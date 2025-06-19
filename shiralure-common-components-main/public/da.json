@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Customer 1",
+    "email": "customer1@example.com",
+    "phone": "+919999999990",
+    "status": "ACTIVE"
+  },
+  {
+    "id": 2,
+    "name": "Customer 2",
+    "email": "customer2@example.com",
+    "phone": "+919999999991",
+    "status": "INACTIVE"
+  },
+  {
+    "id": 3,
+    "name": "Customer 3",
+    "email": "customer3@example.com",
+    "phone": "+919999999992",
+    "status": "ACTIVE"
+  },
+  {
+    "id": 4,
+    "name": "Customer 4",
+    "email": "customer4@example.com",
+    "phone": "+919999999993",
+    "status": "INACTIVE"
+  },
+  {
+    "id": 5,
+    "name": "Customer 5",
+    "email": "customer5@example.com",
+    "phone": "+919999999994",
+    "status": "ACTIVE"
+  },
+  {
+    "id": 6,
+    "name": "Customer 6",
+    "email": "customer6@example.com",
+    "phone": "+919999999995",
+    "status": "INACTIVE"
+  },
+  {
+    "id": 7,
+    "name": "Customer 7",
+    "email": "customer7@example.com",
+    "phone": "+919999999996",
+    "status": "ACTIVE"
+  },
+  {
+    "id": 8,
+    "name": "Customer 8",
+    "email": "customer8@example.com",
+    "phone": "+919999999997",
+    "status": "INACTIVE"
+  },
+  {
+    "id": 9,
+    "name": "Customer 9",
+    "email": "customer9@example.com",
+    "phone": "+919999999998",
+    "status": "ACTIVE"
+  },
+  {
+    "id": 10,
+    "name": "Customer 10",
+    "email": "customer10@example.com",
+    "phone": "+919999999999",
+    "status": "INACTIVE"
+  }
+]

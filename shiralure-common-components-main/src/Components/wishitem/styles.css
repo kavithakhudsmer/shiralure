@@ -1,0 +1,131 @@
+.wishlist-item-wishlist {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(193, 191, 191);
+}
+
+.item-image-wishlist {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 4px;
+}
+
+.item-details-wishlist {
+  flex-grow: 1;
+}
+
+.item-details-wishlist h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+  font-weight: 500;
+  color: #212121;
+}
+
+.item-details-wishlist p {
+  margin: 0 0 6px;
+  font-size: 14px;
+  color: #302f2f;
+}
+
+.item-price-wishlist {
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #000;
+  font-size: 1rem;
+}
+
+.item-actions-wishlist {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+.switch-to-cart-btn {
+  background-color: rgb(232, 231, 231);
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border: none;
+  padding: 8px 45px;
+  border-radius: 4px black;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.switch-to-cart-btn:hover {
+  background-color: #b0acac;
+}
+
+.delete-item-btn {
+  background: none;
+  border: none;
+  margin-top: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.delete-item-btn:hover {
+  color: #ff0000; /* Red on hover to indicate deletion */
+}
+
+.icon-trash::before {
+  content: url('../../assets/trash.png'); /* Trash icon emoji for simplicity */
+}
+@media (max-width: 768px) {
+  .wishlist-item-wishlist {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 10px;
+  }
+
+  .item-image-wishlist {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+
+  .item-details-wishlist {
+    width: 100%;
+  }
+
+  .item-details-wishlist h3 {
+    font-size: 16px;
+  }
+
+  .item-details-wishlist p {
+    font-size: 13px;
+  }
+
+  .item-price-wishlist {
+    font-size: 0.95rem;
+  }
+
+  .item-actions-wishlist {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .switch-to-cart-btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .delete-item-btn {
+    font-size: 1rem;
+    align-self: flex-end;
+  }
+}

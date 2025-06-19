@@ -1,0 +1,16 @@
+.top-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.mid-layer{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 40px 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+}

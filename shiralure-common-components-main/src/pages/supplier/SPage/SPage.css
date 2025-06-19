@@ -1,0 +1,234 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Fixed height instead of min-height */
+  background-color: #f8fafc;
+  width: 100%;
+  overflow: hidden; /* Prevent any scrolling */
+}
+
+/* Ensure the header spans full width */
+.main-layout > :first-child {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Layout body contains sidebar and main content */
+.layout-body {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Sidebar positioning - adjusted for header */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 250px;
+  height: calc(100vh - 60px);
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  overflow: hidden; /* No scrolling in sidebar */
+  z-index: 999;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f8fafc;
+  height: calc(100vh - 60px); /* Fixed height */
+  width: calc(100% - 250px);
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Page Header */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px 16px 32px; /* Reduced padding */
+  background-color: #f8fafc;
+  margin-bottom: 0;
+  width: 100%;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.page-title {
+  font-size: 28px; /* Slightly smaller */
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.breadcrumb-item {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-item:hover {
+  color: #3b82f6;
+}
+
+.breadcrumb-item.active {
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.breadcrumb-separator {
+  color: #9ca3af;
+}
+
+/* Settings Content Area */
+.settings-content {
+  display: flex;
+  flex: 1;
+  background-color: #ffffff;
+  margin: 0 32px 20px 32px; /* Reduced bottom margin */
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* No scrolling */
+  height: calc(100vh - 180px); /* Optimized height */
+  width: calc(100% - 64px);
+}
+
+/* Settings Navigation Sidebar */
+.settings-sidebar {
+  width: 300px; /* Back to original width */
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto; /* Enable scrolling for settings sidebar */
+  height: 100%;
+}
+
+/* Main Content Area */
+.content-area {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 24px;
+  overflow: hidden; /* No scrolling */
+  width: calc(100% - 300px); /* Back to original width calculation */
+  height: 100%;
+}
+
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  background-color: #ffffff;
+  margin: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.coming-soon h2 {
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.coming-soon p {
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%; /* Fixed height */
+  overflow: hidden; /* Prevent all scrolling */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8fafc;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%; /* Fixed height */
+  overflow: hidden; /* No scrolling */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-layout > :first-child {
+    width: 100%;
+    position: static;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .settings-content {
+    flex-direction: column;
+    margin: 0 12px 12px 12px;
+    height: auto;
+    width: calc(100% - 24px);
+  }
+  
+  .settings-sidebar {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .content-area {
+    padding: 16px;
+    width: 100%;
+  }
+  
+  .page-header {
+    padding: 16px;
+    width: 100%;
+  }
+  
+  .page-title {
+    font-size: 24px;
+  }
+}
+
+/* ----------- SCROLL FIX FOR MOBILE ----------- */
+@media (max-width: 768px) {
+  html, body, #root, .main-layout, .layout-body, .main-content, .settings-content, .content-area {
+    overflow: visible !important;
+    height: auto !important;
+  }
+}

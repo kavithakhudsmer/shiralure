@@ -1,0 +1,13 @@
+[
+  {
+    "name": "MEERA",
+    "code": "4567",
+    "discount": 50.0,
+    "discountType": "Fixed",
+    "startDate": "04:23 PM, 27-03-2025",
+    "endDate": "04:23 PM, 31-03-2025",
+    "minOrderAmount": "78.00",
+    "maxDiscount": "6777.00",
+    "limitPerUser": "78"
+  }
+]

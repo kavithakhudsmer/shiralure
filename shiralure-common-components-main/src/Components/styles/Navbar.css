@@ -1,0 +1,104 @@
+/* Navbar.css */
+.navbar {
+  background-color: #fff; /* White background to match the page */
+  border-bottom: 1px solid #e0e0e0; /* Subtle border for separation */
+  border-top: 1px solid #e0e0e0
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 15px;
+  position: relative;
+}
+
+.category-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling for arrows */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.category-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome/Safari */
+}
+
+.category-item {
+  flex: 0 0 auto; /* Prevent items from shrinking */
+  margin: 0 15px; /* Spacing between categories */
+}
+
+.category-link {
+  text-decoration: none;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500; /* Medium weight for boldness */
+  white-space: nowrap; /* Prevent text wrapping */
+  transition: color 0.3s ease;
+}
+
+.category-link:hover {
+  color: #007bff; /* Blue hover effect */
+}
+
+.scroll-arrow {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
+  display: none; /* Hidden by default on desktop */
+}
+
+.scroll-arrow:hover {
+  color: #007bff;
+}
+
+/* Show arrows on smaller screens */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 10px;
+  }
+
+  .category-list {
+    overflow-x: auto; /* Ensure scrolling is enabled */
+  }
+
+  .category-item {
+    margin: 0 10px; /* Reduce spacing on tablets */
+  }
+
+  .scroll-arrow {
+    display: block; /* Show arrows on tablets and below */
+  }
+
+  .left-arrow {
+    margin-right: 10px;
+  }
+
+  .right-arrow {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-item {
+    margin: 0 8px; /* Further reduce spacing on mobile */
+  }
+
+  .category-link {
+    font-size: 14px; /* Smaller font size on mobile */
+  }
+
+  .scroll-arrow {
+    font-size: 18px; /* Slightly smaller arrows */
+  }
+}

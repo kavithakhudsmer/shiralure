@@ -1,0 +1,81 @@
+
+[
+  {
+    "id": 1,
+    "itemImage": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=100",
+    "itemName": "Black Heels For Women",
+    "itemCode": "#2343",
+    "customerId": "#user1",
+    "customerName": "Kavi",
+    "customerEmail": "kavi@gmail.com",
+    "customerImage": "https://randomuser.me/api/portraits/women/1.jpg",
+    "orderedDate": "10-12-2024",
+    "status": "success",
+    "price": "$689"
+  },
+  {
+    "id": 2,
+    "itemImage": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=100",
+    "itemName": "White Tshirt",
+    "itemCode": "#5655",
+    "customerId": "#user2",
+    "customerName": "Ani",
+    "customerEmail": "ani@gmail.com",
+    "customerImage": "https://randomuser.me/api/portraits/women/2.jpg",
+    "orderedDate": "10-12-2024",
+    "status": "shipping",
+    "price": "$599"
+  },
+  {
+    "id": 3,
+    "itemImage": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=100",
+    "itemName": "Jacket for men",
+    "itemCode": "#15245",
+    "customerId": "#user3",
+    "customerName": "Kani",
+    "customerEmail": "kani@gmail.com",
+    "customerImage": "https://randomuser.me/api/portraits/men/1.jpg",
+    "orderedDate": "10-12-2024",
+    "status": "out-for-delivery",
+    "price": "$569"
+  },
+  {
+    "id": 4,
+    "itemImage": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=100",
+    "itemName": "Airpods",
+    "itemCode": "#45431",
+    "customerId": "#user4",
+    "customerName": "Bari",
+    "customerEmail": "bari@gmail.com",
+    "customerImage": "https://randomuser.me/api/portraits/men/2.jpg",
+    "orderedDate": "10-12-2024",
+    "status": "cancelled",
+    "price": "$469"
+  },
+  {
+    "id": 5,
+    "itemImage": "https://images.unsplash.com/photo-1594035910387-fea47794261f?w=100",
+    "itemName": "Jasmine Perfume",
+    "itemCode": "#35656",
+    "customerId": "#user5",
+    "customerName": "Kavin",
+    "customerEmail": "kavin@gmail.com",
+    "customerImage": "https://randomuser.me/api/portraits/men/3.jpg",
+    "orderedDate": "10-12-2024",
+    "status": "ordered",
+    "price": "$459"
+  },
+  {
+    "id": 6,
+    "itemImage": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=100",
+    "itemName": "Smart Watch",
+    "itemCode": "#622545",
+    "customerId": "#user6",
+    "customerName": "Bavin",
+    "customerEmail": "bavin@gmail.com",
+    "customerImage": "https://randomuser.me/api/portraits/men/4.jpg",
+    "orderedDate": "10-12-2024",
+    "status": "packed",
+    "price": "$559"
+  }
+]

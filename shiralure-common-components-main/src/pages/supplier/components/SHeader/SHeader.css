@@ -1,0 +1,56 @@
+/* SettingsHeader.css - With Scrolling (Invisible Scrollbar) */
+.settings-navigation {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Take full height of parent */
+  overflow-y: auto; /* Enable scrolling */
+  
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.settings-navigation::-webkit-scrollbar {
+  display: none;
+}
+
+.settings-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  color: #6b7280;
+  border-bottom: 1px solid #f3f4f6;
+  flex-shrink: 0;
+}
+
+.settings-nav-item:hover {
+  background-color: #f9fafb;
+  color: #374151;
+}
+
+.settings-nav-item.active {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  font-weight: 500;
+  border-right: 3px solid #3b82f6;
+}
+
+.nav-icon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-text {
+  font-weight: 400;
+  font-size: 14px;
+}

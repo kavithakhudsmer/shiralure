@@ -1,0 +1,437 @@
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f2f6f9; }
+.kapp-container { padding: 24px; }
+.kheader-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.ktitle { font-size: 28px; font-weight: bold; margin-bottom: 4px; }
+.kbreadcrumb { display: flex; justify-content: flex-end; align-items: center; gap: 6px; color: #7a7a7a; font-size: 20px; }
+.klink { color: #7c3aed; cursor: pointer; }
+.kpurchase-table-container { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+
+.kcontrols { display: flex; gap: 10px; margin-bottom: 20px; justify-content: flex-end; align-items: center; }
+.kdropdown { padding: 4px 6px; border-radius: 6px; border: none; background-color: #5b61f3; color: white; font-weight: bold; }
+.kicon-btn { background-color: #5b61f3; color: white; border: none; padding: 8px 10px; border-radius: 6px; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; height: 38px; min-width: 30px; }
+
+.kpage-size-selector-container { position: relative; display: inline-block; background-color: #5b61f3; border-radius: 6px; height: 38px; vertical-align: middle; }
+.kpage-size-select { background-color: transparent; color: white; border: none; padding: 0 30px 0 12px; border-radius: 6px; font-size: 14px; font-weight: bold; height: 100%; cursor: pointer; -moz-appearance: none; -webkit-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23ffffff'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd' /%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; background-size: 1em auto; line-height: 30px; }
+.kpage-size-select:focus { outline: none; }
+.kpage-size-select option { color: black; background-color: white; }
+
+.kdivider { border: none; height: 1px; background-color: rgba(0,0,0,0.1); margin: 20px 0; width: 100%; border-radius: 1px; }
+
+.kform-container { margin-bottom: 20px; }
+.kform-row { display: flex; margin-bottom: 20px; gap: 20px; }
+.kform-group { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.kform-group label { margin-bottom: 5px; font-weight: 500; color: #4a4a4a; font-size: 14px; }
+
+input, select, textarea { padding: 10px; border-radius: 6px; border: 1px solid #e2e8f0; background-color: #f1f5f9; font-size: 14px; box-sizing: border-box; }
+select.kpage-size-select { padding: 0 30px 0 12px; background-color: transparent; border: none; color: white; }
+
+.kbutton-row { display: flex; gap: 10px; justify-content: flex-start; margin-top: 10px; }
+.ksearch-btn { background-color: #6366f1; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 500; display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.kclear-btn { background-color: black; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 500; display: flex; align-items: center; gap: 8px; font-size: 14px; }
+
+.kpurchase-table { width: 100%; border-collapse: collapse;border-radius: 4px; }
+.kpurchase-table th, .kpurchase-table td { padding: 14px; border-bottom: 1px solid #e4e4e4; font-size: 14px; text-align: left; vertical-align: middle; }
+.kpurchase-table th:first-child, .kpurchase-table td:first-child { padding-left: 0; }
+.kpurchase-table th:last-child, .kpurchase-table td:last-child { padding-right: 0; }
+.kpurchase-table th { background-color: #f3f4f6; font-weight: 600; color: #374151; }
+.kpurchase-table th:nth-child(3), .kpurchase-table td:nth-child(3),
+.kpurchase-table th:nth-child(4), .kpurchase-table td:nth-child(4),
+.kpurchase-table th:nth-child(5), .kpurchase-table td:nth-child(5),
+.kpurchase-table th:nth-child(6), .kpurchase-table td:nth-child(6),
+.kpurchase-table th:nth-child(7), .kpurchase-table td:nth-child(7) { text-align: center; }
+
+.kstatus.received { color: green; font-weight: bold; }
+.kstatus.pending { color: #e67e22; font-weight: bold; }
+.kstatus.cancelled { color: red; font-weight: bold; }
+.kpayment.paid { color: green; font-weight: bold; }
+.kpayment.pending { color: #e67e22; font-weight: bold; }
+.kpayment.not-paid { color: red; font-weight: bold; }
+
+
+
+
+.kpagination { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; font-size: 14px; color: #4b5563; }
+.kaction-icons { display: flex; gap: 15px; justify-content: center;}
+.kicon { 
+    cursor: pointer; 
+    font-size: 16px;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    box-sizing: border-box;
+    overflow: visible;
+    position: relative;
+}
+
+/* Reduce icon size, make hover circle bigger than icon */
+.kicon svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+/* Icon color styles */
+.kview-icon,
+.kpayment-icon,
+.kedit-icon,
+.kdelete-icon,
+.klist-icon {
+    background: transparent;
+}
+
+.kview-icon { color: #5b61f3; }
+.kpayment-icon { color: #34CFC3; }
+.kedit-icon { color: #33ab4f; }
+.kdelete-icon { color: #dc3545; }
+.klist-icon { color: #04A2E0; }
+
+/* Add circle border on hover with the same color as the hover background */
+.kview-icon:hover {
+    background-color: #e7e9fd;
+    color: #5b61f3;
+    box-shadow: 0 0 0 6px #e7e9fd;
+}
+.kpayment-icon:hover {
+    background-color: #e6fcf9;
+    color: #34CFC3;
+    box-shadow: 0 0 0 6px #e6fcf9;
+}
+.kedit-icon:hover {
+    background-color: #e6f8ec;
+    color: #33ab4f;
+    box-shadow: 0 0 0 6px #e6f8ec;
+}
+.kdelete-icon:hover {
+    background-color: #fdeaea;
+    color: #dc3545;
+    box-shadow: 0 0 0 6px #fdeaea;
+}
+.klist-icon:hover {
+    background-color: #e6f6fd;
+    color: #04A2E0;
+    box-shadow: 0 0 0 6px #e6f6fd;
+}
+
+/* Set icon width and height to 15px */
+.kicon {
+    width: 15px;
+    height: 15px;
+}
+.kicon svg {
+    width: 15px;
+    height: 15px;
+}
+
+/* Keep icon color fixed on hover */
+.kicon:hover svg {
+    color: inherit;
+    fill: currentColor;
+}
+
+.kpage-controls { display: inline-flex; border-radius: 8px; overflow: hidden; background-color: white; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05); border: 1px solid #e0e0e0; }
+.kpage-controls button { padding: 6px 12px; min-width: 38px; height: 38px; border: none; background-color: white; color: #5b61f3; font-size: 14px; cursor: pointer; transition: background-color 0.2s, color 0.2s; display: flex; align-items: center; justify-content: center; border-right: 1px solid #e0e0e0; }
+.kpage-controls button:last-child { border-right: none; }
+.kpage-controls .active { background-color: #eef0ff; color: #5b61f3; font-weight: 600; }
+.kpage-controls button:not(.active):hover { background-color: #f5f5f5; }
+.kpage-controls button.arrow:disabled { opacity: 0.5; cursor: not-allowed; }
+.kpage-controls .arrow { color: #444; font-weight: bold; }
+
+.kdropdown-container { position: relative; display: inline-block; }
+.kdropdown-menu { position: absolute; top: calc(100% + 8px); right: 0; background-color: white; border: 1px solid #e0e0e0; border-radius: 6px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); z-index: 1000; min-width: 100px; padding: 2px 0; }
+.kdropdown-item { display: flex; align-items: center; width: 100%; padding: 6px 10px; text-align: left; background-color: transparent; border: none; color: #333; cursor: pointer; font-size: 12px; white-space: nowrap; }
+.kdropdown-item:hover { background-color: #f5f5f5; color: #2c3e50; }
+.kdropdown-item-icon { margin-right: 6px; color: #5b61f3; }
+
+.kmodal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; }
+.kmodal-content { background-color: white; border-radius: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); width: 90%; max-width: 450px; padding: 30px; animation: fadeInScale 0.3s ease-out forwards; text-align: center; position: relative; }
+@keyframes fadeInScale { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+.kmodal-title { font-size: 24px; font-weight: 700; color: #333; margin: 0; margin-top: 15px; margin-bottom: 20px; }
+.kmodal-close-btn { background: none; border: none; font-size: 15px; color: #777; cursor: pointer; padding: 5px; border-radius: 50%; transition: background-color 0.2s, color 0.2s; position: absolute; top: 15px; right: 15px; z-index: 10; }
+.kmodal-close-btn:hover { background-color: #f0f0f0; color: #333;  }
+.kmodal-icon-container { margin-bottom: 15px; margin-top: 10px; }
+.kmodal-icon { font-size: 60px; color: #F8B92D; }
+.kmodal-body { font-size: 16px; color: #555; text-align: center; margin-bottom: 30px; line-height: 1.5; }
+.kmodal-footer { display: flex; justify-content: center; gap: 15px; }
+.kmodal-btn {
+    padding: 12px 25px; border-radius: 6px; font-size: 16px; font-weight: 600;
+    cursor: pointer; transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    min-width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.kcancel-btn { background-color: #4A5568; color: white; border: 1px solid #4A5568; }
+.kcancel-btn:hover { background-color: #2D3748; border-color: #2D3748; }
+.kdelete-confirm-btn { background-color: #6366F1; color: white; border: 1px solid #6366F1; }
+.kdelete-confirm-btn:hover { background-color: #4F46E5; border-color: #4F46E5; }
+
+.kadd-edit-modal-content { max-width: 700px; padding: 40px; text-align: left; max-height: 100vh; overflow-y: auto; }
+.kadd-edit-modal-title { font-size: 28px; font-weight: bold; color: #333; margin-bottom: 25px; text-align: center; }
+.kadd-edit-form-row { display: flex; gap: 20px; margin-bottom: 20px; }
+.kadd-edit-form-group { flex: 1; display: flex; flex-direction: column; }
+.kadd-edit-form-group label { margin-bottom: 8px; font-weight: 600; color: #374151; font-size: 15px; }
+.kadd-edit-form-group input, .kadd-edit-form-group select, .kadd-edit-form-group textarea { padding: 12px; border-radius: 8px; border: 1px solid #d1d5db; background-color: #f9fafb; font-size: 15px; width: 100%; box-sizing: border-box; }
+.kadd-edit-form-group input:focus, .kadd-edit-form-group select:focus, .kadd-edit-form-group textarea:focus { outline: none; border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2); }
+.kadd-edit-form-group textarea { min-height: 100px; resize: vertical; }
+.kadd-edit-section-title { font-size: 18px; font-weight: bold; color: #374151; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #e5e7eb; }
+.kadd-edit-button-row { display: flex; justify-content: flex-end; gap: 15px; margin-top: 30px; }
+.ksave-btn {
+    background-color: #5A66F1; color: white; border: none; padding: 12px 25px; border-radius: 6px;
+    cursor: pointer; font-weight: 600; font-size: 16px; transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.ksave-btn:hover { background-color: #6f78e5; }
+.kcancel-add-edit-btn {
+    background-color: #000000; color: white; border: none; padding: 12px 25px; border-radius: 6px;
+    cursor: pointer; font-weight: 600; font-size: 16px; transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.kcancel-add-edit-btn:hover { background-color: #2d2c2c; }
+
+.kpurchase-details-modal-content { max-width: 900px; padding: 40px; text-align: left; max-height: 100vh; overflow-y: auto; }
+.kdetail-card-row { display: flex; gap: 20px; margin-bottom: 20px; }
+.kdetail-card { flex: 1; background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; }
+.kdetail-card-title { font-size: 16px; font-weight: 600; color: #374151; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.kdetail-card-text { font-size: 14px; color: #4b5563; margin-bottom: 5px; }
+.kdetail-card-text strong { color: #1f2937; }
+.kproduct-table-header { font-size: 18px; font-weight: bold; color: #374151; margin-top: 30px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #e5e7eb; }
+.ksummary-section { display: flex; justify-content: flex-end; margin-top: 30px; }
+.ksummary-card { background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; width: 300px; }
+.ksummary-item { display: flex; justify-content: space-between; padding: 5px 0; font-size: 14px; color: #4b5563; }
+.ksummary-item strong { color: #1f2937; }
+.ksummary-total { border-top: 1px solid #e5e7eb; margin-top: 10px; padding-top: 10px; font-size: 16px; font-weight: bold; color: #1f2937; }
+.kprint-button-row { display: flex; justify-content: flex-end; margin-top: 20px; }
+.kprint-btn { background-color: #5b61f3; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 500; display: flex; align-items: center; gap: 6px; font-size: 14px; }
+
+.krich-text-editor-toolbar { display: flex; gap: 8px; padding: 8px; border: 1px solid #d1d5db; border-bottom: none; border-top-left-radius: 8px; border-top-right-radius: 8px; background-color: #e9ecef; flex-wrap: wrap; }
+.krich-text-editor-toolbar button { background-color: #f9fafb; border: 1px solid #d1d5db; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 14px; color: #374151; transition: background-color 0.2s; }
+.krich-text-editor-toolbar button:hover { background-color: #d1d5db; }
+.krich-text-editor-content { min-height: 100px; border: 1px solid #d1d5db; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; padding: 12px; background-color: #f9fafb; font-size: 15px; width: 100%; box-sizing: border-box; overflow-y: auto; resize: vertical; outline: none; }
+.krich-text-editor-content:focus-within { border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2); }
+.krich-text-editor-toolbar button svg { width: 16px; height: 16px; vertical-align: middle; }
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .kheader-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .kcontrols {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* Filter and search controls responsive */
+    .kform-container {
+        width: 100%;
+        padding: 0;
+    }
+    .kform-row {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+    .kform-group {
+        width: 100%;
+    }
+    .kbutton-row {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+    .ksearch-btn,
+    .kclear-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Slider responsive */
+    .kslider-container {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .kslider {
+        width: 100% !important;
+    }
+
+    /* Add Purchases button responsive */
+    .kadd-purchase-btn {
+        width: 100%;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    /* Print button responsive */
+    .kprint-button-row {
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .kprint-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .kpurchase-table-container {
+        padding: 10px;
+    }
+
+    /* Table responsive: horizontal scroll and stacking */
+    .kpurchase-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+    .kpurchase-table th,
+    .kpurchase-table td {
+        white-space: nowrap;
+        min-width: 100px;
+    }
+    .kpurchase-table th:first-child,
+    .kpurchase-table td:first-child {
+        padding-left: 8px;
+    }
+    .kpurchase-table th:last-child,
+    .kpurchase-table td:last-child {
+        padding-right: 8px;
+    }
+
+    /* Responsive table content: stack on very small screens */
+    @media (max-width: 500px) {
+        .kpurchase-table,
+        .kpurchase-table thead,
+        .kpurchase-table tbody,
+        .kpurchase-table th,
+        .kpurchase-table td,
+        .kpurchase-table tr {
+            display: block;
+        }
+        .kpurchase-table thead {
+            display: none;
+        }
+        .kpurchase-table tr {
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e4e4e4;
+        }
+        .kpurchase-table td {
+            position: relative;
+            padding-left: 50%;
+            min-width: unset;
+            white-space: normal;
+            border: none;
+            border-bottom: 1px solid #e4e4e4;
+        }
+        .kpurchase-table td:before {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            width: 45%;
+            white-space: nowrap;
+            font-weight: bold;
+            color: #374151;
+            content: attr(data-label);
+        }
+    }
+
+    .kaction-icons {
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    .kaction-icons .kicon {
+        margin-right: 0;
+        margin-bottom: 6px;
+    }
+
+    .kadd-edit-modal-content,
+    .kpurchase-details-modal-content {
+        padding: 15px;
+    }
+
+    .kadd-edit-form-row,
+    .kdetail-card-row {
+        flex-direction: column;
+        gap: 10px;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    .ksummary-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ksummary-card {
+        width: 100%;
+    }
+
+    /* Responsive styles for module.jsx */
+    .module-container {
+        padding: 10px !important;
+    }
+    .module-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+    .module-content {
+        padding: 10px !important;
+    }
+    .module-table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+    }
+    .module-form-row {
+        flex-direction: column !important;
+        gap: 10px !important;
+        overflow-x: auto !important;
+        overflow-y: auto !important;
+    }
+
+    /* Responsive styles for calendar and other modules */
+    .calendar-container {
+        padding: 10px !important;
+    }
+    .calendar-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+    .calendar-content {
+        padding: 10px !important;
+    }
+    .calendar-table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+    }
+    .calendar-form-row {
+        flex-direction: column !important;
+        gap: 10px !important;
+        overflow-x: auto !important;
+        overflow-y: auto !important;
+    }
+
+    /* Add similar responsive rules for other modules as needed */
+}

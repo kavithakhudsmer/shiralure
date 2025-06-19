@@ -1,0 +1,114 @@
+
+/* Account Page Layout */
+.account-page {
+  display: flex;
+  padding: 0;
+  gap: 20px;
+  background-color: #ffffff; /* White background */
+  min-height: calc(100vh - 120px);
+  border: #ccc;
+}
+
+.account-section {
+  flex: 1;
+  padding: 30px;
+  background: #ffffff; 
+  border-radius: 12px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  color: #000; 
+}
+
+.account-section h2,
+.account-section h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #000; /* Headings in black */
+}
+
+.account-section img {
+  height: 17px;
+  width: 17px;
+}
+
+.edit-btn {
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.account-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #e0dede; /* White textbox */
+  color: #000000; /* Black text */
+}
+
+.input-group {
+  display: flex;
+  gap: 20px;
+}
+
+.gender {
+  color: #000;
+  display: flex;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+.location-btn {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .account-page {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .account-section {
+    margin-right: 0;
+    padding: 0px;
+  }
+
+  .account-section h2 {
+    font-size: 20px;
+  }
+
+  .account-section h3 {
+    font-size: 18px;
+  }
+
+  .edit-btn,
+  .location-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .account-form input {
+    width: 100%;
+  }
+}
+

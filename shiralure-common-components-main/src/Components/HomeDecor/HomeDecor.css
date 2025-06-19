@@ -1,0 +1,104 @@
+/* HomeDecor.css */
+.home-decor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 15px;
+  background-color: #fff;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.decor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.decor-card {
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0; /* Added border */
+  border-radius: 12px; /* Added border-radius */
+  overflow: hidden; /* Ensures content respects border-radius */
+}
+
+.decor-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.decor-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 10px 10px 0 0;
+  transition: filter 0.3s ease, border-radius 0.3s ease;
+}
+
+.decor-card:hover img {
+  filter: brightness(1.1);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .home-decor {
+    padding: 30px 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .decor-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  .decor-card img {
+    height: 150px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-decor {
+    padding: 20px 5px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .decor-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .decor-card img {
+    height: 120px;
+    border-radius: 5px;
+  }
+}

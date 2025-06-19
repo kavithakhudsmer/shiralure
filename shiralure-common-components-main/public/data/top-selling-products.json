@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "product": "Ethnic School bag for children (24L)",
+    "category": "Bags",
+    "stock": "In Stock",
+    "sales": "5,093",
+    "image": "https://images.unsplash.com/photo-1566150902887-9679ecc155ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+  },
+  {
+    "id": 2,
+    "product": "Leather jacket for men (S,M,L,XL)",
+    "category": "Clothing",
+    "stock": "In Stock",
+    "sales": "6,890",
+    "image": "https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+  },
+  {
+    "id": 3,
+    "product": "Childrens Teddy toy of high quality",
+    "category": "Toys",
+    "stock": "Out Of Stock",
+    "sales": "5,423",
+    "image": "https://images.unsplash.com/photo-1582515073490-39981397c445?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+  },
+  {
+    "id": 4,
+    "product": "Orange smart watch (24mm)",
+    "category": "Fashion",
+    "stock": "Out Of Stock",
+    "sales": "10,234",
+    "image": "https://images.unsplash.com/photo-1558126319-c9feecbf57ee?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+  },
+  {
+    "id": 5,
+    "product": "Black Camera",
+    "category": "Electronic",
+    "stock": "In Stock",
+    "sales": "10,234",
+    "image": "https://m.media-amazon.com/images/I/511NJSJcNiL._SX300_SY300_QL70_FMwebp_.jpg"
+  },
+  {
+    "id": 6,
+    "product": "Hand Bag For Ladies",
+    "category": "Fashion",
+    "stock": "Out Of Stock",
+    "sales": "1,034",
+    "image": "https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+  }
+]

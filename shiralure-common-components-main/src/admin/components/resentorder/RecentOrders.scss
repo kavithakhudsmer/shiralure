@@ -1,0 +1,184 @@
+.muthu-recent-orders-wrapper {
+  padding: 20px;
+  background: #fff;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    display: block;
+    width: 100%;
+  }
+
+  .muthu-recent-orders-title {
+    font-size: 1.4rem;
+    color: #2d2d2d;
+    margin: 0 0 1.5rem 0;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  .muthu-recent-orders-container {
+    width: 100%;
+    min-width: 1024px;
+
+    @media (max-width: 768px) {
+      overflow-x: auto;
+      width: auto;
+      min-width: 100%;
+    }
+
+    .ant-table {
+      font-family: inherit;
+      min-width: 100%;
+
+      .ant-table-container {
+        @media (max-width: 768px) {
+          overflow-x: visible;
+        }
+      }
+      
+      .ant-table-thead > tr > th {
+        background-color: #f5f6fa;
+        color: black;
+        font-weight: bold;
+        font-size: 0.95rem;
+        padding: 14px 18px;
+        white-space: nowrap;
+        
+        @media (max-width: 768px) {
+          padding: 12px 15px;
+          font-size: 0.85rem;
+        }
+      }
+      
+      .ant-table-tbody > tr > td {
+        padding: 14px 18px;
+        color: black;
+        font-size: 0.9rem;
+        font-weight: bold;
+        white-space: nowrap;
+        
+        @media (max-width: 768px) {
+          padding: 12px 15px;
+          font-size: 0.85rem;
+        }
+      }
+      
+      .ant-table-tbody > tr:hover > td {
+        background: #f9f9f9;
+      }
+    }
+    
+    .muthu-item-details {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        object-fit: cover;
+        background: #f0f0f0;
+      }
+
+      .muthu-text {
+        span {
+          font-size: 0.8rem;
+          color: #888;
+          display: block;
+          font-weight: normal;
+        }
+      }
+    }
+    .muthu-customer-id {
+  color: #28a745 !important;
+  font-weight: bold !important;
+}
+    .muthu-customer-details {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: #f0f0f0;
+      }
+
+      .muthu-text {
+        span {
+          font-size: 0.8rem;
+          color: #888;
+          display: block;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .muthu-status {
+      font-weight: 600;
+      text-transform: capitalize;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      display: inline-block;
+
+      &.muthu-success { color: #28a745; }
+      &.muthu-shipping { color: #007bff; }
+      &.muthu-out-for-delivery { color: #ffc107; }
+      &.muthu-cancelled { color: #dc3545; }
+      &.muthu-ordered { color: #6c757d; }
+      &.muthu-packed { color: #17a2b8; }
+    }
+
+    .muthu-action {
+      font-size: 1.2rem;
+      color: #1378d1;
+      cursor: pointer;
+      transition: color 0.2s;
+      text-align: center;
+
+      &:hover {
+        color: #2d2d2d;
+      }
+    }
+        .muthu-view-btn {
+      background: none;
+      border: none;
+      color: #1378d1;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+      padding: 5px 10px;
+      border-radius: 4px;
+  
+      &:hover {
+        color: #0d5aa7;
+        background-color: rgba(13, 90, 167, 0.1);
+        border-radius: 100%;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+  }
+}
+
+// Responsive adjustments for very small screens
+@media (max-width: 480px) {
+  .muthu-recent-orders-wrapper {
+    .muthu-recent-orders-container {
+      min-width: 1200px;
+    }
+  }
+}

@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=FontName&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue', Arial, sans-serif, 'FontName', serif;
+}
+
+@font-face {
+  font-family: 'ShiraLure';
+  src: url('../fonts/serif-font.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.verification-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  /* position: relative; */
+}
+
+.logo-container-top {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 100;
+  height: auto;
+  width: 150px;
+}
+
+.logo-top {
+  width: 100%;
+  height: auto;
+}
+
+/* .left-section {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f5f5f5;
+} */
+
+.left-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* .right-section {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../assets/images/background.png');
+  background-size: cover;
+  background-position: center;
+} */
+
+.right-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.brand-name {
+  top: 80px;
+  font-family: 'ShiraLure', serif;
+  font-size: 70px;
+  color: #b48c08;
+}
+
+.verification-form-container {
+  background-color: #EAE9EF;
+  padding: 40px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.verify-title {
+  font-size: 28px;
+  font-weight: 600;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 25px;
+  margin-left: 10px;
+  color: #000;
+}
+
+.instruction {
+  font-size: 16px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  color: #333;
+}
+
+.code-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.resend-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.resend-row span{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-left: 10px;
+}
+
+.verification-form-container ::placeholder{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.resend-btn {
+  background: none;
+  border: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #3626f7;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+}
+
+.verify-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black  ;
+  border: 2.5px solid black;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.back-link-container {
+  text-align: center;
+}
+
+.back-link {
+  color: #3626f7;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* 720p (720x1280) */
+@media screen and (min-width: 720px) and (max-width: 1279px) {
+  .verification-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* .left-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  } */
+
+  /* .right-section {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+
+  .brand-name {
+    font-size: 56px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .verification-form-container {
+    max-width: 600px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8); /* Optional: for better readability */
+    border-radius: 10px; /* Optional: for better appearance */
+    text-align: center;
+  }
+
+  .verify-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .instruction {
+    font-size: 20px;
+    margin-left: -35px;
+    margin-bottom: 25px;
+  }
+
+  .code-input,
+  .verify-btn {
+    padding: 18px;
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .resend-row {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .resend-btn {
+    font-size: 18px;
+  }
+
+  .back-link {
+    font-size: 18px;
+  }
+}
+
+/* Mobile (320px) */
+@media screen and (max-width: 320px) {
+  .verification-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* .left-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  } */
+
+  /* .right-section {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+  } */
+
+  .right-content {
+    padding: 40px 10px 10px;
+    text-align: center;
+  }
+
+  .logo-container-top {
+    width: 80px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .brand-name {
+    font-size: 36px;
+    /* margin-bottom: 5px; */
+    text-align: center;
+  }
+
+  .verification-form-container {
+    padding: 15px;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.8); /* Optional: for better readability */
+    border-radius: 10px; /* Optional: for better appearance */
+    text-align: center;
+  }
+
+  .verify-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .instruction {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .code-input,
+  .verify-btn {
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .resend-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .resend-btn {
+    font-size: 14px;
+  }
+
+  .back-link {
+    font-size: 14px;
+  }
+}

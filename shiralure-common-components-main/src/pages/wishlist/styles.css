@@ -1,0 +1,44 @@
+.wishlist-page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent; /* Keep the light background */
+}
+
+.wishlist-container {
+  max-width: 1200px; /* Set a max-width to prevent the container from stretching too wide */
+  margin: 0 auto; /* Center the container horizontally */
+  background-color: transparent;
+  padding: 20px 20px; /* Reduce padding for a tighter layout */
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); Add a subtle shadow for depth */
+  border-radius: 8px; /* Add slight rounding to the corners */
+  margin-top: 20px; /* Add some space from the header */
+  margin-bottom: 20px; /* Add space before the footer */
+}
+
+.wishlist-container h1 {
+  margin-bottom: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 28px; /* Increase font size for emphasis */
+  color: black; /* Use a vibrant color (like pink) to match the "4 items" in the image */
+  text-align: center; /* Center the heading */
+  font-weight: 600; /* Make the heading bolder */
+}
+
+.wishlist-container .item-count {
+  color: #ff0000; /* Red color for the item count */
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .wishlist-container {
+    padding: 15px 10px;
+  }
+
+  .wishlist-container h1 {
+    font-size: 22px;
+  }
+
+  .wishlist-container .item-count {
+    font-size: 16px;
+  }
+}

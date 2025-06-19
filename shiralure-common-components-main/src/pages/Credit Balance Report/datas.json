@@ -1,0 +1,14 @@
+[
+  { "name": "Abcd", "email": "abcd@ec.com", "phone": "+911234567890", "role":"Admin","balance": 0.0 },
+  { "name": "Efgh", "email": "efgh@ec.com", "phone": "+911234567890", "role":"User","balance": 0.0 },
+  { "name": "Ibcd", "email": "ibcd@ec.com", "phone": "+911234567890", "role":"User","balance": 0.0 },
+  { "name": "Jbcd", "email": "jbcd@ec.com", "phone": "+911234567890", "role":"Admin","balance": 5.0 },
+  { "name": "Kbcd", "email": "kbcd@ec.com", "phone": "+911234567890", "role":"Admin","balance": 10.0 },
+  { "name": "Lbcd", "email": "lbcd@ec.com", "phone": "+911234567890", "role":"User","balance": 0.0 },
+  { "name": "Mbcd", "email": "mbcd@ec.com", "phone": "+911234567890", "role":"Admin","balance": 2.0 },
+  { "name": "Nbcd", "email": "nbcd@ec.com", "phone": "+911234567890", "role":"Admin","balance": 7.0 },
+  { "name": "Obcd", "email": "obcd@ec.com", "phone": "+911234567890","role":"User", "balance": 0.0 },
+  { "name": "Pbcd", "email": "pbcd@ec.com", "phone": "+911234567890","role":"User", "balance": 1.0 },
+  { "name": "Qbcd", "email": "qbcd@ec.com", "phone": "+911234567890", "role":"Admin","balance": 9.0 },
+  { "name": "Rbcd", "email": "rbcd@ec.com", "phone": "+911234567890", "role":"User","balance": 3.0 }
+]

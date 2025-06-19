@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+.header {
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 15px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* Search section */
+.search {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-container .search-icon {
+  color: #666;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.search-container input {
+  border: none;
+  padding: 5px;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+}
+
+.search-container input::placeholder {
+  color: #999;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
+
+/* Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* User actions (icons) */
+.user-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.user-actions button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Desktop view (default) */
+@media (min-width: 769px) {
+  .user-actions {
+    display: flex;
+  }
+}
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 10px;
+    position: relative;
+  }
+
+  .logo img {
+    height: 35px;
+  }
+
+  .search-container {
+    max-width: 250px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .user-actions {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 55px;
+    right: 0; /* Changed from 30px to 0 */
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  .user-actions.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .user-actions button {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+}
+
+/* Mobile view (up to 480px) */
+@media (max-width: 480px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 10px;
+    position: relative;
+  }
+
+  .logo img {
+    height: 30px;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .search-container {
+    width: 100%;
+    max-width: none;
+    padding: 4px 8px;
+  }
+
+  .search-container .search-icon {
+    font-size: 14px;
+    margin-right: 6px;
+  }
+
+  .search-container input {
+    font-size: 14px;
+  }
+
+  .search-container input::placeholder {
+    font-size: 14px;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+  }
+
+  .user-actions {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 0; /* Changed from 20px to 0 */
+    background-color: #1a1a1a;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  .user-actions.open {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .user-actions button {
+    font-size: 18px;
+    padding: 8px 0;
+  }
+}
+
+/* Extra small screens (320px and below) */
+@media (max-width: 320px) {
+  .header-container {
+    padding: 6px 8px 10px 8px;
+    gap: 6px;
+  }
+
+  .logo img {
+    height: 25px;
+  }
+
+  .search-container {
+    padding: 3px 6px;
+  }
+
+  .search-container .search-icon {
+    font-size: 12px;
+    margin-right: 4px;
+  }
+
+  .search-container input {
+    font-size: 12px;
+  }
+
+  .search-container input::placeholder {
+    font-size: 12px;
+  }
+
+  .menu-icon {
+    top: 8px;
+    right: 8px;
+    font-size: 18px;
+  }
+
+  .user-actions {
+    top: 45px;
+    right: 0; /* Changed from 15px to 0 */
+    padding: 8px;
+  }
+
+  .user-actions button {
+    font-size: 16px;
+    padding: 6px 0;
+  }
+}

@@ -1,0 +1,131 @@
+
+{
+  "sections": [
+    {
+      "title": "Top Deals",
+      "products": [
+        {
+          "image": "mens-shirt.jpg",
+          "title": "Men's Shirt",
+          "discount": "Min.30% Off",
+          "alt": "Men's Shirt"
+        },
+        {
+          "image": "travel-bags.jpg",
+          "title": "Travel Bags",
+          "discount": "Min.50% Off",
+          "alt": "Travel Bags"
+        },
+        {
+          "image": "electronics.jpg",
+          "title": "Electronics",
+          "discount": "Min.35% Off",
+          "alt": "Electronics"
+        },
+        {
+          "image": "furniture.jpg",
+          "title": "Furniture",
+          "discount": "Min.10% Off",
+          "alt": "Furniture"
+        },
+        {
+          "image": "sports.jpg",
+          "title": "Sports",
+          "discount": "Min.10% Off",
+          "alt": "Sports Equipment"
+        }
+        
+      ]
+    },
+    {
+      "title": "Trends",
+      "products": [
+        {
+          "image": "mobiles.jpg",
+          "title": "Mobiles",
+          "discount": "Min.30% Off",
+          "alt": "Mobiles"
+        },
+        {
+          "image": "womens-kurthi.jpg",
+          "title": "Women's Kurthi",
+          "discount": "Min.50% Off",
+          "alt": "Women's Kurthi"
+        },
+        {
+          "image": "hair-straightener.jpg",
+          "title": "Hair Straightener",
+          "discount": "Min.35% Off",
+          "alt": "Hair Straightener"
+        },
+        {
+          "image": "gaming.jpg",
+          "title": "Gaming",
+          "discount": "Min.15% Off",
+          "alt": "Gaming Accessories"
+        },
+        {
+          "image": "sports-trends.jpg",
+          "title": "Sports",
+          "discount": "Min.35% Off",
+          "alt": "Sports Gear"
+        }
+      ]
+    },
+    {
+      "title": "Kitchen Essentials",
+      "products": [
+        {
+          "image": "tableware-set.jpg",
+          "title": "Tableware Set",
+          "discount": "Starting ₹999",
+          "alt": "Tableware Set"
+        },
+        {
+          "image": "cookware.jpg",
+          "title": "Cookware",
+          "discount": "Starting ₹999",
+          "alt": "Cookware"
+        },
+        {
+          "image": "spices.jpg",
+          "title": "Spices",
+          "discount": "Starting ₹299",
+          "alt": "Spices"
+        },
+        {
+          "image": "weighing-scale.jpg",
+          "title": "Electronic Weighing Scale",
+          "discount": "Starting ₹999",
+          "alt": "Electronic Weighing Scale"
+        },
+        {
+          "image": "plate-organizer.jpg",
+          "title": "Plate Organizer",
+          "discount": "Starting ₹799",
+          "alt": "Plate Organizer"
+        }
+      ]
+    },{
+      "title": "Upto 60% Off.. Home Decor",
+      "products": [
+        {
+          "image": "decor1.jpg",
+          "alt": "Home Decor Item 1"
+        },
+        {
+          "image": "decor2.jpg",
+          "alt": "Home Decor Item 2"
+        },
+        {
+          "image": "decor3.jpg",
+          "alt": "Home Decor Item 3"
+        },
+        {
+          "image": "decor4.jpg",
+          "alt": "Home Decor Item 4"
+        }
+      ]
+    }
+  ]
+}

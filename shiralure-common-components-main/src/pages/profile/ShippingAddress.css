@@ -1,0 +1,130 @@
+.shipping-address-page {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+
+  .box-pic{
+    height: 19px;
+    width: 19px;
+  }
+  
+  .shipping-address-page h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .shipping-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .input-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }  
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .form-group label {
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .form-group label span {
+    color: red;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f0f0f0; /* Light gray background */
+    color: #000000; /* Black text */
+  }
+  
+  
+  .address-with-button {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .location-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .save-btn {
+    background-color: #000;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .save-btn:hover {
+    background-color: #333;
+  }
+  @media (max-width: 768px) {
+    .shipping-address-page {
+      padding: 0;
+    }
+  
+    .shipping-address-page h1 {
+      font-size: 20px;
+      text-align: center;
+    }
+  
+    .input-row {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .form-group input,
+    .form-group select {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .address-with-button {
+      flex-direction: column;
+    }
+  
+    .location-btn {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .save-btn {
+      font-size: 15px;
+      padding: 10px;
+    }
+  
+    .box-pic {
+      height: 16px;
+      width: 16px;
+    }
+  }
+  

@@ -1,0 +1,481 @@
+.rproducts-report-container {
+  padding: 25px 30px;
+  background-color: #F2F6F9;
+  font-family: Arial, sans-serif;
+  min-height: 100vh; 
+  box-sizing: border-box;
+}
+
+.rheader-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap; 
+  gap: 10px; 
+}
+
+.rtitle {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.rbreadcrumb {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  color: #7a7a7a;
+  font-size: 18px;
+  text-align: right; 
+}
+.rlink {
+  color: #6366f1;
+  cursor: pointer;
+}
+
+.topsicons {
+  background-color: white;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+
+.ractions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #d8d8da;
+  margin-right: 4px; 
+}
+
+/* MODIFIED: Consistent button styling */
+.rdropdown-btn,
+.ricon-btn {
+  background-color: #6366f1;
+  color: white;
+  padding: 8px 10px; 
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  white-space: nowrap;
+  height: 38px; 
+  box-sizing: border-box; 
+}
+
+.rdropdown-btn .MuiSvgIcon-root, 
+.rdropdown-btn svg { 
+  margin-left: 4px;
+  vertical-align: middle; 
+}
+
+.ricon-btn svg {
+  font-size: 20px; 
+}
+
+.rdropdown-menu,
+.rshare-options-menu {
+  position: absolute;
+  background-color: #6366f1;
+  border: 1px solid #ccc;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 800;
+  min-width: 100px;
+  right: 0; 
+}
+
+.rdropdown-menu {
+  top: 42px;
+  margin-right: 50px; 
+}
+
+.rshare-options-menu {
+  top: 42px; 
+}
+
+.rdropdown-menu div,
+.rshare-option-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rdropdown-menu div:hover,
+.rshare-option-item:hover {
+  background-color: #f0f0f0;
+  color: #191e23;
+}
+
+/* Filter Panel */
+.rfilter-panel {
+  background: white;
+  padding: 8px 13px;
+  margin-left: 12px;
+  animation: fadeIn 0.3s ease-in-out;
+  border-radius: 6px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.rfilter-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.rfilter-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+   gap: 5px; 
+   width: 30%;
+}
+
+.rfilter-label {
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 5px;
+  font-weight: 600;
+  gap:5px;
+  width: 30%;
+}
+
+.rfilter-input {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  background-color: #f3f3f3;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 85%;
+  gap: 15px;
+
+}
+
+.rfilter-inputs
+{
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  background-color: #f3f3f3;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  gap: 15px;
+
+}
+
+#category-select {
+  color: #b0b2b4;
+}
+
+.rfilter-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.rsearch-btn,
+.rclear-btn {
+  background-color: #6366f1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.rclear-btn {
+  background-color: #191e23;
+}
+
+.rsearch-btn svg,
+.rclear-btn svg {
+  margin-right: 5px;
+}
+
+/* MODIFIED: Table Responsiveness */
+.beautyproducts {
+  overflow-x: auto; 
+  margin-top: 18px;
+}
+
+.rproducts-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 20px;
+  
+  }
+
+.rproducts-table th,
+.rproducts-table td {
+  padding: 14px 20px;
+  text-align: left;
+  border-bottom: 1px solid #dcdada;
+  white-space: normal; 
+  word-break: break-word; 
+}
+
+.rproducts-table th {
+  font-weight: 600;
+  color: #4b5563;
+  background-color: #f3f4f6;
+}
+
+.rproducts-table th:nth-child(2),
+.rproducts-table td:nth-child(2),
+.rproducts-table th:nth-child(3),
+.rproducts-table td:nth-child(3),
+.rproducts-table th:nth-child(4),
+.rproducts-table td:nth-child(4) {
+  text-align: center;
+}
+.rpagination-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-left: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.rpagin {
+  margin-bottom: 10px;
+}
+
+.rpagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 10px;
+  margin: 20px 0;
+  margin-right: 16px;
+}
+
+.rpagination-controls button {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #6366f1;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rpagination-controls button.active {
+  background-color: #f0f2ff;
+  color: #6366f1;
+  border-color: #6366f1;
+  font-weight: 600;
+}
+
+.rpagination-controls button:hover:not(.active) {
+  background-color: #f3f4f6;
+}
+
+.rpagination-controls button:first-child
+{
+border-left: 1px solid #e5e7eb;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.rpagination-controls button:last-child
+{
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Small screens (e.g., mobile phones) */
+@media (max-width: 768px) {
+  .rproducts-report-container {
+    padding: 15px;
+  }
+
+  .rheader-bar {
+    flex-direction: column; 
+    align-items: flex-start; 
+  }
+
+  .rtitle {
+    font-size: 24px; 
+    margin-bottom: 10px;
+  }
+
+  .rbreadcrumb {
+    justify-content: flex-start; 
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .ractions {
+    justify-content: center; 
+    gap: 8px; 
+    border-bottom: none; 
+    padding-bottom: 0;
+    width: 100%;
+  }
+
+  .rdropdown-btn,
+  .ricon-btn {
+    padding: 6px 10px;
+    height: 32px; 
+    font-size: 14px;
+  }
+
+  .rdropdown-menu,
+  .rshare-options-menu {
+    right: auto; 
+    left: 50%; 
+    transform: translateX(-50%);
+    top: 50px; 
+    min-width: unset; 
+    width: 90%; 
+  }
+
+  .rfilter-row {
+    flex-direction: column; 
+    gap: 8px; 
+  }
+
+  /* .rfilter-group {
+    width: 50%; 
+    min-width: unset; 
+  } */
+
+  .rfilter-actions {
+    justify-content: center; 
+    width: 100%;
+  }
+
+  .rproducts-table {
+    width: 100%;
+  }
+
+  .rproducts-table th,
+  .rproducts-table td {
+    padding: 10px; /* Reduce table cell padding */
+    font-size: 14px; /* Smaller font size for table content */
+    white-space: normal; /* Allow text to wrap within cells */
+    word-break: break-word; /* Break long words */
+  }
+
+  .rpagination-footer {
+    flex-direction: column; /* Stack pagination elements */
+    text-align: center;
+  }
+
+  .rpagin {
+    margin-left: 0; /* Remove left margin */
+    margin-bottom: 10px; /* Add space below "Showing X of Y" */
+    font-size: 14px;
+  }
+
+  .rpagination-controls {
+    margin-right: 0; /* Remove right margin */
+    justify-content: center;
+  }
+
+  .rpagination-controls button {
+    padding: 6px 10px; /* Smaller padding for pagination buttons */
+    font-size: 13px;
+  }
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .rproducts-report-container {
+    padding: 20px;
+  }
+
+  .rtitle {
+    font-size: 26px;
+  }
+
+  .rbreadcrumb {
+    font-size: 17px;
+  }
+
+  .ractions {
+    gap: 10px;
+  }
+
+  .rdropdown-btn,
+  .ricon-btn {
+    padding: 8px 12px; /* Adjust padding for tablets */
+    height: 38px; /* Consistent height for tablets */
+  }
+
+  
+
+  .rfilter-input {
+    min-width: 70px;
+  }
+
+  .rproducts-table {
+    width: 100%;
+  }
+
+  .rproducts-table th,
+  .rproducts-table td {
+    padding: 12px;
+  }
+
+  .rpagination-footer {
+    font-size: 15px;
+  }
+
+  .rpagination-controls button {
+    padding: 7px 14px;
+  }
+}
+
+/* Large screens (desktops) - styles already mostly cater to this */
+@media (min-width: 1025px) {
+  .rproducts-report-container {
+    padding: 25px 30px;
+  }
+
+  .rproducts-table {
+    width: 95%; /* Adjust as needed for desktop */
+    margin: 0 auto;
+    /* You can add a min-width here IF you want the table
+       to always be at least a certain width on large desktops,
+       e.g., min-width: 800px;
+       But generally, `width: 100%` inside a flexible container is enough. */
+  }
+
+  .rpagin {
+    margin-left: 20px;
+  }
+
+  .rpagination-controls {
+    margin-right: 16px;
+  }
+}

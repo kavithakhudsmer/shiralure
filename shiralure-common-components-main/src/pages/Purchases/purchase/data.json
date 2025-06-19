@@ -1,0 +1,186 @@
+{
+  "initialDataWithNotes": [
+    {
+      "id": 1,
+      "supplier": "Eco Supplies",
+      "date": "12:45 PM, 15-03-2025",
+      "ref": "PUR-001",
+      "status": "Received",
+      "total": "$9,750.00",
+      "payment": "Paid",
+      "note": "Standard order for office",
+      "supplierDetails": {
+        "location": "India, Chennai",
+        "phone": "9876543219",
+        "email": "ne@gmail.com"
+      },
+      "products": [
+        {
+          "name": "Hair Serum",
+          "unitCost": "1950.00",
+          "quantity": 50,
+          "discount": "0.00",
+          "taxes": "0.00",
+          "subTotal": "97500"
+        }
+      ],
+      "createdDate": "12:46 PM, 15-03-2025"
+    },
+    {
+      "id": 2,
+      "supplier": "Green Traders",
+      "date": "10:30 AM, 14-03-2025",
+      "ref": "PUR-002",
+      "status": "Pending",
+      "total": "$3,500.00",
+      "payment": "Pending",
+      "note": "Awaiting confirmation",
+      "supplierDetails": {
+        "location": "India, Mumbai",
+        "phone": "9123456789",
+        "email": "green@example.com"
+      },
+      "products": [
+        {
+          "name": "Organic Vegetables",
+          "unitCost": "50.00",
+          "quantity": 70,
+          "discount": "0.00",
+          "taxes": "0.00",
+          "subTotal": "3500.00"
+        }
+      ],
+      "createdDate": "10:35 AM, 14-03-2025"
+    },
+    {
+      "id": 3,
+      "supplier": "Nature Co.",
+      "date": "09:15 AM, 13-03-2025",
+      "ref": "PUR-003",
+      "status": "Received",
+      "total": "$6,250.00",
+      "payment": "Paid",
+      "note": "Bulk purchase of organic goods",
+      "supplierDetails": {
+        "location": "India, Bangalore",
+        "phone": "9988776655",
+        "email": "nature@example.00"
+      },
+      "products": [
+        {
+          "name": "Eco-friendly Bags",
+          "unitCost": "125.00",
+          "quantity": 50,
+          "discount": "0.00",
+          "taxes": "0.00",
+          "subTotal": "6250.00"
+        }
+      ],
+      "createdDate": "09:20 AM, 13-03-2025"
+    },
+    {
+      "id": 4,
+      "supplier": "Pure Essentials",
+      "date": "03:20 PM, 12-03-2025",
+      "ref": "PUR-004",
+      "status": "Cancelled",
+      "total": "$1,150.00",
+      "payment": "Not Paid",
+      "note": "Order cancelled by supplier",
+      "supplierDetails": {
+        "location": "India, Delhi",
+        "phone": "9000011111",
+        "email": "pure@example.com"
+      },
+      "products": [
+        {
+          "name": "Essential Oils",
+          "unitCost": "230.00",
+          "quantity": 5,
+          "discount": "0.00",
+          "taxes": "0.00",
+          "subTotal": "1150.00"
+        }
+      ],
+      "createdDate": "03:25 PM, 12-03-2025"
+    },
+    {
+      "id": 5,
+      "supplier": "Bio Mart",
+      "date": "11:50 AM, 11-03-2025",
+      "ref": "PUR-005",
+      "status": "Received",
+      "total": "$8,200.00",
+      "payment": "Paid",
+      "note": "Urgent delivery completed",
+      "supplierDetails": {
+        "location": "India, Kolkata",
+        "phone": "9765432109",
+        "email": "bio@example.com"
+      },
+      "products": [
+        {
+          "name": "Organic Snacks",
+          "unitCost": "82.00",
+          "quantity": 100,
+          "discount": "0.00",
+          "taxes": "0.00",
+          "subTotal": "8200.00"
+        }
+      ],
+      "createdDate": "11:55 AM, 11-03-2025"
+    },
+    {
+      "id": 6,
+      "supplier": "Organic Hub",
+      "date": "08:40 AM, 10-03-2025",
+      "ref": "PUR-006",
+      "status": "Pending",
+      "total": "$4,300.00",
+      "payment": "Pending",
+      "note": "Follow up on this",
+      "supplierDetails": {
+        "location": "India, Pune",
+        "phone": "9555544444",
+        "email": "hub@example.com"
+      },
+      "products": [
+        {
+          "name": "Fresh Produce",
+          "unitCost": "43.00",
+          "quantity": 100,
+          "discount": "0.00",
+          "taxes": "0.00",
+          "subTotal": "4300.00"
+        }
+      ],
+      "createdDate": "08:45 AM, 10-03-2025"
+    }
+  ],
+  "dummyPurchasePayments": [
+    {
+      "id": 1,
+      "purchaseId": 1,
+      "date": "16-03-2025",
+      "referenceNo": "PAY-001",
+      "amount": "$9,750.00",
+      "paymentMethod": "Bank Transfer"
+    },
+    {
+      "id": 2,
+      "purchaseId": 3,
+      "date": "14-03-2025",
+      "referenceNo": "PAY-002",
+      "amount": "$6,250.00",
+      "paymentMethod": "Credit Card"
+    },
+    {
+      "id": 3,
+      "purchaseId": 5,
+      "date": "12-03-2025",
+      "referenceNo": "PAY-003",
+      "amount": "$8,200.00",
+      "paymentMethod": "Cash"
+    }
+  ]
+}

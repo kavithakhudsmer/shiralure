@@ -1,0 +1,16 @@
+[
+  {
+    "item": "Eco-Friendly Water Bottle",
+    "quantity": 2,
+    "price": 250,
+    "shippingAddress": "123 Green Street, Chennai",
+    "orderDate": "2025-05-28"
+  },
+  {
+    "item": "Reusable Tote Bag",
+    "quantity": 1,
+    "price": 200,
+    "shippingAddress": "456 Eco Lane, Bangalore",
+    "orderDate": "2025-05-30"
+  }
+]

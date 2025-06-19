@@ -1,0 +1,197 @@
+// Variables
+$muthu-dark-bg: #121212;
+$muthu-dark-surface: #1e1e1e;
+$muthu-dark-text: #e0e0e0;
+$muthu-dark-divider: #333;
+
+.muthu-home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  background-color: #F2F6F9;
+  transition: background 0.3s ease;
+  width: 100%;
+  overflow-x: hidden;
+
+  &.muthu-dark-mode {
+    background-color: $muthu-dark-bg;
+    color: $muthu-dark-text;
+  }
+
+  .muthu-home-header {
+   
+    padding: 20px 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    margin-left: 20px;
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+      width: 100%;
+     
+    }
+
+    .muthu-home-title {
+      font-size: 40px;
+      font-weight: bold;
+      color: #333;
+      transition: color 0.3s ease;
+
+      .muthu-dark-mode & {
+        color: $muthu-dark-text;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 32px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 28px;
+      }
+    }
+
+    .muthu-breadcrumb {
+      font-size: 25px;
+      margin-right: 50px;
+      margin-top: 20px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+
+      a:first-child {
+        color: #5A66F1;
+        text-decoration: none;
+      }
+
+      a:last-child {
+        color: #666;
+        text-decoration: none;
+        &:hover {
+          color: #5A66F1;
+        }
+      }
+
+      .muthu-separator {
+        color: #999;
+        margin: 0 18px;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 16px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .muthu-main-content {
+ 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transition: margin 0.3s ease;
+    
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .muthu-home-container {
+      flex: 1;
+      padding: 0 30px 30px 30px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      box-sizing: border-box;
+
+      @media (max-width: 768px) {
+        
+      }
+
+      .muthu-widgets,
+      .muthu-sales,
+      .muthu-top-customer,
+      .muthu-upcoming-products,
+      .muthu-admin-container,
+      .muthu-order-table {
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 100%;
+        margin-top: 20px;
+      }
+
+      .muthu-widgets {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+       
+
+        @media (max-width: 992px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+      }
+
+      .muthu-sales {
+        @media (max-width: 768px) {
+          
+          margin-top: 15px;
+        }
+      }
+
+      .muthu-top-customer {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+        @media (max-width: 992px) {
+          flex-direction: column;
+        }
+
+        @media (max-width: 768px) {
+          
+        }
+      }
+
+      .muthu-upcoming-products {
+        display: flex;
+        flex-direction: row;
+
+        @media (max-width: 992px) {
+          flex-direction: column;
+        }
+
+        @media (max-width: 768px) {
+          
+        }
+      }
+
+      .muthu-admin-container {
+        
+
+        @media (max-width: 768px) {
+          
+        }
+      }
+
+      .muthu-order-table {
+        
+        margin-bottom: 20px;
+
+        @media (max-width: 768px) {
+         
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.sidebar {
+  width: 250px;
+  background: #fff;
+  color: black;
+  border-right: 1px solid #ddd;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  z-index: 999;
+  transition: left 0.3s ease;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  padding-top: 190px;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.sidebar h3 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.sidebar-options {
+  list-style: none;
+  padding-left: 20px;
+  background: rgb(239, 239, 239);
+  border-bottom: 1px solid white;
+}
+
+.sidebar-options img {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+}
+
+.sidebar-options li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+.sidebar-options li:hover {
+  color: #5f5b5b;
+}
+.sidebar-options a {
+  text-decoration: none;
+  color: inherit;  
+}
+
+.sidebar-options a:hover {
+  text-decoration: none;
+}
+
+.sidebar-options .active {
+  font-weight: bold;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Desktop styles */
+@media screen and (min-width: 768px) {
+  .sidebar {
+    position: sticky;
+    left: 0;
+    top: 100px;
+    min-height: calc(100vh - 100px);
+    padding-top: 30px;
+  }
+  .close-btn {
+    display: none;
+  }
+}
+.profile-layout {
+  display: flex;
+}
+
+.profile-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 0;
+}
+.profile-header{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.mobile-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: #f1f1f1;
+  position: sticky;
+  top: 0;
+  z-index: 998;
+  flex-direction: column;
+}
+
+.profile-image {
+  width: 30px; 
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-header {
+    display: none;
+  }
+}

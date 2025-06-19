@@ -1,0 +1,302 @@
+/*THeader.css*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+.header {
+  background-color: #1a1a1a !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header-container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 15px !important;
+  background-color: #1a1a1a !important;
+}
+
+.logo img {
+  height: 40px !important;
+  cursor: pointer;
+}
+
+/* Search section */
+.search {
+  flex: 1 !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.search-container {
+  display: flex !important;
+  align-items: center !important;
+  background-color: white !important;
+  border-radius: 20px !important;
+  padding: 5px 10px !important;
+  width: 100% !important;
+  max-width: 400px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.search-container .search-icon {
+  color: #666 !important;
+  font-size: 16px !important;
+  margin-right: 8px !important;
+  background: none !important;
+}
+
+.search-container input {
+  border: none !important;
+  padding: 5px !important;
+  width: 100% !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 16px !important;
+  color: #333 !important;
+  outline: none !important;
+  background-color: white !important;
+  background: white !important;
+}
+
+.search-container input::placeholder {
+  color: #999 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 16px !important;
+}
+
+/* Menu Icon */
+.menu-icon {
+  display: none;
+  font-size: 24px !important;
+  color: white !important;
+  cursor: pointer;
+  background: none !important;
+  border: none !important;
+}
+
+/* User actions (icons) */
+.user-actions {
+  display: flex !important;
+  gap: 15px !important;
+  background: none !important;
+}
+
+.user-actions button {
+  background: none !important;
+  border: none !important;
+  font-size: 20px !important;
+  color: white !important;
+  cursor: pointer !important;
+  padding: 5px !important;
+}
+
+.user-actions button:hover {
+  color: #ccc !important;
+}
+
+/* Ensure Font Awesome icons are visible */
+.user-actions button i,
+.menu-icon i,
+.search-container i {
+  display: inline-block !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+/* Desktop view (default) */
+@media (min-width: 769px) {
+  .user-actions {
+    display: flex !important;
+  }
+}
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 10px !important;
+    position: relative;
+    background-color: #1a1a1a !important;
+  }
+
+  .logo img {
+    height: 35px !important;
+  }
+
+  .search-container {
+    max-width: 250px !important;
+    background-color: white !important;
+  }
+
+  .menu-icon {
+    display: block !important;
+    color: white !important;
+  }
+
+  .user-actions {
+    display: none;
+    flex-direction: column !important;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    background-color: #1a1a1a !important;
+    padding: 15px !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  .user-actions.open {
+    display: flex !important;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .user-actions button {
+    font-size: 18px !important;
+    padding: 10px 0 !important;
+    color: white !important;
+  }
+}
+
+/* Mobile view (up to 480px) */
+@media (max-width: 480px) {
+  .header-container {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px;
+    padding: 8px 10px !important;
+    position: relative;
+    background-color: #1a1a1a !important;
+  }
+
+  .logo img {
+    height: 30px !important;
+  }
+
+  .search {
+    width: 100% !important;
+  }
+
+  .search-container {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 4px 8px !important;
+    background-color: white !important;
+  }
+
+  .search-container .search-icon {
+    font-size: 14px !important;
+    margin-right: 6px !important;
+    color: #666 !important;
+  }
+
+  .search-container input {
+    font-size: 14px !important;
+    background-color: white !important;
+  }
+
+  .search-container input::placeholder {
+    font-size: 14px !important;
+  }
+
+  .menu-icon {
+    display: block !important;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px !important;
+    color: white !important;
+  }
+
+  .user-actions {
+    display: none;
+    flex-direction: column !important;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #1a1a1a !important;
+    padding: 10px !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  .user-actions.open {
+    display: flex !important;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .user-actions button {
+    font-size: 18px !important;
+    padding: 8px 0 !important;
+    color: white !important;
+  }
+}
+
+/* Extra small screens (320px and below) */
+@media (max-width: 320px) {
+  .header-container {
+    padding: 6px 8px 10px 8px !important;
+    gap: 6px;
+    background-color: #1a1a1a !important;
+  }
+
+  .logo img {
+    height: 25px !important;
+  }
+
+  .search-container {
+    padding: 3px 6px !important;
+    background-color: white !important;
+  }
+
+  .search-container .search-icon {
+    font-size: 12px !important;
+    margin-right: 4px !important;
+    color: #666 !important;
+  }
+
+  .search-container input {
+    font-size: 12px !important;
+    background-color: white !important;
+  }
+
+  .search-container input::placeholder {
+    font-size: 12px !important;
+  }
+
+  .menu-icon {
+    top: 8px;
+    right: 8px;
+    font-size: 18px !important;
+    color: white !important;
+  }
+
+  .user-actions {
+    top: 45px;
+    right: 0;
+    padding: 8px !important;
+    background-color: #1a1a1a !important;
+  }
+
+  .user-actions button {
+    font-size: 16px !important;
+    padding: 6px 0 !important;
+    color: white !important;
+  }
+}

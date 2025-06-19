@@ -1,0 +1,12 @@
+
+[
+  { "email": "abcd@ex.com", "date": "01:17PM, 23-12-2024" },
+  { "email": "efgh@ex.com", "date": "01:17PM, 23-12-2024" },
+  { "email": "test@abc.com", "date": "03:45PM, 25-12-2024" },
+  { "email": "abcd@ex.com", "date": "01:17PM, 23-12-2024" },
+  { "email": "efgh@ex.com", "date": "01:17PM, 23-12-2024" },
+  { "email": "test@abc.com", "date": "03:45PM, 25-12-2024" },
+  { "email": "abcd@ex.com", "date": "01:17PM, 23-12-2024" },
+  { "email": "efgh@ex.com", "date": "01:17PM, 23-12-2024" },
+  { "email": "test@abc.com", "date": "03:45PM, 25-12-2024" }
+]

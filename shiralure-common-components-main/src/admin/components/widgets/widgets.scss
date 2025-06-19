@@ -1,0 +1,125 @@
+.muthu-widget {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+
+  .muthu-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    
+    .muthu-icon-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      
+      .muthu-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border-radius: 8px;
+      }
+      
+      .muthu-icon {
+        font-size: 48px;
+      }
+      
+      .muthu-title {
+        font-size: 24px;
+        color: #000000c1;
+        font-weight: 50;
+      }
+    }
+
+    .muthu-info-container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .muthu-counter {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .muthu-link {
+        font-size: 12px;
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+    }
+  }
+
+  .muthu-right {
+    position: absolute;
+    top: 32px;
+    right: 35px;
+    
+    .muthu-trend {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 8px 25px;
+      border-radius: 20px;
+      
+      svg {
+        font-size: 19px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    flex-direction: row; // Changed from column to row
+    flex-wrap: wrap; // Allow wrapping
+    gap: 15px;
+
+    .muthu-left {
+      width: auto; // Changed from 100% to auto
+      flex: 1;
+      min-width: 0; // Prevent overflow
+      
+      .muthu-icon-container {
+        justify-content: flex-start; // Changed from space-between
+        width: auto;
+        
+        .muthu-title {
+          font-size: 20px;
+          white-space: nowrap; // Prevent title from wrapping
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .muthu-info-container {
+        .muthu-counter {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .muthu-right {
+      position: static;
+      align-self: center; // Changed from flex-end to center
+      margin-left: auto; // Push to the right
+      padding-left: 15px; // Add some spacing
+      
+      .muthu-trend {
+        padding: 6px 15px; // Slightly smaller on mobile
+      }
+    }
+  }
+}

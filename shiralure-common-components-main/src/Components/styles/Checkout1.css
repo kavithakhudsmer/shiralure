@@ -1,0 +1,406 @@
+/* Header area */
+.header1 {
+  padding-bottom: 15px;
+}
+
+.header1 h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Main content area with two columns */
+.main-content-checkout {
+  display: flex;
+  gap: 20px;
+}
+
+/* Left column - Order details */
+.left-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Success alert banner */
+.success-alert {
+  background-color: #d4ffd4;
+  padding: 12px 15px;
+  color: #0f5f0f;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Product card */
+.product-card-checkout {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.product-details-checkout {
+  display: flex;
+  align-items: flex-start;
+}
+
+.product-image-checkout {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+.product-image-checkout img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.product-info-checkout {
+  flex: 1;
+}
+
+.product-info-checkout h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #333;
+  line-height: 1.3;
+}
+
+.product-specs {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.price-container-checkout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.current-price-checkout {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.original-price-checkout {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: #888;
+}
+
+.discount-tag-checkout {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Order meta information */
+.order-meta {
+  margin-top: 5px;
+}
+
+.order-number {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.shipping-info {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.shipping-info a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.shipping-info a:hover {
+  text-decoration: underline;
+}
+
+.shipment-details {
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.shipment-details h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Summary section */
+.summary-section {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0 10px;
+  cursor: pointer;
+}
+
+.summary-header h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+.summary-details {
+  font-size: 14px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.total-row {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Right column - Order status */
+.right-column {
+  flex: 1;
+}
+
+.status-timeline {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.status-step {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.status-step:last-child {
+  margin-bottom: 0;
+}
+
+.status-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+  color: white;
+  border: 2px solid transparent;
+  z-index: 2;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Status icon styles */
+.status-completed {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+.status-active {
+  background-color: #2196F3;
+  border-color: #2196F3;
+}
+
+.status-pending {
+  background-color: #FF9800;
+  border-color: #FF9800;
+}
+
+.status-future {
+  background-color: #9E9E9E;
+  border-color: #9E9E9E;
+}
+
+/* Status line styles */
+.status-line {
+  position: absolute;
+  left: 12px;
+  top: 24px;
+  bottom: -30px;
+  width: 2px;
+  z-index: 1;
+}
+
+/* Different line styles based on status */
+.line-completed {
+  background-color: #4CAF50;
+}
+
+.line-active {
+  background: repeating-linear-gradient(
+    to bottom,
+    #2196F3 0,
+    #2196F3 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.line-pending {
+  background: repeating-linear-gradient(
+    to bottom,
+    #FF9800 0,
+    #FF9800 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.line-future {
+  background: repeating-linear-gradient(
+    to bottom,
+    #9E9E9E 0,
+    #9E9E9E 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.status-step:last-child .status-line {
+  display: none;
+}
+
+/* Title styles based on status */
+.title-completed {
+  color: #4CAF50;
+}
+
+.title-active {
+  color: #2196F3;
+  font-weight: 600;
+}
+
+.title-pending {
+  color: #FF9800;
+}
+
+.title-future {
+  color: #666;
+}
+
+.status-content {
+  flex: 1;
+}
+
+.status-title {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.status-text {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #333;
+  transition: transform 0.2s;
+}
+
+.caret.open {
+  transform: rotate(180deg);
+}
+
+/* Tracking info styles * /
+.tracking-info {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed #ddd;
+}
+
+.tracking-link {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.tracking-number {
+  font-size: 12px;
+  color: #666;
+}
+
+.delivery-confirmation {
+  margin-top: 10px;
+  padding: 8px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content-checkout {
+    flex-direction: column;
+  }
+  
+  .right-column {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-details-checkout {
+    flex-direction: column;
+  }
+  
+  .product-image-checkout {
+    margin-bottom: 15px;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .status-text {
+    font-size: 12px;
+  }
+}

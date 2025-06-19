@@ -1,0 +1,192 @@
+.forgot-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    background-color: #222;
+    overflow: hidden;
+    position: relative;
+}
+
+.forgot-left-container {
+    flex: 6;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.forgot-left-container img[alt="image 11"] {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.forgot-left-container img[alt="image 9"] {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 180px;
+    height: auto;
+    z-index: 2;
+}
+
+.forgot-right-container {
+    flex: 4;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.forgot-logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    font-size: 3.5rem;
+    color: #b8870bc1;
+    font-family: serif;
+    font-weight: bold;
+    z-index: 3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.forgot-form-container {
+    position: relative;
+    z-index: 3;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(198, 192, 192, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    left: -30%;
+}
+
+.forgot-title {
+    font-size: 2.4rem;
+    color: #222;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.forgot-label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.forgot-label {
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 1rem;
+    margin-left: 0;
+}
+
+.forgot-label span.required {
+    color: #ff0000;
+    margin-left: 4px;
+    font-size: 1rem;
+}
+
+.use-phone {
+    color: #ed2121;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: underline;
+    text-align: right;
+}
+
+.forgot-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #ffffff;
+    box-sizing: border-box;
+    margin-left: 0;
+}
+
+.forgot-button {
+    width: 100%;
+    padding: 12px;
+    background: #0f0e0e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 1.5rem 0;
+    display: block;
+    margin-left: 0;
+}
+
+.back-link {
+    margin-top: 1rem;
+    text-align: left;
+    color: black;
+    margin-bottom: 0.5rem;
+}
+
+.back {
+    color: blue;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.message {
+    color: #0f0e0e;
+    font-size: 0.9rem;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+    .forgot-container {
+      flex-direction: column;
+      height: 100vh;
+    }
+    .forgot-left-container {
+      display: none;
+    }
+    .forgot-right-container {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .forgot-form-container {
+        width: 90%;
+        left: 0;
+      }
+}

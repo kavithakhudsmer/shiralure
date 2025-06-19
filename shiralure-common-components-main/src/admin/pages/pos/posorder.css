@@ -1,0 +1,72 @@
+.adminpos-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+}
+.adminpos-container span{
+    font-size: 12px;
+}
+.adminpos-container p{
+    font-size: 12px;
+}
+.adminpos-card span{
+    color: #6E7191;
+}
+.adminpos-customer-contact{
+    color: #6E7191;
+}
+
+.adminpos-order-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.adminpos-paid {
+  color: #16a34a; /* green-600 */
+}
+
+.adminpos-confirmed {
+  color: #6366f1; /* indigo-500 */
+}
+
+.adminpos-date {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.adminpos-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.adminpos-summary-row,
+.adminpos-summary-total {
+  font-size: 14px;
+  padding: 4px 0;
+}
+
+.adminpos-customer-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+
+.adminpos-product-image {
+  width: 50px;
+  height: 100px;
+  object-fit: contain;
+}
+.adminpos-control {
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background-color:#6366f1;
+  font-size: 8px;
+  color: #fff;
+  box-shadow: none;
+  width: 100%;
+}
+

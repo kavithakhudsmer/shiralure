@@ -1,0 +1,121 @@
+import React from "react";
+import {
+  Card,
+  CardContent,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const purchases = [
+  {
+    supplier: "Eco Supplies",
+    date: "12:45 PM, 15-03-2025",
+    ref: "PUR-001",
+    status: "Received",
+    total: "$9,750.00",
+    payment: "Paid",
+  },
+  {
+    supplier: "Green Traders",
+    date: "10:30 AM, 14-03-2025",
+    ref: "PUR-002",
+    status: "Pending",
+    total: "$3,500.00",
+    payment: "Partial",
+  },
+  {
+    supplier: "Nature Co.",
+    date: "09:15 AM, 13-03-2025",
+    ref: "PUR-003",
+    status: "Received",
+    total: "$6,250.00",
+    payment: "Paid",
+  },
+  {
+    supplier: "Pure Essentials",
+    date: "03:20 PM, 12-03-2025",
+    ref: "PUR-004",
+    status: "Cancelled",
+    total: "$1,150.00",
+    payment: "Not Paid",
+  },
+  {
+    supplier: "Bio Mart",
+    date: "11:50 AM, 11-03-2025",
+    ref: "PUR-005",
+    status: "Received",
+    total: "$8,200.00",
+    payment: "Paid",
+  },
+  {
+    supplier: "Organic Hub",
+    date: "08:40 AM, 10-03-2025",
+    ref: "PUR-006",
+    status: "Pending",
+    total: "$4,300.00",
+    payment: "Partial",
+  },
+];
+
+const getStatusColor = (status) => {
+  switch (status) {
+    case "Received":
+      return "text-green-600";
+    case "Pending":
+      return "text-orange-500";
+    case "Cancelled":
+      return "text-red-600";
+    default:
+      return "text-gray-700";
+  }
+};
+
+export default function PurchaseTable() {
+  return (
+    <div className="p-6">
+      <h1 className="text-3xl font-bold mb-6">Purchases</h1>
+      <Card>
+        <CardContent className="overflow-x-auto p-0">
+          <table className="min-w-full table-auto">
+            <thead>
+              <tr className="bg-gray-100 text-left">
+                <th className="px-4 py-3">Supplier</th>
+                <th className="px-4 py-3">Date</th>
+                <th className="px-4 py-3">Reference No</th>
+                <th className="px-4 py-3">Status</th>
+                <th className="px-4 py-3">Total</th>
+                <th className="px-4 py-3">Payment</th>
+              </tr>
+            </thead>
+            <tbody>
+              {purchases.map((item, idx) => (
+                <tr key={idx} className="border-t">
+                  <td className="px-4 py-3 whitespace-nowrap">{item.supplier}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{item.date}</td>
+                  <td className="px-4 py-3 whitespace-nowrap">{item.ref}</td>
+                  <td className={`px-4 py-3 whitespace-nowrap font-medium ${getStatusColor(item.status)}`}>
+                    {item.status}
+                  </td>
+                  <td className="px-4 py-3 whitespace-nowrap">{item.total}</td>
+                  <td className={`px-4 py-3 whitespace-nowrap ${item.payment === "Paid" ? "text-green-600" : item.payment === "Partial" ? "text-orange-500" : "text-red-600"}`}>
+                    {item.payment}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </CardContent>
+      </Card>
+      <div className="flex justify-between items-center mt-4 text-sm text-gray-500">
+        <span>Showing 1 to 6 of 20 entries</span>
+        <div className="flex items-center gap-2">
+          <Button variant="outline" size="sm"><ChevronLeft size={16} /></Button>
+          <Button variant="outline" size="sm" className="bg-indigo-100 text-indigo-600">1</Button>
+          <Button variant="outline" size="sm">2</Button>
+          <Button variant="outline" size="sm">3</Button>
+          <Button variant="outline" size="sm"><ChevronRight size={16} /></Button>
+        </div>
+      </div>
+    </div>
+  );
+}

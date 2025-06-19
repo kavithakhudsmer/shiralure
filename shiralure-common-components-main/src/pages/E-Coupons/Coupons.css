@@ -1,0 +1,955 @@
+/* Unchanged print styles */
+ .DSheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  gap: 900px;
+ 
+}
+ 
+.DStitle {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+ 
+.DSbreadcrumb {
+  font-size: 20px;
+  text-align: right;
+  gap: 0px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+ 
+.DSbreadcrumb a {
+  text-decoration: none;
+  color: #6c63ff;
+  text-align: right;
+}
+@media print {
+  .DSCoupon-container * {
+    visibility: hidden;
+  }
+  .DSCoupon-table,
+  .DSCoupon-table * {
+    visibility: visible;
+  }
+  .DSCoupon-table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 12px;
+    border-collapse: collapse;
+  }
+ 
+  .DSCoupon-table th,
+  .DSCoupon-table td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+  }
+  .DSCoupon-table th {
+    background-color: #f3f4f6;
+    font-weight: bold;
+  }
+  .DSCoupon-table th:last-child,
+  .DSCoupon-table td:last-child {
+    display: none !important;
+  }
+  .DSCoupon-table {
+    page-break-inside: avoid;
+  }
+  .DSCoupon-table td[style] {
+    color: inherit !important;
+    font-weight: normal !important;
+  }
+}
+
+.DSCoupon-container {
+  padding: 20px;
+  background: #f8fbfd;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.DSCoupon-container h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.DSCoupon-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.DSCoupon-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.DSHeader-divider {
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+  margin: 10px 0;
+}
+
+.DSHeader-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.DSBtn-icon {
+  background: #5A66F1 !important;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  height:38px;
+}
+
+.DSBtn-icon:hover {
+  background: #7981ec !important;
+}
+
+.DSBtn-icon svg {
+  fill: #ffffff;
+  width: 17px;
+  height: 17px;
+}
+
+.DSFilter-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.DSFilter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.DSFilter-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  max-width: 212px;
+  flex: 1 1 0px;
+  position: relative;
+}
+
+.DSFilter-field label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.DSFilter-field input,
+.DSFilter-field textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  background-color: #F2F6F9;
+}
+
+.DSFilter-field .DSInput-error {
+  border-color: #F4415F;
+}
+
+.DSError-message {
+  color: #F4415F;
+  font-size: 12px;
+  margin-top: 4px;
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+}
+
+.DSFilter-buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.DSSearch-button,
+.DSClear-button,
+.DSClick-button {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.DSSearch-button,
+.DSClick-button {
+  background-color: #5A66F1;
+  color: white;
+}
+.DSSearch-button:hover,
+.DSClick-button:hover {
+  background-color: #7981ec;
+}
+.DSClear-button {
+  background-color: black;
+  color: white;
+}
+.DSClear-button:hover {
+  background-color: #4b5563;
+}
+
+.DSCoupon-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  /* scrollbar-width removed for better browser compatibility */
+  /* Custom scrollbar colors for Firefox were removed for better browser compatibility */
+}
+
+/* Custom scrollbar for WebKit browsers */
+.DSCoupon-table-container::-webkit-scrollbar {
+  height: 8px; /* Height of horizontal scrollbar */
+}
+
+.DSCoupon-table-container::-webkit-scrollbar-track {
+  background: #e2e8f0; /* Track color */
+  border-radius: 4px;
+}
+
+.DSCoupon-table-container::-webkit-scrollbar-thumb {
+  background: #5A66F1; /* Thumb color */
+  border-radius: 4px;
+}
+
+.DSCoupon-table-container::-webkit-scrollbar-thumb:hover {
+  background: #7981ec; /* Thumb hover color */
+}
+
+.DSCoupon-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.DSCoupon-table th,
+.DSCoupon-table td {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.DSCoupon-table th {
+  background-color: #f3f4f6;
+}
+
+.DSAction-buttons-cell {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+}
+
+.DSAction-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+.DSAction-btn.DSView {
+  color: #5A66F1;
+}
+.DSAction-btn.DSView:hover {
+  background: #eeeffe;
+  border-radius: 100%;
+}
+.DSAction-btn.DSEdit {
+  color: #22C55E;
+}
+.DSAction-btn.DSEdit:hover {
+  background: #e8f9df;
+  border-radius: 100%;
+}
+.DSAction-btn.DSDelete {
+  color: #F4415F;
+}
+.DSAction-btn.DSDelete:hover {
+  background: #f4415f28;
+  border-radius: 100%;
+}
+
+.DSShare-dropdown-container,
+.DSAction-modal-container {
+  position: relative;
+  display: inline-block;
+}
+
+.DSDropdown-menu {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  background: #5A66F1;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  
+  z-index: 1000;
+  min-width: 80px;
+}
+
+.DSDropdown-menu div {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.DSDropdown-menu div:hover {
+  background-color: #999ff0;
+}
+
+.DSModal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow-y: auto; /* Enable vertical scrolling for modals */
+}
+
+.DSModal-content {
+  background: white;
+  padding: 18px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh; /* Limit height for scrolling */
+  overflow-y: auto; /* Enable scrolling within modal */
+  box-shadow: 0 4px 15px rgba(0, 0, 8, 0.4);
+  position: relative;
+  margin: 20px auto; /* Center with margin */
+  box-sizing: border-box;
+}
+
+.DSModal-content h3 {
+  margin: 0 0 15px;
+  font-size: 18px;
+  text-align: left;
+  color: #333;
+}
+
+.DSForm-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.DSForm-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.DSDate-input {
+  padding-right: 8px;
+  width: 100%;
+}
+
+.DSDate-input-container {
+  width: 100%;
+}
+
+.DSFilter-input {
+  background-color: #F2F6F9;
+}
+
+textarea.DSLarge-textarea {
+  resize: vertical;
+  min-height: 80px;
+  max-height: 120px;
+  width: 123%;
+}
+
+.DSFile-input-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+input[type="file"].DSLarge-file-input,
+input[type="file"].DSEdit-file-input {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background: #fff;
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.DSFile-input-wrapper::before {
+  content: "Browse...";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 14px;
+  color: #999;
+  background: #F2F6F9;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 0;
+}
+
+.DSFile-input-wrapper[data-filename]:not([data-filename=""]):before {
+  content: attr(data-filename);
+  color: #333;
+}
+
+input[type="file"].DSLarge-file-input.DSInput-error,
+input[type="file"].DSEdit-file-input.DSInput-error {
+  border-color: #F4415F;
+}
+
+input[type="file"].DSLarge-file-input.DSInput-error + .DSFile-input-wrapper::before,
+input[type="file"].DSEdit-file-input.DSInput-error + .DSFile-input-wrapper::before {
+  border-color: #F4415F;
+}
+
+.DSModal-content .DSRadio-group input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.DSModal-content .DSRadio-group input[type="radio"]:checked {
+  background-color: #5A66F1;
+  border-color: #333;
+  position: relative;
+}
+
+.DSModal-content .DSRadio-group input[type="radio"]:checked::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.DSRadio-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.DSRadio-group label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.DSRadio-group input[type="radio"] {
+  margin-right: 6px;
+}
+
+label {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.DSForm-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.DSForm-buttons button {
+  padding: 8px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.DSForm-buttons button:first-child {
+  background-color: #5a66f1;
+  color: white;
+}
+.DSForm-buttons button:first-child:hover {
+  background-color: #7185e6;
+}
+.DSForm-buttons button:last-child {
+  background-color: black;
+  color: white;
+}
+.DSForm-buttons button:last-child:hover {
+  background-color: #6c757d;
+}
+
+.DSCoupon-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background-color: #fff;
+  margin: 0 10px; /* Added margin to prevent sticking to borders */
+}
+
+.DSCoupon-details p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.DSCoupon-details strong {
+  display: inline-block;
+  min-width: 120px;
+  color: #555;
+}
+
+.DSModal-content.DSDelete-confirm-modal {
+  width: 90%;
+  max-width: 420px; /* Smaller size for responsiveness */
+  text-align: center;
+  padding: 20px;
+  max-height: 150vh; /* Limit height for scrolling */
+  overflow-y: auto; /* Enable scrolling */
+}
+
+.DSDelete-icon {
+  font-size: 40px; /* Slightly smaller for mobile */
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.DSDelete-confirm-modal h2 {
+  font-size: 18px; /* Smaller font for responsiveness */
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.DSDelete-message {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.DSDelete-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.DSDelete-confirm-btn {
+  padding: 9px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.DSDelete-confirm-btn.DSDelete-yes {
+  background-color: #5A66F1;
+  color: white;
+}
+.DSDelete-confirm-btn.DSDelete-yes:hover {
+  background-color: #7983f5;
+}
+.DSDelete-confirm-btn.DSDelete-no {
+  background-color: black;
+  color: white;
+}
+.DSDelete-confirm-btn.DSDelete-no:hover {
+  background-color: #52595f;
+}
+
+/* Pagination and Dropdown Styles */
+.DSDedropdown-container {
+  position: relative;
+}
+
+.DSDErecord-button, .DSDEaction-button {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  background-color: #5a66f1;
+  color: #fff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 38px;
+}
+
+.DSDErecord-button:hover, .DSDEaction-button:hover {
+  background-color: #999ff0;
+}
+
+.DSDEdropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 6px;
+  background-color: #5a66f1;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 4px;
+  z-index: 20;
+  width: 60px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.DSDEdropdown-item {
+  padding: 6px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.DSDEdropdown-item svg {
+  color: #fff;
+}
+
+.DSDEdropdown-item:hover {
+  background-color: #999ff0;
+  border-radius: 3px;
+}
+
+.DSDEpagination-buttons {
+  display: flex;
+  gap: 0;
+}
+
+.DSDEpagination-button {
+  padding: 8px 14px;
+  border: 1px solid #d1d5db;
+  background-color: #f3f4f6;
+  color: #5a66f1;
+  border-right-width: 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.DSDEpagination-button:last-child {
+  border-right-width: 1px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.DSDEpagination-button:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.DSDEpagination-button.DSDEactive {
+  background-color: #d9e6f8;
+  color: #5a66f1;
+  font-weight: bold;
+}
+
+.DSDEpagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.DSPagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.DSClose-button {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.DSClose-button:hover {
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .DSCoupon-container {
+    padding: 12px;
+  }
+  .DSCoupon-container h2 {
+    font-size: 20px;
+  }
+  .DSCoupon-card {
+    padding: 12px;
+  }
+  .DSCoupon-table-container {
+    overflow-x: auto;
+  }
+  .DSCoupon-table {
+    min-width: 700px;
+  }
+  .DSCoupon-table th,
+  .DSCoupon-table td {
+    padding: 8px 4px;
+    font-size: 13px;
+  }
+  .DSAction-buttons-cell {
+    min-width: 100px;
+    gap: 6px;
+  }
+  .DSAction-btn {
+    padding: 6px;
+    font-size: 13px;
+  }
+  .DSFilter-field {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .DSForm-row {
+    grid-template-columns: 1fr;
+  }
+  .DSPagination-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .DSModal-content {
+    width: 100%;
+    max-width: 500px;
+    padding: 14px;
+    max-height: 75vh;
+    margin: 10px auto;
+  }
+  .DSCoupon-details {
+    margin: 0 5px;
+    padding: 8px;
+  }
+  .DSCoupon-details p {
+    font-size: 13px;
+  }
+  .DSCoupon-details strong {
+    min-width: 100px;
+  }
+  .DSModal-content.DSDelete-confirm-modal {
+    max-width: 280px;
+    padding: 16px;
+    max-height: 65vh;
+  }
+  .DSDelete-icon {
+    font-size: 36px;
+  }
+  .DSDelete-confirm-modal h2 {
+    font-size: 16px;
+  }
+  .DSDelete-message {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .DSDelete-confirm-btn {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+  textarea.DSLarge-textarea {
+    min-height: 70px;
+    max-height: 100px;
+    width: 457px;
+  }
+  .DSFile-input-wrapper {
+    height: 80px;
+    width: 457px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .DSCoupon-container {
+    padding: 8px;
+  }
+  .DSCoupon-container h2 {
+    font-size: 18px;
+  }
+  .DSCoupon-card {
+    padding: 8px;
+  }
+  .DSBtn-icon {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+  .DSBtn-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+  .DSFilter-field label {
+    font-size: 12px;
+  }
+  .DSFilter-field input,
+  .DSFilter-field textarea {
+    font-size: 13px;
+    padding: 6px;
+  }
+  .DSSearch-button,
+  .DSClear-button,
+  .DSClick-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  .DSCoupon-table th,
+  .DSCoupon-table td {
+    font-size: 11px;
+    padding: 6px 3px;
+  }
+  .DSAction-buttons-cell {
+    min-width: 90px;
+    gap: 4px;
+  }
+  .DSAction-btn {
+    padding: 4px;
+    font-size: 12px;
+  }
+  .DSDEpagination-button {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  .DSModal-content {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px;
+    max-height: 70vh;
+  }
+  .DSModal-content h3 {
+    font-size: 16px;
+  }
+  .DSForm-buttons button {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+  .DSCoupon-details {
+    margin: 0 3px;
+    padding: 6px;
+  }
+  .DSCoupon-details p {
+    font-size: 12px;
+  }
+  .DSCoupon-details strong {
+    min-width: 80px;
+  }
+  .DSModal-content.DSDelete-confirm-modal {
+    max-width: 260px;
+    padding: 12px;
+    max-height: 60vh;
+  }
+  .DSDelete-icon {
+    font-size: 32px;
+  }
+  .DSDelete-confirm-modal h2 {
+    font-size: 14px;
+  }
+  .DSDelete-message {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .DSDelete-confirm-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
