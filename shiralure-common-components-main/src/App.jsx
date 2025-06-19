@@ -37,7 +37,7 @@ import ProductReports from './pages/Reportpage/ProductReports';
 // import CustomerTable from './pages/customerpage/CustomerTable';
 import CreditBalanceReports from './pages/Credit Balance Report/CreditBalanceReports';
 import Coupons from './pages/E-Coupons/Coupons';
-import Promotion from './pages/promotion/promotion/Promotion';
+import Promotion from './pages/promotion/promotion/promotion';
 
 
 const Layout = ({ children }) => {
