@@ -37,7 +37,7 @@ import ProductReports from './pages/Reportpage/ProductReports';
 // import CustomerTable from './pages/customerpage/CustomerTable';
 import CreditBalanceReports from './pages/Credit Balance Report/CreditBalanceReports';
 import Coupons from './pages/E-Coupons/Coupons';
-
+import Promotion from './pages/promotion/promotion/Promotion';
 
 
 const Layout = ({ children }) => {
@@ -83,6 +83,7 @@ const App = () => {
                 {/* <Route path="CustomerTable" element={<CustomerTable />} /> */}
                 <Route path="CreditBalanceReports" element={<CreditBalanceReports />} />
                 <Route path="Coupons" element={<Coupons />} />
+                <Route path="promotion" element={<Promotion />} />
               
                
               </Routes>
@@ -112,6 +113,7 @@ const App = () => {
                   <Route path="ShippingAddress" element={<ShippingAddress />} />
                   <Route path="MyOrders" element={<MyOrders />} />
                   <Route path="Notification" element={<Notification />} />
+                  
                 </Route>
               </Routes>
             </Layout>
