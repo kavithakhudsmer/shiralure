@@ -37,7 +37,7 @@ import ProductReports from './pages/Reportpage/ProductReports';
 // import CustomerTable from './pages/customerpage/CustomerTable';
 import CreditBalanceReports from './pages/Credit Balance Report/CreditBalanceReports';
 import Coupons from './pages/E-Coupons/Coupons';
-import Promotion from './pages/promotion/promotion/promotion';
+// import TransactionPage from './pages/Transactions/Transactions';
 
 
 const Layout = ({ children }) => {
@@ -83,7 +83,8 @@ const App = () => {
                 {/* <Route path="CustomerTable" element={<CustomerTable />} /> */}
                 <Route path="CreditBalanceReports" element={<CreditBalanceReports />} />
                 <Route path="Coupons" element={<Coupons />} />
-                <Route path="promotion" element={<Promotion />} />
+                {/* <Route path="Transactions " element={<TransactionPage />} /> */}
+    
               
                
               </Routes>
