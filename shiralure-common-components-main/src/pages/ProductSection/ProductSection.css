@@ -1,0 +1,840 @@
+/* Print styles to match Coupons.css */
+@media print {
+  .dvsCouponContainer * {
+    visibility: hidden;
+  }
+  .dvsCouponTable,
+  .dvsCouponTable * {
+    visibility: visible;
+  }
+  .dvsCouponTable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 12px;
+    border-collapse: collapse;
+  }
+  .dvsCouponTable th,
+  .dvsCouponTable td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+  }
+  .dvsCouponTable th {
+    background-color: #f3f4f6;
+    font-weight: bold;
+  }
+  .dvsCouponTable th:last-child,
+  .dvsCouponTable td:last-child {
+    display: none !important;
+  }
+  .dvsCouponTable {
+    page-break-inside: avoid;
+  }
+  .dvsCouponTable td[style] {
+    color: inherit !important;
+    font-weight: normal !important;
+  }
+}
+
+/* Main container styled like .coupon-container */
+.dvsCouponContainer {
+  padding: 20px;
+  background: #f8fbfd;
+  min-height: 100vh; /* Matches Coupons.css */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100vw; /* Matches Coupons.css */
+  box-sizing: border-box;
+}
+
+/* Header styled like Coupons.css */
+.dvsCouponContainer h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: self-start;
+   width: 100%;
+}
+
+/* Card styled like .coupon-card */
+.dvsCouponCard {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width:100%; /* Matches Coupons.css */
+  box-sizing: border-box;
+}
+
+/* Header buttons container */
+.dvsCouponHeader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.dvsCouponHeaderDivider {
+  border: 0;
+  border-top: 1px solid #878a8e;
+  margin: 10px 0;
+}
+
+.dvsCouponHeaderButtons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Button styles to match Coupons.css */
+.dvsCouponBtnIcon {
+  background: #5A66F1 !important;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  height: 38px;
+}
+
+.dvsCouponBtnIcon:hover {
+  background: #7981ec !important;
+}
+
+.dvsCouponBtnIcon svg {
+  fill: #ffffff;
+  width: 17px;
+  height: 17px;
+}
+
+/* Filter grid styled like Coupons.css */
+.dvsCouponFilterGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.dvsCouponFilterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+}
+
+.dvsCouponFilterField {
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  max-width: 290px;
+  flex: 1 1 0px;
+  position: relative;
+}
+
+.dvsCouponFilterField label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 25px;
+}
+
+.dvsCouponFilterField input,
+.dvsCouponFilterField select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80%;
+  box-sizing: border-box;
+  font-size: 14px;
+  background-color: #F2F6F9;
+}
+
+.dvsCouponFilterField .dvsCouponInputError {
+  border-color: #F4415F;
+}
+
+.dvsCouponErrorMessage {
+  color: #F4415F;
+  font-size: 12px;
+  margin-top: 4px;
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+}
+
+.dvsCouponFilterButtons {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 5px;
+}
+
+.dvsCouponSearchButton,
+.dvsCouponClearButton,
+.dvsCouponClickButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dvsCouponSearchButton,
+.dvsCouponClickButton {
+  background-color: #5A66F1;
+  color: white;
+}
+.dvsCouponSearchButton:hover,
+.dvsCouponClickButton:hover {
+  background-color: #7981ec;
+}
+.dvsCouponClearButton {
+  background-color: black;
+  color: white;
+}
+.dvsCouponClearButton:hover {
+  background-color: #4b5563;
+}
+
+/* Table container styled like .coupon-table-container */
+.dvsCouponTableContainer {
+  width: 100%;
+  overflow-x: auto; /* Matches Coupons.css */
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+  scrollbar-width: auto;
+  scrollbar-color: #e2e8f0 #f3f4f6;
+}
+
+.dvsCouponTableContainer::-webkit-scrollbar {
+  height: 8px;
+}
+
+.dvsCouponTableContainer::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+
+.dvsCouponTableContainer::-webkit-scrollbar-thumb {
+  background: #5A66F1;
+  border-radius: 4px;
+}
+
+.dvsCouponTableContainer::-webkit-scrollbar-thumb:hover {
+  background: #7981ec;
+}
+
+.dvsCouponTable {
+  width: 100%;
+  min-width: 700px; /* Matches Coupons.css */
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.dvsCouponTable th,
+.dvsCouponTable td {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dvsCouponTable th {
+  background-color: #f3f4f6;
+}
+
+.dvsCouponActionButtonsCell {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  min-width: 120px;
+}
+
+.dvsCouponActionBtn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+.dvsCouponActionBtn.dvsCouponView {
+  color: #5A66F1;
+}
+.dvsCouponActionBtn.dvsCouponView:hover {
+  background: #eeeffe;
+  border-radius: 100%;
+}
+.dvsCouponActionBtn.dvsCouponEdit {
+  color: #22C55E;
+}
+.dvsCouponActionBtn.dvsCouponEdit:hover {
+  background: #e8f9df;
+  border-radius: 100%;
+}
+.dvsCouponActionBtn.dvsCouponDelete {
+  color: #F4415F;
+}
+.dvsCouponActionBtn.dvsCouponDelete:hover {
+  background: #f4415f28;
+  border-radius: 100%;
+}
+
+.dvsCouponShareDropdownContainer,
+.dvsCouponActionModalContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.dvsCouponDropdownMenu {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  background: #5A66F1;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  z-index: 1000;
+  min-width: 80px;
+}
+
+.dvsCouponDropdownMenu div {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.dvsCouponDropdownMenu div:hover {
+  background-color: #999ff0;
+}
+
+/* Modal styles to match Coupons.css */
+.dvsCouponModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.dvsCouponModalContent {
+  background: white;
+  padding: 18px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh; /* Matches Coupons.css */
+  overflow-y: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 8, 0.4);
+  position: relative;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+.dvsCouponModalContent h3 {
+  margin: 5px 0 25px;
+  font-size: 18px;
+  text-align: left;
+  color: #333;
+}
+
+.dvsCouponFormGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dvsCouponFormRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 25px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.dvsCouponModalContent .dvsCouponRadioGroup input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.dvsCouponModalContent .dvsCouponRadioGroup input[type="radio"]:checked {
+  background-color: #5A66F1;
+  border-color: #333;
+  position: relative;
+}
+
+.dvsCouponModalContent .dvsCouponRadioGroup input[type="radio"]:checked::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dvsCouponRadioGroup {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.dvsCouponRadioGroup label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.dvsCouponRadioGroup input[type="radio"] {
+  margin-right: 6px;
+}
+
+label {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.dvsCouponFormButtons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.dvsCouponFormButtons button {
+  padding: 8px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.dvsCouponFormButtons button:first-child {
+  background-color: #5a66f1;
+  color: white;
+}
+.dvsCouponFormButtons button:first-child:hover {
+  background-color: #7185e6;
+}
+.dvsCouponFormButtons button:last-child {
+  background-color: black;
+  color: white;
+}
+.dvsCouponFormButtons button:last-child:hover {
+  background-color: #6c757d;
+}
+
+.dvsCouponProductDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background-color: #fff;
+  margin: 0 10px;
+}
+
+.dvsCouponProductDetails p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 2.5;
+}
+
+.dvsCouponProductDetails strong {
+  display: inline-block;
+  min-width: 120px;
+  color: #555;
+}
+
+.dvsCouponModalContent.dvsCouponDeleteConfirmModal {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  padding: 20px;
+  max-height: 75vh; /* Matches Coupons.css */
+  overflow-y: auto;
+}
+
+.dvsCouponDeleteIcon {
+  font-size: 40px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.dvsCouponDeleteConfirmModal h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.dvsCouponDeleteMessage {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.dvsCouponDeleteButtons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.dvsCouponDeleteConfirmBtn {
+  padding: 9px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dvsCouponDeleteConfirmBtn.dvsCouponDeleteYes {
+  background-color: #5A66F1;
+  color: white;
+}
+.dvsCouponDeleteConfirmBtn.dvsCouponDeleteYes:hover {
+  background-color: #7983f5;
+}
+.dvsCouponDeleteConfirmBtn.dvsCouponDeleteNo {
+  background-color: black;
+  color: white;
+}
+.dvsCouponDeleteConfirmBtn.dvsCouponDeleteNo:hover {
+  background-color: #52595f;
+}
+
+.dvsCouponDedropdownContainer {
+  position: relative;
+}
+
+.dvsCouponDerecordButton,
+.dvsCouponDeactionButton {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  background-color: #5a66f1;
+  color: #fff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  height: 38px;
+}
+
+.dvsCouponDerecordButton:hover,
+.dvsCouponDeactionButton:hover {
+  background-color: #999ff0;
+}
+
+.dvsCouponDedropdownMenu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 6px;
+  background-color: #5a66f1;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 4px;
+  z-index: 20;
+  width: 60px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dvsCouponDedropdownItem {
+  padding: 6px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.dvsCouponDedropdownItem svg {
+  color: #fff;
+}
+
+.dvsCouponDedropdownItem:hover {
+  background-color: #999ff0;
+  border-radius: 3px;
+}
+
+.dvsCouponDepaginationButtons {
+  display: flex;
+  gap: 0;
+}
+
+.dvsCouponDepaginationButton {
+  padding: 8px 14px;
+  border: 1px solid #d1d5db;
+  background-color: #f3f4f6;
+  color: #5a66f1;
+  border-right-width: 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dvsCouponDepaginationButton:last-child {
+  border-right-width: 1px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.dvsCouponDepaginationButton:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.dvsCouponDepaginationButton.dvsCouponDeactive {
+  background-color: #d9e6f8;
+  color: #5a66f1;
+  font-weight: bold;
+}
+
+.dvsCouponDepaginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dvsCouponPaginationContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dvsCouponCloseButton {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.dvsCouponCloseButton:hover {
+  color: #333;
+}
+
+/* Media queries to match Coupons.css */
+@media screen and (max-width: 768px) {
+  .dvsCouponContainer {
+    padding: 12px;
+  }
+  .dvsCouponContainer h2 {
+    font-size: 20px;
+  }
+  .dvsCouponCard {
+    padding: 12px;
+  }
+  .dvsCouponTableContainer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .dvsCouponTable {
+    min-width: 700px;
+  }
+  .dvsCouponTable th,
+  .dvsCouponTable td {
+    padding: 8px 4px;
+    font-size: 13px;
+  }
+  .dvsCouponActionButtonsCell {
+    min-width: 100px;
+    gap: 6px;
+  }
+  .dvsCouponActionBtn {
+    padding: 6px;
+    font-size: 13px;
+  }
+  .dvsCouponFilterField {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  .dvsCouponFormRow {
+    grid-template-columns: 1fr;
+  }
+  .dvsCouponPaginationContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .dvsCouponModalContent {
+    width: 100%;
+    max-width: 500px;
+    padding: 14px;
+    max-height: 75vh;
+    margin: 10px auto;
+  }
+  .dvsCouponProductDetails {
+    margin: 0 5px;
+    padding: 8px;
+  }
+  .dvsCouponProductDetails p {
+    font-size: 13px;
+  }
+  .dvsCouponProductDetails strong {
+    min-width: 100px;
+  }
+  .dvsCouponModalContent.dvsCouponDeleteConfirmModal {
+    max-width: 280px;
+    padding: 16px;
+    max-height: 65vh;
+  }
+  .dvsCouponDeleteIcon {
+    font-size: 36px;
+  }
+  .dvsCouponDeleteConfirmModal h2 {
+    font-size: 16px;
+  }
+  .dvsCouponDeleteMessage {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+  .dvsCouponDeleteConfirmBtn {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dvsCouponContainer {
+    padding: 8px;
+  }
+  .dvsCouponContainer h2 {
+    font-size: 18px;
+  }
+  .dvsCouponCard {
+    padding: 8px;
+  }
+  .dvsCouponBtnIcon {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+  .dvsCouponBtnIcon svg {
+    width: 15px;
+    height: 15px;
+  }
+  .dvsCouponFilterField label {
+    font-size: 12px;
+  }
+  .dvsCouponFilterField input,
+  .dvsCouponFilterField select {
+    font-size: 13px;
+    padding: 6px;
+  }
+  .dvsCouponSearchButton,
+  .dvsCouponClearButton,
+  .dvsCouponClickButton {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  .dvsCouponTable th,
+  .dvsCouponTable td {
+    font-size: 11px;
+    padding: 6px 3px;
+  }
+  .dvsCouponActionButtonsCell {
+    min-width: 90px;
+    gap: 4px;
+  }
+  .dvsCouponActionBtn {
+    padding: 4px;
+    font-size: 12px;
+  }
+  .dvsCouponDepaginationButton {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  .dvsCouponModalContent {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px;
+    max-height: 70vh;
+  }
+  .dvsCouponModalContent h3 {
+    font-size: 16px;
+  }
+  .dvsCouponFormButtons button {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+  .dvsCouponProductDetails {
+    margin: 0 3px;
+    padding: 6px;
+  }
+  .dvsCouponProductDetails p {
+    font-size: 12px;
+  }
+  .dvsCouponProductDetails strong {
+    min-width: 80px;
+  }
+  .dvsCouponModalContent.dvsCouponDeleteConfirmModal {
+    max-width: 260px;
+    padding: 12px;
+    max-height: 60vh;
+  }
+  .dvsCouponDeleteIcon {
+    font-size: 32px;
+  }
+  .dvsCouponDeleteConfirmModal h2 {
+    font-size: 14px;
+  }
+  .dvsCouponDeleteMessage {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .dvsCouponDeleteConfirmBtn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

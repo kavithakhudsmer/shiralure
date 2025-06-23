@@ -1,0 +1,22 @@
+[
+  { "name": "Featured Products", "status": "Active" },
+  { "name": "Seasonal Discounts", "status": "Inactive" },
+  { "name": "Best Sellers", "status": "Active" },
+  { "name": "New Arrivals", "status": "Active" },
+  { "name": "Clearance Sale", "status": "Inactive" },
+  { "name": "Limited Time Offers", "status": "Active" },
+  { "name": "Summer Collection", "status": "Active" },
+  { "name": "Winter Deals", "status": "Inactive" },
+  { "name": "Popular Items", "status": "Active" },
+  { "name": "Trending Now", "status": "Active" },
+  { "name": "Exclusive Picks", "status": "Inactive" },
+  { "name": "Editor’s Choice", "status": "Active" },
+  { "name": "Top Rated", "status": "Inactive" },
+  { "name": "Limited Stock", "status": "Active" },
+  { "name": "Must Haves", "status": "Active" },
+  { "name": "Clearout", "status": "Inactive" },
+  { "name": "Holiday Specials", "status": "Active" },
+  { "name": "Just In", "status": "Inactive" },
+  { "name": "Weekend Deals", "status": "Active" },
+  { "name": "Gift Ideas", "status": "Active" }
+]
