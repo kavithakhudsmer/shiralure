@@ -167,10 +167,10 @@ select.kpage-size-select { padding: 0 30px 0 12px; background-color: transparent
     justify-content: center;
     gap: 8px;
 }
-.kcancel-btn { background-color: #4A5568; color: white; border: 1px solid #4A5568; }
+.kcancel-btn { background-color: #000000; color: white; border: 1px solid #4A5568; }
 .kcancel-btn:hover { background-color: #2D3748; border-color: #2D3748; }
-.kdelete-confirm-btn { background-color: #6366F1; color: white; border: 1px solid #6366F1; }
-.kdelete-confirm-btn:hover { background-color: #4F46E5; border-color: #4F46E5; }
+.kdelete-confirm-btn { background-color: #4F46E5; color: white; border: 1px solid #4F46E5; }
+.kdelete-confirm-btn:hover { background-color: #6366F1; border-color: #6366F1; }
 
 .kadd-edit-modal-content { max-width: 700px; padding: 40px; text-align: left; max-height: 100vh; overflow-y: auto; }
 .kadd-edit-modal-title { font-size: 28px; font-weight: bold; color: #333; margin-bottom: 25px; text-align: center; }
