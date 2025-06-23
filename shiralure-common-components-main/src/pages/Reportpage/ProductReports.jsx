@@ -174,7 +174,7 @@ const ProductsReport = () => {
               />
             </div>
             <div className="rfilter-group">
-              <label htmlFor="category-select" className="rfilter-label">Category</label>
+              <label htmlFor="category-select" className="rfilter-label1">Category</label>
               <select
                 id="category-select"
                 className="rfilter-inputs"

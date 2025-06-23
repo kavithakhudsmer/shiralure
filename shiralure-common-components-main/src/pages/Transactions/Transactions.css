@@ -1,4 +1,4 @@
-.DEsubscriber {
+.DevaDEsubscriber {
   background-color: #F2F6F9;
   font-family: sans-serif;
   width: 100%;
@@ -34,7 +34,7 @@
   }
 }
 
-.DEheader {
+.DevaDEheader {
   padding: 10px 0px;
   background-color: #F2F6F9;
   width: 100%;
@@ -43,7 +43,7 @@
   justify-content: center;
 }
 
-.DEheader-content {
+.DevaDEheader-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,33 +52,33 @@
   box-sizing: border-box;
 }
 
-.DEheader-content h1 {
+.DevaDEheader-content h1 {
   font-size: 24px;
   font-weight: 600;
   color: #1F2937;
 }
 
-.DEbreadcrumb {
+.DevaDEbreadcrumb {
   font-size: 14px;
   color: #6B7280;
 }
 
-.DEbreadcrumb .DEhome {
+.DevaDEbreadcrumb .DevaDEhome {
   color: #5a66f1;
   font-weight: 500;
 }
 
-.DEbreadcrumb .DEhome:after {
+.DevaDEbreadcrumb .DevaDEhome:after {
   content: ">>";
   color: #6B7280;
   margin: 0 8px;
 }
 
-.DEmain-container {
+.DevaDEmain-container {
   background-color: #FFFFFF;
   margin: 20px 0;
   margin-bottom: 40px;
-  padding: 50px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   max-width: 1350px;
@@ -86,7 +86,7 @@
   box-sizing: border-box;
 }
 
-.DEaction-bar {
+.DevaDEaction-bar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -94,11 +94,11 @@
   gap: 8px;
 }
 
-.DEdropdown-container {
+.DevaDEdropdown-container {
   position: relative;
 }
 
-.DErecord-button, .DEaction-button {
+.DevaDErecord-button, .DevaDEaction-button {
   padding: 8px 12px;
   border: 1px solid #D1D5DB;
   background-color: #5a66f1;
@@ -112,11 +112,11 @@
   height: 38px;
 }
 
-.DErecord-button:hover, .DEaction-button:hover {
+.DevaDErecord-button:hover, .DevaDEaction-button:hover {
   background-color: #999ff0;
 }
 
-.DEdropdown-menu {
+.DevaDEdropdown-menu {
   position: absolute;
   right: 0;
   top: 100%;
@@ -130,7 +130,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.DEdropdown-item {
+.DevaDEdropdown-item {
   padding: 6px 10px;
   display: flex;
   align-items: center;
@@ -139,51 +139,49 @@
   font-size: 14px;
   cursor: pointer;
 }
-.DEdropdown-item svg {
-  color: #e0e0e0; /* Lighter color to contrast with the purple background */
+.DevaDEdropdown-item svg {
+  color: #e0e0e0;
 }
 
-
-.DEdropdown-item:hover {
+.DevaDEdropdown-item:hover {
   background-color: #999ff0;
 }
 
-.DEdivider {
+.DevaDEdivider {
   border: 0;
-  border-top: 1px solid #E5E7EB;
+  border-top: 1px solid #aeaeae;
   margin: 16px 0;
 }
 
-.DEfilter-container {
+.DevaDEfilter-container {
   padding: 16px 0;
 }
 
-.DEfilter-row {
+.DevaDEfilter-row {
   display: flex;
   gap: 16px;
   margin-bottom: 16px;
 }
 
-.DEfilter-group {
+.DevaDEfilter-group {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.DEbutton-group {
-  margin-top: 15px;
+.DevaDEbutton-group {
   flex-direction: row;
-  gap: 20px;
+  gap: 10px;
 }
 
-.DEfilter-label {
+.DevaDEfilter-label {
   font-size: 14px;
   font-weight: 500;
   color: #374151;
   margin-bottom: 4px;
 }
 
-.DEfilter-input, .DEfilter-select {
+.DevaDEfilter-input, .DevaDEfilter-select {
   padding: 12px;
   border: 1px solid #D1D5DB;
   border-radius: 4px;
@@ -196,24 +194,32 @@
   appearance: none;
 }
 
-.DEfilter-input[type="text"] {
+.DevaDEfilter-input[type="datetime-local"] {
+  width: 330px;
+  min-width: 0;
+  padding: 12px;
+}
+
+
+.DevaDEfilter-input[type="text"] {
   background-image: none;
 }
 
-.DEfilter-select {
+.DevaDEfilter-select {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="%236B7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
   background-repeat: no-repeat;
   background-position: right 12px center;
 }
 
-.DEfilter-select:focus {
+.DevaDEfilter-select:focus {
   outline: none;
   border-color: #5a66f1;
   box-shadow: 0 0 0 2px rgba(90, 102, 241, 0.2);
 }
 
-.DEsearch-button, .DEclear-button {
+.DevaDEsearch-button, .DevaDEclear-button {
   justify-content: center;
+  margin-top: 20px;
   border: none;
   border-radius: 6px;
   height: 36px;
@@ -226,52 +232,52 @@
   font-size: 14px;
 }
 
-.DEsearch-button {
+.DevaDEsearch-button {
   background-color: #5a66f1;
 }
 
-.DEsearch-button:hover {
+.DevaDEsearch-button:hover {
   background-color: rgb(85, 134, 238);
 }
 
-.DEclear-button {
+.DevaDEclear-button {
   background-color: black;
 }
 
-.DEclear-button:hover {
+.DevaDEclear-button:hover {
   background-color: #6B7280;
 }
 
-.DEloading {
+.DevaDEloading {
   text-align: center;
   padding: 20px;
   font-size: 16px;
   color: #6B7280;
 }
 
-.DEsubscriber-table {
+.DevaDEsubscriber-table {
   width: 100%;
   border-collapse: collapse;
   background-color: #FFFFFF;
 }
 
-.DEsubscriber-table th, .DEsubscriber-table td {
+.DevaDEsubscriber-table th, .DevaDEsubscriber-table td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #E5E7EB;
 }
 
-.DEsubscriber-table th {
+.DevaDEsubscriber-table th {
   background-color:#f3f4f6;
   font-weight: 600;
   color: #1F2937;
 }
 
-.DEsubscriber-table td {
+.DevaDEsubscriber-table td {
   color: #4B5563;
 }
 
-.DEpagination {
+.DevaDEpagination {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -280,17 +286,17 @@
   border-top: 1px solid #E5E7EB;
 }
 
-.DEpagination-info {
+.DevaDEpagination-info {
   font-size: 14px;
   color: #6B7280;
 }
 
-.DEpagination-buttons {
+.DevaDEpagination-buttons {
   display: flex;
   gap: 0;
 }
 
-.DEpagination-button {
+.DevaDEpagination-button {
   padding: 6px 12px;
   border: 1px solid #D1D5DB;
   background-color: #f3f4f6;
@@ -299,23 +305,23 @@
   font-size: 14px;
 }
 
-.DEpagination-button:last-child {
+.DevaDEpagination-button:last-child {
   border-right-width: 1px;
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
-.DEpagination-button:first-child {
+.DevaDEpagination-button:first-child {
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
 
-.DEpagination-button:disabled {
+.DevaDEpagination-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.DEpagination-button.DEactive {
+.DevaDEpagination-button.DevaDEactive {
   background-color: #d9e6f8;
   color: #5a66f1;
   font-weight: bold;
@@ -323,136 +329,136 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .DEheader {
+  .DevaDEheader {
     padding: 15px 20px;
   }
-  .DEheader-content h1 {
+  .DevaDEheader-content h1 {
     font-size: 20px;
   }
-  .DEbreadcrumb {
+  .DevaDEbreadcrumb {
     font-size: 12px;
   }
-  .DEmain-container {
+  .DevaDEmain-container {
     margin: 15px 0;
     margin-bottom: 40px;
     padding: 15px;
     max-width: 900px;
   }
-  .DEsubscriber-table th, .DEsubscriber-table td {
+  .DevaDEsubscriber-table th, .DevaDEsubscriber-table td {
     padding: 10px;
     font-size: 12px;
   }
-  .DEaction-bar {
+  .DevaDEaction-bar {
     gap: 6px;
   }
-  .DErecord-button, .DEaction-button {
+  .DevaDErecord-button, .DevaDEaction-button {
     padding: 6px 10px;
     font-size: 12px;
   }
-  .DEfilter-row {
+  .DevaDEfilter-row {
     flex-wrap: wrap;
     gap: 10px;
   }
-  .DEfilter-group {
+  .DevaDEfilter-group {
     flex: 100%;
   }
-  .DEbutton-group {
+  .DevaDEbutton-group {
     flex: 100%;
     justify-content: flex-start;
   }
-  .DEsearch-button, .DEclear-button {
+  .DevaDEsearch-button, .DevaDEclear-button {
     padding: 6px 12px;
     font-size: 12px;
   }
-  .DEpagination-info {
+  .DevaDEpagination-info {
     font-size: 12px;
   }
-  .DEpagination-button {
+  .DevaDEpagination-button {
     padding: 6px 10px;
     font-size: 12px;
   }
-  .DEfilter-input, .DEfilter-select {
+  .DevaDEfilter-input, .DevaDEfilter-select {
     width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  .DEheader {
+  .DevaDEheader {
     padding: 15px 20px;
   }
-  .DEmain-container {
+  .DevaDEmain-container {
     margin: 10px 0;
     margin-bottom: 40px;
     padding: 10px;
     max-width: 600px;
   }
-  .DEsubscriber-table {
+  .DevaDEsubscriber-table {
     display: block;
     overflow-x: auto;
   }
-  .DEsubscriber-table th, .DEsubscriber-table td {
+  .DevaDEsubscriber-table th, .DevaDEsubscriber-table td {
     min-width: 120px;
   }
-  .DEaction-bar {
+  .DevaDEaction-bar {
     justify-content: flex-end;
     flex-wrap: wrap;
   }
-  .DEfilter-row {
+  .DevaDEfilter-row {
     flex-direction: column;
     gap: 10px;
   }
-  .DEbutton-group {
+  .DevaDEbutton-group {
     flex-direction: row;
     gap: 10px;
   }
-  .DEpagination {
+  .DevaDEpagination {
     flex-direction: column;
     gap: 10px;
   }
-  .DEpagination-buttons {
+  .DevaDEpagination-buttons {
     width: 100%;
     justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  .DEheader {
+  .DevaDEheader {
     padding: 10px;
   }
-  .DEheader-content {
+  .DevaDEheader-content {
     justify-content: space-between;
   }
-  .DEheader-content h1 {
+  .DevaDEheader-content h1 {
     font-size: 18px;
   }
-  .DEbreadcrumb {
+  .DevaDEbreadcrumb {
     font-size: 10px;
   }
-  .DEmain-container {
+  .DevaDEmain-container {
     margin: 5px 0;
     margin-bottom: 40px;
     padding: 8px;
     max-width: 100%;
   }
-  .DEsubscriber-table th, .DEsubscriber-table td {
+  .DevaDEsubscriber-table th, .DevaDEsubscriber-table td {
     padding: 8px;
     font-size: 10px;
   }
-  .DErecord-button, .DEaction-button {
+  .DevaDErecord-button, .DevaDEaction-button {
     padding: 4px 8px;
     font-size: 10px;
   }
-  .DEfilter-input, .DEfilter-select {
+  .DevaDEfilter-input, .DevaDEfilter-select {
     font-size: 12px;
   }
-  .DEsearch-button, .DEclear-button {
+  .DevaDEsearch-button, .DevaDEclear-button {
     padding: 4px 10px;
     font-size: 10px;
   }
-  .DEpagination-info {
+  .DevaDEpagination-info {
     font-size: 10px;
   }
-  .DEpagination-button {
+  .DevaDEpagination-button {
     padding: 4px 8px;
     font-size: 10px;
   }

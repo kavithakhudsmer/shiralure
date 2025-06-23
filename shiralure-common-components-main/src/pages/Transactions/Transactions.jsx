@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {FiPrinter, FiFileText, } from "react-icons/fi";
 import { FaShareFromSquare,FaAngleRight, FaAngleLeft } from "react-icons/fa6";
-import { HiMiniAdjustmentsVertical } from "react-icons/hi2";
 import {  IoMdArrowDropdown,IoMdSearch } from "react-icons/io";
 import { MdClear } from "react-icons/md";
+
+import { PiSliders } from "react-icons/pi";
 import './Transactions.css';
 
 const TransactionPage = () => {
@@ -118,32 +119,32 @@ const TransactionPage = () => {
   const paginate = () => filteredList.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
 
   return (
-    <div className="DEsubscriber">
-      <div className="DEheader">
-        <div className="DEheader-content">
+    <div className="DevaDEsubscriber">
+      <div className="DevaDEheader">
+        <div className="DevaDEheader-content">
           <h1>Transaction</h1>
-          <div className="DEbreadcrumb">
-            <span className="DEhome">Dashboard</span>  Transaction
+          <div className="DevaDEbreadcrumb">
+            <span className="DevaDEhome">Dashboard</span>  Transaction
           </div>
         </div>
       </div>
 
-      <div className="DEmain-container">
-        <div className="DEaction-bar">
-          <div className="DEdropdown-container">
+      <div className="DevaDEmain-container">
+        <div className="DevaDEaction-bar">
+          <div className="DevaDEdropdown-container">
             <button
               ref={recordButtonRef}
-              className="DErecord-button"
+              className="DevaDErecord-button"
               onClick={() => setShowPageDropdown(!showPageDropdown)}
             >
               {rowsPerPage} <IoMdArrowDropdown size={17}/>
             </button>
             {showPageDropdown && (
-              <div ref={recordDropdownRef} className="DEdropdown-menu">
+              <div ref={recordDropdownRef} className="DevaDEdropdown-menu">
                 {[6, 12, 18, 24].map((num) => (
                   <div
                     key={num}
-                    className="DEdropdown-item"
+                    className="DevaDEdropdown-item"
                     onClick={() => { setRowsPerPage(num); setShowPageDropdown(false); setCurrentPage(1); }}
                   >
                     {num}
@@ -153,25 +154,25 @@ const TransactionPage = () => {
             )}
           </div>
           <button
-            className="DEaction-button"
+            className="DevaDEaction-button"
             onClick={toggleFilters}
           >
-            <HiMiniAdjustmentsVertical size={17} />
+            <PiSliders size={17} />
           </button>
-          <div className="DEdropdown-container">
+          <div className="DevaDEdropdown-container">
             <button
               ref={shareButtonRef}
-              className="DEaction-button"
+              className="DevaDEaction-button"
               onClick={toggleShareDropdown}
             >
               <FaShareFromSquare />
             </button>
             {showShareDropdown && (
-              <div ref={shareDropdownRef} className="DEdropdown-menu">
-                <div className="DEdropdown-item" onClick={handlePrint}>
+              <div ref={shareDropdownRef} className="DevaDEdropdown-menu">
+                <div className="DevaDEdropdown-item" onClick={handlePrint}>
                   <FiPrinter /> Print
                 </div>
-                <div className="DEdropdown-item" onClick={downloadXLS}>
+                <div className="DevaDEdropdown-item" onClick={downloadXLS}>
                   <FiFileText /> XLS
                 </div>
               </div>
@@ -179,35 +180,35 @@ const TransactionPage = () => {
           </div>
         </div>
 
-        <hr className="DEdivider" />
+        <hr className="DevaDEdivider" />
 
         {showFilters && (
-          <div className="DEfilter-container">
-            <div className="DEfilter-row">
-              <div className="DEfilter-group">
-                <label className="DEfilter-label">Transaction Id</label>
+          <div className="DevaDEfilter-container">
+            <div className="DevaDEfilter-row">
+              <div className="DevaDEfilter-group">
+                <label className="DevaDEfilter-label">Transaction Id</label>
                 <input
-                  className="DEfilter-input"
+                  className="DevaDEfilter-input"
                   value={transactionIdFilter}
                   onChange={(e) => setTransactionIdFilter(e.target.value)}
                 />
               </div>
-              <div className="DEfilter-group">
-                <label className="DEfilter-label">Order Serial No</label>
+              <div className="DevaDEfilter-group">
+                <label className="DevaDEfilter-label">Order Serial No</label>
                 <input
-                  className="DEfilter-input"
+                  className="DevaDEfilter-input"
                   value={orderSerialNoFilter}
                   onChange={(e) => setOrderSerialNoFilter(e.target.value)}
                 />
               </div>
-              <div className="DEfilter-group">
-                <label className="DEfilter-label">Payment Method</label>
+              <div className="DevaDEfilter-group">
+                <label className="DevaDEfilter-label">Payment Method</label>
                 <select
-                  className="DEfilter-input DEfilter-select"
+                  className="DevaDEfilter-input DevaDEfilter-select"
                   value={paymentMethodFilter}
                   onChange={(e) => setPaymentMethodFilter(e.target.value)}
                 >
-                  <option value=""></option>
+                  <option value="">All</option>
                   <option value="Credit Card">Credit Card</option>
                   <option value="PayPal">PayPal</option>
                   <option value="Debit Card">Debit Card</option>
@@ -216,23 +217,23 @@ const TransactionPage = () => {
                 </select>
               </div>
             </div>
-            <div className="DEfilter-row">
-              <div className="DEfilter-group">
-                <label className="DEfilter-label">Date</label>
+            <div className="DevaDEfilter-row">
+              <div className="DevaDEfilter-group">
+                <label className="DevaDEfilter-label">Date</label>
                 <input
                   type="datetime-local"
-                  className="DEfilter-input"
+                  className="DevaDEfilter-input"
                   value={dateFilter}
                   onChange={(e) => setDateFilter(e.target.value)}
                 />
               </div>
             </div>
-            <div className="DEfilter-row">
-              <div className="DEfilter-group DEbutton-group">
-                <button className="DEsearch-button" onClick={handleSearch}>
+            <div className="DevaDEfilter-row">
+              <div className="DevaDEfilter-group DevaDEbutton-group">
+                <button className="DevaDEsearch-button" onClick={handleSearch}>
                   <IoMdSearch /> Search
                 </button>
-                <button className="DEclear-button" onClick={handleClear}>
+                <button className="DevaDEclear-button" onClick={handleClear}>
                   <MdClear /> Clear
                 </button>
               </div>
@@ -241,10 +242,10 @@ const TransactionPage = () => {
         )}
 
         {isLoading ? (
-          <div className="DEloading">Loading transactions...</div>
+          <div className="DevaDEloading">Loading transactions...</div>
         ) : (
           <div id="printable-table">
-            <table className="DEsubscriber-table">
+            <table className="DevaDEsubscriber-table">
               <thead>
                 <tr>
                   <th>Transaction Id</th>
@@ -275,13 +276,13 @@ const TransactionPage = () => {
           </div>
         )}
 
-        <div className="DEpagination">
-          <div className="DEpagination-info">
+        <div className="DevaDEpagination">
+          <div className="DevaDEpagination-info">
             Showing {Math.min((currentPage - 1) * rowsPerPage + 1, filteredList.length)} to {Math.min(currentPage * rowsPerPage, filteredList.length)} of {filteredList.length} entries
           </div>
-          <div className="DEpagination-buttons">
+          <div className="DevaDEpagination-buttons">
             <button
-              className="DEpagination-button"
+              className="DevaDEpagination-button"
               disabled={currentPage === 1}
               onClick={() => setCurrentPage(1)}
             >
@@ -290,14 +291,14 @@ const TransactionPage = () => {
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}
-                className={`DEpagination-button ${page === currentPage ? 'DEactive' : ''}`}
+                className={`DevaDEpagination-button ${page === currentPage ? 'DevaDEactive' : ''}`}
                 onClick={() => setCurrentPage(page)}
               >
                 {page}
               </button>
             ))}
             <button
-              className="DEpagination-button"
+              className="DevaDEpagination-button"
               disabled={currentPage === totalPages}
               onClick={() => setCurrentPage(totalPages)}
             >

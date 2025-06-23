@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "OrderId": "123",
+    "Date": "12-12-2024",
+    "Total": "21",
+    "Discount": "23",
+    "ShippingCharge": "321",
+    "PaymentType": "UPI",
+    "PaymentStatus": "Paid"
+  },
+  {
+    "id": 2,
+    "OrderId": "124",
+    "Date": "13-12-2024",
+    "Total": "45",
+    "Discount": "5",
+    "ShippingCharge": "50",
+    "PaymentType": "Credit Card",
+    "PaymentStatus": "Paid"
+  },
+  {
+    "id": 3,
+    "OrderId": "125",
+    "Date": "14-12-2024",
+    "Total": "120",
+    "Discount": "15",
+    "ShippingCharge": "0",
+    "PaymentType": "Cash",
+    "PaymentStatus": "Unpaid"
+  },
+  {
+    "id": 4,
+    "OrderId": "126",
+    "Date": "15-12-2024",
+    "Total": "80",
+    "Discount": "10",
+    "ShippingCharge": "20",
+    "PaymentType": "Net Banking",
+    "PaymentStatus": "Partially Paid"
+  },
+   {
+    "id": 1,
+    "OrderId": "123",
+    "Date": "12-12-2024",
+    "Total": "21",
+    "Discount": "23",
+    "ShippingCharge": "321",
+    "PaymentType": "UPI",
+    "PaymentStatus": "Paid"
+  },
+  {
+    "id": 2,
+    "OrderId": "124",
+    "Date": "13-12-2024",
+    "Total": "45",
+    "Discount": "5",
+    "ShippingCharge": "50",
+    "PaymentType": "Credit Card",
+    "PaymentStatus": "Paid"
+  },
+  {
+    "id": 3,
+    "OrderId": "125",
+    "Date": "14-12-2024",
+    "Total": "120",
+    "Discount": "15",
+    "ShippingCharge": "0",
+    "PaymentType": "Cash",
+    "PaymentStatus": "Unpaid"
+  },
+  {
+    "id": 4,
+    "OrderId": "126",
+    "Date": "15-12-2024",
+    "Total": "80",
+    "Discount": "10",
+    "ShippingCharge": "20",
+    "PaymentType": "Net Banking",
+    "PaymentStatus": "Partially Paid"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "phone": "+91 9999999999",
+    "street": "123 Street",
+    "country": "India",
+    "state": "Tamil Nadu",
+    "city": "Chennai",
+    "zip": "600001"
+  }
+]

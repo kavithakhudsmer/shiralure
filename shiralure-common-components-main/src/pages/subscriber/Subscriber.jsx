@@ -3,7 +3,6 @@ import {
   FiMail, FiTrash2, FiPrinter, FiFileText, FiCheck, FiX,
 } from "react-icons/fi";
 import { PiSliders } from "react-icons/pi";
-import { HiMiniAdjustmentsVertical } from "react-icons/hi2";
 import { FaShareFromSquare, FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 import { IoMdSearch, IoMdArrowDropdown } from "react-icons/io";
 import { MdClear } from "react-icons/md";

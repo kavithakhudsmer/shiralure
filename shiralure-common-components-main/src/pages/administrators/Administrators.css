@@ -1,0 +1,1004 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fb;
+  margin: 0;
+  
+  height: 95vh;
+  width: 100%;
+  display: block;
+ flex-direction: column;
+  margin-top: 20px;
+}
+
+.kvdivider-line {
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.kvadmin-header {
+  border-bottom: none;
+}
+.kvcontainer {
+  margin-top: 20px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-left: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  overflow: visible;
+  position: relative;
+  width: calc(100% - 30px);
+  min-width: 1200px;
+ 
+  max-height: 150vh;
+  box-sizing: border-box; 
+}
+
+.kvadmin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px 10px;
+  font-size: 13px;
+  background-color: #f6f8fa;
+  border-bottom: 0px solid #ffffff;
+  padding-top: 25px;
+  margin-top: 0px;
+  
+}
+
+.kvadmin-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  color: #111;
+}
+
+.kvbreadcrumb {
+  font-size: 16px;
+  color: #6c757d;
+}
+
+.kvdash {
+  color: #5A66F1;
+  font-weight: 600;
+}
+
+.kvdivider {
+  margin: 0 6px;
+  font-weight: bold;
+  color: #888;
+}
+
+.kvactive {
+  color: #333;
+}
+
+.kvbreadcrumb h2 {
+  margin: 0;
+  font-size: 17px;
+  color: #6c757d;
+}
+
+.kvbreadcrumb .kvactive {
+  color: #5A66F1;
+  font-weight: bold;
+}
+
+.kvcontrols {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 15px 0;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.kvcontrols button {
+  cursor: pointer;
+  padding: 8px 8px;
+  border: none;
+  color: #ffffff;
+  background: #5A66F1;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  line-height: 1;
+  outline: none;
+}
+
+.kvcontrols button:focus {
+  outline: none;
+}
+
+.kvrowcount-group {
+  display: flex;
+  gap: 2px;
+}
+
+.kvrowcount-btn {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: #5A66F1;
+  color: white;
+  cursor: pointer;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.kvrowcount-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.kvcontrols button:hover {
+  background: #5A66F1;
+}
+
+.kvshare-dropdown-wrapper,
+.kvrowcount-wrapper {
+  position: relative;
+}
+
+.kvrowcount-wrapper button {
+  width: 50px;
+  height: 35px;
+  font-size: 16px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.kvshare-dropdown,
+.kvrowcount-dropdown {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  background: #5A66F1;
+  color: #5A66F1;
+  border: #5A66F1;
+  border-radius: 4px;
+  min-width: 100px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  font-size: 16px;
+}
+
+.kvrowcount-dropdown {
+  left: 0;
+  min-height: 30px;
+  min-width: 30px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 2px;
+  background: #5A66F1;
+  box-shadow: none;
+  font-size: 14px;
+  outline: none;
+  border: #989ab3;
+}
+
+.kvrowcount-dropdown p {
+  margin: 0;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background 0.2s;
+}
+
+.kvrowcount-dropdown p:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.kvshare-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.kvshare-dropdown-wrapper button {
+  background-color: #5A66F1;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kvshare-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kvshare-option:hover {
+  background-color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kvshare-option:hover,
+.kvrowcount-dropdown p:hover {
+  background-color: #4f46e5;
+}
+
+.kvshare-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #4f46e5;
+  border: 1px solid #ccc;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 120px;
+  padding: 4px 0px;
+  color: #ffffff;
+}
+
+.kvshare-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.kvshare-option:hover {
+  background-color: #4f46e5;
+  color: #ccc;
+}
+
+.kvfilter-box {
+  padding: 0px;
+  background: #ffffff;
+  border-radius: 8px;
+  margin: 0 auto 20px auto;
+  border: white;
+  width: calc(100% - 30px);
+  max-width: 1150px;
+  min-height: 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  animation: fadeDown 0.3s ease;
+}
+
+
+.kvfilter-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 70px;
+  align-items: flex-end;
+}
+
+.kvfilter-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px;
+  width: 20%;
+  gap: 4px;
+}
+
+.kvfilter-group input {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  
+  background-color: #f0f8ff;
+  color: #333;
+}
+
+.kvfilter-buttons {
+  width: 1000%;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+
+
+
+
+.kvfilter-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  
+}
+
+.kvfilter-buttons .search {
+  
+  background-color: #5A66F1;
+  max-width: 85px;
+  font-size: 14px;
+  justify-content: flex-start;
+}
+
+.kvfilter-buttons .clear {
+  background-color: #363636;
+  max-width: 110px;
+}
+
+table {
+  width: 98%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+   border-spacing: 0 10px ;   
+}
+
+th, td {
+  padding: 7px 6px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+  padding: 12px 8px;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+  
+}
+
+.active {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.inactive {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.kvactions {
+  padding: 0px;
+}
+
+.kvaction-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 13px;
+}
+
+.kvicon-button:focus,
+.icon-button:focus,
+.kvicon-button:active,
+.icon-button:active {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.kvicon-button {
+  
+  border: none;
+  padding: 6px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+  font-size: 16px;
+  gap: 20px;
+}
+
+
+.kvicon-button > * {
+  margin: 2px !important;
+  padding: 1px !important;
+}
+
+.icon-button:hover {
+  transform: scale(1.05);
+  border-radius: 50%;
+  border: none;
+}
+
+.kvview-btn {
+  color: #5A66F1;
+  background-color: rgb(255, 255, 255);
+  border: white;
+  padding: 6px;
+  width: 24px;
+  height: 20px;
+  
+}
+
+.kvview-btn:hover {
+  background-color: #c9cdf5;
+  width: 30px;
+  height: 25px;
+}
+
+.kvedit-btn {
+  color: #22C55E;
+  background-color: white;
+  border: white;
+  padding: 4px;
+width: 24px;
+  height: 20px;
+}
+
+.kvedit-btn:hover {
+  background-color: #d4edda;
+  width: 30px;
+  height: 25px;
+}
+
+.kvdelete-btn {
+  color: #F4415F;
+  background-color: white;
+  border: white;
+  padding: 4px;
+  width: 24px;
+  height: 20px;
+}
+
+.kvdelete-btn:hover {
+  background-color: #f8d7da;
+  width: 30px;
+  height: 25px;
+}
+
+.kvoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.kvform-box {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.kvform-box h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.kvform-group {
+  margin-bottom: 15px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.kvform-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.kvform-group input[type="text"],
+.kvform-group input[type="email"],
+.kvform-group input[type="password"] {
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+
+.kvradio-group {
+  display: flex;
+  gap: 20px;
+  font-weight: normal;
+}
+
+.kvradio-group input[type="radio"] {
+  accent-color: #5A66F1;
+}
+
+.kvform-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.kvform-buttons button {
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+
+.kvform-buttons .save {
+  background-color: #5A66F1;
+  color: white;
+}
+.kvform-buttons .save:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.kvform-buttons .close {
+  background-color: #363636;
+  color: white;
+}
+.kvform-buttons .close:focus {
+  outline: none;
+  box-shadow: none;
+}
+.kvfooter {
+  padding: 10px 0;
+  background-color: #fff;
+}
+
+.kvfooter-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.kvfooter-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.kvpagination {
+  display: flex;
+  gap: 0px;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.page {
+  color: #5A66F1;
+  width: 32px;
+  height: 32px;
+  padding: 6px 6px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+}
+
+.kvarrow {
+  color: #5A66F1;
+  width: 32px;
+  height: 32px;
+  padding: 6px 6px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.kvarrow1 {
+  color: #5A66F1;
+  width: 32px;
+  height: 32px;
+  padding: 6px 6px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.page:focus:not(:focus-visible),
+.kvarrow:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.page.active {
+  background-color: #DBDFE1;
+  color: #5A66F1;
+}
+
+.kvarrow:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.kvform-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.kvradio-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.kvform-buttons.bottom-left {
+  justify-content: flex-start;
+}
+
+.kvdelete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.kvdelete-box {
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+  border-radius: 10px;
+  width: 320px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: popup-fade 0.3s ease;
+  gap: 12px;
+}
+
+.kvdelete-icon {
+  margin-bottom: 15px;
+}
+
+.kvdelete-box h2 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.kvsubtext {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.kvdelete-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.kvdelete-buttons .yes {
+  background: #5A66F1;
+  color: #fff;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.kvdelete-buttons .yes:focus {
+  outline: none;
+  box-shadow: none;
+}
+.kvdelete-buttons .no {
+  background: #363636;
+  color: #fff;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.kvdelete-buttons .no:focus {
+  outline: none;
+  box-shadow: none;
+}
+@keyframes popup-fade {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.kvadmin-profile.fullscreen-profile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f6f9fc;
+  z-index: 1000;
+  padding: 2rem;
+  overflow-y: auto;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.kvclose-btn {
+  position: absolute;
+  top: 0rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.kvclose-btn:hover {
+  transform: scale(1.2);
+  color: red;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-table-area,
+  .print-table-area * {
+    visibility: visible;
+  }
+  .print-table-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+  }
+  .print-table-area table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .print-table-area th,
+  .print-table-area td {
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 8px;
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-table-area,
+  .print-table-area * {
+    visibility: visible;
+  }
+  .print-table-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: white;
+    box-sizing: border-box;
+  }
+  .print-table-area table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    table-layout: auto;
+  }
+  .print-table-area th,
+  .print-table-area td {
+    padding: 8px 12px;
+    text-align: left;
+    background: white;
+    color: black;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+  .kvcontainer {
+    min-width: 0; /* Override min-width to allow scaling */
+    width: calc(100% - 30px);
+    
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kvadmin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 24px 10px;
+  }
+
+  .kvadmin-header h1 {
+    font-size: 26px;
+    margin: 0;
+  }
+
+  .kvbreadcrumb {
+    font-size: 16px;
+  }
+
+  .kvcontrols {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 0 0 15px 0;
+  }
+
+  .kvfilter-line {
+    flex-direction: column;
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  .kvfilter-group {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+
+  .kvfilter-box {
+    width: calc(100% - 30px);
+    margin: 0 auto 20px auto;
+  }
+
+  .print-table-area {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 98%;
+    min-width: 600px; /* Ensure table is scrollable */
+  }
+
+  .kvform-grid {
+    grid-template-columns: 1fr;
+    gap: 15px 20px;
+  }
+
+  .kvform-box {
+    width: 90%;
+    padding: 20px 25px;
+  }
+
+  .kvdelete-box {
+    width: 90%;
+    padding: 40px;
+  }
+
+  .kvpagination {
+    flex-wrap: wrap;
+    gap: 0px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .kvadmin-header h1 {
+    font-size: 26px;
+  }
+
+  .kvbreadcrumb {
+    font-size: 16px;
+  }
+
+  .kvcontrols button {
+    padding: 8px 8px;
+    font-size: 18px;
+  }
+
+  .kvrowcount-btn {
+    width: 3px;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .kvrowcount-wrapper button {
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  .kvfilter-group input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .kvfilter-buttons button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 7px 6px;
+    font-size: 14px;
+  }
+
+ 
+
+  .kvform-box {
+    width: 90%;
+    padding: 20px 25px;
+  }
+
+  .kvdelete-box {
+    width: 90%;
+    padding: 40px;
+  }
+}
+
+

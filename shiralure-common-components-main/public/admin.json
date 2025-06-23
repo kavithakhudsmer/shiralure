@@ -1,0 +1,62 @@
+{
+  "admins": [
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phone": "+1 555-123-4567",
+    "status": "Active",
+    "addresses": [
+        {
+          "name": "John Doe",
+          "email": "john.doe@example.com",
+          "phone": "+91 555-123-4567",
+          "street": "1-27",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Chennai",
+          "zip": "853621"
+        },
+       {
+          "name": "John Doe",
+          "email": "john.doe@example.com",
+          "phone": "+91 555-123-4567",
+          "street": "1-27",
+          "country": "India",
+          "state": "Tamil Nadu",
+          "city": "Chennai",
+          "zip": "853621"
+        }
+      ]
+    },
+    {
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "phone": "+1 555-123-4567",
+    "status": "Active"
+  },
+  {
+    "name": "Michael Brown",
+    "email": "michael.bro@example.com",
+    "phone": "+1 555-123-4567",
+    "status": "Inactive"
+  },
+  {
+    "name": "Emily Davis",
+    "email": "emily.davis@example.com",
+    "phone": "+1 555-123-4567",
+    "status": "Active"
+  },
+  {
+    "name": "Robert Johnson",
+    "email": "robert@example.com",
+    "phone": "+1 555-123-4567",
+    "status": "Active"
+  },
+  {
+    "name": "Sarah Wilson",
+    "email": "wilson@example.com",
+    "phone": "+1 555-123-4567",
+    "status": "Inactive"
+  }
+]
+}
