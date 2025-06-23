@@ -32,29 +32,29 @@ const PosOrder = () => {
   const [filterReason, setFilterReason] = useState("");
   const [filteredOrders, setFilteredOrders] = useState(orders);
 
-const handleSearch = () => {
-  const filtered = orders.filter((order) => {
-    const formattedDate = filterDate
-      ? new Date(filterDate).toLocaleDateString("en-GB") // "19/03/2025"
-      : "";
+  const handleSearch = () => {
+    const filtered = orders.filter((order) => {
+      const formattedDate = filterDate
+        ? new Date(filterDate).toLocaleDateString("en-GB") // "19/03/2025"
+        : "";
 
-    const orderDateOnly = order.date.split(",")[0]; // "19-03-2025"
+      const orderDateOnly = order.date.split(",")[0]; // "19-03-2025"
 
-    return (
-      (filterCustomer === "" ||
-        order.customer.toLowerCase().includes(filterCustomer.toLowerCase())) &&
-      (filterDate === "" || orderDateOnly === formattedDate.replaceAll("/", "-")) &&
-      (filterRef === "" ||
-        order.order.toLowerCase().includes(filterRef.toLowerCase())) &&
-      (filterTotal === "" || order.amount.toString().includes(filterTotal)) &&
-      (filterReason === "" ||
-        order.status.toLowerCase().includes(filterReason.toLowerCase()))
-    );
-  });
+      return (
+        (filterCustomer === "" ||
+          order.customer.toLowerCase().includes(filterCustomer.toLowerCase())) &&
+        (filterDate === "" || orderDateOnly === formattedDate.replaceAll("/", "-")) &&
+        (filterRef === "" ||
+          order.order.toLowerCase().includes(filterRef.toLowerCase())) &&
+        (filterTotal === "" || order.amount.toString().includes(filterTotal)) &&
+        (filterReason === "" ||
+          order.status.toLowerCase().includes(filterReason.toLowerCase()))
+      );
+    });
 
-  setFilteredOrders(filtered);
-  setCurrentPage(1);
-};
+    setFilteredOrders(filtered);
+    setCurrentPage(1);
+  };
 
 
   const handleClear = () => {

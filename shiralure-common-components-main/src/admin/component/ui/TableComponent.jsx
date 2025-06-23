@@ -24,11 +24,11 @@ const TableComponent = ({ headers, data, renderRow }) => {
         }
 
         .custom-table thead th {
-          background-color: rgb(217, 217, 217);
+          background-color: #f3f4f6;
           color: var(--text-color);
           font-weight: 600;
           text-align: center;
-          box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+         
           border: none;
           font-size: 14px;
         }
@@ -36,7 +36,7 @@ const TableComponent = ({ headers, data, renderRow }) => {
         .custom-table tbody tr {
           background-color: #ffffff;
           transition: box-shadow 0.3s ease;
-          box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
           border: 0;
         }
 

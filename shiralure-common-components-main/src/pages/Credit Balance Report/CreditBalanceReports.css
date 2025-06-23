@@ -399,7 +399,7 @@
 .rajipagination button.active {
   background-color: #f0f2ff; /* light purple */
   color: #6366f1; /* blue text */
-  border-color: #6366f1;
+  
   font-weight: 600;
 }
  
