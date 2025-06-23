@@ -9,6 +9,8 @@ import { BsCalendar2Date } from "react-icons/bs";
 import ExcelJS from "exceljs";
 import "./DamageTShirt.css";
 
+import { PiSliders } from "react-icons/pi";
+
 const PaymentStatusBadge = ({ status }) => {
   const statusClasses = {
     Paid: "dspbadge dspbg-success",
@@ -304,7 +306,7 @@ export default function DamageTShirt() {
             onClick={toggleFilters}
             title="Filter"
           >
-            <FiSliders  size={17} />
+            <PiSliders  size={17} />
           </button>
           <div className="dspDEdropdown-container">
             <button

@@ -143,10 +143,10 @@ select.kpage-size-select { padding: 0 30px 0 12px; background-color: transparent
 .kpage-controls .arrow { color: #444; font-weight: bold; }
 
 .kdropdown-container { position: relative; display: inline-block; }
-.kdropdown-menu { position: absolute; top: calc(100% + 8px); right: 0; background-color: white; border: 1px solid #e0e0e0; border-radius: 6px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); z-index: 1000; min-width: 100px; padding: 2px 0; }
-.kdropdown-item { display: flex; align-items: center; width: 100%; padding: 6px 10px; text-align: left; background-color: transparent; border: none; color: #333; cursor: pointer; font-size: 12px; white-space: nowrap; }
-.kdropdown-item:hover { background-color: #f5f5f5; color: #2c3e50; }
-.kdropdown-item-icon { margin-right: 6px; color: #5b61f3; }
+.kdropdown-menu { position: absolute; top: calc(100% + 8px); right: 0; background-color: #5b61f3; border: 1px solid #e0e0e0; border-radius: 6px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); z-index: 1000; min-width: 100px; padding: 2px 0; }
+.kdropdown-item { display: flex; align-items: center; width: 100%; padding: 6px 10px; text-align: left; background-color: transparent; border: none; color: #ffffff; cursor: pointer; font-size: 12px; white-space: nowrap; }
+.kdropdown-item:hover { background-color: #8688fe; color: #f4f4f4; }
+.kdropdown-item-icon { margin-right: 6px; color: #ffffff; }
 
 .kmodal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; z-index: 2000; }
 .kmodal-content { background-color: white; border-radius: 8px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); width: 90%; max-width: 450px; padding: 30px; animation: fadeInScale 0.3s ease-out forwards; text-align: center; position: relative; }
