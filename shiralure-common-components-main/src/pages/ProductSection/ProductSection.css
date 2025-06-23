@@ -154,6 +154,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 80%;
+  height: 39px;
   box-sizing: border-box;
   font-size: 14px;
   background-color: #F2F6F9;
@@ -211,9 +212,8 @@
 .dvsCouponTableContainer {
   width: 100%;
   overflow-x: auto; /* Matches Coupons.css */
-  -webkit-overflow-scrolling: touch;
   margin-bottom: 20px;
-  scrollbar-width: auto;
+  /* Removed scrollbar-width for better browser compatibility */
   scrollbar-color: #e2e8f0 #f3f4f6;
 }
 
@@ -678,7 +678,6 @@ label {
   }
   .dvsCouponTableContainer {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
   }
   .dvsCouponTable {
     min-width: 700px;
