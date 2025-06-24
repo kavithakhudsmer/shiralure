@@ -232,7 +232,7 @@ const paginatedAdmins = filteredAdmins.slice(startIndex, endIndex);
         <h1>Administrators</h1>
         <div className="kvbreadcrumb">
           <h2>
-            <span className="kvactive">Dashboard</span> &gt;&gt; <span>Administrators</span>
+            <span className="kvactive">Home</span> &gt;&gt; <span>Administrators</span>
 
           </h2>
         </div>

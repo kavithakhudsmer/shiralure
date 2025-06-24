@@ -41,6 +41,11 @@ import TransactionPage from './pages/Transactions/Transactions';
 import Administrators from './pages/administrators/Administrators';
 import DamageTShirt from './pages/salesreport/DamageTShirt';
 import ProductSection from './pages/ProductSection/ProductSection';
+import ViewCustomerPage from './pages/customerpage/ViewCustomerPage';
+
+
+
+
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -89,6 +94,7 @@ const App = () => {
                 <Route path="Administrators" element={<Administrators/>} />
                 <Route path="DamageTShirt" element={<DamageTShirt />} />
                 <Route path="ProductSection" element={<ProductSection />} />
+                <Route path="view-customer" element={<ViewCustomerPage />} />
 
               
                
