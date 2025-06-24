@@ -1,0 +1,780 @@
+/* Main Container and Header */
+.sraju-sremployee-dashboard-container {
+  padding: 14px 16px;
+  background-color: #F2F6F9;
+  font-family: Arial, sans-serif;
+}
+ 
+.sraju-sremployee-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+      margin-top: -20px;
+}
+ 
+.sraju-employee-header-left h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #131212;
+    margin-bottom: 12px;
+   
+}
+ 
+.sraju-employee-header-right h2
+{
+ 
+    font-weight: 400;
+   
+}
+ 
+.sraju-employee-breadcrumb
+{
+      font-size: 20px;
+      color: #333;
+    font-weight: 400;
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+ 
+ 
+ 
+.sraju-employee-breadcrumb-link {
+    color: #5A66F1;
+    text-decoration: none;
+}
+ 
+.sraju-employee-breadcrumb span {
+    color: #333;
+    margin: 0 5px;
+}
+ 
+/* Main Content Box */
+.sraju-employee-content-box-wrapper {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+ 
+/* Top Controls Section */
+.sraju-employee-top-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+ 
+.sraju-employee-icon-button-group {
+    display: flex;
+    gap: 10px;
+}
+ 
+.sraju-employee-icon-button {
+    position: relative;
+    display: inline-block;
+}
+ 
+.sraju-employee-icon-box {
+    background-color: #5A66F1;
+    color: #fff;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+ 
+
+ 
+.sraju-employee-icon {
+    font-size: 18px;
+}
+ 
+/* Share Dropdown */
+.sraju-employee-share-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #5A66F1;
+    color:white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    min-width: 100px;
+    z-index: 100;
+    margin-top: 5px;
+    overflow: hidden;
+}
+ 
+.sraju-employee-share-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color:white;
+}
+ 
+.sraju-employee-share-item:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+ 
+.sraju-employee-dropdown-icon {
+    font-size: 16px;
+}
+ 
+/* Divider Line */
+.sraju-employee-divider-line {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+ 
+/* Filter Box */
+.sraju-employee-filter-form-wrapper {
+    padding: 15px;
+    margin-bottom: 20px;
+}
+ 
+.sraju-employee-filter-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    align-items: flex-end;
+}
+ 
+.sraju-filter-group {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.sraju-filter-group label {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+ 
+.sraju-filter-group input,
+.sraju-filter-group select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f9;
+    font-size: 14px;
+    width: 80%;
+    box-sizing: border-box;
+}
+ 
+.sraju-filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+    grid-column: span 1;
+    justify-content: flex-start;
+}
+ 
+.sraju-filter-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+ 
+.sraju-filter-buttons button.sraju-search {
+    background-color: #5A66F1;
+    color: #fff;
+}
+ 
+
+ 
+.sraju-filter-buttons button.sraju-clear {
+    background-color: #333;
+    color: #fff;
+}
+ 
+.sraju-filter-buttons button.sraju-clear:hover {
+    background-color: #333;
+}
+ 
+ 
+/* Table Styling */
+.sraju-print-table-area {
+    overflow-x: auto;
+}
+ 
+.sraju-print-table-area table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0efef ;
+}
+ 
+.sraju-print-table-area table th,
+.sraju-print-table-area table td {
+    padding: 12px 15px;
+    text-align: center;
+    font-size: 14px;
+}
+ 
+.sraju-print-table-area table th {
+    background-color: #f0f2f5;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+}
+ 
+.sraju-print-table-area table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+ 
+.sraju-active-status {
+    color: #28a745;
+    font-weight: bold;
+}
+ 
+.sraju-inactive-status {
+    color: #dc3545;
+    font-weight: bold;
+}
+ 
+.sraju-employee-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+}
+ 
+.sraju-employee-action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+}
+ 
+.sraju-employee-icon-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+ 
+/* Icon colors */
+ 
+.sraju-employee-icon-action-btn svg { /* Target the SVG directly for color */
+  font-size: 20px; /* Ensure icon size is consistent */
+}
+ 
+.sraju-employee-view-btn svg {
+  color: #5A66F1;
+}
+ 
+.sraju-employee-edit-btn svg {
+  color: #22C55E;
+}
+ 
+.sraju-employee-delete-btn svg {
+  color: #EF4444;
+}
+ 
+/* Hover effects with circular background */
+.sraju-employee-view-btn:hover {
+  background-color: rgba(90, 102, 241, 0.1);
+}
+ 
+.sraju-employee-edit-btn:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+ 
+.sraju-employee-delete-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+ 
+/* Optional: slight scale effect on hover */
+.sraju-employee-icon-action-btn:hover {
+  transform: scale(1.1);
+}
+ 
+/* Overlay and Form Box */
+.sraju-employee-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+ 
+.sraju-employee-form-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+ 
+.sraju-employee-form-box h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: left;
+}
+ 
+/* Corrected placement for the divider line, targeting it as a direct child */
+.sraju-employee-form-box .sraju-employee-divider-line {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 25px;
+}
+ 
+.sraju-employee-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+ 
+.sraju-employee-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+ 
+.sraju-employee-form-group label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+ 
+.sraju-employee-form-group .sraju-required {
+    color: #dc3545;
+    margin-left: 2px;
+}
+ 
+.sraju-employee-form-group input[type="text"],
+.sraju-employee-form-group input[type="email"],
+.sraju-employee-form-group input[type="password"],
+.sraju-employee-form-group select {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fcfcfc;
+}
+ 
+/* Focus state for inputs/selects within form groups */
+.sraju-employee-form-group input:focus,
+.sraju-employee-form-group select:focus {
+    outline: none;
+    border-color: #6c5ce7;
+    box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
+}
+ 
+ 
+.sraju-employee-phone-input {
+    display: flex;
+    gap: 5px;
+}
+ 
+.sraju-employee-phone-input select {
+    flex-shrink: 0;
+    width: auto;
+}
+ 
+.sraju-employee-phone-input input {
+    flex-grow: 1;
+}
+ 
+/* Container for the radio group */
+.sraju-employee-radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 5px;
+}
+ 
+/* Styling for each radio button label */
+.sraju-employee-radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+    color: #333;
+}
+ 
+/* Hide the default browser radio button */
+.sraju-employee-radio-group input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Basic styling for the custom radio circle (light purple) */
+    width: 18px;
+    height: 18px;
+   
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+}
+ 
+/* Style for the checked state (deeper purple fill) */
+.sraju-employee-radio-group input[type="radio"]:checked {
+    border-color: #5A66F1;
+    background-color: #5A66F1;
+}
+ 
+/* Create the inner white dot for the checked state */
+.sraju-employee-radio-group input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.sraju-employee-form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 10px;
+}
+ 
+.sraju-employee-form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+ 
+.sraju-employee-form-buttons button.sraju-save {
+    background-color: #5A66F1;
+    color: #fff;
+}
+
+ 
+.sraju-employee-form-buttons button.sraju-close {
+    background-color: #333;
+    color: #fff;
+}
+ 
+.sraju-employee-form-buttons button.sraju-close:hover {
+    background-color: #555;
+}
+ 
+/* Delete Confirmation Modal - unchanged */
+.sraju-employee-delete-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+ 
+.sraju-employee-delete-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+ 
+.sraju-employee-delete-icon {
+    margin-bottom: 20px;
+}
+ 
+.sraju-employee-delete-box h2 {
+    margin-top: 0;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+}
+ 
+.sraju-employee-subtext {
+    color: #777;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+ 
+.sraju-employee-delete-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+ 
+.sraju-employee-delete-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+ 
+.sraju-employee-delete-buttons button.sraju-yes {
+    background-color: #5A66F1;
+    color: #fff;
+}
+ 
+
+ 
+.sraju-employee-delete-buttons button.sraju-no {
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* Pagination */
+.sraju-employee-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.sraju-employee-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: -32px;
+}
+ 
+.sraju-employee-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    padding: 10px;
+    margin: 20px 0;
+}
+ 
+.sraju-employee-pagination-arrow {
+    background-color: #f0f2f5;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+ 
+.sraju-employee-pagination-arrow:hover:not(:disabled) {
+    background-color: #e2e6ea;
+    color: #333;
+}
+ 
+.sraju-employee-pagination-page {
+    background-color: #f0f2f5;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+ 
+.sraju-employee-pagination-page:hover:not(:disabled) {
+    background-color: #e2e6ea;
+    color: #333;
+}
+ 
+.sraju-employee-pagination-page.sraju-active {
+    background-color: #EEEFFE;
+    color: #fff;
+   
+}
+ 
+.sraju-employee-pagination-page.sraju-active:hover {
+    background-color: #EEEFFE;
+    color: #fff;
+}
+ 
+.sraju-employee-pagination-arrow:disabled,
+.sraju-employee-pagination-page:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+ 
+/* Row Count Dropdown */
+.sraju-employee-row-count-wrapper {
+    position: relative;
+    display: inline-block;
+   
+}
+ 
+.sraju-employee-row-count-btn {
+  background-color: #5A66F1;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  height: 38px;
+  box-sizing: border-box;
+}
+ 
+
+.sraju-employee-row-count-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #6c5ce7;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    min-width: 80px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+ 
+.sraju-employee-row-count-dropdown p {
+    padding: 8px 15px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+}
+ 
+.sraju-employee-row-count-dropdown p:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+ 
+ 
+/* Print Styles - to hide actions column and buttons during print */
+@media print {
+    .sraju-no-print {
+        display: none !important;
+    }
+    body {
+        background-color: #fff; /* White background for printing */
+    }
+    .sraju-sremployee-dashboard-container,
+    .sraju-employee-content-box-wrapper {
+        padding: 0;
+        box-shadow: none;
+        background-color: #fff;
+    }
+    .sraju-sremployee-header-section,
+    .sraju-employee-top-controls,
+    .sraju-employee-divider-line,
+    .sraju-employee-filter-form-wrapper,
+    .sraju-employee-footer {
+        display: none;
+    }
+    .sraju-print-table-area table {
+        border: 1px solid #000;
+    }
+    .sraju-print-table-area table th, .sraju-print-table-area table td {
+        border: 1px solid #000;
+        padding: 8px;
+    }
+}
+ 
+ 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .sraju-employee-top-controls {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .sraju-employee-icon-button-group {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .sraju-employee-filter-form {
+        grid-template-columns: 1fr;
+    }
+    .sraju-filter-buttons {
+        justify-content: stretch;
+    }
+    .sraju-filter-buttons button {
+        flex-grow: 1;
+    }
+    .sraju-employee-form-grid {
+        grid-template-columns: 1fr;
+    }
+    .sraju-employee-form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .sraju-employee-form-buttons button {
+        width: 100%;
+        justify-content: center;
+    }
+    .sraju-employee-delete-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .sraju-employee-delete-buttons button {
+        width: 100%;
+    }
+    .sraju-employee-footer-content {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    .sraju-employee-pagination {
+        width: 100%;
+        justify-content: center;
+    }
+}

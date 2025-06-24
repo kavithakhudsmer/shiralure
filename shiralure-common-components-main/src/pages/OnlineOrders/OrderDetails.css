@@ -421,12 +421,13 @@ input:checked + .slider:before {
 }
 
 .srimodal-buttons button:first-child {
-  background-color: #ccc;
-  color: black;
+  margin-left: 200px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
 }
 
 .srimodal-buttons button:last-child {
-  background-color: #443cc2;
+  background-color: #4f46d7;
   color: white;
 }
 .order-modal {
