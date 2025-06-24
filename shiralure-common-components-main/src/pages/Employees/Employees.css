@@ -608,7 +608,7 @@
     color: #555;
     border: 1px solid #ddd;
     padding: 8px 12px;
-    border-radius: 5px;
+    border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -620,7 +620,7 @@
  
 .sraju-employee-pagination-page {
     background-color: #f0f2f5;
-    color: #555;
+    color: #5A66F1;
     border: 1px solid #ddd;
     padding: 8px 12px;
     cursor: pointer;
@@ -629,12 +629,12 @@
  
 .sraju-employee-pagination-page:hover:not(:disabled) {
     background-color: #e2e6ea;
-    color: #333;
+    color: #5A66F1;
 }
  
 .sraju-employee-pagination-page.sraju-active {
     background-color: #EEEFFE;
-    color: #fff;
+    color: #5A66F1;
    
 }
  
@@ -676,7 +676,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #6c5ce7;
+    background-color: #5A66F1;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -695,7 +695,7 @@
  
 .sraju-employee-row-count-dropdown p:hover {
     background-color: #f0f0f0;
-    color: #333;
+    color: #5A66F1;
 }
  
  
