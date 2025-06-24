@@ -304,7 +304,6 @@
 .rpagination-controls button.active {
   background-color: #f0f2ff;
   color: #6366f1;
-  border-color: #6366f1;
   font-weight: 600;
 }
 

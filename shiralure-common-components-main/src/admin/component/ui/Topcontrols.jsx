@@ -58,9 +58,16 @@ const TopControls = ({
           background-color: #4f46e5;
           color: white;
         }
+
+        .top-controls {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px; /* 10px gap between all icons/buttons */
+          margin-bottom: 1rem;
+        }
       `}</style>
 
-      <div className="top-controls d-flex gap-2 flex-wrap mb-3">
+      <div className="top-controls">
         {/* Rows Per Page Dropdown */}
         <Dropdown>
           <Dropdown.Toggle className="custom-btn">

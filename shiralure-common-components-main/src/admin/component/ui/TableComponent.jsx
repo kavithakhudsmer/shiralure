@@ -40,9 +40,10 @@ const TableComponent = ({ headers, data, renderRow }) => {
           border: 0;
         }
 
-        .custom-table tbody tr:hover {
+        /* Removed hover effect */
+        /* .custom-table tbody tr:hover {
           box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-        }
+        } */
 
         .custom-table tbody td {
           text-align: center;
@@ -51,9 +52,9 @@ const TableComponent = ({ headers, data, renderRow }) => {
           border: none;
           font-size: 12px;
         }
-                  .responsive-scroll {
-            overflow-x: auto;
-          }
+        .responsive-scroll {
+          overflow-x: auto;
+        }
         @media (max-width: 991px) {
           .responsive-scroll {
             overflow-x: auto;
@@ -62,7 +63,7 @@ const TableComponent = ({ headers, data, renderRow }) => {
       `}</style>
 
       <div className="responsive-scroll">
-        <Table bordered hover className="text-center custom-table">
+        <Table bordered className="text-center custom-table">
           <thead className="table-light">
             <tr>
               {headers.map((header, idx) => (
