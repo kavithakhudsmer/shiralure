@@ -1,4 +1,4 @@
-.btn {
+.snekaview-btn {
   padding: 8px 16px; /* reduced padding */
   border: none;
   border-radius: 8px; /* slightly smaller radius */
@@ -19,10 +19,10 @@
 }
 
 /* ===== White Card Container ===== */
-.snekaprofile-card,
-.snekatab-card,
-.snekatab-content,
-.snekawhite-card {
+.snekaview-profile-card,
+.snekaview-tab-card,
+.snekaview-tab-content,
+.snekaview-white-card {
   background: white;
   border-radius: 12px;
   padding: 24px 32px;
@@ -31,13 +31,13 @@
 }
 
 /* ===== Profile Card Layout ===== */
-.profile-card {
+.snekaview-profile-card {
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-.profile-card img.snekaprofile-photo {
+.snekaview-profile-card img.snekaview-profile-photo {
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -45,13 +45,13 @@
   border: 3px solid #ddd;
 }
 
-.profile-details h2 {
+.snekaview-profile-details h2 {
   margin: 0;
   font-size: 24px;
   font-weight: 600;
 }
 
-.snekatag {
+.snekaview-tag {
   display: inline-block;
   background-color: #ffefa2; /* Soft yellow */
   color: #9a6900;           /* Dark gold */
@@ -63,7 +63,7 @@
 }
 
 /* ===== Upload Button ===== */
-.snekaupload-btn {
+.snekaview-upload-btn {
   margin-top: 10px;
   padding: 10px 16px;
   background-color: #4a5ef2; /* Indigo blue */
@@ -75,20 +75,20 @@
   transition: background-color 0.2s ease;
 }
 
-.snekaupload-btn:hover {
+.snekaview-upload-btn:hover {
   background-color: #4338ca;
 }
 
 /* ===== Tabs Container ===== */
-.snekatabs,
-.profile-tabs {
+.snekaview-tabs,
+.snekaview-profile-tabs {
   display: flex;
   gap: 12px;
   margin-bottom: 24px;
 }
 
 /* ===== Individual Tab Styles ===== */
-.snekatab {
+.snekaview-tab {
   background: #fff;
   border: 1px solid #d4dbe4;
   padding: 10px 16px;
@@ -102,25 +102,25 @@
   gap: 6px;
 }
 
-.snekatab:hover {
+.snekaview-tab:hover {
   background-color: #e4e8f0;
 }
 
-.snekatab.active {
+.snekaview-tab.active {
   background-color: #4a5ef2;
   color: white;
   border-color: #4a5ef2;
 }
 
 /* ===== Tab Content Area ===== */
-.snekatab-content p {
+.snekaview-tab-content p {
   margin: 12px 0;
   font-size: 15px;
   display: flex;
   align-items: center;
 }
 
-.snekatab-content p strong {
+.snekaview-tab-content p strong {
   width: 120px; /* Fixed width for label */
   display: inline-block;
   font-weight: 600;
@@ -129,23 +129,23 @@
 
 
 /* ===== Info Grid for Labels/Inputs ===== */
-.snekainfo-grid {
+.snekaview-info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
 }
 
 /* ===== Form Labels and Inputs ===== */
-.snekatab-content label {
+.snekaview-tab-content label {
   font-size: 14px;
   margin-top: 12px;
   display: block;
   font-weight: 500;
 }
 
-.snekatab-content input,
-.snekatab-content select,
-.snekatab-content textarea {
+.snekaview-tab-content input,
+.snekaview-tab-content select,
+.snekaview-tab-content textarea {
   width: 100%;
   padding: 10px;
   border-radius: 8px;
@@ -157,7 +157,7 @@
 }
 
 /* ===== Save Button ===== */
-.snekasave-btn {
+.snekaview-save-btn {
   margin-top: 16px;
   padding: 10px 20px;
   background-color: #4a5ef2;
@@ -169,30 +169,30 @@
   transition: background-color 0.2s ease;
 }
 
-.snekasave-btn:hover {
+.snekaview-save-btn:hover {
   background-color: #4338ca;
 }
 
 /* ===== Status Text ===== */
-.snekastatus.active {
+.snekaview-status.active {
   color: green;
   font-weight: 600;
 }
 
-.snekastatus.inactive {
+.snekaview-status.inactive {
   color: red;
   font-weight: 600;
 }
 
 /* ===== Table Styles within Tab Content ===== */
-.snekatab-content table {
+.snekaview-tab-content table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 16px;
 }
 
-.snekatab-content th,
-.snekatab-content td {
+.snekaview-tab-content th,
+.snekaview-tab-content td {
   padding: 12px 10px;
   font-size: 14px;
   border-bottom: 1px solid #eee;
@@ -206,21 +206,21 @@
 
   gap: 24px;
 } */
-.profile-card {
+.snekaview-profile-card {
   display: flex;
   align-items: center;
   justify-content: space-between; /* This pushes items to opposite ends */
   gap: 24px;
 }
 
-.address-header {
+.snekaview-address-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
 }
 
-.snekaadd-address-btn {
+.snekaview-add-address-btn {
   background-color: #4a5ef2;
   color: white;
   padding: 8px 14px;
@@ -231,13 +231,13 @@
   transition: background-color 0.2s;
 }
 
-.snekaadd-address-btn:hover {
+.snekaview-add-address-btn:hover {
   background-color: #4a5ef2;
 }
 
 /* Modal overlay */
 /* Modal overlay */
-.snekamodal-overlay {
+.snekaview-modal-overlay {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
@@ -251,7 +251,7 @@
 }
 
 /* Modal container */
-.snekamodal {
+.snekaview-modal {
   background-color: #fff;
   border-radius: 12px;
   width: 550px;
@@ -263,21 +263,21 @@
 }
 
 /* Modal header */
-.snekamodal-header {
+.snekaview-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
 }
 
-.snekamodal-header h3 {
+.snekaview-modal-header h3 {
   font-size: 22px;
   font-weight: 700;
   margin: 0;
 }
 
-.snekamodal-close-btn,
-.close-btn {
+.snekaview-modal-close-btn,
+.snekaview-close-btn {
   background: none;
   border: none;
   font-size: 26px;
@@ -286,21 +286,21 @@
   transition: color 0.2s ease;
 }
 
-.snekamodal-close-btn:hover,
-.close-btn:hover {
+.snekaview-modal-close-btn:hover,
+.snekaview-close-btn:hover {
   color: #4a5ef2;
 }
 
 /* Form layout */
-.snekamodal-form {
+.snekaview-modal-form {
   display: flex;
   flex-direction: column;
 }
 
 /* More spacious and modern input fields */
-.snekamodal-form input,
-.snekamodal-form select,
-.snekamodal-form textarea {
+.snekaview-modal-form input,
+.snekaview-modal-form select,
+.snekaview-modal-form textarea {
   width: 100%;
   padding: 16px 18px;
   border: 1.5px solid #ccc;
@@ -313,23 +313,23 @@
 }
 
 /* On focus */
-.snekamodal-form input:focus,
-.snekamodal-form select:focus,
-.snekamodal-form textarea:focus {
+.snekaview-modal-form input:focus,
+.snekaview-modal-form select:focus,
+.snekaview-modal-form textarea:focus {
   border-color: #4a5ef2;
   outline: none;
 }
 
 /* Modal footer buttons */
-.snekamodal-footer {
+.snekaview-modal-footer {
   display: flex;
   justify-content: flex-start;
   gap: 12px;
   margin-top: 24px;
 }
 
-.snekasave-btn,
-.snekaclear-btn {
+.snekaview-save-btn,
+.snekaview-clear-btn {
   width: 120px; /* Fixed width for both */
   padding: 10px;
   font-size: 15px;
@@ -341,12 +341,12 @@
   transition: background-color 0.2s ease;
 }
 
-.snekasave-btn {
+.snekaview-save-btn {
   background-color: #4a5ef2;
   color: white;
 }
 
-.snekaclear-btn {
+.snekaview-clear-btn {
   background-color: #050202;
   color: white;
   margin-top: 16px;
@@ -360,24 +360,24 @@
 
 
 
-.btn-primary {
+.snekaview-btn-primary {
   background-color: #4a5ef2;
   color: white;
   box-shadow: 0 4px 10px rgba(74, 94, 242, 0.4);
 }
 
-.btn-primary:hover {
+.snekaview-btn-primary:hover {
   background-color: #4338ca;
   box-shadow: 0 6px 12px rgba(67, 56, 202, 0.6);
 }
 
-.btn-secondary {
+.snekaview-btn-secondary {
   background-color: #eee;
   color: #555;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.btn-secondary:hover {
+.snekaview-btn-secondary:hover {
   background-color: #ddd;
   box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
@@ -387,66 +387,66 @@
     padding: 24px;
   }
 
-  .snekaprofile-card,
-  .snekawhite-card {
+  .snekaview-profile-card,
+  .snekaview-white-card {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
   }
 
-  .profile-card img.snekaprofile-photo {
+  .snekaview-profile-card img.snekaview-profile-photo {
     width: 80px;
     height: 80px;
   }
 
-  .snekatabs,
-  .profile-tabs {
+  .snekaview-tabs,
+  .snekaview-profile-tabs {
     flex-wrap: wrap;
     gap: 8px;
   }
 
-  .snekatab {
+  .snekaview-tab {
     flex: 1 1 calc(50% - 12px);
     justify-content: center;
   }
 
-  .snekamodal {
+  .snekaview-modal {
     padding: 24px;
     width: 95vw;
   }
 }
 
 @media (max-width: 768px) {
-  .snekainfo-grid {
+  .snekaview-info-grid {
     grid-template-columns: 1fr;
   }
 
-  .snekatab-content p {
+  .snekaview-tab-content p {
     flex-direction: column;
     gap: 6px;
   }
 
-  .snekamodal-form input,
-  .snekamodal-form select,
-  .snekamodal-form textarea {
+  .snekaview-modal-form input,
+  .snekaview-modal-form select,
+  .snekaview-modal-form textarea {
     padding: 12px;
     font-size: 14px;
   }
 
-  .snekamodal-header h3 {
+  .snekaview-modal-header h3 {
     font-size: 18px;
   }
 
-  .snekamodal-actions {
+  .snekaview-modal-actions {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .snekamodal-actions button {
+  .snekaview-modal-actions button {
     width: 100%;
   }
 
-  .snekaadd-address-btn {
+  .snekaview-add-address-btn {
     width: 100%;
     text-align: center;
   }
@@ -457,41 +457,41 @@
     padding: 16px;
   }
 
-  .snekatab {
+  .snekaview-tab {
     font-size: 13px;
     padding: 8px;
   }
 
-  .snekatab-content label {
+  .snekaview-tab-content label {
     font-size: 13px;
   }
 
-  .snekamodal {
+  .snekaview-modal {
     padding: 20px;
   }
 
-  .snekamodal-form label {
+  .snekaview-modal-form label {
     margin-top: 16px;
     font-size: 14px;
   }
 
-  .btn-primary,
-  .btn-secondary {
+  .snekaview-btn-primary,
+  .snekaview-btn-secondary {
     font-size: 14px;
     padding: 10px 0;
   }
 
-  .profile-card img.snekaprofile-photo {
+  .snekaview-profile-card img.snekaview-profile-photo {
     width: 60px;
     height: 60px;
   }
 
-  .profile-details h2 {
+  .snekaview-profile-details h2 {
     font-size: 18px;
   }
 }
 /* ===== Flex Row for Profile + Add Button ===== */
-.profile-header-row {
+.snekaview-profile-header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -501,7 +501,7 @@
 }
 
 /* Adjust spacing between two cards (left and right) */
-.profile-card {
+.snekaview-profile-card {
   flex: 1;
   display: flex;
   align-items: center;
@@ -510,17 +510,17 @@
 
 /* Responsive handling for stacking on mobile */
 @media (max-width: 768px) {
-  .profile-header-row {
+  .snekaview-profile-header-row {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .snekaadd-address-btn {
+  .snekaview-add-address-btn {
     align-self: flex-end;
     width: 100%;
   }
 }
-.inline-view {
+.snekaview-inline-view {
   text-align: left;
   margin-top: 20px;
   padding: 16px;
@@ -531,15 +531,15 @@
   justify-content: flex-start;
 }
 
-.inline-view h5 {
+.snekaview-inline-view h5 {
   margin-bottom: 12px;
 }
-.address-table{
+.snekaview-address-table{
   /* justify-content: center; */
   display: flex;
   justify-content: flex-start;
 }
-.close-inline {
+.snekaview-close-inline {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -550,11 +550,11 @@
   color: #888;
 }
 
-.close-inline:hover {
+.snekaview-close-inline:hover {
   color: #000;
 }
 /* ----demo--/ */
-.inline-view {
+.snekaview-inline-view {
   margin-top: 20px;
   background: #fff;
   padding: 20px;
@@ -563,19 +563,19 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-.inline-view-header {
+.snekaview-inline-view-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
 }
 
-.inline-view-header h5 {
+.snekaview-inline-view-header h5 {
   font-size: 18px;
   margin: 0;
 }
 
-.close-inline {
+.snekaview-close-inline {
   background: transparent;
   border: none;
   font-size: 16px;
@@ -583,23 +583,23 @@
   cursor: pointer;
 }
 
-.inline-row {
+.snekaview-inline-row {
   display: flex;
   margin-bottom: 6px;
 }
 
-.inline-row strong {
+.snekaview-inline-row strong {
   width: 120px;
   font-weight: 600;
   color: #333;
 }
-.profile-header-card {
+.snekaview-profile-header-card {
   display: flex;
   align-items: flex-start;
   gap: 16px;
   flex-direction: row;
 }
-.profile-header-card .snekaheader {
+.snekaview-profile-header-card .snekaview-header {
   display: flex;
   align-items: flex-start;
   gap: 16px;
@@ -619,27 +619,27 @@
   align-items: flex-start;
   gap: 8px;
 } */
-.snekaprofile-photo {
+.snekaview-profile-photo {
   width: 100px;          /* or any square size */
   height: 100px;
   border-radius: 12px;   /* adjust this value for desired curve */
   object-fit: cover;
   border: 2px solid #ccc; /* optional */
 }
-.snekaheader {
+.snekaview-header {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
 }
-.snekaheader-info {
+.snekaview-header-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
 }
 
-.snekaheader-info h2 {
+.snekaview-header-info h2 {
   margin: 0;
   font-size: 24px;
   font-weight: 500;
@@ -647,7 +647,7 @@
   text-transform: uppercase;
 }
 
-.snekatag {
+.snekaview-tag {
   background-color: #fff7da;
   color: #c89e00;
   font-size: 11px;
@@ -656,7 +656,7 @@
   font-weight: 500;
 }
 
-.snekaupload-btn {
+.snekaview-upload-btn {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -668,7 +668,7 @@
   cursor: pointer;
   font-size: 13px;
 }
-.snekaentry-count {
+.snekaview-entry-count {
   margin-top: 8px;
   font-size: 14px;
   color: #666;
@@ -738,7 +738,7 @@
   background-color: #4338ca;
 }
  */
- .snekamodal-body {
+ .snekaview-modal-body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px 38px; /* vertical and horizontal gap between fields */
@@ -749,12 +749,12 @@
 }
 
 /* Make ZIP field span both columns */
-.snekamodal-body .full-width {
+.snekaview-modal-body .full-width {
   grid-column: span 2;
 }
 
 /* Input styling */
-.snekamodal-body input {
+.snekaview-modal-body input {
   width: 100%;
   padding: 12px 14px;
   border: 1px solid #ccc;
@@ -764,11 +764,11 @@
   transition: border-color 0.2s;
 }
 
-.snekamodal-body input:focus {
+.snekaview-modal-body input:focus {
   border-color: #4c6ef5;
   box-shadow: 0 0 0 2px rgba(76, 110, 245, 0.1);
 }
-.snekaaddress-view-card {
+.snekaview-address-view-card {
   background: white;
   border-radius: 12px;
   padding: 24px 32px;
@@ -776,14 +776,14 @@
   position: relative;
 }
 
-.snekacard-header {
+.snekaview-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
 }
 
-.snekaback-button {
+.snekaview-back-button {
   background: none;
   border: none;
   color: #007bff;
@@ -794,11 +794,11 @@
   transition: background 0.2s ease;
 }
 
-.snekaback-button:hover {
+.snekaview-back-button:hover {
   background-color: rgba(0, 123, 255, 0.1);
 }
 
-.snekaicon-wrapper {
+.snekaview-icon-wrapper {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -808,14 +808,14 @@
   z-index: 0;
 }
 
-.snekaicon-wrapper svg {
+.snekaview-icon-wrapper svg {
   position: relative;
   z-index: 1; /* icon above circle */
   display: block;
 }
 
 /* Circle behind icon */
-.snekaicon-wrapper::before {
+.snekaview-icon-wrapper::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -830,86 +830,86 @@
 }
 
 /* Pink circle */
-.snekaicon-wrapper.pink::before {
+.snekaview-icon-wrapper.pink::before {
   background-color: #e91e63;
 }
 
 /* Green circle */
-.snekaicon-wrapper.green::before {
+.snekaview-icon-wrapper.green::before {
   background-color: #4caf50;
 }
 
 /* Red circle */
-.snekaicon-wrapper.red::before {
+.snekaview-icon-wrapper.red::before {
   background-color: #dc3545;
 }
 
 /* On hover show circle and slightly scale up */
-.snekaicon-wrapper:hover::before {
+.snekaview-icon-wrapper:hover::before {
   opacity: 0.15; /* subtle transparent background */
   transform: translate(-50%, -50%) scale(1);
 }
-.snekaicon-btn.view {
+.snekaview-icon-btn.view {
   color: #5A66F1;
   border-radius: 50%;
   transition: background-color 0.3s, color 0.3s;
   padding: 10px; /* to make space for the round bg */
 }
 
-.snekaicon-btn.view:hover {
+.snekaview-icon-btn.view:hover {
   background-color: #eeeffe;
   /* color: white; */
   cursor: pointer;
 }
 
-.snekaicon-btn.edit {
+.snekaview-icon-btn.edit {
   color: #22C55E;
   border-radius: 50%;
   transition: background-color 0.3s, color 0.3s;
   padding: 10px;
 }
 
-.snekaicon-btn.edit:hover {
+.snekaview-icon-btn.edit:hover {
   background-color: #e8f9ef;
   /* color: white; */
   cursor: pointer;
 }
 
-.snekaicon-btn.delete {
+.snekaview-icon-btn.delete {
   color: #F4415F;
   border-radius: 50%;
   transition: background-color 0.3s, color 0.3s;
   padding: 10px;
 }
 
-.snekaicon-btn.delete:hover {
+.snekaview-icon-btn.delete:hover {
   background-color: #ffcfd7;
   /* color: white; */
   cursor: pointer;
 }
 
 
-.snekasecurity-row {
+.snekaview-security-row {
   display: flex;
   gap: 180px;
   margin-bottom: 20px;
   max-width: 600px; /* limit row width */
 }
 
-.snekasecurity-field {
+.snekaview-security-field {
   flex: 1;
   display: flex;
   flex-direction: column;
   max-width: 280px; /* control individual input field width */
 }
 
-.snekasecurity-field label {
+.snekaview-security-field label {
   margin-bottom: 4px;
   font-weight: 500;
   font-size: 13px;
 }
 
-.snekasecurity-field input {
+.snekaview-security-field input {
   padding: 2px 6px;
   height: 32px;
   border: 1px solid #ccc;
@@ -918,33 +918,32 @@
   width: 100%; /* maintain width inside container */
 }
 
-.snekaicon-warning {
+.snekaview-icon-warning {
   font-size: 60px; /* Make the icon bigger */
   color: #facc15;  /* Tailwind's yellow-400 (or use #fbbf24 for yellow-500) */
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
 }
-.snekainfo-row {
+.snekaview-info-row {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
-.snekainfo-label {
+.snekaview-info-label {
   width: 100px;
   font-weight: bold;
   color: #333;
   margin-right: 10px;
 }
-.snekainfo-value {
+.snekaview-info-value {
   width: calc(50% - 170px);
   color: #555;
   margin-right: 20px;
   word-break: break-word;
 }
-.snekastatus.active {
+.snekaview-status.active {
   color: green;
   font-weight: bold;
   
 }
-

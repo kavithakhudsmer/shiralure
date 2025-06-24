@@ -11,7 +11,7 @@ import { PiWarningCircleBold } from "react-icons/pi";
 
 
 import './CustomerTable.css';
-import ViewCustomerPage from './ViewCustomerPage';
+import './ViewCustomerPage';
 
 export default function CustomerTable() {
   const [customers, setCustomers] = useState([]);
@@ -215,23 +215,23 @@ const toggleDropdown = () => {
 };
 
 return (
-  <div className="snekcustomer-page">
-    <div className="snekheader-row">
-      <h2 className="title">Customer</h2>
-      <h6 className="breadcrumb"><a href="/">Home</a> &gt;&gt; <span>Customer</span></h6>
+  <div className="snek-customer-page">
+    <div className="snek-header-row">
+      <h2 className="snek-title">Customer</h2>
+      <h6 className="snek-breadcrumb"><a href="/">Home</a> &gt;&gt; <span>Customer</span></h6>
     </div>
-    <div className="snekwhite-container">
-      <div className="snekaction-bar">
-        <div className="snekicon-button">
-          <button className="snekicon-box" onClick={toggleDropdown}>
+    <div className="snek-white-container">
+      <div className="snek-action-bar">
+        <div className="snek-icon-button">
+          <button className="snek-icon-box" onClick={toggleDropdown}>
             {numRecords} <MdArrowDropDown size={20} className="icon" />
           </button>
           {showDropdown && (
-            <div className="snekdropdown-menu">
+            <div className="snek-dropdown-menu">
               {[5, 10, 15, 20].map((num) => (
                 <div
                   key={num}
-                  className="snekdropdown-item"
+                  className="snek-dropdown-item"
                   onClick={() => {
                     setNumRecords(num);
                     setCurrentPage(1);
@@ -245,17 +245,17 @@ return (
           )}
         </div>
 
-        <div className="snekcustomer-actions">
-          <button className="snekicon-btn filled" onClick={toggleFilter}>
+        <div className="snek-customer-actions">
+          <button className="snek-icon-btn filled" onClick={toggleFilter}>
             <PiSliders size={20} />
           </button>
-          <div className="snekicon-button dropdown-container">
-            <button className="snekicon-btn filled" onClick={toggleShareOptions}>
+          <div className="snek-icon-button dropdown-container">
+            <button className="snek-icon-btn filled" onClick={toggleShareOptions}>
               <FaShareSquare size={22} />
             </button>
             {showShareDropdown && (
-              <div className="snekdropdown-menu right">
-                <div className="snekdropdown-items">
+              <div className="snek-dropdown-menu right">
+                <div className="snek-dropdown-items">
                   <div onClick={() => window.print()}>
                     <FaPrint size={14} /> Print
                   </div>
@@ -268,7 +268,7 @@ return (
           </div>
 
           <button
-            className="snekicon-btn filled"
+            className="snek-icon-btn filled"
             title="Add New"
             onClick={() => {
               setSelectedCustomer(null);
@@ -290,12 +290,12 @@ return (
           </button>
         </div>
       </div>
-      <div className="sneksection-divider" />
+      <div className="snek-section-divider" />
 
       {showFilters && (
-        <div className="snekcustomer-filters">
-          <div className="snekfilter-grid">
-            <div className="snekfilter-field">
+        <div className="snek-customer-filters">
+          <div className="snek-filter-grid">
+            <div className="snek-filter-field">
             <label>Name</label>
             <input
               type="text"
@@ -304,7 +304,7 @@ return (
               onChange={(e) => setFilters({ ...filters, name: e.target.value })}
             />
             </div>
-            <div className="snekfilter-field">
+            <div className="snek-filter-field">
             <label>Email</label>
             <input
               type="email"
@@ -313,7 +313,7 @@ return (
               onChange={(e) => setFilters({ ...filters, email: e.target.value })}
             />
             </div>
-            <div className="snekfilter-field">
+            <div className="snek-filter-field">
             <label>Phone</label>
             <input
               type="text"
@@ -322,7 +322,7 @@ return (
               onChange={(e) => setFilters({ ...filters, phone: e.target.value })}
             />
             </div>
-            <div className="snekfilter-field">
+            <div className="snek-filter-field">
             <label>Status</label>
             <select
               value={filters.status}
@@ -335,9 +335,9 @@ return (
             </div>
           </div>
 
-          <div className="snekfilter-buttons">
+          <div className="snek-filter-buttons">
             <button
-              className="snekbtn search"
+              className="snek-btn search"
               onClick={(e) => {
                 e.preventDefault();
                 setSearchFilters(filters);
@@ -347,7 +347,7 @@ return (
               <IoMdSearch /> Search
             </button>
             <button
-              className="snekbtn clear"
+              className="snek-btn clear"
               onClick={(e) => {
                 e.preventDefault();
                 setFilters({ name: '', email: '', phone: '', status: '' });
@@ -361,8 +361,8 @@ return (
         </div>
       )}
 
-      <div className="snekcustomer-table-wrapper">
-        <table className="snekcustomer-table">
+      <div className="snek-customer-table-wrapper">
+        <table className="snek-customer-table">
           <thead>
             <tr>
               <th>Name</th>
@@ -391,14 +391,14 @@ return (
                 </td>
                 <td>
                   <button
-                    className="snekicon-btn view"
+                    className="snek-icon-btn view"
                     onClick={() => navigate(`/view-customer/${c.id}`, { state: { customer: c } })}
                   >
                     <Eye size={18} />
                   </button>
 
                   <button
-                    className="snekicon-btn edit"
+                    className="snek-icon-btn edit"
                     onClick={() => {
                       setSelectedCustomer(c);
                       setIsEditMode(true);
@@ -407,7 +407,7 @@ return (
                   >
                     <Pen size={18} />
                   </button>
-                  <button className="snekicon-btn delete" onClick={() => confirmDelete(c)}>
+                  <button className="snek-icon-btn delete" onClick={() => confirmDelete(c)}>
                     <Trash2 size={18} />
                   </button>
                 </td>
@@ -415,11 +415,11 @@ return (
             ))}
           </tbody>
         </table>
-         <div className="snektable-footer-container">
-        <div className="snektable-footer">
+         <div className="snek-table-footer-container">
+        <div className="snek-table-footer">
           Showing {startIdx + 1} to {startIdx + displayedData.length} of {filteredData.length} entries
         </div>
-        <div className="snekpagination">
+        <div className="snek-pagination">
           <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
             <IoIosArrowBack />
           </button>
@@ -443,9 +443,9 @@ return (
      
 
       {showModal && (
-        <div className="snekcustomer-modal-overlay">
-          <div className="snekcustomer-modal-box">
-            <div className="snekcustomer-modal-header">
+        <div className="snek-customer-modal-overlay">
+          <div className="snek-customer-modal-box">
+            <div className="snek-customer-modal-header">
               <h3>Customers</h3>
               <button
                 onClick={() => {
@@ -459,10 +459,10 @@ return (
             </div>
 
             <form onSubmit={handleFormSubmit} onReset={handleFormReset}>
-              <div className="snekcustomer-form-grid">
-                <div className="snekcustomer-form-group">
+              <div className="snek-customer-form-grid">
+                <div className="snek-customer-form-group">
                   <label>
-                    NAME<span className="required">*</span>
+                    NAME<span className="snek-required">*</span>
                   </label>
                   <input
                     name="name"
@@ -473,9 +473,9 @@ return (
                   />
                 </div>
 
-                <div className="snekcustomer-form-group">
+                <div className="snek-customer-form-group">
                   <label>
-                    EMAIL<span className="required">*</span>
+                    EMAIL<span className="snek-required">*</span>
                   </label>
                   <input
                     name="email"
@@ -486,7 +486,7 @@ return (
                   />
                 </div>
 
-                <div className="snekcustomer-form-group">
+                <div className="snek-customer-form-group">
                   <label>PHONE</label>
                   <input
                     name="phone"
@@ -497,12 +497,12 @@ return (
                 </div>
               </div>
 
-              <div className="snekcustomer-row-three">
-                <div className="snekcustomer-form-group">
+              <div className="snek-customer-row-three">
+                <div className="snek-customer-form-group">
                   <label>
-                    STATUS<span className="required">*</span>
+                    STATUS<span className="snek-required">*</span>
                   </label>
-                  <div className="snekcustomer-radio-group">
+                  <div className="snek-customer-radio-group">
                     <label>
                       <input
                         type="radio"
@@ -526,9 +526,9 @@ return (
                   </div>
                 </div>
 
-                <div className="snekcustomer-form-group">
+                <div className="snek-customer-form-group">
                   <label>
-                    PASSWORD<span className="required">*</span>
+                    PASSWORD<span className="snek-required">*</span>
                   </label>
                   <input
                     name="password"
@@ -539,9 +539,9 @@ return (
                   />
                 </div>
 
-                <div className="snekcustomer-form-group">
+                <div className="snek-customer-form-group">
                   <label>
-                    CONFIRM PASSWORD<span className="required">*</span>
+                    CONFIRM PASSWORD<span className="snek-required">*</span>
                   </label>
                   <input
                     name="confirmPassword"
@@ -553,12 +553,12 @@ return (
                 </div>
               </div>
 
-              <div className="snekcustomer-modal-footer">
-                <button type="submit" className="snekcustomer-btn snekcustomer-save-btn">
+              <div className="snek-customer-modal-footer">
+                <button type="submit" className="snek-customer-btn snek-customer-save-btn">
                   <TiTick  style={{ marginRight: '6px' }} /> 
                   {isEditMode ? 'UPDATE' : 'SAVE'}
                 </button>
-                <button type="reset" className="snekcustomer-btn snekcustomer-clear-btn">
+                <button type="reset" className="snek-customer-btn snek-customer-clear-btn">
                   <RxCross2  style={{ marginRight: '6px' }}/>
                   CLEAR
                 </button>
@@ -567,8 +567,7 @@ return (
           </div>
         </div>
       )}
-{/* 
-      {showDeleteModal && (
+{/* {showDeleteModal && (
         <div className="modal-overlay">
           <div className="modal-box delete-confirmation">
             <div className="modal-header">
@@ -590,18 +589,18 @@ return (
         </div>
       )} */}
       {showDeleteModal && (
-  <div className="snekmodal-overlay">
-    <div className="snekmodal-box delete-confirmation">
-      <div className="snekicon-warning">
+  <div className="snek-modal-overlay">
+    <div className="snek-modal-box delete-confirmation">
+      <div className="snek-icon-warning">
        <PiWarningCircleBold />
       </div>
-      <h3 className="modal-title">Are you sure ?</h3>
-      <p className="modal-subtitle">You will not be able to recover the deleted record!</p>
-      <div className="snekmodal-footer">
-        <button className="btn danger" onClick={handleDeleteConfirmed}>
+      <h3 className="snek-modal-title">Are you sure ?</h3>
+      <p className="snek-modal-subtitle">You will not be able to recover the deleted record!</p>
+      <div className="snek-modal-footer">
+        <button className="snek-btn danger" onClick={handleDeleteConfirmed}>
           Yes, Delete it !
         </button>
-        <button className="btn cancel" onClick={handleCancelDelete}>
+        <button className="snek-btn cancel" onClick={handleCancelDelete}>
           No, Cancel !
         </button>
       </div>

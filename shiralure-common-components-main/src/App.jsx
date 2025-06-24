@@ -34,7 +34,7 @@ import OrderTable from './pages/OnlineOrders/OrderTable';
 // import Damage from "./pages/Damage/damage/DamageTShirt";
 import Subscriber from './pages/subscriber/Subscriber';
 import ProductReports from './pages/Reportpage/ProductReports';
-// import CustomerTable from './pages/customerpage/CustomerTable';
+import CustomerTable from './pages/customerpage/CustomerTable';
 import CreditBalanceReports from './pages/Credit Balance Report/CreditBalanceReports';
 import Coupons from './pages/E-Coupons/Coupons';
 import TransactionPage from './pages/Transactions/Transactions';
@@ -82,7 +82,7 @@ const App = () => {
                 {/* <Route path="Damage" element={<Damage />} /> */}
                 <Route path="Subscriber" element={<Subscriber />} />
                 <Route path="ProductReports" element={<ProductReports />} />
-                {/* <Route path="CustomerTable" element={<CustomerTable />} /> */}
+                <Route path="CustomerTable" element={<CustomerTable />} />
                 <Route path="CreditBalanceReports" element={<CreditBalanceReports />} />
                 <Route path="Coupons" element={<Coupons />} />
                 <Route path="Transactions" element={<TransactionPage />} />
