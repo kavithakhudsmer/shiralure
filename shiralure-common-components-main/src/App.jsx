@@ -31,7 +31,6 @@ import PushNotification from './admin/pages/pushNotification/Pushnotification';
 // import SPage from "./pages/supplier/SPage/SPage";
 import Purchase from "./pages/Purchases/purchase/Purchase";
 import OrderTable from './pages/OnlineOrders/OrderTable';
-// import Damage from "./pages/Damage/damage/DamageTShirt";
 import Subscriber from './pages/subscriber/Subscriber';
 import ProductReports from './pages/Reportpage/ProductReports';
 import CustomerTable from './pages/customerpage/CustomerTable';

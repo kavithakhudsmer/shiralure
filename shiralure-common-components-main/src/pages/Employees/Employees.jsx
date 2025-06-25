@@ -17,7 +17,7 @@ import { IoEyeOutline } from "react-icons/io5";
 function Employees() {
   const [admins, setAdmins] = useState([]);
   useEffect(() => {
-    fetch('/admin.json')
+    fetch('/admin1.json')
       .then((res) => res.json())
       .then((data) => {
         setAdmins(data.admins);

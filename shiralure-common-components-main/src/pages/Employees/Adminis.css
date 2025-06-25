@@ -531,15 +531,15 @@
 }
  
 .sraj-address-view-btn:hover { 
-  background-color: rgba(90, 102, 241, 0.1); 
+  background-color: #eeeffe; 
 }
  
 .sraj-address-edit-btn:hover {
-  background-color: rgba(59, 130, 246, 0.1); 
+  background-color: #e8f9ef; 
 }
  
 .sraj-address-delete-btn:hover {
-  background-color: rgba(239, 68, 68, 0.1); 
+  background-color: #ffcfd7; 
 }
  
 .sraj-employee-delete-modal {
