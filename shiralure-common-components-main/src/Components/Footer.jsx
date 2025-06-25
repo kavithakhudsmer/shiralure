@@ -1,12 +1,14 @@
 import React from 'react';
-import './styles/Footer.css';
+import './Footer.css';
 import { FaPaperPlane, FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
-import slLogo from './img/SL.png'; // Replace with the actual path to your SL logo image
+import slLogo from '../assets/images/SL.png'; // Replace with the actual path to your SL logo image
 
-function Footer() {
+function Footer2() {
   return (
     <footer className="footer">
-      {/* <div className="newsletter-top">
+      {/* Newsletter Section (Top) */}
+      <div className="newsletter-top">
+        {/* Left Side */}
         <div className="newsletter-left">
           <div className="newsletter-heading-section">
             <FaEnvelope className="contact-icon" />
@@ -22,11 +24,12 @@ function Footer() {
             </form>
           </div>
         </div>
+        {/* Right Side */}
         <div className="newsletter-right">
           <img src={slLogo} alt="SL Logo" className="logo-image" />
           <span className="logo-text" style={{font:'poppins',fontSize:'25px'}}>ShiraLure</span>
         </div>
-      </div> */}
+      </div>
 
       {/* Other Sections */}
       <div className="footer-container">
@@ -83,4 +86,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Footer2;

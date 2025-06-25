@@ -11,7 +11,7 @@
     align-items: center;
     margin-left: 10px;
     margin-right: 10px;
-      margin-top: -20px;
+      margin-top: 5px;
 }
  
 .sraju-employee-header-left h1 {
@@ -54,6 +54,8 @@
 .sraju-employee-content-box-wrapper {
     background-color: #fff;
     padding: 20px;
+    margin-top:30px;
+   
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -289,24 +291,24 @@
 }
  
 .sraju-employee-edit-btn svg {
-  color: #22C55E;
+  color:#22C55E;
 }
  
 .sraju-employee-delete-btn svg {
-  color: #EF4444;
+  color: #F4415F;
 }
  
 /* Hover effects with circular background */
 .sraju-employee-view-btn:hover {
-  background-color: rgba(90, 102, 241, 0.1);
+  background-color: #eeeffe;
 }
  
 .sraju-employee-edit-btn:hover {
-  background-color: rgba(59, 130, 246, 0.1);
+  background-color: #e8f9ef;
 }
  
 .sraju-employee-delete-btn:hover {
-  background-color: rgba(239, 68, 68, 0.1);
+  background-color:#ffcfd7;
 }
  
 /* Optional: slight scale effect on hover */
@@ -501,13 +503,12 @@
 
  
 .sraju-employee-form-buttons button.sraju-close {
-    background-color: #333;
+    background-color: #000000;
     color: #fff;
 }
  
-.sraju-employee-form-buttons button.sraju-close:hover {
-    background-color: #555;
-}
+
+
  
 /* Delete Confirmation Modal - unchanged */
 .sraju-employee-delete-modal {

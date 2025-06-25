@@ -105,7 +105,7 @@
  
 .sraj-upload-btn {
   margin-top: 6px;
-  background-color: #4f46e5;
+  background-color: #5A66F1;
   color: white;
   padding: 8px 14px;
   cursor: pointer;
@@ -121,10 +121,6 @@
   box-shadow: none;
 }
  
- 
-.sraj-upload-btn:hover { 
-  background-color: #3730a3;
-}
  
  
 .sraj-role{ 
@@ -166,12 +162,12 @@
 }
  
 .sraj-tabs .sraj-active { 
-  background-color: #4f46e5;
+  background-color: #5A66F1;
   color: white;
 }
  
 .sraj-tabs button:hover:not(.sraj-active) { 
-  background-color: #4f46e5;
+  background-color: #5A66F1;
   color: #d3d3d3;
 }
  
@@ -418,7 +414,7 @@
 }
  
 .sraj-add-address-btn {
-  background-color: #4f46e5;
+  background-color: #5A66F1;
   color: white;
   padding: 8px 14px; 
   border: none;
@@ -434,9 +430,6 @@
   box-shadow: none;
 }
  
-.sraj-add-address-btn:hover { 
-  background-color: #3730a3; 
-}
  
 .sraj-info-details-container2 { 
   display: flex;
@@ -778,22 +771,18 @@
 }
  
 .sraj-modal-actions button[type="submit"] {
-  background-color: #4f46e5; 
+  background-color: #5A66F1; 
   color: white;
 }
  
-.sraj-modal-actions button[type="submit"]:hover {
-  background-color: #3730a3; 
-}
+
  
 .sraj-modal-actions button[type="button"] { 
   background-color: #333; 
   color: white;
 }
  
-.sraj-modal-actions button[type="button"]:hover { 
-  background-color: #555; 
-}
+
  
 
 .sraj-modal input[type="text"],
