@@ -26,7 +26,6 @@ import OrderConfirmation from './Components/Checkout/Checkout1';
 import ARorder from './admin/pages/returnOrder/ARorder';
 import Homeadmin from './admin/pages/home/home';
 import Pos from './admin/pages/pos/Pos';
-import PosOrder from './admin/pages/pos/PosOrder';
 import PushNotification from './admin/pages/pushNotification/Pushnotification';
 // import SPage from "./pages/supplier/SPage/SPage";
 import Purchase from "./pages/Purchases/purchase/Purchase";
@@ -42,6 +41,8 @@ import DamageTShirt from './pages/salesreport/DamageTShirt';
 import ProductSection from './pages/ProductSection/ProductSection';
 import ViewCustomerPage from './pages/customerpage/ViewCustomerPage';
 import Employees from './pages/Employees/Employees';
+import PosOrders from './pages/posorder/PosOrders';
+// import Promotion from './pages/promotion/promotion';
 
 
 
@@ -79,7 +80,7 @@ const App = () => {
                 <Route path="" element={<Homeadmin />} />
                 <Route path="ARorder" element={<ARorder />} />
                 <Route path="Pos" element={<Pos />} />
-                <Route path="PosOrder" element={<PosOrder />} />
+                <Route path="PosOrders" element={<PosOrders />} />
                 <Route path="PushNotification" element={<PushNotification />} />
                 {/* <Route path="SPage" element={<SPage />} /> */}
                 <Route path="Purchase" element={<Purchase />} /> 
@@ -96,6 +97,7 @@ const App = () => {
                 <Route path="ProductSection" element={<ProductSection />} />
                 <Route path="view-customer" element={<ViewCustomerPage />} />
                 <Route path="Employees" element={<Employees />} />
+                {/* <Route path="Promotion" element={<Promotion />} /> */}
 
               
                

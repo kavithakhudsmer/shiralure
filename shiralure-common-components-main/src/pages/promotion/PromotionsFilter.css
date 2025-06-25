@@ -1,0 +1,71 @@
+
+
+.muthufilter-promotions-filter {
+  background: white;
+ 
+  border-radius: 8px;
+  padding-bottom: 20px;
+}
+
+.muthufilter-filter-row {
+  display: flex;
+  flex-direction: row;
+  gap: 29px;
+  margin-bottom: 20px;
+}
+
+.muthufilter-filter-group {
+  flex: 1;
+}
+
+.muthufilter-filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+}
+
+.muthufilter-filter-group input,
+.muthufilter-filter-group select {
+  width: 100%;
+  padding: 10px 0px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #F2F6F9; 
+}
+
+.muthufilter-filter-actions {
+  display: flex;
+  justify-content: left;
+  gap: 12px;
+}
+
+.muthufilter-search-btn {
+  padding: 10px 20px;
+  background: rgb(91, 101, 240);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.muthufilter-clear-btn {
+  padding: 10px 20px;
+  background: #000000;
+  color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}

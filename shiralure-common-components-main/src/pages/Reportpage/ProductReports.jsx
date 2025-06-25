@@ -126,7 +126,7 @@ const ProductsReport = () => {
       <div className="rheader-bar">
         <h1 className="rtitle">Products Report</h1>
         <div className="rbreadcrumb">
-          <div className="rlink" onClick={handleGoToDashboard}>Dashboard</div> <div className="arrow">&gt;&gt;</div> <div>Products Report</div>
+          <div className="rlink" onClick={handleGoToDashboard}>Home</div> <div className="arrow">&gt;&gt;</div> <div>Products Report</div>
         </div>
       </div>
  

@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "Exclusive Products",
+    "type": "Small",
+    "status": "Active",
+    "description": "Special discount on exclusive items"
+  },
+  {
+    "id": 2,
+    "name": "Winter Products",
+    "type": "Big",
+    "status": "Active",
+    "description": "Winter season special offers"
+  },
+  {
+    "id": 3,
+    "name": "Summer Sale",
+    "type": "Medium",
+    "status": "Inactive",
+    "description": "Discounts on summer collection"
+  },
+  {
+    "id": 4,
+    "name": "Autumn Collection",
+    "type": "Big",
+    "status": "Active",
+    "description": "New autumn arrivals"
+  },
+  {
+    "id": 5,
+    "name": "Spring Savings",
+    "type": "Small",
+    "status": "Active",
+    "description": "Early bird spring discounts"
+  },
+  {
+    "id": 6,
+    "name": "Holiday Special",
+    "type": "Medium",
+    "status": "Active",
+    "description": "Festive season offers"
+  },
+  {
+    "id": 7,
+    "name": "Clearance Event",
+    "type": "Small",
+    "status": "Inactive",
+    "description": "Last chance items"
+  }
+]
+ 
+ 

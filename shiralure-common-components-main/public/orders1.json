@@ -1,0 +1,24 @@
+[
+  {
+    "orderId": "2112025",
+    "customer": "Walking Customer",
+    "amount": "1921.00",
+    "date": "19-03-2025,12:00 AM",
+    "status": "Confirmed",
+    "paymentStatus": "Paid",
+    "paymentType": "Cash",
+    "orderType": "Pos",
+    "image": "https://placehold.co/100x150/e0e0e0/ffffff?text=Shampoo"
+  },
+  {
+    "orderId": "2112027",
+    "customer": "Walking Customer",
+    "amount": "1661.00",
+    "date": "19-03-2025,11:00 AM",
+    "status": "Confirmed",
+    "paymentStatus": "Paid",
+    "paymentType": "Cash",
+    "orderType": "Pos",
+    "image": "https://placehold.co/100x150/e0e0e0/ffffff?text=Conditioner"
+  }
+]

@@ -1,0 +1,455 @@
+.promotions-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333;
+  background-color: #F2F6F9;
+}
+
+/* Header Styles */
+.header {
+  margin-bottom: 30px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header-left h1 {
+  font-size: 34px;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: -30px;
+}
+
+.breadcrumb {
+  font-size: 24px;
+  color: #333;
+}
+
+.breadcrumb-home {
+  color: #5A66F1;
+  text-decoration: none;
+}
+
+.breadcrumb span {
+  color: #666;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.breadcrumb span:hover {
+  color: #5A66F1;
+}
+
+/* Table Container Styles */
+.table-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  padding-left: 20px; /* Add padding for left and right */
+  padding-right: 20px; /* Add padding for left and right */
+}
+
+/* Table Header Styles */
+.table-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px 0; /* Adjust padding, left/right handled by container */
+  background: white;
+  /* Removed border-bottom here as we are adding a separate separator */
+  border-radius: 8px 8px 0 0;
+}
+
+.table-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* Separator below action icons */
+.table-separator {
+  border-bottom: 1px solid #eee; /* Light gray border */
+  margin-bottom: 20px; /* Space between separator and table */
+}
+
+/* Table Content Box */
+.table-content-box {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 20px; /* Add margin below the table box */
+  overflow: hidden;
+}
+
+/* Table Styles */
+.promotions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.promotions-table th {
+  text-align: center;
+  padding: 15px 20px;
+  background: rgb(240, 240, 240);
+  font-weight: bold;
+  color: black;
+  border-bottom: 1px solid #eee;
+}
+
+.promotions-table td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.promotions-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status Styles */
+.status {
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.status.active {
+  color: #24f16f;
+  background-color: white;
+  font-weight: 800;
+}
+
+.status.inactive {
+  color: #eb2647;
+  background-color: white;
+  font-weight: 800;
+}
+
+/* Action Buttons in Table */
+.action-buttons-cell {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.action-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+.action-btn.view {
+  color: #5A66F1;
+}
+
+.action-btn.view:hover {
+  background: #eeeffe;
+  border-radius: 100%;
+}
+
+.action-btn.edit {
+  color: #5DD488;
+}
+
+.action-btn.edit:hover {
+  background: #e8f9ef;
+  border-radius: 100%;
+}
+
+.action-btn.delete {
+  color: #F4415F;
+}
+
+.action-btn.delete:hover {
+  background: #f4415f28;
+  border-radius: 100%;
+}
+
+/* Pagination */
+.table-footer-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0; /* Adjust padding, left/right handled by container */
+  background: white;
+  border-radius: 0 0 8px 8px;
+  margin-top: 0; /* Removed margin-top as padding handles spacing */
+}
+
+.pagination-info {
+  color: #666;
+  font-size: 14px;
+}
+
+.pagination-controls {
+  display: flex;
+  border: 1px solid #ddd;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.pagination-btn {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid #ddd;
+  background: white;
+  color: #5A66F1;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-btn:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pagination-btn.active {
+  background: #eeeffe;
+  color: #5A66F1;
+  font-weight: bold;
+}
+
+.pagination-ellipsis {
+  padding: 0 8px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+/* Action Buttons */
+.items-per-page {
+  position: relative;
+  display: inline-block;
+}
+
+.items-per-page-selector {
+  height: 35px;
+  width: 58px;
+  border-radius: 8px;
+  background: #5A66F1;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-size: 14px;
+  gap: 8px;
+  white-space: nowrap;
+  min-width: 60px;
+}
+
+.items-per-page-dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 100%;
+  min-width: 60px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.items-per-page-option {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+}
+
+.items-per-page-option.active {
+  background: #5A66F1;
+  color: white;
+}
+.icon-btn {
+  width: 42.33px;
+  height: 34.33px;
+  border-radius: 8px;
+  background: #5A66F1;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.icon-btn.add-btn {
+  background: #5A66F1;
+  color: white;
+}
+
+/* Export Dropdown */
+.export-container {
+  position: relative;
+}
+
+
+.export-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #5A66F1;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  width: 120px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.export-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+}
+
+.export-dropdown button:hover {
+  background-color: white;
+  color: #5A66F1;
+}
+
+.export-dropdown button:hover svg {
+  color: #5A66F1;
+}
+
+/* Filter container and modal positioning */
+.filter-container {
+  position: static;
+}
+
+.promotions-filter-modal {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 20px; /* Adjust right position to align with table container padding */
+  z-index: 100;
+  background:#F2F6F9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+/* Styles for filter input boxes (assuming they are direct inputs within the filter modal) */
+.promotions-filter-modal input[type="text"],
+.promotions-filter-modal select {
+  background-color: #D9D9D9;
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't add to the width */
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .header-right {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+    padding: 15px 0; /* Keep padding consistent for mobile */
+  }
+
+  .table-actions {
+    width: auto;
+    margin-left: 0;
+  }
+
+  .table-container {
+    padding-left: 10px; /* Adjust padding for smaller screens */
+    padding-right: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .table-content-box {
+    margin: 0; /* Remove horizontal margin as container has padding */
+  }
+
+  .promotions-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .table-footer-pagination {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 15px 0; /* Adjust padding for smaller screens */
+  }
+
+  .pagination-controls {
+    flex-wrap: wrap;
+    border-radius: 4px;
+  }
+
+  .pagination-info {
+    margin-bottom: 10px;
+  }
+
+  .items-per-page-selector {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
+  .promotions-filter-modal {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    top: calc(100% + 5px);
+  }
+
+  .filter-modal-wrapper {
+    padding: 0 10px; /* Adjust padding for smaller screens */
+  }
+}
