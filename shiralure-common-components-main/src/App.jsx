@@ -43,7 +43,6 @@ import ViewCustomerPage from './pages/customerpage/ViewCustomerPage';
 import Employees from './pages/Employees/Employees';
 import PosOrder from './pages/posorder/PosOrders';
 // import Promotion from './pages/promotion/promotion';
-
 import ReturnPage from './pages/ReturnAndRefund/ReturnPage';
 import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails';
 
