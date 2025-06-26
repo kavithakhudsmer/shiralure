@@ -26,7 +26,6 @@ import OrderConfirmation from './Components/Checkout/Checkout1';
 import ARorder from './admin/pages/returnOrder/ARorder';
 import Homeadmin from './admin/pages/home/home';
 import Pos from './admin/pages/pos/Pos';
-import PushNotification from './admin/pages/pushNotification/Pushnotification';
 // import SPage from "./pages/supplier/SPage/SPage";
 import Purchase from "./pages/Purchases/purchase/Purchase";
 import OrderTable from './pages/OnlineOrders/OrderTable';
@@ -45,7 +44,7 @@ import PosOrder from './pages/posorder/PosOrders';
 // import Promotion from './pages/promotion/promotion';
 import ReturnPage from './pages/ReturnAndRefund/ReturnPage';
 import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails';
-
+import PushNotifications from './pages/PushNotification/PushNotifications';
 
 
 
@@ -82,11 +81,11 @@ const App = () => {
                 <Route path="ARorder" element={<ARorder />} />
                 <Route path="Pos" element={<Pos />} />
                 <Route path="PosOrder" element={<PosOrder />} />
-                <Route path="PushNotification" element={<PushNotification />} />
+                <Route path="PushNotifications" element={<PushNotifications />} />
                 {/* <Route path="SPage" element={<SPage />} /> */}
                 <Route path="Purchase" element={<Purchase />} /> 
                 <Route path="OnlineOrders" element={<OrderTable />} /> 
-                {/* <Route path="Damage" element={<Damage />} /> */}
+          
                 <Route path="Subscriber" element={<Subscriber />} />
                 <Route path="ProductReports" element={<ProductReports />} />
                 <Route path="CustomerTable" element={<CustomerTable />} />

@@ -9,7 +9,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #f6f9fc;
+  background-color: #f2f6f9;
   z-index: 1000;
   padding: 2rem;
   overflow-y: auto;
@@ -31,29 +31,6 @@ border-radius: 4px;
   font-size: 16px;
   color: #6c757d;
 }
-
-
-.kvclose-btn {
-  position: absolute;
-  top: rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  color: #333;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.kvclose-btn:hover {
-  transform: scale(1.2);
-  color: red;
-}
-.kvclose-btn:focus {
-  outline: none;
-  box-shadow: none;
-}
-
 
 .kvprofile-header {
   display: flex;
@@ -284,6 +261,58 @@ border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 6px;
 }
+/* Apply fixed widths to specific columns */
+.kvaddress-table th:nth-child(1),
+.kvaddress-table td:nth-child(1) {
+  width: 10%; /* Name */
+}
+
+.kvaddress-table th:nth-child(2),
+.kvaddress-table td:nth-child(2) {
+  width: 10%; /* Email */
+}
+
+.kvaddress-table th:nth-child(3),
+.kvaddress-table td:nth-child(3) {
+  width: 10%; /* Phone */
+}
+
+.kvaddress-table th:nth-child(4),
+.kvaddress-table td:nth-child(4) {
+  width: 10%; /* Street */
+}
+
+.kvaddress-table th:nth-child(5),
+.kvaddress-table td:nth-child(5) {
+  width: 8%; /* Country */
+}
+
+.kvaddress-table th:nth-child(6),
+.kvaddress-table td:nth-child(6) {
+  width: 8%; /* State */
+}
+
+.kvaddress-table th:nth-child(7),
+.kvaddress-table td:nth-child(7) {
+  width: 6%; /* City */
+}
+
+.kvaddress-table th:nth-child(8),
+.kvaddress-table td:nth-child(8) {
+  width: 8%; /* Zip */
+}
+
+.kvaddress-table th:nth-child(9),
+.kvaddress-table td:nth-child(9) {
+  width: 7%; /* Actions */
+  text-align: center;
+}
+
+/* print */
+@media print {
+  .no-print { display: none !important; }
+}
+
 /* Responsive tweaks for mobile */
 @media (max-width: 768px) {
   .kvaddress-table th,
@@ -506,5 +535,61 @@ select {
 .kvupload-photo .form-buttons .close {
   background-color: #6c757d;
   color: white;
+}
+.kvaddress-detail-view p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.kvmodal {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.kvmodal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.kvmodal h3 {
+  margin-top: 0;
+}
+
+.kvclose-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  outline: none;
+}
+
+.kvclose-btn:hover {
+  transform: scale(1.2);
+  color: #5A66F1;
+}
+
+.kvclose-btn:focus,
+.kvclose-btn:active {
+  outline: none;
+  box-shadow: none;
+  background: none;
 }
 

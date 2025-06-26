@@ -7,10 +7,10 @@ import { FaCheck, FaSearch, FaTimes } from 'react-icons/fa';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import { FaShareFromSquare } from 'react-icons/fa6';
 import { BiAddToQueue } from 'react-icons/bi';
-import { HiOutlineAdjustments } from 'react-icons/hi';
 import { BsFiletypeXls } from 'react-icons/bs';
 import AdminProfile from "./Adminis";
 import { FiEye,FiEdit2,FiTrash2 } from "react-icons/fi";
+import { PiSliders } from "react-icons/pi";
 function Administrators() {
   const [admins, setAdmins] = useState([]);
    useEffect(() => {
@@ -232,7 +232,7 @@ const paginatedAdmins = filteredAdmins.slice(startIndex, endIndex);
         <h1>Administrators</h1>
         <div className="kvbreadcrumb">
           <h2>
-            <span className="kvactive">Home</span> &gt;&gt; <span>Administrators</span>
+            <span className="kvactive">Dashboard</span> &gt;&gt; <span>Administrators</span>
 
           </h2>
         </div>
@@ -265,7 +265,7 @@ const paginatedAdmins = filteredAdmins.slice(startIndex, endIndex);
             )}
           </div>
 
-          <button onClick={handleFilterToggle}><HiOutlineAdjustments /></button>
+          <button onClick={handleFilterToggle}><PiSliders /></button>
 
           <div className="kvshare-dropdown-wrapper" ref={shareRef}>
             <button onClick={handleShareToggle}><FaShareFromSquare /></button>
@@ -313,7 +313,7 @@ const paginatedAdmins = filteredAdmins.slice(startIndex, endIndex);
           </div>
         )}
          <div className="kvtable-wrapper">
-        <div className="print-kvtable-area">
+        <div className="print-table-area">
           <table>
             <thead>
               <tr>
