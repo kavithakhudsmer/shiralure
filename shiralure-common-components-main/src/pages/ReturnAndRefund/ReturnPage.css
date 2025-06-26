@@ -32,6 +32,9 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin:10px;
+  margin-left:25px;
+  margin-right: 25px;
   margin-bottom: 15px;
   gap: 5px;
 }
