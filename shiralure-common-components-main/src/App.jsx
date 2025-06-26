@@ -41,9 +41,11 @@ import DamageTShirt from './pages/salesreport/DamageTShirt';
 import ProductSection from './pages/ProductSection/ProductSection';
 import ViewCustomerPage from './pages/customerpage/ViewCustomerPage';
 import Employees from './pages/Employees/Employees';
-import PosOrders from './pages/posorder/PosOrders';
+import PosOrder from './pages/posorder/PosOrders';
 // import Promotion from './pages/promotion/promotion';
 
+import ReturnPage from './pages/Return/ReturnPage';
+import ReturnDetails from './pages/Return/ReturnDetails';
 
 
 
@@ -80,7 +82,7 @@ const App = () => {
                 <Route path="" element={<Homeadmin />} />
                 <Route path="ARorder" element={<ARorder />} />
                 <Route path="Pos" element={<Pos />} />
-                <Route path="PosOrders" element={<PosOrders />} />
+                <Route path="PosOrder" element={<PosOrder />} />
                 <Route path="PushNotification" element={<PushNotification />} />
                 {/* <Route path="SPage" element={<SPage />} /> */}
                 <Route path="Purchase" element={<Purchase />} /> 
@@ -98,6 +100,10 @@ const App = () => {
                 <Route path="view-customer" element={<ViewCustomerPage />} />
                 <Route path="Employees" element={<Employees />} />
                 {/* <Route path="Promotion" element={<Promotion />} /> */}
+
+                <Route path="ReturnPage" element={<ReturnPage />} />
+                <Route path="/returns/:orderId" element={<ReturnDetails />} />
+              
 
               
                

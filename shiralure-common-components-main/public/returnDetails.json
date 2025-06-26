@@ -1,0 +1,158 @@
+[
+  {
+    "orderId": "ORD-001",
+    "timestamp": "2025-06-20 10:30 AM",
+    "customer": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "phone": "1234567890"
+    },
+    "orderInfo": {
+      "items": "Bluetooth Headphones",
+      "quantity": 1
+    },
+    "returnDetails": {
+      "amount": "49.99",
+      "reason": "Product damaged"
+    },
+    "refundDetails": {
+      "purchaseDate": "2025-06-10",
+      "requestDate": "2025-06-15",
+      "processedDate": "2025-06-18",
+      "refundedAmount": "49.99",
+      "refundedTo": "Credit Card",
+      "transactionId": "TXN123456",
+      "notes": "Customer submitted photo evidence"
+    }
+  },
+  {
+    "orderId": "ORD-002",
+    "timestamp": "03:45 PM, 14-03-2025",
+    "customer": {
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "phone": "9876543210"
+    },
+    "orderInfo": {
+      "items": "Wireless Mouse",
+      "quantity": 1
+    },
+    "returnDetails": {
+      "amount": "120.00",
+      "reason": "Unwanted item"
+    },
+    "refundDetails": {
+      "purchaseDate": "2025-03-10",
+      "requestDate": "2025-03-13",
+      "processedDate": "2025-03-14",
+      "refundedAmount": "120.00",
+      "refundedTo": "UPI",
+      "transactionId": "TXN200002",
+      "notes": "Refunded in full"
+    }
+  },
+  {
+    "orderId": "ORD-003",
+    "timestamp": "10:30 AM, 13-03-2025",
+    "customer": {
+      "name": "Michael Brown",
+      "email": "michael.brown@example.com",
+      "phone": "9871234567"
+    },
+    "orderInfo": {
+      "items": "Gaming Keyboard",
+      "quantity": 1
+    },
+    "returnDetails": {
+      "amount": "75.00",
+      "reason": "Not compatible"
+    },
+    "refundDetails": {
+      "purchaseDate": "2025-03-08",
+      "requestDate": "2025-03-12",
+      "processedDate": "",
+      "refundedAmount": "",
+      "refundedTo": "",
+      "transactionId": "",
+      "notes": "Awaiting approval"
+    }
+  },
+  {
+    "orderId": "ORD-004",
+    "timestamp": "02:15 PM, 12-03-2025",
+    "customer": {
+      "name": "Emily Davis",
+      "email": "emily.davis@example.com",
+      "phone": "9123456780"
+    },
+    "orderInfo": {
+      "items": "USB Charger",
+      "quantity": 2
+    },
+    "returnDetails": {
+      "amount": "30.00",
+      "reason": "Wrong item sent"
+    },
+    "refundDetails": {
+      "purchaseDate": "2025-03-05",
+      "requestDate": "2025-03-10",
+      "processedDate": "2025-03-11",
+      "refundedAmount": "0.00",
+      "refundedTo": "",
+      "transactionId": "",
+      "notes": "Return rejected due to mismatch"
+    }
+  },
+  {
+    "orderId": "ORD-005",
+    "timestamp": "12:50 PM, 11-03-2025",
+    "customer": {
+      "name": "Robert Johnson",
+      "email": "robert.j@example.com",
+      "phone": "8899776655"
+    },
+    "orderInfo": {
+      "items": "Smartwatch",
+      "quantity": 1
+    },
+    "returnDetails": {
+      "amount": "90.00",
+      "reason": "Battery issue"
+    },
+    "refundDetails": {
+      "purchaseDate": "2025-03-04",
+      "requestDate": "2025-03-08",
+      "processedDate": "2025-03-10",
+      "refundedAmount": "90.00",
+      "refundedTo": "Wallet",
+      "transactionId": "TXN200005",
+      "notes": "Full refund approved"
+    }
+  },
+  {
+    "orderId": "ORD-006",
+    "timestamp": "09:00 AM, 10-03-2025",
+    "customer": {
+      "name": "Sarah Wilson",
+      "email": "sarah.w@example.com",
+      "phone": "7001234567"
+    },
+    "orderInfo": {
+      "items": "Portable Speaker",
+      "quantity": 1
+    },
+    "returnDetails": {
+      "amount": "45.00",
+      "reason": "Sound not clear"
+    },
+    "refundDetails": {
+      "purchaseDate": "2025-03-01",
+      "requestDate": "2025-03-07",
+      "processedDate": "2025-03-09",
+      "refundedAmount": "45.00",
+      "refundedTo": "Net Banking",
+      "transactionId": "TXN200006",
+      "notes": "Refunded successfully"
+    }
+  }
+]

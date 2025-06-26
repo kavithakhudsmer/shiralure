@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+.vkreturn-wrapper {
+  padding: 20px;
+  background: #ffffff;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.vkreturn-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+}
+.vkreturn-header h2 {
+  margin: 2px;
+  padding: 0px 20px;
+  gap: 10px;
+}
+.vkheader-card {
+  margin-bottom: 24px; /* or 30px for more space */
+}
+.vkrefund-header-card {
+  margin-top: 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.vkbadge {
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 12px;
+  color: white;
+}
+.returned {
+  background-color: #00b894;
+}
+.refunded {
+  background-color: #ffffff;
+}
+
+.vktimestamp {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.vkgrid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.vkcard {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+}
+
+.vkcard h4 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.kvcard.reminder {
+  border-left: 4px solid #e17055;
+}
+.kvcard h4 {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.vkicon-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #5A66F1;
+  font-size: 18px;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+.vkcard h4 .vkicon {
+  margin-right: 8px;
+  font-size: 18px;
+  color: #5A66F1; /* Or any color matching your theme */
+}
+.vkcard h4 .vkicon2 {
+  margin-right: 8px;
+  font-size: 18px;
+  color: #e9e394; /* Or any color matching your theme */
+}
+.vkcard h4 .vkicon3 {
+  margin-right: 8px;
+  font-size: 18px;
+  color: #b92d2d; /* Or any color matching your theme */
+}
+
+.vkfooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.vkfooter a {
+  color: #0984e3;
+  text-decoration: none;
+}
+
+.close-btn {
+  padding: 8px 16px;
+  background: #2d3436;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

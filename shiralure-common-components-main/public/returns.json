@@ -1,0 +1,10 @@
+{
+  "orders": [
+    { "id": "ORD-001", "customer": "John Doe", "amount": "$50.00", "date": "11:20 AM, 15-03-2025", "status": "Refunded" },
+    { "id": "ORD-002", "customer": "Jane Smith", "amount": "$120.00", "date": "03:45 PM, 14-03-2025", "status": "Refunded" },
+    { "id": "ORD-003", "customer": "Michael Brown", "amount": "$75.00", "date": "10:30 AM, 13-03-2025", "status": "Pending" },
+    { "id": "ORD-004", "customer": "Emily Davis", "amount": "$30.00", "date": "02:15 PM, 12-03-2025", "status": "Rejected" },
+    { "id": "ORD-005", "customer": "Robert Johnson", "amount": "$90.00", "date": "12:50 PM, 11-03-2025", "status": "Refunded" },
+    { "id": "ORD-006", "customer": "Sarah Wilson", "amount": "$45.00", "date": "09:00 AM, 10-03-2025", "status": "Refunded" }
+  ]
+}

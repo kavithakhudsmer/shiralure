@@ -81,6 +81,7 @@
   align-items: center;
   gap: 8px;
   width: 100%;
+  
 }
 
 .newsletter-input {
@@ -90,6 +91,7 @@
   background-color: #fff;
   color: #000;
   font-size: 16px;
+  height: 38px;
   font-family: 'Poppins', sans-serif;
   flex: 1;
   min-width: 0;
