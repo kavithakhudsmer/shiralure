@@ -188,18 +188,18 @@
 
 .pofilter-label {
   font-size: 16px;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .pofilter-input,
 .pofilter-input select {
   padding: 0px;
   background-color:rgba(114, 105, 168, 0.059);
-  border: 1px solid #d1d5db;
+  border: 1px solid #bec1c6;
   border-radius: 4px;
   font-size: 14px;
   width: 250px;
-  height: 32px;
+  height: 42px;
 }
 /* 🔽 Forces buttons to break into new line */
 .pobutton-group {

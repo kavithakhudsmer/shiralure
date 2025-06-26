@@ -41,10 +41,11 @@ import ProductSection from './pages/ProductSection/ProductSection';
 import ViewCustomerPage from './pages/customerpage/ViewCustomerPage';
 import Employees from './pages/Employees/Employees';
 import PosOrder from './pages/posorder/PosOrders';
-// import Promotion from './pages/promotion/promotion';
+// import Promotion from './pages/pomotionpage/promotion';
 import ReturnPage from './pages/ReturnAndRefund/ReturnPage';
 import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails';
 import PushNotifications from './pages/PushNotification/PushNotifications';
+
 
 
 
@@ -97,7 +98,7 @@ const App = () => {
                 <Route path="ProductSection" element={<ProductSection />} />
                 <Route path="view-customer" element={<ViewCustomerPage />} />
                 <Route path="Employees" element={<Employees />} />
-                {/* <Route path="Promotion" element={<Promotion />} /> */}
+                {/* <Route path="promotion" element={<Promotion />} /> */}
 
                 <Route path="ReturnPage" element={<ReturnPage />} />
                 <Route path="/returns/:orderId" element={<ReturnDetails />} />
