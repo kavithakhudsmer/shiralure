@@ -35,7 +35,7 @@ function PushNotifications() {
   const [details, setDetails] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
-  const [isSecondPageStyle, setIsSecondPageStyle] = useState(false); // Toggle 2nd page style
+  const [isSecondPageStyle, setIsSecondPageStyle] = useState(false);
 
   const shareButtonRef = useRef(null);
   const shareDropdownRef = useRef(null);
@@ -118,7 +118,7 @@ function PushNotifications() {
     setShowViewPage(true);
   };
   const toggleUploadModal = () => setShowUploadModal(!showUploadModal);
-  const toggleSecondPageStyle = () => setIsSecondPageStyle(!isSecondPageStyle); // Switch to 2nd page style
+  const toggleSecondPageStyle = () => setIsSecondPageStyle(!isSecondPageStyle);
 
   const handleSearch = () => {
     const filtered = allSubscribers.filter((sub) =>
@@ -296,23 +296,22 @@ function PushNotifications() {
   }
 
   return (
-    
-    <div className={`posubscriber ${isSecondPageStyle ? "posecond-page" : ""}`}>
-      <div className="poheader">
-        <div className="poheader-content">
+    <div className={`dvspSubscriber ${isSecondPageStyle ? "dvspSecond-page" : ""}`}>
+      <div className="dvspHeader">
+        <div className="dvspHeader-content">
           <h1>Push Notifications</h1>
-          <div className="pobreadcrumb">
-            <span className="pohome">Home</span>&gt;&gt;Push Notifications
+          <div className="dvspBreadcrumb">
+            <span className="dvspHome">Home</span>&gt;&gt;Push Notifications
           </div>
         </div>
       </div>
 
-      <div className="pomain-container">
-        <div className="poaction-bar">
-          <div className="podropdown-container">
+      <div className="dvspMain-container">
+        <div className="dvspAction-bar">
+          <div className="dvspDropdown-container">
             <button
               ref={recordButtonRef}
-              className="porecord-button"
+              className="dvspRecord-button"
               onClick={() => setShowPageDropdown(!showPageDropdown)}
               title="Records"
             >
@@ -320,11 +319,11 @@ function PushNotifications() {
               <IoMdArrowDropdown size={17} />
             </button>
             {showPageDropdown && (
-              <div ref={recordDropdownRef} className="podropdown-menu">
+              <div ref={recordDropdownRef} className="dvspDropdown-menu">
                 {[5, 10, 15, 20].map((num) => (
                   <div
                     key={num}
-                    className="podropdown-item"
+                    className="dvspDropdown-item"
                     onClick={() => {
                       setRowsPerPage(num);
                       setShowPageDropdown(false);
@@ -338,24 +337,24 @@ function PushNotifications() {
             )}
           </div>
           <button
-            className="poaction-button pofilter-button"
+            className="dvspAction-button dvspFilter-button"
             onClick={toggleFilters}
             title="Filter"
           >
             <PiSliders size={17} />
           </button>
-          <div className="podropdown-container">
+          <div className="dvspDropdown-container">
             <button
               ref={shareButtonRef}
-              className="poaction-button poshare-button"
+              className="dvspAction-button dvspShare-button"
               onClick={toggleShareDropdown}
               title="Share"
             >
               <FaShareFromSquare size={17} />
             </button>
             {showShareDropdown && (
-              <div ref={shareDropdownRef} className="podropdown-menu">
-                <div className="podropdown-item" onClick={() => fileInputRef.current.click()}>
+              <div ref={shareDropdownRef} className="dvspDropdown-menu">
+                <div className="dvspDropdown-item" onClick={() => fileInputRef.current.click()}>
                   <FiUpload /> Upload File
                 </div>
               </div>
@@ -369,23 +368,23 @@ function PushNotifications() {
             />
           </div>
           <button
-            className="poaction-button poadd-button"
-            onClick={() => setShowModal(true)}// Triggers 2nd page style
-            title="Switch to 1nd Page PushNotification Style"
+            className="dvspAction-button dvspAdd-button"
+            onClick={() => setShowModal(true)}
+            title="Switch to 2nd Page Style"
           >
             <BiAddToQueue size={17} />
           </button>
           {showModal && (
-        <div className="pomodal-overlay">
-          <div className="modal">
-            <div className="modal-header">
+        <div className="dvspModal-overlay">
+          <div className="dvspModal">
+            <div className="dvspModal-header">
               <h2>Push notifactions</h2>
-              <span className="modal-close" onClick={() => setShowModal(false)}>&times;</span>
+              <span className="dvspModal-close" onClick={() => setShowModal(false)}>&times;</span>
             </div>
 
-            <div className="modal-body">
-              <div className="input-row">
-                <div className="input-group half">
+            <div className="dvspModal-body">
+              <div className="dvspInput-row">
+                <div className="dvspInput-group dvspHalf">
                 <label>Role</label>
                 <input
                   type="text"
@@ -394,7 +393,7 @@ function PushNotifications() {
                   onChange={handleInputChange}
                 />
                 </div>
-                <div className="input-group half">
+                <div className="dvspInput-group dvspHalf">
                 <label>User</label>
                 <input
                   type="text"
@@ -404,9 +403,9 @@ function PushNotifications() {
                 />
                 </div>
               </div>
-              <div className="input-group">
+              <div className="dvspInput-group">
                 <label>
-                  Title<span className="required">*</span>
+                  Title<span className="dvspRequired">*</span>
                 </label>
                 <input
                   type="text"
@@ -415,7 +414,7 @@ function PushNotifications() {
                   onChange={handleInputChange}
                 />
               </div>
-              <div className="input-group">
+              <div className="dvspInput-group">
                 <label>Image</label>
                 <input
                   type="file"
@@ -423,9 +422,9 @@ function PushNotifications() {
                   onChange={handleInputChange}
                 />
               </div>
-              <div className="input-group">
+              <div className="dvspInput-group">
                 <label>
-                  Description<span className="required">*</span>
+                  Description<span className="dvspRequired">*</span>
                 </label>
                 <textarea
                   name="description"
@@ -435,38 +434,36 @@ function PushNotifications() {
               </div>
             </div>
 
-            <div className="modal-footer">
-              <button className="posave-button" onClick={handleSave}>
+            <div className="dvspModal-footer">
+              <button className="dvspSave-button" onClick={handleSave}>
                 <TiTick size={15}/> SAVE
               </button>
-              <button className="poclear-button1" onClick={handleClear1}>
+              <button className="dvspClear-button1" onClick={handleClear1}>
                <RxCross2 size={15} /> CLEAR
               </button>
             </div>
           </div>
         </div>
       )}
-
-    
         </div>
 
-        <hr className="podivider" />
+        <hr className="dvspDivider" />
 
         {showFilters && (
-          <div className="pofilter-container">
-            <div className="pofilter-row">
-              <div className="pofilter-group">
-                <label className="pofilter-label">Title</label>
+          <div className="dvspFilter-container">
+            <div className="dvspFilter-row">
+              <div className="dvspFilter-group">
+                <label className="dvspFilter-label">Title</label>
                 <input
-                  className="pofilter-input"
+                  className="dvspFilter-input"
                   value={titleFilter}
                   onChange={(e) => setTitleFilter(e.target.value)}
                 />
               </div>
-              <div className="pofilter-group">
-                <label className="pofilter-label">Role</label>
+              <div className="dvspFilter-group">
+                <label className="dvspFilter-label">Role</label>
                 <select
-                  className="pofilter-input"
+                  className="dvspFilter-input"
                   value={roleFilter}
                   onChange={(e) => {
                     setRoleFilter(e.target.value);
@@ -479,10 +476,10 @@ function PushNotifications() {
                   <option value="Manager">Manager</option>
                 </select>
               </div>
-              <div className="pofilter-group">
-                <label className="pofilter-label">User</label>
+              <div className="dvspFilter-group">
+                <label className="dvspFilter-label">User</label>
                 <select
-                  className="pofilter-input"
+                  className="dvspFilter-input"
                   value={userFilter}
                   onChange={(e) => {
                     setUserFilter(e.target.value);
@@ -496,11 +493,11 @@ function PushNotifications() {
                 </select>
               </div>
             </div>
-            <div className="pobutton-group">
-              <button className="posearch-button" onClick={handleSearch}>
+            <div className="dvspButton-group">
+              <button className="dvspSearch-button" onClick={handleSearch}>
                 <IoMdSearch /> Search
               </button>
-              <button className="poclear-button" onClick={handleClear}>
+              <button className="dvspClear-button" onClick={handleClear}>
                 <MdClear /> Clear
               </button>
             </div>
@@ -508,16 +505,16 @@ function PushNotifications() {
         )}
 
         {isLoading ? (
-          <div className="poloading">Loading Push Notifications...</div>
+          <div className="dvspLoading">Loading Push Notifications...</div>
         ) : (
           <div id="printable-table">
-            <table className="posubscriber-table">
+            <table className="dvspSubscriber-table">
               <thead>
                 <tr>
                   <th style={{ width: "25%" }}>Title</th>
                   <th style={{ width: "25%" }}>Role</th>
                   <th style={{ width: "25%" }}>User</th>
-                  <th className="poaction-column" style={{ width: "25%" }}>Action</th>
+                  <th className="dvspAction-column" style={{ width: "25%" }}>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -527,14 +524,14 @@ function PushNotifications() {
                       <td>{sub.title}</td>
                       <td>{sub.role}</td>
                       <td>{sub.user}</td>
-                      <td className="poaction-column">
-                        <div className="poaction-icons">
+                      <td className="dvspAction-column">
+                        <div className="dvspAction-icons">
                           <FiEye
-                            className="eye-icon"
+                            className="dvspEye-icon"
                             onClick={() => toggleViewPage(sub)}
                           />
                           <FiTrash2
-                            className="trash-icon"
+                            className="dvspTrash-icon"
                             onClick={() => confirmDelete(index)}
                           />
                         </div>
@@ -551,14 +548,14 @@ function PushNotifications() {
           </div>
         )}
 
-        <div className="popagination">
-          <div className="popagination-info">
+        <div className="dvspPagination">
+          <div className="dvspPagination-info">
             Showing {Math.min((currentPage - 1) * rowsPerPage + 1, filteredList.length)} to{" "}
             {Math.min(currentPage * rowsPerPage, filteredList.length)} of {filteredList.length} entries
           </div>
-          <div className="popagination-buttons">
+          <div className="dvspPagination-buttons">
             <button
-              className="popagination-button"
+              className="dvspPagination-button"
               onClick={goToFirstPage}
               disabled={currentPage === 1}
             >
@@ -567,14 +564,14 @@ function PushNotifications() {
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}
-                className={`popagination-button ${page === currentPage ? "poactive" : ""}`}
+                className={`dvspPagination-button ${page === currentPage ? "dvspActive" : ""}`}
                 onClick={() => goToPage(page)}
               >
                 {page}
               </button>
             ))}
             <button
-              className="popagination-button"
+              className="dvspPagination-button"
               onClick={goToLastPage}
               disabled={currentPage === totalPages}
             >
@@ -585,27 +582,27 @@ function PushNotifications() {
       </div>
 
       {showMailPage && (
-        <div className="pomodal-overlay">
-          <div className="pomodal">
-            <div className="pomodal-header">
+        <div className="dvspModal-overlay">
+          <div className="dvspModal">
+            <div className="dvspModal-header">
               <h2>Push Notifications</h2>
-              <span className="pomodal-close" onClick={toggleMailPage}>
+              <span className="dvspModal-close" onClick={toggleMailPage}>
                 <FiX />
               </span>
             </div>
-            <label className="pomodal-label">
-              Subject <span className="porequired">*</span>
+            <label className="dvspModal-label">
+              Subject <span className="dvspRequired">*</span>
             </label>
             <input
-              className="pomodal-input"
+              className="dvspModal-input"
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
             />
-            <div className="pomodal-buttons">
-              <button className="posave-button" onClick={saveMessage}>
+            <div className="dvspModal-buttons">
+              <button className="dvspSave-button" onClick={saveMessage}>
                 <FiCheck /> Save
               </button>
-              <button className="poclear-button1" onClick={clearMailForm}>
+              <button className="dvspClear-button1" onClick={clearMailForm}>
                 <FiX /> Clear
               </button>
             </div>
@@ -614,18 +611,18 @@ function PushNotifications() {
       )}
 
       {showDeleteConfirm && (
-        <div className="pomodal-overlay">
-          <div className="pomodal podelete-modal">
-            <div className="pomodal-icon">
+        <div className="dvspModal-overlay">
+          <div className="dvspModal dvspDelete-modal">
+            <div className="dvspModal-icon">
               <CiCircleAlert size={60} color="gold" />
             </div>
             <h2>Are you sure?</h2>
             <p>You will not be able to recover the deleted record.</p>
-            <div className="pomodal-buttons1">
-              <button className="podelete-button" onClick={deleteSubscriber}>
+            <div className="dvspModal-buttons1">
+              <button className="dvspDelete-button" onClick={deleteSubscriber}>
                 Yes, Delete it!
               </button>
-              <button className="pocancel-button" onClick={cancelDelete}>
+              <button className="dvspCancel-button" onClick={cancelDelete}>
                 No, Cancel!
               </button>
             </div>
@@ -634,15 +631,15 @@ function PushNotifications() {
       )}
 
       {showViewPage && selectedSubscriber && (
-        <div className="pomodal-overlay">
-          <div className="poview-modal">
-            <div className="poview-header">
+        <div className="dvspModal-overlay">
+          <div className="dvspView-modal">
+            <div className="dvspView-header">
               <h2>View Details</h2>
-              <span className="poview-close" onClick={() => setShowViewPage(false)}>
+              <span className="dvspView-close" onClick={() => setShowViewPage(false)}>
                 <FiX />
               </span>
             </div>
-            <div className="poview-content">
+            <div className="dvspView-content">
               <p><strong>Title:</strong> {selectedSubscriber.title}</p>
               <p><strong>Role:</strong> {selectedSubscriber.role}</p>
               <p><strong>User:</strong> {selectedSubscriber.user}</p>
@@ -652,16 +649,16 @@ function PushNotifications() {
       )}
 
       {showUploadModal && (
-        <div className="pomodal-overlay">
-          <div className="pomodal poupload-modal">
-            <div className="pomodal-header">
+        <div className="dvspModal-overlay">
+          <div className="dvspModal dvspUpload-modal">
+            <div className="dvspModal-header">
               <h2>Upload Content</h2>
-              <span className="pomodal-close" onClick={toggleUploadModal}>
+              <span className="dvspModal-close" onClick={toggleUploadModal}>
                 <FiX />
               </span>
             </div>
-            <div className="poupload-options">
-              <label className="pomodal-label">Upload Image</label>
+            <div className="dvspUpload-options">
+              <label className="dvspModal-label">Upload Image</label>
               <input
                 type="file"
                 ref={fileInputRef}
@@ -669,7 +666,7 @@ function PushNotifications() {
                 onChange={handleFileChange}
                 accept=".jpg,.jpeg,.png,.gif"
               />
-              <label className="pomodal-label">Upload File (CSV, JSON, XLSX)</label>
+              <label className="dvspModal-label">Upload File (CSV, JSON, XLSX)</label>
               <input
                 type="file"
                 ref={fileInputRef}
@@ -678,8 +675,8 @@ function PushNotifications() {
                 accept=".csv,.json,.xlsx"
               />
             </div>
-            <div className="pomodal-buttons">
-              <button className="posave-button" onClick={toggleUploadModal}>
+            <div className="dvspModal-buttons">
+              <button className="dvspSave-button" onClick={toggleUploadModal}>
                 <FiCheck /> Close
               </button>
             </div>

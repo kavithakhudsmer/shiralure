@@ -1,4 +1,4 @@
-.posubscriber {
+.dvspSubscriber {
   background-color: #F2F6F9;
   font-family: sans-serif;
   width: 100%;
@@ -24,7 +24,7 @@
     top: 0;
     width: 100%;
   }
-  #printable-table .poaction-column {
+  #printable-table .dvspAction-column {
     display: none;
   }
   #printable-table th, #printable-table td {
@@ -37,7 +37,7 @@
   }
 }
 
-.poheader {
+.dvspHeader {
   padding: 15px 40px;
   border-bottom: 1px solid #F2F6F9;
   background-color: #F2F6F9;
@@ -45,10 +45,9 @@
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  margin-top:15px;
 }
 
-.poheader-content {
+.dvspHeader-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,33 +56,32 @@
   box-sizing: border-box;
 }
 
-.poheader-content h1 {
+.dvspHeader-content h1 {
   font-size: 28px;
   font-weight: bold;
   color: #333;
 }
 
-.pobreadcrumb {
+.dvspBreadcrumb {
   font-size: 18px;
   color: #6b7280;
 }
 
-.pobreadcrumb .pohome {
+.dvspBreadcrumb .dvspHome {
   color: #5a66f1;
-  
 }
 
-.pobreadcrumb .poseparator {
+.dvspBreadcrumb .dvspSeparator {
   margin: 0 5px;
   color: #6b7280;
 }
 
-.pobreadcrumb .pocurrent {
+.dvspBreadcrumb .dvspCurrent {
   font-style: italic;
   color: #333;
 }
 
-.pomain-container {
+.dvspMain-container {
   background-color: #fff;
   margin: 20px 0;
   margin-bottom: 40px;
@@ -95,7 +93,7 @@
   box-sizing: border-box;
 }
 
-.poaction-bar {
+.dvspAction-bar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -104,14 +102,14 @@
   width: 100%;
 }
 
-.podropdown-container {
+.dvspDropdown-container {
   position: relative;
 }
 
-.porecord-button, .poaction-button {
+.dvspRecord-button, .dvspAction-button {
   padding: 8px 12px;
   border: 1px solid #d1d5db;
-  background-color: #5A66F1;
+  background-color: #6c5ce7;
   color: #fff;
   border-radius: 6px;
   display: flex;
@@ -122,8 +120,11 @@
   height: 38px;
 }
 
+.dvspRecord-button:hover, .dvspAction-button:hover {
+  background-color: #868aff;
+}
 
-.podropdown-menu {
+.dvspDropdown-menu {
   position: absolute;
   right: 0;
   top: 100%;
@@ -137,7 +138,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.podropdown-item {
+.dvspDropdown-item {
   padding: 6px 10px;
   cursor: pointer;
   display: flex;
@@ -147,23 +148,22 @@
   font-size: 14px;
 }
 
-.podropdown-item svg {
+.dvspDropdown-item svg {
   color: #ffffff;
 }
 
-.podropdown-item:hover {
+.dvspDropdown-item:hover {
   background-color: #7f88ff;
   border-radius: 3px;
 }
 
-.podivider {
+.dvspDivider {
   margin-bottom: 16px;
   border-color: gray;
   width: 100%;
 }
 
-/* Updated Filter Container */
-.pofilter-container {
+.dvspFilter-container {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -174,44 +174,42 @@
   box-sizing: border-box;
 }
 
-.pofilter-row {
+.dvspFilter-row {
   display: flex;
   gap: 150px;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.pofilter-group {
+.dvspFilter-group {
   display: flex;
   flex-direction: column;
 }
 
-.pofilter-label {
+.dvspFilter-label {
   font-size: 16px;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
 }
 
-.pofilter-input,
-.pofilter-input select {
+.dvspFilter-input,
+.dvspFilter-input select {
   padding: 0px;
   background-color:rgba(114, 105, 168, 0.059);
-  border: 1px solid #bec1c6;
+  border: 1px solid #d1d5db;
   border-radius: 4px;
   font-size: 14px;
   width: 250px;
-  height: 42px;
+  height: 32px;
 }
-/* 🔽 Forces buttons to break into new line */
-.pobutton-group {
+
+.dvspButton-group {
   display: flex;
   gap: 10px;
   margin-top: 10px;
   align-self: flex-start;
 }
 
-
-
-.posearch-button {
+.dvspSearch-button {
   padding: 5px 10px;
   border: none;
   border-radius: 4px;
@@ -223,13 +221,15 @@
   color: #fff;
   cursor: pointer;
   font-size: 14px;
-  background-color: #5A66F1;
+  background-color: #6c5ce7;
   margin: 0;
 }
 
+.dvspSearch-button:hover {
+  background-color: #8e7cc3;
+}
 
-
-.poclear-button {
+.dvspClear-button {
   padding: 5px 10px;
   border: none;
   border-radius: 4px;
@@ -245,9 +245,11 @@
   margin: 0;
 }
 
+.dvspClear-button:hover {
+  background-color: #636e72;
+}
 
-
-.details {
+.dvspDetails {
   margin-left: 20px;
   padding: 5px 10px;
   border: 1px solid #d1d5db;
@@ -257,31 +259,28 @@
   display: none;
 }
 
-.poloading {
+.dvspLoading {
   text-align: center;
   padding: 20px;
   font-size: 16px;
   color: #666;
 }
 
-.poaction-button .poshare-button {
+.dvspAction-button.dvspShare-button {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-/* Show the upload file button when share button is clicked in dropdown */
-.podropdown-menu .poupload-file-button {
+.dvspDropdown-menu .dvspUpload-file-button {
   display: none;
 }
 
-.podropdown-menu.show-upload .poupload-file-button {
+.dvspDropdown-menu.show-upload .dvspUpload-file-button {
   display: flex;
 }
 
-/* Removed .poicon-buttons and .poicon-button since they are no longer needed */
-
-.posubscriber-table {
+.dvspSubscriber-table {
   width: 100%;
   border-collapse: collapse;
   background-color: #fff;
@@ -289,36 +288,38 @@
   overflow: hidden;
 }
 
-.posubscriber-table th, .posubscriber-table td {
+.dvspSubscriber-table th, .dvspSubscriber-table td {
   padding: 12px 16px;
   border-bottom: 1px solid #e5e7eb;
   text-align: center;
   font-size: 14px;
 }
 
-.posubscriber-table th {
+.dvspSubscriber-table th {
   background-color: #f3f4f6;
   font-weight: bold;
   color: #333;
   width: 25%;
 }
 
-.posubscriber-table td {
+.dvspSubscriber-table td {
   color: #666;
   width: 25%;
 }
 
+.dvspSubscriber-table tbody tr:hover {
+  background-color: #f9fafb;
+}
 
-/* Action icons container */
-.poaction-icons {
+.dvspAction-icons {
   display: flex;
-  gap: 18px;
+  gap: 12px;
   justify-content: center;
 }
 
-.poaction-icons svg {
-  width: 28px;
-  height: 28px;
+.dvspAction-icons svg {
+  width: 26px;
+  height: 26px;
   padding: 5px;
   border-radius: 50%;
   cursor: pointer;
@@ -328,27 +329,27 @@
   justify-content: center;
 }
 
-.poaction-icons svg:hover {
+.dvspAction-icons svg:hover {
   transform: scale(1.05);
 }
 
-.poaction-icons .eye-icon {
-  color:#5A66F1;
+.dvspAction-icons .dvspEye-icon {
+  color: #5A66F1;
 }
 
-.poaction-icons .eye-icon:hover {
-  background-color:#eeeffe;
+.dvspAction-icons .dvspEye-icon:hover {
+  background-color: #eeeffe;
 }
 
-.poaction-icons .trash-icon {
+.dvspAction-icons .dvspTrash-icon {
   color: #F4415F;
 }
 
-.poaction-icons .trash-icon:hover {
-  background-color:#ffcfd7;
+.dvspAction-icons .dvspTrash-icon:hover {
+  background-color: #ffcfd7;
 }
 
-.popagination {
+.dvspPagination {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -357,18 +358,18 @@
   width: 100%;
 }
 
-.popagination-info {
+.dvspPagination-info {
   font-size: 14px;
   color: #666;
 }
 
-.popagination-buttons {
+.dvspPagination-buttons {
   display: flex;
   padding-top: 10px;
   gap: 0;
 }
 
-.popagination-button {
+.dvspPagination-button {
   padding: 7px 10px;
   border: 1px solid #d1d5db;
   background-color: #f3f4f6;
@@ -377,19 +378,18 @@
   font-size: 14px;
 }
 
-.popagination-button.poactive {
+.dvspPagination-button.dvspActive {
   background-color: #d9e6f8;
   color: #5a66f1;
   font-weight: bold;
 }
 
-.popagination-button:disabled {
+.dvspPagination-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
- 
 }
 
-.pomodal-overlay {
+.dvspModal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -402,7 +402,7 @@
   z-index: 1000;
 }
 
-.pomodal {
+.dvspModal {
   background-color: #fff;
   padding: 24px;
   border-radius: 10px;
@@ -411,11 +411,12 @@
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
 }
 
-.poview-modal {
+.dvspView-modal {
   background-color: #fff;
   padding-left: 25px;
-  padding-RIGHT: 25px;
+  padding-right: 25px;
   padding-bottom: 25px;
+  padding-top: 25px;
   border-radius: 10px;
   width: 300px;
   max-width: 90%;
@@ -423,43 +424,42 @@
   position: relative;
 }
 
-.podelete-modal {
+.dvspDelete-modal {
   text-align: center;
   width: 450px;
   padding: 32px;
   min-height: 70px;
 }
 
-.pomodal-header, .poview-header {
+.dvspModal-header, .dvspView-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top:20px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
-.pomodal-header h2, .poview-header h2 {
+.dvspModal-header h2, .dvspView-header h2 {
   font-size: 20px;
   font-weight: bold;
 }
 
-.pomodal-close, .poview-close {
+.dvspModal-header .dvspModal-close, .dvspView-header .dvspView-close {
   cursor: pointer;
   font-size: 20px;
 }
 
-.pomodal-label {
+.dvspModal-label {
   display: block;
   margin-top: 16px;
   font-weight: bold;
   font-size: 14px;
 }
 
-.porequired {
+.dvspRequired {
   color: #ef4444;
 }
 
-.pomodal-input, .pomodal-textarea {
+.dvspModal-input, .dvspModal-textarea {
   width: 100%;
   padding: 8px;
   margin-top: 4px;
@@ -468,25 +468,25 @@
   font-size: 14px;
 }
 
-.pomodal-textarea {
+.dvspModal-textarea {
   resize: vertical;
 }
 
-.pomodal-buttons {
+.dvspModal-buttons {
   display: flex;
   justify-content: flex-end;
   gap: 130px;
   margin-top: 16px;
 }
 
-.pomodal-buttons1 {
+.dvspModal-buttons1 {
   display: flex;
   justify-content: center;
   gap: 20px;
   margin-top: 16px;
 }
 
-.posave-button {
+.dvspSave-button {
   background-color: #5a66f1;
   color: #fff;
   border: none;
@@ -503,7 +503,7 @@
   margin-top: 10px;
 }
 
-.poclear-button1 {
+.dvspClear-button1 {
   background-color: black;
   margin-top: 10px;
   justify-content: center;
@@ -519,11 +519,11 @@
   font-size: 14px;
 }
 
-.poclear-button1:hover {
+.dvspClear-button1:hover {
   background-color: #4b5563;
 }
 
-.podelete-button {
+.dvspDelete-button {
   background-color: #5a66f1;
   color: #fff;
   border: none;
@@ -540,12 +540,11 @@
   margin-top: 10px;
 }
 
-
-.posave-button:hover, .podelete-button:hover {
+.dvspSave-button:hover, .dvspDelete-button:hover {
   background-color: #999ff0;
 }
 
-.pocancel-button {
+.dvspCancel-button {
   background-color: black;
   color: #fff;
   border: none;
@@ -562,147 +561,148 @@
   margin-top: 10px;
 }
 
-.pocancel-button:hover {
+.dvspCancel-button:hover {
   background-color: #4b5563;
 }
 
-.pomodal-icon {
+.dvspModal-icon {
   margin-bottom: 16px;
   display: flex;
   justify-content: center;
 }
 
-.podelete-modal h2 {
+.dvspDelete-modal h2 {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 16px;
   color: #333;
 }
 
-.podelete-modal p {
+.dvspDelete-modal p {
   font-size: 14px;
   color: #666;
   margin-bottom: 16px;
 }
 
-.poview-content {
+.dvspView-content {
   margin-top: 16px;
 }
 
-.poview-content p {
+.dvspView-content p {
   margin: 10px 0;
   font-size: 14px;
   color: #333;
 }
-.input-row {
+
+.dvspInput-row {
   display: flex;
   gap: 20px;
 }
 
-.input-group.half {
+.dvspInput-group.dvspHalf {
   flex: 1;
 }
 
-        .pomodal-overlay {
-          position: fixed;
-          top: 0; left: 0; right: 0; bottom: 0;
-          background-color: rgba(0,0,0,0.4);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 1000;
-        }
+.dvspModal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
 
-        .modal {
-          background: white;
-          width: 600px;
-          border-radius: 10px;
-          box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-          padding: 24px;
-          position: relative;
-        }
+.dvspModal {
+  background: white;
+  width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  padding: 24px;
+  position: relative;
+}
 
-        .modal-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-bottom: 1px solid #eee;
-          margin-bottom: 20px;
-        }
+.dvspModal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
 
-        .modal-header h2 {
-          font-size: 20px;
-          font-weight: bold;
-        }
+.dvspModal-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
 
-        .modal-close {
-          cursor: pointer;
-          font-size: 24px;
-          font-weight: bold;
-        }
+.dvspModal-close {
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
 
-        .modal-body {
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-        }
+.dvspModal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
-        .input-group {
-          display: flex;
-          flex-direction: column;
-        }
+.dvspInput-group {
+  display: flex;
+  flex-direction: column;
+}
 
-        .input-group label {
-          font-weight: 500;
-          margin-bottom: 4px;
-        }
+.dvspInput-group label {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
 
-        .input-group input[type="text"],
-        .input-group input[type="file"],
-        .input-group textarea {
-          padding: 8px;
-          border: 1px solid #ccc;
-          border-radius: 6px;
-        }
+.dvspInput-group input[type="text"],
+.dvspInput-group input[type="file"],
+.dvspInput-group textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
 
-        .input-group textarea {
-          resize: vertical;
-          height: 80px;
-        }
+.dvspInput-group textarea {
+  resize: vertical;
+  height: 80px;
+}
 
-        .required {
-          color: red;
-        }
+.dvspRequired {
+  color: red;
+}
 
-        .modal-footer {
-          margin-top: 20px;
-          display: flex;
-          justify-content: flex-start;
-          gap: 12px;
-        }
+.dvspModal-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+}
 
-        .save-btn {
-          background-color: #5a66f1;
-          color: white;
-          border: none;
-          padding: 8px 20px;
-          border-radius: 6px;
-          cursor: pointer;
-        }
+.dvspSave-btn {
+  background-color: #5a66f1;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-        .clear-btn {
-          background-color: #333;
-          color: white;
-          border: none;
-          padding: 8px 20px;
-          border-radius: 6px;
-          cursor: pointer;
-        }
+.dvspClear-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-        .save-btn:hover {
-          background-color: #444cdb;
-        }
+.dvspSave-btn:hover {
+  background-color: #444cdb;
+}
 
-        .clear-btn:hover {
-          background-color: #555;
-        }
+.dvspClear-btn:hover {
+  background-color: #555;
+}
