@@ -1,0 +1,416 @@
+
+.shira-stocks-container {
+  font-family: Arial, sans-serif;
+  background-color: #f3f6f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.shira-stocks-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.shira-stocks-header-left h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.shira-breadcrumb {
+  font-size: 20px;
+  color: #6b7280;
+}
+
+.shira-breadcrumb-home {
+  color: #3b82f6;
+  cursor: pointer;
+}
+
+.shira-breadcrumb-current {
+  color: #0e0e0e;
+  font-weight: 400;
+}
+
+.shira-stocks {
+  background-color: white;
+  border-radius: 12px;
+}
+
+.shira-stocks-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 12px;
+}
+
+.shira-dropdown-button,
+.shira-filter-button,
+.shira-share-button,
+.shira-add-button {
+  background-color: #5A66F1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  min-width: 48px;
+  height: 42px;
+}
+
+.shira-dropdown-wrapper {
+  position: relative;
+}
+
+.shira-entries-dropdown-menu,
+.shira-share-dropdown-menu {
+  position: absolute;
+  top: 120%;
+  background-color: #5a66f1;
+  color: white;
+  border-radius: 8px;
+  padding: 6px 0;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 100px;
+}
+
+.shira-entries-dropdown-menu div,
+.shira-share-dropdown-menu div {
+  padding: 6px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shira-entries-dropdown-menu div:hover,
+.shira-share-dropdown-menu div:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.shira-filter-panel {
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.shira-filter-fields {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.shira-filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  margin-left: 28px;
+}
+
+.shira-filter-group label {
+  font-size: 12px;
+  color: #181818;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.shira-filter-group input,
+.shira-filter-group select {
+  padding: 8px;
+  border: 1px solid #aaa;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.shira-filter-buttons {
+  margin-top: 30px;
+  margin-left: 26px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.shira-search-btn {
+  background-color: #5537ec;
+  color: #ffffff;
+  border: 1px solid #d0c8f3;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.shira-search-btn:hover {
+  background-color: #4a33d4;
+}
+
+.shira-clear-btn {
+  background-color: #111111;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.shira-clear-btn:hover {
+  background-color: #000;
+}
+
+.shira-stocks-divider-line {
+  border-bottom: 2px solid #f7f7f7;
+  margin-bottom: 20px;
+}
+
+.shira-stocks-table {
+  width: 97%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.shira-stocks-table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 2px solid #f7f7f7;
+  padding-left: 25px;
+}
+
+.shira-stocks-table th {
+  background-color: #f7f7f7;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  padding: 14px;
+  text-align: left;
+  border-bottom: 2px solid #f7f7f7;
+  padding-left: 20px;
+}
+
+.shira-status-active {
+  color: #22C55E;
+  font-weight: 500;
+}
+
+.shira-status-inactive {
+  color: #EF4444;
+  font-weight: 500;
+}
+
+.shira-pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.shira-pagination-info {
+  font-size: 14px;
+  color: #111;
+  margin-left: 8px;
+}
+
+.shira-pagination-controls {
+  display: flex;
+  margin-right: 6px;
+}
+
+.shira-pagination-controls button {
+  padding: 10px 12px;
+  border: 1px solid #e6e4e4;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  border-radius: 0;
+}
+
+.shira-pagination-controls button:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.shira-pagination-controls button:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.shira-pagination-controls button:hover:not(.shira-active) {
+  background-color: #f3f4f6;
+}
+
+.shira-pagination-controls button.shira-active {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+.shira-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.shira-modal-content {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.shira-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.shira-modal-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.shira-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.shira-modal-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.shira-modal-body input {
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f9fafb;
+  outline: none;
+  width: 89%;
+}
+
+ .shira-modal-body select
+ {
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #f9fafb;
+  outline: none;
+  width: 100%;
+ }
+
+.shira-modal-body input:focus,
+.shira-modal-body select:focus {
+  border-color: #6366f1;
+  background-color: white;
+}
+
+.shira-modal-footer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.shira-modal-footer button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.shira-save-button {
+  background-color: #6366f1;
+  color: white;
+}
+
+.shira-save-button:hover {
+  background-color: #4f46e5;
+}
+
+.shira-cancel-button {
+  background-color: #111;
+  color: white;
+}
+
+.shira-cancel-button:hover {
+  background-color: #000;
+}
+
+@media print {
+  .shira-stocks-actions,
+  .shira-breadcrumb,
+  .shira-pagination-container,
+  .shira-filter-panel,
+  .shira-modal-overlay,
+  .shira-modal-content {
+    display: none !important;
+  }
+
+  .shira-stocks-container {
+    padding: 0;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .shira-stocks-table {
+    font-size: 14px;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .shira-stocks-table th,
+  .shira-stocks-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .shira-stocks-header-left h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+}

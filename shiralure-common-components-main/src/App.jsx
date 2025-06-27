@@ -45,8 +45,7 @@ import PosOrder from './pages/posorder/PosOrders';
 import ReturnPage from './pages/ReturnAndRefund/ReturnPage';
 import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails';
 import PushNotifications from './pages/PushNotification/PushNotifications';
-
-
+import Stocks from './pages/Stocks/ProductList';
 
 
 const Layout = ({ children }) => {
@@ -102,7 +101,7 @@ const App = () => {
 
                 <Route path="ReturnPage" element={<ReturnPage />} />
                 <Route path="/returns/:orderId" element={<ReturnDetails />} />
-              
+                <Route path="Stocks" element={<Stocks />} />
 
               
                
