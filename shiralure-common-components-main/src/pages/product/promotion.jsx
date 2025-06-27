@@ -47,15 +47,19 @@ const PromotionsDashboard = () => {
     item.category.toLowerCase().includes(filterInputs.category.toLowerCase()) &&
     (filterInputs.status === '' || item.status.toLowerCase() === filterInputs.status.toLowerCase())
   );
- const handleUploadFileClick = () => {
-  if (fileInputRef.current) fileInputRef.current.click();
-};
+
+  const handleUploadFileClick = () => {
+    if (fileInputRef.current) fileInputRef.current.click();
+  };
+
   const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
-const handleFileUpload = (e) => {
-  const files = Array.from(e.target.files);
-  alert(`Uploaded ${files.length} file(s):\n${files.map(f => f.name).join(', ')}`);
-};
+
+  const handleFileUpload = (e) => {
+    const files = Array.from(e.target.files);
+    alert(`Uploaded ${files.length} file(s):\n${files.map(f => f.name).join(', ')}`);
+  };
+
   useEffect(() => {
     setAllPromotions(productsData);
   }, []);
@@ -68,15 +72,15 @@ const handleFileUpload = (e) => {
   const handleClearFilters = () => {
     setFilterInputs({ name: '', category: '', status: '' });
   };
+
   const fileInputRef = useRef(null);
-// const folderInputRef = useRef(null);
+  // const folderInputRef = useRef(null);
+
   const handleItemsPerPageChange = (number) => {
     setItemsPerPage(number);
     setCurrentPage(1);
     setShowItemsPerPageDropdown(false);
   };
-  
-  
 
   const handleAddPromotion = (newPromotion) => {
     const newId = allPromotions.length > 0 ? Math.max(...allPromotions.map(p => p.id)) + 1 : 1;
@@ -129,37 +133,37 @@ const handleFileUpload = (e) => {
 
   const renderStatus = (status) => {
     const colorMap = {
-      success: 'green',
-      shipping: 'blue',
-      'out for delivery': 'goldenrod',
-      cancelled: 'red',
-      ordered: 'gray',
-      packed: 'blue',
+      success: 'pprrgreen',
+      shipping: 'pprrblue',
+      'out for delivery': 'pprryellow',
+      cancelled: 'pprrred',
+      ordered: 'pprrgray',
+      packed: 'pprrblue',
     };
     const color = colorMap[status.toLowerCase()];
-    return <span style={color ? { color } : { fontWeight: 'bold' }}>{status}</span>;
+    return <span className={color ? `pprrstatus ${color}` : 'pprrstatus'}>{status}</span>;
   };
 
   return (
-    <div className="promotions-dashboard">
+    <div className="pprrpromotions-dashboard">
       {/* HEADER */}
-      <div className="header">
-        <div className="header-content">
+      <div className="pprrheader">
+        <div className="pprrheader-content">
           <h1>Products</h1>
-          <div className="breadcrumb">
-            <a href="/" className="breadcrumb-home">Home</a>
+          <div className="pprrbreadcrumb">
+            <a href="/" className="pprrbreadcrumb-home">Home</a>
             <span> &gt;&gt; Products</span>
           </div>
         </div>
       </div>
 
       {/* ACTIONS */}
-      <div className="table-container">
-        <div className="table-header">
-          <div className="table-actions">
+      <div className="pprrtable-container">
+        <div className="pprrtable-header">
+          <div className="pprrtable-actions">
             {/* ITEMS PER PAGE */}
-            <div className="items-per-page" ref={itemsPerPageRef}>
-              <div className="items-per-page-selector" onClick={() => {
+            <div className="pprritems-per-page" ref={itemsPerPageRef}>
+              <div className="pprritems-per-page-selector" onClick={() => {
                 setShowItemsPerPageDropdown(!showItemsPerPageDropdown);
                 setShowFilterRow(false);
               }}>
@@ -167,16 +171,16 @@ const handleFileUpload = (e) => {
                 <FiChevronDown size={16} color='white' />
               </div>
               {showItemsPerPageDropdown && (
-                <div className="items-per-page-dropdown">
+                <div className="pprritems-per-page-dropdown">
                   {[5, 10, 25, 50, 100].map(number => (
-                    <div key={number} className={`items-per-page-option ${itemsPerPage === number ? 'active' : ''}`} onClick={() => handleItemsPerPageChange(number)}>{number}</div>
+                    <div key={number} className={`pprritems-per-page-option ${itemsPerPage === number ? 'pprractive' : ''}`} onClick={() => handleItemsPerPageChange(number)}>{number}</div>
                   ))}
                 </div>
               )}
             </div>
 
             {/* FILTER */}
-            <button className="icon-btn" title="Filter" onClick={() => {
+            <button className="pprricon-btn" title="Filter" onClick={() => {
               setShowFilterRow(prev => !prev);
               setShowExportDropdown(false);
               setShowItemsPerPageDropdown(false);
@@ -185,8 +189,8 @@ const handleFileUpload = (e) => {
             </button>
 
             {/* EXPORT */}
-            <div className="export-container" ref={exportRef}>
-              <button className="icon-btn" title="Export" onClick={() => {
+            <div className="pprrexport-container" ref={exportRef}>
+              <button className="pprricon-btn" title="Export" onClick={() => {
                 setShowExportDropdown(!showExportDropdown);
                 setShowFilterRow(false);
                 setShowItemsPerPageDropdown(false);
@@ -194,198 +198,193 @@ const handleFileUpload = (e) => {
                 <TiExport color='white' size={20} />
               </button>
               {showExportDropdown && (
-                <div className="export-dropdown">
+                <div className="pprrexport-dropdown">
                   <button onClick={exportToPDF}><FiPrinter /> PDF</button>
                   <button onClick={exportToXLSX}><FiFile /> XLS</button>
                 </div>
               )}
             </div>
 
-          <div className="export-container">
+            <div className="pprrexport-container">
+              <button className="pprricon-btn pprradd-btn" title="Upload" onClick={() => {
+                setShowUploadDropdown(prev => !prev);
+                setShowFilterRow(false);
+                setShowExportDropdown(false);
+                setShowItemsPerPageDropdown(false);
+              }}>
+                <GoFileSymlinkFile size={20} color='white' />
+              </button>
+              {showUploadDropdown && (
+                <div className="pprrexport-dropdown">
+                  <a href="/sample.xlsx" download>
+                    <FaFile />Sample File
+                  </a>
+                  <button onClick={handleUploadFileClick}><FaFileUpload />Upload File</button>
+                </div>
+              )}
+            </div>
 
-            <button className="icon-btn add-btn"  title="Upload" onClick={() => {
-             setShowUploadDropdown(prev => !prev);
-              setShowFilterRow(false);
-              setShowExportDropdown(false);
-              setShowItemsPerPageDropdown(false);
-            }}>
-              <GoFileSymlinkFile size={20} color='white' />
+            <input
+              type="file"
+              ref={fileInputRef}
+              style={{ display: 'none' }}
+              multiple
+              onChange={handleFileUpload}
+            />
+
+            <button className="pprricon-btn" onClick={() => setEditPromotion(allPromotions[0])}>
+              <BiSolidAddToQueue color='white' size={20} />
             </button>
-             {showUploadDropdown && (
-    <div className="export-dropdown">
-      <a href="/sample.xlsx" download>
-        <FaFile />Sample File
-      </a>
-      <button onClick={handleUploadFileClick}><FaFileUpload />Upload File</button>
-    </div>
-  )}
-  
-</div>
-
-<input
-  type="file"
-  ref={fileInputRef}
-  style={{ display: 'none' }}
-  multiple
-  onChange={handleFileUpload}
-/>
-
-
-<button className="icon-btn" onClick={() => setEditPromotion(allPromotions[0])}>
-  <BiSolidAddToQueue color='white' size={20} />
-</button>
-
           </div>
         </div>
 
         <hr style={{ borderTop: '0.5px solid #d8d8da', marginBottom: '20px' }} />
 
         {/* FILTER FORM */}
-         {showFilterRow && (
-        <div className="srifilter-form">
-          <div className="srifilter-row">
-            <div className="srifilter-group">
-              <label>Name</label>
-              <input
-                type="text"
-                name="name"
-                value={filterInputs.name}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter name"
-              />
-            </div>
-            <div className="srifilter-group">
-             <label>Sku</label>
-              <input
-                type="text"
-                name="sku"
-                value={filterInputs.sku}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter sku"
-              />
-            </div>
-            <div className="srifilter-group">
-              <label>Buying Price</label>
-              <input
-                type="text"
-                name="buyingprice"
-                value={filterInputs.buyingprice}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter buyingprice"
-              />
-            </div>
-            <div className="srifilter-group">
-              <label>Selling Price</label>
-              <input
-                type="text"
-                name="sellingprice"
-                value={filterInputs.sellingprice}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter sellingprice"
-              />
-            </div>
-            <div className="srifilter-group">
-              <label>Category</label>
-              <input
-                type="text"
-                name="category"
-                value={filterInputs.category}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter category"
-              />
-            </div>
-            <div className="srifilter-group">
-              <label>Brand</label>
-              <input
-                type="text"
-                name="brand"
-                value={filterInputs.brand}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter brand"
-              />
-            </div>
-            <div className="srifilter-group">
-              <label>Barcoad</label>
-              <input
-                type="text"
-                name="barcode"
-                value={filterInputs.barcode}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter barcode"
-              />
-            </div>
-            <div className="srifilter-group">
-              <label>Tax</label>
-              <input
-                type="text"
-                name="tax"
-                value={filterInputs.tax}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter tax"
-              />
-            </div>
-            <div className="srifilter-group">
-              <label>Unit</label>
-              <input
-                type="text"
-                name="unit"
-                value={filterInputs.unit}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter unit"
-              />
-            </div>
-            <div className="srifilter-group">
-              <label>Status</label>
-              <input
-                type="text"
-                name="status"
-                value={filterInputs.status}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter status"
-              />
-            </div>
-            <div className="srifilter-group">
-              <label>Purchasable</label>
-              <input
-                type="text"
-                name="purchas"
-                value={filterInputs.purchas}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter purchas"
-              />
-            </div>
-            <div className="srifilter-group">
-              <label>Show Stock Out</label>
-              <input
-                type="text"
-                name="stockout"
-                value={filterInputs.stockout}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter stockout"
-              />
-            </div>
-             <div className="srifilter-group">
-              <label>Refundable</label>
-              <input
-                type="text"
-                name="Refundable"
-                value={filterInputs.stockout}
-                onChange={handleFilterInputChange}
-                // placeholder="Enter stockout"
-              />
-            </div>
-            
-            <div className="srifilter-actions">
-              <button className="srisearch-btn"><FaSearch  /> Search</button>
-              <button className="sriclear-btn" onClick={handleClearFilters}><FaTimes /> Clear</button>
+        {showFilterRow && (
+          <div className="pprrsrifilter-form">
+            <div className="pprrsrifilter-row">
+              <div className="pprrsrifilter-group">
+                <label>Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={filterInputs.name}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter name"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Sku</label>
+                <input
+                  type="text"
+                  name="sku"
+                  value={filterInputs.sku}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter sku"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Buying Price</label>
+                <input
+                  type="text"
+                  name="buyingprice"
+                  value={filterInputs.buyingprice}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter buyingprice"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Selling Price</label>
+                <input
+                  type="text"
+                  name="sellingprice"
+                  value={filterInputs.sellingprice}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter sellingprice"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Category</label>
+                <input
+                  type="text"
+                  name="category"
+                  value={filterInputs.category}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter category"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Brand</label>
+                <input
+                  type="text"
+                  name="brand"
+                  value={filterInputs.brand}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter brand"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Barcoad</label>
+                <input
+                  type="text"
+                  name="barcode"
+                  value={filterInputs.barcode}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter barcode"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Tax</label>
+                <input
+                  type="text"
+                  name="tax"
+                  value={filterInputs.tax}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter tax"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Unit</label>
+                <input
+                  type="text"
+                  name="unit"
+                  value={filterInputs.unit}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter unit"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Status</label>
+                <input
+                  type="text"
+                  name="status"
+                  value={filterInputs.status}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter status"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Purchasable</label>
+                <input
+                  type="text"
+                  name="purchas"
+                  value={filterInputs.purchas}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter purchas"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Show Stock Out</label>
+                <input
+                  type="text"
+                  name="stockout"
+                  value={filterInputs.stockout}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter stockout"
+                />
+              </div>
+              <div className="pprrsrifilter-group">
+                <label>Refundable</label>
+                <input
+                  type="text"
+                  name="Refundable"
+                  value={filterInputs.stockout}
+                  onChange={handleFilterInputChange}
+                  // placeholder="Enter stockout"
+                />
+              </div>
+              <div className="pprrsrifilter-actions">
+                <button className="pprrsrisearch-btn"><FaSearch /> Search</button>
+                <button className="pprrsriclear-btn" onClick={handleClearFilters}><FaTimes /> Clear</button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
         {/* TABLE */}
-        <div className="table-content-box">
-          <table className="promotions-table">
+        <div className="pprrtable-content-box">
+          <table className="pprrpromotions-table">
             <thead>
               <tr>
                 <th>S.No</th>
@@ -402,24 +401,22 @@ const handleFileUpload = (e) => {
                 <tr key={item.id}>
                   <td>{indexOfFirstItem + index + 1}</td>
                   <td>
-                    <div className="item-detail">
+                    <div className="pprritem-detail">
                       <img src={item.image} alt="" />
-
                       <div>
-                        <div className="item-name">{item.name}</div>
-                        <div className="item-id">#{item.id}</div>
+                        <div className="pprritem-name">{item.name}</div>
+                        <div className="pprritem-id">#{item.id}</div>
                       </div>
                     </div>
                   </td>
-                  <td><span className="category">#{item.category}</span></td>
-
+                  <td><span className="pprrcategory">#{item.category}</span></td>
                   <td>{item.date}</td>
                   <td>{renderStatus(item.status)}</td>
                   <td>₹{item.price}</td>
                   <td>
-                    <button className="action-btn view" onClick={() => handleViewPromotion(item)}><FiEye size={16} /></button>
-                    <button className="action-btn edit" onClick={() => setEditPromotion(item)}><FiEdit2 size={16} /></button>
-                    <button className="action-btn delete" onClick={() => handleDeleteClick(item.id)}><FiTrash2 size={16} /></button>
+                    <button className="pprraction-btn pprrview" onClick={() => handleViewPromotion(item)}><FiEye size={16} /></button>
+                    <button className="pprraction-btn pprredit" onClick={() => setEditPromotion(item)}><FiEdit2 size={16} /></button>
+                    <button className="pprraction-btn pprrdelete" onClick={() => handleDeleteClick(item.id)}><FiTrash2 size={16} /></button>
                   </td>
                 </tr>
               ))}
@@ -428,16 +425,16 @@ const handleFileUpload = (e) => {
         </div>
 
         {/* PAGINATION */}
-        <div className="table-footer-pagination">
-          <div className="pagination-info">
+        <div className="pprrtable-footer-pagination">
+          <div className="pprrpagination-info">
             Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredItems.length)} of {filteredItems.length} entries
           </div>
-          <div className="pagination-controls">
-            <button className="pagination-btn" disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>&lt;</button>
+          <div className="pprrpagination-controls">
+            <button className="pprrpagination-btn" disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>&lt;</button>
             {[...Array(totalPages)].map((_, i) => (
-              <button key={i + 1} className={`pagination-btn ${currentPage === i + 1 ? 'active' : ''}`} onClick={() => handlePageChange(i + 1)}>{i + 1}</button>
+              <button key={i + 1} className={`pprrpagination-btn ${currentPage === i + 1 ? 'pprractive' : ''}`} onClick={() => handlePageChange(i + 1)}>{i + 1}</button>
             ))}
-            <button className="pagination-btn" disabled={currentPage === totalPages || totalPages === 0} onClick={() => handlePageChange(currentPage + 1)}>&gt;</button>
+            <button className="pprrpagination-btn" disabled={currentPage === totalPages || totalPages === 0} onClick={() => handlePageChange(currentPage + 1)}>&gt;</button>
           </div>
         </div>
       </div>

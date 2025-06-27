@@ -80,55 +80,55 @@ const ViewPromotion = () => {
 
   const filteredProducts = products;
 
-  if (!promotion) return <div className="view-promotion-page">Promotion not found</div>;
+  if (!promotion) return <div className="vvp-view-promotion-page">Promotion not found</div>;
 
   return (
-    <div className="view-promotion-page">
-      <div className="header">
-        <div className="header-left"><h1>Products</h1></div>
-        <div className="header-right">
-          <div className="breadcrumb">
-            <a href="/" className="breadcrumb-home">Home</a>
+    <div className="vvp-view-promotion-page">
+      <div className="vvp-header">
+        <div className="vvp-header-left"><h1>Products</h1></div>
+        <div className="vvp-header-right">
+          <div className="vvp-breadcrumb">
+            <a href="/" className="vvp-breadcrumb-home">Home</a>
             <span> &gt;&gt; </span>
-            <a href="/" className="breadcrumb-promotions">Products</a>
+            <a href="/" className="vvp-breadcrumb-promotions">Products</a>
           </div>
         </div>
       </div>
 
-      <div className="tabs-container">
-        <div className="tabs">
-          <button className={`tab ${activeTab === 'information' ? 'active' : ''}`} onClick={() => { setActiveTab('information'); setMoreTab(null); }}>
-            <FiInfo className="tab-icon" /> Information
+      <div className="vvp-tabs-container">
+        <div className="vvp-tabs">
+          <button className={`vvp-tab ${activeTab === 'information' ? 'vvp-active' : ''}`} onClick={() => { setActiveTab('information'); setMoreTab(null); }}>
+            <FiInfo className="vvp-tab-icon" /> Information
           </button>
-          <button className={`tab ${activeTab === 'images' ? 'active' : ''}`} onClick={() => { setActiveTab('images'); setMoreTab(null); }}>
-            <FiImage className="tab-icon" /> Images
+          <button className={`vvp-tab ${activeTab === 'images' ? 'vvp-active' : ''}`} onClick={() => { setActiveTab('images'); setMoreTab(null); }}>
+            <FiImage className="vvp-tab-icon" /> Images
           </button>
-          <button className={`tab ${activeTab === 'products' ? 'active' : ''}`} onClick={() => { setActiveTab('products'); setMoreTab(null); }}>
-            <FiGrid className="tab-icon" /> Variation
+          <button className={`vvp-tab ${activeTab === 'products' ? 'vvp-active' : ''}`} onClick={() => { setActiveTab('products'); setMoreTab(null); }}>
+            <FiGrid className="vvp-tab-icon" /> Variation
           </button>
 
-          <div className="tab-dropdown">
+          <div className="vvp-tab-dropdown">
             <button
-              className={`tab ${moreTab ? 'active' : ''}`}
+              className={`vvp-tab ${moreTab ? 'vvp-active' : ''}`}
               onClick={() => setShowMoreDropdown(!showMoreDropdown)}
             >
-              <MdOutlineExpandMore className="tab-icon" size={20} />
+              <MdOutlineExpandMore className="vvp-tab-icon" size={20} />
               More
             </button>
 
             {showMoreDropdown && (
-              <div className="dropdown-menu">
-                <div className="dropdown-item" onClick={() => handleMoreSelect('offer')}>
-                  <FiGrid className="dropdown-icon" /> Offer
+              <div className="vvp-dropdown-menu">
+                <div className="vvp-dropdown-item" onClick={() => handleMoreSelect('offer')}>
+                  <FiGrid className="vvp-dropdown-icon" /> Offer
                 </div>
-                <div className="dropdown-item" onClick={() => handleMoreSelect('videos')}>
-                  <FiImage className="dropdown-icon" /> Video
+                <div className="vvp-dropdown-item" onClick={() => handleMoreSelect('videos')}>
+                  <FiImage className="vvp-dropdown-icon" /> Video
                 </div>
-                <div className="dropdown-item" onClick={() => handleMoreSelect('shipping')}>
-                  <FiUpload className="dropdown-icon" /> Shipping & Return
+                <div className="vvp-dropdown-item" onClick={() => handleMoreSelect('shipping')}>
+                  <FiUpload className="vvp-dropdown-icon" /> Shipping & Return
                 </div>
-                <div className="dropdown-item" onClick={() => handleMoreSelect('seo')}>
-                  <FiInfo className="dropdown-icon" /> SEO
+                <div className="vvp-dropdown-item" onClick={() => handleMoreSelect('seo')}>
+                  <FiInfo className="vvp-dropdown-icon" /> SEO
                 </div>
               </div>
             )}
@@ -136,44 +136,44 @@ const ViewPromotion = () => {
         </div>
       </div>
 
-      <div className="tab-content">
+      <div className="vvp-tab-content">
         {activeTab === 'information' && (
-          <div className="info-card">
-            <div className="info-title">Information</div>
-            <div className="info-grid">
-              <div className="info-row">
-                <div className="info-label">Name</div>
-                <div className="info-value">{promotion.name}</div>
-                <div className="info-label">Slug</div>
-                <div className="info-value">{promotion.name?.toLowerCase().replace(/\s+/g, '-')}</div>
+          <div className="vvp-info-card">
+            <div className="vvp-info-title">Information</div>
+            <div className="vvp-info-grid">
+              <div className="vvp-info-row">
+                <div className="vvp-info-label">Name</div>
+                <div className="vvp-info-value">{promotion.name}</div>
+                <div className="vvp-info-label">Slug</div>
+                <div className="vvp-info-value">{promotion.name?.toLowerCase().replace(/\s+/g, '-')}</div>
               </div>
-              <div className="info-row">
-                <div className="info-label">Type</div>
-                <div className="info-value">{promotion.type}</div>
-                <div className="info-label">Status</div>
-                <div className={`info-value ${promotion.status.toLowerCase()}`}>{promotion.status}</div>
+              <div className="vvp-info-row">
+                <div className="vvp-info-label">Type</div>
+                <div className="vvp-info-value">{promotion.type}</div>
+                <div className="vvp-info-label">Status</div>
+                <div className={`vvp-info-value ${promotion.status.toLowerCase()}`}>{promotion.status}</div>
               </div>
             </div>
           </div>
         )}
 
         {activeTab === 'images' && (
-          <div className="images-card">
-            <div className="images-content">
-              <div className="image-left">
+          <div className="vvp-images-card">
+            <div className="vvp-images-content">
+              <div className="vvp-image-left">
                 <img
                   src={imagePreviewUrl || 'https://images.unsplash.com/photo-1596464716121-e7c07f1ec67f'}
-                  alt="Preview"
-                  className="image-preview"
+  alt="Preview"
+                  className="vvp-image-preview"
                 />
               </div>
-              <div className="image-right">
+              <div className="vvp-image-right">
                 <p>Small Size: (360px,224px)</p>
                 <br />
                 <p>Big Size: (1126px,400px)</p>
                 <br />
-                <label className="upload-btn">
-                  <FiUpload className="upload-icon" />
+                <label className="vvp-upload-btn">
+                  <FiUpload className="vvp-upload-icon" />
                   Upload Images
                   <input type="file" onChange={handleImageUpload} style={{ display: 'none' }} accept="image/*" />
                 </label>
@@ -183,16 +183,16 @@ const ViewPromotion = () => {
         )}
 
         {activeTab === 'products' && (
-          <div className="products-section">
-            <div className="products-header">
-              <button className="add-product-button" onClick={() => setShowAddModal(true)}>
-                <FiPlus className="add-icon" />
+          <div className="vvp-products-section">
+            <div className="vvp-products-header">
+              <button className="vvp-add-product-button" onClick={() => setShowAddModal(true)}>
+                <FiPlus className="vvp-add-icon" />
                 Add Product
               </button>
             </div>
-            <div className="products-card">
+            <div className="vvp-products-card">
               {filteredProducts.length > 0 ? (
-                <div className="products-table">
+                <div className="vvp-products-table">
                   <table>
                     <thead>
                       <tr>
@@ -208,12 +208,12 @@ const ViewPromotion = () => {
                           <td>{product.name}</td>
                           <td>₹{product.price}</td>
                           <td>
-                            <span className={`status-badge ${product.status.toLowerCase()}`}>
+                            <span className={`vvp-status-badge ${product.status.toLowerCase()}`}>
                               {product.status}
                             </span>
                           </td>
                           <td>
-                            <button className="delete-button" onClick={() => handleDeleteClick(product.id)}>
+                            <button className="vvp-delete-button" onClick={() => handleDeleteClick(product.id)}>
                               <FiTrash2 />
                             </button>
                           </td>
@@ -223,7 +223,7 @@ const ViewPromotion = () => {
                   </table>
                 </div>
               ) : (
-                <div className="products-placeholder">
+                <div className="vvp-products-placeholder">
                   <p>No products match your search.</p>
                 </div>
               )}
@@ -232,25 +232,25 @@ const ViewPromotion = () => {
         )}
 
 {moreTab === 'offer' && (
-  <div className="more-tab-content">
+  <div className="vvp-more-tab-content">
     <h3><BiSolidOffer style={{ verticalAlign: 'middle', marginRight: 6 }} /> Offer</h3>
   </div>
 )}
 
 {moreTab === 'videos' && (
-  <div className="more-tab-content">
+  <div className="vvp-more-tab-content">
     <h3><MdVideoLibrary style={{ verticalAlign: 'middle', marginRight: 6 }} /> Videos</h3>
   </div>
 )}
 
 {moreTab === 'shipping' && (
-  <div className="more-tab-content">
+  <div className="vvp-more-tab-content">
     <h3><MdOutlineLocalShipping style={{ verticalAlign: 'middle', marginRight: 6 }} /> Shipping & Return</h3>
   </div>
 )}
 
 {moreTab === 'seo' && (
-  <div className="more-tab-content">
+  <div className="vvp-more-tab-content">
     <h3><TfiWorld style={{ verticalAlign: 'middle', marginRight: 6 }} /> SEO</h3>
   </div>
 )}

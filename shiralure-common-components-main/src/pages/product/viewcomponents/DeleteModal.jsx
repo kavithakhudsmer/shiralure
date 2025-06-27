@@ -16,7 +16,7 @@ const DeleteModal = ({ isOpen, onClose, onConfirm }) => {
       {/* Embedded CSS */}
       <style>
         {`
-          .msdel-modal-overlay {
+          .dmm-modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
@@ -29,7 +29,7 @@ const DeleteModal = ({ isOpen, onClose, onConfirm }) => {
             z-index: 1000;
           }
 
-          .msdel-modal-content {
+          .dmm-modal-content {
             background: white;
             border-radius: 8px;
             width: 400px; /* Reduced width */
@@ -42,7 +42,7 @@ const DeleteModal = ({ isOpen, onClose, onConfirm }) => {
             justify-content: space-between;
           }
 
-          .msdel-modal-body {
+          .dmm-modal-body {
             text-align: center;
             flex-grow: 1;
             display: flex;
@@ -51,20 +51,20 @@ const DeleteModal = ({ isOpen, onClose, onConfirm }) => {
             align-items: center;
           }
 
-          .msdel-warning-icon {
+          .dmm-warning-icon {
             color: #f1c40f;
             font-size: 4.5rem; /* Reduced icon size */
             margin-bottom: 15px; /* Adjusted margin */
           }
 
-          .msdel-modal-title {
+          .dmm-modal-title {
             font-size: 2rem; /* Reduced title font size */
             font-weight: bold;
             margin-bottom: 10px; /* Adjusted margin */
             color: #000000;
           }
 
-          .msdel-modal-description {
+          .dmm-modal-description {
             font-size: 0.9rem; /* Reduced description font size */
             font-weight: bold;
             color: #847F7F;
@@ -72,7 +72,7 @@ const DeleteModal = ({ isOpen, onClose, onConfirm }) => {
             line-height: 1.4;
           }
 
-          .msdel-modal-footer {
+          .dmm-modal-footer {
             display: flex;
             justify-content: center;
             gap: 15px; /* Adjusted gap */
@@ -81,7 +81,7 @@ const DeleteModal = ({ isOpen, onClose, onConfirm }) => {
             padding-bottom: 15px; /* Adjusted padding */
           }
 
-          .msdel-modal-button {
+          .dmm-modal-button {
             border: none;
             border-radius: 8px;
             font-weight: 500;
@@ -96,24 +96,24 @@ const DeleteModal = ({ isOpen, onClose, onConfirm }) => {
             padding: 0 20px; /* Adjusted padding */
           }
 
-          .msdel-modal-button-primary {
+          .dmm-modal-button-primary {
             background: #5A66F1;
             color: #FFFFFF;
           }
 
-          .msdel-modal-button-secondary {
+          .dmm-modal-button-secondary {
             background: #000000;
             color: #FFFFFF;
           }
         `}
       </style>
 
-      <div className="msdel-modal-overlay">
-        <div className="msdel-modal-content">
-          <div className="msdel-modal-body">
+      <div className="dmm-modal-overlay">
+        <div className="dmm-modal-content">
+          <div className="dmm-modal-body">
             {/* Warning Icon */}
             <svg
-              className="msdel-warning-icon"
+              className="dmm-warning-icon"
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
@@ -130,15 +130,15 @@ const DeleteModal = ({ isOpen, onClose, onConfirm }) => {
               <path d="M12 17h.01" />
             </svg>
 
-            <h4 className="msdel-modal-title">Are you sure?</h4>
-            <p className="msdel-modal-description">
+            <h4 className="dmm-modal-title">Are you sure?</h4>
+            <p className="dmm-modal-description">
               You will not be able to recover the deleted record!
             </p>
           </div>
 
-          <div className="msdel-modal-footer">
+          <div className="dmm-modal-footer">
             <button
-              className="msdel-modal-button msdel-modal-button-primary"
+              className="dmm-modal-button dmm-modal-button-primary"
               onClick={onConfirm}
             >
               <svg
@@ -159,7 +159,7 @@ const DeleteModal = ({ isOpen, onClose, onConfirm }) => {
             </button>
 
             <button
-              className="msdel-modal-button msdel-modal-button-secondary"
+              className="dmm-modal-button dmm-modal-button-secondary"
               onClick={onClose}
             >
               <svg

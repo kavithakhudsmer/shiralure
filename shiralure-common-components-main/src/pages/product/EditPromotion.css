@@ -1,5 +1,5 @@
 /* Overlay background */
-.sri-modal-overlay {
+.eepp-modal-overlay {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
@@ -11,7 +11,7 @@
 }
 
 /* Modal box */
-.sri-modal {
+.eepp-modal {
   background: white;
   border-radius: 12px;
   width: 95%;
@@ -22,7 +22,7 @@
 }
 
 /* Header */
-.sri-modal-header {
+.eepp-modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,12 +30,12 @@
   border-bottom: 1px solid #eee;
 }
 
-.sri-modal-header h2 {
+.eepp-modal-header h2 {
   margin: 0;
   font-size: 20px;
 }
 
-.sri-modal-close {
+.eepp-modal-close {
   background: none;
   border: none;
   font-size: 20px;
@@ -44,23 +44,23 @@
 }
 
 /* Modal body */
-.sri-modal-body {
+.eepp-modal-body {
   padding: 20px 32px;
 }
 
-.sri-modal-form {
+.eepp-modal-form {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.sri-modal-row {
+.eepp-modal-row {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
 }
 
-.sri-form-group {
+.eepp-form-group {
   flex: 1;
   min-width: 200px;
   display: flex;
@@ -71,7 +71,7 @@
   width: 100%;
 }
 
-.sri-form-group label {
+.eepp-form-group label {
   font-weight: 600;
   margin-bottom: 8px;
   font-size: 14px;
@@ -111,7 +111,7 @@ textarea {
 }
 
 /* Image upload area */
-.sri-image-upload {
+.eepp-image-upload {
   position: relative;
   border: 2px dashed #aaa;
   border-radius: 6px;
@@ -126,7 +126,7 @@ textarea {
   overflow: hidden;
 }
 
-.sri-image-upload input[type="file"] {
+.eepp-image-upload input[type="file"] {
   opacity: 0;
   position: absolute;
   inset: 0;
@@ -140,7 +140,7 @@ textarea {
 }
 
 /* Footer */
-.sri-modal-footer-inline {
+.eepp-modal-footer-inline {
   display: flex;
   justify-content: flex-end;
   gap: 16px;
@@ -148,8 +148,8 @@ textarea {
 }
 
 /* Buttons */
-.srisearch-btn,
-.sriclear-btn {
+.eeppsearch-btn,
+.eeppclear-btn {
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
@@ -157,23 +157,24 @@ textarea {
   cursor: pointer;
 }
 
-.srisearch-btn {
+.eeppsearch-btn {
   background: #1976d2;
   color: white;
 }
 
-.srisearch-btn:hover {
+.eeppsearch-btn:hover {
   background: #155fa0;
 }
 
-.sriclear-btn {
+.eeppclear-btn {
   background: #e0e0e0;
   color: #333;
 }
 
-.sriclear-btn:hover {
+.eeppclear-btn:hover {
   background: #c0c0c0;
 }
+
 .tiptap-menubar {
   display: flex;
   gap: 10px;
@@ -181,9 +182,10 @@ textarea {
   padding: 4px;
   margin-bottom: 4px;
 }
+
 .tiptap-content {
-  border:1px solid #ccc;
-  border-radius:6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
   min-height: 200px;
-  padding:8px;
+  padding: 8px;
 }

@@ -52,15 +52,15 @@ const AddPromotionModal = ({ onClose, onSave }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
-        <div className="modal-header">
+    <div className="ddssmodal-overlay">
+      <div className="ddssmodal-content">
+        <div className="ddssmodal-header">
           <h2>Products</h2>
-          <button className="close-btn" onClick={onClose}>&times;</button>
+          <button className="ddssclose-btn" onClick={onClose}>&times;</button>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label>Name <span className="required-asterisk">*</span></label>
+          <div className="ddssform-group">
+            <label>Name <span className="ddssrequired-asterisk">*</span></label>
             <input
               type="text"
               name="name"
@@ -69,10 +69,10 @@ const AddPromotionModal = ({ onClose, onSave }) => {
               required
             />
           </div>
-          <div className="form-group">
-            <label>Status <span className="required-asterisk">*</span></label>
-            <div className="radio-group">
-              <label className="radio-label">
+          <div className="ddssform-group">
+            <label>Status <span className="ddssrequired-asterisk">*</span></label>
+            <div className="ddssradio-group">
+              <label className="ddssradio-label">
                 <input
                   type="radio"
                   name="status"
@@ -83,7 +83,7 @@ const AddPromotionModal = ({ onClose, onSave }) => {
                 />
                 Available
               </label>
-              <label className="radio-label">
+              <label className="ddssradio-label">
                 <input
                   type="radio"
                   name="status"
@@ -96,28 +96,28 @@ const AddPromotionModal = ({ onClose, onSave }) => {
               </label>
             </div>
           </div>
-          <div className="form-group">
-            <label>Image (548PX.140PX) <span className="required-asterisk">*</span></label>
-            <div className="file-input-wrapper">
+          <div className="ddssform-group">
+            <label>Image (548PX.140PX) <span className="ddssrequired-asterisk">*</span></label>
+            <div className="ddssfile-input-wrapper">
               <input
                 type="file"
                 id="image-upload"
-                className="file-input"
+                className="ddssfile-input"
                 onChange={handleImageChange}
                 required
               />
-              <label htmlFor="image-upload" className="choose-file-button">
+              <label htmlFor="image-upload" className="ddsschoose-file-button">
                 Choose File
               </label>
-              <span className="file-name-display">{promotion.imageName}</span>
+              <span className="ddssfile-name-display">{promotion.imageName}</span>
             </div>
           </div>
-          <div className="modal-actions">
-            <button type="button" className="clear-btn" onClick={handleClear}>
-              <FaTimes className="button-icon" size={20} /> Clear
+          <div className="ddssmodal-actions">
+            <button type="button" className="ddssclear-btn" onClick={handleClear}>
+              <FaTimes className="ddssbutton-icon" size={20} /> Clear
             </button>
-            <button type="submit" className="save-btn">
-              <FaCheck className="button-icon" size={20}/> Save
+            <button type="submit" className="ddsssave-btn">
+              <FaCheck className="ddssbutton-icon" size={20}/> Save
             </button>
           </div> 
         </form>

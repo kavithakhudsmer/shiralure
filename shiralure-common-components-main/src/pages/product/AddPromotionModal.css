@@ -1,5 +1,5 @@
 /* AddPromotionModal.css */
-.modal-overlay {
+.ddssmodal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,7 +12,7 @@
   z-index: 1000;
 }
 
-.modal-content {
+.ddssmodal-content {
   background: white;
   border-radius: 8px;
   width: 500px; /* Adjusted width for better fit */
@@ -23,7 +23,7 @@
   /* Remove default padding */
 }
 
-.modal-header {
+.ddssmodal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,7 +31,7 @@
   border-bottom: 1px solid #d8d7d7;
 }
 
-.modal-header h2 {
+.ddssmodal-header h2 {
   margin: 0;
   font-size: 1.2rem; /* Slightly smaller font size for header */
   font-weight: 600; /* Bolder font for header */
@@ -39,7 +39,7 @@
   padding: 15px 20px; /* Apply padding directly to h2 for full width border */
 }
 
-.modal-header .close-btn {
+.ddssmodal-header .ddssclose-btn {
   background: none;
   border: none;
   font-size: 1.8rem; /* Larger close icon */
@@ -49,20 +49,20 @@
   line-height: 1; /* Adjust line height for better vertical alignment */
 }
 
-.form-group {
+.ddssform-group {
   margin-bottom: 15px; /* Reduced margin-bottom */
   padding: 0 20px; /* Keep horizontal padding */
 }
 
-.form-group:first-of-type {
+.ddssform-group:first-of-type {
   padding-top: 20px; /* Add padding to the top of the first form group */
 }
 
-.form-group:last-of-type {
+.ddssform-group:last-of-type {
   margin-bottom: 0; /* Remove margin from the last form group */
 }
 
-.form-group label {
+.ddssform-group label {
   display: block;
   margin-bottom: 6px; /* Reduced margin-bottom */
   font-weight: 500;
@@ -70,13 +70,13 @@
   color: #555;
 }
 
-.required-asterisk {
+.ddssrequired-asterisk {
   color: #e74c3c; /* Red color for asterisk */
   margin-left: 2px;
 }
 
-.form-group input[type="text"],
-.form-group textarea {
+.ddssform-group input[type="text"],
+.ddssform-group textarea {
   width: calc(100% - 22px); /* Adjust width to account for padding and border */
   padding: 10px;
   border: 1px solid #ddd;
@@ -85,18 +85,18 @@
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-.form-group textarea {
+.ddssform-group textarea {
   min-height: 80px; /* Slightly reduced min-height */
   resize: vertical;
 }
 
 /* Radio button styling */
-.radio-group {
+.ddssradio-group {
   display: flex;
   gap: 20px; /* Space between radio options */
 }
 
-.radio-label {
+.ddssradio-label {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -104,7 +104,7 @@
   color: #333;
 }
 
-.radio-label input[type="radio"] {
+.ddssradio-label input[type="radio"] {
   -webkit-appearance: none; /* Hide default radio button */
   -moz-appearance: none;
   appearance: none;
@@ -118,11 +118,11 @@
   cursor: pointer;
 }
 
-.radio-label input[type="radio"]:checked {
+.ddssradio-label input[type="radio"]:checked {
   border-color: #5A66F1; /* Primary color when checked */
 }
 
-.radio-label input[type="radio"]:checked::before {
+.ddssradio-label input[type="radio"]:checked::before {
   content: '';
   width: 10px; /* Inner dot size */
   height: 10px;
@@ -135,7 +135,7 @@
 }
 
 /* File input styling */
-.file-input-wrapper {
+.ddssfile-input-wrapper {
   display: flex;
   align-items: center;
   border: 1px solid #ddd;
@@ -144,11 +144,11 @@
   background-color: #f9f9f9;
 }
 
-.file-input {
+.ddssfile-input {
   display: none; /* Hide the actual file input */
 }
 
-.choose-file-button {
+.ddsschoose-file-button {
   margin-top: 0; /* Remove extra margin */
   color: #333;
   padding: 8px 12px;
@@ -159,7 +159,7 @@
   border-right: 1px solid #ddd; /* Added right border */
 }
 
-.file-name-display {
+.ddssfile-name-display {
   margin-left: 10px;
   font-size: 0.9rem;
   color: #666;
@@ -169,7 +169,7 @@
   flex-grow: 1; /* Allow the file name to take up available space */
 }
 
-.modal-actions {
+.ddssmodal-actions {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
@@ -178,8 +178,8 @@
   margin-top: 20px; /* Add some space above actions */
 }
 
-.save-btn,
-.clear-btn {
+.ddsssave-btn,
+.ddssclear-btn {
   padding: 10px 15px;
   border: none;
   border-radius: 6px; /* Slightly more rounded corners */
@@ -192,19 +192,22 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.save-btn {
+.ddsssave-btn {
   background: #5A66F1;
   color: white;
 }
 
-
-.clear-btn {
+.ddssclear-btn {
   background: #000000; /* Darker gray for clear button */
   color: white;
 }
 
+.ddssbutton-icon {
+  font-size: 1rem; /* Adjust #include <stdio.h>
 
-
-.button-icon {
-  font-size: 1rem; /* Adjust icon size */
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+icon size */
 }

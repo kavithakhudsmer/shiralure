@@ -1,4 +1,4 @@
-.promotions-dashboard {
+.pprrpromotions-dashboard {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -7,18 +7,18 @@
 }
 
 /* Header Styles */
-.header {
+.pprrheader {
   margin-bottom: 30px;
 }
 
-.header-content {
+.pprrheader-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.header-left h1 {
+.pprrheader-left h1 {
   font-size: 34px;
   font-weight: bold;
   color: #000;
@@ -26,7 +26,7 @@
   line-height: 1.2;
 }
 
-.header-right {
+.pprrheader-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -34,28 +34,28 @@
   margin-top: -30px;
 }
 
-.breadcrumb {
+.pprrbreadcrumb {
   font-size: 24px;
   color: #333;
 }
 
-.breadcrumb-home {
+.pprrbreadcrumb-home {
   color: #5A66F1;
   text-decoration: none;
 }
 
-.breadcrumb span {
+.pprrbreadcrumb span {
   color: #666;
   transition: color 0.2s ease;
   cursor: pointer;
 }
 
-.breadcrumb span:hover {
+.pprrbreadcrumb span:hover {
   color: #5A66F1;
 }
 
 /* Table Container Styles */
-.table-container {
+.pprrtable-container {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -65,7 +65,7 @@
 }
 
 /* Table Header Styles */
-.table-header {
+.pprrtable-header {
   display: flex;
   justify-content: flex-end;
   padding: 15px 0; /* Adjust padding, left/right handled by container */
@@ -74,7 +74,7 @@
   border-radius: 8px 8px 0 0;
 }
 
-.table-actions {
+.pprrtable-actions {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -82,13 +82,13 @@
 }
 
 /* Separator below action icons */
-.table-separator {
+.pprrtable-separator {
   border-bottom: 1px solid #eee; /* Light gray border */
   margin-bottom: 20px; /* Space between separator and table */
 }
 
 /* Table Content Box */
-.table-content-box {
+.pprrtable-content-box {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   margin-bottom: 20px; /* Add margin below the table box */
@@ -96,12 +96,12 @@
 }
 
 /* Table Styles */
-.promotions-table {
+.pprrpromotions-table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.promotions-table th {
+.pprrpromotions-table th {
   text-align: center;
   padding: 10px 10px;
   background: rgb(240, 240, 240);
@@ -110,43 +110,45 @@
   border-bottom: 1px solid #eee;
 }
 
-.promotions-table td {
+.pprrpromotions-table tdworth
+
+.pprrpromotions-table td {
   padding: 2px 10px;
   border-bottom: 1px solid #eee;
   vertical-align: middle;
   text-align: center;
 }
 
-.promotions-table tr:last-child td {
+.pprrpromotions-table tr:last-child td {
   border-bottom: none;
 }
 
 /* Status Styles */
-.status {
+.pprrstatus {
   font-weight: 800;
   font-size: 14px;
 }
 
-.status.active {
+.pprrstatus.pprractive {
   color: #24f16f;
   background-color: white;
   font-weight: 800;
 }
 
-.status.inactive {
+.pprrstatus.pprrinactive {
   color: #eb2647;
   background-color: white;
   font-weight: 800;
 }
 
 /* Action Buttons in Table */
-.action-buttons-cell {
+.pprraction-buttons-cell {
   display: flex;
   gap: 8px;
   justify-content: center;
 }
 
-.action-btn {
+.pprraction-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -157,35 +159,36 @@
   cursor: pointer;
   transition: 0.2s ease;
 }
-.action-btn.view {
+
+.pprraction-btn.pprrview {
   color: #5A66F1;
 }
 
-.action-btn.view:hover {
+.pprraction-btn.pprrview:hover {
   background: #eeeffe;
   border-radius: 100%;
 }
 
-.action-btn.edit {
+.pprraction-btn.pprredit {
   color: #5DD488;
 }
 
-.action-btn.edit:hover {
+.pprraction-btn.pprredit:hover {
   background: #e8f9ef;
   border-radius: 100%;
 }
 
-.action-btn.delete {
+.pprraction-btn.pprrdelete {
   color: #F4415F;
 }
 
-.action-btn.delete:hover {
+.pprraction-btn.pprrdelete:hover {
   background: #f4415f28;
   border-radius: 100%;
 }
 
 /* Pagination */
-.table-footer-pagination {
+.pprrtable-footer-pagination {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -195,18 +198,18 @@
   margin-top: 0; /* Removed margin-top as padding handles spacing */
 }
 
-.pagination-info {
+.pprrpagination-info {
   color: #666;
   font-size: 14px;
 }
 
-.pagination-controls {
+.pprrpagination-controls {
   display: flex;
   border: 1px solid #ddd;
   align-items: center;
 }
 
-.pagination-btn {
+.pprrpagination-btn {
   min-width: 32px;
   height: 32px;
   padding: 0 8px;
@@ -221,19 +224,19 @@
   justify-content: center;
 }
 
-.pagination-btn:disabled {
+.pprrpagination-btn:disabled {
   color: #ccc;
   cursor: not-allowed;
   opacity: 0.6;
 }
 
-.pagination-btn.active {
+.pprrpagination-btn.pprractive {
   background: #eeeffe;
   color: #5A66F1;
   font-weight: bold;
 }
 
-.pagination-ellipsis {
+.pprrpagination-ellipsis {
   padding: 0 8px;
   color: #666;
   display: flex;
@@ -241,12 +244,12 @@
 }
 
 /* Action Buttons */
-.items-per-page {
+.pprritems-per-page {
   position: relative;
   display: inline-block;
 }
 
-.items-per-page-selector {
+.pprritems-per-page-selector {
   height: 35px;
   width: 58px;
   border-radius: 8px;
@@ -264,7 +267,7 @@
   min-width: 60px;
 }
 
-.items-per-page-dropdown {
+.pprritems-per-page-dropdown {
   position: absolute;
   left: 0;
   top: 100%;
@@ -279,18 +282,19 @@
   margin-top: 5px;
 }
 
-.items-per-page-option {
+.pprritems-per-page-option {
   padding: 8px 12px;
   cursor: pointer;
   font-size: 14px;
   color: #333;
 }
 
-.items-per-page-option.active {
+.pprritems-per-page-option.pprractive {
   background: #5A66F1;
   color: white;
 }
-.icon-btn {
+
+.pprricon-btn {
   width: 42.33px;
   height: 34.33px;
   border-radius: 8px;
@@ -303,18 +307,17 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.icon-btn.add-btn {
+.pprricon-btn.pprradd-btn {
   background: #5A66F1;
   color: white;
 }
 
 /* Export Dropdown */
-.export-container {
+.pprrexport-container {
   position: relative;
 }
 
-
-.export-dropdown {
+.pprrexport-dropdown {
   position: absolute;
   top: 100%;
   right: 0;
@@ -327,7 +330,7 @@
   margin-top: 5px;
 }
 
-.export-dropdown button {
+.pprrexport-dropdown button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -341,24 +344,17 @@
   color: white;
 }
 
-.export-dropdown button:hover {
+.pprrexport-dropdown button:hover {
   background-color: white;
   color: #5A66F1;
 }
 
-.export-dropdown button:hover svg {
-  color: #5A66F1;
-}
-.export-dropdown button:hover {
-  background-color: white;
+.pprrexport-dropdown button:hover svg {
   color: #5A66F1;
 }
 
-.export-dropdown button:hover svg {
-  color: #5A66F1;
-}
-.export-dropdown a,
-.export-dropdown button {
+.pprrexport-dropdown a,
+.pprrexport-dropdown button {
   display: block;
   width: 100%;
   background: none;
@@ -371,39 +367,40 @@
   text-decoration: none;
 }
 
-.export-dropdown button:hover,
-.export-dropdown a:hover {
+.pprrexport-dropdown button:hover,
+.pprrexport-dropdown a:hover {
   background-color: #fffdfd;
   color: black;
 }
-.export-dropdown button:hover {
+
+.pprrexport-dropdown button:hover {
   background-color: #ffffff;
   color: black;
 }
 
-.export-dropdown button:hover svg {
+.pprrexport-dropdown button:hover svg {
   color: #5A66F1;
 }
 
 /* Filter container and modal positioning */
-.filter-container {
+.pprrfilter-container {
   position: static;
 }
 
-.promotions-filter-modal {
+.pprrpromotions-filter-modal {
   position: absolute;
   top: calc(100% + 10px);
   right: 20px; /* Adjust right position to align with table container padding */
   z-index: 100;
-  background:#F2F6F9;
+  background: #F2F6F9;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 300px;
 }
 
 /* Styles for filter input boxes (assuming they are direct inputs within the filter modal) */
-.promotions-filter-modal input[type="text"],
-.promotions-filter-modal select {
+.pprrpromotions-filter-modal input[type="text"],
+.pprrpromotions-filter-modal select {
   background-color: #D9D9D9;
   border: 1px solid #ccc;
   padding: 8px;
@@ -412,111 +409,119 @@
   box-sizing: border-box; /* Ensures padding doesn't add to the width */
 }
 
-
-
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .header {
+  .pprrheader {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
   }
 
-  .header-right {
+  .pprrheader-right {
     width: 100%;
     align-items: flex-start;
   }
 
-  .table-header {
+  .pprrtable-header {
     flex-direction: column;
     align-items: flex-end;
     gap: 15px;
     padding: 15px 0; /* Keep padding consistent for mobile */
   }
 
-  .table-actions {
+  .pprrtable-actions {
     width: auto;
     margin-left: 0;
   }
 
-  .table-container {
+  .pprrtable-container {
     padding-left: 10px; /* Adjust padding for smaller screens */
     padding-right: 10px; /* Adjust padding for smaller screens */
   }
 
-  .table-content-box {
+  .pprrtable-content-box {
     margin: 0; /* Remove horizontal margin as container has padding */
   }
 
-  .promotions-table {
+  .pprrpromotions-table {
     display: block;
     overflow-x: auto;
   }
 
-  .table-footer-pagination {
+  .pprrtable-footer-pagination {
     flex-direction: column;
     gap: 15px;
     align-items: flex-start;
     padding: 15px 0; /* Adjust padding for smaller screens */
   }
 
-  .pagination-controls {
+  .pprrpagination-controls {
     flex-wrap: wrap;
   }
 
-  .pagination-info {
+  .pprrpagination-info {
     margin-bottom: 10px;
   }
 
-  .items-per-page-selector {
+  .pprritems-per-page-selector {
     padding: 0 10px;
     font-size: 12px;
   }
 
-  .promotions-filter-modal {
+  .pprrpromotions-filter-modal {
     left: 10px;
     right: 10px;
     width: auto;
     top: calc(100% + 5px);
   }
 
-  .filter-modal-wrapper {
+  .pprrfilter-modal-wrapper {
     padding: 0 10px; /* Adjust padding for smaller screens */
   }
-}.sritable-container {
+}
+
+.pprrsritable-container {
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   overflow-x: auto;
   background: white;
 }
-.status.green {
+
+.pprrstatus.pprrgreen {
   color: green;
 }
 
-.status.blue {
+.pprrstatus.pprrblue {
   color: blue;
 }
 
-.status.yellow {
+.pprrstatus.pprryellow {
   color: goldenrod; /* or yellow, but goldenrod is more visible */
 }
 
-.status.red {
+.pprrstatus.pprrred {
   color: red;
 }
 
-.status.gray {
+.pprrstatus.pprrgray {
   color: gray;
-}.category {
+}
+
+.pprrcategory {
   color: green;
   font-weight: 500;
 }
-.item-name{
+
+.pprritem-name {
   /* color: green; */
   font-weight: 500;
-}.export-container {
+}
+
+.pprrexport-container {
   position: relative;
-}.srifilter-form {
+}
+
+.pprrsrifilter-form {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 12px;
@@ -525,26 +530,26 @@
   /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); */
 }
 
-.srifilter-row {
+.pprrsrifilter-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
   gap: 20px;
   font-weight: 800;
 }
 
-.srifilter-group {
+.pprrsrifilter-group {
   display: flex;
   flex-direction: column;
   font-weight: bold;
 }
 
-.srifilter-group label {
+.pprrsrifilter-group label {
   margin-bottom: 6px;
   font-weight: 500;
   color: #333;
 }
 
-.srifilter-group input {
+.pprrsrifilter-group input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -554,7 +559,7 @@
 }
 
 /* Search/Clear button row spans full width */
-.srifilter-actions {
+.pprrsrifilter-actions {
   grid-column: 1 / -1;
   display: flex;
   justify-content: flex-end;
@@ -562,8 +567,8 @@
   gap: 10px;
 }
 
-.srisearch-btn,
-.sriclear-btn {
+.pprrsrisearch-btn,
+.pprrsriclear-btn {
   padding: 10px 16px;
   font-size: 14px;
   border: none;
@@ -574,12 +579,12 @@
   gap: 6px;
 }
 
-.srisearch-btn {
+.pprrsrisearch-btn {
   background-color: #4CAF50;
   color: white;
 }
 
-.sriclear-btn {
+.pprrsriclear-btn {
   background-color: #f44336;
   color: white;
 }

@@ -1,20 +1,22 @@
 html, body {
   width: 100%;
   overflow-x: hidden;
-}.search-controls {
+}
+
+.vvp-search-controls {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
   align-items: center;
 }
 
-.search-input {
+.vvp-search-input {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.clear-button {
+.vvp-clear-button {
   background: #ddd;
   border: none;
   padding: 8px 12px;
@@ -22,20 +24,20 @@ html, body {
   border-radius: 4px;
 }
 
-.product-search-bar {
+.vvp-product-search-bar {
   display: flex;
   gap: 8px;
   margin-left: auto;
   align-items: center;
 }
 
-.product-search-bar input {
+.vvp-product-search-bar input {
   padding: 6px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.product-search-bar button {
+.vvp-product-search-bar button {
   padding: 6px 10px;
   background-color: #f44336;
   border: none;
@@ -44,20 +46,20 @@ html, body {
   cursor: pointer;
 }
 
-.products-controls {
+.vvp-products-controls {
   display: flex;
   gap: 10px;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.products-controls input {
+.vvp-products-controls input {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.view-promotion-page {
+.vvp-view-promotion-page {
   padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
@@ -65,53 +67,51 @@ html, body {
   min-height: 100vh;
   position: relative;
 }
-/* Add these styles to your ViewPromotion.css */
 
-.header {
+.vvp-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
 }
 
-.header-left h1 {
+.vvp-header-left h1 {
   font-size: 34px;
   font-weight: bold;
   color: #000;
   margin: 0;
 }
 
-.header-right {
+.vvp-header-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 30px;
 }
 
-.breadcrumb {
+.vvp-breadcrumb {
   font-size: 24px;
   color: #333;
   margin-top: 40px;
 }
 
-.breadcrumb-home {
+.vvp-breadcrumb-home {
   color: #5A66F1;
   text-decoration: none;
   margin-right: 10px;
 }
-.breadcrumb-promotions {
+
+.vvp-breadcrumb-promotions {
   color: black;
   text-decoration: none;
   margin-left: 10px;
 }
 
- .breadcrumb-promotions:hover {
+.vvp-breadcrumb-promotions:hover {
   color: #5A66F1;
 }
 
-
-
-.view-header {
+.vvp-view-header {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -121,18 +121,18 @@ html, body {
   margin-bottom: 20px;
 }
 
-.view-header-left h1 {
+.vvp-view-header-left h1 {
   font-size: 28px;
   font-weight: bold;
   color: #000;
   margin: 0;
 }
 
-.tabs-container {
+.vvp-tabs-container {
   margin: 20px 0;
 }
 
-.tabs {
+.vvp-tabs {
   display: flex;
   gap: 10px;
   padding: 10px;
@@ -142,7 +142,7 @@ html, body {
   gap: 60px;
 }
 
-.tab {
+.vvp-tab {
   flex: 2;
   padding: 10px 20px;
   background: white;
@@ -157,22 +157,22 @@ html, body {
   transition: all 0.2s;
 }
 
-.tab.active {
+.vvp-tab.vvp-active {
   color: white;
   font-weight: 500;
   background-color: #5A66F1;
 }
 
-.tab-icon {
+.vvp-tab-icon {
   margin-right: 8px;
   margin-top: 2px;
 }
 
-.tab-content {
+.vvp-tab-content {
   padding: 20px 0;
 }
 
-.information-card {
+.vvp-information-card {
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 20px;
@@ -181,7 +181,7 @@ html, body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.information-card h3 {
+.vvp-information-card h3 {
   margin-top: 0;
   margin-bottom: 20px;
   font-size: 28px;
@@ -190,7 +190,7 @@ html, body {
   border-bottom: 2px solid #e2e8f0;
 }
 
-.info-grid {
+.vvp-info-grid {
   margin-left: 100px;
   margin-top: 30px;
   display: grid;
@@ -198,38 +198,38 @@ html, body {
   gap: 30px;
 }
 
-.info-row {
+.vvp-info-row {
   margin-bottom: 15px;
   display: flex;
 }
 
-.info-label {
+.vvp-info-label {
   font-weight: bold;
   font-size: 17px;
   margin-right: 10px;
-  color:black;
+  color: black;
   min-width: 80px;
 }
 
-.info-value {
+.vvp-info-value {
   color: #343941;
 }
 
-.status {
+.vvp-status {
   font-weight: 500;
   padding: 2px 8px;
   border-radius: 4px;
 }
 
-.status.active {
+.vvp-status.vvp-active {
   color: #5DD488;
 }
 
-.status.inactive {
+.vvp-status.vvp-inactive {
   color: #e53e3e;
 }
 
-.images-card {
+.vvp-images-card {
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 20px;
@@ -238,17 +238,17 @@ html, body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.images-content {
+.vvp-images-content {
   display: flex;
   flex-direction: row;
   gap: 20px;
 }
 
-.image-preview-container {
+.vvp-image-preview-container {
   flex: 1;
 }
 
-.image-preview {
+.vvp-image-preview {
   border: 1px dashed #cbd5e0;
   border-radius: 8px;
   height: 224px;
@@ -258,23 +258,23 @@ html, body {
   background-color: #f7fafc;
 }
 
-.image-placeholder {
+.vvp-image-placeholder {
   color: #a0aec0;
 }
 
-.image-info {
+.vvp-image-info {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.image-info p {
+.vvp-image-info p {
   margin: 8px 0;
   color: #4a5568;
 }
 
-.upload-button {
+.vvp-upload-button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -291,24 +291,23 @@ html, body {
   max-width: 200px;
 }
 
-
-.upload-icon {
+.vvp-upload-icon {
   font-size: 16px;
 }
 
-.products-section {
+.vvp-products-section {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.products-header {
+.vvp-products-header {
   display: flex;
   justify-content: flex-end;
   margin-top: -25px;
 }
 
-.products-card {
+.vvp-products-card {
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 20px;
@@ -317,7 +316,7 @@ html, body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.add-product-button {
+.vvp-add-product-button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -332,74 +331,68 @@ html, body {
   transition: background 0.2s;
 }
 
-
-
-.add-icon {
+.vvp-add-icon {
   font-size: 16px;
 }
 
-.products-table {
+.vvp-products-table {
   width: 100%;
   overflow-x: auto;
-
 }
 
-.products-table table {
+.vvp-products-table table {
   width: 100%;
   border-collapse: collapse;
-  
-  
 }
 
-.products-table th, 
-.products-table td {
+.vvp-products-table th, 
+.vvp-products-table td {
   padding: 12px 16px;
   text-align: left;
   border-bottom: 1px solid #e2e8f0;
   font-size: 16px;
 }
 
-.products-table th {
+.vvp-products-table th {
   background-color: rgb(245, 245, 245);
   color: #4E5569;
   font-weight: bold;
   font-size: 18px;
 }
 
-.status-badge {
+.vvp-status-badge {
   padding: 6px 12px;
   border-radius: 4px;
   font-size: 16px;
   font-weight: 500;
 }
 
-.status-badge.active {
+.vvp-status-badge.vvp-active {
   color: #5DD488;
   font-weight: 800;
 }
 
-.status-badge.inactive {
+.vvp-status-badge.vvp-inactive {
   color: #e53e3e;
   font-weight: 800;
 }
 
-.delete-button {
+.vvp-delete-button {
   background: none;
   border: none;
   color: #F4415F;
   cursor: pointer;
   padding: 8px;
   border-radius: 4px;
- 
   font-size: 16px;
 }
 
-.delete-button:hover {
+.vvp-delete-button:hover {
   background: #ffcfd7;
   border-radius: 100%;
 }
 
-.products-placeholder {
+.vvp-products-placeholder {
   padding: 40px;
   text-align: center;
   color: #666;
@@ -407,7 +400,7 @@ html, body {
   border-radius: 4px;
 }
 
-.promotion-not-found {
+.vvp-promotion-not-found {
   text-align: center;
   font-size: 18px;
   color: #666;
@@ -415,46 +408,46 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .info-grid {
+  .vvp-info-grid {
     grid-template-columns: 1fr;
     margin-left: 0;
   }
   
-  .tabs {
+  .vvp-tabs {
     flex-wrap: wrap;
   }
   
-  .tab {
+  .vvp-tab {
     margin-bottom: 5px;
   }
   
-  .view-header-left h1 {
+  .vvp-view-header-left h1 {
     font-size: 28px;
   }
 
-  .products-table th, 
-  .products-table td {
+  .vvp-products-table th, 
+  .vvp-products-table td {
     padding: 8px 12px;
     font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
-  .images-content {
+  .vvp-images-content {
     flex-direction: column;
   }
   
-  .image-preview {
+  .vvp-image-preview {
     height: 180px;
   }
 }
-/* Tabs & Dropdown */
-.tabs {
+
+.vvp-tabs {
   display: flex;
   gap: 10px;
 }
 
-.tab {
+.vvp-tab {
   padding: 8px 16px;
   border: none;
   background-color: #ffffff;
@@ -466,20 +459,20 @@ html, body {
   gap: 6px;
 }
 
-.tab.active {
+.vvp-tab.vvp-active {
   background-color: #4f46e5;
   color: white;
 }
 
-.tab-icon {
+.vvp-tab-icon {
   font-size: 16px;
 }
 
-.tab-dropdown {
+.vvp-tab-dropdown {
   position: relative;
 }
 
-.dropdown-menu {
+.vvp-dropdown-menu {
   position: absolute;
   top: 42px;
   left: 0;
@@ -491,7 +484,7 @@ html, body {
   z-index: 999;
 }
 
-.dropdown-item {
+.vvp-dropdown-item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -501,13 +494,12 @@ html, body {
   font-size: 14px;
 }
 
-.dropdown-item:hover {
+.vvp-dropdown-item:hover {
   background-color: #f5f7fa;
   border-radius: 8px;
 }
 
-/* Information Card */
-.info-card {
+.vvp-info-card {
   background: #fff;
   padding: 24px;
   border-radius: 8px;
@@ -515,44 +507,43 @@ html, body {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.info-title {
+.vvp-info-title {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 16px;
 }
 
-.info-grid {
+.vvp-info-grid {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.info-row {
+.vvp-info-row {
   display: grid;
   grid-template-columns: 120px 1fr 120px 1fr;
   align-items: center;
   gap: 12px;
 }
 
-.info-label {
+.vvp-info-label {
   font-weight: 600;
   color: #333;
 }
 
-.info-value {
+.vvp-info-value {
   color: #555;
 }
 
-.info-value.active {
+.vvp-info-value.vvp-active {
   color: green;
 }
 
-.info-value.inactive {
+.vvp-info-value.vvp-inactive {
   color: red;
 }
 
-/* Images Tab */
-.images-card {
+.vvp-images-card {
   background: #fff;
   border-radius: 8px;
   padding: 24px;
@@ -560,18 +551,18 @@ html, body {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
-.images-content {
+.vvp-images-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 24px;
 }
 
-.image-left {
+.vvp-image-left {
   flex: 1;
 }
 
-.image-preview {
+.vvp-image-preview {
   width: 100%;
   max-width: 300px;
   height: auto;
@@ -579,14 +570,13 @@ html, body {
   object-fit: cover;
 }
 
-.image-right {
+.vvp-image-right {
   flex: 1;
   font-size: 17px;
-  
   color: #555;
 }
 
-.upload-btn {
+.vvp-upload-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -600,10 +590,10 @@ html, body {
   transition: background 0.2s;
 }
 
-.upload-btn:hover {
+.vvp-upload-btn:hover {
   background-color: #4338ca;
 }
 
-.upload-icon {
+.vvp-upload-icon {
   font-size: 18px;
 }
