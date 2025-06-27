@@ -10,7 +10,7 @@ import './ViewPromotion.css';
 import { BiSolidOffer } from 'react-icons/bi';
 import { MdVideoLibrary, MdOutlineLocalShipping } from 'react-icons/md';
 import { TfiWorld } from 'react-icons/tfi';
-import productsData from '../../products.json';
+import productsData from '../../data/products1.json'; // adjust based on file structure
 const ViewPromotion = () => {
   const { id } = useParams();
   const [promotion, setPromotion] = useState(null);

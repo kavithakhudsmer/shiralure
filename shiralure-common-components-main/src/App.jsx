@@ -46,7 +46,8 @@ import ReturnPage from './pages/ReturnAndRefund/ReturnPage';
 import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails';
 import PushNotifications from './pages/PushNotification/PushNotifications';
 import Stocks from './pages/Stocks/ProductList';
-import Product from './pages/product/promotion';
+// import Product from './pages/product/promotion';
+// import ViewPromotionPage from "./pages/product/ViewPromotion";
 
 
 const Layout = ({ children }) => {
@@ -103,7 +104,8 @@ const App = () => {
                 <Route path="ReturnPage" element={<ReturnPage />} />
                 <Route path="/returns/:orderId" element={<ReturnDetails />} />
                 <Route path="Stocks" element={<Stocks />} />
-                <Route path="Product" element={<Promotion />} />
+                {/* <Route path="Product" element={<Product />} /> */}
+                {/* <Route path="ViewPromotionPage" element={<ViewPromotionPage />} /> */}
 
               
                
