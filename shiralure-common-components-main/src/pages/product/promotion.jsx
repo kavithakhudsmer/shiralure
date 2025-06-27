@@ -18,7 +18,7 @@ import './promotion.css';
 // import './PromotionsFilter.css';
 import { FaFile } from "react-icons/fa";
 import { FaFileUpload } from "react-icons/fa";
-import productsData from './public/data/products1.json';
+import productsData from '../../data/products1.json'; // adjust based on file structure
 
 const PromotionsDashboard = () => {
   const navigate = useNavigate();
