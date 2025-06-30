@@ -1,9 +1,12 @@
 .pprrpromotions-dashboard {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding-left: 30px;
+  padding-right: 40px;
   color: #333;
   background-color: #F2F6F9;
+  box-sizing: border-box;
 }
 
 /* Header Styles */
@@ -93,6 +96,7 @@
   border-radius: 8px;
   margin-bottom: 20px; /* Add margin below the table box */
   overflow: hidden;
+  
 }
 
 /* Table Styles */
@@ -125,20 +129,20 @@
 
 /* Status Styles */
 .pprrstatus {
-  font-weight: 800;
+  font-weight: 600;
   font-size: 14px;
 }
 
 .pprrstatus.pprractive {
   color: #24f16f;
   background-color: white;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .pprrstatus.pprrinactive {
   color: #eb2647;
   background-color: white;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 /* Action Buttons in Table */
@@ -207,6 +211,7 @@
   display: flex;
   border: 1px solid #ddd;
   align-items: center;
+  border-radius: 4px;
 }
 
 .pprrpagination-btn {
@@ -504,7 +509,7 @@
 }
 
 .pprrstatus.pprrgray {
-  color: gray;
+  color: rgb(209, 98, 7);
 }
 
 .pprrcategory {
@@ -580,11 +585,11 @@
 }
 
 .pprrsrisearch-btn {
-  background-color: #4CAF50;
+  background-color: #5A66F1;
   color: white;
 }
 
 .pprrsriclear-btn {
-  background-color: #f44336;
+  background-color: #000000;
   color: white;
 }

@@ -158,22 +158,18 @@ textarea {
 }
 
 .eeppsearch-btn {
-  background: #1976d2;
+  background:#5A66F1;
   color: white;
 }
 
-.eeppsearch-btn:hover {
-  background: #155fa0;
-}
+
 
 .eeppclear-btn {
-  background: #e0e0e0;
-  color: #333;
+  background: #000000;
+  color: #ffffff;
 }
 
-.eeppclear-btn:hover {
-  background: #c0c0c0;
-}
+
 
 .tiptap-menubar {
   display: flex;

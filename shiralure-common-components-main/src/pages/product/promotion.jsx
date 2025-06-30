@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  FiSliders, FiChevronDown, FiEye, FiEdit2, FiTrash2, FiPrinter, FiFile
+  FiChevronDown, FiEye, FiEdit2, FiTrash2, FiPrinter, FiFile
 } from 'react-icons/fi';
 // import { MdLibraryAdd } from "react-icons/md";
 import { TiExport } from "react-icons/ti";
@@ -10,6 +10,9 @@ import AddPromotionModal from './AddPromotionModal';
 import EditPromotionModal from './EditPromotion';
 import { GoFileSymlinkFile } from 'react-icons/go';
 import { BiSolidAddToQueue } from 'react-icons/bi';
+
+import { PiSliders } from "react-icons/pi";
+
 import DeleteModal from './viewcomponents/DeleteModal';
 import * as XLSX from 'xlsx';
 import { jsPDF } from "jspdf";
@@ -185,7 +188,7 @@ const PromotionsDashboard = () => {
               setShowExportDropdown(false);
               setShowItemsPerPageDropdown(false);
             }}>
-              <FiSliders color='white' size={20} />
+              <PiSliders color='white' size={20} />
             </button>
 
             {/* EXPORT */}
@@ -238,7 +241,7 @@ const PromotionsDashboard = () => {
           </div>
         </div>
 
-        <hr style={{ borderTop: '0.5px solid #d8d8da', marginBottom: '20px' }} />
+        <hr style={{ borderTop: '0.5px solidrgb(135, 135, 139)', marginBottom: '20px' }} />
 
         {/* FILTER FORM */}
         {showFilterRow && (
@@ -396,6 +399,7 @@ const PromotionsDashboard = () => {
                 <th>Action</th>
               </tr>
             </thead>
+           
             <tbody>
               {currentItems.map((item, index) => (
                 <tr key={item.id}>
