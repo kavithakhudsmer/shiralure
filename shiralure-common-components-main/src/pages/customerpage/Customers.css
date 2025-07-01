@@ -1,0 +1,809 @@
+/* Main Container and Header */
+.rk-customer-dashboard-container {
+  padding: 14px 16px;
+  background-color: #F2F6F9;
+  font-family: Arial, sans-serif;
+}
+
+.rk-customer-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: -20px;
+}
+
+.rk-customer-header-left h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #131212;
+  margin-bottom: 12px;
+
+}
+
+.rk-customer-header-right h2 {
+  font-weight: 400;
+}
+
+.rk-customer-breadcrumb {
+  font-size: 20px;
+  color: #333;
+  font-weight: 400;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+.rk-customer-breadcrumb-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.rk-customer-breadcrumb span {
+  color: #333;
+  margin: 0 5px;
+}
+
+/* Main Content Box */
+.rk-customer-content-box-wrapper {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Top Controls Section */
+.rk-customer-top-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+.rk-customer-icon-button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.rk-customer-icon-button {
+  position: relative;
+  display: inline-block;
+}
+
+.rk-customer-icon-box {
+  background-color: #6c5ce7;
+  color: #fff;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.rk-customer-icon-box:hover {
+  background-color: #5a4cb8;
+}
+
+.rk-customer-icon {
+  font-size: 18px;
+}
+
+/* Share Dropdown */
+.rk-customer-share-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #6c5ce7;
+  color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  min-width: 100px;
+  z-index: 100;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.rk-customer-share-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.rk-customer-share-item:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.rk-customer-dropdown-icon {
+  font-size: 16px;
+}
+
+/* Divider Line */
+.rk-customer-divider-line {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+/* Filter Box */
+.rk-customer-filter-form-wrapper {
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.rk-customer-filter-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.rk-customer-filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.rk-customer-filter-group label {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.rk-customer-filter-group input,
+.rk-customer-filter-group select {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f9;
+  font-size: 14px;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+.rk-customer-filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+  grid-column: span 1;
+  justify-content: flex-start;
+}
+
+.rk-customer-filter-buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.rk-customer-filter-buttons button.rk-customer-search {
+  background-color: #6c5ce7;
+  color: #fff;
+}
+
+.rk-customer-filter-buttons button.rk-customer-search:hover {
+  background-color: #5a4cb8;
+}
+
+.rk-customer-filter-buttons button.rk-customer-clear {
+  background-color: #333;
+  color: #fff;
+}
+
+.rk-customer-filter-buttons button.rk-customer-clear:hover {
+  background-color: #333;
+}
+
+
+/* Table Styling */
+.rk-customer-print-table-area {
+  overflow-x: auto;
+}
+
+.rk-customer-print-table-area table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0efef;
+}
+
+.rk-customer-print-table-area table th,
+.rk-customer-print-table-area table td {
+  padding: 12px 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.rk-customer-print-table-area table th {
+  background-color: #f0f2f5;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.rk-customer-print-table-area table tbody tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+.rk-customer-active-status {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.rk-customer-inactive-status {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.rk-customer-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+}
+
+.rk-customer-action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+}
+
+.rk-customer-icon-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Icon colors */
+.rk-customer-icon-action-btn svg {
+  /* Target the SVG directly for color */
+  font-size: 20px;
+  /* Ensure icon size is consistent */
+}
+
+.rk-customer-view-btn svg {
+  color: #5A66F1;
+}
+
+.rk-customer-edit-btn svg {
+  color: #22C55E;
+}
+
+.rk-customer-delete-btn svg {
+  color: #EF4444;
+}
+
+/* Hover effects with circular background */
+.rk-customer-view-btn:hover {
+  background-color: rgba(90, 102, 241, 0.1);
+}
+
+.rk-customer-edit-btn:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.rk-customer-delete-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Optional: slight scale effect on hover */
+.rk-customer-icon-action-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Overlay and Form Box */
+.rk-customer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.rk-customer-form-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.rk-customer-form-box h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: left;
+}
+
+/* Corrected placement for the divider line, targeting it as a direct child */
+.rk-customer-form-box .rk-customer-divider-line {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 25px;
+}
+
+.rk-customer-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.rk-customer-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.rk-customer-form-group label {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.rk-customer-form-group .rk-customer-required {
+  color: #dc3545;
+  margin-left: 2px;
+}
+
+.rk-customer-form-group input[type="text"],
+.rk-customer-form-group input[type="email"],
+.rk-customer-form-group input[type="password"],
+.rk-customer-form-group select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fcfcfc;
+}
+
+/* Focus state for inputs/selects within form groups */
+.rk-customer-form-group input:focus,
+.rk-customer-form-group select:focus {
+  outline: none;
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
+}
+
+
+.rk-customer-phone-input {
+  display: flex;
+  gap: 5px;
+}
+
+.rk-customer-phone-input select {
+  flex-shrink: 0;
+  width: auto;
+}
+
+.rk-customer-phone-input input {
+  flex-grow: 1;
+}
+
+/* Container for the radio group */
+.rk-customer-radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+/* Styling for each radio button label */
+.rk-customer-radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: normal;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Hide the default browser radio button */
+.rk-customer-radio-group input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Basic styling for the custom radio circle (light purple) */
+  width: 18px;
+  height: 18px;
+  border: 1px solid #a081bb;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  background-color: #f3e9ff;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Style for the checked state (deeper purple fill) */
+.rk-customer-radio-group input[type="radio"]:checked {
+  border-color: #6c5ce7;
+  background-color: #6c5ce7;
+}
+
+/* Create the inner white dot for the checked state */
+.rk-customer-radio-group input[type="radio"]:checked::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rk-customer-form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding-top: 10px;
+}
+
+.rk-customer-form-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.rk-customer-form-buttons button.rk-customer-save {
+  background-color: #6c5ce7;
+  color: #fff;
+}
+
+.rk-customer-form-buttons button.rk-customer-save:hover {
+  background-color: #5a4cb8;
+}
+
+.rk-customer-form-buttons button.rk-customer-close {
+  background-color: #333;
+  color: #fff;
+}
+
+.rk-customer-form-buttons button.rk-customer-close:hover {
+  background-color: #555;
+}
+
+/* Delete Confirmation Modal - unchanged */
+.rk-customer-delete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.rk-customer-delete-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.rk-customer-delete-icon {
+  margin-bottom: 20px;
+}
+
+.rk-customer-delete-box h2 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.rk-customer-subtext {
+  color: #777;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.rk-customer-delete-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.rk-customer-delete-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.rk-customer-delete-buttons button.rk-customer-yes {
+  background-color: #6c5ce7;
+  color: #fff;
+}
+
+.rk-customer-delete-buttons button.rk-customer-yes:hover {
+  background-color: #5a4cb8;
+}
+
+.rk-customer-delete-buttons button.rk-customer-no {
+  background-color: #333;
+  color: #fff;
+}
+
+.rk-customer-delete-buttons button.rk-customer-no:hover {
+  background-color: #555;
+}
+
+/* Pagination */
+.rk-customer-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rk-customer-footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: -32px;
+}
+
+.rk-customer-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+.rk-customer-pagination-arrow {
+  background-color: #f0f2f5;
+  color: #555;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.rk-customer-pagination-arrow:hover:not(:disabled) {
+  background-color: #e2e6ea;
+  color: #333;
+}
+
+.rk-customer-pagination-page {
+  background-color: #f0f2f5;
+  color: #555;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.rk-customer-pagination-page:hover:not(:disabled) {
+  background-color: #e2e6ea;
+  color: #333;
+}
+
+.rk-customer-pagination-page.rk-customer-active {
+  background-color: #6c5ce7;
+  color: #fff;
+  border-color: #6c5ce7;
+}
+
+.rk-customer-pagination-page.rk-customer-active:hover {
+  background-color: #6c5ce7;
+  color: #fff;
+}
+
+.rk-customer-pagination-arrow:disabled,
+.rk-customer-pagination-page:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Row Count Dropdown */
+.rk-customer-row-count-wrapper {
+  position: relative;
+  display: inline-block;
+
+}
+
+.rk-customer-row-count-btn {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  height: 38px;
+  box-sizing: border-box;
+}
+
+.rk-customer-row-count-btn:hover {
+  background-color: #6c5ce7;
+}
+
+.rk-customer-row-count-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #6c5ce7;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  min-width: 80px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.rk-customer-row-count-dropdown p {
+  padding: 8px 15px;
+  margin: 0;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+}
+
+.rk-customer-row-count-dropdown p:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+
+/* Print Styles - to hide actions column and buttons during print */
+@media print {
+  .rk-customer-no-print {
+    display: none !important;
+  }
+
+  body {
+    background-color: #fff;
+    /* White background for printing */
+  }
+
+  .rk-customer-dashboard-container,
+  .rk-customer-content-box-wrapper {
+    padding: 0;
+    box-shadow: none;
+    background-color: #fff;
+  }
+
+  .rk-customer-header-section,
+  .rk-customer-top-controls,
+  .rk-customer-divider-line,
+  .rk-customer-filter-form-wrapper,
+  .rk-customer-footer {
+    display: none;
+  }
+
+  .rk-customer-print-table-area table {
+    border: 1px solid #000;
+  }
+
+  .rk-customer-print-table-area table th,
+  .rk-customer-print-table-area table td {
+    border: 1px solid #000;
+    padding: 8px;
+  }
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .rk-customer-top-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rk-customer-icon-button-group {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .rk-customer-filter-form {
+    grid-template-columns: 1fr;
+  }
+
+  .rk-customer-filter-buttons {
+    justify-content: stretch;
+  }
+
+  .rk-customer-filter-buttons button {
+    flex-grow: 1;
+  }
+
+  .rk-customer-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rk-customer-form-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .rk-customer-form-buttons button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rk-customer-delete-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .rk-customer-delete-buttons button {
+    width: 100%;
+  }
+
+  .rk-customer-footer-content {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .rk-customer-pagination {
+    width: 100%;
+    justify-content: center;
+  }
+}

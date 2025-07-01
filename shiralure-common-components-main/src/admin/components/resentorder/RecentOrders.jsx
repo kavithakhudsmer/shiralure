@@ -3,7 +3,7 @@ import { Table } from 'antd';
 import { FiEye } from 'react-icons/fi';
 import { useNavigate } from 'react-router-dom';
 import './RecentOrders.scss';
-
+import './Dash.jsx';
 const RecentOrders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -35,13 +35,9 @@ const RecentOrders = () => {
     fetchOrders();
   }, []);
 
-  const handleViewDetails = (record) => {
-    // Fixed navigation path with leading slash
-    navigate(`/admin/promotions/${record.id}`, { 
-      state: { 
-        promotion: record 
-      } 
-    });
+  const handleDash = (record) => {
+    // Navigate to /components/resentorder/Dash with the order id
+    navigate(`/components/resentorder/Dash/${record.id}`);
   };
 
   const columns = [
@@ -126,7 +122,7 @@ const RecentOrders = () => {
       render: (_, record) => (
         <button 
           className="muthu-view-btn"
-          onClick={() => handleViewDetails(record)}
+          onClick={() => handleDash(record)}
         >
           <FiEye />
         </button>

@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "name": "REMI",
+    "email": "remi@gmail.com",
+    "phone": "8098765238",
+    "street": "Anna nagra 5th street",
+    "country": "India",
+    "state": "Tamil Nadu",
+    "city": "Thoothukudi",
+    "zip": "628008"
+  }
+]

@@ -7,6 +7,7 @@ import { FaExclamation } from "react-icons/fa";
 import { BiPackage } from "react-icons/bi";
 import { FaPhoneFlip } from "react-icons/fa6";
 import { IoCloseSharp } from 'react-icons/io5';
+
 function ReturnDetails() {
   const { orderId } = useParams();
   const navigate = useNavigate();
@@ -97,7 +98,7 @@ function ReturnDetails() {
       {/* Footer */}
       <div className="vkfooter">
         <p><FaPhoneFlip />Need Help? <a href="#">Contact Customer Support</a></p>
-        <button className="close-btn" onClick={() => navigate(-1)}><IoCloseSharp />Close </button>
+        <button className="close-btn" onClick={() => navigate(-1)}><IoCloseSharp /> </button>
       </div>
     </div>
   );

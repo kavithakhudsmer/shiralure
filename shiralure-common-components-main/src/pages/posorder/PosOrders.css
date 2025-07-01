@@ -22,7 +22,7 @@
     text-align: center;
   }
   .dvsCouponTable th {
-    background-color: #f3f4f6;
+    background-color: #f2f6f9;
     font-weight: bold;
   }
   .dvsCouponTable th:last-child,
@@ -72,6 +72,7 @@
 }
 
 .dvsDEheader-content h1 {
+   margin-top:20px;
   font-size: 28px;
   font-weight: bold;
   color: #333;

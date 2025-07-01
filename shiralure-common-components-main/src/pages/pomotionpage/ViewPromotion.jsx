@@ -93,7 +93,7 @@ const ViewPromotion = () => {
         </div>
         <div className="header-right">
           <div className="breadcrumb">
-            <a href="/" className="breadcrumb-home">Home</a>
+            <a href="/promotions" className="breadcrumb-home">Home</a>
             <span> &gt;&gt; </span>
             <a href="/promotions" className="breadcrumb-promotions">Promotions</a>
           

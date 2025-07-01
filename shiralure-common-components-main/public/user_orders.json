@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "userId": 1,
+    "item": "Oil",
+    "quantities": 3,
+    "prices": 350.00,
+    "shippingAddress": "Anna nagra 5th street....",
+    "orderDate": "03-12-2024"
+  }
+]

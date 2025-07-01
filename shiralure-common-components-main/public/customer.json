@@ -1,0 +1,12 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "REMI",
+      "email": "remi@hudsmer.solutions.com",
+      "phone": "+917865936457",
+      "status": "Active",
+      "role": "CUSTOMER"
+    }
+  ]
+}

@@ -23,7 +23,7 @@ import { FaFile } from "react-icons/fa";
 import { FaFileUpload } from "react-icons/fa";
 import productsData from '../../data/products1.json'; // adjust based on file structure
 
-const PromotionsDashboard = () => {
+const ProductDashboard = () => {
   const navigate = useNavigate();
   const exportRef = useRef(null);
   const itemsPerPageRef = useRef(null);
@@ -107,8 +107,8 @@ const PromotionsDashboard = () => {
     setPromotionToDelete(null);
   };
 
-  const handleViewPromotion = (promotion) => {
-    navigate(`/promotions/view/${promotion.id}`);
+  const handleViewPromotion2 = (promotion) => {
+    navigate(`/admin/products/view/${promotion.id}`);
   };
 
   const handleEditPromotion = (updatedPromotion) => {
@@ -418,7 +418,7 @@ const PromotionsDashboard = () => {
                   <td>{renderStatus(item.status)}</td>
                   <td>₹{item.price}</td>
                   <td>
-                    <button className="pprraction-btn pprrview" onClick={() => handleViewPromotion(item)}><FiEye size={16} /></button>
+                    <button className="pprraction-btn pprrview" onClick={() => handleViewPromotion2(item)}><FiEye size={16} /></button>
                     <button className="pprraction-btn pprredit" onClick={() => setEditPromotion(item)}><FiEdit2 size={16} /></button>
                     <button className="pprraction-btn pprrdelete" onClick={() => handleDeleteClick(item.id)}><FiTrash2 size={16} /></button>
                   </td>
@@ -457,4 +457,4 @@ const PromotionsDashboard = () => {
   );
 };
 
-export default PromotionsDashboard;
+export default ProductDashboard;

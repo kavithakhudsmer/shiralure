@@ -1,0 +1,1582 @@
+/* Main Profile Container */
+.skumari-user-profile.skumari-fullscreen-profile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f6f9fc;
+  z-index: 1000;
+  padding: 2rem;
+  overflow-y: auto;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.skumari-sremployee-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: -20px;
+}
+
+.skumari-employee-header-left h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #131212;
+  margin-bottom: 12px;
+}
+
+.skumari-employee-header-right h2 {
+  font-weight: 400;
+}
+
+.skumari-employee-breadcrumb {
+  font-size: 20px;
+  color: #333;
+  font-weight: 400;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+.skumari-employee-breadcrumb-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.skumari-employee-breadcrumb span {
+  color: #333;
+  margin: 0 5px;
+}
+
+/* Other existing styles (assuming these are separate sections or elements) */
+.skumari-profile-container {
+  padding: 16px;
+  margin: 20px 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+}
+
+.skumari-profile-header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: 14px;
+}
+
+.skumari-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.skumari-avatar.skumari-rounded {
+  border-radius: 50%;
+}
+
+.skumari-avatar.skumari-square {
+  border-radius: 12px;
+}
+
+.skumari-role-badge {
+  background-color: #ffee88;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-top: 0.3rem;
+}
+
+.skumari-upload-btn {
+  margin-top: 6px;
+  background-color: #4f46e5;
+  color: white;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Remove the black border when button is clicked/focused */
+.skumari-upload-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.skumari-upload-btn:hover {
+  background-color: #3730a3;
+}
+
+.skumari-role {
+  background-color: #fcee75;
+  margin-top: 6px;
+  color: rgb(245, 201, 3);
+  padding: 3px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.skumari-tabs {
+  margin: 20px 0;
+  margin-left: 40px;
+  display: flex;
+  gap: 18px;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.skumari-tabs button {
+  padding: 8px 16px;
+  border: none;
+  background: #f6f9fc;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+/* Remove black border on click */
+.skumari-tabs button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.skumari-tabs .skumari-active {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.skumari-tabs button:hover:not(.skumari-active) {
+  background-color: #4f46e5;
+  color: #d3d3d3;
+}
+
+/* Main Container for the Profile Section */
+.skumari-profile-container {
+  padding: 16px;
+  margin: 10px 0;
+  background-color: #ffffff;
+}
+
+/* Info Box - The White Card Containing Basic Information */
+.skumari-info-box {
+  background: white;
+  padding: 28px 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  margin: 24px auto;
+  border: 1px solid #f0f0f0;
+}
+
+/* Container for the "Basic Information" Title */
+.skumari-info-title-container {
+  margin-bottom: 18px;
+}
+
+/* Styling for the "Basic Information" Title Text */
+.skumari-info-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Container for the Details (Email, Phone, Status) including the separator line */
+.skumari-info-details-container {
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+  margin-left: -28px;
+  margin-right: -28px;
+  padding-left: 28px;
+  padding-right: 28px;
+  box-sizing: border-box;
+}
+
+/* Grid layout for Email, Phone, Status */
+.skumari-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 50px;
+}
+
+/* Styling for each row (Email/Value, Phone/Value, Status/Value) */
+.skumari-info-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+}
+
+/* Styling for the labels (e.g., Email, Phone, Status) */
+.skumari-info-label {
+  font-size: 0.9em;
+  color: #374151;
+  font-weight: 500;
+  min-width: 70px;
+}
+
+/* Styling for the actual values (e.g., john.doe@example.com, +1 555-123-4567) */
+.skumari-info-value {
+  font-size: 1.05em;
+  color: #6b7280;
+  font-weight: 500;
+  margin-top: -2px;
+}
+
+/* Styling for the "Active" status text */
+.skumari-status-active {
+  color: #22c55e;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Placeholder for inactive status if needed */
+.skumari-status-inactive {
+  color: #ef4444;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* If you use `required` for labels, include this */
+.skumari-info-label .skumari-required {
+  color: #ff4d4f;
+  margin-left: 3px;
+}
+
+/* Add or modify these styles in Adminis1.css */
+.skumari-info-details-container1 {
+  display: flex;
+  /* gap: 12px;  */
+  flex-wrap: wrap;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-left: 18px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.skumari-user-form-groups1 {
+  flex: 1;
+  min-width: 280px;
+  margin-bottom: 15px;
+}
+
+.skumari-user-form-groups1 label {
+  display: block; /* Makes the label take its own line */
+  margin-bottom: 8px; /* Space between label and input */
+  font-weight: bold;
+  color: #333;
+}
+
+.skumari-user-form-groups1 input[type="password"] {
+  width: 50%; /* Make input fields take full width of their parent container */
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+/* Ensure the button container also has appropriate styling */
+.skumari-button-container {
+  text-align: right; /* Align the save button to the right */
+  padding: 0 20px 20px 20px; /* Add padding around the button */
+}
+
+.skumari-save-btn {
+  background-color: #5A66F1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex; /* Allows icon and text to be aligned */
+  align-items: center;
+  justify-content: center;
+}
+
+.skumari-save-btn:hover {
+  background-color: #4a54d1;
+}
+
+/* If you have specific styles for skumari-info-box1, ensure it allows its content to breathe */
+.skumari-info-box1 {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow: hidden; /* Ensures no content spills out */
+}
+
+.skumari-info-title-container1 {
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.skumari-info-title1 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.skumari-required {
+  color: red;
+  margin-left: 2px;
+}
+
+/* Container for the Save button */
+.skumari-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding-right: 10px;
+}
+
+/* Styling for the Save button */
+.skumari-save-btn {
+  background-color: #4f46e5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-right: 80px;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Hover effect for the Save button */
+.skumari-save-btn:hover {
+  background-color: #3730a3;
+}
+
+.skumari-info-box2 {
+  background: white;
+  padding: 18px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-top: 20px;
+}
+
+.skumari-info-title-container2 {
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+  box-sizing: border-box;
+}
+
+.skumari-address-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: -25px;
+}
+
+.skumari-info-title2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.skumari-add-address-btn {
+  background-color: #4f46e5;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.skumari-add-address-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.skumari-add-address-btn:hover {
+  background-color: #3730a3;
+}
+
+.skumari-info-details-container2 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  margin-bottom: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+  margin-left: -26px;
+  margin-right: -26px;
+  padding-left: 26px;
+  padding-right: 26px;
+  box-sizing: border-box;
+}
+
+.skumari-address-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95em;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.skumari-address-table th {
+  padding: 12px 14px;
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #f1f0f0;
+  font-size: 0.85em;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.skumari-address-table td {
+  font-weight: 400;
+  padding: 10px 14px;
+  border: none;
+}
+
+.skumari-address-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.skumari-address-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.skumari-address-no-entries {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+/* --- New styles for Address Table Action Buttons --- */
+.skumari-address-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.skumari-address-action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.skumari-address-icon-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  font-size: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.skumari-address-icon-action-btn svg {
+  font-size: 20px;
+}
+
+.skumari-address-view-btn svg {
+  color: #5A66F1;
+}
+
+.skumari-address-edit-btn svg {
+  color: #22C55E;
+}
+
+.skumari-address-delete-btn svg {
+  color: #EF4444;
+}
+
+.skumari-address-view-btn:hover {
+  background-color: rgba(90, 102, 241, 0.1);
+}
+
+.skumari-address-edit-btn:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.skumari-address-delete-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.skumari-employee-delete-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.skumari-employee-delete-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.skumari-employee-delete-icon {
+  margin-bottom: 20px;
+}
+
+.skumari-employee-delete-box h2 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.skumari-employee-subtext {
+  color: #777;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.skumari-employee-delete-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skumari-employee-delete-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.skumari-employee-delete-buttons button.skumari-yes {
+  background-color: #6c5ce7;
+  color: #fff;
+}
+
+.skumari-employee-delete-buttons button.skumari-yes:hover {
+  background-color: #5a4cb8;
+}
+
+.skumari-employee-delete-buttons button.skumari-no {
+  background-color: #333;
+  color: #fff;
+}
+
+.skumari-employee-delete-buttons button.skumari-no:hover {
+  background-color: #555;
+}
+
+/* Overall container for the Orders tab content */
+.skumari-info-box3 {
+  background: white;
+  padding: 18px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-top: 20px;
+}
+
+.skumari-info-title-container3 {
+  padding: 15px 20px;
+}
+
+.skumari-orders-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+/* Container for order details (the table) */
+.skumari-info-details-container3 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  margin-bottom: 28px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+  margin-left: -26px;
+  margin-right: -26px;
+  padding-left: 26px;
+  padding-right: 26px;
+  box-sizing: border-box;
+}
+
+/* Table styles for orders */
+.skumari-orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95em;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.skumari-orders-table thead tr {
+  background-color: #f5f5f5;
+}
+
+.skumari-orders-table th,
+.skumari-orders-table td {
+  padding: 12px 15px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.skumari-orders-table th {
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.skumari-orders-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Zebra striping for readability */
+}
+
+/* Action buttons within the orders table */
+.skumari-order-actions {
+  text-align: center;
+}
+
+.skumari-order-actions .skumari-address-action-buttons {
+  /* Reusing styles from address actions */
+  display: flex;
+  gap: 8px; /* Space between icons */
+  justify-content: center;
+}
+
+/* Placeholder for no orders found message */
+.skumari-orders-no-entries {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Footer for pagination/entry count in orders table */
+.skumari-orders-footer {
+  font-size: 14px;
+  color: #555;
+  text-align: left;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+/* Order Detail View Modal */
+.skumari-order-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px; /* Add some padding for smaller screens */
+  box-sizing: border-box;
+}
+
+.skumari-order-detail-box {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px; /* Adjust max-width as needed */
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh; /* Limit height to prevent overflow */
+  overflow-y: auto; /* Enable scrolling for content */
+}
+
+.skumari-order-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.skumari-order-detail-header h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.skumari-order-detail-back-btn {
+  background-color: #6c5ce7; /* A soft grey for "Back" */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.skumari-order-detail-back-btn:hover {
+  background-color: #6c5ce7;
+}
+
+.skumari-order-detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between rows */
+}
+
+.skumari-order-detail-row {
+  display: flex;
+  align-items: baseline; /* Align text baselines */
+}
+
+.skumari-order-detail-label {
+  font-weight: 600;
+  color: #555;
+  width: 150px; /* Fixed width for labels for alignment */
+  flex-shrink: 0; /* Prevent label from shrinking */
+}
+
+.skumari-order-detail-value {
+  color: #333;
+  flex-grow: 1; /* Allow value to take up remaining space */
+}
+
+/* skumari-modal-overlay */
+.skumari-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+/* skumari-order-edit-modal */
+.skumari-order-edit-modal {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 90%; /* Adjust width as needed */
+  max-width: 500px; /* Maximum width for larger screens */
+  position: relative;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.skumari-order-edit-modal h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* skumari-divider-line */
+.skumari-divider-line {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+/* skumari-form-group */
+.skumari-form-group {
+  margin-bottom: 15px;
+}
+
+.skumari-form-group label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.skumari-form-group .skumari-required {
+  color: #ff0000; /* Red asterisk for required fields */
+  margin-left: 4px;
+}
+
+.skumari-form-group input[type="text"],
+.skumari-form-group input[type="number"] {
+  width: 90%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.skumari-form-group input[type="text"]:focus,
+.skumari-form-group input[type="number"]:focus {
+  border-color: #6a5acd; /* Purple border on focus */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.2); /* Light purple shadow on focus */
+}
+
+/* skumari-modal-actions */
+.skumari-modal-actions {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px; /* Space between buttons */
+  margin-top: 25px;
+}
+
+.skumari-modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skumari-modal-actions button[type="button"] {
+  /* CLEAR button */
+  background-color: #6c757d; /* Grey */
+  color: #fff;
+}
+
+.skumari-modal-actions button[type="button"]:hover {
+  background-color: #5a6268;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skumari-modal-actions button[type="submit"] {
+  /* SAVE button */
+  background-color: #6a5acd; /* Purple */
+  color: #fff;
+}
+
+.skumari-modal-actions button[type="submit"]:hover {
+  background-color: #5443b3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skumari-modal-actions button svg {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+/* Optional: Close button for the modal (if you add one to the HTML) */
+.skumari-order-edit-modal .close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+}
+
+.skumari-order-edit-modal .close-button:hover {
+  color: #333;
+}
+
+/* Styling for the modal background overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+/* Styling for the modal content container (the pop-up itself) */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px; /* Max width for larger screens */
+  position: relative;
+}
+
+/* Styling for the modal title (e.g., "ORDERS") */
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Styling for form groups within the modal */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+  width: calc(100% - 10px); /* Adjust for padding */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Styling for the action buttons at the bottom of the modal */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+  margin-top: 20px;
+}
+
+/* Styling for the SAVE button */
+.modal-buttons .save-button {
+  background-color: #6a5acd; /* Purple color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.modal-buttons .save-button:hover {
+  background-color: #5d4aaf; /* Darker purple on hover */
+}
+
+/* Styling for the CLEAR button */
+.modal-buttons .clear-button {
+  background-color: #808080; /* Gray color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.modal-buttons .clear-button:hover {
+  background-color: #696969; /* Darker gray on hover */
+}
+
+/* Styling for the close button (X icon) in the modal header */
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #333;
+}
+
+.modal-close-button:hover {
+  color: #000;
+}
+
+/* --- Confirmation Dialog (Delete) --- */
+
+/* Styling for the warning icon */
+.confirmation-icon {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.confirmation-icon img {
+  width: 60px; /* Adjust size as needed */
+  height: 60px;
+}
+
+/* Styling for the confirmation message */
+.confirmation-message {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.confirmation-subtext {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Styling for the confirmation buttons */
+.confirmation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Yes, Delete it! button */
+.confirmation-buttons .delete-confirm-button {
+  background-color: #6a5acd; /* Purple color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.confirmation-buttons .delete-confirm-button:hover {
+  background-color: #5d4aaf; /* Darker purple on hover */
+}
+
+/* No, Cancel button */
+.confirmation-buttons .cancel-button {
+  background-color: #555; /* Dark gray */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.confirmation-buttons .cancel-button:hover {
+  background-color: #333; /* Even darker gray on hover */
+}
+
+/* General table styling for "My Orders" and "Customers" */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Action icons in table */
+.action-icons img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* --- Modal Overlay --- */
+.skumari-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* --- Modal Container --- */
+.skumari-modal {
+  background-color: #fff;
+  width: 90%;
+  max-width: 500px;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Modal Title --- */
+.skumari-modal h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* --- Divider Line below Title --- */
+.skumari-divider-line {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin-bottom: 20px;
+}
+
+/* --- Form Grid Layout --- */
+.skumari-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* --- Individual Form Group (Label + Input/Select) --- */
+.skumari-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.skumari-form-group1 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Label Styling --- */
+.skumari-form-group label {
+  font-weight: 500;
+  color: #555;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+
+.skumari-form-group1 label {
+  font-weight: 500;
+  color: #555;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+
+.skumari-form-group1 select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #333;
+  background-color: #fdfdfd;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skumari-form-group input[type="text"],
+.skumari-form-group input[type="email"],
+.skumari-form-group input[type="password"],
+.skumari-form-group select {
+  width: 90%;
+  padding: 10px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #333;
+  background-color: #fdfdfd;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skumari-form-group input:focus,
+.skumari-form-group select:focus {
+  outline: none;
+  border-color: #6a5acd;
+  box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.2);
+}
+
+.skumari-phone-input {
+  display: flex;
+  gap: 8px;
+}
+
+.skumari-phone-input input {
+  flex: 1;
+}
+
+.skumari-form-grid .skumari-full-width {
+  grid-column: 1 / -1;
+}
+
+/* --- Required Asterisk --- */
+.skumari-required {
+  color: red;
+  margin-left: 4px;
+}
+
+/* --- Modal Actions (Buttons) --- */
+.skumari-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.skumari-modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+  outline: none;
+  box-shadow: none;
+}
+
+.skumari-modal-actions button[type="submit"] {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.skumari-modal-actions button[type="submit"]:hover {
+  background-color: #3730a3;
+}
+
+.skumari-modal-actions button[type="button"] {
+  background-color: #333;
+  color: white;
+}
+
+.skumari-modal-actions button[type="button"]:hover {
+  background-color: #555;
+}
+
+.skumari-modal input[type="text"],
+.skumari-modal input[type="email"],
+.skumari-modal input[type="password"],
+.skumari-modal select {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background-color: #fdfdfd;
+  color: #333;
+}
+
+.skumari-modal input:focus,
+.skumari-modal select:focus {
+  outline: none;
+  border-color: #6a5acd;
+  box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.2);
+}
+
+.skumari-upload-photo {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 8px;
+  width: 420px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInScale 0.3s ease-in-out;
+}
+
+.skumari-upload-photo h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.skumari-upload-photo input[type="file"] {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+.skumari-upload-photo .skumari-form-buttons {
+  justify-content: space-between;
+}
+
+.skumari-upload-photo .skumari-form-buttons button {
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+.skumari-upload-photo .skumari-form-buttons .skumari-save {
+  background-color: #28a745;
+  color: white;
+}
+
+.skumari-upload-photo .skumari-form-buttons .skumari-close {
+  background-color: #6c757d;
+  color: white;
+}
+
+.skumari-address-detail-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.skumari-address-detail-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.skumari-address-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.skumari-address-detail-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.skumari-address-detail-back-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.skumari-address-detail-back-btn:hover {
+  background-color: #f0f8ff;
+  text-decoration: underline;
+}
+
+.skumari-address-detail-content {
+  padding-top: 15px;
+}
+
+.skumari-address-detail-row {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.skumari-address-detail-label {
+  font-weight: bold;
+  color: #555;
+  font-size: 15px;
+  min-width: 120px;
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+.skumari-address-detail-value {
+  color: #333;
+  font-size: 15px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .skumari-admin-profile.skumari-fullscreen-profile {
+    padding: 1rem;
+  }
+
+  .skumari-admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skumari-profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .skumari-profile-header h2,
+  .skumari-profile-header p {
+    margin: 5px 0;
+  }
+
+  .skumari-tabs {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  .skumari-tabs button {
+    width: 100%;
+    text-align: left;
+  }
+
+  .skumari-info-box,
+  .skumari-info-box1,
+  .skumari-info-box2 {
+    padding: 15px;
+  }
+
+  .skumari-info-details-container,
+  .skumari-info-details-container1,
+  .skumari-info-details-container2 {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .skumari-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skumari-employee-form-groups1 input[type="password"] {
+    width: 100%;
+  }
+
+  .skumari-button-container {
+    padding-right: 0;
+    justify-content: center;
+  }
+
+  .skumari-save-btn {
+    margin-right: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .skumari-address-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .skumari-add-address-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .skumari-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skumari-form-group input[type="text"],
+  .skumari-form-group input[type="email"],
+  .skumari-form-group1 select {
+    width: 100%;
+  }
+
+  .skumari-modal-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .skumari-modal-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .skumari-upload-photo .skumari-form-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .skumari-upload-photo .skumari-form-buttons button {
+    width: 100%;
+  }
+
+  /* Responsive adjustments for Address Detail View */
+  .skumari-address-detail-box {
+    padding: 20px;
+  }
+
+  .skumari-address-detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .skumari-address-detail-name {
+    font-size: 20px;
+  }
+
+  .skumari-address-detail-back-btn {
+    width: 100%;
+    text-align: left;
+    padding-left: 0;
+  }
+
+  .skumari-address-detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .skumari-address-detail-label {
+    min-width: unset;
+    margin-right: 0;
+  }
+}

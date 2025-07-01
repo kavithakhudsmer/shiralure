@@ -1,0 +1,267 @@
+.dsdvpdash{
+  background-color: #eef2f7;
+  font-family: sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.dsdvpheader {
+  padding: 20px 15px;
+  background-color: #eef2f7;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dsdvpheader-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.dsdvpheader-content h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.dsdvpbreadcrumb {
+  font-size: 14px;
+  color: #6366f1;
+}
+
+.dsdvpbreadcrumb .dsdvphome {
+  color: #6366f1;
+  font-weight: bold;
+}
+
+.dsdvpaction-bar {
+  width: 100%;
+  padding: 0 15px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.dsdvpaction-button {
+  padding: 14px 30px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.dsdvpaction-button.dsdvpinfo-button {
+  background-color: #fff;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+}
+
+.dsdvpaction-button.dsdvpimages-button {
+  background-color: #fff;
+  color: #6b7280;
+  border: 1px solid #d1d5db;
+}
+
+.dsdvpaction-button.dsdvpactive {
+  background-color: #6366f1;
+  color: #fff;
+  border: 1px solid #6366f1;
+}
+
+.dsdvpmain-container {
+  background-color: #fff;
+  margin: 0 15px 20px 15px;
+  padding: 20px;
+  border-radius: 10px;
+  width: calc(100% - 30px);
+  box-sizing: border-box;
+}
+
+.dsdvpdashboard-content {
+  padding: 0;
+  border-radius: 6px;
+}
+
+.dsdvpdashboard-content h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7280;
+  margin: 20px 20px 10px 20px;
+}
+
+.dsdvpinfo-table {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 0 20px 20px 20px;
+}
+
+.dsdvpinfo-label {
+  font-size: 14px;
+  color: black;
+  font-weight: 750;
+  padding: 0;
+}
+
+.dsdvpinfo-value {
+  font-size: 14px;
+  color: #333;
+  padding: 0;
+}
+
+.dsdvpstatus-active {
+  color: #10b981;
+}
+
+.dsdvpimage-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px;
+  justify-content: flex-start;
+}
+
+.dsdvpimage-container img {
+  width: 360px;
+  height: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  max-width: 100%;
+}
+
+.dsdvpinfo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-left: 0;
+}
+
+.dsdvpinfo-pair {
+  display: flex;
+  gap: 15px;
+  min-width: 200px;
+  flex: 1 1 40%;
+  margin-left: 50px;
+}
+
+.dsdvpinfo-header {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 20px 12px 0px;
+  margin-bottom: 16px;
+}
+
+.dsdvpimage-info-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 14px;
+  color: #333;
+  padding-top: 10px;
+}
+
+.dsdvpimage-info-side p {
+  margin: 6px 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .dsdvpheader-content h1 {
+    font-size: 24px;
+  }
+
+  .dsdvpbreadcrumb {
+    font-size: 12px;
+  }
+
+  .dsdvpaction-button {
+    width: 160px;
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  .dsdvpmain-container {
+    padding: 15px;
+    margin: 0 10px 15px 10px;
+  }
+
+  .dsdvpimage-container img {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .dsdvpinfo-row {
+    gap: 15px;
+  }
+
+  .dsdvpinfo-pair {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .dsdvpheader {
+    padding: 15px 3%;
+  }
+
+  .dsdvpheader-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .dsdvpheader-content h1 {
+    font-size: 20px;
+  }
+
+  .dsdvpbreadcrumb {
+    font-size: 11px;
+  }
+
+  .dsdvpaction-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dsdvpaction-button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .dsdvpmain-container {
+    padding: 10px;
+    margin: 0 5px 10px 5px;
+  }
+
+  .dsdvpdashboard-content h2 {
+    font-size: 14px;
+    margin: 15px 15px 8px 15px;
+  }
+
+  .dsdvpinfo-table {
+    padding: 0 15px 15px 15px;
+  }
+
+  .dsdvpimage-section {
+    padding: 15px;
+  }
+}

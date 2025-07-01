@@ -8,7 +8,7 @@ body {
 .vkreturn-wrapper {
   padding: 20px;
   background: #ffffff;
-  max-width: 960px;
+  width: 1200px; /* Reverted to original max-width */
   margin: 0 auto;
   border-radius: 10px;
   font-family: 'Segoe UI', sans-serif;
@@ -26,7 +26,7 @@ body {
   gap: 10px;
 }
 .vkheader-card {
-  margin-bottom: 24px; /* or 30px for more space */
+  margin-bottom: 24px;
 }
 .vkrefund-header-card {
   margin-top: 30px;
@@ -38,18 +38,24 @@ body {
   padding: 4px 10px;
   font-size: 14px;
   border-radius: 12px;
-  color: white;
+  font-weight: bold;
 }
-.returned {
-  background-color: #00b894;
+
+.vkbadge.returned {
+  background-color: #e0f2f7;
+  color: #2196f3;
 }
-.refunded {
-  background-color: #ffffff;
+
+.vkbadge.refunded {
+  background-color: #e8f5e9;
+  color: #4caf50;
 }
 
 .vktimestamp {
-  font-size: 14px;
-  color: #666;
+  font-size: 13px;
+  color: #777;
+  margin-top: 5px;
+  padding: 0px 20px;
   margin-bottom: 20px;
 }
 
@@ -95,40 +101,123 @@ body {
 }
 .vkcard h4 .vkicon {
   margin-right: 8px;
-  font-size: 18px;
-  color: #5A66F1; /* Or any color matching your theme */
+  color: #2196f3;
+  font-size: 20px;
 }
 .vkcard h4 .vkicon2 {
   margin-right: 8px;
-  font-size: 18px;
-  color: #e9e394; /* Or any color matching your theme */
+  color: #4caf50;
+  font-size: 20px;
 }
 .vkcard h4 .vkicon3 {
   margin-right: 8px;
-  font-size: 18px;
-  color: #b92d2d; /* Or any color matching your theme */
+  color: #e17055;
+  font-size: 20px;
+}
+.vkcard p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  color: #555;
 }
 
+.vkcard p strong {
+  color: #333;
+}
+
+/* Footer styles */
 .vkfooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #ccc;
-  font-size: 14px;
+  padding: 15px 20px;
+  background-color: #f7f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.vkfooter p {
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.vkfooter p svg {
+  margin-right: 8px;
+  color: #5A66F1;
+  font-size: 18px;
 }
 
 .vkfooter a {
-  color: #0984e3;
+  color: #5A66F1;
   text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.vkfooter a:hover {
+  text-decoration: underline;
+}
+
+.close-btn {
+
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  
 }
 
 .close-btn {
   padding: 8px 16px;
-  background: #2d3436;
-  color: white;
+ 
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+
+
+.close-btn svg {
+  font-size: 20px;
+}
+
+.reminder {
+  background-color: #fffde7;
+  border-left: 5px solid #ffc107;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.reminder h4 {
+  color: #e65100;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reminder h4 svg {
+  margin-right: 10px;
+  font-size: 22px;
+  color: #ff9800;
+}
+
+.reminder p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.reminder p strong {
+  color: #333;
 }

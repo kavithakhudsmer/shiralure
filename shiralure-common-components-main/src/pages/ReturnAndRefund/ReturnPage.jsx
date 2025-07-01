@@ -9,8 +9,10 @@ import { BsFiletypeXls } from 'react-icons/bs';
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 import { FiEye } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // <--- Re-introduced useNavigate
 import { FaSearch, FaTimes } from 'react-icons/fa';
+
+// import ReturnDetails from './ReturnDetails'; // <--- REMOVED: No longer directly imported here
 
 const ReturnPage = () => {
   const [allOrders, setAllOrders] = useState([]);
@@ -23,6 +25,8 @@ const ReturnPage = () => {
   const dropdownRef = useRef(null);
   const shareRef = useRef(null);
 
+  // const [selectedOrderId, setSelectedOrderId] = useState(null); // <--- REMOVED: No longer needed for conditional rendering
+
   const [filters, setFilters] = useState({
     id: '',
     customer: '',
@@ -30,7 +34,7 @@ const ReturnPage = () => {
     status: '',
   });
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // <--- Re-initialized useNavigate
 
   useEffect(() => {
     fetch('/returns.json')
@@ -41,9 +45,15 @@ const ReturnPage = () => {
       });
   }, []);
 
+  // MODIFIED handleViewClick to use navigation
   const handleViewClick = (order) => {
-    navigate(`/returns/${order.id}`);
+    // IMPORTANT: Path must match the route defined in App.jsx for admin section
+    navigate(`/admin/returns/${order.id}`); // <--- MODIFIED TO NAVIGATE TO THE DETAILS PAGE
   };
+
+  // const handleCloseReturnDetails = () => { // <--- REMOVED: No longer needed
+  //   setSelectedOrderId(null);
+  // };
 
   const handleFilterChange = (e) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
@@ -103,12 +113,23 @@ const ReturnPage = () => {
   const endIndex = Math.min(startIndex + rowCount, filteredOrders.length);
   const totalPages = Math.ceil(filteredOrders.length / rowCount);
 
+  // CONDITIONAL RENDERING LOGIC REMOVED: Now ReturnDetails is a separate route
+  // if (selectedOrderId) {
+  //   return (
+  //     <ReturnDetails
+  //       orderId={selectedOrderId}
+  //       onClose={handleCloseReturnDetails}
+  //     />
+  //   );
+  // }
+
+  // Otherwise, render the ReturnPage content (always)
   return (
     <div className="vkreturns-page">
       <div className="returns-header">
         <h2>Returns and Refunds</h2>
         <div className="returns-breadcrumb">
-          <span className="breadcrumb-link">Home</span>
+          <span className="breadcrumb-link">Dashboard</span>
           <span className="breadcrumb-divider"> &gt;&gt; </span>
           <span>Returns and Refunds</span>
         </div>
@@ -210,7 +231,7 @@ const ReturnPage = () => {
                   <td className="vkkactions no-print">
                     <button
                       className="vkkicon-button vkkview-btn"
-                      onClick={() => handleViewClick(order)}
+                      onClick={() => handleViewClick(order)} // Calls navigate
                       title="View"
                     >
                       <FiEye />

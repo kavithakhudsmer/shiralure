@@ -31,24 +31,29 @@ import Purchase from "./pages/Purchases/purchase/Purchase";
 import OrderTable from './pages/OnlineOrders/OrderTable';
 import Subscriber from './pages/subscriber/Subscriber';
 import ProductReports from './pages/Reportpage/ProductReports';
-import CustomerTable from './pages/customerpage/CustomerTable';
+import Customers from './pages/customerpage/Customers';
 import CreditBalanceReports from './pages/Credit Balance Report/CreditBalanceReports';
 import Coupons from './pages/E-Coupons/Coupons';
 import TransactionPage from './pages/Transactions/Transactions';
 import Administrators from './pages/administrators/Administrators';
 import DamageTShirt from './pages/salesreport/DamageTShirt';
 import ProductSection from './pages/ProductSection/ProductSection';
-import ViewCustomerPage from './pages/customerpage/ViewCustomerPage';
+
 import Employees from './pages/Employees/Employees';
 import PosOrder from './pages/posorder/PosOrders';
-// import Promotion from './pages/pomotionpage/promotion';
 import ReturnPage from './pages/ReturnAndRefund/ReturnPage';
-import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails';
+import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails'; // <-- Re-added this import
 import PushNotifications from './pages/PushNotification/PushNotifications';
 import Stocks from './pages/Stocks/ProductList';
 import Product from './pages/product/promotion';
-import ViewPromotionPage from "./pages/product/ViewPromotion";
 import Damage from './pages/damage/damage';
+
+// import PromotionsDashboard from './pages/pomotionpage/promotion';
+// import ViewPromotionPage from './pages/pomotionpage/ViewPromotion';
+
+// import ProductDashboard from "./pages/product/promotion";
+// import ViewProductPage from "./pages/product/ViewPromotion";
+ 
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -87,29 +92,32 @@ const App = () => {
                 {/* <Route path="SPage" element={<SPage />} /> */}
                 <Route path="Purchase" element={<Purchase />} /> 
                 <Route path="OnlineOrders" element={<OrderTable />} /> 
-          
+              
                 <Route path="Subscriber" element={<Subscriber />} />
                 <Route path="ProductReports" element={<ProductReports />} />
-                <Route path="CustomerTable" element={<CustomerTable />} />
+                
                 <Route path="CreditBalanceReports" element={<CreditBalanceReports />} />
                 <Route path="Coupons" element={<Coupons />} />
                 <Route path="Transactions" element={<TransactionPage />} />
                 <Route path="Administrators" element={<Administrators/>} />
                 <Route path="DamageTShirt" element={<DamageTShirt />} />
                 <Route path="ProductSection" element={<ProductSection />} />
-                <Route path="view-customer" element={<ViewCustomerPage />} />
+                
                 <Route path="Employees" element={<Employees />} />
-                {/* <Route path="promotion" element={<Promotion />} /> */}
+                <Route path="Customers" element={<Customers />} />
 
                 <Route path="ReturnPage" element={<ReturnPage />} />
-                <Route path="/returns/:orderId" element={<ReturnDetails />} />
+                {/* IMPORTANT: This route is now active again for full-screen details */}
+                <Route path="returns/:orderId" element={<ReturnDetails />} /> 
                 <Route path="Stocks" element={<Stocks />} />
-                <Route path="Product" element={<Product />} />
-                <Route path="ViewPromotionPage" element={<ViewPromotionPage />} />
+           
+                {/* <Route path="/products" element={<ProductDashboard />} /> */}
+                {/* <Route path="/products/view/:id" element={<ViewProductPage />} /> */}
+            
                 <Route path="damage" element={<Damage />} />
+               {/* <Route path="/promotions" element={<PromotionsDashboard />} /> */}
+          {/* <Route path="/promotionss/view/:id" element={<ViewPromotionPage />} /> */}
 
-              
-               
               </Routes>
           }
         />

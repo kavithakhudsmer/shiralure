@@ -13,11 +13,11 @@ import * as XLSX from 'xlsx';
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
 import './promotion.css';
-import './PromotionsFilter.css';
+
  
-
+ 
  import promotionsData from "./data/promotions.json";
-
+ 
  
 const PromotionsDashboard = () => {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ const PromotionsDashboard = () => {
   const exportRef = useRef(null);
   const itemsPerPageRef = useRef(null);
  
-  // 🆕 Load promotions from JSON file
+ 
   useEffect(() => {
     setAllPromotions(promotionsData);
   }, []);
@@ -108,8 +108,8 @@ const PromotionsDashboard = () => {
     setEditPromotion(null);
   };
  
-  const handleViewPromotion = (promotion) => {
-    navigate(`/promotions/view/${promotion.id}`);
+  const handleViewPromotions = (promotion) => {
+    navigate(`/admin/promotionss/view/${promotion.id}`);
   };
  
   const handlePageChange = (page) => setCurrentPage(page);
@@ -275,7 +275,7 @@ const PromotionsDashboard = () => {
                   <td className={`status ${promo.status.toLowerCase()}`}>{promo.status}</td>
                   <td>
                     <div className="action-buttons-cell">
-                      <button className="action-btn view" onClick={() => handleViewPromotion(promo)}>
+                      <button className="action-btn view" onClick={() => handleViewPromotions(promo)}>
                         <FiEye size={16} />
                       </button>
                       <button className="action-btn edit" onClick={() => setEditPromotion(promo)}>
