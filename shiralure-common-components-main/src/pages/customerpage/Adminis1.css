@@ -43,7 +43,7 @@
 }
 
 .skumari-employee-breadcrumb-link {
-  color: #007bff;
+  color: #5A66F1;
   text-decoration: none;
 }
 
@@ -97,7 +97,7 @@
 
 .skumari-upload-btn {
   margin-top: 6px;
-  background-color: #4f46e5;
+  background-color: #5A66F1;
   color: white;
   padding: 8px 14px;
   cursor: pointer;
@@ -113,9 +113,6 @@
   box-shadow: none;
 }
 
-.skumari-upload-btn:hover {
-  background-color: #3730a3;
-}
 
 .skumari-role {
   background-color: #fcee75;
@@ -155,12 +152,12 @@
 }
 
 .skumari-tabs .skumari-active {
-  background-color: #4f46e5;
+  background-color: #5A66F1;
   color: white;
 }
 
 .skumari-tabs button:hover:not(.skumari-active) {
-  background-color: #4f46e5;
+  background-color: #5A66F1;
   color: #d3d3d3;
 }
 
@@ -308,9 +305,6 @@
   justify-content: center;
 }
 
-.skumari-save-btn:hover {
-  background-color: #4a54d1;
-}
 
 /* If you have specific styles for skumari-info-box1, ensure it allows its content to breathe */
 .skumari-info-box1 {
@@ -348,7 +342,7 @@
 
 /* Styling for the Save button */
 .skumari-save-btn {
-  background-color: #4f46e5;
+  background-color: #5A66F1;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -365,10 +359,7 @@
   box-shadow: none;
 }
 
-/* Hover effect for the Save button */
-.skumari-save-btn:hover {
-  background-color: #3730a3;
-}
+
 
 .skumari-info-box2 {
   background: white;
@@ -398,7 +389,7 @@
 }
 
 .skumari-add-address-btn {
-  background-color: #4f46e5;
+  background-color: #5A66F1;
   color: white;
   padding: 8px 12px;
   border: none;
@@ -414,9 +405,6 @@
   box-shadow: none;
 }
 
-.skumari-add-address-btn:hover {
-  background-color: #3730a3;
-}
 
 .skumari-info-details-container2 {
   display: flex;
@@ -511,19 +499,19 @@
 }
 
 .skumari-address-delete-btn svg {
-  color: #EF4444;
+  color: #F4415F;
 }
 
 .skumari-address-view-btn:hover {
-  background-color: rgba(90, 102, 241, 0.1);
+  background-color: #eeeffe;
 }
 
 .skumari-address-edit-btn:hover {
-  background-color: rgba(59, 130, 246, 0.1);
+  background-color:#e8f9ef;
 }
 
 .skumari-address-delete-btn:hover {
-  background-color: rgba(239, 68, 68, 0.1);
+  background-color:#ffcfd7;
 }
 
 .skumari-employee-delete-modal {
@@ -583,22 +571,18 @@
 }
 
 .skumari-employee-delete-buttons button.skumari-yes {
-  background-color: #6c5ce7;
+  background-color: #5A66F1;
   color: #fff;
 }
 
-.skumari-employee-delete-buttons button.skumari-yes:hover {
-  background-color: #5a4cb8;
-}
+
 
 .skumari-employee-delete-buttons button.skumari-no {
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
 }
 
-.skumari-employee-delete-buttons button.skumari-no:hover {
-  background-color: #555;
-}
+
 
 /* Overall container for the Orders tab content */
 .skumari-info-box3 {
@@ -741,7 +725,7 @@
 }
 
 .skumari-order-detail-back-btn {
-  background-color: #6c5ce7; /* A soft grey for "Back" */
+  background-color: #5A66F1; /* A soft grey for "Back" */
   color: white;
   border: none;
   padding: 8px 15px;
@@ -754,9 +738,7 @@
   transition: background-color 0.3s ease;
 }
 
-.skumari-order-detail-back-btn:hover {
-  background-color: #6c5ce7;
-}
+
 
 .skumari-order-detail-content {
   display: flex;
@@ -878,25 +860,19 @@
 
 .skumari-modal-actions button[type="button"] {
   /* CLEAR button */
-  background-color: #6c757d; /* Grey */
+  background-color: #000000; /* Grey */
   color: #fff;
 }
 
-.skumari-modal-actions button[type="button"]:hover {
-  background-color: #5a6268;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
+
 
 .skumari-modal-actions button[type="submit"] {
   /* SAVE button */
-  background-color: #6a5acd; /* Purple */
+  background-color: #5A66F1; /* Purple */
   color: #fff;
 }
 
-.skumari-modal-actions button[type="submit"]:hover {
-  background-color: #5443b3;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
+
 
 .skumari-modal-actions button svg {
   margin-right: 8px; /* Space between icon and text */
@@ -1277,22 +1253,17 @@
 }
 
 .skumari-modal-actions button[type="submit"] {
-  background-color: #4f46e5;
+  background-color: #5A66F1;
   color: white;
 }
 
-.skumari-modal-actions button[type="submit"]:hover {
-  background-color: #3730a3;
-}
+
 
 .skumari-modal-actions button[type="button"] {
-  background-color: #333;
+  background-color: #000000;
   color: white;
 }
 
-.skumari-modal-actions button[type="button"]:hover {
-  background-color: #555;
-}
 
 .skumari-modal input[type="text"],
 .skumari-modal input[type="email"],

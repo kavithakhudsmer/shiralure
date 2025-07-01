@@ -72,7 +72,7 @@
 }
 
 .rk-customer-icon-box {
-  background-color: #6c5ce7;
+  background-color: #5A66F1;
   color: #fff;
   border: none;
   padding: 10px 12px;
@@ -85,9 +85,6 @@
   transition: background-color 0.3s ease;
 }
 
-.rk-customer-icon-box:hover {
-  background-color: #5a4cb8;
-}
 
 .rk-customer-icon {
   font-size: 18px;
@@ -98,7 +95,7 @@
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #6c5ce7;
+  background-color: #5A66F1;
   color: white;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -191,22 +188,16 @@
 }
 
 .rk-customer-filter-buttons button.rk-customer-search {
-  background-color: #6c5ce7;
+  background-color: #5A66F1;
   color: #fff;
 }
 
-.rk-customer-filter-buttons button.rk-customer-search:hover {
-  background-color: #5a4cb8;
-}
 
 .rk-customer-filter-buttons button.rk-customer-clear {
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
 }
 
-.rk-customer-filter-buttons button.rk-customer-clear:hover {
-  background-color: #333;
-}
 
 
 /* Table Styling */
@@ -292,20 +283,20 @@
 }
 
 .rk-customer-delete-btn svg {
-  color: #EF4444;
+  color: #F4415F;
 }
 
 /* Hover effects with circular background */
 .rk-customer-view-btn:hover {
-  background-color: rgba(90, 102, 241, 0.1);
+  background-color:#eeeffe;
 }
 
 .rk-customer-edit-btn:hover {
-  background-color: rgba(59, 130, 246, 0.1);
+  background-color: #e8f9ef;
 }
 
 .rk-customer-delete-btn:hover {
-  background-color: rgba(239, 68, 68, 0.1);
+  background-color:#ffcfd7;
 }
 
 /* Optional: slight scale effect on hover */
@@ -443,22 +434,22 @@
   -moz-appearance: none;
   appearance: none;
   /* Basic styling for the custom radio circle (light purple) */
-  width: 18px;
-  height: 18px;
-  border: 1px solid #a081bb;
-  border-radius: 50%;
+  width: 15px;
+  height: 9px;
+ 
+  border-radius: 100%;
   outline: none;
   cursor: pointer;
   position: relative;
   flex-shrink: 0;
-  background-color: #f3e9ff;
+ 
   transition: all 0.2s ease-in-out;
 }
 
 /* Style for the checked state (deeper purple fill) */
 .rk-customer-radio-group input[type="radio"]:checked {
-  border-color: #6c5ce7;
-  background-color: #6c5ce7;
+  border-color: #5A66F1;
+  background-color: #5A66F1;
 }
 
 /* Create the inner white dot for the checked state */
@@ -495,22 +486,18 @@
 }
 
 .rk-customer-form-buttons button.rk-customer-save {
-  background-color: #6c5ce7;
+  background-color: #5A66F1;
   color: #fff;
 }
 
-.rk-customer-form-buttons button.rk-customer-save:hover {
-  background-color: #5a4cb8;
-}
+
 
 .rk-customer-form-buttons button.rk-customer-close {
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
 }
 
-.rk-customer-form-buttons button.rk-customer-close:hover {
-  background-color: #555;
-}
+
 
 /* Delete Confirmation Modal - unchanged */
 .rk-customer-delete-modal {
@@ -570,22 +557,16 @@
 }
 
 .rk-customer-delete-buttons button.rk-customer-yes {
-  background-color: #6c5ce7;
+  background-color: #5A66F1;
   color: #fff;
 }
 
-.rk-customer-delete-buttons button.rk-customer-yes:hover {
-  background-color: #5a4cb8;
-}
 
 .rk-customer-delete-buttons button.rk-customer-no {
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
 }
 
-.rk-customer-delete-buttons button.rk-customer-no:hover {
-  background-color: #555;
-}
 
 /* Pagination */
 .rk-customer-footer {
@@ -665,7 +646,7 @@
 }
 
 .rk-customer-row-count-btn {
-  background-color: #6c5ce7;
+  background-color: #5A66F1;
   color: white;
   border: none;
   padding: 8px 12px;
@@ -679,15 +660,13 @@
   box-sizing: border-box;
 }
 
-.rk-customer-row-count-btn:hover {
-  background-color: #6c5ce7;
-}
+
 
 .rk-customer-row-count-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #6c5ce7;
+  background-color: #5A66F1;
   border: 1px solid #ddd;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
