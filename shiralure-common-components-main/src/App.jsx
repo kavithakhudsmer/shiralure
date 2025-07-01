@@ -38,14 +38,12 @@ import TransactionPage from './pages/Transactions/Transactions';
 import Administrators from './pages/administrators/Administrators';
 import DamageTShirt from './pages/salesreport/DamageTShirt';
 import ProductSection from './pages/ProductSection/ProductSection';
-
 import Employees from './pages/Employees/Employees';
 import PosOrder from './pages/posorder/PosOrders';
 import ReturnPage from './pages/ReturnAndRefund/ReturnPage';
-import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails'; // <-- Re-added this import
+import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails'; 
 import PushNotifications from './pages/PushNotification/PushNotifications';
 import Stocks from './pages/Stocks/ProductList';
-
 import Damage from './pages/damage/damage';
 
 // import PromotionsDashboard from './pages/pomotionpage/promotion';

@@ -92,6 +92,14 @@ const POS = () => {
   const total = subTotal + tax - discount;
 
   return (
+    <div className="pos-container">
+    <div className="posheader">
+        <h2 className="postitle">POS</h2>
+        <h6 className="posbreadcrumb">
+          <a href="/" className="posbreadcrumb">Home</a> &gt;&gt; <span>POS</span>
+        </h6>
+      </div>
+    
     <div className="pos-page d-flex">
       <div className="product-list">
         {posproducts.map((product) => (
@@ -385,6 +393,7 @@ const POS = () => {
           </>
         )}
       </div>
+    </div>
     </div>
   );
 };
