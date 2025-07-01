@@ -45,14 +45,14 @@ import ReturnPage from './pages/ReturnAndRefund/ReturnPage';
 import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails'; // <-- Re-added this import
 import PushNotifications from './pages/PushNotification/PushNotifications';
 import Stocks from './pages/Stocks/ProductList';
-import Product from './pages/product/promotion';
+
 import Damage from './pages/damage/damage';
 
 // import PromotionsDashboard from './pages/pomotionpage/promotion';
 // import ViewPromotionPage from './pages/pomotionpage/ViewPromotion';
 
-// import ProductDashboard from "./pages/product/promotion";
-// import ViewProductPage from "./pages/product/ViewPromotion";
+import ProductDashboard from "./pages/product/promotion";
+import ViewProductPage from "./pages/product/ViewPromotion";
  
 
 const Layout = ({ children }) => {
@@ -111,8 +111,8 @@ const App = () => {
                 <Route path="returns/:orderId" element={<ReturnDetails />} /> 
                 <Route path="Stocks" element={<Stocks />} />
            
-                {/* <Route path="/products" element={<ProductDashboard />} /> */}
-                {/* <Route path="/products/view/:id" element={<ViewProductPage />} /> */}
+                <Route path="/products" element={<ProductDashboard />} />
+                <Route path="/products/view/:id" element={<ViewProductPage />} />
             
                 <Route path="damage" element={<Damage />} />
                {/* <Route path="/promotions" element={<PromotionsDashboard />} /> */}
