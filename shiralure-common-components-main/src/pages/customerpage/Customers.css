@@ -11,7 +11,8 @@
   align-items: center;
   margin-left: 10px;
   margin-right: 10px;
-  margin-top: -20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .rk-customer-header-left h1 {
@@ -35,7 +36,7 @@
 }
 
 .rk-customer-breadcrumb-link {
-  color: #007bff;
+  color: #5A66F1;
   text-decoration: none;
 }
 
@@ -593,11 +594,12 @@
 }
 
 .rk-customer-pagination-arrow {
+  height:38px;
   background-color: #f0f2f5;
   color: #555;
   border: 1px solid #ddd;
   padding: 8px 12px;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -608,6 +610,7 @@
 }
 
 .rk-customer-pagination-page {
+   height:38px;
   background-color: #f0f2f5;
   color: #555;
   border: 1px solid #ddd;
@@ -622,14 +625,14 @@
 }
 
 .rk-customer-pagination-page.rk-customer-active {
-  background-color: #6c5ce7;
-  color: #fff;
-  border-color: #6c5ce7;
+  background-color: #EEEFFE;
+  color: #5A66F1;
+  border-color: #EEEFFE;
 }
 
 .rk-customer-pagination-page.rk-customer-active:hover {
-  background-color: #6c5ce7;
-  color: #fff;
+  background-color: #EEEFFE;
+  color: #5A66F1;
 }
 
 .rk-customer-pagination-arrow:disabled,

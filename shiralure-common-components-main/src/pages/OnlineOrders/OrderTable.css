@@ -773,10 +773,10 @@
  background: #eeeffe;
   border-radius: 100%;
   box-shadow: 0 0 0 6px #e7e9fd;
+  
 }
 
 .sriaction-eye:hover {
-
   width: 100%;
   height: 100%;
 }

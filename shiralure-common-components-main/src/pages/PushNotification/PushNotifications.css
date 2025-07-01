@@ -109,7 +109,7 @@
 .dvspRecord-button, .dvspAction-button {
   padding: 8px 12px;
   border: 1px solid #d1d5db;
-  background-color: #6c5ce7;
+  background-color: #5A66F1;
   color: #fff;
   border-radius: 6px;
   display: flex;
@@ -120,16 +120,13 @@
   height: 38px;
 }
 
-.dvspRecord-button:hover, .dvspAction-button:hover {
-  background-color: #868aff;
-}
 
 .dvspDropdown-menu {
   position: absolute;
   right: 0;
   top: 100%;
   margin-top: 6px;
-  background-color: #6b6bff;
+  background-color: #5A66F1;
   border: 1px solid #d1d5db;
   border-radius: 6px;
   padding: 6px;
@@ -221,13 +218,10 @@
   color: #fff;
   cursor: pointer;
   font-size: 14px;
-  background-color: #6c5ce7;
+  background-color: #5A66F1;
   margin: 0;
 }
 
-.dvspSearch-button:hover {
-  background-color: #8e7cc3;
-}
 
 .dvspClear-button {
   padding: 5px 10px;
@@ -245,9 +239,7 @@
   margin: 0;
 }
 
-.dvspClear-button:hover {
-  background-color: #636e72;
-}
+
 
 .dvspDetails {
   margin-left: 20px;
@@ -373,14 +365,14 @@
   padding: 7px 10px;
   border: 1px solid #d1d5db;
   background-color: #f3f4f6;
-  color: #5a66f1;
+  color: #5A66F1;
   cursor: pointer;
   font-size: 14px;
 }
 
 .dvspPagination-button.dvspActive {
   background-color: #d9e6f8;
-  color: #5a66f1;
+  color: #5A66F1;
   font-weight: bold;
 }
 
@@ -487,7 +479,7 @@
 }
 
 .dvspSave-button {
-  background-color: #5a66f1;
+  background-color: #5A66F1;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -524,7 +516,7 @@
 }
 
 .dvspDelete-button {
-  background-color: #5a66f1;
+  background-color: #5A66F1;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -540,9 +532,7 @@
   margin-top: 10px;
 }
 
-.dvspSave-button:hover, .dvspDelete-button:hover {
-  background-color: #999ff0;
-}
+
 
 .dvspCancel-button {
   background-color: black;
@@ -561,9 +551,6 @@
   margin-top: 10px;
 }
 
-.dvspCancel-button:hover {
-  background-color: #4b5563;
-}
 
 .dvspModal-icon {
   margin-bottom: 16px;
@@ -699,9 +686,7 @@
   cursor: pointer;
 }
 
-.dvspSave-btn:hover {
-  background-color: #444cdb;
-}
+
 
 .dvspClear-btn:hover {
   background-color: #555;
