@@ -131,13 +131,13 @@ const PromotionsDashboard = () => {
   };
  
   return (
-    <div className="promotions-dashboard">
-      <div className="header">
-        <div className="header-content">
-          <div className="header-left">
+    <div className="skpromotions-dashboard">
+      <div className="skheader">
+        <div className="skheader-content">
+          <div className="skheader-left">
             <h1>Promotions</h1>
           </div>
-          <div className="header-right">
+          <div className="skheader-right">
             <div className="breadcrumb">
               <a href="/" className="breadcrumb-home">Home</a>
               <span> &gt;&gt; Promotions</span>
@@ -146,11 +146,11 @@ const PromotionsDashboard = () => {
         </div>
       </div>
  
-      <div className="table-container">
-        <div className="table-header">
-          <div className="table-actions">
-            <div className="items-per-page" ref={itemsPerPageRef}>
-              <div className="items-per-page-selector" onClick={() => {
+      <div className="sktable-container">
+        <div className="sktable-header">
+          <div className="sktable-actions">
+            <div className="skitems-per-page" ref={itemsPerPageRef}>
+              <div className="skitems-per-page-selector" onClick={() => {
                 setShowItemsPerPageDropdown(!showItemsPerPageDropdown);
                 setShowFilterRow(false);
               }}>
@@ -158,11 +158,11 @@ const PromotionsDashboard = () => {
                 <FiChevronDown size={16} color='white' />
               </div>
               {showItemsPerPageDropdown && (
-                <div className="items-per-page-dropdown">
+                <div className="skitems-per-page-dropdown">
                   {[5, 10, 25, 50, 100].map(number => (
                     <div
                       key={number}
-                      className={`items-per-page-option ${itemsPerPage === number ? 'active' : ''}`}
+                      className={`skitems-per-page-option ${itemsPerPage === number ? 'active' : ''}`}
                       onClick={() => handleItemsPerPageChange(number)}
                     >
                       {number}
@@ -180,7 +180,7 @@ const PromotionsDashboard = () => {
               <FiSliders color='white' size={20} />
             </button>
  
-            <div className="export-container" ref={exportRef}>
+            <div className="skexport-container" ref={exportRef}>
               <button className="icon-btn" title="Export" onClick={() => {
                 setShowExportDropdown(!showExportDropdown);
                 setShowFilterRow(false);
@@ -189,7 +189,7 @@ const PromotionsDashboard = () => {
                 <TiExport color='white' size={20} />
               </button>
               {showExportDropdown && (
-                <div className="export-dropdown">
+                <div className="skexport-dropdown">
                   <button onClick={exportToPDF}><FiPrinter color='white' size={18} /> PDF</button>
                   <button onClick={exportToXLSX}><FiFile color='white' size={18} /> XLS</button>
                 </div>
@@ -257,8 +257,8 @@ const PromotionsDashboard = () => {
           </div>
         )}
  
-        <div className="table-content-box">
-          <table className="promotions-table">
+        <div className="sktable-content-box">
+          <table className="skpromotions-table">
             <thead>
               <tr>
                 <th>Name</th>
@@ -274,8 +274,8 @@ const PromotionsDashboard = () => {
                   <td>{promo.type}</td>
                   <td className={`status ${promo.status.toLowerCase()}`}>{promo.status}</td>
                   <td>
-                    <div className="action-buttons-cell">
-                      <button className="action-btn view" onClick={() => handleViewPromotions(promo)}>
+                    <div className="skaction-buttons-cell">
+                      <button className="action-btn view" onClick={() => handleViewPromotion(promo)}>
                         <FiEye size={16} />
                       </button>
                       <button className="action-btn edit" onClick={() => setEditPromotion(promo)}>
@@ -292,22 +292,22 @@ const PromotionsDashboard = () => {
           </table>
         </div>
  
-        <div className="table-footer-pagination">
-          <div className="pagination-info">
+        <div className="sktable-footer-pagination">
+          <div className="skpagination-info">
             Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, displayPromotions.length)} of {displayPromotions.length} entries
           </div>
-          <div className="pagination-controls">
-            <button className="pagination-btn" disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>&lt;</button>
+          <div className="skpagination-controls">
+            <button className="skpagination-btn" disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>&lt;</button>
             {[...Array(totalPages)].map((_, i) => (
               <button
                 key={i + 1}
-                className={`pagination-btn ${currentPage === i + 1 ? 'active' : ''}`}
+                className={`skpagination-btn ${currentPage === i + 1 ? 'active' : ''}`}
                 onClick={() => handlePageChange(i + 1)}
               >
                 {i + 1}
               </button>
             ))}
-            <button className="pagination-btn" disabled={currentPage === totalPages || totalPages === 0} onClick={() => handlePageChange(currentPage + 1)}>&gt;</button>
+            <button className="skpagination-btn" disabled={currentPage === totalPages || totalPages === 0} onClick={() => handlePageChange(currentPage + 1)}>&gt;</button>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-.promotions-dashboard {
+.skpromotions-dashboard {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
@@ -14,7 +14,7 @@ body, html {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
 }
-
+ 
 /* Container that holds the whole page */
 .main-container {
   width: 100vw;
@@ -22,18 +22,18 @@ body, html {
   padding: 20px;
   box-sizing: border-box;
 }
-
+ 
 /* Header area (Promotions title and breadcrumbs) */
-.header {
+.skheader {
   width: 100%;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+ 
 /* Table container */
-.table-container {
+.sktable-container {
   width: 100%;
   background-color: white;
   border-radius: 8px;
@@ -41,20 +41,20 @@ body, html {
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
-
+ 
 /* Table styles */
-.table-container table {
+.sktable-container table {
   width: 100%;
   border-collapse: collapse;
 }
-
-.table-container th,
-.table-container td {
+ 
+.sktable-container th,
+.sktable-container td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #eee;
 }
-
+ 
 /* Actions & buttons area */
 .action-buttons {
   display: flex;
@@ -62,63 +62,63 @@ body, html {
   gap: 10px;
   margin-bottom: 10px;
 }
-
+ 
 /* Pagination */
 .pagination {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
 }
-
+ 
 /* Header Styles */
-.header {
+.skheader {
   margin-bottom: 30px;
 }
-
-.header-content {
+ 
+.skheader-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
-
-.header-left h1 {
+ 
+.skheader-left h1 {
   font-size: 34px;
   font-weight: bold;
   color: #000;
   margin: 0;
   line-height: 1.2;
 }
-
-.header-right {
+ 
+.skheader-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 10px;
 }
-
+ 
 .breadcrumb {
   font-size: 24px;
   color: #333;
 }
-
+ 
 .breadcrumb-home {
   color: #5A66F1;
   text-decoration: none;
 }
-
+ 
 .breadcrumb span {
   color: #666;
   transition: color 0.2s ease;
   cursor: pointer;
 }
-
+ 
 .breadcrumb span:hover {
   color: #5A66F1;
 }
-
+ 
 /* Table Container Styles */
-.table-container {
+.sktable-container {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -126,9 +126,9 @@ body, html {
   padding-left: 20px; /* Add padding for left and right */
   padding-right: 20px; /* Add padding for left and right */
 }
-
+ 
 /* Table Header Styles */
-.table-header {
+.sktable-header {
   display: flex;
   justify-content: flex-end;
   padding: 15px 0; /* Adjust padding, left/right handled by container */
@@ -136,35 +136,35 @@ body, html {
   /* Removed border-bottom here as we are adding a separate separator */
   border-radius: 8px 8px 0 0;
 }
-
-.table-actions {
+ 
+.sktable-actions {
   display: flex;
   gap: 10px;
   align-items: center;
   margin-left: auto;
 }
-
+ 
 /* Separator below action icons */
 .table-separator {
   border-bottom: 1px solid #eee; /* Light gray border */
   margin-bottom: 20px; /* Space between separator and table */
 }
-
+ 
 /* Table Content Box */
-.table-content-box {
+.sktable-content-box {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   margin-bottom: 20px; /* Add margin below the table box */
   overflow: hidden;
 }
-
+ 
 /* Table Styles */
-.promotions-table {
+.skpromotions-table {
   width: 100%;
   border-collapse: collapse;
 }
-
-.promotions-table th {
+ 
+.skpromotions-table th {
   text-align: center;
   padding: 15px 20px;
   background: rgb(240, 240, 240);
@@ -172,41 +172,41 @@ body, html {
   color: black;
   border-bottom: 1px solid #eee;
 }
-
-.promotions-table td {
+ 
+.skpromotions-table td {
   padding: 15px 20px;
   border-bottom: 1px solid #eee;
   vertical-align: middle;
   text-align: center;
 }
-
-.promotions-table tr:last-child td {
+ 
+.skpromotions-table tr:last-child td {
   border-bottom: none;
 }
-
+ 
 /* Status Styles */
 .status {
   font-weight: bold;
   font-size: 14px;
 }
-
+ 
 .status.active {
   color: #5DD488;
   background-color: white;
 }
-
+ 
 .status.inactive {
   color: #F4415F;
   background-color: white;
 }
-
+ 
 /* Action Buttons in Table */
-.action-buttons-cell {
+.skaction-buttons-cell {
   display: flex;
   gap: 8px;
   justify-content: center;
 }
-
+ 
 .action-btn {
   position: relative;
   background: none;
@@ -219,36 +219,36 @@ body, html {
   justify-content: center;
   color: #6c757d;
 }
-
+ 
 .action-btn.view {
   color: #5A66F1;
 }
-
+ 
 .action-btn.view:hover {
   background: #eeeffe;
   border-radius: 100%;
 }
-
+ 
 .action-btn.edit {
   color: #5DD488;
 }
-
+ 
 .action-btn.edit:hover {
   background: #e8f9ef;
   border-radius: 100%;
 }
-
+ 
 .action-btn.delete {
   color: #F4415F;
 }
-
+ 
 .action-btn.delete:hover {
   background: #f4415f28;
   border-radius: 100%;
 }
-
+ 
 /* Pagination */
-.table-footer-pagination {
+.sktable-footer-pagination {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -257,19 +257,19 @@ body, html {
   border-radius: 0 0 8px 8px;
   margin-top: 0; /* Removed margin-top as padding handles spacing */
 }
-
-.pagination-info {
+ 
+.skpagination-info {
   color: #666;
   font-size: 14px;
 }
-
-.pagination-controls {
+ 
+.skpagination-controls {
   display: flex;
   border: 1px solid #ddd;
   align-items: center;
 }
-
-.pagination-btn {
+ 
+.skpagination-btn {
   min-width: 32px;
   height: 32px;
   padding: 0 8px;
@@ -283,33 +283,33 @@ body, html {
   align-items: center;
   justify-content: center;
 }
-
-.pagination-btn:disabled {
+ 
+.skpagination-btn:disabled {
   color: #ccc;
   cursor: not-allowed;
   opacity: 0.6;
 }
-
-.pagination-btn.active {
+ 
+.skpagination-btn.active {
   background: #eeeffe;
   color: #5A66F1;
   font-weight: bold;
 }
-
+ 
 .pagination-ellipsis {
   padding: 0 8px;
   color: #666;
   display: flex;
   align-items: center;
 }
-
+ 
 /* Action Buttons */
-.items-per-page {
+.skitems-per-page {
   position: relative;
   display: inline-block;
 }
-
-.items-per-page-selector {
+ 
+.skitems-per-page-selector {
   height: 35px;
   width: 58px;
   border-radius: 8px;
@@ -326,8 +326,8 @@ body, html {
   white-space: nowrap;
   min-width: 60px;
 }
-
-.items-per-page-dropdown {
+ 
+.skitems-per-page-dropdown {
   position: absolute;
   left: 0;
   top: 100%;
@@ -341,15 +341,15 @@ body, html {
   overflow: hidden;
   margin-top: 5px;
 }
-
-.items-per-page-option {
+ 
+.skitems-per-page-option {
   padding: 8px 12px;
   cursor: pointer;
   font-size: 14px;
   color: #333;
 }
-
-.items-per-page-option.active {
+ 
+.skitems-per-page-option.active {
   background: #5A66F1;
   color: white;
 }
@@ -365,19 +365,19 @@ body, html {
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
+ 
 .icon-btn.add-btn {
   background: #5A66F1;
   color: white;
 }
-
+ 
 /* Export Dropdown */
-.export-container {
+.skexport-container {
   position: relative;
 }
-
-
-.export-dropdown {
+ 
+ 
+.skexport-dropdown {
   position: absolute;
   top: 100%;
   right: 0;
@@ -389,8 +389,8 @@ body, html {
   overflow: hidden;
   margin-top: 5px;
 }
-
-.export-dropdown button {
+ 
+.skexport-dropdown button {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -403,21 +403,21 @@ body, html {
   font-size: 14px;
   color: white;
 }
-
-.export-dropdown button:hover {
+ 
+.skexport-dropdown button:hover {
   background-color: white;
   color: #5A66F1;
 }
-
-.export-dropdown button:hover svg {
+ 
+.skexport-dropdown button:hover svg {
   color: #5A66F1;
 }
-
+ 
 /* Filter container and modal positioning */
 .filter-container {
   position: static;
 }
-
+ 
 .promotions-filter-modal {
   position: absolute;
   top: calc(100% + 10px);
@@ -428,7 +428,7 @@ body, html {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 300px;
 }
-
+ 
 /* Styles for filter input boxes (assuming they are direct inputs within the filter modal) */
 .promotions-filter-modal input[type="text"],
 .promotions-filter-modal select {
@@ -439,76 +439,160 @@ body, html {
   width: 100%;
   box-sizing: border-box; /* Ensures padding doesn't add to the width */
 }
-
-
-
+ 
+ 
+ 
 /* Responsive Styles */
 @media (max-width: 768px) {
-  .header {
+  .skheader {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
   }
-
-  .header-right {
+ 
+  .skheader-right {
     width: 100%;
     align-items: flex-start;
   }
-
-  .table-header {
+ 
+  .sktable-header {
     flex-direction: column;
     align-items: flex-end;
     gap: 15px;
     padding: 15px 0; /* Keep padding consistent for mobile */
   }
-
-  .table-actions {
+ 
+  .sktable-actions {
     width: auto;
     margin-left: 0;
   }
-
-  .table-container {
+ 
+  .sktable-container {
     padding-left: 10px; /* Adjust padding for smaller screens */
     padding-right: 10px; /* Adjust padding for smaller screens */
   }
-
-  .table-content-box {
+ 
+  .sktable-content-box {
     margin: 0; /* Remove horizontal margin as container has padding */
   }
-
-  .promotions-table {
+ 
+  .skpromotions-table {
     display: block;
     overflow-x: auto;
   }
-
-  .table-footer-pagination {
+ 
+  .sktable-footer-pagination {
     flex-direction: column;
     gap: 15px;
     align-items: flex-start;
     padding: 15px 0; /* Adjust padding for smaller screens */
   }
-
-  .pagination-controls {
+ 
+  .skpagination-controls {
     flex-wrap: wrap;
   }
-
-  .pagination-info {
+ 
+  .skpagination-info {
     margin-bottom: 10px;
   }
-
-  .items-per-page-selector {
+ 
+  .skitems-per-page-selector {
     padding: 0 10px;
     font-size: 12px;
   }
-
+ 
   .promotions-filter-modal {
     left: 10px;
     right: 10px;
     width: auto;
     top: calc(100% + 5px);
   }
-
+ 
   .filter-modal-wrapper {
     padding: 0 10px; /* Adjust padding for smaller screens */
   }
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.muthufilter-promotions-filter {
+  background: white;
+ 
+  border-radius: 8px;
+  padding-bottom: 20px;
+}
+ 
+.muthufilter-filter-row {
+  display: flex;
+  flex-direction: row;
+  gap: 29px;
+  margin-bottom: 20px;
+}
+ 
+.muthufilter-filter-group {
+  flex: 1;
+}
+ 
+.muthufilter-filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: black;
+  font-weight: bold;
+}
+ 
+.muthufilter-filter-group input,
+.muthufilter-filter-group select {
+  width: 100%;
+  padding: 10px 0px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #F2F6F9; /* Added background color */
+}
+ 
+.muthufilter-filter-actions {
+  display: flex;
+  justify-content: left;
+  gap: 12px;
+}
+ 
+.muthufilter-search-btn {
+  padding: 10px 20px;
+  background: rgb(91, 101, 240);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+ 
+.muthufilter-clear-btn {
+  padding: 10px 20px;
+  background: #000000;
+  color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
 }

@@ -88,7 +88,7 @@ const ViewPromotion = () => {
         <div className="vvp-header-left"><h1>Products</h1></div>
         <div className="vvp-header-right">
           <div className="vvp-breadcrumb">
-            <a href="/" className="vvp-breadcrumb-home">Home</a>
+            <a href="/admin/products" className="vvp-breadcrumb-home">Home</a>
             <span> &gt;&gt; </span>
             <a href="/" className="vvp-breadcrumb-promotions">Products</a>
           </div>
