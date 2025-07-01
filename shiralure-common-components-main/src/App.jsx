@@ -116,7 +116,7 @@ const App = () => {
             
                 <Route path="damage" element={<Damage />} />
                {/* <Route path="/promotions" element={<PromotionsDashboard />} /> */}
-          {/* <Route path="/promotionss/view/:id" element={<ViewPromotionPage />} /> */}
+               {/* <Route path="/promotionss/view/:id" element={<ViewPromotionPage />} /> */}
 
               </Routes>
           }
