@@ -87,35 +87,27 @@ const App = () => {
                 {/* <Route path="SPage" element={<SPage />} /> */}
                 <Route path="Purchase" element={<Purchase />} /> 
                 <Route path="OnlineOrders" element={<OrderTable />} /> 
-              
                 <Route path="Subscriber" element={<Subscriber />} />
                 <Route path="ProductReports" element={<ProductReports />} />
-                
                 <Route path="CreditBalanceReports" element={<CreditBalanceReports />} />
                 <Route path="Coupons" element={<Coupons />} />
                 <Route path="Transactions" element={<TransactionPage />} />
                 <Route path="Administrators" element={<Administrators/>} />
                 <Route path="SalesReport" element={<DamageTShirt />} />
-                <Route path="ProductSection" element={<ProductSection />} />
-                
                 <Route path="Employees" element={<Employees />} />
                 <Route path="Customers" element={<Customers />} />
-
                 <Route path="ReturnPage" element={<ReturnPage />} />
-                {/* IMPORTANT: This route is now active again for full-screen details */}
                 <Route path="returns/:orderId" element={<ReturnDetails />} /> 
-                <Route path="Stocks" element={<Stocks />} />
-           
+                <Route path="Stocks" element={<Stocks />} />          
                 <Route path="/products" element={<ProductDashboard />} />
-                <Route path="/products/view/:id" element={<ViewProductPage />} />
-            
-                <Route path="damage" element={<Damage />} />
-              
+                <Route path="/products/view/:id" element={<ViewProductPage />} />           
+                <Route path="damage" element={<Damage />} />             
                 <Route path="Promotion" element={<Promotion />} />
-
               </Routes>
           }
         />
+
+
         {/* <Route path="/admin" element={<Dashboard />} /> */}
 
 
