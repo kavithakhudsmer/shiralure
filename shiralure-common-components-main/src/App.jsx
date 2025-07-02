@@ -45,10 +45,7 @@ import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails';
 import PushNotifications from './pages/PushNotification/PushNotifications';
 import Stocks from './pages/Stocks/ProductList';
 import Damage from './pages/damage/damage';
-
-// import PromotionsDashboard from './pages/pomotionpage/promotion';
-// import ViewPromotionPage from './pages/pomotionpage/ViewPromotion';
-
+import Promotion from './pages/promotion/promotion';
 import ProductDashboard from "./pages/product/promotion";
 import ViewProductPage from "./pages/product/ViewPromotion";
  
@@ -113,8 +110,8 @@ const App = () => {
                 <Route path="/products/view/:id" element={<ViewProductPage />} />
             
                 <Route path="damage" element={<Damage />} />
-               {/* <Route path="/promotions" element={<PromotionsDashboard />} /> */}
-               {/* <Route path="/promotionss/view/:id" element={<ViewPromotionPage />} /> */}
+              
+                <Route path="Promotion" element={<Promotion />} />
 
               </Routes>
           }

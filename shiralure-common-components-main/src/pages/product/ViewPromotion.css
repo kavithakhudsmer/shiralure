@@ -1,6 +1,7 @@
 html, body {
   width: 100%;
   overflow-x: hidden;
+  
 }
 
 .vvp-search-controls {
@@ -60,12 +61,13 @@ html, body {
 }
 
 .vvp-view-promotion-page {
-  padding: 10px;
-  max-width: 1200px;
+  padding: 30px;
+ 
   margin: 0 auto;
   background: #F2F6F9;
   min-height: 100vh;
   position: relative;
+  
 }
 
 .vvp-header {
