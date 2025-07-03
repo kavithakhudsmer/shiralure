@@ -10,7 +10,7 @@ function Dash() {
 
   useEffect(() => {
     // Fetch data from orders.json in the public folder
-    fetch('/orders.json')
+    fetch('/data/orders.json')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

@@ -1,0 +1,243 @@
+/* Base Reset */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Layout Wrapper */
+.kv-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+/* Main Content Area */
+.kv-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+/* Page Content */
+.kv-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background-color: #f9fafc;
+  margin-top:24px;
+  
+}
+
+/* Sidebar */
+.kv-sidebar {
+  width: 220px; /* ✅ new width here */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #ffffff;
+  border-right: 1px solid #e3e8ee;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  margin-top: 3px;
+  margin-bottom: 20px;
+}
+
+/* Logo */
+.kv-logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: #5a66f1;
+  margin-bottom: 3px;
+}
+
+/* Sidebar Item */
+.kv-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  gap: 6px; /* <- Controls spacing between icon and text */
+  font-size: 14px;
+  color: #3a3d4b;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-align: left;
+}
+
+.kv-item:hover,
+.kv-item:focus {
+  background: rgba(90, 102, 241, 0.1);
+  color: #5a66f1;
+}
+
+/* Icon inside item */
+.kv-item svg {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* Parent Menu Item */
+.kv-parent {
+  font-weight: 600;
+}
+
+/* Submenu */
+.kv-submenu {
+  padding-left: 26px;
+  margin-top: 4px;
+}
+
+.kv-subitem {
+  display: block;
+  padding: 6px 0;
+  font-size: 13px;
+  color: #5c5f6d;
+  text-decoration: none;
+  transition: color 0.2s;
+  
+}
+
+.kv-subitem:hover {
+  color: #5a66f1;
+}
+.kv-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+
+
+.kv-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/* Make entire app fill screen */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Top-level container */
+.kv-viewport {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Header full width */
+.kv-header {
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #e3e8ee;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+/* Layout below header */
+.kv-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Sidebar stays on left */
+
+
+/* Main area */
+.kv-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Scrollable content */
+.kv-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px;
+  background: #f2f6f9;
+  margin-top:45px;
+}
+
+
+.kv-sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 16px;
+}
+
+.kv-sidebar-footer {
+  padding: 1px;
+  border-top: 1px solid #8395aa;
+  font-size: 13px;
+  color: #7d849b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 🌙 Dark Theme Global */
+body.dark-theme {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+/* Header */
+body.dark-theme .kv-header {
+  background: #334155;
+  color: #f1f5f9;
+}
+
+/* Sidebar */
+body.dark-theme .kv-sidebar {
+  background-color: #1f2937;
+  color: #f1f5f9;
+  border-right: 1px solid #334155;
+}
+
+body.dark-theme .kv-sidebar .kv-item,
+body.dark-theme .kv-sidebar .kv-subitem {
+  color: #e2e8f0;
+}
+
+body.dark-theme .kv-sidebar .kv-subitem:hover {
+  background-color: #334155;
+}
+
+/* Main Content */
+body.dark-theme .kv-main {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  transition: background-color 0.3s ease;
+}
+
+/* Buttons or cards inside main content */
+body.dark-theme .card,
+body.dark-theme .btn,
+body.dark-theme input,
+body.dark-theme select {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border-color: #475569;
+}

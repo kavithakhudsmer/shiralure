@@ -1,0 +1,696 @@
+/* 🌞 Light Theme (default) */
+body {
+  background-color: #f5f7fa;
+  color: #1f2937;
+}
+
+/* 🌙 Dark Theme */
+body.dark-theme {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+body.dark-theme .kv-header1 {
+  background: #334155;
+  color: #f1f5f9;
+}
+
+body.dark-theme .kv-sidebar {
+  background: #1e293b;
+  color: #f1f5f9;
+}
+
+/* Dark mode icon buttons: no background or box */
+body.dark-theme .kv-actions button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 6px;
+  border-radius: 50%; /* keeps circular icon if needed */
+  color: #f1f5f9; /* default icon color */
+}
+
+/* On hover: change only the icon color */
+body.dark-theme .kv-actions button:hover {
+  color: #a5b4fc;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Optional: remove focus outline when clicking with mouse */
+body.dark-theme .kv-actions button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+body.dark-theme .kv-header1-footer {
+  background-color: #020c1d;
+  border-top: 1px solid #475569;
+  color: #cbd5e1;
+}
+
+/* ✅ Header Layout */
+.kv-header1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #ffffff;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ✅ Logo */
+.kv-logo {
+  display: flex;
+  align-items: center;
+}
+
+.kv-logo-img {
+  height: 50px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+/* ✅ Action Buttons */
+.kv-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kv-actions button {
+  background: none;
+  border: none;
+  padding: 6px;
+  margin: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: background 0.2s, color 0.2s;
+}
+.kv-actions svg {
+  pointer-events: none;
+}
+.kv-actions button:hover {
+  color: #7973cc;
+}
+
+.kv-actions button:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+.kv-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.kv-search-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #444;
+}
+
+.kv-search-dropdown {
+  position: absolute;
+  top: 50%;
+  right: 36px; /* Pushes input to the right of icon */
+  transform: translateY(-50%);
+  width: 200px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  z-index: 1000;
+}
+
+/* ✅ Search Input */
+
+
+.kv-search-input:focus {
+  border-color: #5a66f1;
+}
+
+/* ✅ Footer */
+.kv-header1-footer {
+  background-color: #f9fafb;
+  padding: 8px 24px;
+  border-top: 1px solid #e3e8ee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* ✅ Profile Avatars */
+.kv-profile-round {
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #dbdbdb;
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kv-profile-small {
+  width: 28px;
+  height: 28px;
+}
+
+.kv-profile-large {
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+}
+
+.kv-profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.kv-cart-wrapper {
+  position: relative;
+}
+
+.kv-cart-modal {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  width: 320px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  padding: 16px 18px;
+  z-index: 1000;
+  font-family: "Segoe UI", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.kv-cart-modal h4 {
+  background-color: #6366f1; /* Purple background */
+  color: #ffffff;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+  margin: -16px -18px 16px -18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.kv-cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 180px;
+  overflow-y: auto;
+  border-top: 1px solid #f0f0f0;
+}
+
+.kv-cart-list li {
+  font-size: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f1f1f1;
+  color: #333;
+}
+
+.kv-cart-list li:last-child {
+  border-bottom: none;
+}
+
+.kv-cart-empty {
+  font-size: 14px;
+  color: #888;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* ❌ Close Button */
+.kv-cart-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.kv-cart-close:hover {
+  color: #000;
+}
+
+
+.kv-cart-close:hover {
+  color: #000;
+}
+
+/* 🌓 Dark Theme Support */
+body.dark-theme .kv-cart-modal {
+  background: #334155;
+  color: #f1f5f9;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .kv-cart-modal h4 {
+  color: #f8fafc;
+}
+
+body.dark-theme .kv-cart-list li {
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+body.dark-theme .kv-cart-empty {
+  color: #cbd5e1;
+}
+
+body.dark-theme .kv-cart-close {
+  color: #cbd5e1;
+}
+body.dark-theme .kv-cart-close:hover {
+  color: #fff;
+}
+
+/* 🎯 Optional: add a subtle hover effect to each cart item */
+.kv-cart-list li:hover {
+  background: #f0f4ff;
+  border-radius: 6px;
+  padding-left: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+body.dark-theme .kv-cart-list li:hover {
+  background: #475569;
+}
+.kv-notification-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 280px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.kv-notification-title {
+  background-color: #6366f1;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px;
+  margin: -16px -16px 16px -16px;
+  border-radius: 8px 8px 0 0;
+}
+
+.kv-notifications-wrapper {
+  position: relative;
+}
+
+.kv-notifications-wrapper button {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* 🔴 Notification Count Badge */
+.kv-notification-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #5a66f1;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  font-weight: bold;
+  line-height: 1;
+}
+.kv-notification-title {
+  background-color: #6366f1; /* Indigo-500 */
+  color: #ffffff;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  margin: -16px -16px 16px -16px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+
+.kv-language-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.kv-language-dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: rgb(154, 182, 241);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 999;
+  width: 150px;
+}
+
+.kv-language-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.kv-language-option:hover {
+  background-color: #f0f0f0;
+}
+
+.kv-language-option img {
+  width: 20px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.kv-profile-wrapper {
+  position: relative;
+}
+
+.kv-profile-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: #5654b6;
+  color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 180px;
+}
+
+.kv-profile-option {
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.kv-profile-option:hover {
+  background-color: #758097;
+}
+
+.kv-language-wrapper {
+  position: relative;
+}
+
+.kv-language-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  width: 160px;
+}
+
+.kv-language-option {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.kv-language-option:hover {
+  background-color: #f3f4f6;
+}
+/* 🌙 DARK THEME GLOBAL EXTENSIONS */
+
+body.dark-theme,
+body.dark-theme .app-wrapper,
+body.dark-theme .main-content,
+body.dark-theme .container {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6,
+body.dark-theme p,
+body.dark-theme label,
+body.dark-theme span,
+body.dark-theme a {
+  color: #e2e8f0;
+}
+
+body.dark-theme input,
+body.dark-theme select,
+body.dark-theme textarea {
+  background-color: #334155;
+  border: 1px solid #475569;
+  color: #f1f5f9;
+}
+
+body.dark-theme input:focus,
+body.dark-theme select:focus,
+body.dark-theme textarea:focus {
+  border-color: #93c5fd;
+  background-color: #475569;
+  outline: none;
+}
+
+body.dark-theme button {
+  background-color: #475569;
+  color: #f1f5f9;
+  border: none;
+}
+
+body.dark-theme button:hover {
+  background-color: #64748b;
+}
+
+/* Tables */
+body.dark-theme table {
+  background-color: #334155;
+  color: #f1f5f9;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+body.dark-theme th,
+body.dark-theme td {
+  border: 1px solid #475569;
+  padding: 10px;
+}
+
+body.dark-theme th {
+  background-color: #475569;
+}
+
+body.dark-theme tr:nth-child(even) {
+  background-color: #2d3748;
+}
+
+body.dark-theme tr:hover {
+  background-color: #3b4a5a;
+}
+
+/* Modal backgrounds */
+body.dark-theme .modal {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+/* Form error/success messages */
+body.dark-theme .error {
+  color: #f87171;
+}
+body.dark-theme .success {
+  color: #34d399;
+}
+/* 🔔 Notification Dark Theme */
+body.dark-theme .kv-notification-dropdown {
+  background: #334155;
+  color: #f1f5f9;
+  border: 1px solid #475569;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .kv-notification-dropdown h4 {
+  color: #f8fafc;
+}
+
+body.dark-theme .kv-notification-dropdown .kv-cart-list li {
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+body.dark-theme .kv-notification-dropdown .kv-cart-empty {
+  color: #cbd5e1;
+}
+.kv-apps-wrapper {
+  position: relative;
+}
+
+.kv-apps-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 16px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.kv-apps-header1 {
+  font-size: 15px;
+  font-weight: bold;
+  background: #6366f1;
+  color: white;
+  padding: 8px;
+  border-radius: 6px 6px 0 0;
+  margin: -16px -16px 12px -16px;
+}
+
+.kv-apps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 0 4px;
+}
+
+.kv-apps-item {
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.kv-apps-item:hover {
+  background-color: #f0f4ff;
+}
+
+/* Colored backgrounds */
+.kv-apps-item.email { background: #eef2ff; color: #4f46e5; }
+.kv-apps-item.chat { background: #e0f2fe; color: #0284c7; }
+.kv-apps-item.task { background: #fef9c3; color: #ca8a04; }
+.kv-apps-item.calendar { background: #fee2e2; color: #b91c1c; }
+.kv-apps-item.file { background: #e0e7ff; color: #4338ca; }
+.kv-apps-item.contacts { background: #d1fae5; color: #059669; }
+
+.kv-apps-footer {
+  margin-top: 14px;
+  padding: 8px 20px;
+  background: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.kv-apps-footer:hover {
+  background: #4f46e5;
+}
+/* 🌙 Dark theme - Apps Dropdown */
+body.dark-theme .kv-apps-dropdown {
+  background-color: #334155;
+  color: #f1f5f9;
+  border: 1px solid #475569;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .kv-apps-header1 {
+  background-color: #475569;
+  color: #f8fafc;
+}
+
+body.dark-theme .kv-apps-item {
+  background-color: transparent;
+  color: #f1f5f9;
+}
+
+body.dark-theme .kv-apps-item:hover {
+  background-color: #475569;
+  border-radius: 8px;
+}
+
+body.dark-theme .kv-apps-footer {
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+}
+
+body.dark-theme .kv-apps-footer:hover {
+  background-color: #6366f1;
+}
+
+/* 🌙 Dark theme - Profile Dropdown */
+body.dark-theme .kv-profile-dropdown {
+  background-color: #334155;
+  border: 1px solid #475569;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  color: #f1f5f9;
+}
+
+body.dark-theme .kv-profile-option {
+  color: #f1f5f9;
+  background: transparent;
+}
+
+body.dark-theme .kv-profile-option:hover {
+  background-color: #475569;
+}
