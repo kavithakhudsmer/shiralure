@@ -4,7 +4,7 @@ import './ProductList.css';
 import { FaShareSquare, FaFileExcel, FaPrint } from 'react-icons/fa';
 import { MdArrowDropDown, MdOutlineClear } from 'react-icons/md';
 import { PiSliders } from 'react-icons/pi';
-import { BiAddToQueue } from "react-icons/bi";
+import { BiSolidAddToQueue } from 'react-icons/bi';
 import { IoMdSearch } from "react-icons/io";
 
 const ProductList = () => {
@@ -116,7 +116,7 @@ const ProductList = () => {
           </div>
 
           <button className="shira-add-button" onClick={() => setShowAddForm(true)}>
-            <BiAddToQueue />
+            <BiSolidAddToQueue />
           </button>
         </div>
 

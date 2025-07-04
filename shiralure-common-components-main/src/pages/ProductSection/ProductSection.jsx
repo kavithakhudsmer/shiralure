@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { FiEye, FiTrash2, FiPrinter, FiFileText, FiEdit2 } from "react-icons/fi";
 import { FaShareFromSquare, FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import { MdClear } from "react-icons/md";
-import { RiAddBoxLine } from "react-icons/ri";
+import { BiSolidAddToQueue } from "react-icons/bi";
 import { CiSearch, CiCircleAlert } from "react-icons/ci";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FaCheck } from "react-icons/fa";
@@ -303,7 +303,7 @@ function ProductSection() {
               )}
             </div>
             <button className="dvsCouponBtnIcon" onClick={() => setShowAddModal(true)} title="Add New Product Section">
-              <RiAddBoxLine size={17} />
+              <BiSolidAddToQueue size={17} />
             </button>
           </div>
         </div>

@@ -7,7 +7,7 @@ import { FaPrint } from "react-icons/fa6";
 import { FaCheck, FaSearch, FaTimes } from 'react-icons/fa';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import { FaShareFromSquare } from 'react-icons/fa6';
-import { BiAddToQueue } from 'react-icons/bi';
+import { BiSolidAddToQueue } from "react-icons/bi";
 import { HiOutlineAdjustments } from 'react-icons/hi';
 import { FaFileExcel } from "react-icons/fa6";
 import AdminProfile from "./Adminis";
@@ -298,7 +298,7 @@ function Employees() {
                         )}
                     </div>
                     <div className="sraju-employee-icon-button" title="Add Employee">
-                        <button className="sraju-employee-icon-box" onClick={handleOverlayToggle}><BiAddToQueue className="sraju-employee-icon" /></button> {/* Added sraju- prefix */}
+                        <button className="sraju-employee-icon-box" onClick={handleOverlayToggle}><BiSolidAddToQueue className="sraju-employee-icon" /></button> {/* Added sraju- prefix */}
                     </div>
                 </div>
             </div>

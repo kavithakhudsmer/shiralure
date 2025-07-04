@@ -8,7 +8,7 @@ import { IoMdSearch, IoMdArrowDropdown } from "react-icons/io";
 import { MdClear } from "react-icons/md";
 import { CiCircleAlert } from "react-icons/ci";
 import Papa from "papaparse";
-import { BiAddToQueue } from "react-icons/bi";
+import { BiSolidAddToQueue } from "react-icons/bi";
 import ExcelJS from "exceljs";
 import { TiTick } from "react-icons/ti";
 import { RxCross2 } from "react-icons/rx";
@@ -372,7 +372,7 @@ function PushNotifications() {
             onClick={() => setShowModal(true)}
             title="Switch to 2nd Page Style"
           >
-            <BiAddToQueue size={17} />
+            <BiSolidAddToQueue size={17} />
           </button>
           {showModal && (
         <div className="dvspModal-overlay">

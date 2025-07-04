@@ -9,7 +9,7 @@ import { PiSliders } from "react-icons/pi";
 
 import { MdClear } from "react-icons/md";
 import { CiCircleAlert } from "react-icons/ci";
-import { RiAddBoxLine } from "react-icons/ri";
+import { BiSolidAddToQueue } from 'react-icons/bi';
 import ExcelJS from "exceljs";
 import ReactQuill from 'react-quill'; // Import ReactQuill directly
 import 'react-quill/dist/quill.snow.css'; // Import Quill's CSS
@@ -729,7 +729,7 @@ const DamagePage = () => {
             onClick={handleAddClick}
             title="Add New Damage"
           >
-            <RiAddBoxLine size={17} />
+            <BiSolidAddToQueue size={17} />
           </button>
         </div>
 

@@ -1,5 +1,5 @@
 .pprrpromotions-dashboard {
-  width: 100vw;
+ 
   min-height: 100vh;
   margin: 0;
   padding-left: 30px;
@@ -94,14 +94,16 @@
 .pprrtable-content-box {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  margin-bottom: 20px; /* Add margin below the table box */
+  margin-bottom: 0px; /* Add margin below the table box */
   overflow: hidden;
+  margin-top: 0px;
   
 }
 
 /* Table Styles */
 .pprrpromotions-table {
   width: 100%;
+  height: 100%;
   border-collapse: collapse;
 }
 

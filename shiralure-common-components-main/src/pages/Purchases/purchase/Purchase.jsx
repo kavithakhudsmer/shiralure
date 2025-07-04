@@ -3,7 +3,7 @@ import './Purchase.css'; // Updated CSS file reference
 import ExcelJS from "exceljs";
 import { initialDataWithNotes, dummyPurchasePayments } from './data.json';
 import {
-  SlidersIcon, PlusSquareIcon, PrintIcon, XlsIcon,
+  SlidersIcon, PrintIcon, XlsIcon,
   SearchIcon, XIcon, EyeIcon, EditIcon, TrashIcon, PaymentIcon,
   ListIcon, ExclamationCircleIcon, TruckIcon, FileTextIcon,
   BoldIcon, ItalicIcon, UnderlineIcon, StrikethroughIcon, CodeIcon,
@@ -18,6 +18,7 @@ import { FaCheck } from "react-icons/fa";
 import { FiEye, FiEdit2, FiTrash2 } from 'react-icons/fi';
 
 import { PiSliders } from "react-icons/pi";
+import { BiSolidAddToQueue } from "react-icons/bi";
 
 
 const masterPurchasesData = [...initialDataWithNotes, ...generateMoreDataWithNotes(7, 20)];
@@ -441,7 +442,7 @@ function Purchase() {
               )}
             </div>
           </div>
-          <button className="kicon-btn" title="Add New Purchase" onClick={handleAddClick}><PlusSquareIcon /></button>
+          <button className="kicon-btn" title="Add New Purchase" onClick={handleAddClick}><BiSolidAddToQueue /></button>
         </div>
         <hr className="kdivider" />
         {showForm && (

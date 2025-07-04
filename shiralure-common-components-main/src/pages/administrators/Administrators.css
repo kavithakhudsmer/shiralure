@@ -30,7 +30,7 @@ body {
   overflow: visible;
   position: relative;
   width: calc(100% - 30px);
-  min-width: 1200px;
+  min-width: 1000px;
  
   max-height: 150vh;
   box-sizing: border-box; 

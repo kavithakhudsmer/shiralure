@@ -6,7 +6,7 @@ import { MdArrowDropDown, MdOutlineLocalPrintshop } from 'react-icons/md';
 import { FaCheck, FaSearch, FaTimes } from 'react-icons/fa';
 import { RiErrorWarningLine } from 'react-icons/ri';
 import { FaShareFromSquare } from 'react-icons/fa6';
-import { BiAddToQueue } from 'react-icons/bi';
+import { BiSolidAddToQueue } from "react-icons/bi";
 import { BsFiletypeXls } from 'react-icons/bs';
 import AdminProfile from "./Adminis";
 import { FiEye,FiEdit2,FiTrash2 } from "react-icons/fi";
@@ -280,7 +280,7 @@ const paginatedAdmins = filteredAdmins.slice(startIndex, endIndex);
               </div>
             )}
           </div>
-          <button onClick={handleOverlayToggle}><BiAddToQueue /></button>
+          <button onClick={handleOverlayToggle}><BiSolidAddToQueue /></button>
         </div>
         
 
