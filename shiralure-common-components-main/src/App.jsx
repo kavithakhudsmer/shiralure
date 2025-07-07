@@ -26,7 +26,7 @@ import OrderConfirmation from './Components/Checkout/Checkout1';
 
 // Import the new AdminLayout component
 
-// import AdminLayout from './Components/AdminLayout';
+import AdminLayout from './Components/AdminLayout';
 
 // Admin Pages Imports
 import ARorder from './admin/pages/returnOrder/ARorder';
@@ -85,7 +85,7 @@ const App = () => {
         <Route
           path="/admin/*" // All paths starting with /admin/ will use this layout
           element={
-            // <AdminLayout> {/* Wrap nested admin routes with AdminLayout */}
+            <AdminLayout> {/* Wrap nested admin routes with AdminLayout */}
               <Routes>
                 <Route path="" element={<Homeadmin />} />
                 <Route path="ARorder" element={<ARorder />} />
@@ -114,7 +114,7 @@ const App = () => {
                 <Route path="ProductSection" element={<ProductSection />} />
                 {/* Add other admin routes here */}
               </Routes>
-            // </AdminLayout>
+            </AdminLayout>
           }
         />
 

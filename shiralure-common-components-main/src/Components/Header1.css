@@ -431,10 +431,12 @@ body.dark-theme .kv-cart-list li:hover {
   align-items: center;
   cursor: pointer;
   transition: background 0.2s ease;
+  border-radius: 8px;
 }
 
 .kv-profile-option:hover {
   background-color: #758097;
+  border-radius: 8px;
 }
 
 .kv-language-wrapper {
