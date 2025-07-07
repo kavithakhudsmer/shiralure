@@ -478,8 +478,9 @@ html, body {
 .vvp-dropdown-menu {
   position: absolute;
   top: 42px;
-  left: 0;
+  left: -108px;
   background: white;
+  margin-top:10px;
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   width: 220px;
