@@ -26,7 +26,7 @@ import OrderConfirmation from './Components/Checkout/Checkout1';
 
 // Import the new AdminLayout component
 
-import AdminLayout from './Components/AdminLayout';
+// import AdminLayout from './Components/AdminLayout';
 
 // Admin Pages Imports
 import ARorder from './admin/pages/returnOrder/ARorder';
@@ -53,6 +53,7 @@ import Damage from './pages/damage/damage';
 import Promotion from './pages/promotion/promotion';
 import ProductDashboard from "./pages/product/promotion";
 import ViewProductPage from "./pages/product/ViewPromotion";
+import Returnorder from './pages/Returnorder/page/ReturnOrder';
 
 
 const Layout = ({ children }) => {
@@ -85,7 +86,7 @@ const App = () => {
         <Route
           path="/admin/*" // All paths starting with /admin/ will use this layout
           element={
-            <AdminLayout> {/* Wrap nested admin routes with AdminLayout */}
+            // <AdminLayout> {/* Wrap nested admin routes with AdminLayout */}
               <Routes>
                 <Route path="" element={<Homeadmin />} />
                 <Route path="ARorder" element={<ARorder />} />
@@ -112,9 +113,10 @@ const App = () => {
                 <Route path="damage" element={<Damage />} />
                 <Route path="Promotion" element={<Promotion />} />
                 <Route path="ProductSection" element={<ProductSection />} />
+                <Route path="Returnorder" element={<Returnorder />} />
                 {/* Add other admin routes here */}
               </Routes>
-            </AdminLayout>
+            // </AdminLayout>
           }
         />
 
