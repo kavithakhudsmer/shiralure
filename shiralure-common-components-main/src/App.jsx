@@ -29,7 +29,7 @@ import OrderConfirmation from './Components/Checkout/Checkout1';
 // import AdminLayout from './Components/AdminLayout';
 
 // Admin Pages Imports
-import ARorder from './admin/pages/returnOrder/ARorder';
+
 import Homeadmin from './admin/pages/home/home';
 import Pos from './admin/pages/pos/Pos';
 import Purchase from "./pages/Purchases/purchase/Purchase";
@@ -89,7 +89,7 @@ const App = () => {
             // <AdminLayout> {/* Wrap nested admin routes with AdminLayout */}
               <Routes>
                 <Route path="" element={<Homeadmin />} />
-                <Route path="ARorder" element={<ARorder />} />
+                
                 <Route path="Pos" element={<Pos />} />
                 <Route path="PosOrder" element={<PosOrder />} />
                 <Route path="PushNotifications" element={<PushNotifications />} />
