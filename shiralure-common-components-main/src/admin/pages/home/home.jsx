@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./home.scss";
 import Widgets from '../../components/widgets/widgets';
 import SalesOverview from '../../components/SalesOverview/SalesOverview';
@@ -6,43 +6,37 @@ import TopCustomer from '../../components/topcostumers/topcustomers';
 import UpcomingProducts from '../../components/upcomingproducts/upcomingproducts';
 import TopSellingProducts from '../../components/topproduct sales/TopSellingProducts';
 import RecentOrders from '../../components/resentorder/RecentOrders';
-import Dash from '../../components/resentorder/Dash'; // Import the Dash component
-
+import Dash from '../../components/resentorder/Dash';
 
 const Home = () => {
-  const [sidebarOpen, setSidebarOpen] = React.useState(false);
-  const [darkMode, setDarkMode] = React.useState(false);
-  const [showDash, setShowDash] = React.useState(false); // State to control Dash visibility
-  const [selectedOrderId, setSelectedOrderId] = React.useState(null); // State to pass ID to Dash
+  const [dashboardData, setDashboardData] = useState(null);
+  const [showDash, setShowDash] = useState(false);
+  const [selectedOrderId, setSelectedOrderId] = useState(null);
 
-  const monthlyData = {
-    income: [2.0, 3.8, 3.9, 6.3, 4.0, 6.3, 4.5, 7.8, 5, 8.1, 4, 7.95],
-    expenses: [8.0, 6.2, 7.8, 3.8, 8.0, 3.8, 5.1, 4.0, 4.1, 6.2, 5.0, 8.15]
-  };
+  useEffect(() => {
+    fetch('/dashboardData.json')
+      .then((res) => res.json())
+      .then((data) => {
+        const processedData = {};
+        Object.keys(data).forEach((key) => {
+          const current = data[key].amount;
+          const previous = data[key].previous;
+          const diff = previous === 0 ? 0 : +(((current - previous) / previous) * 100).toFixed(2);
+          processedData[key] = {
+            amount: current,
+            diff,
+            extraInfo: data[key].extraInfo
+          };
+        });
+        setDashboardData(processedData);
+      });
+  }, []);
 
-  const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
-  // Function to handle showing the Dash component
-  const handleShowDash = (id) => {
-    setSelectedOrderId(id);
-    setShowDash(true);
-  };
-
-  // Function to go back to the main Home view (can be passed to Dash for a back button)
-  const handleHideDash = () => {
-    setShowDash(false);
-    setSelectedOrderId(null);
-  };
+  if (!dashboardData) return <div>Loading...</div>;
 
   return (
-    <div className={`muthu-home ${darkMode ? 'muthu-dark-mode' : ''}`}>
-      {!showDash && ( // Conditionally render the header based on showDash state
+    <div className={`muthu-home`}>
+      {!showDash && (
         <div className="muthu-home-header">
           <h1 className="muthu-home-title">Dashboard</h1>
           <div className="muthu-breadcrumb">
@@ -55,32 +49,34 @@ const Home = () => {
 
       <div className="muthu-main-content">
         {showDash ? (
-          // Render Dash component when showDash is true, passing selectedOrderId
-          <Dash id={selectedOrderId} onBack={handleHideDash} />
+          <Dash id={selectedOrderId} onBack={() => setShowDash(false)} />
         ) : (
-          // Render the main dashboard content when showDash is false
           <div className="muthu-home-container">
             <div className="muthu-widgets">
-              <Widgets type="revenue" amount={2636262} diff={12} darkMode={darkMode} />
-              <Widgets type="sales" amount={5635262} diff={8} darkMode={darkMode} />
-              <Widgets type="stocks" amount={4700} diff={-2} darkMode={darkMode} />
-              <Widgets type="expenses" amount={35262} diff={5} darkMode={darkMode} />
+              {Object.entries(dashboardData).map(([key, value]) => (
+                <Widgets
+                  key={key}
+                  type={key}
+                  amount={value.amount}
+                  diff={value.diff}
+                  extraInfo={value.extraInfo}
+                />
+              ))}
             </div>
             <div className="muthu-sales">
-              <SalesOverview monthlyData={monthlyData} darkMode={darkMode} />
+              <SalesOverview />
             </div>
-            <div className='muthu-top-customer'>
-              <TopCustomer darkMode={darkMode} />
+            <div className="muthu-top-customer">
+              <TopCustomer />
             </div>
-            <div className='muthu-upcoming-products'>
-              <UpcomingProducts darkMode={darkMode} />
+            <div className="muthu-upcoming-products">
+              <UpcomingProducts />
             </div>
             <div className="muthu-admin-container">
-              <TopSellingProducts darkMode={darkMode} />
+              <TopSellingProducts />
             </div>
             <div className="muthu-order-table">
-              {/* Pass the handleShowDash function to RecentOrders */}
-              <RecentOrders darkMode={darkMode} onShowDash={handleShowDash} />
+              <RecentOrders onShowDash={(id) => setSelectedOrderId(id) || setShowDash(true)} />
             </div>
           </div>
         )}

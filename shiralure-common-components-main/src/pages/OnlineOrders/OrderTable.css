@@ -33,7 +33,7 @@
   background: #fff;
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
   margin-bottom: 20px;
 }
 
@@ -191,7 +191,7 @@
 /* Form Buttons */
 .sriform-buttons {
   display: flex;
-  margin-left:-700px;
+  margin-left:-930px;
   gap: 16px;
   margin-top: 20px;
   justify-content: flex-end;
@@ -216,17 +216,11 @@
   background-color: #6c63ff;
 }
 
-.srisearch-btn:hover {
-  background-color: #554ed6;
-}
 
 .sriclear-btn {
   background-color: #000000;
 }
 
-.sriclear-btn:hover {
-  background-color: #333;
-}
 
 /* Table Styling */
 .sritable-container {

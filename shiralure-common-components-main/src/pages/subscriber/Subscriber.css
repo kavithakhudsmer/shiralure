@@ -83,9 +83,8 @@
   margin-bottom: 40px; /* Add a smaller bottom margin for spacing */
   padding: 20px;
   border-radius: 10px;
-  
   max-width: 1200px;
-  width: 100%;
+  width: 95%;
   box-sizing: border-box;
 }
 

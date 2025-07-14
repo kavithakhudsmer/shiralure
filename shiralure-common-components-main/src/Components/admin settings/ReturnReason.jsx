@@ -75,20 +75,20 @@ const ReturnReasonComponent = () => {
   };
 
   return (
-    <div className="container" style={{ minHeight: 'calc(100vh - 70px)', padding: '24px' }}>
-      <div className="main-card">
-        <div className="header">
+    <div className="container1" style={{ minHeight: 'calc(100vh - 70px)', padding: '24px' }}>
+      <div className="main-card1">
+        <div className="header1">
           <h1>Return Reason</h1>
-          <button onClick={handleAdd} className="add-btn">
-            <div className="add-icon">
+          <button onClick={handleAdd} className="add-btn1">
+            <div className="add-icon1">
               <Plus size={20} />
             </div>
             Add
           </button>
         </div>
 
-        <div className="table-container">
-          <table className="table">
+        <div className="table1-container1">
+          <table className="table1">
             <thead>
               <tr>
                 <th>Title</th>
@@ -130,7 +130,7 @@ const ReturnReasonComponent = () => {
           </table>
         </div>
 
-        <div className="footer">
+        <div className="footer1">
           Showing 1 to {reasons.length} of {reasons.length} entries
         </div>
       </div>
@@ -138,7 +138,7 @@ const ReturnReasonComponent = () => {
       {showAddEdit && (
         <div className="modal-overlay">
           <div className="return-reason-modal" role="dialog" aria-labelledby="return-reason-title">
-            <div className="return-reason-modal-header">
+            <div className="return-reason-modal-header1">
               <h2 id="return-reason-title">{currentReason.id ? 'Edit Return Reason' : 'Add Return Reason'}</h2>
               <button onClick={handleCancel} className="return-reason-close-btn" aria-label="Close">
                 <X size={20} />
@@ -214,7 +214,7 @@ const ReturnReasonComponent = () => {
               </div>
             </div>
 
-            <div className="return-reason-modal-footer">
+            <div className="return-reason-modal-footer1">
               <button onClick={handleSave} className="return-reason-btn return-reason-btn-primary" aria-label="Save changes">
                 ✓ Save
               </button>
@@ -229,7 +229,7 @@ const ReturnReasonComponent = () => {
       {showView && (
         <div className="modal-overlay">
           <div className="modal" role="dialog" aria-labelledby="view-title">
-            <div className="modal-header">
+            <div className="modal-header1">
               <h2 id="view-title">View Attribute</h2>
               <button onClick={handleCancel} className="close-btn" aria-label="Close">
                 <X size={20} />

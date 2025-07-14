@@ -26,7 +26,7 @@ import OrderConfirmation from './Components/Checkout/Checkout1';
 
 // Import the new AdminLayout component
 
-// import AdminLayout from './Components/AdminLayout';
+import AdminLayout from './Components/AdminLayout';
 
 // Admin Pages Imports
 
@@ -54,6 +54,9 @@ import Promotion from './pages/promotion/promotion';
 import ProductDashboard from "./pages/product/promotion";
 import ViewProductPage from "./pages/product/ViewPromotion";
 import Returnorder from './pages/Returnorder/page/ReturnOrder';
+
+import Setting from './Components/admin settings/Setting';
+import ReturnReasonComponent from './Components/admin settings/ReturnReason';
 
 
 const Layout = ({ children }) => {
@@ -86,7 +89,7 @@ const App = () => {
         <Route
           path="/admin/*" // All paths starting with /admin/ will use this layout
           element={
-            // <AdminLayout> {/* Wrap nested admin routes with AdminLayout */}
+            <AdminLayout> {/* Wrap nested admin routes with AdminLayout */}
               <Routes>
                 <Route path="" element={<Homeadmin />} />
                 
@@ -114,9 +117,18 @@ const App = () => {
                 <Route path="Promotion" element={<Promotion />} />
                 <Route path="ProductSection" element={<ProductSection />} />
                 <Route path="Returnorder" element={<Returnorder />} />
+
+               
+                <Route path="Settings" element={<Setting />} />
+                  <Route path="return-reasons" element={<ReturnReasonComponent />} />
+                 
+
+
+
+                {/* <Route path="Setting" element={<Setting />} /> */}
                 {/* Add other admin routes here */}
               </Routes>
-            // </AdminLayout>
+            </AdminLayout>
           }
         />
 

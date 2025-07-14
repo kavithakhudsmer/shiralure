@@ -11,7 +11,6 @@ import { FaShareFromSquare, FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 import { IoMdSearch, IoMdArrowDropdown } from "react-icons/io";
 import { MdClear } from "react-icons/md";
 import { CiCircleAlert } from "react-icons/ci";
-import Papa from "papaparse";
 import { BiSolidAddToQueue } from "react-icons/bi";
 import ExcelJS from "exceljs";
 import { TiTick } from "react-icons/ti";
@@ -36,8 +35,6 @@ function PushNotifications() {
   const [showPageDropdown, setShowPageDropdown] = useState(false);
   const [showViewPage, setShowViewPage] = useState(false);
   const [selectedSubscriber, setSelectedSubscriber] = useState(null);
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [showUploadModal, setShowUploadModal] = useState(false);
 
   const shareButtonRef = useRef(null);
   const shareDropdownRef = useRef(null);
@@ -108,7 +105,7 @@ function PushNotifications() {
         const data = await response.json();
         const formattedData = data.map(item => ({
           ...item,
-          description: item.description || "" // Ensure description is always a string
+          description: item.description || ""
         }));
         setAllSubscribers(formattedData);
         setFilteredList(formattedData);
@@ -160,7 +157,6 @@ function PushNotifications() {
     setSelectedSubscriber(subscriber);
     setShowViewPage(true);
   };
-  const toggleUploadModal = () => setShowUploadModal(!showUploadModal);
 
   const handleSearch = () => {
     const filtered = allSubscribers.filter(
@@ -206,105 +202,54 @@ function PushNotifications() {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setSelectedFile(file);
+      const fileExtension = file.name.split(".").pop().toLowerCase();
+      if (fileExtension !== "xlsx") {
+        alert("Please upload an XLSX file only.");
+        event.target.value = "";
+        return;
+      }
+
       const reader = new FileReader();
       reader.onload = (e) => {
         const fileContent = e.target.result;
-        let parsedData = [];
-
-        const fileExtension = file.name.split(".").pop().toLowerCase();
-        if (fileExtension === "csv") {
-          Papa.parse(fileContent, {
-            header: true,
-            complete: (result) => {
-              parsedData = result.data
-                .map((row) => ({
-                  title: row.Title || row.title || "",
-                  role: row.Role || row.role || "",
-                  user: row.User || row.user || "",
-                  description: row.Description || row.description || "",
-                  action: row.Action || row.action || "view",
-                }))
-                .filter((sub) => sub.title && sub.role && sub.user);
-              updateSubscribers(parsedData);
-            },
-            error: (error) => {
-              console.error("CSV parsing error:", error);
-              alert("Error parsing CSV file.");
-            },
-          });
-        } else if (fileExtension === "json") {
-          try {
-            parsedData = JSON.parse(fileContent)
+        const workbook = new ExcelJS.Workbook();
+        workbook.xlsx.load(fileContent).then(() => {
+          const worksheet = workbook.getWorksheet("Subscribers");
+          if (worksheet) {
+            const parsedData = worksheet
+              .getRows(2, worksheet.rowCount - 1)
               .map((row) => ({
-                title: row.Title || row.title || "",
-                role: row.Role || row.role || "",
-                user: row.User || row.user || "",
-                description: row.Description || row.description || "",
-                action: row.Action || row.action || "view",
+                title: row.getCell(1).value?.toString() || "",
+                role: row.getCell(2).value?.toString() || "",
+                user: row.getCell(3).value?.toString() || "",
+                description: row.getCell(4)?.value?.toString() || "",
+                action: row.getCell(5)?.value?.toString() || "view",
               }))
               .filter((sub) => sub.title && sub.role && sub.user);
-            updateSubscribers(parsedData);
-          } catch (error) {
-            console.error("JSON parsing error:", error);
-            alert("Invalid JSON file.");
-          }
-        } else if (fileExtension === "xlsx") {
-          const workbook = new ExcelJS.Workbook();
-          workbook.xlsx.load(fileContent).then(() => {
-            const worksheet = workbook.getWorksheet("Subscribers");
-            if (worksheet) {
-              parsedData = worksheet
-                .getRows(2, worksheet.rowCount - 1)
-                .map((row) => ({
-                  title: row.getCell(1).value?.toString() || "",
-                  role: row.getCell(2).value?.toString() || "",
-                  user: row.getCell(3).value?.toString() || "",
-                  description: row.getCell(4)?.value?.toString() || "",
-                  action: row.getCell(5)?.value?.toString() || "view",
-                }))
-                .filter((sub) => sub.title && sub.role && sub.user);
-              updateSubscribers(parsedData);
-            } else {
-              alert("No 'Subscribers' worksheet found in the Excel file.");
-            }
-          }).catch((error) => {
-            console.error("XLSX parsing error:", error);
-            alert("Error parsing Excel file.");
-          });
-        } else if (fileExtension.match(/\.(jpg|jpeg|png|gif)$/i)) {
-          alert("Image uploaded successfully: " + file.name);
-        } else {
-          alert(
-            "Unsupported file format. Please upload a CSV, JSON, XLSX, or image (JPG, JPEG, PNG, GIF)."
-          );
-          return;
-        }
-      };
-      if (fileExtension === "xlsx") {
-        reader.readAsArrayBuffer(file);
-      } else {
-        reader.readAsText(file);
-      }
-      event.target.value = "";
-    }
-  };
 
-  const updateSubscribers = (newData) => {
-    if (newData.length > 0) {
-      const updatedSubscribers = [...allSubscribers, ...newData].filter(
-        (sub, index, self) =>
-          index === self.findIndex(
-            (s) => s.title === sub.title && s.role === sub.role && s.user === sub.user
-          )
-      );
-      setAllSubscribers(updatedSubscribers);
-      setFilteredList(updatedSubscribers);
-      alert(
-        `Successfully uploaded ${newData.length} new subscribers! Total subscribers: ${updatedSubscribers.length}`
-      );
-    } else {
-      alert("No valid data found in the uploaded file.");
+            if (parsedData.length > 0) {
+              const updatedSubscribers = [...allSubscribers, ...parsedData].filter(
+                (sub, index, self) =>
+                  index === self.findIndex(
+                    (s) => s.title === sub.title && s.role === sub.role && s.user === sub.user
+                  )
+              );
+              setAllSubscribers(updatedSubscribers);
+              setFilteredList(updatedSubscribers);
+              alert(`Successfully uploaded ${parsedData.length} new subscribers from ${file.name}! Total subscribers: ${updatedSubscribers.length}`);
+            } else {
+              alert("No valid data found in the uploaded XLSX file.");
+            }
+          } else {
+            alert("No 'Subscribers' worksheet found in the Excel file.");
+          }
+        }).catch((error) => {
+          console.error("XLSX parsing error:", error);
+          alert("Error parsing XLSX file.");
+        });
+      };
+      reader.readAsArrayBuffer(file);
+      event.target.value = "";
     }
   };
 
@@ -349,20 +294,22 @@ function PushNotifications() {
     const endIndex = startIndex + rowsPerPage;
     return filteredList.slice(startIndex, endIndex);
   };
-  const handleRoleDetails = () => {
-  alert(`Details for role: ${formData.role}`);
-};
 
-const handleUserDetails = () => {
-  alert(`Details for user: ${formData.user}`);
-};
+  const handleRoleDetails = () => {
+    alert(`Details for role: ${formData.role}`);
+  };
+
+  const handleUserDetails = () => {
+    alert(`Details for user: ${formData.user}`);
+  };
+
   return (
     <div className="dvspSubscriber">
       <div className="dvspHeader">
         <div className="dvspHeader-content">
           <h1>Push Notifications</h1>
           <div className="dvspBreadcrumb">
-            <span className="dvspHome">Home</span>Push Notifications
+            <span className="dvspHome">Home</span>&gt;&gt;Push Notifications
           </div>
         </div>
       </div>
@@ -425,7 +372,7 @@ const handleUserDetails = () => {
               ref={fileInputRef}
               style={{ display: "none" }}
               onChange={handleFileChange}
-              accept=".csv,.json,.xlsx,.jpg,.jpeg,.png,.gif"
+              accept=".xlsx"
             />
           </div>
           <button
@@ -569,86 +516,80 @@ const handleUserDetails = () => {
       </div>
 
       {showModal && (
-  <div className="dvspModal-overlay">
-    <div className="dvspModal">
-      <div className="dvspModal-header">
-        <h2>Add Push Notification</h2>
-        <span className="dvspModal-close" onClick={() => setShowModal(false)}>×</span>
-      </div>
+        <div className="dvspModal-overlay">
+          <div className="dvspModal">
+            <div className="dvspModal-header">
+              <h2>Add Push Notification</h2>
+              <span className="dvspModal-close" onClick={() => setShowModal(false)}>×</span>
+            </div>
 
-      <div className="dvspModal-body">
-        <div className="dvspInput-row">
-          {/* ROLE DROPDOWN */}
-          <div className="dvspInput-group dvspHalf">
-            <label>Role</label>
-            <div className="dvspSelectWithBtn">
-              <select
-                name="role"
-                value={formData.role}
-                onChange={handleInputChange}
-              >
-                <option value="">--</option>
-                <option value="Admin">Admin</option>
-                <option value="Manager">Manager</option>
-                <option value="Employee">Employee</option>
-              </select>
-              
+            <div className="dvspModal-body">
+              <div className="dvspInput-row">
+                <div className="dvspInput-group dvspHalf">
+                  <label>Role</label>
+                  <div className="dvspSelectWithBtn">
+                    <select
+                      name="role"
+                      value={formData.role}
+                      onChange={handleInputChange}
+                    >
+                      <option value="">--</option>
+                      <option value="Admin">Admin</option>
+                      <option value="Manager">Manager</option>
+                      <option value="Employee">Employee</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="dvspInput-group dvspHalf">
+                  <label>User</label>
+                  <div className="dvspSelectWithBtn">
+                    <select
+                      name="user"
+                      value={formData.user}
+                      onChange={handleInputChange}
+                    >
+                      <option value="">--</option>
+                      <option value="JohnDoe">John Doe</option>
+                      <option value="JaneSmith">Jane Smith</option>
+                      <option value="AliceWong">Alice Wong</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div className="dvspInput-group">
+                <label>Title<span className="dvspRequired">*</span></label>
+                <input
+                  type="text"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <div className="dvspInput-group">
+                <label>Description<span className="dvspRequired">*</span></label>
+                <textarea
+                  name="description"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                  placeholder="Enter description here"
+                />
+              </div>
+            </div>
+
+            <div className="dvspModal-footer">
+              <button className="dvspSave-button" onClick={handleSave}>
+                <TiTick size={15} /> SAVE
+              </button>
+              <button className="dvspClear-button1" onClick={handleClear1}>
+                <RxCross2 size={15} /> CLEAR
+              </button>
             </div>
           </div>
-
-          {/* USER DROPDOWN */}
-          <div className="dvspInput-group dvspHalf">
-            <label>User</label>
-            <div className="dvspSelectWithBtn">
-              <select
-                name="user"
-                value={formData.user}
-                onChange={handleInputChange}
-              >
-                <option value="">--</option>
-                <option value="JohnDoe">John Doe</option>
-                <option value="JaneSmith">Jane Smith</option>
-                <option value="AliceWong">Alice Wong</option>
-              </select>
-            </div>
-          </div>
         </div>
-
-        {/* TITLE FIELD */}
-        <div className="dvspInput-group">
-          <label>Title<span className="dvspRequired">*</span></label>
-          <input
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        {/* DESCRIPTION FIELD */}
-        <div className="dvspInput-group">
-          <label>Description<span className="dvspRequired">*</span></label>
-          <textarea
-            name="description"
-            value={formData.description}
-            onChange={handleInputChange}
-            placeholder="Enter description here"
-          />
-        </div>
-      </div>
-
-      {/* FOOTER BUTTONS */}
-      <div className="dvspModal-footer">
-        <button className="dvspSave-button" onClick={handleSave}>
-          <TiTick size={15} /> SAVE
-        </button>
-        <button className="dvspClear-button1" onClick={handleClear1}>
-          <RxCross2 size={15} /> CLEAR
-        </button>
-      </div>
-    </div>
-  </div>
-)}
+      )}
 
       {showMailPage && (
         <div className="dvspModal-overlay">
@@ -713,42 +654,6 @@ const handleUserDetails = () => {
               <p><strong>Role:</strong> {selectedSubscriber.role || "N/A"}</p>
               <p><strong>User:</strong> {selectedSubscriber.user || "N/A"}</p>
               <p><strong>Description:</strong> {selectedSubscriber.description || "No description provided"}</p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {showUploadModal && (
-        <div className="dvspModal-overlay">
-          <div className="dvspModal dvspUpload-modal">
-            <div className="dvspModal-header">
-              <h2>Upload Content</h2>
-              <span className="dvspModal-close" onClick={toggleUploadModal}>
-                <FiX />
-              </span>
-            </div>
-            <div className="dvspUpload-options">
-              <label className="dvspModal-label">Upload Image</label>
-              <input
-                type="file"
-                ref={fileInputRef}
-                style={{ display: "block" }}
-                onChange={handleFileChange}
-                accept=".jpg,.jpeg,.png,.gif"
-              />
-              <label className="dvspModal-label">Upload File (CSV, JSON, XLSX)</label>
-              <input
-                type="file"
-                ref={fileInputRef}
-                style={{ display: "block" }}
-                onChange={handleFileChange}
-                accept=".csv,.json,.xlsx"
-              />
-            </div>
-            <div className="dvspModal-buttons">
-              <button className="dvspSave-button" onClick={toggleUploadModal}>
-                <FiCheck /> Close
-              </button>
             </div>
           </div>
         </div>

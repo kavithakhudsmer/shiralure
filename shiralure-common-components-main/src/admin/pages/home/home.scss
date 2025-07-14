@@ -20,7 +20,7 @@ $muthu-dark-divider: #333;
   }
 
   .muthu-home-header {
-   
+
     padding: 20px 20px 0 20px;
     display: flex;
     justify-content: space-between;
@@ -31,7 +31,7 @@ $muthu-dark-divider: #333;
     @media (max-width: 768px) {
       margin-left: 0;
       width: 100%;
-     
+
     }
 
     .muthu-home-title {
@@ -90,12 +90,12 @@ $muthu-dark-divider: #333;
   }
 
   .muthu-main-content {
- 
+
     flex: 1;
     display: flex;
     flex-direction: column;
     transition: margin 0.3s ease;
-    
+
 
     @media (max-width: 768px) {
       margin-left: 0;
@@ -111,7 +111,7 @@ $muthu-dark-divider: #333;
       box-sizing: border-box;
 
       @media (max-width: 768px) {
-        
+
       }
 
       .muthu-widgets,
@@ -130,7 +130,7 @@ $muthu-dark-divider: #333;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
-       
+
 
         @media (max-width: 992px) {
           grid-template-columns: repeat(2, 1fr);
@@ -144,7 +144,7 @@ $muthu-dark-divider: #333;
 
       .muthu-sales {
         @media (max-width: 768px) {
-          
+
           margin-top: 15px;
         }
       }
@@ -159,7 +159,7 @@ $muthu-dark-divider: #333;
         }
 
         @media (max-width: 768px) {
-          
+
         }
       }
 
@@ -172,24 +172,24 @@ $muthu-dark-divider: #333;
         }
 
         @media (max-width: 768px) {
-          
+
         }
       }
 
       .muthu-admin-container {
-        
+
 
         @media (max-width: 768px) {
-          
+
         }
       }
 
       .muthu-order-table {
-        
+
         margin-bottom: 20px;
 
         @media (max-width: 768px) {
-         
+
         }
       }
     }

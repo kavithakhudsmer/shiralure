@@ -1,0 +1,22 @@
+{
+  "visitors": {
+    "amount": 1250,
+    "previous": 1470,
+    "extraInfo": "compared to yesterday"
+  },
+  "stockItems": {
+    "amount": 6678,
+    "previous": 5700,
+    "extraInfo": "12 low stock items"
+  },
+  "orders": {
+    "amount": 235,
+    "previous": 260,
+    "extraInfo": "15 pending, 220 completed"
+  },
+  "deliveries": {
+    "amount": 180,
+    "previous": 150,
+    "extraInfo": "5 in-transit, 170 completed, 5 pending"
+  }
+}

@@ -173,7 +173,26 @@ function Coupons() {
     document.body.removeChild(link);
   };
 
-  const validateForm = () => {
+  const validateField = (name, value) => {
+    if (!value || value.toString().trim() === "") {
+      return `${name.replace(/([A-Z])/g, " $1").toUpperCase()} is required`;
+    }
+    if (name === "discount" && parseFloat(value) <= 0) {
+      return "Discount must be greater than 0";
+    }
+    if (name === "minOrderAmount" && parseFloat(value) < 0) {
+      return "Minimum Order Amount cannot be negative";
+    }
+    if (name === "maxDiscount" && parseFloat(value) < 0) {
+      return "Maximum Discount cannot be negative";
+    }
+    if (name === "limitPerUser" && parseInt(value, 10) <= 0) {
+      return "Limit Per User must be greater than 0";
+    }
+    return "";
+  };
+
+  const validateForm = (couponData, isEdit = false) => {
     const errors = {};
     const requiredFields = [
       "name",
@@ -186,71 +205,135 @@ function Coupons() {
       "maxDiscount",
       "limitPerUser",
       "description",
-      "image",
-    ];
+      isEdit ? null : "image",
+    ].filter(Boolean);
 
     requiredFields.forEach((field) => {
-      if (!newCoupon[field] || newCoupon[field].toString().trim() === "") {
-        errors[field] = `${field.replace(/([A-Z])/g, " $1").toUpperCase()} is required`;
-      }
+      const error = validateField(field, couponData[field]);
+      if (error) errors[field] = error;
     });
 
-    if (newCoupon.discount && parseFloat(newCoupon.discount) <= 0) {
-      errors.discount = "Discount must be greater than 0";
-    }
-    if (newCoupon.minOrderAmount && parseFloat(newCoupon.minOrderAmount) < 0) {
-      errors.minOrderAmount = "Minimum Order Amount cannot be negative";
-    }
-    if (newCoupon.maxDiscount && parseFloat(newCoupon.maxDiscount) < 0) {
-      errors.maxDiscount = "Maximum Discount cannot be negative";
-    }
-    if (newCoupon.limitPerUser && parseInt(newCoupon.limitPerUser, 10) <= 0) {
-      errors.limitPerUser = "Limit Per User must be greater than 0";
+    return errors;
+  };
+
+  const handleAddInputChange = (e) => {
+    const { name, value, type, files } = e.target;
+    let updatedCoupon = { ...newCoupon };
+
+    if (type === "file") {
+      const file = files[0];
+      updatedCoupon = { ...newCoupon, image: file };
+      setAddFileName(file ? file.name : "");
+    } else {
+      updatedCoupon = { ...newCoupon, [name]: value };
     }
 
-    setFormErrors(errors);
-    return Object.keys(errors).length === 0;
+    setNewCoupon(updatedCoupon);
+
+    // Real-time validation
+    const error = validateField(name, type === "file" ? files[0] : value);
+    setFormErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: error,
+    }));
   };
 
   const handleAddCoupon = (e) => {
     e.preventDefault();
-    if (!validateForm()) {
-      return;
+    const errors = validateForm(newCoupon);
+    setFormErrors(errors);
+
+    if (Object.keys(errors).length === 0) {
+      const coupon = {
+        ...newCoupon,
+        discount: parseFloat(newCoupon.discount),
+        minOrderAmount: parseFloat(newCoupon.minOrderAmount) || null,
+        maxDiscount: parseFloat(newCoupon.maxDiscount) || null,
+        limitPerUser: parseInt(newCoupon.limitPerUser, 10) || null,
+      };
+      const updatedCoupons = [...coupons, coupon];
+      setCoupons(updatedCoupons);
+      setFilteredCoupons(updatedCoupons);
+      setNewCoupon({
+        name: "",
+        code: "",
+        discount: "",
+        discountType: "Fixed",
+        startDate: "",
+        endDate: "",
+        minOrderAmount: "",
+        maxDiscount: "",
+        limitPerUser: "",
+        description: "",
+        image: null,
+      });
+      setFormErrors({});
+      setAddFileName("");
+      setShowAddModal(false);
+      setCurrentPage(1);
+    }
+  };
+
+  const handleEditFormChange = (e) => {
+    const { name, value, type, files } = e.target;
+    let updatedData = { ...editFormData };
+
+    if (type === "file") {
+      const file = files[0];
+      updatedData = { ...editFormData, image: file };
+      setEditFileName(file ? file.name : "");
+    } else {
+      updatedData = { ...editFormData, [name]: value };
     }
 
-    const coupon = {
-      ...newCoupon,
-      discount: parseFloat(newCoupon.discount),
-      minOrderAmount: parseFloat(newCoupon.minOrderAmount) || null,
-      maxDiscount: parseFloat(newCoupon.maxDiscount) || null,
-      limitPerUser: parseInt(newCoupon.limitPerUser, 10) || null,
-    };
-    const updatedCoupons = [...coupons, coupon];
-    setCoupons(updatedCoupons);
-    setFilteredCoupons(updatedCoupons);
-    setNewCoupon({
-      name: "",
-      code: "",
-      discount: "",
-      discountType: "Fixed",
-      startDate: "",
-      endDate: "",
-      minOrderAmount: "",
-      maxDiscount: "",
-      limitPerUser: "",
-      description: "",
-      image: null,
-    });
+    setEditFormData(updatedData);
+
+    // Real-time validation
+    const error = validateField(name, type === "file" ? files[0] : value);
+    setFormErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: error,
+    }));
+  };
+
+  const handleUpdateCoupon = () => {
+    const errors = validateForm(editFormData, true);
+    setFormErrors(errors);
+
+    if (Object.keys(errors).length === 0) {
+      const updatedCouponData = {
+        ...editFormData,
+        discount: parseFloat(editFormData.discount),
+        minOrderAmount: parseFloat(editFormData.minOrderAmount) || null,
+        maxDiscount: parseFloat(editFormData.maxDiscount) || null,
+        limitPerUser: parseInt(editFormData.limitPerUser, 10) || null,
+      };
+
+      const updatedCoupons = coupons.map((c) =>
+        c.code === editingCoupon.code ? updatedCouponData : c
+      );
+
+      setCoupons(updatedCoupons);
+      setFilteredCoupons(updatedCoupons);
+      setShowEditModal(false);
+      setEditingCoupon(null);
+      setEditFormData({});
+      setEditFileName("");
+      setFormErrors({});
+      setCurrentPage(1);
+    }
+  };
+
+  const handleCancelEdit = () => {
+    setShowEditModal(false);
+    setEditingCoupon(null);
+    setEditFormData({});
+    setEditFileName("");
     setFormErrors({});
-    setAddFileName("");
-    setShowAddModal(false);
-    setCurrentPage(1);
   };
 
   const handleAddFileChange = (e) => {
-    const file = e.target.files[0];
-    setNewCoupon({ ...newCoupon, image: file });
-    setAddFileName(file ? file.name : "");
+    handleAddInputChange(e);
   };
 
   const handleViewCoupon = (coupon) => {
@@ -272,52 +355,6 @@ function Coupons() {
     setEditFormData(formData);
     setEditFileName(coupon.image instanceof File ? coupon.image.name : "");
     setShowEditModal(true);
-  };
-
-  const handleEditFormChange = (e) => {
-    const { name, value, type, files } = e.target;
-    if (type === "file") {
-      const file = files[0];
-      setEditFormData((prevData) => ({
-        ...prevData,
-        [name]: file,
-      }));
-      setEditFileName(file ? file.name : "");
-    } else {
-      setEditFormData((prevData) => ({
-        ...prevData,
-        [name]: value,
-      }));
-    }
-  };
-
-  const handleUpdateCoupon = () => {
-    const updatedCouponData = {
-      ...editFormData,
-      discount: parseFloat(editFormData.discount),
-      minOrderAmount: parseFloat(editFormData.minOrderAmount) || null,
-      maxDiscount: parseFloat(editFormData.maxDiscount) || null,
-      limitPerUser: parseInt(editFormData.limitPerUser, 10) || null,
-    };
-
-    const updatedCoupons = coupons.map((c) =>
-      c.code === editingCoupon.code ? updatedCouponData : c
-    );
-
-    setCoupons(updatedCoupons);
-    setFilteredCoupons(updatedCoupons);
-    setShowEditModal(false);
-    setEditingCoupon(null);
-    setEditFormData({});
-    setEditFileName("");
-    setCurrentPage(1);
-  };
-
-  const handleCancelEdit = () => {
-    setShowEditModal(false);
-    setEditingCoupon(null);
-    setEditFormData({});
-    setEditFileName("");
   };
 
   const handleDeleteClick = (coupon) => {
@@ -344,7 +381,7 @@ function Coupons() {
       <div className="DSheader">
         <h2 className="DStitle">E-Coupons</h2>
         <h6 className="DSbreadcrumb">
-          <a href="/" className="DSbreadcrumb">Home</a> &gt;&gt; <span>E-Coupons</span>
+          <a href="/" className="DSbreadcrumb">Home</a>  <span>E-Coupons</span>
         </h6>
       </div>
       <div className="DSCoupon-card">
@@ -555,9 +592,7 @@ function Coupons() {
                       type="text"
                       name="name"
                       value={newCoupon.name}
-                      onChange={(e) =>
-                        setNewCoupon({ ...newCoupon, name: e.target.value })
-                      }
+                      onChange={handleAddInputChange}
                       required
                       className={formErrors.name ? "DSInput-error" : ""}
                     />
@@ -573,9 +608,7 @@ function Coupons() {
                       type="text"
                       name="code"
                       value={newCoupon.code}
-                      onChange={(e) =>
-                        setNewCoupon({ ...newCoupon, code: e.target.value })
-                      }
+                      onChange={handleAddInputChange}
                       required
                       className={formErrors.code ? "DSInput-error" : ""}
                     />
@@ -591,9 +624,7 @@ function Coupons() {
                       type="number"
                       name="discount"
                       value={newCoupon.discount}
-                      onChange={(e) =>
-                        setNewCoupon({ ...newCoupon, discount: e.target.value })
-                      }
+                      onChange={handleAddInputChange}
                       required
                       min="0.01"
                       step="0.01"
@@ -616,12 +647,7 @@ function Coupons() {
                           name="discountType"
                           value="Fixed"
                           checked={newCoupon.discountType === "Fixed"}
-                          onChange={(e) =>
-                            setNewCoupon({
-                              ...newCoupon,
-                              discountType: e.target.value,
-                            })
-                          }
+                          onChange={handleAddInputChange}
                           required
                         />
                         Fixed
@@ -632,12 +658,7 @@ function Coupons() {
                           name="discountType"
                           value="Percentage"
                           checked={newCoupon.discountType === "Percentage"}
-                          onChange={(e) =>
-                            setNewCoupon({
-                              ...newCoupon,
-                              discountType: e.target.value,
-                            })
-                          }
+                          onChange={handleAddInputChange}
                         />
                         Percentage
                       </label>
@@ -655,9 +676,7 @@ function Coupons() {
                         type="datetime-local"
                         name="startDate"
                         value={newCoupon.startDate}
-                        onChange={(e) =>
-                          setNewCoupon({ ...newCoupon, startDate: e.target.value })
-                        }
+                        onChange={handleAddInputChange}
                         required
                         className={`DSFilter-input DSDate-input ${formErrors.startDate ? "DSInput-error" : ""}`}
                       />
@@ -675,9 +694,7 @@ function Coupons() {
                         type="datetime-local"
                         name="endDate"
                         value={newCoupon.endDate}
-                        onChange={(e) =>
-                          setNewCoupon({ ...newCoupon, endDate: e.target.value })
-                        }
+                        onChange={handleAddInputChange}
                         required
                         className={`DSFilter-input DSDate-input ${formErrors.endDate ? "DSInput-error" : ""}`}
                       />
@@ -696,12 +713,7 @@ function Coupons() {
                       type="number"
                       name="minOrderAmount"
                       value={newCoupon.minOrderAmount}
-                      onChange={(e) =>
-                        setNewCoupon({
-                          ...newCoupon,
-                          minOrderAmount: e.target.value,
-                        })
-                      }
+                      onChange={handleAddInputChange}
                       required
                       min="0"
                       step="0.01"
@@ -719,9 +731,7 @@ function Coupons() {
                       type="number"
                       name="maxDiscount"
                       value={newCoupon.maxDiscount}
-                      onChange={(e) =>
-                        setNewCoupon({ ...newCoupon, maxDiscount: e.target.value })
-                      }
+                      onChange={handleAddInputChange}
                       required
                       min="0"
                       step="0.01"
@@ -739,12 +749,7 @@ function Coupons() {
                       type="number"
                       name="limitPerUser"
                       value={newCoupon.limitPerUser}
-                      onChange={(e) =>
-                        setNewCoupon({
-                          ...newCoupon,
-                          limitPerUser: e.target.value,
-                        })
-                      }
+                      onChange={handleAddInputChange}
                       required
                       min="1"
                       step="1"
@@ -763,12 +768,7 @@ function Coupons() {
                     <textarea
                       name="description"
                       value={newCoupon.description}
-                      onChange={(e) =>
-                        setNewCoupon({
-                          ...newCoupon,
-                          description: e.target.value,
-                        })
-                      }
+                      onChange={handleAddInputChange}
                       rows={5}
                       required
                       className={`DSLarge-textarea ${formErrors.description ? "DSInput-error" : ""}`}
@@ -908,7 +908,11 @@ function Coupons() {
                     value={editFormData.name || ""}
                     onChange={handleEditFormChange}
                     required
+                    className={formErrors.name ? "DSInput-error" : ""}
                   />
+                  {formErrors.name && (
+                    <span className="DSError-message">{formErrors.name}</span>
+                  )}
                 </div>
                 <div className="DSFilter-field">
                   <label>
@@ -921,7 +925,11 @@ function Coupons() {
                     onChange={handleEditFormChange}
                     required
                     readOnly
+                    className={formErrors.code ? "DSInput-error" : ""}
                   />
+                  {formErrors.code && (
+                    <span className="DSError-message">{formErrors.code}</span>
+                  )}
                 </div>
                 <div className="DSFilter-field">
                   <label>
@@ -933,7 +941,13 @@ function Coupons() {
                     value={editFormData.discount || ""}
                     onChange={handleEditFormChange}
                     required
+                    min="0.01"
+                    step="0.01"
+                    className={formErrors.discount ? "DSInput-error" : ""}
                   />
+                  {formErrors.discount && (
+                    <span className="DSError-message">{formErrors.discount}</span>
+                  )}
                 </div>
               </div>
               <div className="DSForm-row">
@@ -949,6 +963,7 @@ function Coupons() {
                         value="Fixed"
                         checked={editFormData.discountType === "Fixed"}
                         onChange={handleEditFormChange}
+                        required
                       />
                       Fixed
                     </label>
@@ -963,30 +978,41 @@ function Coupons() {
                       Percentage
                     </label>
                   </div>
+                  {formErrors.discountType && (
+                    <span className="DSError-message">{formErrors.discountType}</span>
+                  )}
                 </div>
                 <div className="DSFilter-field">
                   <label>
                     Start Date<span style={{ color: "red" }}>*</span>
                   </label>
                   <input
-                    type="date"
+                    type="datetime-local"
                     name="startDate"
                     value={editFormData.startDate || ""}
                     onChange={handleEditFormChange}
                     required
+                    className={formErrors.startDate ? "DSInput-error" : ""}
                   />
+                  {formErrors.startDate && (
+                    <span className="DSError-message">{formErrors.startDate}</span>
+                  )}
                 </div>
                 <div className="DSFilter-field">
                   <label>
                     End Date<span style={{ color: "red" }}>*</span>
-                  </label>
+                    </label>
                   <input
-                    type="date"
+                    type="datetime-local"
                     name="endDate"
                     value={editFormData.endDate || ""}
                     onChange={handleEditFormChange}
                     required
+                    className={formErrors.endDate ? "DSInput-error" : ""}
                   />
+                  {formErrors.endDate && (
+                    <span className="DSError-message">{formErrors.endDate}</span>
+                  )}
                 </div>
               </div>
               <div className="DSForm-row">
@@ -1000,7 +1026,13 @@ function Coupons() {
                     value={editFormData.minOrderAmount || ""}
                     onChange={handleEditFormChange}
                     required
+                    min="0"
+                    step="0.01"
+                    className={formErrors.minOrderAmount ? "DSInput-error" : ""}
                   />
+                  {formErrors.minOrderAmount && (
+                    <span className="DSError-message">{formErrors.minOrderAmount}</span>
+                  )}
                 </div>
                 <div className="DSFilter-field">
                   <label>
@@ -1012,7 +1044,13 @@ function Coupons() {
                     value={editFormData.maxDiscount || ""}
                     onChange={handleEditFormChange}
                     required
+                    min="0"
+                    step="0.01"
+                    className={formErrors.maxDiscount ? "DSInput-error" : ""}
                   />
+                  {formErrors.maxDiscount && (
+                    <span className="DSError-message">{formErrors.maxDiscount}</span>
+                  )}
                 </div>
                 <div className="DSFilter-field">
                   <label>
@@ -1024,7 +1062,13 @@ function Coupons() {
                     value={editFormData.limitPerUser || ""}
                     onChange={handleEditFormChange}
                     required
+                    min="1"
+                    step="1"
+                    className={formErrors.limitPerUser ? "DSInput-error" : ""}
                   />
+                  {formErrors.limitPerUser && (
+                    <span className="DSError-message">{formErrors.limitPerUser}</span>
+                  )}
                 </div>
               </div>
               <div className="DSForm-row">
@@ -1038,8 +1082,11 @@ function Coupons() {
                     onChange={handleEditFormChange}
                     rows={5}
                     required
-                    className="DSLarge-textarea"
+                    className={`DSLarge-textarea ${formErrors.description ? "DSInput-error" : ""}`}
                   />
+                  {formErrors.description && (
+                    <span className="DSError-message">{formErrors.description}</span>
+                  )}
                 </div>
                 <div className="DSFilter-field">
                   <label>
@@ -1051,12 +1098,15 @@ function Coupons() {
                       accept="image/*"
                       name="image"
                       onChange={handleEditFormChange}
-                      className="DSEdit-file-input"
+                      className={`DSEdit-file-input ${formErrors.image ? "DSInput-error" : ""}`}
                     />
                   </div>
-                  {editFormData.image && !(editFormData.image instanceof File) && (
+                  {formErrors.image && (
+                    <span className="DSError-message">{formErrors.image}</span>
+                  )}
+                  {editFormData.image && (editFormData.image instanceof File) && (
                     <img
-                      src={editFormData.image}
+                      src={URL.createObjectURL(editFormData.image)}
                       alt="Current"
                       style={{ maxWidth: "80px", maxHeight: "80px", marginTop: "5px" }}
                     />

@@ -15,12 +15,12 @@
     flex-direction: column;
     gap: 15px;
     flex: 1;
-    
+
     .muthu-icon-container {
       display: flex;
       align-items: center;
       gap: 10px;
-      
+
       .muthu-icon-wrapper {
         display: flex;
         align-items: center;
@@ -28,15 +28,15 @@
         padding: 8px;
         border-radius: 8px;
       }
-      
+
       .muthu-icon {
         font-size: 48px;
       }
-      
+
       .muthu-title {
         font-size: 24px;
         color: #000000c1;
-        font-weight: 50;
+        font-weight: 500;
       }
     }
 
@@ -65,7 +65,7 @@
     position: absolute;
     top: 32px;
     right: 35px;
-    
+
     .muthu-trend {
       display: flex;
       align-items: center;
@@ -74,7 +74,7 @@
       font-size: 14px;
       padding: 8px 25px;
       border-radius: 20px;
-      
+
       svg {
         font-size: 19px;
       }
@@ -83,22 +83,22 @@
 
   @media (max-width: 768px) {
     padding: 15px;
-    flex-direction: row; // Changed from column to row
-    flex-wrap: wrap; // Allow wrapping
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 15px;
 
     .muthu-left {
-      width: auto; // Changed from 100% to auto
+      width: auto;
       flex: 1;
-      min-width: 0; // Prevent overflow
-      
+      min-width: 0;
+
       .muthu-icon-container {
-        justify-content: flex-start; // Changed from space-between
+        justify-content: flex-start;
         width: auto;
-        
+
         .muthu-title {
           font-size: 20px;
-          white-space: nowrap; // Prevent title from wrapping
+          white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
         }
@@ -113,12 +113,12 @@
 
     .muthu-right {
       position: static;
-      align-self: center; // Changed from flex-end to center
-      margin-left: auto; // Push to the right
-      padding-left: 15px; // Add some spacing
-      
+      align-self: center;
+      margin-left: auto;
+      padding-left: 15px;
+
       .muthu-trend {
-        padding: 6px 15px; // Slightly smaller on mobile
+        padding: 6px 15px;
       }
     }
   }

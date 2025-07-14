@@ -67,7 +67,7 @@ export default function Setting() {
         <div style={styles.settingsHeader}>Settings</div>
         <div style={styles.settingsBreadcrumb}>
           <span>Home</span>
-          <span style={{ margin: '0 5px' }}>>></span>
+          <span style={{ margin: '0 5px' }}> &gt;&gt; </span>
           <span style={styles.settingsBreadcrumbActive}>Settings</span>
         </div>
       </div>
