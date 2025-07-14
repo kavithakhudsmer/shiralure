@@ -1,0 +1,1017 @@
+.outlet-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 20px auto;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Updated font stack */
+}
+
+.outlet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.outlet-title {
+  font-size: 18px; /* Increased from 16px */
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.outlet-btn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px; /* Increased from 14px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-btn-add {
+  background: #5865f2;
+  color: white;
+  padding: 10px 12px;
+}
+
+.outlet-btn-add:hover {
+  background: #4752c4;
+  transform: translateY(-1px);
+}
+
+.outlet-table-container {
+  padding: 0;
+}
+
+.outlet-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px; /* Increased from 14px */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-table thead th {
+  background: #f8f9fa;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #6c757d;
+  font-size: 13px; /* Increased from 12px */
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e9ecef;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f3f4;
+  color: #333;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.outlet-status {
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 13px; /* Increased from 12px */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-status.active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.outlet-status.inactive {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.outlet-action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.outlet-action-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%; /* Circular shape */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+
+.outlet-view-btn {
+  background: #f8d7da; /* Light red background */
+  color: #dc3545; /* Red icon */
+}
+
+.outlet-view-btn:hover {
+  background: #f1aeb5;
+  color: #dc3545;
+  transform: scale(1.05);
+}
+
+.outlet-edit-btn {
+  background: #d1e7dd; /* Light green background */
+  color: #28a745; /* Green icon */
+}
+
+.outlet-edit-btn:hover {
+  background: #a3cfbb;
+  color: #28a745;
+  transform: scale(1.05);
+}
+
+.outlet-delete-btn {
+  background: #fff3cd; /* Light orange background */
+  color: #f0ad4e; /* Orange icon */
+}
+
+.outlet-delete-btn:hover {
+  background: #ffeaa7;
+  color: #f0ad4e;
+  transform: scale(1.05);
+}
+
+.outlet-table-footer {
+  padding: 12px 16px;
+  color: #6c757d;
+  font-size: 13px; /* Increased from 12px */
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+/* Modal Styles */
+.outlet-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.outlet-modal-content {
+  animation: outletModalSlideIn 0.3s ease-out;
+  max-height: 85vh;
+  overflow: hidden;
+}
+
+/* @keyframes outletModalSlideIn remains unchanged */
+
+.outlet-view-modal {
+  width: 400px;
+  max-width: 90vw;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-view-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.outlet-view-modal-title {
+  font-size: 15px; /* Increased from 14px */
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-view-modal-close {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #6c757d;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-view-modal-close:hover {
+  background: #f8f9fa;
+  color: #333;
+}
+
+.outlet-view-modal-body {
+  padding: 20px;
+}
+
+.outlet-view-detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.outlet-view-detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.outlet-view-detail-item label {
+  font-size: 15px; /* Increased from 14px */
+  color: #6c757d;
+  margin-right: 8px;
+  min-width: 60px;
+  font-weight: 500;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-view-detail-item span {
+  font-size: 15px; /* Increased from 14px */
+  color: #333;
+  font-weight: 500;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-view-status.active {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.outlet-view-status.inactive {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* Form Modal Styles - REDUCED HEIGHT */
+.outlet-form-modal {
+  width: 500px;
+  max-width: 90vw;
+  max-height: 70vh;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-form-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid #e9ecef;
+  flex-shrink: 0;
+}
+
+.outlet-form-modal-title {
+  font-size: 14px; /* Increased from 13px */
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-form-modal-close {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 2px;
+  color: #6c757d;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-form-modal-close:hover {
+  background: #f8f9fa;
+  color: #333;
+}
+
+.outlet-form-modal-body {
+  padding: 12px 16px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.outlet-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.outlet-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.outlet-form-group.outlet-full-width {
+  grid-column: 1 / -1;
+}
+
+.outlet-form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 12px; /* Increased from 11px */
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-form-group input,
+.outlet-form-group textarea {
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px; /* Increased from 13px */
+  transition: all 0.2s ease;
+  background: white;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-form-group input:focus,
+.outlet-form-group textarea:focus {
+  outline: none;
+  border-color: #5865f2;
+  box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.1);
+}
+
+.outlet-form-group textarea {
+  resize: vertical;
+  min-height: 50px;
+  max-height: 80px;
+}
+
+.outlet-radio-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.outlet-radio-label {
+  display: flex;
+  align-items: center;
+  font-weight: 500 !important;
+  font-size: 14px !important; /* Increased from 13px */
+  color: #333 !important;
+  cursor: pointer;
+  text-transform: none !important;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-radio-label input[type="radio"] {
+  margin-right: 6px;
+  width: 14px;
+  height: 14px;
+  accent-color: #5865f2;
+}
+
+.outlet-form-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 16px;
+  border-top: 1px solid #e9ecef;
+  background: #f8f9fa;
+  flex-shrink: 0;
+}
+
+.outlet-btn-save-primary {
+  background: #5865f2;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px; /* Increased from 11px */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-btn-save-primary:hover {
+  background: #4752c4;
+  transform: translateY(-1px);
+}
+
+.outlet-btn-clear-secondary {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px; /* Increased from 11px */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-btn-clear-secondary:hover {
+  background: #545b62;
+  transform: translateY(-1px);
+}
+
+/* Delete Modal Styles */
+.outlet-delete-modal {
+  width: 420px;
+  max-width: 90vw;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-delete-modal-content {
+  padding: 40px 30px 30px;
+  text-align: center;
+}
+
+.outlet-delete-modal-icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.outlet-warning-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #ffc107;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.outlet-exclamation {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.outlet-delete-modal-title {
+  font-size: 20px; /* Increased from 18px */
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 10px 0;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-delete-modal-message {
+  font-size: 15px; /* Increased from 14px */
+  color: #6c757d;
+  margin: 0 0 30px 0;
+  line-height: 1.4;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-delete-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.outlet-btn-delete-yes {
+  background: #5865f2;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 15px; /* Increased from 14px */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-btn-delete-yes:hover {
+  background: #4752c4;
+  transform: translateY(-1px);
+}
+
+.outlet-btn-delete-no {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 15px; /* Increased from 14px */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-btn-delete-no:hover {
+  background: #2c2c2c;
+  transform: translateY(-1px);
+}
+
+/* Compact height variants */
+.outlet-form-modal.outlet-compact-height {
+  max-height: 60vh;
+}
+
+.outlet-form-modal.outlet-compact-height .outlet-form-modal-header {
+  padding: 8px 14px;
+}
+
+.outlet-form-modal.outlet-compact-height .outlet-form-modal-body {
+  padding: 10px 14px;
+}
+
+.outlet-form-modal.outlet-compact-height .outlet-form-modal-footer {
+  padding: 8px 14px;
+}
+
+.outlet-form-modal.outlet-compact-height .outlet-form-grid {
+  gap: 8px;
+}
+
+.outlet-form-modal.outlet-compact-height .outlet-form-group label {
+  font-size: 11px; /* Increased from 10px */
+  margin-bottom: 3px;
+}
+
+.outlet-form-modal.outlet-compact-height .outlet-form-group input,
+.outlet-form-modal.outlet-compact-height .outlet-form-group textarea {
+  padding: 5px 7px;
+  font-size: 13px; /* Increased from 12px */
+}
+
+.outlet-form-modal.outlet-compact-height .outlet-form-group textarea {
+  min-height: 40px;
+  max-height: 60px;
+}
+
+.outlet-form-modal.outlet-compact-height .outlet-btn-save-primary,
+.outlet-form-modal.outlet-compact-height .outlet-btn-clear-secondary {
+  padding: 5px 10px;
+  font-size: 11px; /* Increased from 10px */
+}
+
+/* Extra compact height variant */
+.outlet-form-modal.outlet-extra-compact {
+  max-height: 50vh;
+}
+
+.outlet-form-modal.outlet-extra-compact .outlet-form-modal-header {
+  padding: 6px 12px;
+}
+
+.outlet-form-modal.outlet-extra-compact .outlet-form-modal-title {
+  font-size: 13px; /* Increased from 12px */
+}
+
+.outlet-form-modal.outlet-extra-compact .outlet-form-modal-body {
+  padding: 8px 12px;
+}
+
+.outlet-form-modal.outlet-extra-compact .outlet-form-modal-footer {
+  padding: 6px 12px;
+}
+
+.outlet-form-modal.outlet-extra-compact .outlet-form-grid {
+  gap: 6px;
+  grid-template-columns: 1fr;
+}
+
+.outlet-form-modal.outlet-extra-compact .outlet-form-group label {
+  font-size: 10px; /* Increased from 9px */
+  margin-bottom: 2px;
+}
+
+.outlet-form-modal.outlet-extra-compact .outlet-form-group input,
+.outlet-form-modal.outlet-extra-compact .outlet-form-group textarea {
+  padding: 4px 6px;
+  font-size: 12px; /* Increased from 11px */
+}
+
+.outlet-form-modal.outlet-extra-compact .outlet-form-group textarea {
+  min-height: 35px;
+  max-height: 50px;
+}
+
+.outlet-form-modal.outlet-extra-compact .outlet-radio-label {
+  font-size: 12px !important; /* Increased from 11px */
+}
+
+.outlet-form-modal.outlet-extra-compact .outlet-radio-label input[type="radio"] {
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+}
+
+.outlet-form-modal.outlet-extra-compact .outlet-btn-save-primary,
+.outlet-form-modal.outlet-extra-compact .outlet-btn-clear-secondary {
+  padding: 4px 8px;
+  font-size: 10px; /* Increased from 9px */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .outlet-modal-content {
+    margin: 10px;
+    max-height: calc(100vh - 20px);
+  }
+  
+  .outlet-form-modal,
+  .outlet-view-modal {
+    width: auto;
+    max-height: 80vh;
+  }
+  
+  .outlet-form-modal {
+    width: 350px;
+  }
+  
+  .outlet-form-modal-body {
+    padding: 10px 12px;
+  }
+  
+  .outlet-form-modal-header,
+  .outlet-form-modal-footer {
+    padding: 8px 12px;
+  }
+  .outlet-form-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .outlet-form-group input,
+  .outlet-form-group textarea {
+    padding: 5px 7px;
+    font-size: 13px; /* Increased from 12px */
+  }
+  
+  .outlet-form-group textarea {
+    min-height: 45px;
+  }
+  
+  .outlet-form-group label {
+    font-size: 11px; /* Increased from 10px */
+    margin-bottom: 3px;
+  }
+  
+  .outlet-btn-save-primary,
+  .outlet-btn-clear-secondary {
+    padding: 5px 10px;
+    font-size: 11px; /* Increased from 10px */
+  }
+  
+  .outlet-view-modal-header,
+  .outlet-view-modal-body {
+    padding: 16px 20px;
+  }
+  
+  .outlet-table {
+    font-size: 13px; /* Increased from 12px */
+  }
+  
+  .outlet-action-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .outlet-action-btn {
+    padding: 6px;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .outlet-modal-overlay {
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+  
+  .outlet-modal-content {
+    margin: 0 5px;
+    max-height: calc(100vh - 20px);
+  }
+  
+  .outlet-form-modal {
+    width: auto;
+    max-width: calc(100vw - 10px);
+    max-height: 85vh;
+  }
+  
+  .outlet-form-modal-body {
+    padding: 8px 10px;
+  }
+  
+  .outlet-form-modal-header,
+  .outlet-form-modal-footer {
+    padding: 6px 10px;
+  }
+  
+  .outlet-form-modal-title {
+    font-size: 12px; /* Increased from 11px */
+  }
+  
+  .outlet-form-grid {
+    gap: 6px;
+  }
+  
+  .outlet-form-group input,
+  .outlet-form-group textarea {
+    padding: 4px 6px;
+    font-size: 12px; /* Increased from 11px */
+  }
+  
+  .outlet-form-group textarea {
+    min-height: 40px;
+    max-height: 55px;
+  }
+  
+  .outlet-form-group label {
+    font-size: 10px; /* Increased from 9px */
+    margin-bottom: 2px;
+  }
+  
+  .outlet-radio-group {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  
+  .outlet-radio-label {
+    font-size: 12px !important; /* Increased from 11px */
+  }
+  
+  .outlet-radio-label input[type="radio"] {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+  }
+  
+  .outlet-btn-save-primary,
+  .outlet-btn-clear-secondary {
+    padding: 4px 8px;
+    font-size: 10px; /* Increased from 9px */
+  }
+  
+  .outlet-view-modal-title {
+    font-size: 16px; /* Increased from 16px (unchanged but applied font) */
+  }
+  
+  .outlet-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  
+  .outlet-actions {
+    justify-content: center;
+  }
+  
+  .outlet-action-btn {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Scrollable content for very small heights */
+@media (max-height: 600px) {
+  .outlet-form-modal {
+    max-height: 90vh;
+  }
+  
+  .outlet-form-modal-body {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-height: 500px) {
+  .outlet-form-modal {
+    max-height: 95vh;
+  }
+  
+  .outlet-form-modal-body {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  .outlet-form-modal-header,
+  .outlet-form-modal-footer {
+    padding: 5px 10px;
+  }
+}
+
+/* Custom scrollbar for modal body remains unchanged */
+
+/* Additional utility classes for outlets */
+.outlet-btn-save {
+  background: #28a745;
+  color: white;
+  padding: 12px 24px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-btn-save:hover {
+  background: #218838;
+  transform: translateY(-1px);
+}
+
+.outlet-btn-clear {
+  background: #6c757d;
+  color: white;
+  padding: 12px 24px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-btn-clear:hover {
+  background: #545b62;
+  transform: translateY(-1px);
+}
+
+.outlet-btn-delete-confirm {
+  background: #dc3545;
+  color: white;
+  padding: 12px 20px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-btn-delete-confirm:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+}
+
+.outlet-btn-cancel {
+  background: #6c757d;
+  color: white;
+  padding: 12px 24px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-btn-cancel:hover {
+  background: #545b62;
+  transform: translateY(-1px);
+}
+
+/* Loading states */
+.outlet-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: #6c757d;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+/* @keyframes outletSpin remains unchanged */
+
+/* Error states */
+.outlet-error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin: 10px 0;
+  border: 1px solid #f5c6cb;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-success {
+  background: #d4edda;
+  color: #155724;
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin: 10px 0;
+  border: 1px solid #c3e6cb;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+/* Empty state */
+.outlet-empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6c757d;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-empty-state h3 {
+  font-size: 20px; /* Increased from 18px */
+  margin-bottom: 10px;
+  color: #495057;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+.outlet-empty-state p {
+  font-size: 15px; /* Increased from 14px */
+  margin-bottom: 20px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+}
+
+
+/* Accessibility improvements */
+.outlet-action-btn:focus,
+.outlet-btn:focus,
+.outlet-btn-save-primary:focus,
+.outlet-btn-clear-secondary:focus,
+.outlet-btn-delete-yes:focus,
+.outlet-btn-delete-no:focus {
+  outline: 2px solid #5865f2;
+  outline-offset: 2px;
+}
+
+.outlet-form-group input:focus,
+.outlet-form-group textarea:focus {
+  outline: 2px solid #5865f2;
+  outline-offset: 1px;
+}
+
+/* Print styles */
+@media print {
+  .outlet-actions,
+  .outlet-action-buttons,
+  .outlet-modal-overlay {
+    display: none !important;
+  }
+  
+  .outlet-container {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .outlet-table {
+    font-size: 12px;
+  }
+  
+  .outlet-status {
+    border: 1px solid #ddd;
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .outlet-container {
+    border: 2px solid #000;
+  }
+  
+  .outlet-btn,
+  .outlet-action-btn {
+    border: 2px solid currentColor;
+  }
+  
+  .outlet-status {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .outlet-modal-content,
+  .outlet-btn,
+  .outlet-action-btn {
+    animation: none;
+    transition: none;
+  }
+  
+  .outlet-btn:hover,
+  .outlet-action-btn:hover {
+    transform: none;
+  }
+}

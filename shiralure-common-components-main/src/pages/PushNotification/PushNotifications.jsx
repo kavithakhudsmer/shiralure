@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import {
-   FiTrash2,  FiCheck, FiX, FiUpload,FiEye
+  FiTrash2,
+  FiCheck,
+  FiX,
+  FiUpload,
+  FiEye,
 } from "react-icons/fi";
 import { PiSliders } from "react-icons/pi";
 import { FaShareFromSquare, FaAngleRight, FaAngleLeft } from "react-icons/fa6";
@@ -32,10 +36,8 @@ function PushNotifications() {
   const [showPageDropdown, setShowPageDropdown] = useState(false);
   const [showViewPage, setShowViewPage] = useState(false);
   const [selectedSubscriber, setSelectedSubscriber] = useState(null);
-  const [details, setDetails] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
-  const [isSecondPageStyle, setIsSecondPageStyle] = useState(false);
 
   const shareButtonRef = useRef(null);
   const shareDropdownRef = useRef(null);
@@ -43,11 +45,11 @@ function PushNotifications() {
   const recordDropdownRef = useRef(null);
   const fileInputRef = useRef(null);
   const [formData, setFormData] = useState({
-    role: '',
-    user: '',
-    title: '',
+    role: "",
+    user: "",
+    title: "",
     image: null,
-    description: '',
+    description: "",
   });
   const [showModal, setShowModal] = useState(false);
 
@@ -60,7 +62,32 @@ function PushNotifications() {
   };
 
   const handleSave = () => {
-    console.log("Saved:", formData);
+    if (!formData.title.trim() || !formData.description.trim()) {
+      alert("Title and Description are required.");
+      return;
+    }
+
+    const newSubscriber = {
+      title: formData.title,
+      role: formData.role,
+      user: formData.user,
+      description: formData.description,
+      action: "view",
+    };
+
+    const updatedSubscribers = [...allSubscribers, newSubscriber];
+    setAllSubscribers(updatedSubscribers);
+    setFilteredList(updatedSubscribers);
+
+    alert("Successfully added new push notification!");
+
+    setFormData({
+      role: "",
+      user: "",
+      title: "",
+      image: null,
+      description: "",
+    });
     setShowModal(false);
   };
 
@@ -79,8 +106,12 @@ function PushNotifications() {
       try {
         const response = await fetch("/PuchNotification.json");
         const data = await response.json();
-        setAllSubscribers(data);
-        setFilteredList(data);
+        const formattedData = data.map(item => ({
+          ...item,
+          description: item.description || "" // Ensure description is always a string
+        }));
+        setAllSubscribers(formattedData);
+        setFilteredList(formattedData);
       } catch (error) {
         console.error("Error fetching subscribers:", error);
       } finally {
@@ -92,7 +123,13 @@ function PushNotifications() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (showShareDropdown && shareDropdownRef.current && !shareDropdownRef.current.contains(event.target) && shareButtonRef.current && !shareButtonRef.current.contains(event.target)) {
+      if (
+        showShareDropdown &&
+        shareDropdownRef.current &&
+        !shareDropdownRef.current.contains(event.target) &&
+        shareButtonRef.current &&
+        !shareButtonRef.current.contains(event.target)
+      ) {
         setShowShareDropdown(false);
       }
     };
@@ -102,7 +139,13 @@ function PushNotifications() {
 
   useEffect(() => {
     const handleClickOutsideRecord = (event) => {
-      if (showPageDropdown && recordDropdownRef.current && !recordDropdownRef.current.contains(event.target) && recordButtonRef.current && !recordButtonRef.current.contains(event.target)) {
+      if (
+        showPageDropdown &&
+        recordDropdownRef.current &&
+        !recordDropdownRef.current.contains(event.target) &&
+        recordButtonRef.current &&
+        !recordButtonRef.current.contains(event.target)
+      ) {
         setShowPageDropdown(false);
       }
     };
@@ -118,13 +161,13 @@ function PushNotifications() {
     setShowViewPage(true);
   };
   const toggleUploadModal = () => setShowUploadModal(!showUploadModal);
-  const toggleSecondPageStyle = () => setIsSecondPageStyle(!isSecondPageStyle);
 
   const handleSearch = () => {
-    const filtered = allSubscribers.filter((sub) =>
-      sub.title.toLowerCase().includes(titleFilter.toLowerCase()) &&
-      sub.role.toLowerCase().includes(roleFilter.toLowerCase()) &&
-      sub.user.toLowerCase().includes(userFilter.toLowerCase())
+    const filtered = allSubscribers.filter(
+      (sub) =>
+        sub.title.toLowerCase().includes(titleFilter.toLowerCase()) &&
+        sub.role.toLowerCase().includes(roleFilter.toLowerCase()) &&
+        sub.user.toLowerCase().includes(userFilter.toLowerCase())
     );
     setFilteredList(filtered);
     setCurrentPage(1);
@@ -145,10 +188,13 @@ function PushNotifications() {
       { header: "Title", key: "title", width: 30 },
       { header: "Role", key: "role", width: 20 },
       { header: "User", key: "user", width: 20 },
+      { header: "Description", key: "description", width: 50 },
     ];
     worksheet.addRows(filteredList);
     const buffer = await workbook.xlsx.writeBuffer();
-    const blob = new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+    const blob = new Blob([buffer], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -166,64 +212,76 @@ function PushNotifications() {
         const fileContent = e.target.result;
         let parsedData = [];
 
-        const fileExtension = file.name.split('.').pop().toLowerCase();
-        if (fileExtension === 'csv') {
+        const fileExtension = file.name.split(".").pop().toLowerCase();
+        if (fileExtension === "csv") {
           Papa.parse(fileContent, {
             header: true,
             complete: (result) => {
-              parsedData = result.data.map(row => ({
-                title: row.Title || row.title || "",
-                role: row.Role || row.role || "",
-                user: row.User || row.user || "",
-                action: row.Action || row.action || "view"
-              })).filter(sub => sub.title && sub.role && sub.user);
+              parsedData = result.data
+                .map((row) => ({
+                  title: row.Title || row.title || "",
+                  role: row.Role || row.role || "",
+                  user: row.User || row.user || "",
+                  description: row.Description || row.description || "",
+                  action: row.Action || row.action || "view",
+                }))
+                .filter((sub) => sub.title && sub.role && sub.user);
               updateSubscribers(parsedData);
             },
             error: (error) => {
               console.error("CSV parsing error:", error);
               alert("Error parsing CSV file.");
-            }
+            },
           });
-        } else if (fileExtension === 'json') {
+        } else if (fileExtension === "json") {
           try {
-            parsedData = JSON.parse(fileContent).map(row => ({
-              title: row.Title || row.title || "",
-              role: row.Role || row.role || "",
-              user: row.User || row.user || "",
-              action: row.Action || row.action || "view"
-            })).filter(sub => sub.title && sub.role && sub.user);
+            parsedData = JSON.parse(fileContent)
+              .map((row) => ({
+                title: row.Title || row.title || "",
+                role: row.Role || row.role || "",
+                user: row.User || row.user || "",
+                description: row.Description || row.description || "",
+                action: row.Action || row.action || "view",
+              }))
+              .filter((sub) => sub.title && sub.role && sub.user);
             updateSubscribers(parsedData);
           } catch (error) {
             console.error("JSON parsing error:", error);
             alert("Invalid JSON file.");
           }
-        } else if (fileExtension === 'xlsx') {
+        } else if (fileExtension === "xlsx") {
           const workbook = new ExcelJS.Workbook();
           workbook.xlsx.load(fileContent).then(() => {
             const worksheet = workbook.getWorksheet("Subscribers");
             if (worksheet) {
-              parsedData = worksheet.getRows(2, worksheet.rowCount - 1).map(row => ({
-                title: row.getCell(1).value?.toString() || "",
-                role: row.getCell(2).value?.toString() || "",
-                user: row.getCell(3).value?.toString() || "",
-                action: row.getCell(4) ? row.getCell(4).value?.toString() || "view" : "view"
-              })).filter(sub => sub.title && sub.role && sub.user);
+              parsedData = worksheet
+                .getRows(2, worksheet.rowCount - 1)
+                .map((row) => ({
+                  title: row.getCell(1).value?.toString() || "",
+                  role: row.getCell(2).value?.toString() || "",
+                  user: row.getCell(3).value?.toString() || "",
+                  description: row.getCell(4)?.value?.toString() || "",
+                  action: row.getCell(5)?.value?.toString() || "view",
+                }))
+                .filter((sub) => sub.title && sub.role && sub.user);
               updateSubscribers(parsedData);
             } else {
               alert("No 'Subscribers' worksheet found in the Excel file.");
             }
-          }).catch(error => {
+          }).catch((error) => {
             console.error("XLSX parsing error:", error);
             alert("Error parsing Excel file.");
           });
         } else if (fileExtension.match(/\.(jpg|jpeg|png|gif)$/i)) {
           alert("Image uploaded successfully: " + file.name);
         } else {
-          alert("Unsupported file format. Please upload a CSV, JSON, XLSX, or image (JPG, JPEG, PNG, GIF).");
+          alert(
+            "Unsupported file format. Please upload a CSV, JSON, XLSX, or image (JPG, JPEG, PNG, GIF)."
+          );
           return;
         }
       };
-      if (fileExtension === 'xlsx') {
+      if (fileExtension === "xlsx") {
         reader.readAsArrayBuffer(file);
       } else {
         reader.readAsText(file);
@@ -234,12 +292,17 @@ function PushNotifications() {
 
   const updateSubscribers = (newData) => {
     if (newData.length > 0) {
-      const updatedSubscribers = [...allSubscribers, ...newData].filter((sub, index, self) =>
-        index === self.findIndex((s) => s.title === sub.title && s.role === sub.role && s.user === sub.user)
+      const updatedSubscribers = [...allSubscribers, ...newData].filter(
+        (sub, index, self) =>
+          index === self.findIndex(
+            (s) => s.title === sub.title && s.role === sub.role && s.user === sub.user
+          )
       );
       setAllSubscribers(updatedSubscribers);
       setFilteredList(updatedSubscribers);
-      alert(`Successfully uploaded ${newData.length} new subscribers! Total subscribers: ${updatedSubscribers.length}`);
+      alert(
+        `Successfully uploaded ${newData.length} new subscribers! Total subscribers: ${updatedSubscribers.length}`
+      );
     } else {
       alert("No valid data found in the uploaded file.");
     }
@@ -266,6 +329,7 @@ function PushNotifications() {
   const deleteSubscriber = () => {
     const newList = filteredList.filter((_, i) => i !== deleteTargetIndex);
     setFilteredList(newList);
+    setAllSubscribers(newList);
     setShowDeleteConfirm(false);
     setDeleteTargetIndex(null);
   };
@@ -278,7 +342,6 @@ function PushNotifications() {
   const totalPages = Math.ceil(filteredList.length / rowsPerPage);
   const goToPage = (page) => setCurrentPage(page);
   const goToFirstPage = () => setCurrentPage(1);
-  const goToNextPage = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   const goToLastPage = () => setCurrentPage(totalPages);
 
   const paginate = () => {
@@ -286,22 +349,20 @@ function PushNotifications() {
     const endIndex = startIndex + rowsPerPage;
     return filteredList.slice(startIndex, endIndex);
   };
+  const handleRoleDetails = () => {
+  alert(`Details for role: ${formData.role}`);
+};
 
-  function showDetails(type, value) {
-    if (value) {
-      setDetails(`${type.charAt(0).toUpperCase() + type.slice(1)} selected: ${value}`);
-    } else {
-      setDetails('');
-    }
-  }
-
+const handleUserDetails = () => {
+  alert(`Details for user: ${formData.user}`);
+};
   return (
-    <div className={`dvspSubscriber ${isSecondPageStyle ? "dvspSecond-page" : ""}`}>
+    <div className="dvspSubscriber">
       <div className="dvspHeader">
         <div className="dvspHeader-content">
           <h1>Push Notifications</h1>
           <div className="dvspBreadcrumb">
-            <span className="dvspHome">Home</span>&gt;&gt;Push Notifications
+            <span className="dvspHome">Home</span>Push Notifications
           </div>
         </div>
       </div>
@@ -370,81 +431,10 @@ function PushNotifications() {
           <button
             className="dvspAction-button dvspAdd-button"
             onClick={() => setShowModal(true)}
-            title="Switch to 2nd Page Style"
+            title="Add Notification"
           >
             <BiSolidAddToQueue size={17} />
           </button>
-          {showModal && (
-        <div className="dvspModal-overlay">
-          <div className="dvspModal">
-            <div className="dvspModal-header">
-              <h2>Push notifactions</h2>
-              <span className="dvspModal-close" onClick={() => setShowModal(false)}>&times;</span>
-            </div>
-
-            <div className="dvspModal-body">
-              <div className="dvspInput-row">
-                <div className="dvspInput-group dvspHalf">
-                <label>Role</label>
-                <input
-                  type="text"
-                  name="role"
-                  value={formData.role}
-                  onChange={handleInputChange}
-                />
-                </div>
-                <div className="dvspInput-group dvspHalf">
-                <label>User</label>
-                <input
-                  type="text"
-                  name="user"
-                  value={formData.user}
-                  onChange={handleInputChange}
-                />
-                </div>
-              </div>
-              <div className="dvspInput-group">
-                <label>
-                  Title<span className="dvspRequired">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="title"
-                  value={formData.title}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="dvspInput-group">
-                <label>Image</label>
-                <input
-                  type="file"
-                  name="image"
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="dvspInput-group">
-                <label>
-                  Description<span className="dvspRequired">*</span>
-                </label>
-                <textarea
-                  name="description"
-                  value={formData.description}
-                  onChange={handleInputChange}
-                />
-              </div>
-            </div>
-
-            <div className="dvspModal-footer">
-              <button className="dvspSave-button" onClick={handleSave}>
-                <TiTick size={15}/> SAVE
-              </button>
-              <button className="dvspClear-button1" onClick={handleClear1}>
-               <RxCross2 size={15} /> CLEAR
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
         </div>
 
         <hr className="dvspDivider" />
@@ -465,10 +455,7 @@ function PushNotifications() {
                 <select
                   className="dvspFilter-input"
                   value={roleFilter}
-                  onChange={(e) => {
-                    setRoleFilter(e.target.value);
-                    showDetails('role', e.target.value);
-                  }}
+                  onChange={(e) => setRoleFilter(e.target.value)}
                 >
                   <option value="">--</option>
                   <option value="Customer">Customer</option>
@@ -481,10 +468,7 @@ function PushNotifications() {
                 <select
                   className="dvspFilter-input"
                   value={userFilter}
-                  onChange={(e) => {
-                    setUserFilter(e.target.value);
-                    showDetails('user', e.target.value);
-                  }}
+                  onChange={(e) => setUserFilter(e.target.value)}
                 >
                   <option value="">--</option>
                   <option value="Walking Customer">Walking Customer</option>
@@ -514,7 +498,9 @@ function PushNotifications() {
                   <th style={{ width: "25%" }}>Title</th>
                   <th style={{ width: "25%" }}>Role</th>
                   <th style={{ width: "25%" }}>User</th>
-                  <th className="dvspAction-column" style={{ width: "25%" }}>Action</th>
+                  <th className="dvspAction-column" style={{ width: "25%" }}>
+                    Action
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -551,7 +537,8 @@ function PushNotifications() {
         <div className="dvspPagination">
           <div className="dvspPagination-info">
             Showing {Math.min((currentPage - 1) * rowsPerPage + 1, filteredList.length)} to{" "}
-            {Math.min(currentPage * rowsPerPage, filteredList.length)} of {filteredList.length} entries
+            {Math.min(currentPage * rowsPerPage, filteredList.length)} of{" "}
+            {filteredList.length} entries
           </div>
           <div className="dvspPagination-buttons">
             <button
@@ -580,6 +567,88 @@ function PushNotifications() {
           </div>
         </div>
       </div>
+
+      {showModal && (
+  <div className="dvspModal-overlay">
+    <div className="dvspModal">
+      <div className="dvspModal-header">
+        <h2>Add Push Notification</h2>
+        <span className="dvspModal-close" onClick={() => setShowModal(false)}>×</span>
+      </div>
+
+      <div className="dvspModal-body">
+        <div className="dvspInput-row">
+          {/* ROLE DROPDOWN */}
+          <div className="dvspInput-group dvspHalf">
+            <label>Role</label>
+            <div className="dvspSelectWithBtn">
+              <select
+                name="role"
+                value={formData.role}
+                onChange={handleInputChange}
+              >
+                <option value="">--</option>
+                <option value="Admin">Admin</option>
+                <option value="Manager">Manager</option>
+                <option value="Employee">Employee</option>
+              </select>
+              
+            </div>
+          </div>
+
+          {/* USER DROPDOWN */}
+          <div className="dvspInput-group dvspHalf">
+            <label>User</label>
+            <div className="dvspSelectWithBtn">
+              <select
+                name="user"
+                value={formData.user}
+                onChange={handleInputChange}
+              >
+                <option value="">--</option>
+                <option value="JohnDoe">John Doe</option>
+                <option value="JaneSmith">Jane Smith</option>
+                <option value="AliceWong">Alice Wong</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        {/* TITLE FIELD */}
+        <div className="dvspInput-group">
+          <label>Title<span className="dvspRequired">*</span></label>
+          <input
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        {/* DESCRIPTION FIELD */}
+        <div className="dvspInput-group">
+          <label>Description<span className="dvspRequired">*</span></label>
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleInputChange}
+            placeholder="Enter description here"
+          />
+        </div>
+      </div>
+
+      {/* FOOTER BUTTONS */}
+      <div className="dvspModal-footer">
+        <button className="dvspSave-button" onClick={handleSave}>
+          <TiTick size={15} /> SAVE
+        </button>
+        <button className="dvspClear-button1" onClick={handleClear1}>
+          <RxCross2 size={15} /> CLEAR
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 
       {showMailPage && (
         <div className="dvspModal-overlay">
@@ -641,8 +710,9 @@ function PushNotifications() {
             </div>
             <div className="dvspView-content">
               <p><strong>Title:</strong> {selectedSubscriber.title}</p>
-              <p><strong>Role:</strong> {selectedSubscriber.role}</p>
-              <p><strong>User:</strong> {selectedSubscriber.user}</p>
+              <p><strong>Role:</strong> {selectedSubscriber.role || "N/A"}</p>
+              <p><strong>User:</strong> {selectedSubscriber.user || "N/A"}</p>
+              <p><strong>Description:</strong> {selectedSubscriber.description || "No description provided"}</p>
             </div>
           </div>
         </div>

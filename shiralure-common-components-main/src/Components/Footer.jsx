@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { FaPaperPlane, FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import slLogo from '../assets/images/SL.png'; // Replace with the actual path to your SL logo image
-
+import { FaYoutube } from "react-icons/fa";
 function Footer2() {
   return (
     <footer className="footer">
@@ -73,6 +73,7 @@ function Footer2() {
             <li><a href="#"><FaInstagram /></a></li>
             <li><a href="#"><FaTwitter /></a></li>
             <li><a href="#"><FaLinkedinIn /></a></li>
+            <li><a href="#"><FaYoutube /></a></li>
           </ul>
         </div>
         <div className="footer-bottom-right">

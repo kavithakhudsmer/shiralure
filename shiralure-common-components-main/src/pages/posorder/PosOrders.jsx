@@ -258,7 +258,7 @@ function PosOrders() {
                 >
                   <option value="">Select status</option>
                   <option value="Confirmed">Confirmed</option>
-                  <option value="Unconfirmed">Unconfirmed</option>
+                  <option value="Delivered">Delivered</option>
                 </select>
               </div>
               <div className="dvsCouponFilterField">
@@ -430,13 +430,13 @@ function PosOrders() {
                         onChange={(e) => setOrderStatus(e.target.value)}
                       >
                         <option value="Confirmed">Confirmed</option>
-                        <option value="Unconfirmed">Unconfirmed</option>
+                        <option value="Delivered">Delivered</option>
                       </select>
                       <button
                         className="dvsPrint-invoice-btn"
                         onClick={handlePrint}
                       >
-                        <FiPrinter size={20} /> PrintInvoice
+                        <FiPrinter size={20} />PrintInvoice
 
                       </button>
                     </div>

@@ -1,0 +1,441 @@
+/* Main Container */
+.taxes {
+  min-height: calc(100vh - 70px);
+  padding: 24px;
+  background-color: #f8f9fa;
+}
+
+.taxes__container {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Header */
+.taxes__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.taxes__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.taxes__add-btn {
+  width: 40px;
+  height: 40px;
+  background: #4752c4;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.taxes__add-btn:hover {
+  background: #4752c4;
+}
+
+/* Table */
+.taxes__table-container {
+  overflow-x: auto;
+}
+
+.taxes__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.taxes__table thead {
+  background: #f9fafb;
+}
+
+.taxes__table th {
+  padding: 12px 24px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.taxes__table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.15s ease;
+}
+
+.taxes__table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.taxes__table td {
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* Status Badge */
+.taxes__status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 16px;
+  text-transform: capitalize;
+}
+
+.taxes__status--active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.taxes__status--inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Action Buttons */
+.taxes__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.taxes__action-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%; /* Circular shape */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+
+.taxes__action-btn--view {
+  background: #f8d7da; /* Light red background */
+  color: #dc3545; /* Red icon */
+}
+
+.taxes__action-btn--view:hover {
+  background: #f1aeb5;
+  transform: scale(1.05);
+}
+
+.taxes__action-btn--edit {
+  background: #d1e7dd; /* Light green background */
+  color: #28a745; /* Green icon */
+}
+
+.taxes__action-btn--edit:hover {
+  background: #a3cfbb;
+  transform: scale(1.05);
+}
+
+.taxes__action-btn--delete {
+  background: #fff3cd; /* Light orange background */
+  color: #f0ad4e; /* Orange icon */
+}
+
+.taxes__action-btn--delete:hover {
+  background: #ffeaa7;
+  transform: scale(1.05);
+}
+
+/* Footer */
+.taxes__footer {
+  padding: 16px 24px;
+  font-size: 14px;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+/* Modal Overlay */
+.taxes__modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal */
+.taxes__modal {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.taxes__modal--delete {
+  max-width: 400px;
+}
+
+/* Modal Header */
+.taxes__modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.taxes__modal-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.taxes__close-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.taxes__close-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Modal Content */
+.taxes__modal-content {
+  padding: 24px;
+}
+
+.taxes__form-row {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.taxes__form-group {
+  flex: 1;
+}
+
+.taxes__label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.taxes__required {
+  color: #ef4444;
+}
+
+.taxes__input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #374151;
+  transition: border-color 0.2s ease;
+}
+
+.taxes__input:focus {
+  outline: none;
+  border-color: #4752c4;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Radio Group */
+.taxes__radio-group {
+  display: flex;
+  gap: 20px;
+}
+
+.taxes__radio-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+}
+
+.taxes__radio-item input[type="radio"] {
+  display: none;
+}
+
+.taxes__radio-custom {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.taxes__radio-item input[type="radio"]:checked + .taxes__radio-custom {
+  border-color: #4752c4;
+}
+
+.taxes__radio-item input[type="radio"]:checked + .taxes__radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #4752c4;
+  border-radius: 50%;
+}
+
+/* Modal Footer */
+.taxes__modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.taxes__btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.taxes__btn--save {
+  background: #4752c4;
+  color: white;
+}
+
+.taxes__btn--save:hover {
+  background: #4752c4;
+}
+
+.taxes__btn--close {
+  background: #6b7280;
+  color: white;
+}
+
+.taxes__btn--close:hover {
+  background: #4b5563;
+}
+
+/* Delete Modal */
+.taxes__delete-content {
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.taxes__warning-icon {
+  color: #f59e0b;
+  margin-bottom: 20px;
+}
+
+.taxes__delete-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 12px 0;
+}
+
+.taxes__delete-message {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 32px 0;
+}
+
+.taxes__delete-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.taxes__btn--delete-confirm {
+  background: #4752c4;
+  color: white;
+}
+
+.taxes__btn--delete-confirm:hover {
+  background: #4752c4;
+}
+
+.taxes__btn--cancel {
+  background: #6b7280;
+  color: white;
+}
+
+.taxes__btn--cancel:hover {
+  background: #4b5563;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .taxes {
+    padding: 16px;
+  }
+  
+  .taxes__header {
+    padding: 16px 20px;
+  }
+  
+  .taxes__table th,
+  .taxes__table td {
+    padding: 12px 16px;
+  }
+  
+  .taxes__modal {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .taxes__form-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .taxes__modal-footer {
+    flex-direction: column;
+  }
+  
+  .taxes__delete-actions {
+    flex-direction: column;
+  }
+}

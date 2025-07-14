@@ -26,7 +26,7 @@ import OrderConfirmation from './Components/Checkout/Checkout1';
 
 // Import the new AdminLayout component
 
-import AdminLayout from './Components/AdminLayout';
+// import AdminLayout from './Components/AdminLayout';
 
 // Admin Pages Imports
 
@@ -47,7 +47,7 @@ import Employees from './pages/Employees/Employees';
 import PosOrder from './pages/posorder/PosOrders';
 import ReturnPage from './pages/ReturnAndRefund/ReturnPage';
 import ReturnDetails from './pages/ReturnAndRefund/ReturnDetails';
-import PushNotifications from './pages/PushNotification/PushNotifications';
+import PushNotification from './pages/PushNotification/PushNotifications';
 import Stocks from './pages/Stocks/ProductList';
 import Damage from './pages/damage/damage';
 import Promotion from './pages/promotion/promotion';
@@ -86,13 +86,13 @@ const App = () => {
         <Route
           path="/admin/*" // All paths starting with /admin/ will use this layout
           element={
-            <AdminLayout> {/* Wrap nested admin routes with AdminLayout */}
+            // <AdminLayout> {/* Wrap nested admin routes with AdminLayout */}
               <Routes>
                 <Route path="" element={<Homeadmin />} />
                 
                 <Route path="Pos" element={<Pos />} />
                 <Route path="PosOrder" element={<PosOrder />} />
-                <Route path="PushNotifications" element={<PushNotifications />} />
+                <Route path="PushNotification" element={<PushNotification />} />
                 {/* <Route path="SPage" element={<SPage />} /> */}
                 <Route path="Purchase" element={<Purchase />} />
                 <Route path="OnlineOrders" element={<OrderTable />} />
@@ -116,7 +116,7 @@ const App = () => {
                 <Route path="Returnorder" element={<Returnorder />} />
                 {/* Add other admin routes here */}
               </Routes>
-            </AdminLayout>
+            // </AdminLayout>
           }
         />
 

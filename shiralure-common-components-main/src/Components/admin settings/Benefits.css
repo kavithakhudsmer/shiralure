@@ -1,0 +1,574 @@
+/* Main Container */
+.benefits-main-container {
+    padding: 24px;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.benefits-card-wrapper {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header Section */
+.benefits-header-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.benefits-main-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.benefits-header-controls {
+    display: flex;
+    gap: 0;
+    align-items: center;
+}
+
+.benefits-dropdown-wrapper {
+    position: relative;
+}
+
+.benefits-entries-dropdown {
+    background: #6366f1;
+    color: white;
+    border: none;
+    padding: 8px 32px 8px 12px;
+    border-radius: 6px 0 0 6px;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    min-width: 50px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.benefits-pagination-dropdown {
+    position: relative;
+}
+
+.benefits-pagination-select {
+    background: #6366f1;
+    color: white;
+    border: none;
+    padding: 8px 32px 8px 12px;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none;
+    min-width: 60px;
+}
+
+.benefits-entries-dropdown:focus,
+.benefits-pagination-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.benefits-dropdown-wrapper::after,
+.benefits-pagination-dropdown::after {
+    content: '▼';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 10px;
+    pointer-events: none;
+}
+
+/* Table Styles */
+.benefits-table-container {
+    overflow-x: auto;
+}
+
+.benefits-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.benefits-table-header th {
+    background: #f9fafb;
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    color: #6b7280;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.benefits-th-title,
+.benefits-th-description,
+.benefits-th-status,
+.benefits-th-action {
+    padding: 16px;
+}
+
+.benefits-table-row {
+    border-bottom: 1px solid #f3f4f6;
+    transition: background-color 0.2s;
+}
+
+.benefits-table-row:hover {
+    background: #f9fafb;
+}
+
+.benefits-td-title,
+.benefits-td-description,
+.benefits-td-status,
+.benefits-td-action {
+    padding: 16px;
+    vertical-align: middle;
+}
+
+.benefits-td-title {
+    font-weight: 600;
+    color: #111827;
+}
+
+.benefits-td-description {
+    color: #6b7280;
+}
+
+.benefits-status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.benefits-status-badge.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.benefits-status-badge.inactive {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.benefits-action-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.benefits-action-view,
+.benefits-action-edit,
+.benefits-action-delete {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%; /* Circular shape */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    opacity: 0.9;
+}
+
+.benefits-action-view {
+    background: #f8d7da; /* Light red background */
+    color: #dc3545; /* Red icon */
+}
+
+.benefits-action-view:hover {
+    background: #f1aeb5;
+    transform: scale(1.05);
+}
+
+.benefits-action-edit {
+    background: #d1e7dd; /* Light green background */
+    color: #28a745; /* Green icon */
+}
+
+.benefits-action-edit:hover {
+    background: #a3cfbb;
+    transform: scale(1.05);
+}
+
+.benefits-action-delete {
+    background: #fff3cd; /* Light orange background */
+    color: #f0ad4e; /* Orange icon */
+}
+
+.benefits-action-delete:hover {
+    background: #ffeaa7;
+    transform: scale(1.05);
+}
+
+/* Table Footer */
+.benefits-table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: white;
+    border-top: 1px solid #e5e7eb;
+}
+
+.benefits-entries-info {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.benefits-add-new-btn {
+    background: #6366f1;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.benefits-add-new-btn:hover {
+    background: #5856eb;
+}
+
+/* Modal Styles */
+.benefits-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.benefits-modal-container {
+    background: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    margin: 20px;
+}
+
+.benefits-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.benefits-modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.benefits-modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #6b7280;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.benefits-modal-close:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+/* Form Styles */
+.benefits-form {
+    padding: 24px;
+}
+
+.benefits-form-group {
+    margin-bottom: 20px;
+}
+
+.benefits-form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #374151;
+    font-size: 14px;
+}
+
+.benefits-required {
+    color: #dc2626;
+}
+
+.benefits-form-input,
+.benefits-form-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s;
+}
+
+.benefits-form-input:focus,
+.benefits-form-textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.benefits-form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Radio Button Styles */
+.benefits-radio-group {
+    display: flex;
+    gap: 24px;
+}
+
+.benefits-radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.benefits-radio-input {
+    margin-right: 8px;
+    accent-color: #6366f1;
+}
+
+.benefits-radio-text {
+    color: #374151;
+}
+
+/* File Upload Styles */
+.benefits-file-upload {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.benefits-file-input {
+    display: none;
+}
+
+.benefits-file-label {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #374151;
+    transition: all 0.2s;
+}
+
+.benefits-file-label:hover {
+    background: #e5e7eb;
+}
+
+.benefits-file-status {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* Form Actions */
+.benefits-form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.benefits-save-btn,
+.benefits-clear-btn {
+    flex: 1;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.benefits-save-btn {
+    background: #6366f1;
+    color: white;
+    border: none;
+}
+
+.benefits-save-btn:hover {
+    background: #5856eb;
+}
+
+.benefits-clear-btn {
+    background: #6b7280;
+    color: white;
+    border: none;
+}
+
+.benefits-clear-btn:hover {
+    background: #5b6470;
+}
+
+/* Delete Modal Styles */
+.benefits-delete-modal {
+    background: white;
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+    max-width: 400px;
+    margin: 20px;
+}
+
+.benefits-delete-icon {
+    color: #f59e0b;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.benefits-delete-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 8px;
+}
+
+.benefits-delete-message {
+    color: #6b7280;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.benefits-delete-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.benefits-confirm-delete-btn,
+.benefits-cancel-delete-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.benefits-confirm-delete-btn {
+    background: #6366f1;
+    color: white;
+    border: none;
+}
+
+.benefits-confirm-delete-btn:hover {
+    background: #5856eb;
+}
+
+.benefits-cancel-delete-btn {
+    background: #6b7280;
+    color: white;
+    border: none;
+}
+
+.benefits-cancel-delete-btn:hover {
+    background: #5b6470;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .benefits-main-container {
+        padding: 16px;
+    }
+    
+    .benefits-header-section {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+    
+    .benefits-table-container {
+        overflow-x: auto;
+    }
+    
+    .benefits-table-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .benefits-modal-container {
+        margin: 10px;
+    }
+    
+    .benefits-form-actions {
+        flex-direction: column;
+    }
+    
+    .benefits-delete-actions {
+        flex-direction: column;
+    }
+}
+
+/* View Modal Content */
+.benefits-view-content {
+  padding: 20px 0;
+}
+
+.benefits-form-input[readOnly] {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  color: #374151;
+  cursor: not-allowed;
+}
+
+.benefits-form-textarea[readOnly] {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  color: #374151;
+  cursor: not-allowed;
+  resize: none;
+}
+
+/* Ensure modal overlay and container styles are consistent */
+.benefits-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.benefits-modal-container {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 500px; /* Slightly wider for view modal if needed */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}

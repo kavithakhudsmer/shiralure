@@ -16,10 +16,12 @@ import './promotion.css';
 const AddPromotionModal = ({ onClose, onSave }) => {
   const [promotion, setPromotion] = React.useState({
     name: '',
-    status: 'Available', // Default status as per screenshot
-    image: null, // To store the selected file object
-    imageName: 'No file chosen', // To display the file name
+    type: '',
+    status: 'Active',
+    image: null,
+    imageName: 'No file chosen',
   });
+  const [submitted, setSubmitted] = React.useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -49,25 +51,36 @@ const AddPromotionModal = ({ onClose, onSave }) => {
   const handleClear = () => {
     setPromotion({
       name: '',
-      status: 'Available',
+      type: '',
+      status: 'Active',
       image: null,
       imageName: 'No file chosen',
     });
+    setSubmitted(false); // Reset submitted state on clear
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Map 'Available'/'Unavailable' from modal to 'Active'/'Inactive' for dashboard
-    const statusForDashboard = promotion.status === 'Available' ? 'Active' : 'Inactive';
-    onSave({ ...promotion, status: statusForDashboard });
+    setSubmitted(true);
+
+    // Validate all required fields
+    if (
+      promotion.name &&
+      promotion.type &&
+      promotion.status &&
+      promotion.imageName !== 'No file chosen'
+    ) {
+      const statusForDashboard = promotion.status === 'Active' ? 'Active' : 'Inactive';
+      onSave({ ...promotion, status: statusForDashboard });
+    }
   };
 
   return (
     <div className="eds-modal-overlay">
       <div className="eds-modal-content">
         <div className="eds-modal-header">
-          <h2>Promotions</h2> {/* Changed to Promotions as per screenshot */}
-          <button className="close1-btn" onClick={onClose}>&times;</button>
+          <h2>Promotions</h2>
+          <button className="close1-btn" onClick={onClose}>×</button>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="eds-form-group">
@@ -77,9 +90,37 @@ const AddPromotionModal = ({ onClose, onSave }) => {
               name="name"
               value={promotion.name}
               onChange={handleChange}
-              required
+           
+              
             />
+            {submitted && !promotion.name && (
+              <div className="eds-error-message" style={{ color: 'red', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+                Name is required
+              </div>
+            )}
           </div>
+
+          <div className="eds-form-group">
+            <label>Type <span className="eds-required-asterisk">*</span></label>
+            <select
+              name="type"
+              value={promotion.type}
+              onChange={handleChange}
+             
+              
+            >
+              <option value="">Select Type</option>
+              <option value="Small">Small</option>
+              <option value="Big">Big</option>
+              <option value="Medium">Medium</option>
+            </select>
+            {submitted && !promotion.type && (
+              <div className="eds-error-message" style={{ color: 'red', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+                Type is required
+              </div>
+            )}
+          </div>
+
           <div className="eds-form-group">
             <label>STATUS <span className="eds-required-asterisk">*</span></label>
             <div className="eds-radio-group">
@@ -87,26 +128,34 @@ const AddPromotionModal = ({ onClose, onSave }) => {
                 <input
                   type="radio"
                   name="status"
-                  value="Available"
-                  checked={promotion.status === 'Available'}
+                  value="Active"
+                  checked={promotion.status === 'Active'}
                   onChange={handleChange}
-                  required
+    
+                  
                 />
-                Available
+                Active
               </label>
               <label className="eds-radio-label">
                 <input
                   type="radio"
                   name="status"
-                  value="Unavailable"
-                  checked={promotion.status === 'Unavailable'}
+                  value="Inactive"
+                  checked={promotion.status === 'Inactive'}
                   onChange={handleChange}
-                  required
+                
+                  
                 />
-                Unavailable
+                Inactive
               </label>
             </div>
+            {submitted && !promotion.status && (
+              <div className="eds-error-message" style={{ color: 'red', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+                Status is required
+              </div>
+            )}
           </div>
+
           <div className="eds-form-group">
             <label>IMAGE (548PX.140PX) <span className="eds-required-asterisk">*</span></label>
             <div className="eds-file-input-wrapper">
@@ -115,14 +164,20 @@ const AddPromotionModal = ({ onClose, onSave }) => {
                 id="image-upload"
                 className="eds-file-input"
                 onChange={handleImageChange}
-                required
+              
               />
               <label htmlFor="image-upload" className="eds-choose-file-button">
                 Choose File
               </label>
               <span className="eds-file-name-display">{promotion.imageName}</span>
             </div>
+            {submitted && promotion.imageName === 'No file chosen' && (
+              <div className="eds-error-message" style={{ color: 'red', fontSize: '0.875rem', marginTop: '0.25rem' }}>
+                Image is required
+              </div>
+            )}
           </div>
+
           <div className="eds-modal-actions">
             <button type="button" className="eds-clear-btn" onClick={handleClear}>
               <FaTimes className="eds-button-icon" /> Clear
@@ -152,6 +207,11 @@ const EditPromotionModal = ({ promotion, onClose, onSave }) => {
       ...editedPromotion,
       [name]: value
     });
+    // Clear the error for the field being edited
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: ''
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -193,7 +253,7 @@ const EditPromotionModal = ({ promotion, onClose, onSave }) => {
               value={editedPromotion.name || ''}
               onChange={handleChange}
             />
-            {errors.name && <span className="error-message">{errors.name}</span>}
+            {errors.name && <span className="error-message" style={{ color: "red" }}>{errors.name}</span>}
           </div>
 
           <div className="eds-edit-form-group">
@@ -212,7 +272,7 @@ const EditPromotionModal = ({ promotion, onClose, onSave }) => {
               <option value="Big">Big</option>
               <option value="Medium">Medium</option>
             </select>
-            {errors.type && <span className="error-message">{errors.type}</span>}
+            {errors.type && <span className="error-message" style={{ color: "red" }}>{errors.type}</span>}
           </div>
 
           <div className="eds-edit-form-group">
@@ -243,21 +303,7 @@ const EditPromotionModal = ({ promotion, onClose, onSave }) => {
                 Inactive
               </label>
             </div>
-            {errors.status && <span className="error-message">{errors.status}</span>}
-          </div>
-
-          <div className="eds-edit-form-group">
-            <label className="eds-edit-form-label" htmlFor="description">
-              Description
-            </label>
-            <textarea
-              id="description"
-              name="description"
-              className="eds-edit-form-input"
-              rows={3}
-              value={editedPromotion.description || ''}
-              onChange={handleChange}
-            />
+            {errors.status && <span className="error-message" style={{ color: "red" }}>{errors.status}</span>}
           </div>
 
           <div className="eds-edit-modal-actions">
@@ -277,7 +323,6 @@ const EditPromotionModal = ({ promotion, onClose, onSave }) => {
     </div>
   );
 };
-
 // DeleteModal Component
 const DeleteModal = ({ isOpen, onClose, onConfirm }) => {
   if (!isOpen) return null;
@@ -365,13 +410,25 @@ const DeleteModal = ({ isOpen, onClose, onConfirm }) => {
 // AddProductModal Component (moved here)
 const AddProductModal = ({ isOpen, onClose, onAdd, productOptions }) => {
   const [selectedProduct, setSelectedProduct] = useState('');
+  const [error, setError] = useState(''); // State to manage error message
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // Function to validate and handle form submission
+  const validateAndSubmit = () => {
+    if (!selectedProduct) {
+      setError('Product is Required'); // Set error message if no product is selected
+      return false;
+    }
+    setError(''); // Clear error if a product is selected
     onAdd(selectedProduct);
     setSelectedProduct('');
+    return true;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    validateAndSubmit(); // Call the validation function on form submission
   };
 
   return (
@@ -379,10 +436,7 @@ const AddProductModal = ({ isOpen, onClose, onAdd, productOptions }) => {
       <div className="eds-modal-content">
         <div className="eds-modal-header">
           <h3 className="eds-modal-title">Products</h3>
-          <button
-            className="eds-modal-close"
-            onClick={onClose}
-          >
+          <button className="eds-modal-close" onClick={onClose}>
             <FiX />
           </button>
         </div>
@@ -393,16 +447,22 @@ const AddProductModal = ({ isOpen, onClose, onAdd, productOptions }) => {
               <select
                 className="eds-form-select"
                 value={selectedProduct}
-                onChange={(e) => setSelectedProduct(e.target.value)}
+                onChange={(e) => {
+                  setSelectedProduct(e.target.value);
+                  setError(''); // Clear error when a product is selected
+                }}
                 required
               >
-                <option value="">Select a product</option>
-                {productOptions.map(product => (
+                <option value="" disabled>
+                  Select a product
+                </option>
+                {productOptions.map((product) => (
                   <option key={product.id} value={product.id}>
                     {product.name} (₹{product.price})
                   </option>
                 ))}
               </select>
+              {error && <div className="eds-error-message">{error}</div>} {/* Display error message */}
             </div>
           </form>
         </div>
@@ -415,8 +475,8 @@ const AddProductModal = ({ isOpen, onClose, onAdd, productOptions }) => {
           </button>
           <button
             className="eds-modal-button eds-modal-button-primary"
-            onClick={() => onAdd(selectedProduct)}
-            disabled={!selectedProduct}
+            onClick={validateAndSubmit} // Call the validation function on button click
+            // disabled={!selectedProduct} // Keep the button disabled if no product is selected
           >
             <FiCheck /> Save
           </button>
@@ -432,16 +492,17 @@ const ViewPromotion = ({ promotion, onClose }) => {
   const [activeTab, setActiveTab] = useState('information');
   const [products, setProducts] = useState([
     { id: 1, name: 'Exclusive Products', price: '1921.00', status: 'Active' },
-    { id: 2, name: 'Winter Products', price: '1921.00', status: 'Active' }
+    { id: 2, name: 'Winter Products', price: '1921.00', status: 'Active' },
   ]);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [productToDelete, setProductToDelete] = useState(null);
-  const [showAddModal, setShowAddModal] = useState(false); // State for AddProductModal
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [imagePreview, setImagePreview] = useState(null); // New state for image preview
 
   const productOptions = [
     { id: 3, name: 'Summer Collection', price: '2500.00' },
     { id: 4, name: 'Spring Special', price: '1800.00' },
-    { id: 5, name: 'Autumn Arrival', price: '2200.00' }
+    { id: 5, name: 'Autumn Arrival', price: '2200.00' },
   ];
 
   const handleDeleteClick = (productId) => {
@@ -450,20 +511,23 @@ const ViewPromotion = ({ promotion, onClose }) => {
   };
 
   const confirmDelete = () => {
-    setProducts(products.filter(product => product.id !== productToDelete));
+    setProducts(products.filter((product) => product.id !== productToDelete));
     setShowDeleteModal(false);
     setProductToDelete(null);
   };
 
   const handleAddProduct = (selectedProductId) => {
-    const productToAdd = productOptions.find(p => p.id === parseInt(selectedProductId));
+    const productToAdd = productOptions.find((p) => p.id === parseInt(selectedProductId));
     if (productToAdd) {
-      setProducts([...products, {
-        id: productToAdd.id,
-        name: productToAdd.name,
-        price: productToAdd.price,
-        status: 'Active'
-      }]);
+      setProducts([
+        ...products,
+        {
+          id: productToAdd.id,
+          name: productToAdd.name,
+          price: productToAdd.price,
+          status: 'Active',
+        },
+      ]);
     }
     setShowAddModal(false);
   };
@@ -471,16 +535,29 @@ const ViewPromotion = ({ promotion, onClose }) => {
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
+      // Revoke previous image URL to prevent memory leaks
+      if (imagePreview) {
+        URL.revokeObjectURL(imagePreview);
+      }
+      const imageUrl = URL.createObjectURL(file);
+      setImagePreview(imageUrl);
       console.log('File uploaded:', file.name);
     }
   };
 
+  // Cleanup image URL on component unmount or when new image is uploaded
+  useEffect(() => {
+    return () => {
+      if (imagePreview) {
+        URL.revokeObjectURL(imagePreview);
+      }
+    };
+  }, [imagePreview]);
+
   if (!promotion) {
     return (
       <div className="eds-view-promotion-page">
-        <div className="eds-promotion-not-found">
-          Promotion not found!
-        </div>
+        <div className="eds-promotion-not-found">Promotion not found!</div>
       </div>
     );
   }
@@ -494,7 +571,9 @@ const ViewPromotion = ({ promotion, onClose }) => {
           </div>
           <div className="eds-header-right">
             <div className="eds-breadcrumb">
-              <a href="#" className="eds-breadcrumb-home" onClick={onClose}>Home</a>
+              <a href="#" className="eds-breadcrumb-home" onClick={onClose}>
+                Home
+              </a>
               <span> &gt;&gt; </span>
               <span className="eds-breadcrumb-promotions">Promotions</span>
             </div>
@@ -545,10 +624,6 @@ const ViewPromotion = ({ promotion, onClose }) => {
               </div>
               <div className="eds-info-column">
                 <div className="eds-info-row">
-                  <span className="eds-info-label">Description:</span>
-                  <span className="eds-info-value">{promotion.description || 'N/A'}</span>
-                </div>
-                <div className="eds-info-row">
                   <span className="eds-info-label">Status:</span>
                   <span className={`eds-info-value eds-status ${promotion.status.toLowerCase()}`}>
                     {promotion.status}
@@ -564,7 +639,20 @@ const ViewPromotion = ({ promotion, onClose }) => {
             <div className="eds-images-content">
               <div className="eds-image-preview-container">
                 <div className="eds-image-preview">
-                  <div className="eds-image-placeholder">Image Preview</div>
+                  {imagePreview ? (
+                    <img
+                      src={imagePreview}
+                      alt="Uploaded Preview"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'contain',
+                        borderRadius: '4px',
+                      }}
+                    />
+                  ) : (
+                    <div className="eds-image-placeholder">Image Preview</div>
+                  )}
                 </div>
               </div>
               <div className="eds-image-info">
@@ -588,10 +676,7 @@ const ViewPromotion = ({ promotion, onClose }) => {
         {activeTab === 'products' && (
           <div className="eds-products-section">
             <div className="eds-products-header">
-              <button
-                className="eds-add-product-button"
-                onClick={() => setShowAddModal(true)} // This button now opens the AddProductModal
-              >
+              <button className="eds-add-product-button" onClick={() => setShowAddModal(true)}>
                 <FiPlus className="eds-add-icon" />
                 Add Product
               </button>
@@ -609,7 +694,7 @@ const ViewPromotion = ({ promotion, onClose }) => {
                       </tr>
                     </thead>
                     <tbody>
-                      {products.map(product => (
+                      {products.map((product) => (
                         <tr key={product.id}>
                           <td>{product.name}</td>
                           <td>₹{product.price}</td>
@@ -647,7 +732,6 @@ const ViewPromotion = ({ promotion, onClose }) => {
         onConfirm={confirmDelete}
       />
 
-      {/* AddProductModal is now rendered here, within ViewPromotion */}
       <AddProductModal
         isOpen={showAddModal}
         onClose={() => setShowAddModal(false)}

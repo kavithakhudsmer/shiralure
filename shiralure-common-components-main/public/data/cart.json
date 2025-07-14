@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "description": "2.4GHz Wireless Optical Mouse with USB Receiver",
+    "price": 499.00,
+    "quantity": 2,
+    "image": "/assets/products/mouse.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Bluetooth Headphones",
+    "description": "Over-Ear Wireless Headset with Mic",
+    "price": 1599.00,
+    "quantity": 1,
+    "image": "/assets/products/headphones.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Gaming Keyboard",
+    "description": "Mechanical RGB Keyboard - USB Wired",
+    "price": 2499.00,
+    "quantity": 1,
+    "image": "/assets/products/keyboard.jpg"
+  },
+  {
+    "id": 4,
+    "name": "USB-C Charging Cable",
+    "description": "1.5m Fast Charging Cable for Android/iOS",
+    "price": 199.00,
+    "quantity": 3,
+    "image": "/assets/products/cable.jpg"
+  }
+]

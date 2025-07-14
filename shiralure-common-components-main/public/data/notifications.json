@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Order Placed",
+    "message": "Your order #1234 has been placed.",
+    "time": "2 mins ago",
+    "type": "success"
+  },
+  {
+    "id": 2,
+    "title": "New Support Ticket",
+    "message": "You have a new support ticket.",
+    "time": "15 mins ago",
+    "type": "info"
+  },
+  {
+    "id": 3,
+    "title": "Payment Failed",
+    "message": "Payment failed for order #4321.",
+    "time": "1 hour ago",
+    "type": "error"
+  }
+]

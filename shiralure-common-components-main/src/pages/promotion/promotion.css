@@ -596,7 +596,7 @@ body, html {
 
 .eds-form-group input[type="text"],
 .eds-form-group textarea {
-  width: calc(100% - 22px); /* Adjust width to account for padding and border */
+  width: 100%; /* Adjust width to account for padding and border */
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -629,7 +629,6 @@ body, html {
   appearance: none;
   width: 18px; /* Custom radio button size */
   height: 18px;
-  border: 2px solid #ccc;
   border-radius: 50%;
   margin-right: 8px;
   position: relative;
@@ -1519,7 +1518,11 @@ body, html {
 
 .eds-modal-button-primary:disabled {
   background: #5A66F1;
-  cursor: not-allowed;
+}
+.eds-error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
 }
 
 .eds-modal-button-secondary {
