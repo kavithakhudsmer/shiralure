@@ -55,8 +55,39 @@ import ProductDashboard from "./pages/product/promotion";
 import ViewProductPage from "./pages/product/ViewPromotion";
 import Returnorder from './pages/Returnorder/page/ReturnOrder';
 
+
 import Setting from './Components/admin settings/Setting';
 import ReturnReasonComponent from './Components/admin settings/ReturnReason';
+import Company from './Components/admin settings/Company';
+import Site from './Components/admin settings/Site';
+import Mail from './Components/admin settings/Mail';
+import Location from './Components/admin settings/Location';
+import Shipping from './Components/admin settings/Shipping';
+
+import NotificationAlert from './Components/admin settings/NotificationAlert';
+import SocialMedia from './Components/admin settings/SocialMedia';
+import Cookies from './Components/admin settings/Cookies';
+import OTPComponent from './Components/admin settings/Otp';
+import Analytics from './Components/admin settings/Analytics';
+import PaymentGateway from './Components/admin settings/PaymentGateway';
+import License from './Components/admin settings/License';
+import SmsGateway from './Components/admin settings/Sms';
+import LanguagesComponent from './Components/admin settings/Language';
+import RolePermissions from './Components/admin settings/RolePermissions';
+// import PagesComponent from './Components/admin settings/Pages';
+import Taxes from './Components/admin settings/Taxes';
+import Units from './Components/admin settings/Units';
+import Benefits from './Components/admin settings/Benefits';
+import Outlets from './Components/admin settings/Outlet';
+import SupplierComponent from './Components/admin settings/Suppliers';
+import ThemeComponent from './Components/admin settings/Theme';
+import Slider from './Components/admin settings/Slider';
+
+
+
+
+
+
 
 
 const Layout = ({ children }) => {
@@ -117,13 +148,44 @@ const App = () => {
                 <Route path="Promotion" element={<Promotion />} />
                 <Route path="ProductSection" element={<ProductSection />} />
                 <Route path="Returnorder" element={<Returnorder />} />
+                
 
-               
-                <Route path="Settings" element={<Setting />} />
+
+              
+                  <Route path="Settings" element={<Setting />} />
                   <Route path="return-reasons" element={<ReturnReasonComponent />} />
-                 
+                  <Route path="company" element={<Company />} />
+                  <Route path="site" element={<Site />} />
+                  <Route path="mail" element={<Mail />} />
+                  <Route path="location-setup" element={<Location />} />
+                  <Route path="shipping-setup" element={<Shipping />} />
+                  <Route path="notification-alert" element={<NotificationAlert/>} />
+                  <Route path="social-media" element={<SocialMedia/>} />
+                  <Route path="cookies" element={<Cookies/>} />
+                  <Route path="Otp" element={<OTPComponent />} />
+                  <Route path="analytics" element={<Analytics/>} />
+                  <Route path="payment-gateway" element={<PaymentGateway/>} />
+                  <Route path="license" element={<License/>} />
+                  <Route path="sms-gateway" element={<SmsGateway/>} />
+                  <Route path="languages" element={<LanguagesComponent/>} />
+                  <Route path="role-&-permissions" element={<RolePermissions/>} /> 
+                  {/* <Route path="pages" element={<PagesComponent/>} /> */}
+                  <Route path="taxes" element={<Taxes/>} />
+                  <Route path="units" element={<Units/>} /> 
+                  <Route path="benefits" element={<Benefits/>} />
+                  <Route path="outlets" element={<Outlets/>} />
+                  <Route path="suppliers" element={<SupplierComponent/>} />
+                  <Route path="theme" element={<ThemeComponent/>} />
+                  <Route path="sliders" element={<Slider/>} />
 
 
+
+
+
+
+
+
+                  
 
                 {/* <Route path="Setting" element={<Setting />} /> */}
                 {/* Add other admin routes here */}

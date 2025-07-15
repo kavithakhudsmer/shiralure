@@ -23,8 +23,12 @@
   font-weight: bold;
   color: #333;
 }
+.DEbreadcrumb {
+  font-size: 14px;
+  color: #6b7280;
+}
 
-.DSbreadcrumb a{
+.DSbreadcrumb .DShome{
   font-size: 20px;
   color: #5a66f1;
 }
@@ -114,7 +118,7 @@
 
 .DSHeader-divider {
   border: 0;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid #8f9194;
   margin: 10px 0;
 }
 

@@ -1,14 +1,15 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from './Header';
-import Sidebar from './Sidebar';
 
-const Layout = () => {
+import Sidebar1 from './Sidebar1';
+import Header1 from '../Header1';
+
+const Layout1 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
-      <Header />
+      <Header1 />
       <div style={{ display: 'flex', flex: 1, minHeight: 0 }}>
-        <Sidebar />
+        <Sidebar1 />
         <main
           style={{
             flex: 1,
@@ -36,4 +37,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default Layout1;

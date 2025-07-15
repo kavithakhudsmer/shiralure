@@ -381,7 +381,7 @@ function Coupons() {
       <div className="DSheader">
         <h2 className="DStitle">E-Coupons</h2>
         <h6 className="DSbreadcrumb">
-          <a href="/" className="DSbreadcrumb">Home</a>  <span>E-Coupons</span>
+          <span className="DShome">Home</span> &gt;&gt; <span>E-Coupons</span>
         </h6>
       </div>
       <div className="DSCoupon-card">
