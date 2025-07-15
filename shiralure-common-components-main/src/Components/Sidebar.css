@@ -32,6 +32,7 @@ html, body, #root {
 .vkv-content {
   flex: 1;
   padding: 24px;
+  padding-right: 0px;
   overflow-y: auto;
 }
  
