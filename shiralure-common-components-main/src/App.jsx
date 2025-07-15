@@ -56,6 +56,8 @@ import ViewProductPage from "./pages/product/ViewPromotion";
 import Returnorder from './pages/Returnorder/page/ReturnOrder';
 
 
+
+
 import Setting from './Components/admin settings/Setting';
 import ReturnReasonComponent from './Components/admin settings/ReturnReason';
 import Company from './Components/admin settings/Company';
@@ -82,6 +84,10 @@ import Outlets from './Components/admin settings/Outlet';
 import SupplierComponent from './Components/admin settings/Suppliers';
 import ThemeComponent from './Components/admin settings/Theme';
 import Slider from './Components/admin settings/Slider';
+import CurrencyComponent from './Components/admin settings/Currency';
+import ProductCategoriesComponent from './Components/admin settings/ProductCategories';
+import ProductBrandsComponent from './Components/admin settings/ProductBrands';
+import ProductAttributes from './Components/admin settings/ProductAttributes';
 
 
 
@@ -177,7 +183,10 @@ const App = () => {
                   <Route path="suppliers" element={<SupplierComponent/>} />
                   <Route path="theme" element={<ThemeComponent/>} />
                   <Route path="sliders" element={<Slider/>} />
-
+                  <Route path="currencies" element={<CurrencyComponent/>} />
+                  <Route path="product-categories" element={<ProductCategoriesComponent/>} />
+                  <Route path="product-brands" element={<ProductBrandsComponent/>} />
+                  <Route path="product-attributes" element={<ProductAttributes/>} />
 
 
 
