@@ -13,6 +13,14 @@ import { GiShoppingCart } from "react-icons/gi";
 import { BsBellFill } from "react-icons/bs";
 import { RiSunLine } from "react-icons/ri";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import { MdOutlineFullscreen ,MdOutlineFullscreenExit} from "react-icons/md";
+import { PiGreaterThanDuotone } from "react-icons/pi";
+ 
+ 
+ 
+ 
+ 
+ 
 export default function Header1({ title = "Returns and Refunds" }) {
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -23,11 +31,9 @@ export default function Header1({ title = "Returns and Refunds" }) {
   const [notifications, setNotifications] = useState([]);
   const [showNotifications, setShowNotifications] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
-  const [selectedFlag, setSelectedFlag] = useState("/assets/flags/en.png");
-
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [showApps, setShowApps] = useState(false);
-
+ 
   const searchRef = useRef(null);
   const cartRef = useRef(null);
   const notificationsRef = useRef(null);
@@ -35,12 +41,28 @@ export default function Header1({ title = "Returns and Refunds" }) {
   const fileInputRef = useRef(null);
    const langRef = useRef();
   const appsRef = useRef(null);
-
+const toggleFullscreen = () => {
+  if (!isFullscreen) {
+    document.documentElement.requestFullscreen?.();
+  } else {
+    document.exitFullscreen?.();
+  }
+};
+useEffect(() => {
+  const handleFullscreenChange = () => {
+    setIsFullscreen(!!document.fullscreenElement);
+  };
+ 
+  document.addEventListener("fullscreenchange", handleFullscreenChange);
+  return () => {
+    document.removeEventListener("fullscreenchange", handleFullscreenChange);
+  };
+}, []);
   // Toggle dark theme
   useEffect(() => {
     document.body.classList.toggle("dark-theme", isDarkMode);
   }, [isDarkMode]);
-
+ 
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -54,7 +76,7 @@ export default function Header1({ title = "Returns and Refunds" }) {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
+ 
   // Load cart data
   useEffect(() => {
     fetch("/data/cart.json")
@@ -62,7 +84,7 @@ export default function Header1({ title = "Returns and Refunds" }) {
       .then(setCartItems)
       .catch(console.error);
   }, []);
-
+ 
   // Load notification data
   useEffect(() => {
     fetch("/data/notifications.json")
@@ -70,7 +92,7 @@ export default function Header1({ title = "Returns and Refunds" }) {
       .then(setNotifications)
       .catch(console.error);
   }, []);
-
+ 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -78,46 +100,29 @@ export default function Header1({ title = "Returns and Refunds" }) {
       setProfileImage(imageUrl);
     }
   };
-
- const changeLanguage = (lang) => {
-    let flag = "/assets/flags/en.png"; // default
-    if (lang === "fr") flag = "/assets/flags/fr.png";
-    else if (lang === "hi") flag = "/assets/flags/ind.png";
-
-    setSelectedFlag(flag);
-    setShowLanguageDropdown(false);
-    // You can also add i18n.changeLanguage(lang); here
-  };
-
-  // ✅ Close dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (langRef.current && !langRef.current.contains(e.target)) {
-        setShowLanguageDropdown(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
+ 
+ 
   return (
     <>
       <header className="kv-header1">
         <div className="kv-logo">
          <img src={logo} alt="Logo" className="kv-logo-img" />
-        </div>
-
-        <div className="kv-actions">
+         
+</div>
+ 
+ 
+ 
+ <div className="kv-actions">
           {/* 🔍 Search */}
-          <div className="kv-search-wrapper" ref={searchRef}>
+          <div className="vkv-search-wrapper" ref={searchRef}>
   <button
     aria-label="Search"
-    className="kv-search-button"
+    className="vkv-search-button"
     onClick={() => setShowSearch(!showSearch)}
   >
     <FiSearch />
   </button>
-
+ 
   {showSearch && (
     <input
       type="text"
@@ -129,18 +134,21 @@ export default function Header1({ title = "Returns and Refunds" }) {
     />
   )}
 </div>
-
-        
+ 
+        <button aria-label="Toggle Fullscreen" onClick={toggleFullscreen}>
+ 
+    {isFullscreen ? <MdOutlineFullscreenExit /> : <MdOutlineFullscreen />}
+</button>
      
-
-
+ 
+ 
        <button
   aria-label="Toggle Theme"
   onClick={() => setIsDarkMode((prev) => !prev)}
 >
   {isDarkMode ? <RiSunLine /> : <RiMoonLine />}
 </button>
-
+ 
           {/* 🛒 Cart */}
           <div className="kv-cart-wrapper" ref={cartRef}>
             <button aria-label="Cart" onClick={() => setShowCart(!showCart)}>
@@ -164,7 +172,7 @@ export default function Header1({ title = "Returns and Refunds" }) {
               </div>
             )}
           </div>
-
+ 
           {/* 🔔 Notifications */}
           <div className="kv-notifications-wrapper" ref={notificationsRef}>
             <button aria-label="Notifications" onClick={() => setShowNotifications(!showNotifications)}>
@@ -174,7 +182,7 @@ export default function Header1({ title = "Returns and Refunds" }) {
             {showNotifications && (
               <div className="kv-notification-dropdown">
                 <div className="kv-notification-title"><BsBellFill /> Notifications</div>
-
+ 
                 {notifications.length === 0 ? (
                   <p className="kv-cart-empty">No new notifications</p>
                 ) : (
@@ -187,7 +195,7 @@ export default function Header1({ title = "Returns and Refunds" }) {
               </div>
             )}
           </div>
-
+ 
           {/* 📌 Related Apps */}
           <div className="kv-apps-wrapper" ref={appsRef}>
             <button aria-label="Apps" onClick={() => setShowApps(!showApps)}>
@@ -225,9 +233,9 @@ export default function Header1({ title = "Returns and Refunds" }) {
     <button className="kv-apps-footer"></button>
   </div>
 )}
-
+ 
           </div>
-
+ 
           {/* 👤 Profile Upload & Logout */}
           <div className="kv-profile-wrapper" ref={dropdownRef}>
             <div
@@ -241,7 +249,7 @@ export default function Header1({ title = "Returns and Refunds" }) {
                 className="kv-profile-img"
               />
             </div>
-
+ 
             {showDropdown && (
               <div className="kv-profile-dropdown">
                 <div
@@ -260,7 +268,7 @@ export default function Header1({ title = "Returns and Refunds" }) {
                 </div>
               </div>
             )}
-
+ 
             <input
               type="file"
               accept="image/*"
@@ -271,8 +279,10 @@ export default function Header1({ title = "Returns and Refunds" }) {
           </div>
         </div>
       </header>
-
-     
+ 
+     <div className="kv-header-footer">  
+       
+      </div>
     </>
   );
 }

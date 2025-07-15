@@ -1,149 +1,197 @@
-/* Base Reset */
+/* === Reset and Base === */
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  
 }
-
-/* Layout Wrapper */
-.kv-layout {
+ 
+/* === Layout Containers === */
+.vkv-viewport {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
+}
+ 
+.vkv-layout {
+  display: flex;
+  flex: 1;
   overflow: hidden;
 }
-/* Main Content Area */
-.kv-main {
+ 
+.vkv-main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  overflow: hidden;
+  margin-left: 185px;
+  background: #f9fafc;
+  margin-right: 0px;
 }
-
-/* Page Content */
-.kv-content {
+ 
+.vkv-content {
   flex: 1;
   padding: 24px;
   overflow-y: auto;
-  background-color: #f9fafc;
-  margin-top:24px;
-  
 }
-
-/* Sidebar */
-.kv-sidebar {
-  width: 220px; /* ✅ new width here */
-  height: 100%;
-  overflow-x: hidden;
+ 
+/* === Sidebar === */
+.vkv-sidebar {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 210px;
+  height: calc(100vh - 60px);
+  background: white;
   overflow-y: auto;
-  background: #ffffff;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   border-right: 1px solid #e3e8ee;
-  padding: 60px 10px;
-  box-sizing: border-box;
-  position: sticky;
-  top: 0;
-  margin-top: 0px;
-  margin-bottom: 0px;
 }
-
-/* Logo */
-.kv-logo {
-  font-size: 20px;
-  font-weight: 600;
-  color: #5a66f1;
-  margin-bottom: 3px;
+ 
+.vkv-sidebar::-webkit-scrollbar,
+.vkv-main::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
-
-/* Sidebar Item */
-.kv-item {
+ 
+.vkv-sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 16px;
+}
+ 
+/* === Sidebar Items === */
+.vkv-item {
   display: flex;
   align-items: center;
-  padding: 8px 10px;
-  gap: 6px; /* <- Controls spacing between icon and text */
+  gap: 10px;
+  padding: 10px 12px;
   font-size: 14px;
-  color: #3a3d4b;
-  border: none;
+  font-weight: 500;
+  color: #797a7c;
   background: transparent;
+  border: none;
   border-radius: 6px;
   width: 100%;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
   text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
 }
-
-.kv-item:hover,
-.kv-item:focus {
-  background: rgba(90, 102, 241, 0.1);
+.vkv-item.active {
+  color: #797a7c;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 1; /* Full opacity */
+}
+.vkv-item:hover {
+  background-color: rgba(236, 236, 236, 0.07);
+}
+ 
+.vkvdashboard-item {
+  font-size: 14px;
+  font-weight: 500;
+  color: #797a7c;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.2s ease, font-size 0.2s ease;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.85;
+  width: 100%;  
+}
+ 
+/* Active state - stays highlighted */
+.vkvdashboard-item.active {
   color: #5a66f1;
-}
-
-/* Icon inside item */
-.kv-item svg {
   font-size: 18px;
-  flex-shrink: 0;
+  font-weight: 600;
+  opacity: 1; /* Full opacity */
 }
-
-/* Parent Menu Item */
-.kv-parent {
+ 
+/* Hover effect ONLY on non-active items */
+.vkvdashboard-item:hover:not(.active) {
+  color: #5a66f1;
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 1;
+}
+ 
+.vkv-parent {
   font-weight: 600;
 }
-
-/* Submenu */
-.kv-submenu {
-  padding-left: 26px;
-  margin-top: 4px;
+ 
+.vkvdashboard-item span {
+  flex: 1;
+  pointer-events: auto;
 }
-
-.kv-subitem {
-  display: block;
-  padding: 6px 0;
-  font-size: 13px;
+ 
+/* === Icons === */
+.vkv-item svg{
+ 
+  font-size: 20px;
+  flex-shrink: 0;
+  color: #b7b9c9;
+  transition: color 0.2s ease;
+}
+.vkvdashboard-item svg {
+   font-size: 16px;
+  flex-shrink: 0;
+  color: #b7b9c9;
+  transition: color 0.2s ease;
+}
+ 
+.vkv-item:hover svg,
+.vkvdashboard-item:hover svg {
+  color: #b7b9c9;
+}
+ 
+/* === Submenu === */
+.vkv-submenu {
+  padding-left: 30px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+ 
+.vkv-subitem {
+  font-size: 14px;
   color: #5c5f6d;
   text-decoration: none;
-  transition: color 0.2s;
-  
+  padding: 6px 0 6px 26px;
+  position: relative;
+  transition: color 0.2s ease;
+    font-weight: 400;
 }
-
-.kv-subitem:hover {
+ 
+.vkv-subitem::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #b3b3b3;
+}
+ 
+.vkv-subitem:hover {
   color: #5a66f1;
 }
-.kv-layout {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+ 
+.vkv-subitem.active {
+  color: #5a66f1;
+  font-weight: 500;
+  font-size: 16px;
 }
-
-
-
-.kv-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-}
-
-
-/* Make entire app fill screen */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* Top-level container */
-.kv-viewport {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-}
-
-/* Header full width */
-.kv-header {
-  height: 60px;
+ 
+/* === Header === */
+.vkv-header {
+  height: 50px;
   background: #fff;
   border-bottom: 1px solid #e3e8ee;
   padding: 0 24px;
@@ -152,87 +200,57 @@ html, body, #root {
   justify-content: space-between;
   z-index: 10;
 }
-
-/* Layout below header */
-.kv-layout {
-  display: flex;
-  flex: 1;
-  overflow: hidden;
-  height: 100vh;
-}
-
-/* Sidebar stays on left */
-
-
-/* Main area */
-.kv-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-/* Scrollable content */
-.kv-content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 4px;
-  background: #f2f6f9;
-  margin-top:45px;
-}
-
-
-.kv-sidebar-content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 0 16px;
-}
-
-.kv-sidebar-footer {
-  padding: 1px;
-  border-top: 1px solid #8395aa;
-  font-size: 13px;
-  color: #7d849b;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-/* 🌙 Dark Theme Global */
+ 
+ 
+ 
+/* === Dark Theme === */
 body.dark-theme {
   background-color: #1e293b;
   color: #f1f5f9;
 }
-
-/* Header */
-body.dark-theme .kv-header {
+ 
+body.dark-theme .vkv-header {
   background: #334155;
   color: #f1f5f9;
 }
-
-/* Sidebar */
-body.dark-theme .kv-sidebar {
+ 
+body.dark-theme .vkv-sidebar {
   background-color: #1f2937;
   color: #f1f5f9;
   border-right: 1px solid #334155;
 }
-
-body.dark-theme .kv-sidebar .kv-item,
-body.dark-theme .kv-sidebar .kv-subitem {
+ 
+body.dark-theme .vkv-item,
+body.dark-theme .vkv-subitem {
   color: #e2e8f0;
 }
-
-body.dark-theme .kv-sidebar .kv-subitem:hover {
-  background-color: #334155;
+ 
+body.dark-theme .vkv-item:hover,
+body.dark-theme .vkv-subitem:hover {
+  color: #a78bfa;
+  background-color: #273549;
 }
-
-/* Main Content */
-body.dark-theme .kv-main {
+ 
+body.dark-theme .vkv-item svg,
+body.dark-theme .vkv-subitem svg {
+  color: #cbd5e1;
+}
+ 
+body.dark-theme .vkv-item:hover svg,
+body.dark-theme .vkv-subitem:hover svg {
+  color: #a78bfa;
+}
+ 
+body.dark-theme .vkv-subitem::before {
+  color: #64748b;
+}
+ 
+body.dark-theme .vkv-main {
   background-color: #0f172a;
   color: #e2e8f0;
   transition: background-color 0.3s ease;
 }
-
-/* Buttons or cards inside main content */
+ 
 body.dark-theme .card,
 body.dark-theme .btn,
 body.dark-theme input,
@@ -240,4 +258,15 @@ body.dark-theme select {
   background-color: #1e293b;
   color: #f1f5f9;
   border-color: #475569;
+}
+.sidebar {
+  transition: transform 0.3s ease-in-out;
+}
+ 
+.sidebar.open {
+  transform: translateX(0); /* Sidebar visible */
+}
+ 
+.sidebar.closed {
+  transform: translateX(-100%); /* Sidebar hidden */
 }
