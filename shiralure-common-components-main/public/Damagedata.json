@@ -10,7 +10,8 @@
     "productValue": "$250.00",
     "reportedBy": "Admin - Jane Doe",
     "status": "Reported",
-    "dateReported": "10:15 AM, 15-03-2025"
+    "dateReported": "10:15 AM, 15-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 2,
@@ -23,7 +24,8 @@
     "productValue": "$250.00",
     "reportedBy": "Admin - John Smith",
     "status": "Reported",
-    "dateReported": "02:30 PM, 14-03-2025"
+    "dateReported": "02:30 PM, 14-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 3,
@@ -36,7 +38,8 @@
     "productValue": "$45.00",
     "reportedBy": "Admin - Jane Doe",
     "status": "Reported",
-    "dateReported": "09:00 AM, 14-03-2025"
+    "dateReported": "09:00 AM, 14-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 4,
@@ -49,7 +52,8 @@
     "productValue": "$15.00",
     "reportedBy": "Staff - Alex Ray",
     "status": "Reported",
-    "dateReported": "05:15 PM, 13-03-2025"
+    "dateReported": "05:15 PM, 13-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 5,
@@ -62,7 +66,8 @@
     "productValue": "$100.00",
     "reportedBy": "Admin - John Smith",
     "status": "Reported",
-    "dateReported": "11:20 AM, 13-03-2025"
+    "dateReported": "11:20 AM, 13-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 6,
@@ -75,7 +80,8 @@
     "productValue": "$25.00",
     "reportedBy": "Admin - Jane Doe",
     "status": "Reported",
-    "dateReported": "03:40 PM, 12-03-2025"
+    "dateReported": "03:40 PM, 12-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 7,
@@ -88,7 +94,8 @@
     "productValue": "$30.00",
     "reportedBy": "Staff - Maria Garcia",
     "status": "Reported",
-    "dateReported": "10:05 AM, 12-03-2025"
+    "dateReported": "10:05 AM, 12-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 8,
@@ -101,7 +108,8 @@
     "productValue": "$25.00",
     "reportedBy": "Admin - John Smith",
     "status": "Reported",
-    "dateReported": "08:55 PM, 11-03-2025"
+    "dateReported": "08:55 PM, 11-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 9,
@@ -114,7 +122,8 @@
     "productValue": "$150.00",
     "reportedBy": "Admin - Jane Doe",
     "status": "Reported",
-    "dateReported": "01:15 PM, 11-03-2025"
+    "dateReported": "01:15 PM, 11-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 10,
@@ -127,7 +136,8 @@
     "productValue": "$5.00",
     "reportedBy": "Staff - Alex Ray",
     "status": "Reported",
-    "dateReported": "04:00 PM, 10-03-2025"
+    "dateReported": "04:00 PM, 10-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 11,
@@ -140,7 +150,8 @@
     "productValue": "$45.00",
     "reportedBy": "Admin - John Smith",
     "status": "Reported",
-    "dateReported": "11:00 AM, 10-03-2025"
+    "dateReported": "11:00 AM, 10-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 12,
@@ -153,7 +164,8 @@
     "productValue": "$5.00",
     "reportedBy": "Staff - Maria Garcia",
     "status": "Reported",
-    "dateReported": "06:20 PM, 09-03-2025"
+    "dateReported": "06:20 PM, 09-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   },
   {
     "id": 13,
@@ -166,6 +178,7 @@
     "productValue": "$300.00",
     "reportedBy": "Admin - Jane Doe",
     "status": "Reported",
-    "dateReported": "02:10 PM, 09-03-2025"
+    "dateReported": "02:10 PM, 09-03-2025",
+    "imageUrl": "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
   }
 ]

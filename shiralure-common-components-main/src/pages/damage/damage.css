@@ -2,7 +2,7 @@
   background-color: #F2F6F9;
   font-family: sans-serif;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -38,20 +38,21 @@
 }
 
 .devpheader {
-  padding: 20px 40px;
+  padding: 30px 40px;
   border-bottom: 1px solid #F2F6F9;
   background-color: #F2F6F9;
   width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  max-width: 1500px;
 }
 
 .devpheader-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1350px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -63,7 +64,7 @@
 }
 
 .devpbreadcrumb {
-  font-size: 14px;
+  font-size: 20px;
   color: #6b7280;
 }
 
@@ -79,7 +80,7 @@
   padding: 20px;
   border-radius: 10px;
 
-  max-width: 1200px;
+  max-width: 1350px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -430,6 +431,61 @@
   margin-top: 16px;
 }
 
+/* Styling for the button group to keep print and download buttons in the same row */
+.devpbutton-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: end;
+}
+
+/* Styling for the Print button */
+.devpprint-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5a66f1; /* Blue to match FiEye */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 25%;
+  gap: 10px;
+}
+
+.devpprint-button:hover {
+  background-color: #737de9; /* Darker blue on hover */
+}
+
+/* Styling for the Download button */
+.devpdownload-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: Black; /* Green to match FiEdit2 */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 25%;
+}
+
+.devpdownload-button:hover {
+  background-color: rgb(87, 86, 86); /* Darker green on hover */
+}
+
+/* Ensure buttons are hidden during printing */
+@media print {
+  .devpprint-button,
+  .devpdownload-button,
+  .devpview-close-button {
+    display: none;
+  }
+}
 .devpmodal-buttons1 {
   display: flex;
   justify-content: center;

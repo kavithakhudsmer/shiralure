@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
-  FiTrash2, FiPrinter, FiFileText, FiCheck, FiX, FiEye, FiEdit2
+  FiTrash2, FiPrinter, FiFileText, FiCheck, FiX, FiEye, FiEdit2,FiDownload
 } from "react-icons/fi";
 import { FaShareFromSquare, FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 import { IoMdSearch, IoMdArrowDropdown, IoMdClose } from "react-icons/io";
@@ -31,29 +31,39 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
   });
   const [productsInReport, setProductsInReport] = useState([]);
   const [selectedProductToAdd, setSelectedProductToAdd] = useState('');
-  const [error, setError] = useState('');
+  const [errors, setErrors] = useState({
+    date: '',
+    referenceNo: '',
+    attachments: '',
+    products: '',
+    note: '',
+  });
 
   useEffect(() => {
     if (damageItem) {
       let formDate = '';
-      if (damageItem.dateReported) {
+      if (damageItem.date) {
         try {
-          const parts = damageItem.dateReported.split(', ')[1].split('-');
-          if (parts.length === 3) {
-            formDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
-          }
-        } catch (e) { console.error("Error parsing date: ", e); }
-      }
-      if (!formDate && damageItem.date && typeof damageItem.date === 'string' && damageItem.date.includes('-')) {
-        if (!isNaN(new Date(damageItem.date))) {
-          formDate = damageItem.date;
+          // Parse date from format "12:45 PM, 15-03-2025" to "2025-03-15T12:45"
+          const [time, datePart] = damageItem.date.split(', ');
+          const [hours, minutesPeriod] = time.split(':');
+          const [minutes, period] = minutesPeriod.split(' ');
+          const [day, month, year] = datePart.split('-');
+          let adjustedHours = parseInt(hours, 10);
+          if (period === 'PM' && adjustedHours !== 12) adjustedHours += 12;
+          if (period === 'AM' && adjustedHours === 12) adjustedHours = 0;
+          formDate = `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${adjustedHours
+            .toString()
+            .padStart(2, '0')}:${minutes.padStart(2, '0')}`;
+        } catch (e) {
+          console.error("Error parsing date: ", e);
         }
       }
 
       setFormData({
         date: formDate || new Date().toISOString().split('T')[0],
         referenceNo: damageItem.referenceNo || '',
-        attachments: null,
+        attachments: damageItem.attachments || null,
         note: damageItem.note || '',
       });
 
@@ -85,16 +95,17 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    setError('');
+    setErrors((prev) => ({ ...prev, [name]: '' }));
   };
 
   const handleNoteChange = (value) => {
     setFormData((prev) => ({ ...prev, note: value }));
-    setError('');
+    setErrors((prev) => ({ ...prev, note: '' }));
   };
 
   const handleFileChange = (e) => {
     setFormData((prev) => ({ ...prev, attachments: e.target.files[0] }));
+    setErrors((prev) => ({ ...prev, attachments: '' }));
   };
 
   const handleProductChange = (index, field, value) => {
@@ -111,12 +122,12 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
       product.subTotal = (grossSubTotal - discount + taxes).toFixed(2);
     }
     setProductsInReport(updatedProducts);
-    setError('');
+    setErrors((prev) => ({ ...prev, products: '' }));
   };
 
   const handleAddProductFromDropdown = () => {
     if (!selectedProductToAdd) {
-      setError('Please select a product to add.');
+      setErrors((prev) => ({ ...prev, products: 'Please select a product to add.' }));
       return;
     }
     const productData = productOptions.find(p => p.id === selectedProductToAdd);
@@ -135,21 +146,53 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
         }
       ]);
       setSelectedProductToAdd('');
-      setError('');
+      setErrors((prev) => ({ ...prev, products: '' }));
     }
   };
-  
+
   const removeProduct = (index) => {
     setProductsInReport(prevProducts => prevProducts.filter((_, i) => i !== index));
-    setError('');
+    setErrors((prev) => ({ ...prev, products: '' }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let hasErrors = false;
+    const newErrors = {
+      date: '',
+      referenceNo: '',
+      attachments: '',
+      products: '',
+      note: '',
+    };
+
+    if (!formData.date) {
+      newErrors.date = 'Date is required';
+      hasErrors = true;
+    }
+    if (!formData.referenceNo) {
+      newErrors.referenceNo = 'Reference No is required';
+      hasErrors = true;
+    }
+    if (!formData.attachments && !damageItem.imageUrl) {
+      newErrors.attachments = 'Image is required';
+      hasErrors = true;
+    }
     if (productsInReport.length === 0) {
-      setError('At least one product must be added to the damage report.');
+      newErrors.products = 'Product is required';
+      hasErrors = true;
+    }
+    if (!formData.note || formData.note === '<p><br></p>') {
+      newErrors.note = 'Note is required';
+      hasErrors = true;
+    }
+
+    setErrors(newErrors);
+
+    if (hasErrors) {
       return;
     }
+
     const overallTotal = productsInReport.reduce((sum, p) => sum + parseFloat(p.subTotal || 0), 0);
     const updatedDamageData = {
       ...damageItem,
@@ -162,6 +205,8 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
       productName: productsInReport.length === 1 ? productsInReport[0].name : (productsInReport.length > 1 ? 'Multiple Items' : ''),
       quantityDamaged: productsInReport.reduce((sum, p) => sum + parseInt(p.quantity, 10), 0),
       productValue: `$ ${overallTotal.toFixed(2)}`,
+      attachments: formData.attachments,
+      imageUrl: formData.attachments ? URL.createObjectURL(formData.attachments) : damageItem.imageUrl,
     };
     onSave(updatedDamageData);
   };
@@ -181,9 +226,6 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
           <FiX />
         </span>
       </div>
-      {error && (
-        <div className="devptext-red-500 devptext-sm devpmb-4">{error}</div>
-      )}
       <form onSubmit={handleSubmit} className="devpmodal-form">
         <div className="devpfilter-container">
           <div className="devpfilter-group">
@@ -191,18 +233,20 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
               Date <span className="devprequired">*</span>
             </label>
             <input
-              type="date"
+              type="datetime-local"
               name="date"
               id="date"
               value={formData.date}
               onChange={handleInputChange}
               className="devpfilter-input"
-              required
             />
+            {errors.date && (
+              <div className="devptext-red-500 devptext-sm devpmt-1"style={{ color: 'red' }}>{errors.date}</div>
+            )}
           </div>
           <div className="devpfilter-group">
             <label htmlFor="referenceNo" className="devpfilter-label">
-              Reference No
+              Reference No <span className="devprequired">*</span>
             </label>
             <input
               type="text"
@@ -212,10 +256,13 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
               onChange={handleInputChange}
               className="devpfilter-input"
             />
+            {errors.referenceNo && (
+              <div className="devptext-red-500 devptext-sm devpmt-1"style={{ color: 'red' }}>{errors.referenceNo}</div>
+            )}
           </div>
           <div className="devpfilter-group">
             <label htmlFor="attachments" className="devpfilter-label">
-              Attachments
+              Attachments <span className="devprequired">*</span>
             </label>
             <input
               style={{ width: '300px' }}
@@ -225,6 +272,9 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
               onChange={handleFileChange}
               className="devpfilter-input"
             />
+            {errors.attachments && (
+              <div className="devptext-red-500 devptext-sm devpmt-1" style={{ color: 'red' }}>{errors.attachments}</div>
+            )}
           </div>
         </div>
         <div className="devpfilter-container">
@@ -253,6 +303,9 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
                   Add
                 </button>
               </div>
+              {errors.products && (
+                <div className="devptext-red-500 devptext-sm devpmt-1" style={{ color: 'red' }}>{errors.products}</div>
+              )}
             </div>
           </div>
         </div>
@@ -352,7 +405,7 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
         <div className="devpfilter-container">
           <div className="devpfilter-group">
             <label htmlFor="note" className="devpfilter-label">
-              Note
+              Note <span className="devprequired">*</span>
             </label>
             <ReactQuill
               theme="snow"
@@ -361,23 +414,26 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
               placeholder="Insert content here ..."
               modules={{
                 toolbar: [
-                  ['bold', 'italic', 'underline', 'strike'], // toggled buttons
+                  ['bold', 'italic', 'underline', 'strike'],
                   ['blockquote', 'code-block'],
-                  [{ header: 1 }, { header: 2 }], // custom button values
+                  [{ header: 1 }, { header: 2 }],
                   [{ list: 'ordered' }, { list: 'bullet' }],
                   [{ script: 'sub' }, { script: 'super' }],
-                  [{ indent: '-1' }, { indent: '+1' }], // outdent/indent
-                  [{ direction: 'rtl' }], // text direction
-                  [{ size: ['small', false, 'large', 'huge'] }], // custom dropdown
+                  [{ indent: '-1' }, { indent: '+1' }],
+                  [{ direction: 'rtl' }],
+                  [{ size: ['small', false, 'large', 'huge'] }],
                   [{ header: [1, 2, 3, 4, 5, 6, false] }],
-                  [{ color: [] }, { background: [] }], // dropdown with defaults
+                  [{ color: [] }, { background: [] }],
                   [{ font: [] }],
                   [{ align: [] }],
                   ['link', 'image', 'video'],
-                  ['clean'], // remove formatting
+                  ['clean'],
                 ],
               }}
             />
+            {errors.note && (
+              <div className="devptext-red-500 devptext-sm devpmt-1"style={{ color: 'red' }}>{errors.note}</div>
+            )}
           </div>
         </div>
         <div className="devpmodal-buttons">
@@ -502,7 +558,26 @@ const DamagePage = () => {
         item.productName.toLowerCase().includes(filterForm.note.toLowerCase());
 
       const matchesDate =
-        filterForm.date === '' || item.date.includes(filterForm.date);
+      filterForm.date === '' ||
+      (() => {
+        const filterDate = new Date(filterForm.date);
+        if (isNaN(filterDate)) return false;
+
+        const [time, datePart] = item.date.split(', ');
+        const [hours, minutesPeriod] = time.split(':');
+        const [minutes, period] = minutesPeriod.split(' ');
+        const [day, month, year] = datePart.split('-');
+        let adjustedHours = parseInt(hours, 10);
+        if (period === 'PM' && adjustedHours !== 12) adjustedHours += 12;
+        if (period === 'AM' && adjustedHours === 12) adjustedHours = 0;
+        const itemDate = new Date(`${year}-${month}-${day}T${adjustedHours.toString().padStart(2, '0')}:${minutes}`);
+
+        const isSameDate =
+          filterDate.getFullYear() === itemDate.getFullYear() &&
+          filterDate.getMonth() === itemDate.getMonth() &&
+          filterDate.getDate() === itemDate.getDate();
+        return isSameDate;
+      })();
 
       const matchesTotal =
         filterForm.total === '' || item.total.includes(filterForm.total);
@@ -564,7 +639,9 @@ const DamagePage = () => {
       reportedBy: 'Current User',
       status: 'Draft',
       dateReported: new Date().toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true }) + ', ' + new Date().toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' }).replace(/\//g, '-'),
-      products: []
+      products: [],
+      attachments: null,
+      imageUrl: '',
     };
     setEditingDamageItem(newDamageTemplate);
   };
@@ -606,6 +683,104 @@ const DamagePage = () => {
   const handleCancelDelete = () => {
     setIsDeleteModalOpen(false);
     setDamageItemIdToDelete(null);
+  };
+
+  const handleDownloadImage = async (damageItem) => {
+    if (!damageItem?.attachments && !damageItem?.imageUrl) {
+      alert('No image available for download.');
+      return;
+    }
+
+    try {
+      let blob, filename;
+      if (damageItem.attachments) {
+        // Use the uploaded file from attachments
+        blob = damageItem.attachments;
+        filename = `${damageItem.referenceNo || 'damage'}-${damageItem.productName || 'item'}.${damageItem.attachments.name.split('.').pop() || 'jpg'}`;
+      } else {
+        // Fallback to fetching from imageUrl
+        const response = await fetch(damageItem.imageUrl, { mode: 'cors' });
+        if (!response.ok) throw new Error(`Failed to fetch image: ${response.statusText}`);
+        blob = await response.blob();
+        filename = `${damageItem.referenceNo}-${damageItem.productName}.jpg`;
+      }
+
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading image:', error);
+      alert('Failed to download image. Please try again.');
+    }
+  };
+
+  const handlePrintDamageDetails = (damageItem) => {
+    const modalContent = document.querySelector('.devpbg-white.devprounded-lg');
+    if (modalContent) {
+      const printContent = modalContent.cloneNode(true);
+      const printContainer = document.createElement('div');
+      printContainer.appendChild(printContent);
+      document.body.appendChild(printContainer);
+
+      const style = document.createElement('style');
+      style.innerHTML = `
+        @media print {
+          body * {
+            visibility: hidden;
+          }
+          .devpbg-white.devprounded-lg,
+          .devpbg-white.devprounded-lg * {
+            visibility: visible;
+          }
+          #printable-table,
+          #printable-table * {
+            display: none !important;
+          }
+          .devpbg-white.devprounded-lg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            max-height: none;
+            overflow: visible;
+            box-shadow: none;
+          }
+          .devpprint-button,
+          .devpview-close-button,
+          .devpdownload-button {
+            display: none;
+          }
+          .devpdamagebt {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+          }
+          .devpdamagebt1 {
+            padding: 10px;
+          }
+          .devpdamagebt1 div {
+            margin: 10px 0;
+          }
+          .devpfont-medium.devptext-gray-900 {
+            font-weight: bold;
+            display: inline-block;
+            width: 150px;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+      
+      window.print();
+      
+      document.head.removeChild(style);
+      document.body.removeChild(printContainer);
+    }
   };
 
   const handlePrint = () => {
@@ -886,21 +1061,27 @@ const DamagePage = () => {
               <div className="devpfixed devpinset-0 devpbg-black/25 devpbackdrop-blur-sm devpflex devpitems-center devpjustify-center devpp-4 devpz-50">
                 <div className="devpbg-white devprounded-lg devpshadow-xl devpmax-w-md devpw-full devpmax-h-[90vh] devpoverflow-y-auto">
                   <div className="devpdamagebt">
-                    <button onClick={handleCancelView} className="devpview-close-button">
-                      <IoMdClose/>
+                    <button onClick={handleCancelView} className="devpview-close-button" title="Close">
+                      <IoMdClose />
                     </button>
                     <h2 className="devptext-xl devpfont-semibold devptext-gray-900">Damage Details</h2>
                   </div>
                   <div className="devpdamagebt1">
-                    <div><span className="devpfont-medium devptext-gray-900">Reference No: </span><span className="devptext-gray-700">{viewingDamageItem.referenceNo}</span></div>
-                    <div><span className="devpfont-medium devptext-gray-900">Date Reported: </span><span className="devptext-gray-700">{viewingDamageItem.dateReported}</span></div>
-                    <div><span className="devpfont-medium devptext-gray-900">Product: </span><span className="devptext-gray-700">{viewingDamageItem.productName}</span></div>
-                    <div><span className="devpfont-medium devptext-gray-900">Quantity Damaged: </span><span className="devptext-gray-700">{viewingDamageItem.quantityDamaged}</span></div>
-                    <div><span className="devpfont-medium devptext-gray-900">Product Value: </span><span className="devptext-gray-700">{viewingDamageItem.productValue}</span></div>
-                    <div><span className="devpfont-medium devptext-gray-900">Total Damage Value: </span><span className="devptext-gray-700">{viewingDamageItem.total}</span></div>
-                    <div><span className="devpfont-medium devptext-gray-900">Reported By: </span><span className="devptext-gray-700">{viewingDamageItem.reportedBy}</span></div>
-                    <div><span className="devpfont-medium devptext-gray-900">Status: </span><span className="devptext-gray-700">{viewingDamageItem.status}</span></div>
-                    <div><span className="devpfont-medium devptext-gray-900">Note: </span><span className="devptext-gray-700 devpbreak-words">{viewingDamageItem.note}</span></div>
+                    <div><span className="devpfont-medium devptext-gray-900">Reference No: </span><span className="devptext-gray-700">{viewingDamageItem.referenceNo || 'N/A'}</span></div>
+                    <div><span className="devpfont-medium devptext-gray-900">Date Reported: </span><span className="devptext-gray-700">{viewingDamageItem.dateReported || 'N/A'}</span></div>
+                    <div><span className="devpfont-medium devptext-gray-900">Product: </span><span className="devptext-gray-700">{viewingDamageItem.productName || 'N/A'}</span></div>
+                    <div><span className="devpfont-medium devptext-gray-900">Quantity Damaged: </span><span className="devptext-gray-700">{viewingDamageItem.quantityDamaged || '0'}</span></div>
+                    <div><span className="devpfont-medium devptext-gray-900">Product Value: </span><span className="devptext-gray-700">{viewingDamageItem.productValue || '$0.00'}</span></div>
+                    <div><span className="devpfont-medium devptext-gray-900">Total Damage Value: </span><span className="devptext-gray-700">{viewingDamageItem.total || '$0.00'}</span></div>
+                    <div><span className="devpfont-medium devptext-gray-900">Note: </span><span className="devptext-gray-700 devpbreak-words">{viewingDamageItem.note || 'N/A'}</span></div>
+                  </div>
+                  <div className="devpbutton-group">
+                    <button onClick={() => handlePrintDamageDetails(viewingDamageItem)} className="devpprint-button" title="Print Damage Details">
+                      <FiPrinter size={20} /> Print 
+                    </button>
+                    <button onClick={() => handleDownloadImage(viewingDamageItem)} className="devpdownload-button" title="Download Image">
+                      <FiDownload size={20} /> Download Image
+                    </button>
                   </div>
                 </div>
               </div>
@@ -946,5 +1127,4 @@ const DamagePage = () => {
     </div>
   );
 };
-
 export default DamagePage;
