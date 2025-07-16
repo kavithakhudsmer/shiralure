@@ -111,8 +111,12 @@ html, body, #root {
   font-size: 18px;
   font-weight: 600;
   opacity: 1; /* Full opacity */
+  color: #5a66f1 !important;
 }
- 
+ .vkvdashboard-item:hover{
+  color: #5a66f1;
+    color: #5a66f1 !important;
+ }
 /* Hover effect ONLY on non-active items */
 .vkvdashboard-item:hover:not(.active) {
   color: #5a66f1;
@@ -150,13 +154,12 @@ html, body, #root {
   color: #b7b9c9;
 }
  
-/* === Submenu === */
 .vkv-submenu {
   padding-left: 30px;
   margin-top: 5px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px; /* Decreased gap from 4px to 2px */
   align-items: flex-start;
 }
  
@@ -167,7 +170,8 @@ html, body, #root {
   padding: 6px 0 6px 26px;
   position: relative;
   transition: color 0.2s ease;
-    font-weight: 400;
+  font-weight: 400;
+  cursor: pointer; /* Added to indicate interactivity */
 }
  
 .vkv-subitem::before {
@@ -184,10 +188,15 @@ html, body, #root {
   color: #5a66f1;
 }
  
+/* Ensure hover works by overriding potential parent styles */
+.vkv-subitem:hover {
+  color: #5a66f1 !important; /* Added !important as a fallback */
+}
 .vkv-subitem.active {
   color: #5a66f1;
   font-weight: 500;
   font-size: 16px;
+   color: #5a66f1 !important;
 }
  
 /* === Header === */
