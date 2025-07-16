@@ -34,10 +34,10 @@ const ViewPromotion = () => {
     { id: 8, name: 'Autumn Arrival', price: '2200.00' }
   ];
 
- useEffect(() => {
-  const product = productsData.find(p => p.id === id);
-  setPromotion(product);
-}, [id]);
+  useEffect(() => {
+    const product = productsData.find(p => p.id === id);
+    setPromotion(product);
+  }, [id]);
 
   const handleDeleteClick = (productId) => {
     setProductToDelete(productId);
@@ -119,7 +119,7 @@ const ViewPromotion = () => {
             {showMoreDropdown && (
               <div className="vvp-dropdown-menu">
                 <div className="vvp-dropdown-item" onClick={() => handleMoreSelect('offer')}>
-                  <FiGrid className="vvp-dropdown-icon" /> Offer
+                  <BiSolidOffer className="vvp-dropdown-icon" /> Offer
                 </div>
                 <div className="vvp-dropdown-item" onClick={() => handleMoreSelect('videos')}>
                   <FiImage className="vvp-dropdown-icon" /> Video
@@ -163,7 +163,7 @@ const ViewPromotion = () => {
               <div className="vvp-image-left">
                 <img
                   src={imagePreviewUrl || 'https://images.unsplash.com/photo-1596464716121-e7c07f1ec67f'}
-  alt="Preview"
+                  alt="Preview"
                   className="vvp-image-preview"
                 />
               </div>
@@ -231,29 +231,57 @@ const ViewPromotion = () => {
           </div>
         )}
 
-{moreTab === 'offer' && (
-  <div className="vvp-more-tab-content">
-    <h3><BiSolidOffer style={{ verticalAlign: 'middle', marginRight: 6 }} /> Offer</h3>
-  </div>
-)}
+        {moreTab === 'offer' && (
+          <div className="vvp-offer-card"> {/* Changed class name for specific styling */}
+            <div className="vvp-offer-title">Offer</div>
+            <div className="vvp-offer-grid">
+              <div className="vvp-offer-item">
+                <label htmlFor="offerStartDate" className="vvp-offer-label">OFFER START DATE <span className="vvp-required">*</span></label>
+                <input type="date" id="offerStartDate" className="vvp-offer-input" />
+              </div>
+              <div className="vvp-offer-item">
+                <label htmlFor="offerEndDate" className="vvp-offer-label">OFFER END DATE <span className="vvp-required">*</span></label>
+                <input type="date" id="offerEndDate" className="vvp-offer-input" />
+              </div>
+              <div className="vvp-offer-item">
+                <label htmlFor="discountPercentage" className="vvp-offer-label">DISCOUNT PERCENTAGE <span className="vvp-required">*</span></label>
+                <input type="number" id="discountPercentage" className="vvp-offer-input" defaultValue="0" />
+              </div>
+              <div className="vvp-offer-item">
+                <label className="vvp-offer-label">DO YOU WANT TO ADD IN THE FLASH SALE? <span className="vvp-required">*</span></label>
+                <div className="vvp-radio-group">
+                  <label className="vvp-radio-label">
+                    <input type="radio" name="flashSale" value="yes" className="vvp-radio-input" /> Yes
+                  </label>
+                  <label className="vvp-radio-label">
+                    <input type="radio" name="flashSale" value="no" className="vvp-radio-input" defaultChecked /> No
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div className="vvp-offer-save-button-container">
+              <button className="vvp-save-button">Save</button>
+            </div>
+          </div>
+        )}
 
-{moreTab === 'videos' && (
-  <div className="vvp-more-tab-content">
-    <h3><MdVideoLibrary style={{ verticalAlign: 'middle', marginRight: 6 }} /> Videos</h3>
-  </div>
-)}
+        {moreTab === 'videos' && (
+          <div className="vvp-more-tab-content">
+            <h3><MdVideoLibrary style={{ verticalAlign: 'middle', marginRight: 6 }} /> Videos</h3>
+          </div>
+        )}
 
-{moreTab === 'shipping' && (
-  <div className="vvp-more-tab-content">
-    <h3><MdOutlineLocalShipping style={{ verticalAlign: 'middle', marginRight: 6 }} /> Shipping & Return</h3>
-  </div>
-)}
+        {moreTab === 'shipping' && (
+          <div className="vvp-more-tab-content">
+            <h3><MdOutlineLocalShipping style={{ verticalAlign: 'middle', marginRight: 6 }} /> Shipping & Return</h3>
+          </div>
+        )}
 
-{moreTab === 'seo' && (
-  <div className="vvp-more-tab-content">
-    <h3><TfiWorld style={{ verticalAlign: 'middle', marginRight: 6 }} /> SEO</h3>
-  </div>
-)}
+        {moreTab === 'seo' && (
+          <div className="vvp-more-tab-content">
+            <h3><TfiWorld style={{ verticalAlign: 'middle', marginRight: 6 }} /> SEO</h3>
+          </div>
+        )}
 
       </div>
 

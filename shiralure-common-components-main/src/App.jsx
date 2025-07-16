@@ -1,3 +1,4 @@
+// App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
@@ -65,7 +66,7 @@ import Site from './Components/admin settings/Site';
 import Mail from './Components/admin settings/Mail';
 import Location from './Components/admin settings/Location';
 import Shipping from './Components/admin settings/Shipping';
-import NotificationComponent from "./Components/admin settings/NotificationComponent"; 
+import NotificationComponent from "./Components/admin settings/NotificationComponent";
 import NotificationAlert from './Components/admin settings/NotificationAlert';
 import SocialMedia from './Components/admin settings/SocialMedia';
 import Cookies from './Components/admin settings/Cookies';
@@ -130,7 +131,7 @@ const App = () => {
             <AdminLayout> {/* Wrap nested admin routes with AdminLayout */}
               <Routes>
                 <Route path="" element={<Homeadmin />} />
-                
+
                 <Route path="Pos" element={<Pos />} />
                 <Route path="PosOrder" element={<PosOrder />} />
                 <Route path="PushNotification" element={<PushNotification />} />
@@ -155,11 +156,12 @@ const App = () => {
                 <Route path="Promotion" element={<Promotion />} />
                 <Route path="ProductSection" element={<ProductSection />} />
                 <Route path="Returnorder" element={<Returnorder />} />
-                
 
 
-              <Route path="/" element={<Layout1 />}>
-                <Route path="Settings" element={<Setting />} />
+
+              <Route path="Settings" element={<Layout1 />}>
+                {/* The 'Settings' path for Layout1 is now handled by the parent route */}
+                  <Route index element={<Setting />} /> {/* Default child route for /admin/Settings */}
                   <Route path="return-reasons" element={<ReturnReasonComponent />} />
                   <Route path="company" element={<Company />} />
                   <Route path="site" element={<Site />} />
@@ -170,16 +172,16 @@ const App = () => {
                   <Route path="notification-alert" element={<NotificationAlert/>} />
                   <Route path="social-media" element={<SocialMedia/>} />
                   <Route path="cookies" element={<Cookies/>} />
-                  <Route path="Otp" element={<OTPComponent />} />
+                  <Route path="otp" element={<OTPComponent />} /> {/* Corrected path to lowercase */}
                   <Route path="analytics" element={<Analytics/>} />
                   <Route path="payment-gateway" element={<PaymentGateway/>} />
                   <Route path="license" element={<License/>} />
                   <Route path="sms-gateway" element={<SmsGateway/>} />
                   <Route path="languages" element={<LanguagesComponent/>} />
-                  <Route path="role-&-permissions" element={<RolePermissions/>} /> 
+                  <Route path="role-&-permissions" element={<RolePermissions/>} />
                   <Route path="pages" element={<Pages1Component />} />
                   <Route path="taxes" element={<Taxes/>} />
-                  <Route path="units" element={<Units/>} /> 
+                  <Route path="units" element={<Units/>} />
                   <Route path="benefits" element={<Benefits/>} />
                   <Route path="outlets" element={<Outlets/>} />
                   <Route path="suppliers" element={<SupplierComponent/>} />
@@ -195,8 +197,6 @@ const App = () => {
 
 
 
-
-                  
 
                 {/* <Route path="Setting" element={<Setting />} /> */}
                 {/* Add other admin routes here */}

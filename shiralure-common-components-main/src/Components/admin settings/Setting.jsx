@@ -1,3 +1,4 @@
+// Setting.jsx
 import React, { useState } from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
 import {
@@ -87,7 +88,11 @@ export default function Setting() {
                 key={item}
                 onClick={() => {
                   setActiveItem(item);
-                  navigate(`/settings/${item.toLowerCase().replace(/\s+/g, '-')}`);
+                  let path = item.toLowerCase().replace(/\s+/g, '-');
+                  if (item === 'Role & Permissions') {
+                      path = 'role-&-permissions';
+                  }
+                  navigate(`/admin/Settings/${path}`);
                 }}
                 className={`settings-menu-li${item === activeItem ? ' active' : ''}`}
                 style={{
