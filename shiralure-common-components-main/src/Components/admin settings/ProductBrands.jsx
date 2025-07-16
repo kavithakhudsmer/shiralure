@@ -103,82 +103,82 @@ const ProductBrandsComponent = () => {
   };
 
   return (
-    <div className="product-brands-container">
-      <div className="pb-header">
-        <h2 className="pb-title">Product Brands</h2>
-        <button className="pb-add-btn" onClick={handleAdd}>
+    <div className="product-brands-container17">
+      <div className="pb-header17">
+        <h2 className="pb-title17">Product Brands</h2>
+        <button className="pb-add-btn17" onClick={handleAdd}>
           <Plus size={16} />Add
         </button>
       </div>
 
-      <div className="pb-table">
-        <div className="pb-table-header">
-          <div className="pb-col-name">Name</div>
-          <div className="pb-col-description">Description</div>
-          <div className="pb-col-status">Status</div>
-          <div className="pb-col-action">Action</div>
+      <div className="pb-table17">
+        <div className="pb-table-header17">
+          <div className="pb-col-name17">Name</div>
+          <div className="pb-col-description17">Description</div>
+          <div className="pb-col-status17">Status</div>
+          <div className="pb-col-action17">Action</div>
         </div>
 
         {brands.map((brand) => (
-          <div key={brand.id} className="pb-table-row">
-            <div className="pb-col-name">{brand.name}</div>
-            <div className="pb-col-description">{brand.description}</div>
-            <div className="pb-col-status">
-              <span className={`pb-status ${brand.status.toLowerCase()}`}>
+          <div key={brand.id} className="pb-table-row17">
+            <div className="pb-col-name17">{brand.name}</div>
+            <div className="pb-col-description17">{brand.description}</div>
+            <div className="pb-col-status17">
+              <span className={`pb-status17 ${brand.status.toLowerCase()}17`}>
                 {brand.status}
               </span>
             </div>
-            <div className="pb-col-action">
+            <div className="pb-col-action17">
               <button 
-                className="pb-action-btn pb-view-btn" 
+                className="pb-action-btn17 pb-view-btn17" 
                 onClick={() => handleView(brand)}
               >
-                <Eye size={16} color="#dc3545" /> {/* Red for view */}
+                <Eye size={16} color="#dc3545" />
               </button>
               <button 
-                className="pb-action-btn pb-edit-btn" 
+                className="pb-action-btn17 pb-edit-btn17" 
                 onClick={() => handleEdit(brand)}
               >
-                <Edit size={16} color="#28a745" /> {/* Green for edit */}
+                <Edit size={16} color="#28a745" />
               </button>
               <button 
-                className="pb-action-btn pb-delete-btn" 
+                className="pb-action-btn17 pb-delete-btn17" 
                 onClick={() => handleDelete(brand.id)}
               >
-                <Trash2 size={16} color="#f0ad4e" /> {/* Orange for delete */}
+                <Trash2 size={16} color="#f0ad4e" />
               </button>
             </div>
           </div>
         ))}
 
-        <div className="pb-table-footer">
+        <div className="pb-table-footer17">
           Showing 1 to 1 of {brands.length} entries
         </div>
       </div>
 
       {/* Add Modal */}
       {showAddModal && (
-        <div className="pb-modal-overlay">
-          <div className="pb-modal">
-            <div className="pb-modal-header">
-              <h3 className="pb-modal-title">Product Brands</h3>
+        <div className="pb-modal-overlay17">
+          <div className="pb-modal17">
+            <div className="pb-modal-header17">
+              <h3 className="pb-modal-title17">Product Brands</h3>
             </div>
 
-            <div className="pb-modal-body">
-              <div className="pb-form-group">
-                <label className="pb-form-label">Name <span className="pb-required">*</span></label>
+            <div className="pb-modal-body17">
+              <div className="pb-form-group17">
+                <label className="pb-form-label17">Name <span className="pb-required17">*</span></label>
                 <input
                   type="text"
-                  className="pb-form-input"
+                  className="pb-form-input17"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                 />
               </div>
 
-              <div className="pb-form-group">
-                <label className="pb-form-label">Status</label>
-                <div className="pb-radio-group">
-                  <label className="pb-radio-label">
+              <div className="pb-form-group17">
+                <label className="pb-form-label17">Status</label>
+                <div className="pb-radio-group17">
+                  <label className="pb-radio-label17">
                     <input
                       type="radio"
                       name="status"
@@ -187,7 +187,7 @@ const ProductBrandsComponent = () => {
                     />
                     <span>Active</span>
                   </label>
-                  <label className="pb-radio-label">
+                  <label className="pb-radio-label17">
                     <input
                       type="radio"
                       name="status"
@@ -199,39 +199,39 @@ const ProductBrandsComponent = () => {
                 </div>
               </div>
 
-              <div className="pb-form-group">
-                <label className="pb-form-label">Image (72px,72px)</label>
-                <div className="pb-file-upload">
+              <div className="pb-form-group17">
+                <label className="pb-form-label17">Image (72px,72px)</label>
+                <div className="pb-file-upload17">
                   <input
                     type="file"
                     id="fileUpload"
-                    className="pb-file-input"
+                    className="pb-file-input17"
                     onChange={handleFileUpload}
                   />
-                  <label htmlFor="fileUpload" className="pb-file-label">
+                  <label htmlFor="fileUpload" className="pb-file-label17">
                     Choose File
                   </label>
-                  <span className="pb-file-name">
+                  <span className="pb-file-name17">
                     {formData.image || 'No file chosen'}
                   </span>
                 </div>
               </div>
 
-              <div className="pb-form-group">
-                <label className="pb-form-label">Description</label>
+              <div className="pb-form-group17">
+                <label className="pb-form-label17">Description</label>
                 <textarea
-                  className="pb-form-textarea"
+                  className="pb-form-textarea17"
                   value={formData.description}
                   onChange={(e) => setFormData({...formData, description: e.target.value})}
                 />
               </div>
             </div>
 
-            <div className="pb-modal-footer">
-              <button className="pb-btn-close" onClick={closeModal}>
+            <div className="pb-modal-footer17">
+              <button className="pb-btn-close17" onClick={closeModal}>
                 Close
               </button>
-              <button className="pb-btn-save" onClick={handleSave}>
+              <button className="pb-btn-save17" onClick={handleSave}>
                 <Save size={16} />
                 Save
               </button>
@@ -242,27 +242,27 @@ const ProductBrandsComponent = () => {
 
       {/* Edit Modal */}
       {showEditModal && (
-        <div className="pb-modal-overlay">
-          <div className="pb-modal">
-            <div className="pb-modal-header">
-              <h3 className="pb-modal-title">Product Brands</h3>
+        <div className="pb-modal-overlay17">
+          <div className="pb-modal17">
+            <div className="pb-modal-header17">
+              <h3 className="pb-modal-title17">Product Brands</h3>
             </div>
 
-            <div className="pb-modal-body">
-              <div className="pb-form-group">
-                <label className="pb-form-label">Name <span className="pb-required">*</span></label>
+            <div className="pb-modal-body17">
+              <div className="pb-form-group17">
+                <label className="pb-form-label17">Name <span className="pb-required17">*</span></label>
                 <input
                   type="text"
-                  className="pb-form-input"
+                  className="pb-form-input17"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                 />
               </div>
 
-              <div className="pb-form-group">
-                <label className="pb-form-label">Status</label>
-                <div className="pb-radio-group">
-                  <label className="pb-radio-label">
+              <div className="pb-form-group17">
+                <label className="pb-form-label17">Status</label>
+                <div className="pb-radio-group17">
+                  <label className="pb-radio-label17">
                     <input
                       type="radio"
                       name="editStatus"
@@ -271,7 +271,7 @@ const ProductBrandsComponent = () => {
                     />
                     <span>Active</span>
                   </label>
-                  <label className="pb-radio-label">
+                  <label className="pb-radio-label17">
                     <input
                       type="radio"
                       name="editStatus"
@@ -283,39 +283,39 @@ const ProductBrandsComponent = () => {
                 </div>
               </div>
 
-              <div className="pb-form-group">
-                <label className="pb-form-label">Image (72px,72px)</label>
-                <div className="pb-file-upload">
+              <div className="pb-form-group17">
+                <label className="pb-form-label17">Image (72px,72px)</label>
+                <div className="pb-file-upload17">
                   <input
                     type="file"
                     id="editFileUpload"
-                    className="pb-file-input"
+                    className="pb-file-input17"
                     onChange={handleFileUpload}
                   />
-                  <label htmlFor="editFileUpload" className="pb-file-label">
+                  <label htmlFor="editFileUpload" className="pb-file-label17">
                     Choose File
                   </label>
-                  <span className="pb-file-name">
+                  <span className="pb-file-name17">
                     {formData.image || 'No file chosen'}
                   </span>
                 </div>
               </div>
 
-              <div className="pb-form-group">
-                <label className="pb-form-label">Description</label>
+              <div className="pb-form-group17">
+                <label className="pb-form-label17">Description</label>
                 <textarea
-                  className="pb-form-textarea"
+                  className="pb-form-textarea17"
                   value={formData.description}
                   onChange={(e) => setFormData({...formData, description: e.target.value})}
                 />
               </div>
             </div>
 
-            <div className="pb-modal-footer">
-              <button className="pb-btn-close" onClick={closeModal}>
+            <div className="pb-modal-footer17">
+              <button className="pb-btn-close17" onClick={closeModal}>
                 Close
               </button>
-              <button className="pb-btn-save" onClick={handleSave}>
+              <button className="pb-btn-save17" onClick={handleSave}>
                 <Save size={16} />
                 Save
               </button>
@@ -326,25 +326,25 @@ const ProductBrandsComponent = () => {
 
       {/* View Modal */}
       {showViewModal && currentBrand && (
-        <div className="pb-modal-overlay">
-          <div className="pb-view-modal">
-            <div className="pb-modal-header">
-              <h3 className="pb-modal-title">Product Brands</h3>
-              <button className="pb-close-btn" onClick={() => setShowViewModal(false)}>
+        <div className="pb-modal-overlay17">
+          <div className="pb-view-modal17">
+            <div className="pb-modal-header17">
+              <h3 className="pb-modal-title17">Product Brands</h3>
+              <button className="pb-close-btn17" onClick={() => setShowViewModal(false)}>
                 <X size={20} />
               </button>
             </div>
 
-            <div className="pb-view-body">
-              <div className="pb-brand-display">
-                <div className="pb-brand-logo">
-                  <div className="pb-logo-placeholder">
-                    <span className="pb-logo-text">WELLA</span>
+            <div className="pb-view-body17">
+              <div className="pb-brand-display17">
+                <div className="pb-brand-logo17">
+                  <div className="pb-logo-placeholder17">
+                    <span className="pb-logo-text17">WELLA</span>
                   </div>
                 </div>
-                <div className="pb-brand-info">
-                  <h4 className="pb-brand-name">{currentBrand.name.toUpperCase()}</h4>
-                  <span className={`pb-brand-status ${currentBrand.status.toLowerCase()}`}>
+                <div className="pb-brand-info17">
+                  <h4 className="pb-brand-name17">{currentBrand.name.toUpperCase()}</h4>
+                  <span className={`pb-brand-status17 ${currentBrand.status.toLowerCase()}17`}>
                     {currentBrand.status}
                   </span>
                 </div>
@@ -356,18 +356,18 @@ const ProductBrandsComponent = () => {
 
       {/* Delete Confirmation Modal */}
       {showDeleteModal && (
-        <div className="pb-modal-overlay">
-          <div className="pb-delete-modal">
-            <div className="pb-delete-icon">
+        <div className="pb-modal-overlay17">
+          <div className="pb-delete-modal17">
+            <div className="pb-delete-icon17">
               <AlertTriangle size={48} color="#f59e0b" />
             </div>
-            <h3 className="pb-delete-title">Are you sure ?</h3>
-            <p className="pb-delete-message">You will not be able to recover the deleted record!</p>
-            <div className="pb-delete-actions">
-              <button className="pb-btn-danger" onClick={confirmDelete}>
+            <h3 className="pb-delete-title17">Are you sure ?</h3>
+            <p className="pb-delete-message17">You will not be able to recover the deleted record!</p>
+            <div className="pb-delete-actions17">
+              <button className="pb-btn-danger17" onClick={confirmDelete}>
                 Yes, Delete it !
               </button>
-              <button className="pb-btn-cancel" onClick={() => setShowDeleteModal(false)}>
+              <button className="pb-btn-cancel17" onClick={() => setShowDeleteModal(false)}>
                 No, Cancel !
               </button>
             </div>
@@ -376,7 +376,7 @@ const ProductBrandsComponent = () => {
       )}
 
       <style jsx>{`
-        .product-brands-container {
+        .product-brands-container17 {
           max-width: 1200px;
           margin: 0 auto;
           padding: 20px;
@@ -385,21 +385,21 @@ const ProductBrandsComponent = () => {
           min-height: 100vh;
         }
 
-        .pb-header {
+        .pb-header17 {
           display: flex;
           justify-content: space-between;
           align-items: center;
           margin-bottom: 20px;
         }
 
-        .pb-title {
+        .pb-title17 {
           margin: 0;
           font-size: 18px;
           font-weight: 600;
           color: #1f2937;
         }
 
-        .pb-add-btn {
+        .pb-add-btn17 {
           background: #6366f1;
           color: white;
           border: none;
@@ -411,18 +411,18 @@ const ProductBrandsComponent = () => {
           justify-content: center;
         }
 
-        .pb-add-btn:hover {
+        .pb-add-btn17:hover {
           background: #5855e7;
         }
 
-        .pb-table {
+        .pb-table17 {
           background: white;
           border-radius: 8px;
           overflow: hidden;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        .pb-table-header {
+        .pb-table-header17 {
           display: grid;
           grid-template-columns: 1fr 3fr 1fr 1fr;
           gap: 20px;
@@ -434,7 +434,7 @@ const ProductBrandsComponent = () => {
           color: #374151;
         }
 
-        .pb-table-row {
+        .pb-table-row17 {
           display: grid;
           grid-template-columns: 1fr 3fr 1fr 1fr;
           gap: 20px;
@@ -443,37 +443,37 @@ const ProductBrandsComponent = () => {
           align-items: center;
         }
 
-        .pb-table-row:hover {
+        .pb-table-row17:hover {
           background: #f9fafb;
         }
 
-        .pb-status {
+        .pb-status17 {
           padding: 4px 8px;
           border-radius: 4px;
           font-size: 12px;
           font-weight: 500;
         }
 
-        .pb-status.active {
+        .pb-status17.active17 {
           background: #dcfce7;
           color: #16a34a;
         }
 
-        .pb-status.inactive {
+        .pb-status17.inactive17 {
           background: #fee2e2;
           color: #dc2626;
         }
 
-        .pb-col-action {
+        .pb-col-action17 {
           display: flex;
           gap: 8px;
         }
 
-        .pb-action-btn {
+        .pb-action-btn17 {
           width: 32px;
           height: 32px;
           border: none;
-          border-radius: 50%; /* Circular shape */
+          border-radius: 50%;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -482,41 +482,41 @@ const ProductBrandsComponent = () => {
           opacity: 0.9;
         }
 
-        .pb-view-btn {
-          background: #f8d7da; /* Light red background */
+        .pb-view-btn17 {
+          background: #f8d7da;
         }
 
-        .pb-view-btn:hover {
+        .pb-view-btn17:hover {
           background: #f1aeb5;
           transform: scale(1.05);
         }
 
-        .pb-edit-btn {
-          background: #d1e7dd; /* Light green background */
+        .pb-edit-btn17 {
+          background: #d1e7dd;
         }
 
-        .pb-edit-btn:hover {
+        .pb-edit-btn17:hover {
           background: #a3cfbb;
           transform: scale(1.05);
         }
 
-        .pb-delete-btn {
-          background: #fff3cd; /* Light orange background */
+        .pb-delete-btn17 {
+          background: #fff3cd;
         }
 
-        .pb-delete-btn:hover {
+        .pb-delete-btn17:hover {
           background: #ffeaa7;
           transform: scale(1.05);
         }
 
-        .pb-table-footer {
+        .pb-table-footer17 {
           padding: 16px 20px;
           font-size: 14px;
           color: #6b7280;
           background: #f9fafb;
         }
 
-        .pb-modal-overlay {
+        .pb-modal-overlay17 {
           position: fixed;
           top: 0;
           left: 0;
@@ -529,7 +529,7 @@ const ProductBrandsComponent = () => {
           z-index: 1000;
         }
 
-        .pb-modal {
+        .pb-modal17 {
           background: white;
           border-radius: 8px;
           width: 500px;
@@ -538,14 +538,14 @@ const ProductBrandsComponent = () => {
           overflow: auto;
         }
 
-        .pb-view-modal {
+        .pb-view-modal17 {
           background: white;
           border-radius: 8px;
           width: 400px;
           max-width: 90vw;
         }
 
-        .pb-modal-header {
+        .pb-modal-header17 {
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -553,14 +553,14 @@ const ProductBrandsComponent = () => {
           border-bottom: 1px solid #e5e7eb;
         }
 
-        .pb-modal-title {
+        .pb-modal-title17 {
           margin: 0;
           font-size: 18px;
           font-weight: 600;
           color: #1f2937;
         }
 
-        .pb-close-btn {
+        .pb-close-btn17 {
           background: none;
           border: none;
           cursor: pointer;
@@ -568,19 +568,19 @@ const ProductBrandsComponent = () => {
           color: #6b7280;
         }
 
-        .pb-close-btn:hover {
+        .pb-close-btn17:hover {
           color: #374151;
         }
 
-        .pb-modal-body {
+        .pb-modal-body17 {
           padding: 20px;
         }
 
-        .pb-form-group {
+        .pb-form-group17 {
           margin-bottom: 20px;
         }
 
-        .pb-form-label {
+        .pb-form-label17 {
           display: block;
           font-size: 14px;
           font-weight: 500;
@@ -588,11 +588,11 @@ const ProductBrandsComponent = () => {
           margin-bottom: 8px;
         }
 
-        .pb-required {
+        .pb-required17 {
           color: #ef4444;
         }
 
-        .pb-form-input {
+        .pb-form-input17 {
           width: 100%;
           padding: 12px;
           border: 1px solid #d1d5db;
@@ -602,14 +602,14 @@ const ProductBrandsComponent = () => {
           box-sizing: border-box;
         }
 
-        .pb-form-input:focus {
+        .pb-form-input17:focus {
           outline: none;
           border-color: #6366f1;
           background: white;
           box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
 
-        .pb-form-textarea {
+        .pb-form-textarea17 {
           width: 100%;
           padding: 12px;
           border: 1px solid #d1d5db;
@@ -621,20 +621,20 @@ const ProductBrandsComponent = () => {
           box-sizing: border-box;
         }
 
-        .pb-form-textarea:focus {
+        .pb-form-textarea17:focus {
           outline: none;
           border-color: #6366f1;
           background: white;
           box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
 
-        .pb-radio-group {
+        .pb-radio-group17 {
           display: flex;
           gap: 20px;
           margin-top: 8px;
         }
 
-        .pb-radio-label {
+        .pb-radio-label17 {
           display: flex;
           align-items: center;
           gap: 8px;
@@ -642,11 +642,11 @@ const ProductBrandsComponent = () => {
           font-size: 14px;
         }
 
-        .pb-radio-label input[type="radio"] {
+        .pb-radio-label17 input[type="radio"] {
           margin: 0;
         }
 
-        .pb-file-upload {
+        .pb-file-upload17 {
           display: flex;
           align-items: center;
           gap: 12px;
@@ -656,11 +656,11 @@ const ProductBrandsComponent = () => {
           border-radius: 6px;
         }
 
-        .pb-file-input {
+        .pb-file-input17 {
           display: none;
         }
 
-        .pb-file-label {
+        .pb-file-label17 {
           padding: 8px 16px;
           background: #e5e7eb;
           border: 1px solid #d1d5db;
@@ -670,16 +670,16 @@ const ProductBrandsComponent = () => {
           color: #374151;
         }
 
-        .pb-file-label:hover {
+        .pb-file-label17:hover {
           background: #d1d5db;
         }
 
-        .pb-file-name {
+        .pb-file-name17 {
           font-size: 14px;
           color: #6b7280;
         }
 
-        .pb-modal-footer {
+        .pb-modal-footer17 {
           display: flex;
           justify-content: flex-end;
           gap: 12px;
@@ -687,7 +687,7 @@ const ProductBrandsComponent = () => {
           border-top: 1px solid #e5e7eb;
         }
 
-        .pb-btn-close {
+        .pb-btn-close17 {
           padding: 8px 16px;
           background: #6b7280;
           color: white;
@@ -697,11 +697,11 @@ const ProductBrandsComponent = () => {
           font-size: 14px;
         }
 
-        .pb-btn-close:hover {
+        .pb-btn-close17:hover {
           background: #4b5563;
         }
 
-        .pb-btn-save {
+        .pb-btn-save17 {
           padding: 8px 16px;
           background: #6366f1;
           color: white;
@@ -714,21 +714,21 @@ const ProductBrandsComponent = () => {
           gap: 6px;
         }
 
-        .pb-btn-save:hover {
+        .pb-btn-save17:hover {
           background: #5855e7;
         }
 
-        .pb-view-body {
+        .pb-view-body17 {
           padding: 20px;
         }
 
-        .pb-brand-display {
+        .pb-brand-display17 {
           display: flex;
           align-items: center;
           gap: 20px;
         }
 
-        .pb-brand-logo {
+        .pb-brand-logo17 {
           width: 120px;
           height: 80px;
           background: #dc2626;
@@ -738,47 +738,47 @@ const ProductBrandsComponent = () => {
           justify-content: center;
         }
 
-        .pb-logo-placeholder {
+        .pb-logo-placeholder17 {
           display: flex;
           align-items: center;
           justify-content: center;
         }
 
-        .pb-logo-text {
+        .pb-logo-text17 {
           color: white;
           font-size: 18px;
           font-weight: bold;
         }
 
-        .pb-brand-info {
+        .pb-brand-info17 {
           flex: 1;
         }
 
-        .pb-brand-name {
+        .pb-brand-name17 {
           margin: 0 0 8px 0;
           font-size: 24px;
           font-weight: bold;
           color: #1f2937;
         }
 
-        .pb-brand-status {
+        .pb-brand-status17 {
           padding: 4px 8px;
           border-radius: 4px;
           font-size: 12px;
           font-weight: 500;
         }
 
-        .pb-brand-status.active {
+        .pb-brand-status17.active17 {
           background: #dcfce7;
           color: #16a34a;
         }
 
-        .pb-brand-status.inactive {
+        .pb-brand-status17.inactive17 {
           background: #fee2e2;
           color: #dc2626;
         }
 
-        .pb-delete-modal {
+        .pb-delete-modal17 {
           background: white;
           border-radius: 8px;
           padding: 40px;
@@ -787,30 +787,30 @@ const ProductBrandsComponent = () => {
           max-width: 90vw;
         }
 
-        .pb-delete-icon {
+        .pb-delete-icon17 {
           margin-bottom: 20px;
         }
 
-        .pb-delete-title {
+        .pb-delete-title17 {
           margin: 0 0 10px 0;
           font-size: 20px;
           color: #1f2937;
           font-weight: 600;
         }
 
-        .pb-delete-message {
+        .pb-delete-message17 {
           margin: 0 0 30px 0;
           color: #6b7280;
           font-size: 14px;
         }
 
-        .pb-delete-actions {
+        .pb-delete-actions17 {
           display: flex;
           gap: 12px;
           justify-content: center;
         }
 
-        .pb-btn-danger {
+        .pb-btn-danger17 {
           background: #6366f1;
           color: white;
           border: none;
@@ -821,11 +821,11 @@ const ProductBrandsComponent = () => {
           font-weight: 500;
         }
 
-        .pb-btn-danger:hover {
+        .pb-btn-danger17:hover {
           background: #5855e7;
         }
 
-        .pb-btn-cancel {
+        .pb-btn-cancel17 {
           background: #6b7280;
           color: white;
           border: none;
@@ -836,7 +836,7 @@ const ProductBrandsComponent = () => {
           font-weight: 500;
         }
 
-        .pb-btn-cancel:hover {
+        .pb-btn-cancel17:hover {
           background: #4b5563;
         }
       `}</style>

@@ -140,288 +140,285 @@ const Location = () => {
   };
 
   if (error) {
-    return (
-      <div className="location-error-boundary">
-        <h2>Error</h2>
-        <p>{error}</p>
-        <button onClick={fetchLocations}>Retry</button>
-      </div>
-    );
-  }
-
   return (
-    <div className="location-management-container">
-      {/* Header */}
-      <div className="location-management-header">
-        <div className="location-header-controls">
-          <button className="location-icon-btn">
-            <ChevronDown size={16} />
-          </button>
-          <button className="location-icon-btn">
-            <Search size={16} />
-          </button>
-          <button className="location-icon-btn" onClick={handleAddNew}>
-            <Edit size={16} />
-          </button>
-        </div>
-      </div>
-
-      {/* Search Filters */}
-      <div className="location-search-section">
-        <div className="location-search-row">
-          <div className="location-search-group">
-            <label>Countries</label>
-            <input
-              type="text"
-              placeholder="Countries"
-              value={searchFilters.countries}
-              onChange={(e) => setSearchFilters({...searchFilters, countries: e.target.value})}
-            />
-          </div>
-          <div className="location-search-group">
-            <label>States</label>
-            <input
-              type="text"
-              placeholder="States"
-              value={searchFilters.states}
-              onChange={(e) => setSearchFilters({...searchFilters, states: e.target.value})}
-            />
-          </div>
-        </div>
-        <div className="location-search-row">
-          <div className="location-search-group">
-            <label>Cities</label>
-            <input
-              type="text"
-              placeholder="Cities"
-              value={searchFilters.cities}
-              onChange={(e) => setSearchFilters({...searchFilters, cities: e.target.value})}
-            />
-          </div>
-          <div className="location-search-group">
-            <label>Status</label>
-            <select
-              value={searchFilters.status}
-              onChange={(e) => setSearchFilters({...searchFilters, status: e.target.value})}
-            >
-              <option value="">All Status</option>
-              <option value="Active">Active</option>
-              <option value="Inactive">Inactive</option>
-            </select>
-          </div>
-        </div>
-        <div className="location-search-buttons">
-          <button className="location-search-btn" onClick={handleSearch}>
-            <Search size={16} />
-            Search
-          </button>
-          <button className="location-clear-btn" onClick={handleClear}>
-            <X size={16} />
-            Clear
-          </button>
-        </div>
-      </div>
-
-      {/* Data Table */}
-      <div className="location-table-container">
-        {isLoading ? (
-          <div className="location-loading">Loading...</div>
-        ) : filteredLocations.length === 0 ? (
-          <div className="location-empty-state">
-            <h3>No Locations Found</h3>
-            <p>Try adjusting your search filters or add a new location.</p>
-          </div>
-        ) : (
-          <table className="location-data-table">
-            <thead>
-              <tr>
-                <th>Countries</th>
-                <th>States</th>
-                <th>Cities</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredLocations.map((location) => (
-                <tr key={location.id}>
-                  <td>{location.country}</td>
-                  <td>{location.state}</td>
-                  <td>{location.city}</td>
-                  <td>
-                    <span className={`location-status location-status-${location.status.toLowerCase()}`}>
-                      {location.status}
-                    </span>
-                  </td>
-                  <td>
-                    <div className="location-action-buttons">
-                      <button
-                        className="location-action-btn location-edit-btn"
-                        onClick={() => handleEdit(location)}
-                      >
-                        <Edit size={14} />
-                      </button>
-                      <button
-                        className="location-action-btn location-delete-btn"
-                        onClick={() => handleDelete(location)}
-                      >
-                        <Trash2 size={14} />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
-      </div>
-
-      {/* Pagination */}
-      <div className="location-pagination">
-        <span className="location-pagination-info">
-          Showing 1 to {filteredLocations.length} of {locations.length} entries
-        </span>
-        <div className="location-pagination-controls">
-          <button className="location-pagination-btn">
-            <ChevronLeft size={16} />
-          </button>
-          <button className="location-pagination-btn location-pagination-active">1</button>
-          <button className="location-pagination-btn">2</button>
-          <button className="location-pagination-btn">3</button>
-          <button className="location-pagination-btn">
-            <ChevronRight size={16} />
-          </button>
-        </div>
-      </div>
-
-      {/* Location Modal */}
-      {showLocationModal && (
-        <div className="location-modal-overlay">
-          <div className="location-modal">
-            <div className="location-modal-header">
-              <h3>Location</h3>
-            </div>
-            <div className="location-modal-body">
-              <div className="location-form-row">
-                <div className="location-form-group">
-                  <label>Country</label>
-                  <select
-                    value={locationForm.country}
-                    onChange={(e) => setLocationForm({...locationForm, country: e.target.value})}
-                  >
-                    <option value="">Select Country</option>
-                    {countries.map(country => (
-                      <option key={country} value={country}>{country}</option>
-                    ))}
-                  </select>
-                  <ChevronDown className="location-select-icon" size={16} />
-                </div>
-                <div className="location-form-group">
-                  <label>State</label>
-                  <select
-                    value={locationForm.state}
-                    onChange={(e) => setLocationForm({...locationForm, state: e.target.value})}
-                  >
-                    <option value="">Select State</option>
-                    {states.map(state => (
-                      <option key={state} value={state}>{state}</option>
-                    ))}
-                  </select>
-                  <ChevronDown className="location-select-icon" size={16} />
-                </div>
-              </div>
-              <div className="location-form-row">
-                <div className="location-form-group">
-                  <label>City</label>
-                  <select
-                    value={locationForm.city}
-                    onChange={(e) => setLocationForm({...locationForm, city: e.target.value})}
-                  >
-                    <option value="">Select City</option>
-                    {cities.map(city => (
-                      <option key={city} value={city}>{city}</option>
-                    ))}
-                  </select>
-                  <ChevronDown className="location-select-icon" size={16} />
-                </div>
-                <div className="location-form-group">
-                  <label>Action</label>
-                  <div className="location-radio-group">
-                    <label className="location-radio-label">
-                      <input
-                        type="radio"
-                        name="status"
-                        value="Active"
-                        checked={locationForm.status === 'Active'}
-                        onChange={(e) => setLocationForm({...locationForm, status: e.target.value})}
-                      />
-                      Active
-                    </label>
-                    <label className="location-radio-label">
-                      <input
-                        type="radio"
-                        name="status"
-                        value="Inactive"
-                        checked={locationForm.status === 'Inactive'}
-                        onChange={(e) => setLocationForm({...locationForm, status: e.target.value})}
-                      />
-                      Inactive
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="location-modal-footer">
-              <button
-                className="location-btn location-btn-primary"
-                onClick={handleSaveLocation}
-              >
-                
-                Save
-              </button>
-              <button
-                className="location-btn location-btn-secondary"
-                onClick={() => setShowLocationModal(false)}
-              >
-                Close
-              </button>
-              
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Delete Confirmation Modal */}
-      {showDeleteModal && (
-        <div className="location-modal-overlay">
-          <div className="location-modal location-delete-modal">
-            <div className="location-modal-body">
-              <div className="location-delete-icon">
-                <AlertCircle size={48} color="#fbbf24" />
-              </div>
-              <h3>Are you sure?</h3>
-              <p>You will not be able to recover the deleted record!</p>
-            </div>
-            <div className="location-modal-footer">
-              <button
-                className="location-btn location-btn-primary"
-                onClick={handleConfirmDelete}
-              >
-                Yes, Delete it!
-              </button>
-              <button
-                className="location-btn location-btn-secondary"
-                onClick={() => setShowDeleteModal(false)}
-              >
-                No, Cancel!
-              </button>
-              
-            </div>
-          </div>
-        </div>
-      )}
+    <div className="location7-error7-boundary7">
+      <h2>Error</h2>
+      <p>{error}</p>
+      <button onClick={fetchLocations}>Retry</button>
     </div>
   );
+}
+
+return (
+  <div className="location7-management7-container7">
+    {/* Header */}
+    <div className="location7-management7-header7">
+      <div className="location7-header7-controls7">
+        <button className="location7-icon7-btn7">
+          <ChevronDown size={16} />
+        </button>
+        <button className="location7-icon7-btn7">
+          <Search size={16} />
+        </button>
+        <button className="location7-icon7-btn7" onClick={handleAddNew}>
+          <Edit size={16} />
+        </button>
+      </div>
+    </div>
+
+    {/* Search Filters */}
+    <div className="location7-search7-section7">
+      <div className="location7-search7-row7">
+        <div className="location7-search7-group7">
+          <label>Countries</label>
+          <input
+            type="text"
+            placeholder="Countries"
+            value={searchFilters.countries}
+            onChange={(e) => setSearchFilters({...searchFilters, countries: e.target.value})}
+          />
+        </div>
+        <div className="location7-search7-group7">
+          <label>States</label>
+          <input
+            type="text"
+            placeholder="States"
+            value={searchFilters.states}
+            onChange={(e) => setSearchFilters({...searchFilters, states: e.target.value})}
+          />
+        </div>
+      </div>
+      <div className="location7-search7-row7">
+        <div className="location7-search7-group7">
+          <label>Cities</label>
+          <input
+            type="text"
+            placeholder="Cities"
+            value={searchFilters.cities}
+            onChange={(e) => setSearchFilters({...searchFilters, cities: e.target.value})}
+          />
+        </div>
+        <div className="location7-search7-group7">
+          <label>Status</label>
+          <select
+            value={searchFilters.status}
+            onChange={(e) => setSearchFilters({...searchFilters, status: e.target.value})}
+          >
+            <option value="">All Status</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+      </div>
+      <div className="location7-search7-buttons7">
+        <button className="location7-search7-btn7" onClick={handleSearch}>
+          <Search size={16} />
+          Search
+        </button>
+        <button className="location7-clear7-btn7" onClick={handleClear}>
+          <X size={16} />
+          Clear
+        </button>
+      </div>
+    </div>
+
+    {/* Data Table */}
+    <div className="location7-table7-container7">
+      {isLoading ? (
+        <div className="location7-loading7">Loading...</div>
+      ) : filteredLocations.length === 0 ? (
+        <div className="location7-empty7-state7">
+          <h3>No Locations Found</h3>
+          <p>Try adjusting your search filters or add a new location.</p>
+        </div>
+      ) : (
+        <table className="location7-data7-table7">
+          <thead>
+            <tr>
+              <th>Countries</th>
+              <th>States</th>
+              <th>Cities</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredLocations.map((location) => (
+              <tr key={location.id}>
+                <td>{location.country}</td>
+                <td>{location.state}</td>
+                <td>{location.city}</td>
+                <td>
+                  <span className={`location7-status7 location7-status7-${location.status.toLowerCase()}7`}>
+                    {location.status}
+                  </span>
+                </td>
+                <td>
+                  <div className="location7-action7-buttons7">
+                    <button
+                      className="location7-action7-btn7 location7-edit7-btn7"
+                      onClick={() => handleEdit(location)}
+                    >
+                      <Edit size={14} />
+                    </button>
+                    <button
+                      className="location7-action7-btn7 location7-delete7-btn7"
+                      onClick={() => handleDelete(location)}
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </div>
+
+    {/* Pagination */}
+    <div className="location7-pagination7">
+      <span className="location7-pagination7-info7">
+        Showing 1 to {filteredLocations.length} of {locations.length} entries
+      </span>
+      <div className="location7-pagination7-controls7">
+        <button className="location7-pagination7-btn7">
+          <ChevronLeft size={16} />
+        </button>
+        <button className="location7-pagination7-btn7 location7-pagination7-active7">1</button>
+        <button className="location7-pagination7-btn7">2</button>
+        <button className="location7-pagination7-btn7">3</button>
+        <button className="location7-pagination7-btn7">
+          <ChevronRight size={16} />
+        </button>
+      </div>
+    </div>
+
+    {/* Location Modal */}
+    {showLocationModal && (
+      <div className="location7-modal7-overlay7">
+        <div className="location7-modal7">
+          <div className="location7-modal7-header7">
+            <h3>Location</h3>
+          </div>
+          <div className="location7-modal7-body7">
+            <div className="location7-form7-row7">
+              <div className="location7-form7-group7">
+                <label>Country</label>
+                <select
+                  value={locationForm.country}
+                  onChange={(e) => setLocationForm({...locationForm, country: e.target.value})}
+                >
+                  <option value="">Select Country</option>
+                  {countries.map(country => (
+                    <option key={country} value={country}>{country}</option>
+                  ))}
+                </select>
+                <ChevronDown className="location7-select7-icon7" size={16} />
+              </div>
+              <div className="location7-form7-group7">
+                <label>State</label>
+                <select
+                  value={locationForm.state}
+                  onChange={(e) => setLocationForm({...locationForm, state: e.target.value})}
+                >
+                  <option value="">Select State</option>
+                  {states.map(state => (
+                    <option key={state} value={state}>{state}</option>
+                  ))}
+                </select>
+                <ChevronDown className="location7-select7-icon7" size={16} />
+              </div>
+            </div>
+            <div className="location7-form7-row7">
+              <div className="location7-form7-group7">
+                <label>City</label>
+                <select
+                  value={locationForm.city}
+                  onChange={(e) => setLocationForm({...locationForm, city: e.target.value})}
+                >
+                  <option value="">Select City</option>
+                  {cities.map(city => (
+                    <option key={city} value={city}>{city}</option>
+                  ))}
+                </select>
+                <ChevronDown className="location7-select7-icon7" size={16} />
+              </div>
+              <div className="location7-form7-group7">
+                <label>Action</label>
+                <div className="location7-radio7-group7">
+                  <label className="location7-radio7-label7">
+                    <input
+                      type="radio"
+                      name="status"
+                      value="Active"
+                      checked={locationForm.status === 'Active'}
+                      onChange={(e) => setLocationForm({...locationForm, status: e.target.value})}
+                    />
+                    Active
+                  </label>
+                  <label className="location7-radio7-label7">
+                    <input
+                      type="radio"
+                      name="status"
+                      value="Inactive"
+                      checked={locationForm.status === 'Inactive'}
+                      onChange={(e) => setLocationForm({...locationForm, status: e.target.value})}
+                    />
+                    Inactive
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="location7-modal7-footer7">
+            <button
+              className="location7-btn7 location7-btn7-primary7"
+              onClick={handleSaveLocation}
+            >
+              Save
+            </button>
+            <button
+              className="location7-btn7 location7-btn7-secondary7"
+              onClick={() => setShowLocationModal(false)}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Delete Confirmation Modal */}
+    {showDeleteModal && (
+      <div className="location7-modal7-overlay7">
+        <div className="location7-modal7 location7-delete7-modal7">
+          <div className="location7-modal7-body7">
+            <div className="location7-delete7-icon7">
+              <AlertCircle size={48} color="#fbbf24" />
+            </div>
+            <h3>Are you sure?</h3>
+            <p>You will not be able to recover the deleted record!</p>
+          </div>
+          <div className="location7-modal7-footer7">
+            <button
+              className="location7-btn7 location7-btn7-primary7"
+              onClick={handleConfirmDelete}
+            >
+              Yes, Delete it!
+            </button>
+            <button
+              className="location7-btn7 location7-btn7-secondary7"
+              onClick={() => setShowDeleteModal(false)}
+            >
+              No, Cancel!
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+);
 };
 
 export default Location;

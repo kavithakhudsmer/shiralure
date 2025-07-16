@@ -1,5 +1,5 @@
 /* License Component Styles */
-.license-container {
+.license-container6 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,106 +8,106 @@
   background-color: #f8fafc;
 }
 
-.license-card {
+.license-card6 {
   width: 100%;
-  max-width: 800px; /* Large width as requested */
-  min-height: 500px; /* Increased height */
+  max-width: 800px;
+  min-height: 500px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border: 1px solid #e5e7eb;
-  padding: 60px; /* Increased padding for more height */
+  padding: 60px;
 }
 
-.license-title {
-  font-size: 30px; /* Increased from 28px for better prominence */
+.license-title6 {
+  font-size: 30px;
   font-weight: 600;
   color: #111827;
-  margin: 0 0 40px 0; /* Increased bottom margin */
+  margin: 0 0 40px 0;
   border-bottom: 1px solid #e5e7eb;
-  padding-bottom: 20px; /* Increased padding */
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Updated font family */
+  padding-bottom: 20px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.license-form {
-  margin-bottom: 50px; /* Increased margin for more spacing */
+.license-form6 {
+  margin-bottom: 50px;
 }
 
-.license-label {
+.license-label6 {
   display: block;
-  font-size: 16px; /* Kept as is, but applied new font family */
-  font-weight: bold; /* Made the label bold */
+  font-size: 16px;
+  font-weight: bold;
   color: #374151;
   margin-bottom: 12px;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Updated font family */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.license-input {
+.license-input6 {
   width: 100%;
-  padding: 20px 24px; /* Increased padding for more height */
+  padding: 20px 24px;
   border: 1px solid #d1d5db;
   border-radius: 8px;
   background-color: #f9fafb;
   color: #111827;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Updated from monospace stack */
-  font-size: 16px; /* Kept as is, but with new font family */
-  font-weight: normal; /* Removed bold from license key value */
-  line-height: 1.6; /* Increased line height */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.6;
   box-sizing: border-box;
   transition: all 0.2s ease-in-out;
-  min-height: 60px; /* Added minimum height */
+  min-height: 60px;
 }
 
-.license-input:focus {
+.license-input6:focus {
   outline: none;
   border-color: #4752c4;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
   background-color: white;
 }
 
-.license-input::placeholder {
+.license-input6::placeholder {
   color: #9ca3af;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.license-actions {
+.license-actions6 {
   display: flex;
   justify-content: flex-end;
 }
 
-.save-button {
+.save-button6 {
   display: inline-flex;
   align-items: center;
   padding: 12px 24px;
   background-color: #4752c4;
   color: white;
   font-weight: 500;
-  font-size: 16px; /* Kept as is, but applied new font family */
+  font-size: 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Updated font family */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.save-button:hover {
+.save-button6:hover {
   background-color: #4752c4;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transform: translateY(-1px);
 }
 
-.save-button:active {
+.save-button6:active {
   transform: translateY(0);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
-.save-button:focus {
+.save-button6:focus {
   outline: none;
   box-shadow: 0 0 0 3px #4752c4;
 }
 
-.save-icon {
+.save-icon6 {
   width: 18px;
   height: 18px;
   margin-right: 8px;
@@ -116,39 +116,39 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .license-card {
+  .license-card6 {
     max-width: 100%;
     padding: 24px;
     margin: 10px;
   }
   
-  .license-title {
-    font-size: 22px; /* Adjusted from 20px for better scaling */
+  .license-title6 {
+    font-size: 22px;
     margin-bottom: 24px;
   }
   
-  .license-input {
+  .license-input6 {
     padding: 14px 16px;
-    font-size: 14px; /* Adjusted from 14px for consistency */
+    font-size: 14px;
   }
   
-  .save-button {
+  .save-button6 {
     padding: 10px 20px;
-    font-size: 14px; /* Adjusted from 14px for consistency */
+    font-size: 14px;
   }
   
-  .save-icon {
+  .save-icon6 {
     width: 16px;
     height: 16px;
   }
 }
 
 @media (max-width: 480px) {
-  .license-container {
+  .license-container6 {
     padding: 10px;
   }
   
-  .license-card {
+  .license-card6 {
     padding: 20px;
   }
 }

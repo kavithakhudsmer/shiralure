@@ -118,17 +118,17 @@ const Outlets = () => {
   };
 
   const renderTableView = () => (
-    <div className="outlet-container">
-      <div className="outlet-header">
-        <h2 className="outlet-title">OUTLETS</h2>
-        <div className="outlet-actions">
-          <button className="outlet-btn outlet-btn-add" onClick={() => openModal('add')}>
+    <div className="outlet-container12">
+      <div className="outlet-header12">
+        <h2 className="outlet-title12">OUTLETS</h2>
+        <div className="outlet-actions12">
+          <button className="outlet-btn12 outlet-btn-add12" onClick={() => openModal('add')}>
             <Plus size={18} />Add
           </button>
         </div>
       </div>
-      <div className="outlet-table-container">
-        <table className="outlet-table">
+      <div className="outlet-table-container12">
+        <table className="outlet-table12">
           <thead>
             <tr>
               <th>NAME</th>
@@ -143,28 +143,28 @@ const Outlets = () => {
                 <td>{outlet.name}</td>
                 <td>{outlet.place}</td>
                 <td>
-                  <span className={`outlet-status ${outlet.status.toLowerCase()}`}>
+                  <span className={`outlet-status12 ${outlet.status.toLowerCase()}12`}>
                     {outlet.status}
                   </span>
                 </td>
                 <td>
-                  <div className="outlet-action-buttons">
+                  <div className="outlet-action-buttons12">
                     <button
-                      className="outlet-action-btn outlet-view-btn"
+                      className="outlet-action-btn12 outlet-view-btn12"
                       onClick={() => openModal('view', outlet)}
                       title="View"
                     >
                       <Eye size={16} />
                     </button>
                     <button
-                      className="outlet-action-btn outlet-edit-btn"
+                      className="outlet-action-btn12 outlet-edit-btn12"
                       onClick={() => openModal('edit', outlet)}
                       title="Edit"
                     >
                       <Edit size={16} />
                     </button>
                     <button
-                      className="outlet-action-btn outlet-delete-btn"
+                      className="outlet-action-btn12 outlet-delete-btn12"
                       onClick={() => openModal('delete', outlet)}
                       title="Delete"
                     >
@@ -176,7 +176,7 @@ const Outlets = () => {
             ))}
           </tbody>
         </table>
-        <div className="outlet-table-footer">
+        <div className="outlet-table-footer12">
           Showing 1 out of {outlets.length} entries
         </div>
       </div>
@@ -184,22 +184,22 @@ const Outlets = () => {
   );
 
   const renderViewModal = () => (
-    <div className="outlet-modal-overlay" onClick={() => closeModal('view')}>
-      <div className="outlet-modal-content outlet-view-modal" onClick={(e) => e.stopPropagation()}>
-        <div className="outlet-view-modal-header">
-          <h3 className="outlet-view-modal-title">OUTLETS</h3>
-          <button className="outlet-view-modal-close" onClick={() => closeModal('view')}>
+    <div className="outlet-modal-overlay12" onClick={() => closeModal('view')}>
+      <div className="outlet-modal-content12 outlet-view-modal12" onClick={(e) => e.stopPropagation()}>
+        <div className="outlet-view-modal-header12">
+          <h3 className="outlet-view-modal-title12">OUTLETS</h3>
+          <button className="outlet-view-modal-close12" onClick={() => closeModal('view')}>
             <X size={18} />
           </button>
         </div>
-        <div className="outlet-view-modal-body">
-          <div className="outlet-view-detail-item">
+        <div className="outlet-view-modal-body12">
+          <div className="outlet-view-detail-item12">
             <label>NAME :</label>
             <span>{selectedOutlet?.name}</span>
           </div>
-          <div className="outlet-view-detail-item">
+          <div className="outlet-view-detail-item12">
             <label>STATUS :</label>
-            <span className={`outlet-view-status ${selectedOutlet?.status?.toLowerCase()}`}>
+            <span className={`outlet-view-status12 ${selectedOutlet?.status?.toLowerCase()}12`}>
               {selectedOutlet?.status}
             </span>
           </div>
@@ -209,17 +209,17 @@ const Outlets = () => {
   );
 
   const renderFormModal = (isEdit = false) => (
-    <div className="outlet-modal-overlay" onClick={() => closeModal(isEdit ? 'edit' : 'add')}>
-      <div className="outlet-modal-content outlet-form-modal" onClick={(e) => e.stopPropagation()}>
-        <div className="outlet-form-modal-header">
-          <h3 className="outlet-form-modal-title">OUTLETS</h3>
-          <button className="outlet-form-modal-close" onClick={() => closeModal(isEdit ? 'edit' : 'add')}>
+    <div className="outlet-modal-overlay12" onClick={() => closeModal(isEdit ? 'edit' : 'add')}>
+      <div className="outlet-modal-content12 outlet-form-modal12" onClick={(e) => e.stopPropagation()}>
+        <div className="outlet-form-modal-header12">
+          <h3 className="outlet-form-modal-title12">OUTLETS</h3>
+          <button className="outlet-form-modal-close12" onClick={() => closeModal(isEdit ? 'edit' : 'add')}>
             <X size={18} />
           </button>
         </div>
-        <div className="outlet-form-modal-body">
-          <div className="outlet-form-grid">
-            <div className="outlet-form-group">
+        <div className="outlet-form-modal-body12">
+          <div className="outlet-form-grid12">
+            <div className="outlet-form-group12">
               <label>NAME *</label>
               <input
                 type="text"
@@ -229,7 +229,7 @@ const Outlets = () => {
                 required
               />
             </div>
-            <div className="outlet-form-group">
+            <div className="outlet-form-group12">
               <label>LATITUDE/LONGITUDE</label>
               <input
                 type="text"
@@ -239,7 +239,7 @@ const Outlets = () => {
                 placeholder=""
               />
             </div>
-            <div className="outlet-form-group">
+            <div className="outlet-form-group12">
               <label>EMAIL</label>
               <input
                 type="email"
@@ -248,7 +248,7 @@ const Outlets = () => {
                 onChange={handleInputChange}
               />
             </div>
-            <div className="outlet-form-group">
+            <div className="outlet-form-group12">
               <label>PHONE</label>
               <input
                 type="tel"
@@ -257,7 +257,7 @@ const Outlets = () => {
                 onChange={handleInputChange}
               />
             </div>
-            <div className="outlet-form-group">
+            <div className="outlet-form-group12">
               <label>CITY *</label>
               <input
                 type="text"
@@ -267,7 +267,7 @@ const Outlets = () => {
                 required
               />
             </div>
-            <div className="outlet-form-group">
+            <div className="outlet-form-group12">
               <label>ADDRESS *</label>
               <input
                 type="text"
@@ -277,7 +277,7 @@ const Outlets = () => {
                 required
               />
             </div>
-            <div className="outlet-form-group">
+            <div className="outlet-form-group12">
               <label>ZIP CODE *</label>
               <input
                 type="text"
@@ -287,10 +287,10 @@ const Outlets = () => {
                 required
               />
             </div>
-            <div className="outlet-form-group">
+            <div className="outlet-form-group12">
               <label>STATUS *</label>
-              <div className="outlet-radio-group">
-                <label className="outlet-radio-label">
+              <div className="outlet-radio-group12">
+                <label className="outlet-radio-label12">
                   <input
                     type="radio"
                     name="status"
@@ -300,7 +300,7 @@ const Outlets = () => {
                   />
                   Active
                 </label>
-                <label className="outlet-radio-label">
+                <label className="outlet-radio-label12">
                   <input
                     type="radio"
                     name="status"
@@ -312,7 +312,7 @@ const Outlets = () => {
                 </label>
               </div>
             </div>
-            <div className="outlet-form-group outlet-full-width">
+            <div className="outlet-form-group12 outlet-full-width12">
               <label>ADDRESS *</label>
               <textarea
                 name="address"
@@ -324,11 +324,11 @@ const Outlets = () => {
             </div>
           </div>
         </div>
-        <div className="outlet-form-modal-footer">
-          <button className="outlet-btn-save-primary" onClick={handleSave}>
+        <div className="outlet-form-modal-footer12">
+          <button className="outlet-btn-save-primary12" onClick={handleSave}>
             SAVE
           </button>
-          <button className="outlet-btn-clear-secondary" onClick={handleClear}>
+          <button className="outlet-btn-clear-secondary12" onClick={handleClear}>
             CLEAR
           </button>
         </div>
@@ -337,21 +337,21 @@ const Outlets = () => {
   );
 
   const renderDeleteModal = () => (
-    <div className="outlet-modal-overlay" onClick={() => closeModal('delete')}>
-      <div className="outlet-modal-content outlet-delete-modal" onClick={(e) => e.stopPropagation()}>
-        <div className="outlet-delete-modal-content">
-          <div className="outlet-delete-modal-icon">
-            <div className="outlet-warning-circle">
-              <span className="outlet-exclamation">!</span>
+    <div className="outlet-modal-overlay12" onClick={() => closeModal('delete')}>
+      <div className="outlet-modal-content12 outlet-delete-modal12" onClick={(e) => e.stopPropagation()}>
+        <div className="outlet-delete-modal-content12">
+          <div className="outlet-delete-modal-icon12">
+            <div className="outlet-warning-circle12">
+              <span className="outlet-exclamation12">!</span>
             </div>
           </div>
-          <h3 className="outlet-delete-modal-title">Are you sure ?</h3>
-          <p className="outlet-delete-modal-message">You will not be able to recover the deleted record!</p>
-          <div className="outlet-delete-modal-actions">
-            <button className="outlet-btn-delete-yes" onClick={handleDelete}>
+          <h3 className="outlet-delete-modal-title12">Are you sure ?</h3>
+          <p className="outlet-delete-modal-message12">You will not be able to recover the deleted record!</p>
+          <div className="outlet-delete-modal-actions12">
+            <button className="outlet-btn-delete-yes12" onClick={handleDelete}>
               Yes, Delete it !
             </button>
-            <button className="outlet-btn-delete-no" onClick={() => closeModal('delete')}>
+            <button className="outlet-btn-delete-no12" onClick={() => closeModal('delete')}>
               No, Cancel !
             </button>
           </div>

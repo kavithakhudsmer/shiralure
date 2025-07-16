@@ -98,42 +98,42 @@ const RolePermissions = () => {
   };
 
   return (
-    <div className="user-role-permissions">
-      <div className="user-role-permissions__header">
-        <h2 className="user-role-permissions__title">Role & Permissions</h2>
+    <div className="user-role-permissions20">
+      <div className="user-role-permissions__header20">
+        <h2 className="user-role-permissions__title20">Role & Permissions</h2>
       </div>
       
-      <div className="user-role-permissions__table-container">
-        <table className="user-role-permissions__table">
-          <thead className="user-role-permissions__thead">
+      <div className="user-role-permissions__table-container20">
+        <table className="user-role-permissions__table20">
+          <thead className="user-role-permissions__thead20">
             <tr>
-              <th className="user-role-permissions__th">Role Name</th>
-              <th className="user-role-permissions__th">Description</th>
-              <th className="user-role-permissions__th">Permissions</th>
-              <th className="user-role-permissions__th">Status</th>
-              <th className="user-role-permissions__th">Action</th>
+              <th className="user-role-permissions__th20">Role Name</th>
+              <th className="user-role-permissions__th20">Description</th>
+              <th className="user-role-permissions__th20">Permissions</th>
+              <th className="user-role-permissions__th20">Status</th>
+              <th className="user-role-permissions__th20">Action</th>
             </tr>
           </thead>
-          <tbody className="user-role-permissions__tbody">
+          <tbody className="user-role-permissions__tbody20">
             {roles.map((role) => (
-              <tr key={role.id} className="user-role-permissions__tr">
-                <td className="user-role-permissions__td user-role-permissions__td--name">
+              <tr key={role.id} className="user-role-permissions__tr20">
+                <td className="user-role-permissions__td20 user-role-permissions__td--name20">
                   {role.name}
                 </td>
-                <td className="user-role-permissions__td user-role-permissions__td--description">
+                <td className="user-role-permissions__td20 user-role-permissions__td--description20">
                   {role.description}
                 </td>
-                <td className="user-role-permissions__td user-role-permissions__td--permissions">
+                <td className="user-role-permissions__td20 user-role-permissions__td--permissions20">
                   {role.permissions}
                 </td>
-                <td className="user-role-permissions__td user-role-permissions__td--status">
-                  <span className="user-role-permissions__status-badge">
+                <td className="user-role-permissions__td20 user-role-permissions__td--status20">
+                  <span className="user-role-permissions__status-badge20">
                     {role.status}
                   </span>
                 </td>
-                <td className="user-role-permissions__td user-role-permissions__td--action">
+                <td className="user-role-permissions__td20 user-role-permissions__td--action20">
                   <button 
-                    className="user-role-permissions__action-btn"
+                    className="user-role-permissions__action-btn20"
                     onClick={() => handleViewDetails(role)}
                     aria-label={`View details for ${role.name}`}
                   >
@@ -148,14 +148,14 @@ const RolePermissions = () => {
 
       {/* Modal for Role Details */}
       {selectedRole && (
-        <div className="user-role-permissions__modal-overlay" onClick={closeModal}>
-          <div className="user-role-permissions__modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="user-role-permissions__modal-header">
-              <h3 className="user-role-permissions__modal-title">
+        <div className="user-role-permissions__modal-overlay20" onClick={closeModal}>
+          <div className="user-role-permissions__modal-content20" onClick={(e) => e.stopPropagation()}>
+            <div className="user-role-permissions__modal-header20">
+              <h3 className="user-role-permissions__modal-title20">
                 {selectedRole.name} Role Details
               </h3>
               <button 
-                className="user-role-permissions__modal-close"
+                className="user-role-permissions__modal-close20"
                 onClick={closeModal}
                 aria-label="Close modal"
               >
@@ -163,39 +163,39 @@ const RolePermissions = () => {
               </button>
             </div>
             
-            <div className="user-role-permissions__modal-body">
-              <div className="user-role-permissions__detail-section">
-                <h4 className="user-role-permissions__detail-label">Description</h4>
-                <p className="user-role-permissions__detail-value">{selectedRole.description}</p>
+            <div className="user-role-permissions__modal-body20">
+              <div className="user-role-permissions__detail-section20">
+                <h4 className="user-role-permissions__detail-label20">Description</h4>
+                <p className="user-role-permissions__detail-value20">{selectedRole.description}</p>
               </div>
               
-              <div className="user-role-permissions__detail-section">
-                <h4 className="user-role-permissions__detail-label">Status</h4>
-                <span className="user-role-permissions__status-badge">
+              <div className="user-role-permissions__detail-section20">
+                <h4 className="user-role-permissions__detail-label20">Status</h4>
+                <span className="user-role-permissions__status-badge20">
                   {selectedRole.status}
                 </span>
               </div>
               
-              <div className="user-role-permissions__detail-section">
-                <h4 className="user-role-permissions__detail-label">Detailed Permissions</h4>
-                <ul className="user-role-permissions__permissions-list">
+              <div className="user-role-permissions__detail-section20">
+                <h4 className="user-role-permissions__detail-label20">Detailed Permissions</h4>
+                <ul className="user-role-permissions__permissions-list20">
                   {selectedRole.detailedPermissions.map((permission, index) => (
-                    <li key={index} className="user-role-permissions__permission-item">
+                    <li key={index} className="user-role-permissions__permission-item20">
                       {permission}
                     </li>
                   ))}
                 </ul>
               </div>
               
-              <div className="user-role-permissions__detail-row">
-                <div className="user-role-permissions__detail-section">
-                  <h4 className="user-role-permissions__detail-label">Created Date</h4>
-                  <p className="user-role-permissions__detail-value">{selectedRole.createdDate}</p>
+              <div className="user-role-permissions__detail-row20">
+                <div className="user-role-permissions__detail-section20">
+                  <h4 className="user-role-permissions__detail-label20">Created Date</h4>
+                  <p className="user-role-permissions__detail-value20">{selectedRole.createdDate}</p>
                 </div>
                 
-                <div className="user-role-permissions__detail-section">
-                  <h4 className="user-role-permissions__detail-label">Last Modified</h4>
-                  <p className="user-role-permissions__detail-value">{selectedRole.lastModified}</p>
+                <div className="user-role-permissions__detail-section20">
+                  <h4 className="user-role-permissions__detail-label20">Last Modified</h4>
+                  <p className="user-role-permissions__detail-value20">{selectedRole.lastModified}</p>
                 </div>
               </div>
             </div>
@@ -204,7 +204,7 @@ const RolePermissions = () => {
       )}
 
       <style jsx>{`
-        .user-role-permissions {
+        .user-role-permissions20 {
           background: #ffffff;
           border-radius: 8px;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -214,20 +214,20 @@ const RolePermissions = () => {
           max-width: 100%;
         }
 
-        .user-role-permissions__header {
+        .user-role-permissions__header20 {
           padding: 20px 24px;
           border-bottom: 1px solid #e5e7eb;
           background: #ffffff;
         }
 
-        .user-role-permissions__title {
+        .user-role-permissions__title20 {
           font-size: 18px;
           font-weight: 600;
           color: #111827;
           margin: 0;
         }
 
-        .user-role-permissions__table-container {
+        .user-role-permissions__table-container20 {
           overflow-x: auto;
           overflow-y: hidden;
           width: 100%;
@@ -235,35 +235,35 @@ const RolePermissions = () => {
           scrollbar-color: #cbd5e0 #f7fafc;
         }
 
-        .user-role-permissions__table-container::-webkit-scrollbar {
+        .user-role-permissions__table-container20::-webkit-scrollbar {
           height: 8px;
         }
 
-        .user-role-permissions__table-container::-webkit-scrollbar-track {
+        .user-role-permissions__table-container20::-webkit-scrollbar-track {
           background: #f7fafc;
         }
 
-        .user-role-permissions__table-container::-webkit-scrollbar-thumb {
+        .user-role-permissions__table-container20::-webkit-scrollbar-thumb {
           background: #cbd5e0;
           border-radius: 4px;
         }
 
-        .user-role-permissions__table-container::-webkit-scrollbar-thumb:hover {
+        .user-role-permissions__table-container20::-webkit-scrollbar-thumb:hover {
           background: #a0aec0;
         }
 
-        .user-role-permissions__table {
+        .user-role-permissions__table20 {
           width: 100%;
           min-width: 800px;
           border-collapse: collapse;
           table-layout: fixed;
         }
 
-        .user-role-permissions__thead {
+        .user-role-permissions__thead20 {
           background: #f9fafb;
         }
 
-        .user-role-permissions__th {
+        .user-role-permissions__th20 {
           padding: 12px 24px;
           text-align: left;
           font-size: 12px;
@@ -275,55 +275,55 @@ const RolePermissions = () => {
           white-space: nowrap;
         }
 
-        .user-role-permissions__th:first-child {
+        .user-role-permissions__th20:first-child {
           width: 150px;
         }
 
-        .user-role-permissions__th:nth-child(2) {
+        .user-role-permissions__th20:nth-child(2) {
           width: 300px;
         }
 
-        .user-role-permissions__th:nth-child(3) {
+        .user-role-permissions__th20:nth-child(3) {
           width: 200px;
         }
 
-        .user-role-permissions__th:nth-child(4) {
+        .user-role-permissions__th20:nth-child(4) {
           width: 100px;
         }
 
-        .user-role-permissions__th:last-child {
+        .user-role-permissions__th20:last-child {
           width: 80px;
         }
 
-        .user-role-permissions__tbody {
+        .user-role-permissions__tbody20 {
           background: #ffffff;
         }
 
-        .user-role-permissions__tr {
+        .user-role-permissions__tr20 {
           transition: background-color 0.15s ease;
         }
 
-        .user-role-permissions__tr:hover {
+        .user-role-permissions__tr20:hover {
           background: #f9fafb;
         }
 
-        .user-role-permissions__tr:not(:last-child) {
+        .user-role-permissions__tr20:not(:last-child) {
           border-bottom: 1px solid #e5e7eb;
         }
 
-        .user-role-permissions__td {
+        .user-role-permissions__td20 {
           padding: 16px 24px;
           vertical-align: top;
         }
 
-        .user-role-permissions__td--name {
+        .user-role-permissions__td--name20 {
           font-size: 14px;
           font-weight: 500;
           color: #111827;
           white-space: nowrap;
         }
 
-        .user-role-permissions__td--description {
+        .user-role-permissions__td--description20 {
           font-size: 14px;
           color: #6b7280;
           line-height: 1.4;
@@ -331,18 +331,18 @@ const RolePermissions = () => {
           word-wrap: break-word;
         }
 
-        .user-role-permissions__td--permissions {
+        .user-role-permissions__td--permissions20 {
           font-size: 14px;
           color: #6b7280;
           white-space: nowrap;
         }
 
-        .user-role-permissions__td--status {
+        .user-role-permissions__td--status20 {
           padding: 16px 24px;
           vertical-align: middle;
         }
 
-        .user-role-permissions__status-badge {
+        .user-role-permissions__status-badge20 {
           display: inline-flex;
           align-items: center;
           padding: 4px 8px;
@@ -354,13 +354,13 @@ const RolePermissions = () => {
           text-transform: capitalize;
         }
 
-        .user-role-permissions__td--action {
+        .user-role-permissions__td--action20 {
           padding: 16px 24px;
           vertical-align: middle;
           text-align: center;
         }
 
-        .user-role-permissions__action-btn {
+        .user-role-permissions__action-btn20 {
           width: 32px;
           height: 32px;
           background-color: #f8d7da; /* Light red background */
@@ -374,12 +374,12 @@ const RolePermissions = () => {
           transition: background-color 0.15s ease;
         }
 
-        .user-role-permissions__action-btn:hover {
+        .user-role-permissions__action-btn20:hover {
           background-color: #f1aeb5;
         }
 
         /* Modal Styles */
-        .user-role-permissions__modal-overlay {
+        .user-role-permissions__modal-overlay20 {
           position: fixed;
           top: 0;
           left: 0;
@@ -393,7 +393,7 @@ const RolePermissions = () => {
           padding: 20px;
         }
 
-        .user-role-permissions__modal-content {
+        .user-role-permissions__modal-content20 {
           background: #ffffff;
           border-radius: 12px;
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -403,7 +403,7 @@ const RolePermissions = () => {
           overflow-y: auto;
         }
 
-        .user-role-permissions__modal-header {
+        .user-role-permissions__modal-header20 {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -411,14 +411,14 @@ const RolePermissions = () => {
           border-bottom: 1px solid #e5e7eb;
         }
 
-        .user-role-permissions__modal-title {
+        .user-role-permissions__modal-title20 {
           font-size: 18px;
           font-weight: 600;
           color: #111827;
           margin: 0;
         }
 
-        .user-role-permissions__modal-close {
+        .user-role-permissions__modal-close20 {
           background: none;
           border: none;
           cursor: pointer;
@@ -428,44 +428,44 @@ const RolePermissions = () => {
           transition: all 0.15s ease;
         }
 
-        .user-role-permissions__modal-close:hover {
+        .user-role-permissions__modal-close20:hover {
           background-color: #f3f4f6;
           color: #111827;
         }
 
-        .user-role-permissions__modal-body {
+        .user-role-permissions__modal-body20 {
           padding: 24px;
         }
 
-        .user-role-permissions__detail-section {
+        .user-role-permissions__detail-section20 {
           margin-bottom: 20px;
         }
 
-        .user-role-permissions__detail-section:last-child {
+        .user-role-permissions__detail-section20:last-child {
           margin-bottom: 0;
         }
 
-        .user-role-permissions__detail-label {
+        .user-role-permissions__detail-label20 {
           font-size: 14px;
           font-weight: 600;
           color: #374151;
           margin: 0 0 8px 0;
         }
 
-        .user-role-permissions__detail-value {
+        .user-role-permissions__detail-value20 {
           font-size: 14px;
           color: #6b7280;
           margin: 0;
           line-height: 1.5;
         }
 
-        .user-role-permissions__permissions-list {
+        .user-role-permissions__permissions-list20 {
           list-style: none;
           padding: 0;
           margin: 0;
         }
 
-        .user-role-permissions__permission-item {
+        .user-role-permissions__permission-item20 {
           font-size: 14px;
           color: #6b7280;
           padding: 6px 0;
@@ -474,7 +474,7 @@ const RolePermissions = () => {
           padding-left: 20px;
         }
 
-        .user-role-permissions__permission-item:before {
+        .user-role-permissions__permission-item20:before {
           content: '•';
           color: #10b981;
           font-weight: bold;
@@ -482,11 +482,11 @@ const RolePermissions = () => {
           left: 0;
         }
 
-        .user-role-permissions__permission-item:last-child {
+        .user-role-permissions__permission-item20:last-child {
           border-bottom: none;
         }
 
-        .user-role-permissions__detail-row {
+        .user-role-permissions__detail-row20 {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 20px;
@@ -494,111 +494,111 @@ const RolePermissions = () => {
 
         /* Responsive behavior */
         @media (max-width: 768px) {
-          .user-role-permissions__header {
+          .user-role-permissions__header20 {
             padding: 16px 20px;
           }
           
-          .user-role-permissions__title {
+          .user-role-permissions__title20 {
             font-size: 16px;
           }
           
-          .user-role-permissions__table {
+          .user-role-permissions__table20 {
             min-width: 700px;
           }
           
-          .user-role-permissions__th,
-          .user-role-permissions__td {
+          .user-role-permissions__th20,
+          .user-role-permissions__td20 {
             padding: 12px 16px;
           }
           
-          .user-role-permissions__th:first-child,
-          .user-role-permissions__td--name {
+          .user-role-permissions__th20:first-child,
+          .user-role-permissions__td--name20 {
             width: 120px;
           }
           
-          .user-role-permissions__th:nth-child(2),
-          .user-role-permissions__td--description {
+          .user-role-permissions__th20:nth-child(2),
+          .user-role-permissions__td--description20 {
             width: 250px;
           }
           
-          .user-role-permissions__th:nth-child(3),
-          .user-role-permissions__td--permissions {
+          .user-role-permissions__th20:nth-child(3),
+          .user-role-permissions__td--permissions20 {
             width: 180px;
           }
           
-          .user-role-permissions__th:nth-child(4) {
+          .user-role-permissions__th20:nth-child(4) {
             width: 80px;
           }
           
-          .user-role-permissions__th:last-child {
+          .user-role-permissions__th20:last-child {
             width: 70px;
           }
 
-          .user-role-permissions__action-btn {
+          .user-role-permissions__action-btn20 {
             width: 28px;
             height: 28px;
           }
 
-          .user-role-permissions__action-btn svg {
+          .user-role-permissions__action-btn20 svg {
             width: 14px;
             height: 14px;
           }
 
-          .user-role-permissions__modal-content {
+          .user-role-permissions__modal-content20 {
             margin: 10px;
             max-width: none;
           }
 
-          .user-role-permissions__modal-header,
-          .user-role-permissions__modal-body {
+          .user-role-permissions__modal-header20,
+          .user-role-permissions__modal-body20 {
             padding: 16px 20px;
           }
 
-          .user-role-permissions__detail-row {
+          .user-role-permissions__detail-row20 {
             grid-template-columns: 1fr;
             gap: 16px;
           }
         }
 
         @media (max-width: 480px) {
-          .user-role-permissions__table {
+          .user-role-permissions__table20 {
             min-width: 600px;
           }
           
-          .user-role-permissions__th:first-child,
-          .user-role-permissions__td--name {
+          .user-role-permissions__th20:first-child,
+          .user-role-permissions__td--name20 {
             width: 100px;
           }
           
-          .user-role-permissions__th:nth-child(2),
-          .user-role-permissions__td--description {
+          .user-role-permissions__th20:nth-child(2),
+          .user-role-permissions__td--description20 {
             width: 200px;
           }
           
-          .user-role-permissions__th:nth-child(3),
-          .user-role-permissions__td--permissions {
+          .user-role-permissions__th20:nth-child(3),
+          .user-role-permissions__td--permissions20 {
             width: 150px;
           }
           
-          .user-role-permissions__th:nth-child(4) {
+          .user-role-permissions__th20:nth-child(4) {
             width: 70px;
           }
           
-          .user-role-permissions__th:last-child {
+          .user-role-permissions__th20:last-child {
             width: 60px;
           }
 
-          .user-role-permissions__action-btn {
+          .user-role-permissions__action-btn20 {
             width: 24px;
             height: 24px;
           }
 
-          .user-role-permissions__action-btn svg {
+          .user-role-permissions__action-btn20 svg {
             width: 12px;
             height: 12px;
           }
 
-          .user-role-permissions__modal-overlay {
+          .user-role-permissions__modal-overlay20 {
             padding: 10px;
           }
         }

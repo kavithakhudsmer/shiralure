@@ -89,82 +89,81 @@ const CurrencyComponent = () => {
   };
 
   return (
-    <div className="currency-container">
-      <div className="currency-header">
+    <div className="currency-container3">
+      <div className="currency-header3">
         <h2>CURRENCIES</h2>
-        <div className="header-buttons">
-          <button className="btn-primary" onClick={handleAdd}>
+        <div className="header-buttons3">
+          <button className="btn-primary3" onClick={handleAdd}>
             <Plus size={16} />Add
           </button>
         </div>
       </div>
 
-      <div className="currency-table">
-        <div className="table-header">
-          <div className="col-title">TITLE</div>
-          <div className="col-symbol">SYMBOL</div>
-          <div className="col-code">CODE</div>
-          <div className="col-crypto">IS CRYPTOCURRENCY</div>
-          <div className="col-rate">EXCHANGE RATE</div>
-          <div className="col-action">ACTION</div>
+      <div className="currency-table3">
+        <div className="table-header3">
+          <div className="col-title3">TITLE</div>
+          <div className="col-symbol3">SYMBOL</div>
+          <div className="col-code3">CODE</div>
+          <div className="col-crypto3">IS CRYPTOCURRENCY</div>
+          <div className="col-rate3">EXCHANGE RATE</div>
+          <div className="col-action3">ACTION</div>
         </div>
 
         {currencies.map((currency) => (
-          <div key={currency.id} className="table-row">
-            <div className="col-title">{currency.title}</div>
-            <div className="col-symbol">{currency.symbol}</div>
-            <div className="col-code">{currency.code}</div>
-            <div className="col-crypto">
-              <span className={currency.isCryptocurrency ? 'yes' : 'no'}>
+          <div key={currency.id} className="table-row3">
+            <div className="col-title3">{currency.title}</div>
+            <div className="col-symbol3">{currency.symbol}</div>
+            <div className="col-code3">{currency.code}</div>
+            <div className="col-crypto3">
+              <span className={currency.isCryptocurrency ? 'yes3' : 'no3'}>
                 {currency.isCryptocurrency ? 'Yes' : 'No'}
               </span>
             </div>
-            <div className="col-rate">{currency.exchangeRate}</div>
-            <div className="col-action">
+            <div className="col-rate3">{currency.exchangeRate}</div>
+            <div className="col-action3">
               <button 
-                className="action-btn edit-btn" 
+                className="action-btn3 edit-btn3" 
                 onClick={() => handleEdit(currency)}
               >
-                <Edit size={16} color="#28a745" /> {/* Green for edit */}
+                <Edit size={16} color="#28a745" />
               </button>
               <button 
-                className="action-btn delete-btn" 
+                className="action-btn3 delete-btn3" 
                 onClick={() => handleDelete(currency.id)}
               >
-                <Trash2 size={16} color="#f0ad4e" /> {/* Orange for delete */}
+                <Trash2 size={16} color="#f0ad4e" />
               </button>
             </div>
           </div>
         ))}
 
-        <div className="table-footer">
+        <div className="table-footer3">
           Showing {currencies.length} out of {currencies.length} entries
         </div>
       </div>
 
-      {/* Add/Edit Modal */}
       {showModal && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <div className="modal-header">
+        <div className="modal-overlay3">
+          <div className="modal3">
+            <div className="modal-header3">
               <h3>CURRENCIES</h3>
-              <button className="close-btn" onClick={() => setShowModal(false)}>
+              <button className="close-btn3" onClick={() => setShowModal(false)}>
                 <X size={20} />
               </button>
             </div>
 
-            <div className="modal-body">
-              <div className="form-row">
-                <div className="form-group">
-                  <label>NAME <span className="required">*</span></label>
+            <div className="modal-body3">
+              <div className="form-row3">
+                <div className="form-group3">
+                  <label>NAME <span className="required3">*</span></label>
                   <input
                     type="text"
                     value={formData.title}
                     onChange={(e) => setFormData({...formData, title: e.target.value})}
                   />
                 </div>
-                <div className="form-group">
-                  <label>SYMBOL <span className="required">*</span></label>
+                <div className="form-group3">
+                  <label>SYMBOL <span className="required3">*</span></label>
                   <input
                     type="text"
                     value={formData.symbol}
@@ -173,19 +172,19 @@ const CurrencyComponent = () => {
                 </div>
               </div>
 
-              <div className="form-row">
-                <div className="form-group">
-                  <label>CODE <span className="required">*</span></label>
+              <div className="form-row3">
+                <div className="form-group3">
+                  <label>CODE <span className="required3">*</span></label>
                   <input
                     type="text"
                     value={formData.code}
                     onChange={(e) => setFormData({...formData, code: e.target.value})}
                   />
                 </div>
-                <div className="form-group">
-                  <label>IS CRYPTOCURRENCY <span className="required">*</span></label>
-                  <div className="radio-group">
-                    <label className="radio-label">
+                <div className="form-group3">
+                  <label>IS CRYPTOCURRENCY <span className="required3">*</span></label>
+                  <div className="radio-group3">
+                    <label className="radio-label3">
                       <input
                         type="radio"
                         name="isCryptocurrency"
@@ -194,7 +193,7 @@ const CurrencyComponent = () => {
                       />
                       <span>Yes</span>
                     </label>
-                    <label className="radio-label">
+                    <label className="radio-label3">
                       <input
                         type="radio"
                         name="isCryptocurrency"
@@ -207,7 +206,7 @@ const CurrencyComponent = () => {
                 </div>
               </div>
 
-              <div className="form-group">
+              <div className="form-group3">
                 <label>EXCHANGE RATE</label>
                 <input
                   type="number"
@@ -217,12 +216,12 @@ const CurrencyComponent = () => {
               </div>
             </div>
 
-            <div className="modal-footer">
-              <button className="btn-primary" onClick={handleSave}>
+            <div className="modal-footer3">
+              <button className="btn-primary3" onClick={handleSave}>
                 <Save size={16} />
                 SAVE
               </button>
-              <button className="btn-secondary" onClick={handleClear}>
+              <button className="btn-secondary3" onClick={handleClear}>
                 <RotateCcw size={16} />
                 CLEAR
               </button>
@@ -231,18 +230,17 @@ const CurrencyComponent = () => {
         </div>
       )}
 
-      {/* Delete Confirmation Modal */}
       {showDeleteModal && (
-        <div className="modal-overlay">
-          <div className="delete-modal">
-            <div className="delete-icon">⚠️</div>
+        <div className="modal-overlay3">
+          <div className="delete-modal3">
+            <div className="delete-icon3">⚠️</div>
             <h3>Are you sure ?</h3>
             <p>You will not be able to recover the deleted record!</p>
-            <div className="delete-actions">
-              <button className="btn-danger" onClick={confirmDelete}>
+            <div className="delete-actions3">
+              <button className="btn-danger3" onClick={confirmDelete}>
                 Yes, Delete it !
               </button>
-              <button className="btn-cancel" onClick={() => setShowDeleteModal(false)}>
+              <button className="btn-cancel3" onClick={() => setShowDeleteModal(false)}>
                 No, Cancel !
               </button>
             </div>
@@ -251,34 +249,34 @@ const CurrencyComponent = () => {
       )}
 
       <style jsx>{`
-        .currency-container {
+        .currency-container3 {
           max-width: 1200px;
           margin: 0 auto;
           padding: 20px;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Updated font stack */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .currency-header {
+        .currency-header3 {
           display: flex;
           justify-content: space-between;
           align-items: center;
           margin-bottom: 20px;
         }
 
-        .currency-header h2 {
+        .currency-header3 h2 {
           margin: 0;
-          font-size: 20px; /* Increased from 18px */
+          font-size: 20px;
           font-weight: 600;
           color: #333;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .header-buttons {
+        .header-buttons3 {
           display: flex;
           gap: 10px;
         }
 
-        .btn-primary {
+        .btn-primary3 {
           background: #6366f1;
           color: white;
           border: none;
@@ -288,15 +286,15 @@ const CurrencyComponent = () => {
           display: flex;
           align-items: center;
           gap: 6px;
-          font-size: 15px; /* Increased from 14px */
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-size: 15px;
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .btn-primary:hover {
+        .btn-primary3:hover {
           background: #5855e7;
         }
 
-        .btn-secondary {
+        .btn-secondary3 {
           background: #f3f4f6;
           color: #6b7280;
           border: 1px solid #d1d5db;
@@ -306,22 +304,22 @@ const CurrencyComponent = () => {
           display: flex;
           align-items: center;
           gap: 6px;
-          font-size: 15px; /* Increased from 14px */
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-size: 15px;
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .btn-secondary:hover {
+        .btn-secondary3:hover {
           background: #e5e7eb;
         }
 
-        .currency-table {
+        .currency-table3 {
           background: white;
           border-radius: 8px;
           overflow: hidden;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        .table-header {
+        .table-header3 {
           display: grid;
           grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr 1fr;
           gap: 20px;
@@ -329,13 +327,13 @@ const CurrencyComponent = () => {
           background: #f9fafb;
           border-bottom: 1px solid #e5e7eb;
           font-weight: 600;
-          font-size: 13px; /* Increased from 12px */
+          font-size: 13px;
           color: #374151;
           text-transform: uppercase;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .table-row {
+        .table-row3 {
           display: grid;
           grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr 1fr;
           gap: 20px;
@@ -344,30 +342,30 @@ const CurrencyComponent = () => {
           align-items: center;
         }
 
-        .table-row:hover {
+        .table-row3:hover {
           background: #f9fafb;
         }
 
-        .yes {
+        .yes3 {
           color: #10b981;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .no {
+        .no3 {
           color: #ef4444;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .col-action {
+        .col-action3 {
           display: flex;
           gap: 8px;
         }
 
-        .action-btn {
+        .action-btn3 {
           width: 32px;
           height: 32px;
           border: none;
-          border-radius: 50%; /* Circular shape */
+          border-radius: 50%;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -376,33 +374,33 @@ const CurrencyComponent = () => {
           opacity: 0.9;
         }
 
-        .edit-btn {
+        .edit-btn3 {
           background: #dcfce7;
         }
 
-        .edit-btn:hover {
+        .edit-btn3:hover {
           background: #bbf7d0;
           transform: scale(1.05);
         }
 
-        .delete-btn {
+        .delete-btn3 {
           background: #fef2f2;
         }
 
-        .delete-btn:hover {
+        .delete-btn3:hover {
           background: #fee2e2;
           transform: scale(1.05);
         }
 
-        .table-footer {
+        .table-footer3 {
           padding: 16px 20px;
-          font-size: 15px; /* Increased from 14px */
+          font-size: 15px;
           color: #6b7280;
           background: #f9fafb;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .modal-overlay {
+        .modal-overlay3 {
           position: fixed;
           top: 0;
           left: 0;
@@ -415,7 +413,7 @@ const CurrencyComponent = () => {
           z-index: 1000;
         }
 
-        .modal {
+        .modal3 {
           background: white;
           border-radius: 8px;
           width: 600px;
@@ -424,7 +422,7 @@ const CurrencyComponent = () => {
           overflow: auto;
         }
 
-        .modal-header {
+        .modal-header3 {
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -432,93 +430,93 @@ const CurrencyComponent = () => {
           border-bottom: 1px solid #e5e7eb;
         }
 
-        .modal-header h3 {
+        .modal-header3 h3 {
           margin: 0;
-          font-size: 20px; /* Increased from 18px */
+          font-size: 20px;
           font-weight: 600;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .close-btn {
+        .close-btn3 {
           background: none;
           border: none;
           cursor: pointer;
           padding: 4px;
           color: #6b7280;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .close-btn:hover {
+        .close-btn3:hover {
           color: #374151;
         }
 
-        .modal-body {
+        .modal-body3 {
           padding: 20px;
         }
 
-        .form-row {
+        .form-row3 {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 20px;
           margin-bottom: 20px;
         }
 
-        .form-group {
+        .form-group3 {
           display: flex;
           flex-direction: column;
         }
 
-        .form-group label {
-          font-size: 13px; /* Increased from 12px */
+        .form-group3 label {
+          font-size: 13px;
           font-weight: 600;
           color: #374151;
           margin-bottom: 8px;
           text-transform: uppercase;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .required {
+        .required3 {
           color: #ef4444;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .form-group input {
+        .form-group3 input {
           padding: 12px;
           border: 1px solid #d1d5db;
           border-radius: 6px;
-          font-size: 15px; /* Increased from 14px */
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-size: 15px;
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .form-group input:focus {
+        .form-group3 input:focus {
           outline: none;
           border-color: #6366f1;
           box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
 
-        .radio-group {
+        .radio-group3 {
           display: flex;
           gap: 20px;
           margin-top: 8px;
         }
 
-        .radio-label {
+        .radio-label3 {
           display: flex;
           align-items: center;
           gap: 8px;
           cursor: pointer;
-          font-size: 15px; /* Increased from 14px */
+          font-size: 15px;
           text-transform: none;
           font-weight: normal;
           margin-bottom: 0;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .radio-label input[type="radio"] {
+        .radio-label3 input[type="radio"] {
           margin: 0;
         }
 
-        .modal-footer {
+        .modal-footer3 {
           display: flex;
           justify-content: flex-end;
           gap: 12px;
@@ -526,7 +524,7 @@ const CurrencyComponent = () => {
           border-top: 1px solid #e5e7eb;
         }
 
-        .delete-modal {
+        .delete-modal3 {
           background: white;
           border-radius: 8px;
           padding: 40px;
@@ -535,60 +533,60 @@ const CurrencyComponent = () => {
           max-width: 90vw;
         }
 
-        .delete-icon {
+        .delete-icon3 {
           font-size: 48px;
           margin-bottom: 20px;
         }
 
-        .delete-modal h3 {
+        .delete-modal3 h3 {
           margin: 0 0 10px 0;
-          font-size: 20px; /* Increased from 20px */
+          font-size: 20px;
           color: #374151;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .delete-modal p {
+        .delete-modal3 p {
           margin: 0 0 30px 0;
           color: #6b7280;
-          font-size: 15px; /* Increased from default */
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-size: 15px;
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .delete-actions {
+        .delete-actions3 {
           display: flex;
           gap: 12px;
           justify-content: center;
         }
 
-        .btn-danger {
+        .btn-danger3 {
           background: #6366f1;
           color: white;
           border: none;
           padding: 12px 24px;
           border-radius: 6px;
           cursor: pointer;
-          font-size: 15px; /* Increased from 14px */
+          font-size: 15px;
           font-weight: 500;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .btn-danger:hover {
+        .btn-danger3:hover {
           background: #5855e7;
         }
 
-        .btn-cancel {
+        .btn-cancel3 {
           background: #6b7280;
           color: white;
           border: none;
           padding: 12px 24px;
           border-radius: 6px;
           cursor: pointer;
-          font-size: 15px; /* Increased from 14px */
+          font-size: 15px;
           font-weight: 500;
-          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+          font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .btn-cancel:hover {
+        .btn-cancel3:hover {
           background: #4b5563;
         }
       `}</style>

@@ -46,92 +46,92 @@ const ThemeComponent = () => {
   };
 
   return (
-    <div className="theme-container">
-      <h2 className="theme-title">Theme</h2>
+    <div className="theme-container27">
+      <h2 className="theme-title27">Theme</h2>
       
-      <div className="theme-grid">
+      <div className="theme-grid27">
         {/* Logo Section */}
-        <div className="theme-section">
-          <label className="section-label">LOGO (128PX,43PX)</label>
-          <div className="upload-area" onClick={() => handleFileUpload('logo')}>
-            <div className="upload-icon">📁</div>
-            <span className="upload-text">No File Chosen</span>
+        <div className="theme-section27">
+          <label className="section-label27">LOGO (128PX,43PX)</label>
+          <div className="upload-area27" onClick={() => handleFileUpload('logo')}>
+            <div className="upload-icon27">📁</div>
+            <span className="upload-text27">No File Chosen</span>
           </div>
           {logoFile && (
-            <div className="preview-container">
-              <img src={logoFile} alt="Logo preview" className="logo-preview" />
+            <div className="preview-container27">
+              <img src={logoFile} alt="Logo preview" className="logo-preview27" />
             </div>
           )}
           {!logoFile && (
-            <div className="default-logo">
-              <span className="logo-text">SL</span>
+            <div className="default-logo27">
+              <span className="logo-text27">SL</span>
             </div>
           )}
         </div>
 
         {/* Favicon Section */}
-        <div className="theme-section">
-          <label className="section-label">FAV ICON (120PX,120PX)</label>
-          <div className="upload-area" onClick={() => handleFileUpload('favicon')}>
-            <div className="upload-icon">📁</div>
-            <span className="upload-text">No File Chosen</span>
+        <div className="theme-section27">
+          <label className="section-label27">FAV ICON (120PX,120PX)</label>
+          <div className="upload-area27" onClick={() => handleFileUpload('favicon')}>
+            <div className="upload-icon27">📁</div>
+            <span className="upload-text27">No File Chosen</span>
           </div>
           {favIconFile && (
-            <div className="preview-container">
-              <img src={favIconFile} alt="Favicon preview" className="favicon-preview" />
+            <div className="preview-container27">
+              <img src={favIconFile} alt="Favicon preview" className="favicon-preview27" />
             </div>
           )}
           {!favIconFile && (
-            <div className="default-favicon">
-              <span className="logo-text">SL</span>
+            <div className="default-favicon27">
+              <span className="logo-text27">SL</span>
             </div>
           )}
         </div>
 
         {/* Footer Logo Section */}
-        <div className="theme-section">
-          <label className="section-label">FOOTER LOGO (144PX,48PX)</label>
-          <div className="upload-area" onClick={() => handleFileUpload('footer')}>
-            <div className="upload-icon">📁</div>
-            <span className="upload-text">No File Chosen</span>
+        <div className="theme-section27">
+          <label className="section-label27">FOOTER LOGO (144PX,48PX)</label>
+          <div className="upload-area27" onClick={() => handleFileUpload('footer')}>
+            <div className="upload-icon27">📁</div>
+            <span className="upload-text27">No File Chosen</span>
           </div>
           {footerLogoFile && (
-            <div className="preview-container">
-              <img src={footerLogoFile} alt="Footer logo preview" className="footer-logo-preview" />
+            <div className="preview-container27">
+              <img src={footerLogoFile} alt="Footer logo preview" className="footer-logo-preview27" />
             </div>
           )}
           {!footerLogoFile && (
-            <div className="default-footer-logo">
-              <span className="logo-text">SL</span>
+            <div className="default-footer-logo27">
+              <span className="logo-text27">SL</span>
             </div>
           )}
         </div>
       </div>
 
       {/* Save Button */}
-      <button className="save-button" onClick={handleSave}>
+      <button className="save-button27" onClick={handleSave}>
         <Save size={16} /> Save
       </button>
 
       {/* Upload Modal */}
       {uploadModalOpen && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <div className="modal-header">
+        <div className="modal-overlay27">
+          <div className="modal-content27">
+            <div className="modal-header27">
               <h3>Upload Logo</h3>
-              <button className="close-button" onClick={closeUploadModal}>✕</button>
+              <button className="close-button27" onClick={closeUploadModal}>✕</button>
             </div>
-            <div className="modal-body">
-              <div className="user-info">
-                <div className="avatar-placeholder">
-                  <span className="logo-text">SL</span>
+            <div className="modal-body27">
+              <div className="user-info27">
+                <div className="avatar-placeholder27">
+                  <span className="logo-text27">SL</span>
                 </div>
-                <div className="user-details">
+                <div className="user-details27">
                   <h4>John Doe</h4>
-                  <span className="admin-badge">Admin</span>
+                  <span className="admin-badge27">Admin</span>
                 </div>
               </div>
-              <button className="choose-file-button" onClick={() => handleFileUpload('logo')}>
+              <button className="choose-file-button27" onClick={() => handleFileUpload('logo')}>
                 📁 Choose File
               </button>
             </div>

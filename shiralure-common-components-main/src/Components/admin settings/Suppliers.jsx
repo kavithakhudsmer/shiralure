@@ -65,17 +65,17 @@ const SupplierComponent = () => {
   };
 
   return (
-    <div className="supplier-container">
-      <div className="supplier-header">
+    <div className="supplier-container25">
+      <div className="supplier-header25">
         <h2>Supplier</h2>
-        <div className="header-actions">
-          <button className="add-btn" onClick={() => openModal('add')}>
+        <div className="header-actions25">
+          <button className="add-btn25" onClick={() => openModal('add')}>
             <Plus size={16} />Add
           </button>
         </div>
       </div>
 
-      <div className="supplier-table">
+      <div className="supplier-table25">
         <table>
           <thead>
             <tr>
@@ -93,40 +93,39 @@ const SupplierComponent = () => {
               <td>chelawella@gmail.com</td>
               <td>+1 11-23984436</td>
               <td>
-                <div className="action-buttons">
-                  <button className="action-btn view-btn" onClick={() => openModal('view')}>
-                    <Eye size={14} color="#dc3545" /> {/* Red for view */}
+                <div className="action-buttons25">
+                  <button className="action-btn25 view-btn25" onClick={() => openModal('view')}>
+                    <Eye size={14} color="#dc3545" />
                   </button>
-                  <button className="action-btn edit-btn" onClick={() => openModal('edit')}>
-                    <Edit size={14} color="#28a745" /> {/* Green for edit */}
+                  <button className="action-btn25 edit-btn25" onClick={() => openModal('edit')}>
+                    <Edit size={14} color="#28a745" />
                   </button>
-                  <button className="action-btn delete-btn" onClick={() => openModal('delete')}>
-                    <Trash2 size={14} color="#f0ad4e" /> {/* Orange for delete */}
+                  <button className="action-btn25 delete-btn25" onClick={() => openModal('delete')}>
+                    <Trash2 size={14} color="#f0ad4e" />
                   </button>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
-        <div className="table-footer">
-          <span>Showing 1 to1 of 1 entries</span>
+        <div className="table-footer25">
+          <span>Showing 1 to 1 of 1 entries</span>
         </div>
       </div>
 
-      {/* Add/Edit Modal */}
       {(showModal === 'add' || showModal === 'edit') && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
+        <div className="modal-overlay25" onClick={closeModal}>
+          <div className="modal-content25" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header25">
               <h3>{showModal === 'add' ? 'Add Supplier' : 'Edit Supplier'}</h3>
-              <button className="close-btn" onClick={closeModal}>
+              <button className="close-btn25" onClick={closeModal}>
                 <X size={20} />
               </button>
             </div>
-            <div className="modal-body">
-              <div className="form-section">
-                <div className="form-row">
-                  <div className="form-group">
+            <div className="modal-body25">
+              <div className="form-section25">
+                <div className="form-row25">
+                  <div className="form-group25">
                     <label>Company</label>
                     <input
                       type="text"
@@ -136,7 +135,7 @@ const SupplierComponent = () => {
                       placeholder="Company"
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group25">
                     <label>Name</label>
                     <input
                       type="text"
@@ -147,8 +146,8 @@ const SupplierComponent = () => {
                     />
                   </div>
                 </div>
-                <div className="form-row">
-                  <div className="form-group">
+                <div className="form-row25">
+                  <div className="form-group25">
                     <label>Email</label>
                     <input
                       type="email"
@@ -158,7 +157,7 @@ const SupplierComponent = () => {
                       placeholder="Email"
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group25">
                     <label>Phone</label>
                     <input
                       type="tel"
@@ -171,9 +170,9 @@ const SupplierComponent = () => {
                 </div>
               </div>
 
-              <div className="form-section">
-                <div className="form-row">
-                  <div className="form-group">
+              <div className="form-section25">
+                <div className="form-row25">
+                  <div className="form-group25">
                     <label>Country</label>
                     <input
                       type="text"
@@ -183,7 +182,7 @@ const SupplierComponent = () => {
                       placeholder="Country"
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group25">
                     <label>State</label>
                     <input
                       type="text"
@@ -194,8 +193,8 @@ const SupplierComponent = () => {
                     />
                   </div>
                 </div>
-                <div className="form-row">
-                  <div className="form-group">
+                <div className="form-row25">
+                  <div className="form-group25">
                     <label>City</label>
                     <input
                       type="text"
@@ -205,7 +204,7 @@ const SupplierComponent = () => {
                       placeholder="City"
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group25">
                     <label>Zip Code</label>
                     <input
                       type="text"
@@ -216,10 +215,10 @@ const SupplierComponent = () => {
                     />
                   </div>
                 </div>
-                <div className="form-row">
-                  <div className="form-group full-width">
+                <div className="form-row25">
+                  <div className="form-group25 full-width25">
                     <label>Upload File</label>
-                    <div className="file-upload">
+                    <div className="file-upload25">
                       <Upload size={16} />
                       <span>Select file to upload</span>
                     </div>
@@ -227,11 +226,11 @@ const SupplierComponent = () => {
                 </div>
               </div>
             </div>
-            <div className="modal-footer">
-              <button className="btn btn-secondary" onClick={closeModal}>
+            <div className="modal-footer25">
+              <button className="btn25 btn-secondary25" onClick={closeModal}>
                 Cancel
               </button>
-              <button className="btn btn-primary" onClick={handleSave}>
+              <button className="btn25 btn-primary25" onClick={handleSave}>
                 Save
               </button>
             </div>
@@ -239,58 +238,57 @@ const SupplierComponent = () => {
         </div>
       )}
 
-      {/* View Modal */}
       {showModal === 'view' && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content view-modal" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
+        <div className="modal-overlay25" onClick={closeModal}>
+          <div className="modal-content25 view-modal25" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header25">
               <h3>VIEW</h3>
-              <button className="close-btn" onClick={closeModal}>
+              <button className="close-btn25" onClick={closeModal}>
                 <X size={20} />
               </button>
             </div>
-            <div className="modal-body">
-              <div className="profile-section">
-                <div className="profile-avatar">
-                  <div className="avatar-circle">
+            <div className="modal-body25">
+              <div className="profile-section25">
+                <div className="profile-avatar25">
+                  <div className="avatar-circle25">
                     <span>JD</span>
                   </div>
-                  <div className="profile-info">
+                  <div className="profile-info25">
                     <h4>John Doe</h4>
-                    <span className="profile-badge">Member</span>
+                    <span className="profile-badge25">Member</span>
                   </div>
                 </div>
               </div>
-              <div className="info-section">
+              <div className="info-section25">
                 <h4>Basic Information</h4>
-                <div className="info-grid">
-                  <div className="info-row">
-                    <span className="info-label">Company:</span>
-                    <span className="info-value">{supplierData.company}</span>
+                <div className="info-grid25">
+                  <div className="info-row25">
+                    <span className="info-label25">Company:</span>
+                    <span className="info-value25">{supplierData.company}</span>
                   </div>
-                  <div className="info-row">
-                    <span className="info-label">Email:</span>
-                    <span className="info-value">{supplierData.email}</span>
+                  <div className="info-row25">
+                    <span className="info-label25">Email:</span>
+                    <span className="info-value25">{supplierData.email}</span>
                   </div>
-                  <div className="info-row">
-                    <span className="info-label">Name:</span>
-                    <span className="info-value">{supplierData.name}</span>
+                  <div className="info-row25">
+                    <span className="info-label25">Name:</span>
+                    <span className="info-value25">{supplierData.name}</span>
                   </div>
-                  <div className="info-row">
-                    <span className="info-label">Phone:</span>
-                    <span className="info-value">{supplierData.phone}</span>
+                  <div className="info-row25">
+                    <span className="info-label25">Phone:</span>
+                    <span className="info-value25">{supplierData.phone}</span>
                   </div>
-                  <div className="info-row">
-                    <span className="info-label">State:</span>
-                    <span className="info-value">{supplierData.state}</span>
+                  <div className="info-row25">
+                    <span className="info-label25">State:</span>
+                    <span className="info-value25">{supplierData.state}</span>
                   </div>
-                  <div className="info-row">
-                    <span className="info-label">Zip Code:</span>
-                    <span className="info-value">{supplierData.zipCode}</span>
+                  <div className="info-row25">
+                    <span className="info-label25">Zip Code:</span>
+                    <span className="info-value25">{supplierData.zipCode}</span>
                   </div>
-                  <div className="info-row">
-                    <span className="info-label">Country:</span>
-                    <span className="info-value">{supplierData.country}</span>
+                  <div className="info-row25">
+                    <span className="info-label25">Country:</span>
+                    <span className="info-value25">{supplierData.country}</span>
                   </div>
                 </div>
               </div>
@@ -299,21 +297,20 @@ const SupplierComponent = () => {
         </div>
       )}
 
-      {/* Delete Modal */}
       {showModal === 'delete' && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content delete-modal" onClick={(e) => e.stopPropagation()}>
-            <div className="delete-content">
-              <div className="delete-icon">
-                <div className="warning-icon">!</div>
+        <div className="modal-overlay25" onClick={closeModal}>
+          <div className="modal-content25 delete-modal25" onClick={(e) => e.stopPropagation()}>
+            <div className="delete-content25">
+              <div className="delete-icon25">
+                <div className="warning-icon25">!</div>
               </div>
               <h3>Are you sure ?</h3>
               <p>You will not be able to recover this selected record!</p>
-              <div className="delete-actions">
-                <button className="btn btn-confirm" onClick={handleDelete}>
+              <div className="delete-actions25">
+                <button className="btn25 btn-confirm25" onClick={handleDelete}>
                   Yes, Delete it!
                 </button>
-                <button className="btn btn-cancel" onClick={closeModal}>
+                <button className="btn25 btn-cancel25" onClick={closeModal}>
                   No, Cancel!
                 </button>
               </div>
@@ -323,7 +320,7 @@ const SupplierComponent = () => {
       )}
 
       <style jsx>{`
-        .supplier-container {
+        .supplier-container25 {
           width: 100%;
           max-width: 1200px;
           margin: 0 auto;
@@ -331,26 +328,26 @@ const SupplierComponent = () => {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .supplier-header {
+        .supplier-header25 {
           display: flex;
           justify-content: space-between;
           align-items: center;
           margin-bottom: 20px;
         }
 
-        .supplier-header h2 {
+        .supplier-header25 h2 {
           margin: 0;
           font-size: 24px;
           font-weight: 600;
           color: #1f2937;
         }
 
-        .header-actions {
+        .header-actions25 {
           display: flex;
           gap: 12px;
         }
 
-        .add-btn {
+        .add-btn25 {
           background: #8b5cf6;
           color: white;
           border: none;
@@ -362,11 +359,11 @@ const SupplierComponent = () => {
           gap: 4px;
         }
 
-        .add-btn:hover {
+        .add-btn25:hover {
           background: #7c3aed;
         }
 
-        .export-btn {
+        .export-btn25 {
           background: #3b82f6;
           color: white;
           border: none;
@@ -378,11 +375,11 @@ const SupplierComponent = () => {
           gap: 4px;
         }
 
-        .export-btn:hover {
+        .export-btn25:hover {
           background: #2563eb;
         }
 
-        .supplier-table {
+        .supplier-table25 {
           background: white;
           border-radius: 8px;
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -412,16 +409,16 @@ const SupplierComponent = () => {
           font-size: 14px;
         }
 
-        .action-buttons {
+        .action-buttons25 {
           display: flex;
           gap: 8px;
         }
 
-        .action-btn {
+        .action-btn25 {
           width: 32px;
           height: 32px;
           border: none;
-          border-radius: 50%; /* Circular shape */
+          border-radius: 50%;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -430,34 +427,34 @@ const SupplierComponent = () => {
           opacity: 0.9;
         }
 
-        .view-btn {
-          background: #f8d7da; /* Light red background */
+        .view-btn25 {
+          background: #f8d7da;
         }
 
-        .view-btn:hover {
+        .view-btn25:hover {
           background: #f1aeb5;
           transform: scale(1.05);
         }
 
-        .edit-btn {
-          background: #d1e7dd; /* Light green background */
+        .edit-btn25 {
+          background: #d1e7dd;
         }
 
-        .edit-btn:hover {
+        .edit-btn25:hover {
           background: #a3cfbb;
           transform: scale(1.05);
         }
 
-        .delete-btn {
-          background: #fff3cd; /* Light orange background */
+        .delete-btn25 {
+          background: #fff3cd;
         }
 
-        .delete-btn:hover {
+        .delete-btn25:hover {
           background: #ffeaa7;
           transform: scale(1.05);
         }
 
-        .table-footer {
+        .table-footer25 {
           padding: 12px 16px;
           background: #f9fafb;
           border-top: 1px solid #e5e7eb;
@@ -465,7 +462,7 @@ const SupplierComponent = () => {
           color: #6b7280;
         }
 
-        .modal-overlay {
+        .modal-overlay25 {
           position: fixed;
           top: 0;
           left: 0;
@@ -478,7 +475,7 @@ const SupplierComponent = () => {
           z-index: 1000;
         }
 
-        .modal-content {
+        .modal-content25 {
           background: white;
           border-radius: 8px;
           width: 90%;
@@ -487,7 +484,7 @@ const SupplierComponent = () => {
           overflow: auto;
         }
 
-        .modal-header {
+        .modal-header25 {
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -495,14 +492,14 @@ const SupplierComponent = () => {
           border-bottom: 1px solid #e5e7eb;
         }
 
-        .modal-header h3 {
+        .modal-header25 h3 {
           margin: 0;
           font-size: 18px;
           font-weight: 600;
           color: #1f2937;
         }
 
-        .close-btn {
+        .close-btn25 {
           background: none;
           border: none;
           cursor: pointer;
@@ -511,42 +508,42 @@ const SupplierComponent = () => {
           border-radius: 4px;
         }
 
-        .close-btn:hover {
+        .close-btn25:hover {
           background: #f3f4f6;
         }
 
-        .modal-body {
+        .modal-body25 {
           padding: 20px;
         }
 
-        .form-section {
+        .form-section25 {
           margin-bottom: 24px;
         }
 
-        .form-section:last-child {
+        .form-section25:last-child {
           margin-bottom: 0;
         }
 
-        .form-row {
+        .form-row25 {
           display: flex;
           gap: 16px;
           margin-bottom: 16px;
         }
 
-        .form-row:last-child {
+        .form-row25:last-child {
           margin-bottom: 0;
         }
 
-        .form-group {
+        .form-group25 {
           flex: 1;
         }
 
-        .form-group.full-width {
+        .form-group25.full-width25 {
           flex: none;
           width: 100%;
         }
 
-        .form-group label {
+        .form-group25 label {
           display: block;
           margin-bottom: 6px;
           font-size: 14px;
@@ -554,7 +551,7 @@ const SupplierComponent = () => {
           color: #374151;
         }
 
-        .form-group input {
+        .form-group25 input {
           width: 100%;
           padding: 8px 12px;
           border: 1px solid #d1d5db;
@@ -564,17 +561,17 @@ const SupplierComponent = () => {
           background: #f9fafb;
         }
 
-        .form-group input:focus {
+        .form-group25 input:focus {
           outline: none;
           border-color: #3b82f6;
           background: white;
         }
 
-        .form-group input::placeholder {
+        .form-group25 input::placeholder {
           color: #9ca3af;
         }
 
-        .file-upload {
+        .file-upload25 {
           display: flex;
           align-items: center;
           gap: 8px;
@@ -587,11 +584,11 @@ const SupplierComponent = () => {
           color: #6b7280;
         }
 
-        .file-upload:hover {
+        .file-upload25:hover {
           background: #f3f4f6;
         }
 
-        .modal-footer {
+        .modal-footer25 {
           display: flex;
           gap: 12px;
           justify-content: flex-end;
@@ -599,7 +596,7 @@ const SupplierComponent = () => {
           border-top: 1px solid #e5e7eb;
         }
 
-        .btn {
+        .btn25 {
           padding: 8px 16px;
           border-radius: 6px;
           font-size: 14px;
@@ -609,57 +606,57 @@ const SupplierComponent = () => {
           transition: all 0.2s;
         }
 
-        .btn-primary {
+        .btn-primary25 {
           background: #3b82f6;
           color: white;
         }
 
-        .btn-primary:hover {
+        .btn-primary25:hover {
           background: #2563eb;
         }
 
-        .btn-secondary {
+        .btn-secondary25 {
           background: #6b7280;
           color: white;
         }
 
-        .btn-secondary:hover {
+        .btn-secondary25:hover {
           background: #4b5563;
         }
 
-        .btn-confirm {
+        .btn-confirm25 {
           background: #8b5cf6;
           color: white;
         }
 
-        .btn-confirm:hover {
+        .btn-confirm25:hover {
           background: #7c3aed;
         }
 
-        .btn-cancel {
+        .btn-cancel25 {
           background: #6b7280;
           color: white;
         }
 
-        .btn-cancel:hover {
+        .btn-cancel25:hover {
           background: #4b5563;
         }
 
-        .view-modal {
+        .view-modal25 {
           max-width: 500px;
         }
 
-        .profile-section {
+        .profile-section25 {
           margin-bottom: 24px;
         }
 
-        .profile-avatar {
+        .profile-avatar25 {
           display: flex;
           align-items: center;
           gap: 16px;
         }
 
-        .avatar-circle {
+        .avatar-circle25 {
           width: 60px;
           height: 60px;
           border-radius: 50%;
@@ -672,14 +669,14 @@ const SupplierComponent = () => {
           font-size: 18px;
         }
 
-        .profile-info h4 {
+        .profile-info25 h4 {
           margin: 0 0 4px 0;
           font-size: 16px;
           font-weight: 600;
           color: #1f2937;
         }
 
-        .profile-badge {
+        .profile-badge25 {
           background: #fbbf24;
           color: white;
           padding: 2px 8px;
@@ -688,51 +685,51 @@ const SupplierComponent = () => {
           font-weight: 500;
         }
 
-        .info-section h4 {
+        .info-section25 h4 {
           margin: 0 0 16px 0;
           font-size: 16px;
           font-weight: 600;
           color: #1f2937;
         }
 
-        .info-grid {
+        .info-grid25 {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 16px;
         }
 
-        .info-row {
+        .info-row25 {
           display: flex;
           flex-direction: column;
           gap: 4px;
         }
 
-        .info-label {
+        .info-label25 {
           font-size: 12px;
           font-weight: 500;
           color: #6b7280;
           text-transform: uppercase;
         }
 
-        .info-value {
+        .info-value25 {
           font-size: 14px;
           color: #1f2937;
         }
 
-        .delete-modal {
+        .delete-modal25 {
           max-width: 400px;
         }
 
-        .delete-content {
+        .delete-content25 {
           padding: 40px;
           text-align: center;
         }
 
-        .delete-icon {
+        .delete-icon25 {
           margin-bottom: 16px;
         }
 
-        .warning-icon {
+        .warning-icon25 {
           width: 60px;
           height: 60px;
           border-radius: 50%;
@@ -746,20 +743,20 @@ const SupplierComponent = () => {
           margin: 0 auto;
         }
 
-        .delete-content h3 {
+        .delete-content25 h3 {
           margin: 0 0 8px 0;
           font-size: 20px;
           font-weight: 600;
           color: #1f2937;
         }
 
-        .delete-content p {
+        .delete-content25 p {
           margin: 0 0 24px 0;
           font-size: 14px;
           color: #6b7280;
         }
 
-        .delete-actions {
+        .delete-actions25 {
           display: flex;
           gap: 12px;
           justify-content: center;

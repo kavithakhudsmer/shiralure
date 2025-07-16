@@ -57,7 +57,7 @@ import Returnorder from './pages/Returnorder/page/ReturnOrder';
 
 
 
-
+import Layout1 from './Components/admin settings/Layout1';
 import Setting from './Components/admin settings/Setting';
 import ReturnReasonComponent from './Components/admin settings/ReturnReason';
 import Company from './Components/admin settings/Company';
@@ -65,7 +65,7 @@ import Site from './Components/admin settings/Site';
 import Mail from './Components/admin settings/Mail';
 import Location from './Components/admin settings/Location';
 import Shipping from './Components/admin settings/Shipping';
-
+import NotificationComponent from "./Components/admin settings/NotificationComponent"; 
 import NotificationAlert from './Components/admin settings/NotificationAlert';
 import SocialMedia from './Components/admin settings/SocialMedia';
 import Cookies from './Components/admin settings/Cookies';
@@ -77,6 +77,7 @@ import SmsGateway from './Components/admin settings/Sms';
 import LanguagesComponent from './Components/admin settings/Language';
 import RolePermissions from './Components/admin settings/RolePermissions';
 // import PagesComponent from './Components/admin settings/Pages';
+import Pages1Component from './Components/admin settings/Pages1Component';
 import Taxes from './Components/admin settings/Taxes';
 import Units from './Components/admin settings/Units';
 import Benefits from './Components/admin settings/Benefits';
@@ -157,14 +158,15 @@ const App = () => {
                 
 
 
-             
-                  <Route path="Settings" element={<Setting />} />
+              <Route path="/" element={<Layout1 />}>
+                <Route path="Settings" element={<Setting />} />
                   <Route path="return-reasons" element={<ReturnReasonComponent />} />
                   <Route path="company" element={<Company />} />
                   <Route path="site" element={<Site />} />
                   <Route path="mail" element={<Mail />} />
                   <Route path="location-setup" element={<Location />} />
                   <Route path="shipping-setup" element={<Shipping />} />
+                  <Route path="notification" element={<NotificationComponent />} />
                   <Route path="notification-alert" element={<NotificationAlert/>} />
                   <Route path="social-media" element={<SocialMedia/>} />
                   <Route path="cookies" element={<Cookies/>} />
@@ -175,7 +177,7 @@ const App = () => {
                   <Route path="sms-gateway" element={<SmsGateway/>} />
                   <Route path="languages" element={<LanguagesComponent/>} />
                   <Route path="role-&-permissions" element={<RolePermissions/>} /> 
-                  {/* <Route path="pages" element={<PagesComponent/>} /> */}
+                  <Route path="pages" element={<Pages1Component />} />
                   <Route path="taxes" element={<Taxes/>} />
                   <Route path="units" element={<Units/>} /> 
                   <Route path="benefits" element={<Benefits/>} />
@@ -187,7 +189,7 @@ const App = () => {
                   <Route path="product-categories" element={<ProductCategoriesComponent/>} />
                   <Route path="product-brands" element={<ProductBrandsComponent/>} />
                   <Route path="product-attributes" element={<ProductAttributes/>} />
-               
+               </Route>
 
 
 

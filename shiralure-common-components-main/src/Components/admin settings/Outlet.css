@@ -1,14 +1,14 @@
-.outlet-container {
+.outlet-container12 {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   max-width: 1200px;
   margin: 20px auto;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Updated font stack */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-header {
+.outlet-header12 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,25 +17,25 @@
   border-bottom: 1px solid #e9ecef;
 }
 
-.outlet-title {
-  font-size: 18px; /* Increased from 16px */
+.outlet-title12 {
+  font-size: 18px;
   font-weight: 600;
   color: #333;
   margin: 0;
   letter-spacing: 0.5px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-actions {
+.outlet-actions12 {
   display: flex;
   gap: 8px;
 }
 
-.outlet-btn {
+.outlet-btn12 {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 15px; /* Increased from 14px */
+  font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,84 +43,84 @@
   transition: all 0.2s ease;
   font-weight: 600;
   letter-spacing: 0.5px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-add {
+.outlet-btn-add12 {
   background: #5865f2;
   color: white;
   padding: 10px 12px;
 }
 
-.outlet-btn-add:hover {
+.outlet-btn-add12:hover {
   background: #4752c4;
   transform: translateY(-1px);
 }
 
-.outlet-table-container {
+.outlet-table-container12 {
   padding: 0;
 }
 
-.outlet-table {
+.outlet-table12 {
   width: 100%;
   border-collapse: collapse;
-  font-size: 15px; /* Increased from 14px */
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-size: 15px;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-table thead th {
+.outlet-table12 thead th {
   background: #f8f9fa;
   padding: 12px 16px;
   text-align: left;
   font-weight: 600;
   color: #6c757d;
-  font-size: 13px; /* Increased from 12px */
+  font-size: 13px;
   letter-spacing: 0.5px;
   border-bottom: 1px solid #e9ecef;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-table tbody td {
+.outlet-table12 tbody td {
   padding: 12px 16px;
   border-bottom: 1px solid #f1f3f4;
   color: #333;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-table tbody tr:hover {
+.outlet-table12 tbody tr:hover {
   background: #f8f9fa;
 }
 
-.outlet-status {
+.outlet-status12 {
   padding: 4px 12px;
   border-radius: 16px;
-  font-size: 13px; /* Increased from 12px */
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-status.active {
+.outlet-status12.active12 {
   background: #d4edda;
   color: #155724;
 }
 
-.outlet-status.inactive {
+.outlet-status12.inactive12 {
   background: #f8d7da;
   color: #721c24;
 }
 
-.outlet-action-buttons {
+.outlet-action-buttons12 {
   display: flex;
   gap: 8px;
 }
 
-.outlet-action-btn {
+.outlet-action-btn12 {
   width: 32px;
   height: 32px;
   border: none;
-  border-radius: 50%; /* Circular shape */
+  border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -129,50 +129,50 @@
   opacity: 0.9;
 }
 
-.outlet-view-btn {
-  background: #f8d7da; /* Light red background */
-  color: #dc3545; /* Red icon */
+.outlet-view-btn12 {
+  background: #f8d7da;
+  color: #dc3545;
 }
 
-.outlet-view-btn:hover {
+.outlet-view-btn12:hover {
   background: #f1aeb5;
   color: #dc3545;
   transform: scale(1.05);
 }
 
-.outlet-edit-btn {
-  background: #d1e7dd; /* Light green background */
-  color: #28a745; /* Green icon */
+.outlet-edit-btn12 {
+  background: #d1e7dd;
+  color: #28a745;
 }
 
-.outlet-edit-btn:hover {
+.outlet-edit-btn12:hover {
   background: #a3cfbb;
   color: #28a745;
   transform: scale(1.05);
 }
 
-.outlet-delete-btn {
-  background: #fff3cd; /* Light orange background */
-  color: #f0ad4e; /* Orange icon */
+.outlet-delete-btn12 {
+  background: #fff3cd;
+  color: #f0ad4e;
 }
 
-.outlet-delete-btn:hover {
+.outlet-delete-btn12:hover {
   background: #ffeaa7;
   color: #f0ad4e;
   transform: scale(1.05);
 }
 
-.outlet-table-footer {
+.outlet-table-footer12 {
   padding: 12px 16px;
   color: #6c757d;
-  font-size: 13px; /* Increased from 12px */
+  font-size: 13px;
   background: #f8f9fa;
   border-top: 1px solid #e9ecef;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Modal Styles */
-.outlet-modal-overlay {
+.outlet-modal-overlay12 {
   position: fixed;
   top: 0;
   left: 0;
@@ -185,24 +185,22 @@
   z-index: 1000;
 }
 
-.outlet-modal-content {
+.outlet-modal-content12 {
   animation: outletModalSlideIn 0.3s ease-out;
   max-height: 85vh;
   overflow: hidden;
 }
 
-/* @keyframes outletModalSlideIn remains unchanged */
-
-.outlet-view-modal {
+.outlet-view-modal12 {
   width: 400px;
   max-width: 90vw;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-view-modal-header {
+.outlet-view-modal-header12 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -210,16 +208,16 @@
   border-bottom: 1px solid #e9ecef;
 }
 
-.outlet-view-modal-title {
-  font-size: 15px; /* Increased from 14px */
+.outlet-view-modal-title12 {
+  font-size: 15px;
   font-weight: 600;
   color: #333;
   margin: 0;
   letter-spacing: 0.5px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-view-modal-close {
+.outlet-view-modal-close12 {
   border: none;
   background: none;
   cursor: pointer;
@@ -227,56 +225,56 @@
   color: #6c757d;
   border-radius: 4px;
   transition: all 0.2s ease;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-view-modal-close:hover {
+.outlet-view-modal-close12:hover {
   background: #f8f9fa;
   color: #333;
 }
 
-.outlet-view-modal-body {
+.outlet-view-modal-body12 {
   padding: 20px;
 }
 
-.outlet-view-detail-item {
+.outlet-view-detail-item12 {
   display: flex;
   align-items: center;
   margin-bottom: 16px;
 }
 
-.outlet-view-detail-item:last-child {
+.outlet-view-detail-item12:last-child {
   margin-bottom: 0;
 }
 
-.outlet-view-detail-item label {
-  font-size: 15px; /* Increased from 14px */
+.outlet-view-detail-item12 label {
+  font-size: 15px;
   color: #6c757d;
   margin-right: 8px;
   min-width: 60px;
   font-weight: 500;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-view-detail-item span {
-  font-size: 15px; /* Increased from 14px */
+.outlet-view-detail-item12 span {
+  font-size: 15px;
   color: #333;
   font-weight: 500;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-view-status.active {
+.outlet-view-status12.active12 {
   color: #28a745;
   font-weight: 600;
 }
 
-.outlet-view-status.inactive {
+.outlet-view-status12.inactive12 {
   color: #dc3545;
   font-weight: 600;
 }
 
 /* Form Modal Styles - REDUCED HEIGHT */
-.outlet-form-modal {
+.outlet-form-modal12 {
   width: 500px;
   max-width: 90vw;
   max-height: 70vh;
@@ -285,10 +283,10 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-form-modal-header {
+.outlet-form-modal-header12 {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -297,16 +295,16 @@
   flex-shrink: 0;
 }
 
-.outlet-form-modal-title {
-  font-size: 14px; /* Increased from 13px */
+.outlet-form-modal-title12 {
+  font-size: 14px;
   font-weight: 600;
   color: #333;
   margin: 0;
   letter-spacing: 0.5px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-form-modal-close {
+.outlet-form-modal-close12 {
   border: none;
   background: none;
   cursor: pointer;
@@ -314,94 +312,94 @@
   color: #6c757d;
   border-radius: 4px;
   transition: all 0.2s ease;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-form-modal-close:hover {
+.outlet-form-modal-close12:hover {
   background: #f8f9fa;
   color: #333;
 }
 
-.outlet-form-modal-body {
+.outlet-form-modal-body12 {
   padding: 12px 16px;
   overflow-y: auto;
   flex: 1;
 }
 
-.outlet-form-grid {
+.outlet-form-grid12 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
-.outlet-form-group {
+.outlet-form-group12 {
   display: flex;
   flex-direction: column;
 }
 
-.outlet-form-group.outlet-full-width {
+.outlet-form-group12.outlet-full-width12 {
   grid-column: 1 / -1;
 }
 
-.outlet-form-group label {
+.outlet-form-group12 label {
   font-weight: 600;
   color: #333;
-  font-size: 12px; /* Increased from 11px */
+  font-size: 12px;
   letter-spacing: 0.5px;
   margin-bottom: 4px;
   text-transform: uppercase;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-form-group input,
-.outlet-form-group textarea {
+.outlet-form-group12 input,
+.outlet-form-group12 textarea {
   padding: 6px 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 14px; /* Increased from 13px */
+  font-size: 14px;
   transition: all 0.2s ease;
   background: white;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-form-group input:focus,
-.outlet-form-group textarea:focus {
+.outlet-form-group12 input:focus,
+.outlet-form-group12 textarea:focus {
   outline: none;
   border-color: #5865f2;
   box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.1);
 }
 
-.outlet-form-group textarea {
+.outlet-form-group12 textarea {
   resize: vertical;
   min-height: 50px;
   max-height: 80px;
 }
 
-.outlet-radio-group {
+.outlet-radio-group12 {
   display: flex;
   gap: 12px;
   margin-top: 4px;
 }
 
-.outlet-radio-label {
+.outlet-radio-label12 {
   display: flex;
   align-items: center;
   font-weight: 500 !important;
-  font-size: 14px !important; /* Increased from 13px */
+  font-size: 14px !important;
   color: #333 !important;
   cursor: pointer;
   text-transform: none !important;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-radio-label input[type="radio"] {
+.outlet-radio-label12 input[type="radio"] {
   margin-right: 6px;
   width: 14px;
   height: 14px;
   accent-color: #5865f2;
 }
 
-.outlet-form-modal-footer {
+.outlet-form-modal-footer12 {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
@@ -411,66 +409,66 @@
   flex-shrink: 0;
 }
 
-.outlet-btn-save-primary {
+.outlet-btn-save-primary12 {
   background: #5865f2;
   color: white;
   border: none;
   padding: 6px 12px;
   border-radius: 4px;
-  font-size: 12px; /* Increased from 11px */
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-save-primary:hover {
+.outlet-btn-save-primary12:hover {
   background: #4752c4;
   transform: translateY(-1px);
 }
 
-.outlet-btn-clear-secondary {
+.outlet-btn-clear-secondary12 {
   background: #6c757d;
   color: white;
   border: none;
   padding: 6px 12px;
   border-radius: 4px;
-  font-size: 12px; /* Increased from 11px */
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-clear-secondary:hover {
+.outlet-btn-clear-secondary12:hover {
   background: #545b62;
   transform: translateY(-1px);
 }
 
 /* Delete Modal Styles */
-.outlet-delete-modal {
+.outlet-delete-modal12 {
   width: 420px;
   max-width: 90vw;
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-delete-modal-content {
+.outlet-delete-modal-content12 {
   padding: 40px 30px 30px;
   text-align: center;
 }
 
-.outlet-delete-modal-icon {
+.outlet-delete-modal-icon12 {
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
 }
 
-.outlet-warning-circle {
+.outlet-warning-circle12 {
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -481,238 +479,238 @@
   margin: 0 auto;
 }
 
-.outlet-exclamation {
+.outlet-exclamation12 {
   color: white;
   font-size: 28px;
   font-weight: bold;
   line-height: 1;
 }
 
-.outlet-delete-modal-title {
-  font-size: 20px; /* Increased from 18px */
+.outlet-delete-modal-title12 {
+  font-size: 20px;
   font-weight: 600;
   color: #333;
   margin: 0 0 10px 0;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-delete-modal-message {
-  font-size: 15px; /* Increased from 14px */
+.outlet-delete-modal-message12 {
+  font-size: 15px;
   color: #6c757d;
   margin: 0 0 30px 0;
   line-height: 1.4;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-delete-modal-actions {
+.outlet-delete-modal-actions12 {
   display: flex;
   gap: 12px;
   justify-content: center;
 }
 
-.outlet-btn-delete-yes {
+.outlet-btn-delete-yes12 {
   background: #5865f2;
   color: white;
   border: none;
   padding: 12px 24px;
   border-radius: 4px;
-  font-size: 15px; /* Increased from 14px */
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-delete-yes:hover {
+.outlet-btn-delete-yes12:hover {
   background: #4752c4;
   transform: translateY(-1px);
 }
 
-.outlet-btn-delete-no {
+.outlet-btn-delete-no12 {
   background: #333;
   color: white;
   border: none;
   padding: 12px 24px;
   border-radius: 4px;
-  font-size: 15px; /* Increased from 14px */
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-delete-no:hover {
+.outlet-btn-delete-no12:hover {
   background: #2c2c2c;
   transform: translateY(-1px);
 }
 
 /* Compact height variants */
-.outlet-form-modal.outlet-compact-height {
+.outlet-form-modal12.outlet-compact-height12 {
   max-height: 60vh;
 }
 
-.outlet-form-modal.outlet-compact-height .outlet-form-modal-header {
+.outlet-form-modal12.outlet-compact-height12 .outlet-form-modal-header12 {
   padding: 8px 14px;
 }
 
-.outlet-form-modal.outlet-compact-height .outlet-form-modal-body {
+.outlet-form-modal12.outlet-compact-height12 .outlet-form-modal-body12 {
   padding: 10px 14px;
 }
 
-.outlet-form-modal.outlet-compact-height .outlet-form-modal-footer {
+.outlet-form-modal12.outlet-compact-height12 .outlet-form-modal-footer12 {
   padding: 8px 14px;
 }
 
-.outlet-form-modal.outlet-compact-height .outlet-form-grid {
+.outlet-form-modal12.outlet-compact-height12 .outlet-form-grid12 {
   gap: 8px;
 }
 
-.outlet-form-modal.outlet-compact-height .outlet-form-group label {
-  font-size: 11px; /* Increased from 10px */
+.outlet-form-modal12.outlet-compact-height12 .outlet-form-group12 label {
+  font-size: 11px;
   margin-bottom: 3px;
 }
 
-.outlet-form-modal.outlet-compact-height .outlet-form-group input,
-.outlet-form-modal.outlet-compact-height .outlet-form-group textarea {
+.outlet-form-modal12.outlet-compact-height12 .outlet-form-group12 input,
+.outlet-form-modal12.outlet-compact-height12 .outlet-form-group12 textarea {
   padding: 5px 7px;
-  font-size: 13px; /* Increased from 12px */
+  font-size: 13px;
 }
 
-.outlet-form-modal.outlet-compact-height .outlet-form-group textarea {
+.outlet-form-modal12.outlet-compact-height12 .outlet-form-group12 textarea {
   min-height: 40px;
   max-height: 60px;
 }
 
-.outlet-form-modal.outlet-compact-height .outlet-btn-save-primary,
-.outlet-form-modal.outlet-compact-height .outlet-btn-clear-secondary {
+.outlet-form-modal12.outlet-compact-height12 .outlet-btn-save-primary12,
+.outlet-form-modal12.outlet-compact-height12 .outlet-btn-clear-secondary12 {
   padding: 5px 10px;
-  font-size: 11px; /* Increased from 10px */
+  font-size: 11px;
 }
 
 /* Extra compact height variant */
-.outlet-form-modal.outlet-extra-compact {
+.outlet-form-modal12.outlet-extra-compact12 {
   max-height: 50vh;
 }
 
-.outlet-form-modal.outlet-extra-compact .outlet-form-modal-header {
+.outlet-form-modal12.outlet-extra-compact12 .outlet-form-modal-header12 {
   padding: 6px 12px;
 }
 
-.outlet-form-modal.outlet-extra-compact .outlet-form-modal-title {
-  font-size: 13px; /* Increased from 12px */
+.outlet-form-modal12.outlet-extra-compact12 .outlet-form-modal-title12 {
+  font-size: 13px;
 }
 
-.outlet-form-modal.outlet-extra-compact .outlet-form-modal-body {
+.outlet-form-modal12.outlet-extra-compact12 .outlet-form-modal-body12 {
   padding: 8px 12px;
 }
 
-.outlet-form-modal.outlet-extra-compact .outlet-form-modal-footer {
+.outlet-form-modal12.outlet-extra-compact12 .outlet-form-modal-footer12 {
   padding: 6px 12px;
 }
 
-.outlet-form-modal.outlet-extra-compact .outlet-form-grid {
+.outlet-form-modal12.outlet-extra-compact12 .outlet-form-grid12 {
   gap: 6px;
   grid-template-columns: 1fr;
 }
 
-.outlet-form-modal.outlet-extra-compact .outlet-form-group label {
-  font-size: 10px; /* Increased from 9px */
+.outlet-form-modal12.outlet-extra-compact12 .outlet-form-group12 label {
+  font-size: 10px;
   margin-bottom: 2px;
 }
 
-.outlet-form-modal.outlet-extra-compact .outlet-form-group input,
-.outlet-form-modal.outlet-extra-compact .outlet-form-group textarea {
+.outlet-form-modal12.outlet-extra-compact12 .outlet-form-group12 input,
+.outlet-form-modal12.outlet-extra-compact12 .outlet-form-group12 textarea {
   padding: 4px 6px;
-  font-size: 12px; /* Increased from 11px */
+  font-size: 12px;
 }
 
-.outlet-form-modal.outlet-extra-compact .outlet-form-group textarea {
+.outlet-form-modal12.outlet-extra-compact12 .outlet-form-group12 textarea {
   min-height: 35px;
   max-height: 50px;
 }
 
-.outlet-form-modal.outlet-extra-compact .outlet-radio-label {
-  font-size: 12px !important; /* Increased from 11px */
+.outlet-form-modal12.outlet-extra-compact12 .outlet-radio-label12 {
+  font-size: 12px !important;
 }
 
-.outlet-form-modal.outlet-extra-compact .outlet-radio-label input[type="radio"] {
+.outlet-form-modal12.outlet-extra-compact12 .outlet-radio-label12 input[type="radio"] {
   width: 12px;
   height: 12px;
   margin-right: 4px;
 }
 
-.outlet-form-modal.outlet-extra-compact .outlet-btn-save-primary,
-.outlet-form-modal.outlet-extra-compact .outlet-btn-clear-secondary {
+.outlet-form-modal12.outlet-extra-compact12 .outlet-btn-save-primary12,
+.outlet-form-modal12.outlet-extra-compact12 .outlet-btn-clear-secondary12 {
   padding: 4px 8px;
-  font-size: 10px; /* Increased from 9px */
+  font-size: 10px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .outlet-modal-content {
+  .outlet-modal-content12 {
     margin: 10px;
     max-height: calc(100vh - 20px);
   }
   
-  .outlet-form-modal,
-  .outlet-view-modal {
+  .outlet-form-modal12,
+  .outlet-view-modal12 {
     width: auto;
     max-height: 80vh;
   }
   
-  .outlet-form-modal {
+  .outlet-form-modal12 {
     width: 350px;
   }
   
-  .outlet-form-modal-body {
+  .outlet-form-modal-body12 {
     padding: 10px 12px;
   }
   
-  .outlet-form-modal-header,
-  .outlet-form-modal-footer {
+  .outlet-form-modal-header12,
+  .outlet-form-modal-footer12 {
     padding: 8px 12px;
   }
-  .outlet-form-grid {
+  .outlet-form-grid12 {
     grid-template-columns: 1fr;
     gap: 8px;
   }
   
-  .outlet-form-group input,
-  .outlet-form-group textarea {
+  .outlet-form-group12 input,
+  .outlet-form-group12 textarea {
     padding: 5px 7px;
-    font-size: 13px; /* Increased from 12px */
+    font-size: 13px;
   }
   
-  .outlet-form-group textarea {
+  .outlet-form-group12 textarea {
     min-height: 45px;
   }
   
-  .outlet-form-group label {
-    font-size: 11px; /* Increased from 10px */
+  .outlet-form-group12 label {
+    font-size: 11px;
     margin-bottom: 3px;
   }
   
-  .outlet-btn-save-primary,
-  .outlet-btn-clear-secondary {
+  .outlet-btn-save-primary12,
+  .outlet-btn-clear-secondary12 {
     padding: 5px 10px;
-    font-size: 11px; /* Increased from 10px */
+    font-size: 11px;
   }
   
-  .outlet-view-modal-header,
-  .outlet-view-modal-body {
+  .outlet-view-modal-header12,
+  .outlet-view-modal-body12 {
     padding: 16px 20px;
   }
   
-  .outlet-table {
-    font-size: 13px; /* Increased from 12px */
+  .outlet-table12 {
+    font-size: 13px;
   }
   
-  .outlet-action-buttons {
+  .outlet-action-buttons12 {
     flex-direction: column;
     gap: 4px;
   }
   
-  .outlet-action-btn {
+  .outlet-action-btn12 {
     padding: 6px;
     width: 28px;
     height: 28px;
@@ -720,91 +718,91 @@
 }
 
 @media (max-width: 480px) {
-  .outlet-modal-overlay {
+  .outlet-modal-overlay12 {
     align-items: flex-start;
     padding-top: 10px;
   }
   
-  .outlet-modal-content {
+  .outlet-modal-content12 {
     margin: 0 5px;
     max-height: calc(100vh - 20px);
   }
   
-  .outlet-form-modal {
+  .outlet-form-modal12 {
     width: auto;
     max-width: calc(100vw - 10px);
     max-height: 85vh;
   }
   
-  .outlet-form-modal-body {
+  .outlet-form-modal-body12 {
     padding: 8px 10px;
   }
   
-  .outlet-form-modal-header,
-  .outlet-form-modal-footer {
+  .outlet-form-modal-header12,
+  .outlet-form-modal-footer12 {
     padding: 6px 10px;
   }
   
-  .outlet-form-modal-title {
-    font-size: 12px; /* Increased from 11px */
+  .outlet-form-modal-title12 {
+    font-size: 12px;
   }
   
-  .outlet-form-grid {
+  .outlet-form-grid12 {
     gap: 6px;
   }
   
-  .outlet-form-group input,
-  .outlet-form-group textarea {
+  .outlet-form-group12 input,
+  .outlet-form-group12 textarea {
     padding: 4px 6px;
-    font-size: 12px; /* Increased from 11px */
+    font-size: 12px;
   }
   
-  .outlet-form-group textarea {
+  .outlet-form-group12 textarea {
     min-height: 40px;
     max-height: 55px;
   }
   
-  .outlet-form-group label {
-    font-size: 10px; /* Increased from 9px */
+  .outlet-form-group12 label {
+    font-size: 10px;
     margin-bottom: 2px;
   }
   
-  .outlet-radio-group {
+  .outlet-radio-group12 {
     gap: 8px;
     flex-wrap: wrap;
   }
   
-  .outlet-radio-label {
-    font-size: 12px !important; /* Increased from 11px */
+  .outlet-radio-label12 {
+    font-size: 12px !important;
   }
   
-  .outlet-radio-label input[type="radio"] {
+  .outlet-radio-label12 input[type="radio"] {
     width: 12px;
     height: 12px;
     margin-right: 4px;
   }
   
-  .outlet-btn-save-primary,
-  .outlet-btn-clear-secondary {
+  .outlet-btn-save-primary12,
+  .outlet-btn-clear-secondary12 {
     padding: 4px 8px;
-    font-size: 10px; /* Increased from 9px */
+    font-size: 10px;
   }
   
-  .outlet-view-modal-title {
-    font-size: 16px; /* Increased from 16px (unchanged but applied font) */
+  .outlet-view-modal-title12 {
+    font-size: 16px;
   }
   
-  .outlet-header {
+  .outlet-header12 {
     flex-direction: column;
     gap: 10px;
     align-items: stretch;
   }
   
-  .outlet-actions {
+  .outlet-actions12 {
     justify-content: center;
   }
   
-  .outlet-action-btn {
+  .outlet-action-btn12 {
     width: 24px;
     height: 24px;
   }
@@ -812,173 +810,168 @@
 
 /* Scrollable content for very small heights */
 @media (max-height: 600px) {
-  .outlet-form-modal {
+  .outlet-form-modal12 {
     max-height: 90vh;
   }
   
-  .outlet-form-modal-body {
+  .outlet-form-modal-body12 {
     max-height: 300px;
     overflow-y: auto;
   }
 }
 
 @media (max-height: 500px) {
-  .outlet-form-modal {
+  .outlet-form-modal12 {
     max-height: 95vh;
   }
   
-  .outlet-form-modal-body {
+  .outlet-form-modal-body12 {
     max-height: 250px;
     overflow-y: auto;
   }
   
-  .outlet-form-modal-header,
-  .outlet-form-modal-footer {
+  .outlet-form-modal-header12,
+  .outlet-form-modal-footer12 {
     padding: 5px 10px;
   }
 }
 
-/* Custom scrollbar for modal body remains unchanged */
-
 /* Additional utility classes for outlets */
-.outlet-btn-save {
+.outlet-btn-save12 {
   background: #28a745;
   color: white;
   padding: 12px 24px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-save:hover {
+.outlet-btn-save12:hover {
   background: #218838;
   transform: translateY(-1px);
 }
 
-.outlet-btn-clear {
+.outlet-btn-clear12 {
   background: #6c757d;
   color: white;
   padding: 12px 24px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-clear:hover {
+.outlet-btn-clear12:hover {
   background: #545b62;
   transform: translateY(-1px);
 }
 
-.outlet-btn-delete-confirm {
+.outlet-btn-delete-confirm12 {
   background: #dc3545;
   color: white;
   padding: 12px 20px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-delete-confirm:hover {
+.outlet-btn-delete-confirm12:hover {
   background: #c82333;
   transform: translateY(-1px);
 }
 
-.outlet-btn-cancel {
+.outlet-btn-cancel12 {
   background: #6c757d;
   color: white;
   padding: 12px 24px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-cancel:hover {
+.outlet-btn-cancel12:hover {
   background: #545b62;
   transform: translateY(-1px);
 }
 
 /* Loading states */
-.outlet-loading {
+.outlet-loading12 {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px;
   color: #6c757d;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* @keyframes outletSpin remains unchanged */
-
 /* Error states */
-.outlet-error {
+.outlet-error12 {
   background: #f8d7da;
   color: #721c24;
   padding: 12px 16px;
   border-radius: 4px;
   margin: 10px 0;
   border: 1px solid #f5c6cb;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-success {
+.outlet-success12 {
   background: #d4edda;
   color: #155724;
   padding: 12px 16px;
   border-radius: 4px;
   margin: 10px 0;
   border: 1px solid #c3e6cb;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Empty state */
-.outlet-empty-state {
+.outlet-empty-state12 {
   text-align: center;
   padding: 60px 20px;
   color: #6c757d;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-empty-state h3 {
-  font-size: 20px; /* Increased from 18px */
+.outlet-empty-state12 h3 {
+  font-size: 20px;
   margin-bottom: 10px;
   color: #495057;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-empty-state p {
-  font-size: 15px; /* Increased from 14px */
+.outlet-empty-state12 p {
+  font-size: 15px;
   margin-bottom: 20px;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Consistent font */
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
-
 
 /* Accessibility improvements */
-.outlet-action-btn:focus,
-.outlet-btn:focus,
-.outlet-btn-save-primary:focus,
-.outlet-btn-clear-secondary:focus,
-.outlet-btn-delete-yes:focus,
-.outlet-btn-delete-no:focus {
+.outlet-action-btn12:focus,
+.outlet-btn12:focus,
+.outlet-btn-save-primary12:focus,
+.outlet-btn-clear-secondary12:focus,
+.outlet-btn-delete-yes12:focus,
+.outlet-btn-delete-no12:focus {
   outline: 2px solid #5865f2;
   outline-offset: 2px;
 }
 
-.outlet-form-group input:focus,
-.outlet-form-group textarea:focus {
+.outlet-form-group12 input:focus,
+.outlet-form-group12 textarea:focus {
   outline: 2px solid #5865f2;
   outline-offset: 1px;
 }
 
 /* Print styles */
 @media print {
-  .outlet-actions,
-  .outlet-action-buttons,
-  .outlet-modal-overlay {
+  .outlet-actions12,
+  .outlet-action-buttons12,
+  .outlet-modal-overlay12 {
     display: none !important;
   }
   
-  .outlet-container {
+  .outlet-container12 {
     box-shadow: none;
     border: 1px solid #ddd;
   }
   
-  .outlet-table {
+  .outlet-table12 {
     font-size: 12px;
   }
   
-  .outlet-status {
+  .outlet-status12 {
     border: 1px solid #ddd;
     background: white !important;
     color: black !important;
@@ -987,31 +980,31 @@
 
 /* High contrast mode support */
 @media (prefers-contrast: high) {
-  .outlet-container {
+  .outlet-container12 {
     border: 2px solid #000;
   }
   
-  .outlet-btn,
-  .outlet-action-btn {
+  .outlet-btn12,
+  .outlet-action-btn12 {
     border: 2px solid currentColor;
   }
   
-  .outlet-status {
+  .outlet-status12 {
     border: 2px solid currentColor;
   }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
-  .outlet-modal-content,
-  .outlet-btn,
-  .outlet-action-btn {
+  .outlet-modal-content12,
+  .outlet-btn12,
+  .outlet-action-btn12 {
     animation: none;
     transition: none;
   }
   
-  .outlet-btn:hover,
-  .outlet-action-btn:hover {
+  .outlet-btn12:hover,
+  .outlet-action-btn12:hover {
     transform: none;
   }
 }

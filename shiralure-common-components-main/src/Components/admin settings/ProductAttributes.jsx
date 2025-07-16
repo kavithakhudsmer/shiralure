@@ -60,12 +60,12 @@ const ProductAttributes = () => {
   };
 
   return (
-    <div className="product-attributes-container">
-      <div className="product-attributes-card">
-        <div className="product-attributes-header">
-          <h2 className="product-attributes-title">Product Attributes</h2>
+    <div className="product-attributes-container16">
+      <div className="product-attributes-card16">
+        <div className="product-attributes-header16">
+          <h2 className="product-attributes-title16">Product Attributes</h2>
           <button 
-            className="product-attributes-add-btn"
+            className="product-attributes-add-btn16"
             onClick={handleAdd}
           >
             <Plus size={16} />
@@ -73,37 +73,37 @@ const ProductAttributes = () => {
           </button>
         </div>
         
-        <div className="product-attributes-table-container">
-          <table className="product-attributes-table">
-            <thead className="product-attributes-thead">
+        <div className="product-attributes-table-container16">
+          <table className="product-attributes-table16">
+            <thead className="product-attributes-thead16">
               <tr>
-                <th className="product-attributes-th-name">Name</th>
-                <th className="product-attributes-th-action">Action</th>
+                <th className="product-attributes-th-name16">Name</th>
+                <th className="product-attributes-th-action16">Action</th>
               </tr>
             </thead>
-            <tbody className="product-attributes-tbody">
+            <tbody className="product-attributes-tbody16">
               {attributes.map((attribute) => (
-                <tr key={attribute.id} className="product-attributes-row">
-                  <td className="product-attributes-cell-name">{attribute.name}</td>
-                  <td className="product-attributes-cell-action">
-                    <div className="product-attributes-action-buttons">
+                <tr key={attribute.id} className="product-attributes-row16">
+                  <td className="product-attributes-cell-name16">{attribute.name}</td>
+                  <td className="product-attributes-cell-action16">
+                    <div className="product-attributes-action-buttons16">
                       <button 
-                        className="product-attributes-action-btn product-attributes-view-btn"
+                        className="product-attributes-action-btn16 product-attributes-view-btn16"
                         onClick={() => handleView(attribute)}
                       >
-                        <Eye size={14} color="#dc3545" /> {/* Red for view */}
+                        <Eye size={14} color="#dc3545" />
                       </button>
                       <button 
-                        className="product-attributes-action-btn product-attributes-edit-btn"
+                        className="product-attributes-action-btn16 product-attributes-edit-btn16"
                         onClick={() => handleEdit(attribute)}
                       >
-                        <Edit size={14} color="#28a745" /> {/* Green for edit */}
+                        <Edit size={14} color="#28a745" />
                       </button>
                       <button 
-                        className="product-attributes-action-btn product-attributes-delete-btn"
+                        className="product-attributes-action-btn16 product-attributes-delete-btn16"
                         onClick={() => handleDelete(attribute)}
                       >
-                        <Trash2 size={14} color="#f0ad4e" /> {/* Orange for delete */}
+                        <Trash2 size={14} color="#f0ad4e" />
                       </button>
                     </div>
                   </td>
@@ -113,55 +113,55 @@ const ProductAttributes = () => {
           </table>
         </div>
         
-        <div className="product-attributes-footer">
+        <div className="product-attributes-footer16">
           Showing 1 to 6 of 6 entries
         </div>
       </div>
 
       {/* Add Attribute Modal */}
       {showAddModal && (
-        <div className="product-attributes-modal-overlay">
-          <div className="product-attributes-modal product-attributes-add-modal">
-            <div className="product-attributes-modal-header">
-              <h3 className="product-attributes-modal-title">Add Attribute</h3>
+        <div className="product-attributes-modal-overlay16">
+          <div className="product-attributes-modal16 product-attributes-add-modal16">
+            <div className="product-attributes-modal-header16">
+              <h3 className="product-attributes-modal-title16">Add Attribute</h3>
               <button 
-                className="product-attributes-modal-close"
+                className="product-attributes-modal-close16"
                 onClick={() => setShowAddModal(false)}
               >
                 <X size={20} />
               </button>
             </div>
-            <div className="product-attributes-modal-content">
-              <div className="product-attributes-field-group">
-                <label className="product-attributes-field-label">Name</label>
+            <div className="product-attributes-modal-content16">
+              <div className="product-attributes-field-group16">
+                <label className="product-attributes-field-label16">Name</label>
                 <input 
                   type="text" 
-                  className="product-attributes-input"
+                  className="product-attributes-input16"
                   value={addName}
                   onChange={(e) => setAddName(e.target.value)}
                   placeholder="Enter attribute name"
                 />
               </div>
-              <div className="product-attributes-field-group">
-                <label className="product-attributes-field-label">Values</label>
+              <div className="product-attributes-field-group16">
+                <label className="product-attributes-field-label16">Values</label>
                 <input 
                   type="text" 
-                  className="product-attributes-input"
+                  className="product-attributes-input16"
                   value={addValues}
                   onChange={(e) => setAddValues(e.target.value)}
                   placeholder="Enter values separated by commas"
                 />
               </div>
             </div>
-            <div className="product-attributes-modal-footer">
+            <div className="product-attributes-modal-footer16">
               <button 
-                className="product-attributes-btn product-attributes-save-btn"
+                className="product-attributes-btn16 product-attributes-save-btn16"
                 onClick={handleSaveAdd}
               >
                 Save
               </button>
               <button 
-                className="product-attributes-btn product-attributes-cancel-btn"
+                className="product-attributes-btn16 product-attributes-cancel-btn16"
                 onClick={() => setShowAddModal(false)}
               >
                 Cancel
@@ -173,26 +173,26 @@ const ProductAttributes = () => {
 
       {/* View Attribute Modal */}
       {showViewModal && (
-        <div className="product-attributes-modal-overlay">
-          <div className="product-attributes-modal product-attributes-view-modal">
-            <div className="product-attributes-modal-header">
-              <h3 className="product-attributes-modal-title">View Attribute</h3>
+        <div className="product-attributes-modal-overlay16">
+          <div className="product-attributes-modal16 product-attributes-view-modal16">
+            <div className="product-attributes-modal-header16">
+              <h3 className="product-attributes-modal-title16">View Attribute</h3>
               <button 
-                className="product-attributes-modal-close"
+                className="product-attributes-modal-close16"
                 onClick={() => setShowViewModal(false)}
               >
                 <X size={20} />
               </button>
             </div>
-            <div className="product-attributes-modal-content">
-              <div className="product-attributes-field-group">
-                <label className="product-attributes-field-label">Name: {selectedAttribute?.name}</label>
+            <div className="product-attributes-modal-content16">
+              <div className="product-attributes-field-group16">
+                <label className="product-attributes-field-label16">Name: {selectedAttribute?.name}</label>
               </div>
-              <div className="product-attributes-field-group">
-                <label className="product-attributes-field-label">Values:</label>
-                <div className="product-attributes-values-list">
+              <div className="product-attributes-field-group16">
+                <label className="product-attributes-field-label16">Values:</label>
+                <div className="product-attributes-values-list16">
                   {selectedAttribute?.values.map((value, index) => (
-                    <span key={index} className="product-attributes-value-tag">
+                    <span key={index} className="product-attributes-value-tag16">
                       {value}
                     </span>
                   ))}
@@ -205,47 +205,47 @@ const ProductAttributes = () => {
 
       {/* Edit Attribute Modal */}
       {showEditModal && (
-        <div className="product-attributes-modal-overlay">
-          <div className="product-attributes-modal product-attributes-edit-modal">
-            <div className="product-attributes-modal-header">
-              <h3 className="product-attributes-modal-title">Edit Attribute</h3>
+        <div className="product-attributes-modal-overlay16">
+          <div className="product-attributes-modal16 product-attributes-edit-modal16">
+            <div className="product-attributes-modal-header16">
+              <h3 className="product-attributes-modal-title16">Edit Attribute</h3>
               <button 
-                className="product-attributes-modal-close"
+                className="product-attributes-modal-close16"
                 onClick={() => setShowEditModal(false)}
               >
                 <X size={20} />
               </button>
             </div>
-            <div className="product-attributes-modal-content">
-              <div className="product-attributes-field-group">
-                <label className="product-attributes-field-label">Name</label>
+            <div className="product-attributes-modal-content16">
+              <div className="product-attributes-field-group16">
+                <label className="product-attributes-field-label16">Name</label>
                 <input 
                   type="text" 
-                  className="product-attributes-input"
+                  className="product-attributes-input16"
                   value={editName}
                   onChange={(e) => setEditName(e.target.value)}
                 />
               </div>
-              <div className="product-attributes-field-group">
-                <label className="product-attributes-field-label">Values</label>
+              <div className="product-attributes-field-group16">
+                <label className="product-attributes-field-label16">Values</label>
                 <input 
                   type="text" 
-                  className="product-attributes-input"
+                  className="product-attributes-input16"
                   value={editValues}
                   onChange={(e) => setEditValues(e.target.value)}
                   placeholder="Enter values separated by commas"
                 />
               </div>
             </div>
-            <div className="product-attributes-modal-footer">
+            <div className="product-attributes-modal-footer16">
               <button 
-                className="product-attributes-btn product-attributes-save-btn"
+                className="product-attributes-btn16 product-attributes-save-btn16"
                 onClick={handleSave}
               >
                 Save
               </button>
               <button 
-                className="product-attributes-btn product-attributes-cancel-btn"
+                className="product-attributes-btn16 product-attributes-cancel-btn16"
                 onClick={() => setShowEditModal(false)}
               >
                 Cancel
@@ -257,25 +257,25 @@ const ProductAttributes = () => {
 
       {/* Delete Confirmation Modal */}
       {showDeleteModal && (
-        <div className="product-attributes-modal-overlay">
-          <div className="product-attributes-modal product-attributes-delete-modal">
-            <div className="product-attributes-delete-content">
-              <div className="product-attributes-delete-icon">
-                <Clock size={40} className="product-attributes-clock-icon" />
+        <div className="product-attributes-modal-overlay16">
+          <div className="product-attributes-modal16 product-attributes-delete-modal16">
+            <div className="product-attributes-delete-content16">
+              <div className="product-attributes-delete-icon16">
+                <Clock size={40} className="product-attributes-clock-icon16" />
               </div>
-              <h3 className="product-attributes-delete-title">Are you sure ?</h3>
-              <p className="product-attributes-delete-message">
+              <h3 className="product-attributes-delete-title16">Are you sure ?</h3>
+              <p className="product-attributes-delete-message16">
                 You will not be able to recover the deleted record!
               </p>
-              <div className="product-attributes-delete-buttons">
+              <div className="product-attributes-delete-buttons16">
                 <button 
-                  className="product-attributes-btn product-attributes-delete-confirm-btn"
+                  className="product-attributes-btn16 product-attributes-delete-confirm-btn16"
                   onClick={handleConfirmDelete}
                 >
                   Yes, Delete it !
                 </button>
                 <button 
-                  className="product-attributes-btn product-attributes-delete-cancel-btn"
+                  className="product-attributes-btn16 product-attributes-delete-cancel-btn16"
                   onClick={() => setShowDeleteModal(false)}
                 >
                   No, Cancel !
@@ -287,14 +287,14 @@ const ProductAttributes = () => {
       )}
 
       <style jsx>{`
-        .product-attributes-container {
+        .product-attributes-container16 {
           padding: 20px;
           background-color: #f5f7fa;
           min-height: 100vh;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .product-attributes-card {
+        .product-attributes-card16 {
           background: white;
           border-radius: 8px;
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -302,7 +302,7 @@ const ProductAttributes = () => {
           margin: 0 auto;
         }
 
-        .product-attributes-header {
+        .product-attributes-header16 {
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -310,14 +310,14 @@ const ProductAttributes = () => {
           border-bottom: 1px solid #e5e7eb;
         }
 
-        .product-attributes-title {
+        .product-attributes-title16 {
           font-size: 18px;
           font-weight: 600;
           color: #1f2937;
           margin: 0;
         }
 
-        .product-attributes-add-btn {
+        .product-attributes-add-btn16 {
           background: #4f46e5;
           color: white;
           border: none;
@@ -330,25 +330,25 @@ const ProductAttributes = () => {
           font-weight: 500;
         }
 
-        .product-attributes-add-btn:hover {
+        .product-attributes-add-btn16:hover {
           background: #4338ca;
         }
 
-        .product-attributes-table-container {
+        .product-attributes-table-container16 {
           overflow-x: auto;
         }
 
-        .product-attributes-table {
+        .product-attributes-table16 {
           width: 100%;
           border-collapse: collapse;
         }
 
-        .product-attributes-thead {
+        .product-attributes-thead16 {
           background-color: #f9fafb;
         }
 
-        .product-attributes-th-name,
-        .product-attributes-th-action {
+        .product-attributes-th-name16,
+        .product-attributes-th-action16 {
           padding: 12px 24px;
           text-align: left;
           font-weight: 500;
@@ -356,42 +356,42 @@ const ProductAttributes = () => {
           border-bottom: 1px solid #e5e7eb;
         }
 
-        .product-attributes-th-action {
+        .product-attributes-th-action16 {
           text-align: center;
           width: 200px;
         }
 
-        .product-attributes-tbody {
+        .product-attributes-tbody16 {
           background: white;
         }
 
-        .product-attributes-row:hover {
+        .product-attributes-row16:hover {
           background-color: #f9fafb;
         }
 
-        .product-attributes-cell-name {
+        .product-attributes-cell-name16 {
           padding: 16px 24px;
           color: #1f2937;
           border-bottom: 1px solid #e5e7eb;
         }
 
-        .product-attributes-cell-action {
+        .product-attributes-cell-action16 {
           padding: 16px 24px;
           text-align: center;
           border-bottom: 1px solid #e5e7eb;
         }
 
-        .product-attributes-action-buttons {
+        .product-attributes-action-buttons16 {
           display: flex;
           gap: 8px;
           justify-content: center;
         }
 
-        .product-attributes-action-btn {
+        .product-attributes-action-btn16 {
           width: 32px;
           height: 32px;
           border: none;
-          border-radius: 50%; /* Circular shape */
+          border-radius: 50%;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -400,41 +400,41 @@ const ProductAttributes = () => {
           opacity: 0.9;
         }
 
-        .product-attributes-view-btn {
-          background: #f8d7da; /* Light red background */
+        .product-attributes-view-btn16 {
+          background: #f8d7da;
         }
 
-        .product-attributes-view-btn:hover {
+        .product-attributes-view-btn16:hover {
           background: #f1aeb5;
           transform: scale(1.05);
         }
 
-        .product-attributes-edit-btn {
-          background: #d1e7dd; /* Light green background */
+        .product-attributes-edit-btn16 {
+          background: #d1e7dd;
         }
 
-        .product-attributes-edit-btn:hover {
+        .product-attributes-edit-btn16:hover {
           background: #a3cfbb;
           transform: scale(1.05);
         }
 
-        .product-attributes-delete-btn {
-          background: #fff3cd; /* Light orange background */
+        .product-attributes-delete-btn16 {
+          background: #fff3cd;
         }
 
-        .product-attributes-delete-btn:hover {
+        .product-attributes-delete-btn16:hover {
           background: #ffeaa7;
           transform: scale(1.05);
         }
 
-        .product-attributes-footer {
+        .product-attributes-footer16 {
           padding: 16px 24px;
           color: #6b7280;
           font-size: 14px;
           border-top: 1px solid #e5e7eb;
         }
 
-        .product-attributes-modal-overlay {
+        .product-attributes-modal-overlay16 {
           position: fixed;
           top: 0;
           left: 0;
@@ -447,7 +447,7 @@ const ProductAttributes = () => {
           z-index: 1000;
         }
 
-        .product-attributes-modal {
+        .product-attributes-modal16 {
           background: white;
           border-radius: 8px;
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -457,7 +457,7 @@ const ProductAttributes = () => {
           overflow-y: auto;
         }
 
-        .product-attributes-modal-header {
+        .product-attributes-modal-header16 {
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -465,14 +465,14 @@ const ProductAttributes = () => {
           border-bottom: 1px solid #e5e7eb;
         }
 
-        .product-attributes-modal-title {
+        .product-attributes-modal-title16 {
           font-size: 18px;
           font-weight: 600;
           color: #1f2937;
           margin: 0;
         }
 
-        .product-attributes-modal-close {
+        .product-attributes-modal-close16 {
           background: none;
           border: none;
           cursor: pointer;
@@ -480,26 +480,26 @@ const ProductAttributes = () => {
           padding: 4px;
         }
 
-        .product-attributes-modal-close:hover {
+        .product-attributes-modal-close16:hover {
           color: #1f2937;
         }
 
-        .product-attributes-modal-content {
+        .product-attributes-modal-content16 {
           padding: 24px;
         }
 
-        .product-attributes-field-group {
+        .product-attributes-field-group16 {
           margin-bottom: 20px;
         }
 
-        .product-attributes-field-label {
+        .product-attributes-field-label16 {
           display: block;
           font-weight: 500;
           color: #374151;
           margin-bottom: 8px;
         }
 
-        .product-attributes-input {
+        .product-attributes-input16 {
           width: 100%;
           padding: 10px 12px;
           border: 1px solid #d1d5db;
@@ -508,20 +508,20 @@ const ProductAttributes = () => {
           background-color: #f9fafb;
         }
 
-        .product-attributes-input:focus {
+        .product-attributes-input16:focus {
           outline: none;
           border-color: #4f46e5;
           background-color: white;
         }
 
-        .product-attributes-values-list {
+        .product-attributes-values-list16 {
           display: flex;
           flex-wrap: wrap;
           gap: 8px;
           margin-top: 8px;
         }
 
-        .product-attributes-value-tag {
+        .product-attributes-value-tag16 {
           background: #f3f4f6;
           color: #374151;
           padding: 4px 12px;
@@ -529,7 +529,7 @@ const ProductAttributes = () => {
           font-size: 14px;
         }
 
-        .product-attributes-modal-footer {
+        .product-attributes-modal-footer16 {
           padding: 16px 24px;
           border-top: 1px solid #e5e7eb;
           display: flex;
@@ -537,7 +537,7 @@ const ProductAttributes = () => {
           justify-content: flex-end;
         }
 
-        .product-attributes-btn {
+        .product-attributes-btn16 {
           border: none;
           border-radius: 6px;
           padding: 10px 20px;
@@ -546,75 +546,75 @@ const ProductAttributes = () => {
           transition: all 0.2s;
         }
 
-        .product-attributes-save-btn {
+        .product-attributes-save-btn16 {
           background: #4f46e5;
           color: white;
         }
 
-        .product-attributes-save-btn:hover {
+        .product-attributes-save-btn16:hover {
           background: #4338ca;
         }
 
-        .product-attributes-cancel-btn {
+        .product-attributes-cancel-btn16 {
           background: #6b7280;
           color: white;
         }
 
-        .product-attributes-cancel-btn:hover {
+        .product-attributes-cancel-btn16:hover {
           background: #374151;
         }
 
-        .product-attributes-delete-modal {
+        .product-attributes-delete-modal16 {
           max-width: 400px;
         }
 
-        .product-attributes-delete-content {
+        .product-attributes-delete-content16 {
           padding: 32px 24px;
           text-align: center;
         }
 
-        .product-attributes-delete-icon {
+        .product-attributes-delete-icon16 {
           margin-bottom: 16px;
         }
 
-        .product-attributes-clock-icon {
+        .product-attributes-clock-icon16 {
           color: #f59e0b;
         }
 
-        .product-attributes-delete-title {
+        .product-attributes-delete-title16 {
           font-size: 20px;
           font-weight: 600;
           color: #1f2937;
           margin: 0 0 8px 0;
         }
 
-        .product-attributes-delete-message {
+        .product-attributes-delete-message16 {
           color: #6b7280;
           margin: 0 0 24px 0;
           font-size: 14px;
         }
 
-        .product-attributes-delete-buttons {
+        .product-attributes-delete-buttons16 {
           display: flex;
           gap: 12px;
           justify-content: center;
         }
 
-        .product-attributes-delete-confirm-btn {
+        .product-attributes-delete-confirm-btn16 {
           background: #4f46e5;
           color: white;
         }
 
-        .product-attributes-delete-confirm-btn:hover {
+        .product-attributes-delete-confirm-btn16:hover {
           background: #4338ca;
         }
 
-        .product-attributes-delete-cancel-btn {
+        .product-attributes-delete-cancel-btn16 {
           background: #6b7280;
           color: white;
         }
 
-        .product-attributes-delete-cancel-btn:hover {
+        .product-attributes-delete-cancel-btn16:hover {
           background: #374151;
         }
       `}</style>

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import {Save} from 'lucide-react';
+import { Save } from 'lucide-react';
+
 const SmsGateway = () => {
   const [activeTab, setActiveTab] = useState('TWILLIO');
   
-  // Gateway configurations matching your exact UI
+  // Gateway configurations remain unchanged
   const gatewayConfigs = {
     TWILLIO: {
       name: 'TWILLIO',
@@ -111,7 +112,6 @@ const SmsGateway = () => {
     const config = gatewayConfigs[activeTab];
     if (!config) return null;
 
-    // Group fields by row
     const fieldsByRow = {};
     config.fields.forEach(field => {
       if (!fieldsByRow[field.row]) {
@@ -121,13 +121,13 @@ const SmsGateway = () => {
     });
 
     return Object.keys(fieldsByRow).map(rowNum => (
-      <div key={rowNum} className="form-row">
+      <div key={rowNum} className="form-row24">
         {fieldsByRow[rowNum].map(field => (
-          <div key={field.name} className="form-group">
-            <label className="form-label">{field.label}</label>
+          <div key={field.name} className="form-group24">
+            <label className="form-label24">{field.label}</label>
             {field.type === 'select' ? (
               <select 
-                className="form-select"
+                className="form-select24"
                 value={formData[activeTab]?.[field.name] || ''}
                 onChange={(e) => handleInputChange(activeTab, field.name, e.target.value)}
               >
@@ -139,7 +139,7 @@ const SmsGateway = () => {
             ) : (
               <input 
                 type="text"
-                className="form-input"
+                className="form-input24"
                 value={formData[activeTab]?.[field.name] || ''}
                 onChange={(e) => handleInputChange(activeTab, field.name, e.target.value)}
               />
@@ -151,24 +151,23 @@ const SmsGateway = () => {
   };
 
   return (
-    <div className="sms-gateway-container">
-      {/* Header Tabs */}
-      <div className="header-tabs">
+    <div className="sms-gateway-container24">
+      <div className="header-tabs24">
         <button 
-          className={`tab-button ${activeTab === 'TWILLIO' ? 'active' : ''}`}
+          className={`tab-button24 ${activeTab === 'TWILLIO' ? 'active24' : ''}`}
           onClick={() => setActiveTab('TWILLIO')}
         >
           TWILLIO
         </button>
         <button 
-          className={`tab-button ${activeTab === 'BULKSMS' ? 'active' : ''}`}
+          className={`tab-button24 ${activeTab === 'BULKSMS' ? 'active24' : ''}`}
           onClick={() => setActiveTab('BULKSMS')}
         >
           BULKSMS
         </button>
-        <div className="dropdown-container">
+        <div className="dropdown-container24">
           <select 
-            className="gateway-dropdown"
+            className="gateway-dropdown24"
             onChange={handleDropdownChange}
             value=""
           >
@@ -180,29 +179,27 @@ const SmsGateway = () => {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="main-content">
-        <div className="section-title">{activeTab}</div>
+      <div className="main-content24">
+        <div className="section-title24">{activeTab}</div>
         
-        <div className="form-container">
+        <div className="form-container24">
           {renderFormFields()}
         </div>
 
-        <button className="save-button">
-          {/* <span className="save-icon">💾</span> */}
+        <button className="save-button24">
           <Save size={16} /> Save
         </button>
       </div>
 
       <style jsx>{`
-        .sms-gateway-container {
+        .sms-gateway-container24 {
           width: 100%;
           max-width: 600px;
           background-color: #f5f5f5;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .header-tabs {
+        .header-tabs24 {
           display: flex;
           align-items: center;
           background-color: #f5f5f5;
@@ -210,7 +207,7 @@ const SmsGateway = () => {
           border-bottom: 1px solid #e0e0e0;
         }
 
-        .tab-button {
+        .tab-button24 {
           padding: 12px 24px;
           border: none;
           background-color: transparent;
@@ -222,21 +219,21 @@ const SmsGateway = () => {
           border-radius: 0;
         }
 
-        .tab-button:hover {
+        .tab-button24:hover {
           background-color: #e8e8e8;
         }
 
-        .tab-button.active {
-          background-color:#4752c4;
+        .tab-button24.active24 {
+          background-color: #4752c4;
           color: white;
         }
 
-        .dropdown-container {
+        .dropdown-container24 {
           margin-left: auto;
           padding: 0 16px;
         }
 
-        .gateway-dropdown {
+        .gateway-dropdown24 {
           border: none;
           background-color: transparent;
           color: #666;
@@ -246,16 +243,16 @@ const SmsGateway = () => {
           padding: 8px 4px;
         }
 
-        .gateway-dropdown:hover {
+        .gateway-dropdown24:hover {
           color: #333;
         }
 
-        .main-content {
+        .main-content24 {
           background-color: white;
           padding: 32px;
         }
 
-        .section-title {
+        .section-title24 {
           font-size: 18px;
           font-weight: 600;
           color: #333;
@@ -264,21 +261,21 @@ const SmsGateway = () => {
           border-bottom: 1px solid #f0f0f0;
         }
 
-        .form-container {
+        .form-container24 {
           margin-bottom: 32px;
         }
 
-        .form-row {
+        .form-row24 {
           display: flex;
           gap: 24px;
           margin-bottom: 24px;
         }
 
-        .form-group {
+        .form-group24 {
           flex: 1;
         }
 
-        .form-label {
+        .form-label24 {
           display: block;
           margin-bottom: 8px;
           font-size: 12px;
@@ -288,7 +285,7 @@ const SmsGateway = () => {
           letter-spacing: 0.5px;
         }
 
-        .form-input {
+        .form-input24 {
           width: 100%;
           padding: 12px 16px;
           border: 2px solid #e5e5e5;
@@ -299,12 +296,12 @@ const SmsGateway = () => {
           box-sizing: border-box;
         }
 
-        .form-input:focus {
+        .form-input24:focus {
           outline: none;
-          border-color:#4752c4;
+          border-color: #4752c4;
         }
 
-        .form-select {
+        .form-select24 {
           width: 100%;
           padding: 12px 16px;
           border: 2px solid #e5e5e5;
@@ -322,12 +319,12 @@ const SmsGateway = () => {
           padding-right: 40px;
         }
 
-        .form-select:focus {
+        .form-select24:focus {
           outline: none;
           border-color: #4752c4;
         }
 
-        .save-button {
+        .save-button24 {
           display: inline-flex;
           align-items: center;
           gap: 8px;
@@ -342,33 +339,29 @@ const SmsGateway = () => {
           transition: background-color 0.2s ease;
         }
 
-        .save-button:hover {
+        .save-button24:hover {
           background-color: #4752c4;
         }
 
-        .save-icon {
-          font-size: 16px;
-        }
-
         @media (max-width: 640px) {
-          .form-row {
+          .form-row24 {
             flex-direction: column;
             gap: 16px;
           }
           
-          .main-content {
+          .main-content24 {
             padding: 24px 16px;
           }
           
-          .header-tabs {
+          .header-tabs24 {
             flex-wrap: wrap;
           }
           
-          .dropdown-container {
+          .dropdown-container24 {
             width: 100%;
             margin-left: 0;
             padding: 8px 16px;
-            border-top: 1px solid #e0e0e0;
+            borderEr-top: 1px solid #e0e0e0;
           }
         }
       `}</style>

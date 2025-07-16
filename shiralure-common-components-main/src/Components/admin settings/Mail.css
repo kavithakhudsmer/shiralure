@@ -1,5 +1,4 @@
-
-.mail-container {
+.mail-container8 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 24px;
@@ -10,28 +9,28 @@
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-.mail-title {
+.mail-title8 {
   font-size: 24px;
   font-weight: 600;
   color: #333333;
   margin: 0 0 30px 0;
 }
 
-.form-row {
+.form-row8 {
   display: flex;
   gap: 24px;
   margin-bottom: 24px;
 }
 
-.form-group {
+.form-group8 {
   flex: 1;
 }
 
-.form-group-full {
+.form-group-full8 {
   margin-bottom: 24px;
 }
 
-.form-label {
+.form-label8 {
   display: block;
   font-size: 12px;
   font-weight: 500;
@@ -41,11 +40,11 @@
   margin-bottom: 8px;
 }
 
-.required {
+.required8 {
   color: #ff6b6b;
 }
 
-.form-input {
+.form-input8 {
   width: 100%;
   height: 50px;
   padding: 0 16px;
@@ -58,12 +57,12 @@
   box-sizing: border-box;
 }
 
-.form-input:focus {
+.form-input8:focus {
   outline: none;
   border-color: #4f7cff;
 }
 
-.form-select {
+.form-select8 {
   width: 100%;
   height: 50px;
   padding: 0 16px;
@@ -82,18 +81,18 @@
   box-sizing: border-box;
 }
 
-.form-select:focus {
+.form-select8:focus {
   outline: none;
   border-color: #4f7cff;
 }
 
-.radio-group {
+.radio-group8 {
   display: flex;
   gap: 30px;
   margin-top: 12px;
 }
 
-.radio-label {
+.radio-label8 {
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -102,11 +101,11 @@
   font-weight: 500;
 }
 
-.radio-input {
+.radio-input8 {
   display: none;
 }
 
-.radio-custom {
+.radio-custom8 {
   width: 18px;
   height: 18px;
   border: 2px solid #e1e5e9;
@@ -116,12 +115,12 @@
   transition: all 0.2s ease;
 }
 
-.radio-input:checked + .radio-custom {
+.radio-input8:checked + .radio-custom8 {
   border-color: #4f7cff;
   background-color: #4f7cff;
 }
 
-.radio-input:checked + .radio-custom::after {
+.radio-input8:checked + .radio-custom8::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -133,7 +132,7 @@
   transform: translate(-50%, -50%);
 }
 
-.save-button {
+.save-button8 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,24 +149,24 @@
   margin-top: 32px;
 }
 
-.save-button:hover {
+.save-button8:hover {
   background-color: #3d63e6;
 }
 
-.save-button:active {
+.save-button8:active {
   background-color: #2d4fd9;
 }
 
-.save-icon {
+.save-icon8 {
   font-size: 16px;
   font-weight: 400;
 }
 
 @media (max-width: 768px) {
-  .mail-container {
+  .mail-container8 {
     padding: 16px;
   }
-  .form-row {
+  .form-row8 {
     flex-direction: column;
     gap: 16px;
   }

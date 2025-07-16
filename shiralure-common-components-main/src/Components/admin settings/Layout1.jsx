@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Sidebar1 from './Sidebar1';
+import Sidebar from '../Sidebar';
 import Header1 from '../Header1';
 
 const Layout1 = () => {
@@ -9,7 +9,7 @@ const Layout1 = () => {
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header1 />
       <div style={{ display: 'flex', flex: 1, minHeight: 0 }}>
-        <Sidebar1 />
+        <Sidebar />
         <main
           style={{
             flex: 1,

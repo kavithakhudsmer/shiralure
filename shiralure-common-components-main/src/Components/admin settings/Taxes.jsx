@@ -92,17 +92,17 @@ const Taxes = () => {
   };
 
   return (
-    <div className="taxes">
-      <div className="taxes__container">
-        <div className="taxes__header">
-          <h1 className="taxes__title">Taxes</h1>
-          <button onClick={handleAdd} className="taxes__add-btn">
+    <div className="taxes26">
+      <div className="taxes26__container">
+        <div className="taxes26__header">
+          <h1 className="taxes26__title">Taxes</h1>
+          <button onClick={handleAdd} className="taxes26__add-btn">
             <Plus size={20} />
           </button>
         </div>
 
-        <div className="taxes__table-container">
-          <table className="taxes__table">
+        <div className="taxes26__table-container">
+          <table className="taxes26__table">
             <thead>
               <tr>
                 <th>NAME</th>
@@ -119,16 +119,16 @@ const Taxes = () => {
                   <td>{tax.code}</td>
                   <td>{tax.taxRate}</td>
                   <td>
-                    <span className={`taxes__status ${tax.status === 'Active' ? 'taxes__status--active' : 'taxes__status--inactive'}`}>
+                    <span className={`taxes26__status ${tax.status === 'Active' ? 'taxes26__status--active' : 'taxes26__status--inactive'}`}>
                       {tax.status}
                     </span>
                   </td>
                   <td>
-                    <div className="taxes__actions">
-                      <button onClick={() => handleEdit(tax)} className="taxes__action-btn taxes__action-btn--edit">
+                    <div className="taxes26__actions">
+                      <button onClick={() => handleEdit(tax)} className="taxes26__action-btn taxes26__action-btn--edit">
                         <Edit size={16} />
                       </button>
-                      <button onClick={() => handleDeleteClick(tax.id)} className="taxes__action-btn taxes__action-btn--delete">
+                      <button onClick={() => handleDeleteClick(tax.id)} className="taxes26__action-btn taxes26__action-btn--delete">
                         <Trash2 size={16} />
                       </button>
                     </div>
@@ -139,42 +139,42 @@ const Taxes = () => {
           </table>
         </div>
 
-        <div className="taxes__footer">
+        <div className="taxes26__footer">
           Showing 1 to {taxes.length} of {taxes.length} entries
         </div>
       </div>
 
       {/* Add/Edit Modal */}
       {showModal && (
-        <div className="taxes__modal-overlay">
-          <div className="taxes__modal">
-            <div className="taxes__modal-header">
+        <div className="taxes26__modal-overlay">
+          <div className="taxes26__modal">
+            <div className="taxes26__modal-header">
               <h2>Taxes</h2>
-              <button onClick={handleClose} className="taxes__close-btn">
+              <button onClick={handleClose} className="taxes26__close-btn">
                 <X size={20} />
               </button>
             </div>
 
-            <div className="taxes__modal-content">
-              <div className="taxes__form-row">
-                <div className="taxes__form-group">
-                  <label className="taxes__label">
-                    NAME <span className="taxes__required">*</span>
+            <div className="taxes26__modal-content">
+              <div className="taxes26__form-row">
+                <div className="taxes26__form-group">
+                  <label className="taxes26__label">
+                    NAME <span className="taxes26__required">*</span>
                   </label>
                   <input
                     type="text"
                     value={currentTax.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
-                    className="taxes__input"
+                    className="taxes26__input"
                   />
                 </div>
 
-                <div className="taxes__form-group">
-                  <label className="taxes__label">
-                    STATUS <span className="taxes__required">*</span>
+                <div className="taxes26__form-group">
+                  <label className="taxes26__label">
+                    STATUS <span className="taxes26__required">*</span>
                   </label>
-                  <div className="taxes__radio-group">
-                    <label className="taxes__radio-item">
+                  <div className="taxes26__radio-group">
+                    <label className="taxes26__radio-item">
                       <input
                         type="radio"
                         name="status"
@@ -182,10 +182,10 @@ const Taxes = () => {
                         checked={currentTax.status === 'Active'}
                         onChange={(e) => handleInputChange('status', e.target.value)}
                       />
-                      <span className="taxes__radio-custom"></span>
+                      <span className="taxes26__radio-custom"></span>
                       Active
                     </label>
-                    <label className="taxes__radio-item">
+                    <label className="taxes26__radio-item">
                       <input
                         type="radio"
                         name="status"
@@ -193,45 +193,45 @@ const Taxes = () => {
                         checked={currentTax.status === 'Inactive'}
                         onChange={(e) => handleInputChange('status', e.target.value)}
                       />
-                      <span className="taxes__radio-custom"></span>
+                      <span className="taxes26__radio-custom"></span>
                       Inactive
                     </label>
                   </div>
                 </div>
               </div>
 
-              <div className="taxes__form-row">
-                <div className="taxes__form-group">
-                  <label className="taxes__label">
-                    CODE <span className="taxes__required">*</span>
+              <div className="taxes26__form-row">
+                <div className="taxes26__form-group">
+                  <label className="taxes26__label">
+                    CODE <span className="taxes26__required">*</span>
                   </label>
                   <input
                     type="text"
                     value={currentTax.code}
                     onChange={(e) => handleInputChange('code', e.target.value)}
-                    className="taxes__input"
+                    className="taxes26__input"
                   />
                 </div>
 
-                <div className="taxes__form-group">
-                  <label className="taxes__label">
-                    TAX RATE <span className="taxes__required">*</span>
+                <div className="taxes26__form-group">
+                  <label className="taxes26__label">
+                    TAX RATE <span className="taxes26__required">*</span>
                   </label>
                   <input
                     type="text"
                     value={currentTax.taxRate}
                     onChange={(e) => handleInputChange('taxRate', e.target.value)}
-                    className="taxes__input"
+                    className="taxes26__input"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="taxes__modal-footer">
-              <button onClick={handleSave} className="taxes__btn taxes__btn--save">
+            <div className="taxes26__modal-footer">
+              <button onClick={handleSave} className="taxes26__btn taxes26__btn--save">
                 <span>✓</span> Save
               </button>
-              <button onClick={handleClose} className="taxes__btn taxes__btn--close">
+              <button onClick={handleClose} className="taxes26__btn taxes26__btn--close">
                 <span>✕</span> Close
               </button>
             </div>
@@ -241,21 +241,21 @@ const Taxes = () => {
 
       {/* Delete Confirmation Modal */}
       {showDeleteModal && (
-        <div className="taxes__modal-overlay">
-          <div className="taxes__modal taxes__modal--delete">
-            <div className="taxes__delete-content">
-              <div className="taxes__warning-icon">
+        <div className="taxes26__modal-overlay">
+          <div className="taxes26__modal taxes26__modal--delete">
+            <div className="taxes26__delete-content">
+              <div className="taxes26__warning-icon">
                 <AlertCircle size={48} />
               </div>
-              <h3 className="taxes__delete-title">Are you sure ?</h3>
-              <p className="taxes__delete-message">
+              <h3 className="taxes26__delete-title">Are you sure ?</h3>
+              <p className="taxes26__delete-message">
                 You will not be able to recover the deleted record!
               </p>
-              <div className="taxes__delete-actions">
-                <button onClick={handleDelete} className="taxes__btn taxes__btn--delete-confirm">
+              <div className="taxes26__delete-actions">
+                <button onClick={handleDelete} className="taxes26__btn taxes26__btn--delete-confirm">
                   Yes, Delete it !
                 </button>
-                <button onClick={handleClose} className="taxes__btn taxes__btn--cancel">
+                <button onClick={handleClose} className="taxes26__btn taxes26__btn--cancel">
                   No, Cancel !
                 </button>
               </div>

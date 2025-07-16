@@ -1,11 +1,11 @@
 /* Main Container */
-.taxes {
+.taxes26 {
   min-height: calc(100vh - 70px);
   padding: 24px;
   background-color: #f8f9fa;
 }
 
-.taxes__container {
+.taxes26__container {
   background: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -13,7 +13,7 @@
 }
 
 /* Header */
-.taxes__header {
+.taxes26__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,14 +21,14 @@
   border-bottom: 1px solid #e5e7eb;
 }
 
-.taxes__title {
+.taxes26__title {
   font-size: 18px;
   font-weight: 600;
   color: #111827;
   margin: 0;
 }
 
-.taxes__add-btn {
+.taxes26__add-btn {
   width: 40px;
   height: 40px;
   background: #4752c4;
@@ -42,26 +42,26 @@
   transition: background-color 0.2s ease;
 }
 
-.taxes__add-btn:hover {
+.taxes26__add-btn:hover {
   background: #4752c4;
 }
 
 /* Table */
-.taxes__table-container {
+.taxes26__table-container {
   overflow-x: auto;
 }
 
-.taxes__table {
+.taxes26__table {
   width: 100%;
   border-collapse: collapse;
   min-width: 600px;
 }
 
-.taxes__table thead {
+.taxes26__table thead {
   background: #f9fafb;
 }
 
-.taxes__table th {
+.taxes26__table th {
   padding: 12px 24px;
   text-align: left;
   font-size: 12px;
@@ -72,23 +72,23 @@
   border-bottom: 1px solid #e5e7eb;
 }
 
-.taxes__table tbody tr {
+.taxes26__table tbody tr {
   border-bottom: 1px solid #e5e7eb;
   transition: background-color 0.15s ease;
 }
 
-.taxes__table tbody tr:hover {
+.taxes26__table tbody tr:hover {
   background: #f9fafb;
 }
 
-.taxes__table td {
+.taxes26__table td {
   padding: 16px 24px;
   font-size: 14px;
   color: #374151;
 }
 
 /* Status Badge */
-.taxes__status {
+.taxes26__status {
   display: inline-flex;
   align-items: center;
   padding: 4px 12px;
@@ -98,27 +98,27 @@
   text-transform: capitalize;
 }
 
-.taxes__status--active {
+.taxes26__status--active {
   background: #d1fae5;
   color: #065f46;
 }
 
-.taxes__status--inactive {
+.taxes26__status--inactive {
   background: #fee2e2;
   color: #991b1b;
 }
 
 /* Action Buttons */
-.taxes__actions {
+.taxes26__actions {
   display: flex;
   gap: 8px;
 }
 
-.taxes__action-btn {
+.taxes26__action-btn {
   width: 32px;
   height: 32px;
   border: none;
-  border-radius: 50%; /* Circular shape */
+  border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -127,38 +127,38 @@
   opacity: 0.9;
 }
 
-.taxes__action-btn--view {
-  background: #f8d7da; /* Light red background */
-  color: #dc3545; /* Red icon */
+.taxes26__action-btn--view {
+  background: #f8d7da;
+  color: #dc3545;
 }
 
-.taxes__action-btn--view:hover {
+.taxes26__action-btn--view:hover {
   background: #f1aeb5;
   transform: scale(1.05);
 }
 
-.taxes__action-btn--edit {
-  background: #d1e7dd; /* Light green background */
-  color: #28a745; /* Green icon */
+.taxes26__action-btn--edit {
+  background: #d1e7dd;
+  color: #28a745;
 }
 
-.taxes__action-btn--edit:hover {
+.taxes26__action-btn--edit:hover {
   background: #a3cfbb;
   transform: scale(1.05);
 }
 
-.taxes__action-btn--delete {
-  background: #fff3cd; /* Light orange background */
-  color: #f0ad4e; /* Orange icon */
+.taxes26__action-btn--delete {
+  background: #fff3cd;
+  color: #f0ad4e;
 }
 
-.taxes__action-btn--delete:hover {
+.taxes26__action-btn--delete:hover {
   background: #ffeaa7;
   transform: scale(1.05);
 }
 
 /* Footer */
-.taxes__footer {
+.taxes26__footer {
   padding: 16px 24px;
   font-size: 14px;
   color: #6b7280;
@@ -167,7 +167,7 @@
 }
 
 /* Modal Overlay */
-.taxes__modal-overlay {
+.taxes26__modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -181,7 +181,7 @@
 }
 
 /* Modal */
-.taxes__modal {
+.taxes26__modal {
   background: white;
   border-radius: 8px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
@@ -191,12 +191,12 @@
   overflow: hidden;
 }
 
-.taxes__modal--delete {
+.taxes26__modal--delete {
   max-width: 400px;
 }
 
 /* Modal Header */
-.taxes__modal-header {
+.taxes26__modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -204,14 +204,14 @@
   border-bottom: 1px solid #e5e7eb;
 }
 
-.taxes__modal-header h2 {
+.taxes26__modal-header h2 {
   font-size: 18px;
   font-weight: 600;
   color: #111827;
   margin: 0;
 }
 
-.taxes__close-btn {
+.taxes26__close-btn {
   width: 32px;
   height: 32px;
   border: none;
@@ -225,27 +225,27 @@
   transition: all 0.2s ease;
 }
 
-.taxes__close-btn:hover {
+.taxes26__close-btn:hover {
   background: #f3f4f6;
   color: #374151;
 }
 
 /* Modal Content */
-.taxes__modal-content {
+.taxes26__modal-content {
   padding: 24px;
 }
 
-.taxes__form-row {
+.taxes26__form-row {
   display: flex;
   gap: 24px;
   margin-bottom: 20px;
 }
 
-.taxes__form-group {
+.taxes26__form-group {
   flex: 1;
 }
 
-.taxes__label {
+.taxes26__label {
   display: block;
   font-size: 14px;
   font-weight: 500;
@@ -253,11 +253,11 @@
   margin-bottom: 8px;
 }
 
-.taxes__required {
+.taxes26__required {
   color: #ef4444;
 }
 
-.taxes__input {
+.taxes26__input {
   width: 100%;
   padding: 12px 16px;
   border: 1px solid #d1d5db;
@@ -267,19 +267,19 @@
   transition: border-color 0.2s ease;
 }
 
-.taxes__input:focus {
+.taxes26__input:focus {
   outline: none;
   border-color: #4752c4;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 /* Radio Group */
-.taxes__radio-group {
+.taxes26__radio-group {
   display: flex;
   gap: 20px;
 }
 
-.taxes__radio-item {
+.taxes26__radio-item {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -288,11 +288,11 @@
   cursor: pointer;
 }
 
-.taxes__radio-item input[type="radio"] {
+.taxes26__radio-item input[type="radio"] {
   display: none;
 }
 
-.taxes__radio-custom {
+.taxes26__radio-custom {
   width: 16px;
   height: 16px;
   border: 2px solid #d1d5db;
@@ -301,11 +301,11 @@
   transition: all 0.2s ease;
 }
 
-.taxes__radio-item input[type="radio"]:checked + .taxes__radio-custom {
+.taxes26__radio-item input[type="radio"]:checked + .taxes26__radio-custom {
   border-color: #4752c4;
 }
 
-.taxes__radio-item input[type="radio"]:checked + .taxes__radio-custom::after {
+.taxes26__radio-item input[type="radio"]:checked + .taxes26__radio-custom::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -318,7 +318,7 @@
 }
 
 /* Modal Footer */
-.taxes__modal-footer {
+.taxes26__modal-footer {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
@@ -327,7 +327,7 @@
   background: #f9fafb;
 }
 
-.taxes__btn {
+.taxes26__btn {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -336,106 +336,106 @@
   border-radius: 6px;
   font-size: 14px;
   font-weight: 500;
-  cursor: pointer;
+  cursor:0000;
   transition: all 0.2s ease;
 }
 
-.taxes__btn--save {
+.taxes26__btn--save {
   background: #4752c4;
   color: white;
 }
 
-.taxes__btn--save:hover {
+.taxes26__btn--save:hover {
   background: #4752c4;
 }
 
-.taxes__btn--close {
+.taxes26__btn--close {
   background: #6b7280;
   color: white;
 }
 
-.taxes__btn--close:hover {
+.taxes26__btn--close:hover {
   background: #4b5563;
 }
 
 /* Delete Modal */
-.taxes__delete-content {
+.taxes26__delete-content {
   padding: 40px 24px;
   text-align: center;
 }
 
-.taxes__warning-icon {
+.taxes26__warning-icon {
   color: #f59e0b;
   margin-bottom: 20px;
 }
 
-.taxes__delete-title {
+.taxes26__delete-title {
   font-size: 20px;
   font-weight: 600;
   color: #111827;
   margin: 0 0 12px 0;
 }
 
-.taxes__delete-message {
+.taxes26__delete-message {
   font-size: 14px;
   color: #6b7280;
   margin: 0 0 32px 0;
 }
 
-.taxes__delete-actions {
+.taxes26__delete-actions {
   display: flex;
   justify-content: center;
   gap: 12px;
 }
 
-.taxes__btn--delete-confirm {
+.taxes26__btn--delete-confirm {
   background: #4752c4;
   color: white;
 }
 
-.taxes__btn--delete-confirm:hover {
+  .taxes26__btn--delete-confirm:hover {
   background: #4752c4;
 }
 
-.taxes__btn--cancel {
+.taxes26__btn--cancel {
   background: #6b7280;
   color: white;
 }
 
-.taxes__btn--cancel:hover {
+.taxes26__btn--cancel:hover {
   background: #4b5563;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .taxes {
+  .taxes26 {
     padding: 16px;
   }
   
-  .taxes__header {
+  .taxes26__header {
     padding: 16px 20px;
   }
   
-  .taxes__table th,
-  .taxes__table td {
+  .taxes26__table th,
+  .taxes26__table td {
     padding: 12px 16px;
   }
   
-  .taxes__modal {
+  .taxes26__modal {
     width: 95%;
     margin: 20px;
   }
   
-  .taxes__form-row {
+  .taxes26__form-row {
     flex-direction: column;
     gap: 16px;
   }
   
-  .taxes__modal-footer {
+  .taxes26__modal-footer {
     flex-direction: column;
   }
   
-  .taxes__delete-actions {
+  .taxes26__delete-actions {
     flex-direction: column;
   }
 }
