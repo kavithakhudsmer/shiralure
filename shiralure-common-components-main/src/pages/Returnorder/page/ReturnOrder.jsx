@@ -12,6 +12,7 @@ import { BiSolidAddToQueue } from 'react-icons/bi';
 import ExcelJS from "exceljs";
 import "../style/ReturnOrder.css";
 import data from "./returnOrder.json";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 function ReturnOrder() {
   const [showFilters, setShowFilters] = useState(false);
@@ -747,7 +748,7 @@ function ReturnOrder() {
         <div className="pmodal-overlay">
           <div className="pmodal-box">
             <div className="pmodal-icon">
-              <span className="pexclamation-icon">!</span>
+              <span className="pexclamation-icon">< HiOutlineExclamationCircle /></span>
             </div>
             <h2 className="pmodal-title">Are you sure ?</h2>
             <p className="pmodal-message">

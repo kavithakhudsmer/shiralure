@@ -1,12 +1,10 @@
 /* promotion.css */
 .eds-promotions-dashboard {
-  max-width: 100%; /* Changed to 100% for full width responsiveness */
-  margin: 0 auto;
-  padding: 30px;
-  color: #333;
-  background-color: #F2F6F9; /* Already set to match view promotion modal background color */
-  box-sizing: border-box; /* Ensure padding is included in the width */
-  min-height: 100vh; /* Ensure the dashboard takes full viewport height */
+  background-color: #F2F6F9;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding:24px;
 }
 /* Apply to your outermost container */
 body, html {

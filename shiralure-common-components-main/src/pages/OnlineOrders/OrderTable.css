@@ -1,8 +1,10 @@
 /* General Page Styling */
 .sriorder-page {
-  padding: 20px;
-  background: #f4f6fa;
+  padding: 24px;
+  background-color: #F2F6F9;
+  font-family: Arial, sans-serif;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 /* Header Styling */

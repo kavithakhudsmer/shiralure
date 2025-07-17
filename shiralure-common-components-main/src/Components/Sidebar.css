@@ -120,8 +120,7 @@ html, body, #root {
 /* Hover effect ONLY on non-active items */
 .vkvdashboard-item:hover:not(.active) {
   color: #5a66f1;
-  font-size: 16px;
-  font-weight: 600;
+  
   opacity: 1;
 }
  

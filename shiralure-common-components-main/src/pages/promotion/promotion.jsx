@@ -949,7 +949,7 @@ const PromotionsDashboard = () => {
                 </button>
               </div>
             </div>
-            <hr style={{ borderTop: '0.5px solid #d8d8da', marginBottom: '20px' }} />
+            <hr style={{ borderTop: '0.5px solid #8c8c91ff', marginBottom: '20px' }} />
 
             {showFilterRow && (
               <div className="eds-muthufilter-promotions-filter" style={{ margin: '20px' }}>
