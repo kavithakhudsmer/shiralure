@@ -1,1553 +1,1841 @@
-/* Main Profile Container */
-.skumari-user-profile.skumari-fullscreen-profile {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #f6f9fc;
-  z-index: 1000;
-  padding: 2rem;
-  overflow-y: auto;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+/* General Body/Root Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f6f9fc; /* Main page background */
 }
 
+/* Main Profile Container - Stays the same, overall light grey background */
+.skumari-user-profile.skumari-fullscreen-profile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f6f9fc; /* This is the main light grey background */
+    z-index: 1000; /* Ensure it's above other things but below modal */
+    padding: 2rem;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Section (Customers Breadcrumb) */
 .skumari-sremployee-header-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: -20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: -20px;
 }
 
 .skumari-employee-header-left h1 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #131212;
-  margin-bottom: 12px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #131212;
+    margin-bottom: 12px;
 }
 
 .skumari-employee-header-right h2 {
-  font-weight: 400;
+    font-weight: 400;
 }
 
 .skumari-employee-breadcrumb {
-  font-size: 20px;
-  color: #333;
-  font-weight: 400;
-  margin-bottom: 8px;
-  margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 8px;
+    margin-top: 10px;
 }
 
 .skumari-employee-breadcrumb-link {
-  color: #5A66F1;
-  text-decoration: none;
+    color: #007bff;
+    text-decoration: none;
 }
 
 .skumari-employee-breadcrumb span {
-  color: #333;
-  margin: 0 5px;
+    color: #333;
+    margin: 0 5px;
 }
 
-/* Other existing styles (assuming these are separate sections or elements) */
+/* Main Profile Container (White Box for the John Doe section) */
 .skumari-profile-container {
-  padding: 16px;
-  margin: 20px 0;
-  background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  border-radius: 8px;
+    padding: 16px;
+    margin: 20px 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    border-radius: 8px;
 }
 
+/* Profile Header (Avatar and Name) */
 .skumari-profile-header {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 20px;
-  margin-left: 14px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-left: 14px;
 }
 
 .skumari-avatar {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border: 2px solid #ccc;
-  border-radius: 4px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 4px;
 }
 
 .skumari-avatar.skumari-rounded {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
 .skumari-avatar.skumari-square {
-  border-radius: 12px;
+    border-radius: 12px;
 }
 
 .skumari-role-badge {
-  background-color: #ffee88;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 0.8rem;
-  display: inline-block;
-  margin-top: 0.3rem;
+    background-color: #ffee88;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-top: 0.3rem;
 }
 
 .skumari-upload-btn {
-  margin-top: 6px;
-  background-color: #5A66F1;
-  color: white;
-  padding: 8px 14px;
-  cursor: pointer;
-  border-radius: 6px;
-  border: none;
-  outline: none;
-  box-shadow: none;
+    margin-top: 6px;
+    background-color: #4f46e5;
+    color: white;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    box-shadow: none;
 }
 
-/* Remove the black border when button is clicked/focused */
 .skumari-upload-btn:focus {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
 
+.skumari-upload-btn:hover {
+    background-color: #3730a3;
+}
 
 .skumari-role {
-  background-color: #fcee75;
-  margin-top: 6px;
-  color: rgb(245, 201, 3);
-  padding: 3px 15px;
-  border: none;
-  cursor: pointer;
-  border-radius: 7px;
+    background-color: #fcee75;
+    margin-top: 6px;
+    color: rgb(245, 201, 3);
+    padding: 3px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
 }
 
+/* Tab Navigation */
 .skumari-tabs {
-  margin: 20px 0;
-  margin-left: 40px;
-  display: flex;
-  gap: 18px;
-  outline: none;
-  box-shadow: none;
-  border: none;
+    margin: 20px 0;
+    margin-left: 40px;
+    display: flex;
+    gap: 18px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    position: sticky; /* Keeps tabs visible while scrolling */
+    top: 0;
+    background-color: #f6f9fc; /* Matches body background */
+    z-index: 10; /* Above order details content */
+    padding-top: 10px;
 }
 
 .skumari-tabs button {
-  padding: 8px 16px;
-  border: none;
-  background: #f6f9fc;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+    padding: 8px 16px;
+    border: none;
+    background: #f6f9fc;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* Remove black border on click */
+.skumari-tabs button i {
+    font-size: 18px;
+}
+
 .skumari-tabs button:focus {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
 
 .skumari-tabs .skumari-active {
-  background-color: #5A66F1;
-  color: white;
+    background-color: #4f46e5;
+    color: white;
 }
 
 .skumari-tabs button:hover:not(.skumari-active) {
-  background-color: #5A66F1;
-  color: #d3d3d3;
+    background-color: #4f46e5;
+    color: #d3d3d3;
 }
 
-/* Main Container for the Profile Section */
-.skumari-profile-container {
-  padding: 16px;
-  margin: 10px 0;
-  background-color: #ffffff;
-}
-
-/* Info Box - The White Card Containing Basic Information */
+/* Info Box - General White Card for tab content (e.g., Profile tab) */
 .skumari-info-box {
-  background: white;
-  padding: 28px 32px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
-  margin: 24px auto;
-  border: 1px solid #f0f0f0;
+    background: white;
+    padding: 46px 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
 }
 
-/* Container for the "Basic Information" Title */
 .skumari-info-title-container {
-  margin-bottom: 18px;
+    margin-bottom: 14px;
+    margin-top: -20px;
 }
 
-/* Styling for the "Basic Information" Title Text */
 .skumari-info-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-  margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    padding-bottom: -10px;
+    margin-top: -10px;
 }
 
-/* Container for the Details (Email, Phone, Status) including the separator line */
 .skumari-info-details-container {
-  padding-top: 18px;
-  border-top: 1px solid #e5e7eb;
-  margin-left: -28px;
-  margin-right: -28px;
-  padding-left: 28px;
-  padding-right: 28px;
-  box-sizing: border-box;
+    padding-top: 18px;
+    border-top: 1px solid #e5e7eb;
+    margin-left: -18px;
+    margin-right: -28px;
+    padding-left: 28px;
+    padding-right: 28px;
+    box-sizing: border-box;
 }
 
-/* Grid layout for Email, Phone, Status */
 .skumari-info-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 50px;
 }
 
-/* Styling for each row (Email/Value, Phone/Value, Status/Value) */
 .skumari-info-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 7px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
 }
 
-/* Styling for the labels (e.g., Email, Phone, Status) */
 .skumari-info-label {
-  font-size: 0.9em;
-  color: #374151;
-  font-weight: 500;
-  min-width: 70px;
+    font-size: 0.9em;
+    color: #374151;
+    font-weight: 500;
+    min-width: 70px;
 }
 
-/* Styling for the actual values (e.g., john.doe@example.com, +1 555-123-4567) */
 .skumari-info-value {
-  font-size: 1.05em;
-  color: #6b7280;
-  font-weight: 500;
-  margin-top: -2px;
+    font-size: 1.05em;
+    color: #6b7280;
+    font-weight: 500;
+    margin-top: -2px;
 }
 
-/* Styling for the "Active" status text */
 .skumari-status-active {
-  color: #22c55e;
-  font-weight: 600;
-  display: inline-block;
+    color: #22c55e;
+    font-weight: 600;
+    display: inline-block;
 }
 
-/* Placeholder for inactive status if needed */
 .skumari-status-inactive {
-  color: #ef4444;
-  font-weight: 600;
-  display: inline-block;
+    color: #ef4444;
+    font-weight: 600;
+    display: inline-block;
 }
 
-/* If you use `required` for labels, include this */
 .skumari-info-label .skumari-required {
-  color: #ff4d4f;
-  margin-left: 3px;
+    color: #ff4d4f;
+    margin-left: 3px;
 }
 
-/* Add or modify these styles in Adminis1.css */
-.skumari-info-details-container1 {
-  display: flex;
-  /* gap: 12px;  */
-  flex-wrap: wrap;
-  padding: 20px;
-  box-sizing: border-box;
-  margin-left: 18px;
-  border-top: 1px solid #e5e7eb;
-}
-
-.skumari-user-form-groups1 {
-  flex: 1;
-  min-width: 280px;
-  margin-bottom: 15px;
-}
-
-.skumari-user-form-groups1 label {
-  display: block; /* Makes the label take its own line */
-  margin-bottom: 8px; /* Space between label and input */
-  font-weight: bold;
-  color: #333;
-}
-
-.skumari-user-form-groups1 input[type="password"] {
-  width: 50%; /* Make input fields take full width of their parent container */
-  padding: 10px 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
-}
-
-/* Ensure the button container also has appropriate styling */
-.skumari-button-container {
-  text-align: right; /* Align the save button to the right */
-  padding: 0 20px 20px 20px; /* Add padding around the button */
-}
-
-.skumari-save-btn {
-  background-color: #5A66F1;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex; /* Allows icon and text to be aligned */
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* If you have specific styles for skumari-info-box1, ensure it allows its content to breathe */
+/* Info Box - Security Tab */
 .skumari-info-box1 {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-  margin-bottom: 20px;
-  overflow: hidden; /* Ensures no content spills out */
+    overflow: hidden;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    padding: 12px;
 }
 
 .skumari-info-title-container1 {
-  padding: 15px 20px;
-  border-bottom: 1px solid #eee;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
 }
 
 .skumari-info-title1 {
-  margin: 0;
-  font-size: 20px;
-  color: #333;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.skumari-info-details-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 14px 12px;
+    box-sizing: border-box;
+    margin-left: 18px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.skumari-user-form-groups1 {
+    flex: 1;
+    min-width: 280px;
+}
+
+.skumari-user-form-groups1 label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.skumari-user-form-groups1 input[type="password"] {
+    width: 50%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
 }
 
 .skumari-required {
-  color: red;
-  margin-left: 2px;
+    color: red;
+    margin-left: 2px;
 }
 
-/* Container for the Save button */
 .skumari-button-container {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
-  padding-right: 10px;
+    display: flex;
+    justify-content: flex-end;
 }
 
-/* Styling for the Save button */
 .skumari-save-btn {
-  background-color: #5A66F1;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  margin-right: 80px;
-  outline: none;
-  box-shadow: none;
+    background-color: #4f46e5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-right: 90px;
+    outline: none;
+    box-shadow: none;
 }
 
+.skumari-save-btn:hover {
+    background-color: #3730a3;
+}
 
-
+/* Info Box - Address Tab */
 .skumari-info-box2 {
-  background: white;
-  padding: 18px 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  margin-top: 20px;
+    background: white;
+    padding: 20px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
 }
 
 .skumari-info-title-container2 {
-  padding-bottom: 2px;
-  margin-bottom: 2px;
-  box-sizing: border-box;
+    padding-bottom: 2px;
+    margin-bottom: 4px;
+    box-sizing: border-box;
 }
 
 .skumari-address-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: -25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: -20px;
+    margin-top: -12px;
 }
 
 .skumari-info-title2 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
 }
 
 .skumari-add-address-btn {
-  background-color: #5A66F1;
-  color: white;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+    background-color: #4f46e5;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .skumari-add-address-btn:focus {
-  outline: none;
-  box-shadow: none;
+    outline: none;
+    box-shadow: none;
 }
 
+.skumari-add-address-btn:hover {
+    background-color: #3730a3;
+}
 
 .skumari-info-details-container2 {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 10px;
-  margin-bottom: 20px;
-  padding-top: 18px;
-  border-top: 1px solid #e5e7eb;
-  margin-left: -26px;
-  margin-right: -26px;
-  padding-left: 26px;
-  padding-right: 26px;
-  box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    padding-top: 4px;
+    border-top: 1px solid #e5e7eb;
+    margin-left: -26px;
+    margin-right: -26px;
+    padding-left: 26px;
+    padding-right: 26px;
+    box-sizing: border-box;
 }
 
 .skumari-address-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-  font-size: 0.95em;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.95em;
+    border-radius: 12px;
+    border-top: 1px solid #e5e7eb;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
 }
 
 .skumari-address-table th {
-  padding: 12px 14px;
-  text-align: center;
-  color: #333;
-  font-weight: 600;
-  text-transform: uppercase;
-  background-color: #f1f0f0;
-  font-size: 0.85em;
-  border-bottom: 1px solid #e0e0e0;
+    padding: 12px 14px;
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #f1f0f0;
+    font-size: 0.85em;
 }
 
 .skumari-address-table td {
-  font-weight: 400;
-  padding: 10px 14px;
-  border: none;
+    font-weight: 400;
+    padding: 16px 14px;
+    /* border-bottom: 1px solid #e0e0e0; */
 }
 
-.skumari-address-table tbody tr {
-  border-bottom: 1px solid #f0f0f0;
-}
+/* .skumari-address-table tbody tr {
+    /* border-bottom: 1px solid #f0f0f0; 
+} */
 
 .skumari-address-table tbody tr:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
-.skumari-address-no-entries {
-  text-align: center;
-  color: #888;
-  font-style: italic;
-  margin-bottom: 14px;
-}
-
-/* --- New styles for Address Table Action Buttons --- */
 .skumari-address-actions {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
 }
 
 .skumari-address-action-buttons {
-  display: flex;
-  gap: 8px;
+    display: flex;
+    gap: 8px;
 }
 
 .skumari-address-icon-action-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-  font-size: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.skumari-address-icon-action-btn svg {
-  font-size: 20px;
+.skumari-address-icon-action-btn i {
+    font-size: 20px;
 }
 
-.skumari-address-view-btn svg {
-  color: #5A66F1;
+.skumari-address-view-btn  {
+    color: #5A66F1;
 }
 
-.skumari-address-edit-btn svg {
-  color: #22C55E;
+.skumari-address-edit-btn {
+    color: #22C55E;
 }
 
-.skumari-address-delete-btn svg {
-  color: #F4415F;
+.skumari-address-delete-btn  {
+    color: #EF4444;
 }
 
 .skumari-address-view-btn:hover {
-  background-color: #eeeffe;
+    background-color: rgba(90, 102, 241, 0.1);
 }
 
 .skumari-address-edit-btn:hover {
-  background-color:#e8f9ef;
+    background-color: rgba(59, 130, 246, 0.1);
 }
 
 .skumari-address-delete-btn:hover {
-  background-color:#ffcfd7;
+    background-color: rgba(239, 68, 68, 0.1);
 }
 
-.skumari-employee-delete-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.skumari-employee-delete-box {
-  background: #fff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  width: 90%;
-  max-width: 400px;
-}
-
-.skumari-employee-delete-icon {
-  margin-bottom: 20px;
-}
-
-.skumari-employee-delete-box h2 {
-  margin-top: 0;
-  font-size: 28px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.skumari-employee-subtext {
-  color: #777;
-  margin-bottom: 30px;
-  font-size: 15px;
-}
-
-.skumari-employee-delete-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-.skumari-employee-delete-buttons button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.skumari-employee-delete-buttons button.skumari-yes {
-  background-color: #5A66F1;
-  color: #fff;
-}
-
-
-
-.skumari-employee-delete-buttons button.skumari-no {
-  background-color: #000000;
-  color: #fff;
-}
-
-
-
-/* Overall container for the Orders tab content */
+/* --- My Orders Tab Container (for the list view ONLY) --- */
 .skumari-info-box3 {
-  background: white;
-  padding: 18px 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  margin-top: 20px;
+    background-color: #fff;
+    padding: 4px 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+    box-sizing: border-box;
 }
 
 .skumari-info-title-container3 {
-  padding: 15px 20px;
+    padding: 2px 2px;
+    padding-bottom: 0;
+}
+
+/* Orders Header (for the list view) */
+.skumari-orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .skumari-orders-header h3 {
-  margin: 0;
-  font-size: 20px;
-  color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin: 10px 0 0 0;
 }
 
-/* Container for order details (the table) */
-.skumari-info-details-container3 {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 10px;
-  margin-bottom: 28px;
-  padding-top: 18px;
-  border-top: 1px solid #e5e7eb;
-  margin-left: -26px;
-  margin-right: -26px;
-  padding-left: 26px;
-  padding-right: 26px;
-  box-sizing: border-box;
+/* Individual Order Card (List View) */
+.skumari-order-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    padding: 12px 4px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    border: 2px solid #f0f0f0;
 }
 
-/* Table styles for orders */
-.skumari-orders-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-  font-size: 0.95em;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+.skumari-order-card-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    flex-grow: 1;
 }
 
-.skumari-orders-table thead tr {
-  background-color: #f5f5f5;
+.skumari-order-icon-wrapper {
+    color: #1a1b1b;
+    padding: 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    box-sizing: border-box;
 }
 
-.skumari-orders-table th,
-.skumari-orders-table td {
-  padding: 12px 15px;
-  text-align: center;
-  white-space: nowrap;
+.skumari-order-icon-wrapper svg {
+    font-size: 24px;
+    color: #101112;
 }
 
-.skumari-orders-table th {
-  font-weight: 600;
-  color: #555;
-  text-transform: uppercase;
+.skumari-order-details-text {
+    flex-grow: 1;
 }
 
-.skumari-orders-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9; /* Zebra striping for readability */
+.skumari-order-id {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-/* Action buttons within the orders table */
-.skumari-order-actions {
-  text-align: center;
+.skumari-order-status {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+    display: inline-block;
 }
 
-.skumari-order-actions .skumari-address-action-buttons {
-  /* Reusing styles from address actions */
-  display: flex;
-  gap: 8px; /* Space between icons */
-  justify-content: center;
+.skumari-status-delivered {
+    color: #19af3c;
+}
+.skumari-status-pending {
+    color: #ea0707;
+}
+.skumari-status-confirmed {
+    color: #1682f5;
+}
+.skumari-status-ontheway {
+    color: #16c9e9;
 }
 
-/* Placeholder for no orders found message */
+.skumari-order-products {
+    font-size: 15px;
+    color: #555;
+    margin: 0 0 5px 0;
+}
+
+.skumari-order-datetime {
+    font-size: 14px;
+    color: #777;
+    margin: 0 0 10px 0;
+}
+
+.skumari-order-total {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+.skumari-order-card-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.skumari-see-details-btn {
+    background-color: transparent;
+    color: #007bff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+    margin-bottom: -50px;
+}
+
 .skumari-orders-no-entries {
-  text-align: center;
-  padding: 30px;
-  color: #666;
-  font-style: italic;
+    text-align: center;
+    color: #777;
+    padding: 30px 0;
+    font-size: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
 }
 
-/* Footer for pagination/entry count in orders table */
 .skumari-orders-footer {
-  font-size: 14px;
-  color: #555;
-  text-align: left;
-  padding: 10px 0;
-  margin-top: 10px;
+    font-size: 14px;
+    color: #777;
+    text-align: start;
+    margin-bottom: 10px;
 }
 
-/* Order Detail View Modal */
-.skumari-order-detail-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  padding: 20px; /* Add some padding for smaller screens */
-  box-sizing: border-box;
-}
-
-.skumari-order-detail-box {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  max-width: 600px; /* Adjust max-width as needed */
-  padding: 30px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  max-height: 90vh; /* Limit height to prevent overflow */
-  overflow-y: auto; /* Enable scrolling for content */
-}
-
-.skumari-order-detail-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #eee;
-}
-
-.skumari-order-detail-header h2 {
-  font-size: 24px;
-  color: #333;
-  margin: 0;
-  flex-grow: 1;
+/* --- Order Details View (In-Page, No Modal) --- */
+.skumari-order-detail-view {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    margin-top: 60px; /* Adjusted to account for tab height */
 }
 
 .skumari-order-detail-back-btn {
-  background-color: #5A66F1; /* A soft grey for "Back" */
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: background-color 0.3s ease;
+   justify-content: flex-end;
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #4f46e5;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
 }
 
-
-
-.skumari-order-detail-content {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Space between rows */
+.skumari-order-detail-back-btn:hover {
+    
+    color: #4f46e5;
 }
 
-.skumari-order-detail-row {
-  display: flex;
-  align-items: baseline; /* Align text baselines */
+.skumari-order-detail-columns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 6px; /* Extra space below tabs */
 }
 
-.skumari-order-detail-label {
-  font-weight: 600;
-  color: #555;
-  width: 150px; /* Fixed width for labels for alignment */
-  flex-shrink: 0; /* Prevent label from shrinking */
+.skumari-order-summary-left {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.skumari-order-detail-value {
-  color: #333;
-  flex-grow: 1; /* Allow value to take up remaining space */
+.skumari-order-info-group {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 4px 6px;
+    border: 1px solid #eee;
 }
 
-/* skumari-modal-overlay */
+.skumari-order-info-group p {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #555;
+     margin-left: 12px;
+    /* line-height: 1.5; */
+}
+
+.skumari-order-status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+    position: relative;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 8px;
+}
+
+.skumari-order-status-bar::before {
+    content: '';
+    position: absolute;
+    top: calc(50% + -5px);
+    left: 12px;
+    right: 12px;
+    height: 5px;
+    background-color: #11ac35;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.skumari-status-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    color: #999;
+    font-size: 13px;
+    flex: 1;
+    text-align: center;
+}
+
+.skumari-status-icon {
+    font-size: 20px;
+    color: #28a745;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 4px solid #28a745;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skumari-status-step.completed .skumari-status-icon {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.skumari-status-step.completed span {
+    color: #333;
+    font-weight: 500;
+}
+
+.skumari-payment-info {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 4px 6px;
+    border: 1px solid #eee;
+}
+
+.skumari-payment-info h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-left: 12px;
+}
+
+.skumari-payment-info p {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #555;
+    margin-left: 12px;
+}
+
+.skumari-status-paid {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.skumari-order-details-right {
+    flex: 1.0;
+    min-width: 300px;
+    background-color: #fff;
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.skumari-order-details-right h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.skumari-order-product-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.skumari-order-product-item:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.skumari-product-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    margin-right: 15px;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+.skumari-order-product-item span:nth-child(2) {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #333;
+}
+
+.skumari-product-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.skumari-summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #555;
+    margin-left: 12px;
+}
+
+.skumari-summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-left: 12px;
+}
+
+/* Responsive adjustments for order details view */
+@media (max-width: 768px) {
+    .skumari-order-detail-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skumari-order-summary-left,
+    .skumari-order-details-right {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .skumari-order-detail-view {
+        padding: 10px;
+    }
+}
+
+/* --- General Modal and Form Related Styles (kept for other modals) --- */
 .skumari-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Ensure it's on top of other content */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
-/* skumari-order-edit-modal */
-.skumari-order-edit-modal {
-  background-color: #fff;
-  padding: 20px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  width: 90%; /* Adjust width as needed */
-  max-width: 500px; /* Maximum width for larger screens */
-  position: relative;
-  box-sizing: border-box; /* Include padding in width calculation */
-}
-
-.skumari-order-edit-modal h3 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 15px;
-  font-weight: 600;
-}
-
-/* skumari-divider-line */
-.skumari-divider-line {
-  border-bottom: 1px solid #eee;
-  margin-bottom: 20px;
-}
-
-/* skumari-form-group */
-.skumari-form-group {
-  margin-bottom: 15px;
-}
-
-.skumari-form-group label {
-  display: block;
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 5px;
-  font-weight: 500;
-}
-
-.skumari-form-group .skumari-required {
-  color: #ff0000; /* Red asterisk for required fields */
-  margin-left: 4px;
-}
-
-.skumari-form-group input[type="text"],
-.skumari-form-group input[type="number"] {
-  width: 90%;
-  padding: 10px 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  color: #333;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-.skumari-form-group input[type="text"]:focus,
-.skumari-form-group input[type="number"]:focus {
-  border-color: #6a5acd; /* Purple border on focus */
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(106, 90, 205, 0.2); /* Light purple shadow on focus */
-}
-
-/* skumari-modal-actions */
-.skumari-modal-actions {
-  display: flex;
-  justify-content: flex-end; /* Align buttons to the right */
-  gap: 10px; /* Space between buttons */
-  margin-top: 25px;
-}
-
-.skumari-modal-actions button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skumari-modal-actions button[type="button"] {
-  /* CLEAR button */
-  background-color: #000000; /* Grey */
-  color: #fff;
-}
-
-
-
-.skumari-modal-actions button[type="submit"] {
-  /* SAVE button */
-  background-color: #5A66F1; /* Purple */
-  color: #fff;
-}
-
-
-
-.skumari-modal-actions button svg {
-  margin-right: 8px; /* Space between icon and text */
-}
-
-/* Optional: Close button for the modal (if you add one to the HTML) */
-.skumari-order-edit-modal .close-button {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #999;
-}
-
-.skumari-order-edit-modal .close-button:hover {
-  color: #333;
-}
-
-/* Styling for the modal background overlay */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000; /* Ensure it's on top of other content */
-}
-
-/* Styling for the modal content container (the pop-up itself) */
-.modal-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 500px; /* Max width for larger screens */
-  position: relative;
-}
-
-/* Styling for the modal title (e.g., "ORDERS") */
-.modal-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Styling for form groups within the modal */
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.form-group input[type="text"],
-.form-group input[type="number"] {
-  width: calc(100% - 10px); /* Adjust for padding */
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-/* Styling for the action buttons at the bottom of the modal */
-.modal-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px; /* Space between buttons */
-  margin-top: 20px;
-}
-
-/* Styling for the SAVE button */
-.modal-buttons .save-button {
-  background-color: #6a5acd; /* Purple color */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.modal-buttons .save-button:hover {
-  background-color: #5d4aaf; /* Darker purple on hover */
-}
-
-/* Styling for the CLEAR button */
-.modal-buttons .clear-button {
-  background-color: #808080; /* Gray color */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.modal-buttons .clear-button:hover {
-  background-color: #696969; /* Darker gray on hover */
-}
-
-/* Styling for the close button (X icon) in the modal header */
-.modal-close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: #333;
-}
-
-.modal-close-button:hover {
-  color: #000;
-}
-
-/* --- Confirmation Dialog (Delete) --- */
-
-/* Styling for the warning icon */
-.confirmation-icon {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.confirmation-icon img {
-  width: 60px; /* Adjust size as needed */
-  height: 60px;
-}
-
-/* Styling for the confirmation message */
-.confirmation-message {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #333;
-}
-
-.confirmation-subtext {
-  text-align: center;
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 20px;
-}
-
-/* Styling for the confirmation buttons */
-.confirmation-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-/* Yes, Delete it! button */
-.confirmation-buttons .delete-confirm-button {
-  background-color: #6a5acd; /* Purple color */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.confirmation-buttons .delete-confirm-button:hover {
-  background-color: #5d4aaf; /* Darker purple on hover */
-}
-
-/* No, Cancel button */
-.confirmation-buttons .cancel-button {
-  background-color: #555; /* Dark gray */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.confirmation-buttons .cancel-button:hover {
-  background-color: #333; /* Even darker gray on hover */
-}
-
-/* General table styling for "My Orders" and "Customers" */
-.data-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.data-table th,
-.data-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.data-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-/* Action icons in table */
-.action-icons img {
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-  cursor: pointer;
-}
-
-/* --- Modal Overlay --- */
-.skumari-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
-/* --- Modal Container --- */
 .skumari-modal {
-  background-color: #fff;
-  width: 90%;
-  max-width: 500px;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  max-height: 90vh;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+    background-color: #fff;
+    width: 90%;
+    max-width: 500px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- Modal Title --- */
 .skumari-modal h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: #333;
-  margin-top: 0;
-  margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
-/* --- Divider Line below Title --- */
 .skumari-divider-line {
-  height: 1px;
-  background-color: #e5e7eb;
-  margin-bottom: 20px;
+    height: 1px;
+    background-color: #e5e7eb;
+    margin-bottom: 20px;
 }
 
-/* --- Form Grid Layout --- */
+/* .skumari-divider-line1 {
+    height: 1px;
+    background-color: #e5e7eb;
+    margin-bottom: 15px;
+} */
+
 .skumari-form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-/* --- Individual Form Group (Label + Input/Select) --- */
 .skumari-form-group {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .skumari-form-group1 {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- Label Styling --- */
 .skumari-form-group label {
-  font-weight: 500;
-  color: #555;
-  font-size: 0.9em;
-  margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.9em;
+    margin-bottom: 8px;
 }
 
 .skumari-form-group1 label {
-  font-weight: 500;
-  color: #555;
-  font-size: 0.9em;
-  margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+    font-size: 0.9em;
+    margin-bottom: 8px;
 }
 
 .skumari-form-group1 select {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #d9d9d9;
-  border-radius: 8px;
-  font-size: 1em;
-  color: #333;
-  background-color: #fdfdfd;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    background-color: #fdfdfd;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skumari-form-group input[type="text"],
 .skumari-form-group input[type="email"],
-.skumari-form-group input[type="password"],
-.skumari-form-group select {
-  width: 90%;
-  padding: 10px 12px;
-  border: 1px solid #d9d9d9;
-  border-radius: 8px;
-  font-size: 1em;
-  color: #333;
-  background-color: #fdfdfd;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+.skumari-form-group input[type="password"]
+{
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    background-color: #fdfdfd;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skumari-form-group input:focus,
-.skumari-form-group select:focus {
-  outline: none;
-  border-color: #6a5acd;
-  box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.2);
+.skumari-form-group1 select:focus {
+    outline: none;
+    border-color: #6a5acd;
+    box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.2);
 }
 
 .skumari-phone-input {
-  display: flex;
-  gap: 8px;
+    display: flex;
+    gap: 8px;
 }
 
 .skumari-phone-input input {
-  flex: 1;
+    flex: 1;
 }
 
 .skumari-form-grid .skumari-full-width {
-  grid-column: 1 / -1;
+    grid-column: 1 / -1;
 }
 
-/* --- Required Asterisk --- */
 .skumari-required {
-  color: red;
-  margin-left: 4px;
+    color: red;
+    margin-left: 4px;
 }
 
-/* --- Modal Actions (Buttons) --- */
 .skumari-modal-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .skumari-modal-actions button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: background-color 0.2s ease;
-  outline: none;
-  box-shadow: none;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+    outline: none;
+    box-shadow: none;
 }
 
 .skumari-modal-actions button[type="submit"] {
-  background-color: #5A66F1;
-  color: white;
+    background-color: #4f46e5;
+    color: white;
 }
 
-
+.skumari-modal-actions button[type="submit"]:hover {
+    background-color: #3730a3;
+}
 
 .skumari-modal-actions button[type="button"] {
-  background-color: #000000;
-  color: white;
+    background-color: #333;
+    color: white;
 }
 
+.skumari-modal-actions button[type="button"]:hover {
+    background-color: #555;
+}
 
 .skumari-modal input[type="text"],
 .skumari-modal input[type="email"],
-.skumari-modal input[type="password"],
-.skumari-modal select {
-  border: 1px solid #d9d9d9;
-  border-radius: 8px;
-  padding: 10px 12px;
-  background-color: #fdfdfd;
-  color: #333;
+.skumari-modal input[type="password"]
+{
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background-color: #f9f9f9;
+    color: #333;
 }
+
+.skumari-modal select {
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
 
 .skumari-modal input:focus,
 .skumari-modal select:focus {
-  outline: none;
-  border-color: #6a5acd;
-  box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.2);
+    outline: none;
+    border-color: #6a5acd;
+    box-shadow: 0 0 0 2px rgba(106, 90, 205, 0.2);
 }
 
 .skumari-upload-photo {
-  background: #fff;
-  padding: 25px 30px;
-  border-radius: 8px;
-  width: 420px;
-  max-width: 90%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  animation: fadeInScale 0.3s ease-in-out;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    width: 420px;
+    max-width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeInScale 0.3s ease-in-out;
 }
 
 .skumari-upload-photo h2 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #333;
-  text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
 }
 
 .skumari-upload-photo input[type="file"] {
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background-color: #fafafa;
-  font-size: 14px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    font-size: 14px;
 }
 
 .skumari-upload-photo .skumari-form-buttons {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 .skumari-upload-photo .skumari-form-buttons button {
-  padding: 10px 16px;
-  font-size: 14px;
-  border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 6px;
 }
 
 .skumari-upload-photo .skumari-form-buttons .skumari-save {
-  background-color: #28a745;
-  color: white;
+    background-color: #28a745;
+    color: white;
 }
 
 .skumari-upload-photo .skumari-form-buttons .skumari-close {
-  background-color: #6c757d;
-  color: white;
+    background-color: #6c757d;
+    color: white;
 }
 
+/* Add missing animation if needed */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Additional styles for Address Detail View */
 .skumari-address-detail-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .skumari-address-detail-box {
-  background: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  width: 90%;
-  max-width: 600px;
-  position: relative;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-sizing: border-box;
+    background-color: #fff;
+    width: 90%;
+    max-width: 500px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .skumari-address-detail-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .skumari-address-detail-name {
-  font-size: 24px;
-  font-weight: 700;
-  color: #333;
-  margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
 }
 
 .skumari-address-detail-back-btn {
-  background: none;
-  border: none;
-  color: #007bff;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
+    background: #fbfbfb;
+    border: 1px solid #ccc;
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .skumari-address-detail-back-btn:hover {
-  background-color: #f0f8ff;
-  text-decoration: underline;
+    color: #333;
+    border-color: #bbb;
 }
 
 .skumari-address-detail-content {
-  padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .skumari-address-detail-row {
-  display: flex;
-  align-items: baseline;
-  margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 .skumari-address-detail-label {
-  font-weight: bold;
-  color: #555;
-  font-size: 15px;
-  min-width: 120px;
-  text-transform: uppercase;
-  margin-right: 5px;
+    font-weight: 500;
+    color: #555;
+    min-width: 100px;
 }
 
 .skumari-address-detail-value {
-  color: #333;
-  font-size: 15px;
+    color: #333;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .skumari-admin-profile.skumari-fullscreen-profile {
-    padding: 1rem;
-  }
-
-  .skumari-admin-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .skumari-profile-header {
-    flex-direction: column;
+/* Delete Confirmation Modal Styles */
+.skumari-employee-delete-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
     align-items: center;
+    z-index: 1000;
+}
+
+.skumari-employee-delete-box {
+    background-color: #fff;
+    width: 90%;
+    max-width: 400px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
-  }
+}
 
-  .skumari-profile-header h2,
-  .skumari-profile-header p {
-    margin: 5px 0;
-  }
+.skumari-employee-delete-icon {
+    margin-bottom: 20px;
+}
 
-  .skumari-tabs {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 0;
-    gap: 10px;
-  }
+.skumari-employee-subtext {
+    color: #666;
+    margin-bottom: 20px;
+}
 
-  .skumari-tabs button {
-    width: 100%;
-    text-align: left;
-  }
-
-  .skumari-info-box,
-  .skumari-info-box1,
-  .skumari-info-box2 {
-    padding: 15px;
-  }
-
-  .skumari-info-details-container,
-  .skumari-info-details-container1,
-  .skumari-info-details-container2 {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: -15px;
-    margin-right: -15px;
-  }
-
-  .skumari-info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skumari-employee-form-groups1 input[type="password"] {
-    width: 100%;
-  }
-
-  .skumari-button-container {
-    padding-right: 0;
+.skumari-employee-delete-buttons {
+    display: flex;
     justify-content: center;
-  }
-
-  .skumari-save-btn {
-    margin-right: 0;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .skumari-address-header {
-    flex-direction: column;
-    align-items: flex-start;
     gap: 10px;
-  }
+}
 
-  .skumari-add-address-btn {
-    width: 100%;
-    justify-content: center;
-  }
+.skumari-yes {
+    background-color: #ef2020;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
-  .skumari-form-grid {
-    grid-template-columns: 1fr;
-  }
+.skumari-no {
+    background-color: #050606;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
-  .skumari-form-group input[type="text"],
-  .skumari-form-group input[type="email"],
-  .skumari-form-group1 select {
-    width: 100%;
-  }
+.skumari-yes:hover {
+    background-color: #ef2020;
+}
 
-  .skumari-modal-actions {
-    flex-direction: column;
-    gap: 10px;
-  }
+.skumari-no:hover {
+    background-color: #0a0b0c;
+}
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+    /* Main Profile Container */
+    .skumari-user-profile.skumari-fullscreen-profile {
+        padding: 1rem; /* Reduce padding for smaller screens */
+    }
 
-  .skumari-modal-actions button {
-    width: 100%;
-    justify-content: center;
-  }
+    /* Header Section */
+    .skumari-sremployee-header-section {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: flex-start; /* Align to the start */
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+    }
 
-  .skumari-upload-photo .skumari-form-buttons {
-    flex-direction: column;
-    gap: 10px;
-  }
+    .skumari-employee-header-left h1 {
+        font-size: 24px; /* Adjust font size */
+        margin-bottom: 8px;
+    }
 
-  .skumari-upload-photo .skumari-form-buttons button {
-    width: 100%;
-  }
+    .skumari-employee-breadcrumb {
+        font-size: 16px; /* Adjust font size */
+        margin-top: 5px;
+    }
 
-  /* Responsive adjustments for Address Detail View */
-  .skumari-address-detail-box {
-    padding: 20px;
-  }
+    /* Main Profile Container (White Box) */
+    .skumari-profile-container {
+        padding: 12px; /* Reduce padding */
+        margin: 15px 0; /* Adjust margin */
+    }
 
-  .skumari-address-detail-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
+    /* Profile Header (Avatar and Name) */
+    .skumari-profile-header {
+        flex-direction: column; /* Stack avatar and name vertically */
+        align-items: center; /* Center items */
+        margin-left: 0;
+        text-align: center;
+        gap: 10px;
+    }
 
-  .skumari-address-detail-name {
-    font-size: 20px;
-  }
+    .skumari-avatar {
+        width: 80px; /* Adjust avatar size */
+        height: 80px;
+    }
 
-  .skumari-address-detail-back-btn {
-    width: 100%;
-    text-align: left;
-    padding-left: 0;
-  }
+    .skumari-upload-btn {
+        margin-top: 10px; /* Add some space */
+    }
 
-  .skumari-address-detail-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
+    /* Tab Navigation */
+    .skumari-tabs {
+        flex-wrap: wrap; /* Allow tabs to wrap to the next line */
+        justify-content: center; /* Center tabs when wrapped */
+        margin-left: 0;
+        gap: 10px; /* Reduce gap between tabs */
+        padding-top: 0;
+        position: static; /* Remove sticky positioning */
+        background-color: transparent; /* Ensure no background interference */
+    }
 
-  .skumari-address-detail-label {
-    min-width: unset;
-    margin-right: 0;
-  }
+    .skumari-tabs button {
+        flex-grow: 1; /* Allow buttons to grow to fill space */
+        font-size: 14px; /* Adjust font size */
+        padding: 6px 12px;
+    }
+
+    /* Info Box - General White Card for tab content */
+    .skumari-info-box {
+        padding: 20px 15px; /* Adjust padding */
+    }
+
+    .skumari-info-title-container {
+        margin-top: 0; /* Reset margin */
+        margin-bottom: 10px;
+    }
+
+    .skumari-info-title {
+        font-size: 16px; /* Adjust font size */
+        margin-top: 0; /* Reset margin */
+    }
+
+    .skumari-info-details-container {
+        padding-top: 15px;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .skumari-info-grid {
+        grid-template-columns: 1fr; /* Stack grid items vertically */
+        gap: 15px; /* Adjust gap */
+    }
+
+    .skumari-info-row {
+        flex-direction: column; /* Stack label and value */
+        align-items: flex-start; /* Align to the start */
+        gap: 2px;
+    }
+
+    .skumari-info-label {
+        font-size: 0.85em; /* Adjust font size */
+        min-width: auto; /* Remove min-width constraint */
+    }
+
+    .skumari-info-value {
+        font-size: 1em; /* Adjust font size */
+        margin-top: 0;
+    }
+
+    /* Info Box - Security Tab */
+    .skumari-info-box1 {
+        padding: 10px; /* Adjust padding */
+    }
+
+    .skumari-info-title-container1 {
+        padding: 10px 15px; /* Adjust padding */
+    }
+
+    .skumari-info-title1 {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .skumari-info-details-container1 {
+        padding: 10px 0; /* Adjust padding */
+        margin-left: 0;
+        border-top: none; /* Remove border */
+    }
+
+    .skumari-user-form-groups1 {
+        min-width: 100%; /* Full width */
+        margin-bottom: 15px; /* Add space between groups */
+    }
+
+    .skumari-user-form-groups1 input[type="password"] {
+        width: 100%; /* Full width for password fields */
+    }
+
+    .skumari-button-container {
+        justify-content: center; /* Center the button */
+    }
+
+    .skumari-save-btn {
+        margin-right: 0; /* Reset margin */
+        width: 100%; /* Make button full width */
+        justify-content: center; /* Center content in button */
+        padding: 12px 20px; /* Adjust padding */
+    }
+
+    /* Info Box - Address Tab */
+    .skumari-info-box2 {
+        padding: 10px 15px; /* Adjust padding */
+    }
+
+    .skumari-address-header {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: flex-start; /* Align to the start */
+        padding-bottom: 0;
+        margin-top: 0;
+    }
+
+    .skumari-info-title2 {
+        font-size: 16px; /* Adjust font size */
+        margin-bottom: 10px; /* Add space below title */
+    }
+
+    .skumari-add-address-btn {
+        width: 100%; 
+        justify-content: center; /* Center content in button */
+        padding: 6px 8px;
+    }
+
+    .skumari-info-details-container2 {
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .skumari-address-table {
+        font-size: 0.85em; /* Adjust font size for table */
+    }
+
+    .skumari-address-table th,
+    .skumari-address-table td {
+        padding: 10px 8px; /* Adjust table cell padding */
+    }
+
+    .skumari-address-actions {
+        flex-direction: column; /* Stack action buttons vertically */
+        gap: 5px;
+    }
+
+    .skumari-address-action-buttons {
+        flex-direction: column; /* Stack individual action buttons */
+        gap: 5px;
+    }
+
+    .skumari-address-icon-action-btn {
+        padding: 8px; /* Adjust padding for icons */
+        font-size: 20px;
+    }
+
+    .skumari-address-icon-action-btn i {
+        font-size: 16px;
+    }
+
+    /* My Orders Tab Container */
+    .skumari-info-box3 {
+        padding: 10px 15px; /* Adjust padding */
+    }
+
+    .skumari-info-title-container3 {
+        padding: 0;
+    }
+
+    /* Orders Header (for the list view) */
+    .skumari-orders-header {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: flex-start; /* Align to the start */
+        margin-bottom: 15px;
+    }
+
+    .skumari-orders-header h3 {
+        font-size: 18px; /* Adjust font size */
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    /* Individual Order Card (List View) */
+    .skumari-order-card {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align to the start */
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .skumari-order-card-left {
+        width: 100%; /* Full width */
+        align-items: center; /* Center items */
+        gap: 10px;
+    }
+
+    .skumari-order-id {
+        font-size: 15px; /* Adjust font size */
+    }
+
+    .skumari-order-products {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .skumari-order-datetime {
+        font-size: 13px; /* Adjust font size */
+        margin-bottom: 5px;
+    }
+
+    .skumari-order-total {
+        font-size: 16px; /* Adjust font size */
+    }
+
+    .skumari-order-card-right {
+        width: 100%; /* Full width */
+        justify-content: center; /* Center the button */
+    }
+
+    .skumari-see-details-btn {
+        margin-bottom: 0; /* Reset margin */
+        padding: 8px 15px; /* Adjust padding */
+        font-size: 14px;
+    }
+
+    .skumari-orders-no-entries {
+        padding: 20px 10px; /* Adjust padding */
+        font-size: 14px;
+    }
+
+    .skumari-orders-footer {
+        text-align: center; /* Center the footer text */
+        font-size: 13px;
+    }
+
+    /* Order Details View */
+    .skumari-order-detail-view {
+        padding: 15px; /* Adjust padding */
+        margin-top: 20px; /* Adjust margin */
+    }
+
+    .skumari-order-detail-back-btn {
+        width: 100%; /* Full width button */
+        justify-content: center; /* Center content in button */
+        margin-bottom: 15px;
+    }
+
+    .skumari-order-detail-columns {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 15px; /* Adjust gap */
+        margin-top: 10px; /* Adjust margin */
+    }
+
+    .skumari-order-summary-left,
+    .skumari-order-details-right {
+        min-width: unset; /* Remove min-width */
+        width: 100%; /* Full width */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .skumari-order-info-group p,
+    .skumari-payment-info p {
+        font-size: 14px; /* Adjust font size */
+        margin-left: 10px;
+    }
+
+    .skumari-order-status-bar {
+        padding: 10px; /* Adjust padding */
+        padding-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 5px;
+    }
+
+    .skumari-status-step {
+        font-size: 11px; /* Adjust font size */
+    }
+
+    .skumari-status-icon {
+        font-size: 18px; /* Adjust icon size */
+        padding: 3px;
+    }
+
+    .skumari-payment-info h4,
+    .skumari-order-details-right h4 {
+        font-size: 16px; /* Adjust font size */
+        margin-left: 10px;
+    }
+
+    .skumari-order-product-item {
+        flex-direction: row; /* Keep items in a row but adjust spacing */
+        align-items: center;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    .skumari-product-thumb {
+        width: 50px; /* Adjust thumbnail size */
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .skumari-order-product-item span:nth-child(2) {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .skumari-product-price {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .skumari-summary-line,
+    .skumari-summary-total {
+        font-size: 14px; /* Adjust font size */
+        margin-left: 10px;
+    }
+
+    .skumari-summary-total {
+        font-size: 16px; /* Adjust total font size */
+    }
+
+    /* Modal and Form Related Styles */
+    .skumari-modal {
+        width: 95%; /* Adjust modal width */
+        padding: 20px; /* Adjust padding */
+    }
+
+    .skumari-modal h3 {
+        font-size: 18px; /* Adjust font size */
+    }
+
+    .skumari-form-grid {
+        grid-template-columns: 1fr; /* Stack form items vertically */
+        gap: 15px;
+    }
+
+    .skumari-form-group input[type="text"],
+    .skumari-form-group input[type="email"],
+    .skumari-form-group input[type="password"],
+    .skumari-form-group select {
+        width: 100%; /* Full width for inputs */
+    }
+
+    .skumari-modal-actions {
+        flex-direction: column; /* Stack action buttons vertically */
+        gap: 10px;
+    }
+
+    .skumari-modal-actions button {
+        width: 100%; /* Full width buttons */
+        justify-content: center; /* Center content in buttons */
+        padding: 12px 20px;
+    }
+
+    /* Upload Photo Modal */
+    .skumari-upload-photo {
+        width: 90%; /* Adjust width */
+        padding: 20px;
+    }
+
+    .skumari-upload-photo h2 {
+        font-size: 18px;
+    }
+
+    .skumari-upload-photo .skumari-form-buttons {
+        flex-direction: column; /* Stack buttons */
+        gap: 10px;
+    }
+
+    .skumari-upload-photo .skumari-form-buttons button {
+        width: 100%; /* Full width */
+    }
+
+    /* Address Detail View */
+    .skumari-address-detail-box {
+        width: 95%; /* Adjust width */
+        padding: 20px;
+    }
+
+    .skumari-address-detail-header {
+        flex-direction: column; /* Stack header items */
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .skumari-address-detail-name {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .skumari-address-detail-back-btn {
+        width: 100%; /* Full width button */
+        justify-content: center;
+    }
+
+    .skumari-address-detail-row {
+        flex-direction: column; /* Stack label and value */
+        gap: 2px;
+    }
+
+    .skumari-address-detail-label {
+        min-width: unset; /* Remove min-width */
+        font-size: 0.9em;
+    }
+
+    .skumari-address-detail-value {
+        font-size: 1em;
+    }
+
+    /* Delete Confirmation Modal */
+    .skumari-employee-delete-box {
+        width: 90%; /* Adjust width */
+        padding: 20px;
+    }
+
+    .skumari-employee-delete-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
+
+    .skumari-employee-delete-buttons button {
+        width: 100%; /* Full width buttons */
+    }
+}
+
+/* Optional: Adjustments for very small screens (e.g., mobile landscape) */
+@media (max-width: 480px) {
+    .skumari-employee-header-left h1 {
+        font-size: 20px;
+    }
+
+    .skumari-tabs button {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+
+    .skumari-info-box,
+    .skumari-info-box1,
+    .skumari-info-box3,
+    .skumari-order-detail-view {
+        padding: 10px; /* Further reduce padding */
+    }
+
+    .skumari-modal,
+    .skumari-upload-photo,
+    .skumari-employee-delete-box {
+        padding: 15px; /* Further reduce modal padding */
+    }
+
+    @media screen and (max-width: 480px) {
+    .skumari-info-details-container2 {
+        /* Ensure horizontal scrolling for the table */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    .skumari-address-table {
+        font-size: 0.8em; /* Smaller font for table content */
+        /* Set a minimum width to force horizontal scroll if content overflows */
+        min-width: 450px; /* Adjust this value if your content is wider/narrower */
+    }
+
+    .skumari-address-table th,
+    .skumari-address-table td {
+        padding: 6px; /* Significantly reduced padding in table cells */
+        white-space: nowrap; /* Keep content on a single line */
+    }
+    .skumari-address-actions {
+        min-width: unset; /* Remove fixed min-width set for desktop/tablet */
+        width: 60px; /* Give a specific, smaller width for action buttons */
+    }
+
+    .skumari-address-action-buttons {
+        gap: 3px; /* Even smaller gap between action buttons */
+        justify-content: center; /* Center buttons within their cell */
+        align-items: center; /* Align items vertically */
+    }
+
+    .skumari-address-icon-action-btn {
+        font-size: 1.1em; /* Slightly smaller icons */
+        padding: 4px; /* Reduced padding around icons */
+    }
+}
 }

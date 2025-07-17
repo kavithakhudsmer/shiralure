@@ -1,17 +1,14 @@
 .pprrpromotions-dashboard {
- 
-  min-height: 100vh;
-  margin: 0;
-  padding-left: 30px;
-  padding-right: 40px;
-  color: #333;
+  padding: 30px;
   background-color: #F2F6F9;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
 /* Header Styles */
 .pprrheader {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .pprrheader-content {
@@ -19,14 +16,14 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-top:20px;
 }
 
 .pprrheader-left h1 {
-  font-size: 34px;
+  font-size: 28px;
   font-weight: bold;
   color: #000;
   margin: 0;
-  line-height: 1.2;
 }
 
 .pprrheader-right {
@@ -38,7 +35,7 @@
 }
 
 .pprrbreadcrumb {
-  font-size: 24px;
+  font-size: 20px;
   color: #333;
 }
 

@@ -90,7 +90,6 @@ function Customers() {
                 setShowShareDropdown(false);
             }
             if (showOverlayForm && formRef.current && !formRef.current.contains(event.target)) {
-                // Do nothing if clicking outside the form, as the form has its own close button
                 // setShowOverlayForm(false);
             }
             if (showRowCountDropdown && rowCountRef.current && !rowCountRef.current.contains(event.target)) {
@@ -252,9 +251,9 @@ function Customers() {
     const endIndex = Math.min(startIndex + rowsToDisplay, filteredCustomers.length);
     const paginatedCustomers = filteredCustomers.slice(startIndex, endIndex);
 
-    if (showProfile && selectedCustomer) {
-        return <UserProfile user={selectedCustomer} onClose={closeProfileModal} />;
-    }
+    // if (showProfile && selectedCustomer) {
+    //     return <UserProfile user={selectedCustomer} onClose={closeProfileModal} />;
+    // }
 
     return (
         <div className="rk-customer-dashboard-container">
@@ -271,6 +270,11 @@ function Customers() {
 
             <div className="rk-customer-content-box-wrapper">
 
+{showProfile && selectedCustomer ? (
+                    // Render UserProfile if showProfile is true and a customer is selected
+                    <UserProfile user={selectedCustomer} onBackToList={closeProfileModal} />
+                ) : (
+                    <>
                 <div className="rk-customer-top-controls">
                     <div className="rk-customer-icon-button-group">
                         <div className="rk-customer-row-count-wrapper" ref={rowCountRef}>
@@ -318,7 +322,7 @@ function Customers() {
                         </div>
                     </div>
                 </div>
-
+</>)}
                 <div className="rk-customer-divider-line"></div>
 
                 {showFilter && (

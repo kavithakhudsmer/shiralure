@@ -19,7 +19,7 @@ import { FiEye, FiEdit2, FiTrash2 } from 'react-icons/fi';
 
 import { PiSliders } from "react-icons/pi";
 import { BiSolidAddToQueue } from "react-icons/bi";
-
+import { GoFileSymlinkFile } from 'react-icons/go';
 
 const masterPurchasesData = [...initialDataWithNotes, ...generateMoreDataWithNotes(7, 20)];
 
@@ -442,6 +442,7 @@ function Purchase() {
               )}
             </div>
           </div>
+          
           <button className="kicon-btn" title="Add New Purchase" onClick={handleAddClick}><BiSolidAddToQueue /></button>
         </div>
         <hr className="kdivider" />

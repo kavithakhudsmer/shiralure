@@ -13,6 +13,7 @@
 
 .dsdvpheader {
   padding: 30px 30px;
+  margin-top:20px;
   background-color: #eef2f7;
   width: 100%;
   box-sizing: border-box;
@@ -24,8 +25,30 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+
 }
 
+
+.muthu-breadcrumb {
+  gap:10px;
+      font-size: 20px;
+     
+      margin-top: 19px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      a:first-child {
+        color: #5A66F1;
+        text-decoration: none;
+      }
+      a:last-child {
+        color: #666;
+        text-decoration: none;
+        &:hover {
+          color: #5A66F1;
+        }
+      }
+    }
 
 .dsdvpheader-content h1 {
   font-size: 32px;

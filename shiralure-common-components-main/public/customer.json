@@ -7,6 +7,62 @@
       "phone": "+917865936457",
       "status": "Active",
       "role": "CUSTOMER"
+    },
+    {
+      "id": 2,
+      "name": "REVI",
+      "email": "revi@hudsmer.solutions.com",
+      "phone": "+917865936434",
+      "status": "InActive",
+      "role": "CUSTOMER"
+    },
+    {
+      "id": 3,
+      "name": "RAJI",
+      "email": "raji@hudsmer.solutions.com",
+      "phone": "+916865936457",
+      "status": "InActive",
+      "role": "CUSTOMER"
+    },
+    {
+      "id": 4,
+      "name": "RUBI",
+      "email": "rubi@hudsmer.solutions.com",
+      "phone": "+917866836457",
+      "status": "Active",
+      "role": "CUSTOMER"
+    },
+    {
+      "id": 5,
+      "name": "RAVI",
+      "email": "ravi@hudsmer.solutions.com",
+      "phone": "+918865936457",
+      "status": "InActive",
+      "role": "CUSTOMER"
+    },
+    {
+      "id": 6,
+      "name": "RAJU",
+      "email": "raju@hudsmer.solutions.com",
+      "phone": "+917865945457",
+      "status": "Active",
+      "role": "CUSTOMER"
+    },
+    {
+      "id": 7,
+      "name": "REV",
+      "email": "rev@hudsmer.solutions.com",
+      "phone": "+917865936457",
+      "status": "InActive",
+      "role": "CUSTOMER"
+    },
+    {
+      "id": 8,
+      "name": "REMI",
+      "email": "remi@hudsmer.solutions.com",
+      "phone": "+917865936457",
+      "status": "Active",
+      "role": "CUSTOMER"
     }
   ]
 }

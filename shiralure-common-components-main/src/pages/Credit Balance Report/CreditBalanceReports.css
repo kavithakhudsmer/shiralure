@@ -1,7 +1,9 @@
 .rajipage-container {
-  padding: 14px 16px;
-  background-color: #F2F6F9;
+  padding: 24px;
+    background-color: #F2F6F9;
   font-family: Arial, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
  
 }
  

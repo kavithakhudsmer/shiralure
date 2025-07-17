@@ -1,7 +1,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f7fb;
+  background-color: #f2f6f9;
   margin: 0;
   
   height: 95vh;
@@ -9,6 +9,14 @@ body {
   display: block;
  flex-direction: column;
   margin-top: 20px;
+}
+
+.admin-wrapper {
+  padding: 24px;
+  background-color: #F2F6F9;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .kvdivider-line {
@@ -25,7 +33,7 @@ body {
   padding: 30px;
   background-color: #ffffff;
   border-radius: 8px;
-  margin-left: 20px;
+
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
   overflow: visible;
   position: relative;
@@ -42,7 +50,7 @@ body {
   align-items: center;
   padding: 20px 25px 10px;
   font-size: 13px;
-  background-color: #f6f8fa;
+  background-color: #f2f6f9;
   border-bottom: 0px solid #ffffff;
  
   margin-top: 20px;
@@ -50,7 +58,7 @@ body {
 }
 
 .kvadmin-header h1 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
   margin: 0;
   color: #111;
@@ -890,7 +898,7 @@ width: 24px;
   }
 
   .kvbreadcrumb {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .kvcontrols {

@@ -27,6 +27,7 @@ $muthu-dark-divider: #333;
     align-items: center;
     transition: all 0.3s ease;
     margin-left: 20px;
+    margin-top:20px;
 
     @media (max-width: 768px) {
       margin-left: 0;
@@ -54,9 +55,9 @@ $muthu-dark-divider: #333;
     }
 
     .muthu-breadcrumb {
-      font-size: 25px;
+      font-size: 20px;
       margin-right: 50px;
-      margin-top: 20px;
+      margin-top: 19px;
       font-weight: 500;
       display: flex;
       align-items: center;

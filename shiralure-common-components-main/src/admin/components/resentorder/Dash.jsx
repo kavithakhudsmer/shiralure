@@ -39,8 +39,14 @@ function Dash({ id, onBack }) {
       <div className="dsdvpheader">
         <div className="dsdvpheader-content">
           <h1>Dashboard</h1>
-          <div className="dsdvpbreadcrumb">
-            <span className="dsdvphome" onClick={onBack} style={{ cursor: 'pointer' }}>Home</span> &gt;&gt; Dashboard
+          <div className="muthu-breadcrumb">
+
+            <a href="admin">Home</a>
+
+            <span className="muthu-separator">&gt;&gt;</span>
+
+            <a href="#">Dashboard</a>
+
           </div>
         </div>
       </div>
