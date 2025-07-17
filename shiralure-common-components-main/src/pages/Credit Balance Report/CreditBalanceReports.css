@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.25rem;
-  margin-top: 5px;
+  margin-top: 20px;
   margin-bottom: 20px;
  
 }
@@ -23,6 +23,7 @@
  
 .rajibreadcrumb {
   font-size: 20px;
+  margin-top:20px;
   text-align: right;
   gap: 0px;
   font-weight: 400;

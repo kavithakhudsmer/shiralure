@@ -59,7 +59,7 @@ import Returnorder from './pages/Returnorder/page/ReturnOrder';
 
 
 import Layout1 from './Components/admin settings/Layout1';
-import Setting from './Components/admin settings/Setting';
+// import Setting from './Components/admin settings/Setting';
 import ReturnReasonComponent from './Components/admin settings/ReturnReason';
 import Company from './Components/admin settings/Company';
 import Site from './Components/admin settings/Site';
@@ -135,7 +135,7 @@ const App = () => {
                 <Route path="Pos" element={<Pos />} />
                 <Route path="PosOrder" element={<PosOrder />} />
                 <Route path="PushNotification" element={<PushNotification />} />
-                {/* <Route path="SPage" element={<SPage />} /> */}
+               
                 <Route path="Purchase" element={<Purchase />} />
                 <Route path="OnlineOrders" element={<OrderTable />} />
                 <Route path="Subscriber" element={<Subscriber />} />
@@ -161,7 +161,7 @@ const App = () => {
 
               <Route path="Settings" element={<Layout1 />}>
                 {/* The 'Settings' path for Layout1 is now handled by the parent route */}
-                  <Route index element={<Setting />} /> {/* Default child route for /admin/Settings */}
+                  {/* <Route index element={<Setting />} /> Default child route for /admin/Settings */}
                   <Route path="return-reasons" element={<ReturnReasonComponent />} />
                   <Route path="company" element={<Company />} />
                   <Route path="site" element={<Site />} />

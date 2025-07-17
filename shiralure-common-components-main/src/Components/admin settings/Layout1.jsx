@@ -3,18 +3,19 @@ import { Outlet } from 'react-router-dom';
 
 import Sidebar from '../Sidebar';
 import Header1 from '../Header1';
-
+import Setting from './Setting';
 const Layout1 = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header1 />
       <div style={{ display: 'flex', flex: 1, minHeight: 0 }}>
         <Sidebar />
+        <Setting />
         <main
           style={{
             flex: 1,
-            marginTop: '70px',
-            marginLeft: '260px', // Default for desktop
+            marginTop: '20px',
+          
             background: '#f5f5f5',
             overflowY: 'auto',
           }}
