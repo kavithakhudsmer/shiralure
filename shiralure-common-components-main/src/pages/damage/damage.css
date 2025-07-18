@@ -33,7 +33,7 @@
 }
 
 .devpheader {
-padding: 20px 0px;
+padding: 0px 20px;
   border-bottom: 1px solid #F2F6F9;
   background-color: #F2F6F9;
   width: 100%;
@@ -48,6 +48,7 @@ padding: 20px 0px;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 20px;
 }
 
 .devpheader-content h1 {

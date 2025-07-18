@@ -57,8 +57,8 @@ export default function Setting() {
     <div
       style={{
         ...styles.mainPanel,
-        height: 'calc(100vh - 70px)',
-        overflowY: 'auto',
+        height: 'calc(100vh - 70px)', // Keep the height the same as per your request
+        overflowY: 'auto', // Keep this if you want mainPanel to scroll
         scrollbarWidth: 'none', /* Firefox */
         msOverflowStyle: 'none', /* IE and Edge */
       }}
@@ -193,6 +193,8 @@ const styles = {
     flexDirection: 'column',
     minHeight: 0,
     background: '#f5f5f5',
+    height: 'calc(100vh - 70px)', // Keeping the height calculation as per your request
+    paddingBottom: '24px', // Added padding to increase the background size at the bottom
   },
   headerRow: {
     display: 'flex',
@@ -267,5 +269,6 @@ const styles = {
   settingsChildContent: {
     flex: 1,
     background: '#f5f5f5',
+    overflowY: 'auto',
   },
 };

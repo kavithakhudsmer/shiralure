@@ -26,11 +26,9 @@ import PaymentFlow from './Components/PaymentSteps/PaymentFlow';
 import OrderConfirmation from './Components/Checkout/Checkout1';
 
 // Import the new AdminLayout component
-
 import AdminLayout from './Components/AdminLayout';
 
 // Admin Pages Imports
-
 import Homeadmin from './admin/pages/home/home';
 import Pos from './admin/pages/pos/Pos';
 import Purchase from "./pages/Purchases/purchase/Purchase";
@@ -57,9 +55,10 @@ import ViewProductPage from "./pages/product/ViewPromotion";
 import Returnorder from './pages/Returnorder/page/ReturnOrder';
 
 
+// Changed Layout1 to Setting, as Setting.jsx is now responsible for the settings layout
+import Setting from './Components/admin settings/Setting'; // Import Setting.jsx
 
-import Layout1 from './Components/admin settings/Layout1';
-// import Setting from './Components/admin settings/Setting';
+// Import individual setting components
 import ReturnReasonComponent from './Components/admin settings/ReturnReason';
 import Company from './Components/admin settings/Company';
 import Site from './Components/admin settings/Site';
@@ -77,7 +76,6 @@ import License from './Components/admin settings/License';
 import SmsGateway from './Components/admin settings/Sms';
 import LanguagesComponent from './Components/admin settings/Language';
 import RolePermissions from './Components/admin settings/RolePermissions';
-// import PagesComponent from './Components/admin settings/Pages';
 import Pages1Component from './Components/admin settings/Pages1Component';
 import Taxes from './Components/admin settings/Taxes';
 import Units from './Components/admin settings/Units';
@@ -90,12 +88,6 @@ import CurrencyComponent from './Components/admin settings/Currency';
 import ProductCategoriesComponent from './Components/admin settings/ProductCategories';
 import ProductBrandsComponent from './Components/admin settings/ProductBrands';
 import ProductAttributes from './Components/admin settings/ProductAttributes';
-
-
-
-
-
-
 
 
 const Layout = ({ children }) => {
@@ -135,7 +127,7 @@ const App = () => {
                 <Route path="Pos" element={<Pos />} />
                 <Route path="PosOrder" element={<PosOrder />} />
                 <Route path="PushNotification" element={<PushNotification />} />
-               
+
                 <Route path="Purchase" element={<Purchase />} />
                 <Route path="OnlineOrders" element={<OrderTable />} />
                 <Route path="Subscriber" element={<Subscriber />} />
@@ -150,18 +142,17 @@ const App = () => {
                 <Route path="ReturnPage" element={<ReturnPage />} />
                 <Route path="returns/:orderId" element={<ReturnDetails />} />
                 <Route path="Stocks" element={<Stocks />} />
-                <Route path="/products" element={<ProductDashboard />} />
-                <Route path="/products/view/:id" element={<ViewProductPage />} />
+                <Route path="products" element={<ProductDashboard />} /> {/* Corrected to "products" for consistency */}
+                <Route path="products/view/:id" element={<ViewProductPage />} />
                 <Route path="damage" element={<Damage />} />
                 <Route path="Promotion" element={<Promotion />} />
                 <Route path="ProductSection" element={<ProductSection />} />
                 <Route path="Returnorder" element={<Returnorder />} />
 
-
-
-              <Route path="Settings" element={<Layout1 />}>
-                {/* The 'Settings' path for Layout1 is now handled by the parent route */}
-                  {/* <Route index element={<Setting />} /> Default child route for /admin/Settings */}
+                {/* Nested Routes for Admin Settings */}
+                <Route path="Settings" element={<Setting />}>
+                  {/* Default child route for /admin/Settings */}
+                  {/* <Route index element={<SettingHomeComponent />} /> uncomment and create this component if you want a default landing page for settings */}
                   <Route path="return-reasons" element={<ReturnReasonComponent />} />
                   <Route path="company" element={<Company />} />
                   <Route path="site" element={<Site />} />
@@ -172,7 +163,7 @@ const App = () => {
                   <Route path="notification-alert" element={<NotificationAlert/>} />
                   <Route path="social-media" element={<SocialMedia/>} />
                   <Route path="cookies" element={<Cookies/>} />
-                  <Route path="otp" element={<OTPComponent />} /> {/* Corrected path to lowercase */}
+                  <Route path="otp" element={<OTPComponent />} />
                   <Route path="analytics" element={<Analytics/>} />
                   <Route path="payment-gateway" element={<PaymentGateway/>} />
                   <Route path="license" element={<License/>} />
@@ -191,15 +182,8 @@ const App = () => {
                   <Route path="product-categories" element={<ProductCategoriesComponent/>} />
                   <Route path="product-brands" element={<ProductBrandsComponent/>} />
                   <Route path="product-attributes" element={<ProductAttributes/>} />
-               </Route>
+                </Route>
 
-
-
-
-
-
-                {/* <Route path="Setting" element={<Setting />} /> */}
-                {/* Add other admin routes here */}
               </Routes>
             </AdminLayout>
           }

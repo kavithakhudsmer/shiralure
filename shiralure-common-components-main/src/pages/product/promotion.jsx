@@ -3,25 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import {
   FiChevronDown, FiEye, FiEdit2, FiTrash2, FiPrinter, FiFile
 } from 'react-icons/fi';
-// import { MdLibraryAdd } from "react-icons/md";
 import { TiExport } from "react-icons/ti";
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import AddPromotionModal from './AddPromotionModal';
 import EditPromotionModal from './EditPromotion';
 import { GoFileSymlinkFile } from 'react-icons/go';
 import { BiSolidAddToQueue } from 'react-icons/bi';
-
 import { PiSliders } from "react-icons/pi";
-
 import DeleteModal from './viewcomponents/DeleteModal';
 import * as XLSX from 'xlsx';
-import { jsPDF } from "jspdf";
-import autoTable from "jspdf-autotable";
 import './promotion.css';
-// import './PromotionsFilter.css';
 import { FaFile } from "react-icons/fa";
 import { FaFileUpload } from "react-icons/fa";
-import productsData from '../../data/products1.json'; // adjust based on file structure
+import productsData from '../../data/products1.json';
 
 const ProductDashboard = () => {
   const navigate = useNavigate();
@@ -29,8 +23,6 @@ const ProductDashboard = () => {
   const itemsPerPageRef = useRef(null);
 
   const [allPromotions, setAllPromotions] = useState([]);
-  // const [filteredPromotions, setFilteredPromotions] = useState([]);
-  // const [isFiltered] = useState(false);
   const [showFilterRow, setShowFilterRow] = useState(false);
   const [filterInputs, setFilterInputs] = useState({ name: '', category: '', status: '' });
   const [showExportDropdown, setShowExportDropdown] = useState(false);
@@ -77,7 +69,6 @@ const ProductDashboard = () => {
   };
 
   const fileInputRef = useRef(null);
-  // const folderInputRef = useRef(null);
 
   const handleItemsPerPageChange = (number) => {
     setItemsPerPage(number);
@@ -125,16 +116,69 @@ const ProductDashboard = () => {
     XLSX.writeFile(wb, "promotions.xlsx");
   };
 
-  const exportToPDF = () => {
-    const doc = new jsPDF();
-    autoTable(doc, {
-      head: [['ID', 'Name', 'Type', 'Status', 'Description']],
-      body: filteredItems.map(p => [p.id, p.name, p.type, p.status, p.description])
-    });
-    doc.save('promotions.pdf');
+  const handlePrint = () => {
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(`
+      <html>
+        <head>
+          <title>Print Promotions</title>
+          <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            img { width: 50px; height: 50px; object-fit: cover; }
+            .pprritem-detail { display: flex; align-items: center; gap: 10px; }
+            .pprrstatus { padding: 4px 8px; border-radius: 4px; color: white; }
+            .pprrgreen { background-color: #28a745; }
+            .pprrblue { background-color: #007bff; }
+            .pprryellow { background-color: #ffc107; }
+            .pprrred { background-color: #dc3545; }
+            .pprrgray { background-color: #6c757d; }
+          </style>
+        </head>
+        <body>
+          <h1>Promotions Report</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Item Details</th>
+                <th>Category</th>
+                <th>Ordered Date</th>
+                <th>Status</th>
+                <th>Selling Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${filteredItems.map((item, index) => `
+                <tr>
+                  <td>${index + 1}</td>
+                  <td>
+                    <div class="pprritem-detail">
+                      <img src="${item.image}" alt="${item.name}" />
+                      <div>
+                        <div class="pprritem-name">${item.name}</div>
+                        <div class="pprritem-id">#${item.id}</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>#${item.category}</td>
+                  <td>${item.date}</td>
+                  <td><span class="pprrstatus ${getStatusClass(item.status)}">${item.status}</span></td>
+                  <td>₹${item.price}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </body>
+      </html>
+    `);
+    printWindow.document.close();
+    printWindow.print();
   };
 
-  const renderStatus = (status) => {
+  const getStatusClass = (status) => {
     const colorMap = {
       success: 'pprrgreen',
       shipping: 'pprrblue',
@@ -143,7 +187,11 @@ const ProductDashboard = () => {
       ordered: 'pprrgray',
       packed: 'pprrblue',
     };
-    const color = colorMap[status.toLowerCase()];
+    return colorMap[status.toLowerCase()] || '';
+  };
+
+  const renderStatus = (status) => {
+    const color = getStatusClass(status);
     return <span className={color ? `pprrstatus ${color}` : 'pprrstatus'}>{status}</span>;
   };
 
@@ -155,7 +203,7 @@ const ProductDashboard = () => {
           <h1>Products</h1>
           <div className="pprrbreadcrumb">
             <a href="/" className="pprrbreadcrumb-home">Home</a>
-            <span> &gt;&gt; Products</span>
+            <span>&gt;&gt;Products</span>
           </div>
         </div>
       </div>
@@ -202,7 +250,7 @@ const ProductDashboard = () => {
               </button>
               {showExportDropdown && (
                 <div className="pprrexport-dropdown">
-                  <button onClick={exportToPDF}><FiPrinter /> PDF</button>
+                  <button onClick={handlePrint}><FiPrinter /> Print</button>
                   <button onClick={exportToXLSX}><FiFile /> XLS</button>
                 </div>
               )}
@@ -241,7 +289,7 @@ const ProductDashboard = () => {
           </div>
         </div>
 
-        <hr style={{ borderTop: '0.5px solidrgb(135, 135, 139)', marginBottom: '20px' }} />
+        <hr style={{ borderTop: '0.5px solid rgb(135, 135, 139)', marginBottom: '20px' }} />
 
         {/* FILTER FORM */}
         {showFilterRow && (
@@ -254,7 +302,6 @@ const ProductDashboard = () => {
                   name="name"
                   value={filterInputs.name}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter name"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -264,7 +311,6 @@ const ProductDashboard = () => {
                   name="sku"
                   value={filterInputs.sku}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter sku"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -274,7 +320,6 @@ const ProductDashboard = () => {
                   name="buyingprice"
                   value={filterInputs.buyingprice}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter buyingprice"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -284,7 +329,6 @@ const ProductDashboard = () => {
                   name="sellingprice"
                   value={filterInputs.sellingprice}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter sellingprice"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -294,7 +338,6 @@ const ProductDashboard = () => {
                   name="category"
                   value={filterInputs.category}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter category"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -304,7 +347,6 @@ const ProductDashboard = () => {
                   name="brand"
                   value={filterInputs.brand}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter brand"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -314,7 +356,6 @@ const ProductDashboard = () => {
                   name="barcode"
                   value={filterInputs.barcode}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter barcode"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -324,7 +365,6 @@ const ProductDashboard = () => {
                   name="tax"
                   value={filterInputs.tax}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter tax"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -334,7 +374,6 @@ const ProductDashboard = () => {
                   name="unit"
                   value={filterInputs.unit}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter unit"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -344,7 +383,6 @@ const ProductDashboard = () => {
                   name="status"
                   value={filterInputs.status}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter status"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -354,7 +392,6 @@ const ProductDashboard = () => {
                   name="purchas"
                   value={filterInputs.purchas}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter purchas"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -364,7 +401,6 @@ const ProductDashboard = () => {
                   name="stockout"
                   value={filterInputs.stockout}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter stockout"
                 />
               </div>
               <div className="pprrsrifilter-group">
@@ -374,7 +410,6 @@ const ProductDashboard = () => {
                   name="Refundable"
                   value={filterInputs.stockout}
                   onChange={handleFilterInputChange}
-                  // placeholder="Enter stockout"
                 />
               </div>
               <div className="pprrsrifilter-actions">
@@ -399,7 +434,6 @@ const ProductDashboard = () => {
                 <th>Action</th>
               </tr>
             </thead>
-           
             <tbody>
               {currentItems.map((item, index) => (
                 <tr key={item.id}>
@@ -434,11 +468,11 @@ const ProductDashboard = () => {
             Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredItems.length)} of {filteredItems.length} entries
           </div>
           <div className="pprrpagination-controls">
-            <button className="pprrpagination-btn" disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>&lt;</button>
+            <button className="pprrpagination-btn" disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}></button>
             {[...Array(totalPages)].map((_, i) => (
               <button key={i + 1} className={`pprrpagination-btn ${currentPage === i + 1 ? 'pprractive' : ''}`} onClick={() => handlePageChange(i + 1)}>{i + 1}</button>
             ))}
-            <button className="pprrpagination-btn" disabled={currentPage === totalPages || totalPages === 0} onClick={() => handlePageChange(currentPage + 1)}>&gt;</button>
+            <button className="pprrpagination-btn" disabled={currentPage === totalPages || totalPages === 0} onClick={() => handlePageChange(currentPage + 1)}></button>
           </div>
         </div>
       </div>

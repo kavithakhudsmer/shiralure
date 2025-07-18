@@ -58,12 +58,7 @@ const adminPageRoutes = {
   "Credit Balance Report": "/admin/CreditBalanceReports",
 
   // SETUP
-  "Settings": "/admin/Settings", // This is for the main settings page
-  // Add specific settings sub-pages if you want direct links from here
-  // e.g., "Return Reasons": "/admin/return-reasons",
-  // "Company": "/admin/company",
-  // "Site": "/admin/site",
-  // ... and so on for all your nested settings routes
+  "Settings": "/admin/Settings", // This is the main Settings link, leading to Setting.jsx
 };
 
 

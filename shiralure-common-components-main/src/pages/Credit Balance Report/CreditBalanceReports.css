@@ -4,7 +4,6 @@
   font-family: Arial, sans-serif;
   min-height: 100vh;
   box-sizing: border-box;
- 
 }
  
 .rajiheader {
@@ -12,9 +11,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.25rem;
-  margin-top: 20px;
-  margin-bottom: 20px;
- 
+  margin-bottom: 10px;
 }
  
 .rajititle {

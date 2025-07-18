@@ -52,7 +52,7 @@
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  margin-top:20px;
+  
   width: 100%;
   box-sizing: border-box;
 }
@@ -84,7 +84,7 @@
 
 .dvspMain-container {
   background-color: #ffffff;
-  margin: 20px 0;
+ 
   margin-bottom: 40px;
   padding: 20px;
   border-radius: 10px;
