@@ -468,9 +468,9 @@ function PushNotifications() {
                   value={titleFilter}
                   onChange={(e) => setTitleFilter(e.target.value)}
                 />
-                {errors.filterTitle && (
+                {/* {errors.filterTitle && (
                   <div className="dvspError-message">{errors.filterTitle}</div>
-                )}
+                )} */}
               </div>
               <div className="dvspFilter-group">
                 <label className="dvspFilter-label">Role</label>
@@ -485,9 +485,9 @@ function PushNotifications() {
                   <option value="Admin">Admin</option>
                   <option value="Manager">Manager</option>
                 </select>
-                {errors.filterRole && (
+                {/* {errors.filterRole && (
                   <div className="dvspError-message">{errors.filterRole}</div>
-                )}
+                )} */}
               </div>
               <div className="dvspFilter-group">
                 <label className="dvspFilter-label">User</label>
@@ -502,9 +502,9 @@ function PushNotifications() {
                   <option value="Admin User">Admin User</option>
                   <option value="Manager User">Manager User</option>
                 </select>
-                {errors.filterUser && (
+                {/* {errors.filterUser && (
                   <div className="dvspError-message">{errors.filterUser}</div>
-                )}
+                )} */}
               </div>
             </div>
             <div className="dvspButton-group">

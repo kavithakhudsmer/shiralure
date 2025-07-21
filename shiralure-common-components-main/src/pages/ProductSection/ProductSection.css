@@ -51,7 +51,9 @@
   overflow-x: hidden; /* Add this */
   overflow-y: auto;
 }
-
+.psCouponErrorMessage{
+  margin-bottom: 7px;
+}
 .psheader {
   padding: 0px 10px;
   margin-bottom: 10px;

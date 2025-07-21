@@ -1,8 +1,8 @@
 .dvspSubscriber {
+ 
   background-color: #F2F6F9;
-  font-family: sans-serif;
-  width: 100%;
-  min-height: 100%;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -109,7 +109,7 @@
   margin-bottom: 40px;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(199, 40, 40, 0.1);
+  
   position: relative;
   height: 100%;
   width: 95%;
@@ -521,9 +521,7 @@
   transition: background-color 0.2s;
   margin-top: 10px;
 }
-.dvspSave-button:hover {
-  background-color: #4d97ff;
-}
+
 
 
 .dvspClear-button1 {
@@ -542,9 +540,7 @@
   font-size: 14px;
 }
 
-.dvspClear-button1:hover {
-  background-color: #4b5563;
-}
+
 
 .dvspDelete-button {
   background-color: #5A66F1;
@@ -701,11 +697,9 @@
 .dvspEdit-icon {
   cursor: pointer;
   margin: 0 5px;
-  color: #007bff;
+  color: #5A66F1;
 }
-.dvspEdit-icon:hover {
-  color: #0056b3;
-}
+
 .dvspFilter-input {
   width: 100%;
   padding: 8px;
@@ -715,7 +709,7 @@
 }
 .dvspFilter-input:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: #5A66F1;
 }
 .dvspSelectWithBtn {
   display: flex;
@@ -753,7 +747,4 @@
   padding: 8px 20px;
   border-radius: 6px;
   cursor: pointer;
-}
-.dvspClear-btn:hover {
-  background-color: #555;
 }

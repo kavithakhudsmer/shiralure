@@ -126,7 +126,7 @@ const ProductList = () => {
           <div className="shira-filter-panel">
             <div className="shira-filter-fields">
               <div className="shira-filter-group">
-                <label htmlFor="orderId">Order Id</label>
+                <label htmlFor="orderId">Name</label>
                 <input type="text" id="orderId" value={filterOrderId} onChange={(e) => setFilterOrderId(e.target.value)} />
               </div>
               <div className="shira-filter-group">
@@ -137,10 +137,7 @@ const ProductList = () => {
                   <option value="Inactive">Inactive</option>
                 </select>
               </div>
-              <div className="shira-filter-group">
-                <label htmlFor="customer">Customer</label>
-                <input type="text" id="customer" value={filterCustomer} onChange={(e) => setFilterCustomer(e.target.value)} />
-              </div>
+              
             </div>
             <div className="shira-filter-buttons">
               <button className="shira-search-btn"><IoMdSearch /> Search</button>
