@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './Adminis.css';
-import AdminLayout from '../../Components/AdminLayout';
 
 import { IoPersonSharp, IoLocationSharp, IoCloseSharp } from 'react-icons/io5';
 import { MdLock } from 'react-icons/md';
@@ -114,9 +113,10 @@ function Adminis({ admin, onClose }) {
   };
 
   return (
-    <div>
-    <AdminLayout> 
+    
+    
     <div className="kvadmin-profile fullscreen-profile">
+      
       <div className="kvadmin-header">
         <h1>Administrators</h1>
         <div className="kvbreadcrumb">
@@ -321,8 +321,8 @@ function Adminis({ admin, onClose }) {
         </div>
       )}
     </div>
-     </AdminLayout>
-     </div>
+     
+    
   );
 }
 

@@ -1,16 +1,14 @@
 /* Main Profile Container */
 .sraj-admin-profile.sraj-fullscreen-profile { 
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #f6f9fc;
-  z-index: 1000;
-  padding: 2rem;
-  overflow-y: auto;
-  border-radius: 4px;
-  box-sizing: border-box;
+    position: fixed;
+    width: 85vw;
+    height: 90vh;
+    background-color: #f6f9fc; 
+    z-index: 500; 
+    padding: 2rem;
+    overflow-y: auto; 
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
  
 /* Container for the page title and breadcrumb */

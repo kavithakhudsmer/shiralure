@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Adminis1.css'; // Ensure this matches the CSS filename
+// import AdminLayout from "../../Components/AdminLayout";
 
 import { IoPersonSharp, IoLocationSharp, IoCloseSharp } from "react-icons/io5";
 import { MdLock } from "react-icons/md";
@@ -242,9 +243,8 @@ function Userprofile({ user, onClose }) {
 
 
     return (
+        // <AdminLayout>
         <div className="skumari-user-profile skumari-fullscreen-profile">
-            { ( 
-                <>
                     <div className="skumari-sremployee-header-section">
                         <div className="skumari-employee-header-left">
                             <h1 className="skumari-employee-title">Customers</h1>
@@ -319,9 +319,6 @@ function Userprofile({ user, onClose }) {
                         </button>
                     </div>
                 )}
-                    
-                </>
-            )}
 
             {activeTab === 'profile' &&  (
                 <div className="skumari-info-box">
@@ -710,7 +707,9 @@ function Userprofile({ user, onClose }) {
                 </div>
             )}
         </div>
+        // </AdminLayout>
     );
+    
 }
 
 export default Userprofile;

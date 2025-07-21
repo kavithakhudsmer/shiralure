@@ -238,6 +238,10 @@ function Employees() {
   const startIndex = (currentPage - 1) * rowsToDisplay;
   const endIndex = Math.min(startIndex + rowsToDisplay, filteredAdmins.length);
   const paginatedAdmins = filteredAdmins.slice(startIndex, endIndex);
+
+  if(showProfile && selectedAdmin) {
+              return  <AdminProfile admin={selectedAdmin} onClose={closeUploadModal} />
+            }
  
   return (
     <div className="sraju-sremployee-dashboard-container">
@@ -445,10 +449,6 @@ function Employees() {
                         </div>
                     </div>
                 </div>
-            )}
- 
-            {showProfile && selectedAdmin && (
-                <AdminProfile admin={selectedAdmin} onClose={closeUploadModal} />
             )}
  
             {showDeleteConfirm && (

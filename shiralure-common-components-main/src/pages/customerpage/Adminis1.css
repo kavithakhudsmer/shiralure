@@ -1,21 +1,12 @@
-/* General Body/Root Styles */
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f6f9fc; /* Main page background */
-}
 
-/* Main Profile Container - Stays the same, overall light grey background */
 .skumari-user-profile.skumari-fullscreen-profile {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #f6f9fc; /* This is the main light grey background */
-    z-index: 1000; /* Ensure it's above other things but below modal */
+    width: 85vw;
+    height: 90vh;
+    background-color: #f6f9fc; 
+    z-index: 500; 
     padding: 2rem;
-    overflow-y: auto; /* Allows scrolling if content overflows */
+    overflow-y: auto; 
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
@@ -27,7 +18,8 @@ body {
     align-items: center;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: -20px;
+    margin-top: -22px;
+    margin-bottom: -14px;
 }
 
 .skumari-employee-header-left h1 {
@@ -375,7 +367,7 @@ body {
 }
 
 .skumari-add-address-btn {
-    background-color: #4f46e5;
+    background-color: #5A66F1;
     color: white;
     padding: 8px 12px;
     border: none;
@@ -391,9 +383,6 @@ body {
     box-shadow: none;
 }
 
-.skumari-add-address-btn:hover {
-    background-color: #3730a3;
-}
 
 .skumari-info-details-container2 {
     display: flex;
@@ -713,6 +702,7 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     padding: 4px 6px;
     border: 1px solid #eee;
+    padding-top: 14px;
 }
 
 .skumari-order-info-group p {
@@ -754,13 +744,13 @@ body {
     position: relative;
     z-index: 2;
     color: #999;
-    font-size: 13px;
+    font-size: 12px;
     flex: 1;
     text-align: center;
 }
 
 .skumari-status-icon {
-    font-size: 20px;
+    font-size: 34px;
     color: #28a745;
     background-color: #fff;
     border-radius: 50%;
@@ -789,6 +779,7 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     padding: 4px 6px;
     border: 1px solid #eee;
+    padding-top: 14px;
 }
 
 .skumari-payment-info h4 {
@@ -820,6 +811,7 @@ body {
     border-radius: 8px;
     border: 1px solid #eee;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding-top: 14px;
 }
 
 .skumari-order-details-right h4 {

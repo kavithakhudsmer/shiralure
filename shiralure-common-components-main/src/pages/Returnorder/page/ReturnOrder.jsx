@@ -36,9 +36,20 @@ function ReturnOrder() {
     date: "",
     referenceNo: "",
     customer: "",
+    attachment: null,
+    attachmentName: "",
     products: [],
   });
   const [reason, setReason] = useState("");
+  const [errors, setErrors] = useState({
+    date: '',
+    customer: '',
+    subject: '',
+    message: '',
+    referenceNo: '',
+    attachment: '',
+    reason: '',
+  });
 
   const shareButtonRef = useRef(null);
   const shareDropdownRef = useRef(null);
@@ -156,20 +167,33 @@ function ReturnOrder() {
   const clearMailForm = () => {
     setSubject("");
     setMessage("");
+    setErrors((prev) => ({ ...prev, subject: '', message: '' }));
   };
 
   const saveMail = () => {
-    if (!subject.trim() || !message.trim()) {
-      alert("Both Subject and Message are required.");
-      return;
+    let newErrors = { subject: '', message: '' };
+    let isValid = true;
+
+    if (!subject.trim()) {
+      newErrors.subject = 'Subject cannot be empty';
+      isValid = false;
     }
-    alert(`Saved message:\nSubject: ${subject}\nMessage: ${message}`);
+    if (!message.trim()) {
+      newErrors.message = 'Message cannot be empty';
+      isValid = false;
+    }
+
+    setErrors((prev) => ({ ...prev, ...newErrors }));
+    if (isValid) {
+      alert(`Saved message:\nSubject: ${subject}\nMessage: ${message}`);
+      setShowMailPage(false);
+    }
   };
 
   const handleEyeClick = (order) => setSelectedOrder(order);
   const handleDeleteClick = (index) => {
     const globalIndex = (currentPage - 1) * rowsPerPage + index;
-    setDeleteTargetIndex(0);
+    setDeleteTargetIndex(globalIndex);
     setShowDeleteConfirm(true);
   };
 
@@ -223,6 +247,7 @@ function ReturnOrder() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setInvoiceData({ ...invoiceData, [name]: value });
+    setErrors((prev) => ({ ...prev, [name]: value ? '' : prev[name] }));
   };
 
   const handleFileChange = (e) => {
@@ -232,6 +257,7 @@ function ReturnOrder() {
       attachment: file ? file : null,
       attachmentName: file ? file.name : ""
     });
+    setErrors((prev) => ({ ...prev, attachment: file ? '' : prev.attachment }));
   };
 
   const handleAddProduct = () => {
@@ -260,17 +286,44 @@ function ReturnOrder() {
   };
 
   const handleClearInvoice = () => {
-    setInvoiceData({ date: "", referenceNo: "", customer: "", attachment: null, products: [] });
+    setInvoiceData({ date: "", referenceNo: "", customer: "", attachment: null, attachmentName: "", products: [] });
     setReason("");
+    setErrors({ date: '', customer: '', referenceNo: '', attachment: '', reason: '' });
   };
 
   const handleSaveInvoice = () => {
-    console.log("Invoice Data:", { ...invoiceData, reason });
-    alert("Invoice saved!");
-    setShowInvoiceModule(false);
+    let newErrors = { date: '', customer: '', referenceNo: '', attachment: '', reason: '' };
+    let isValid = true;
+
+    if (!invoiceData.date) {
+      newErrors.date = 'Date cannot be empty';
+      isValid = false;
+    }
+    if (!invoiceData.customer) {
+      newErrors.customer = 'Customer cannot be empty';
+      isValid = false;
+    }
+    if (!invoiceData.referenceNo) {
+      newErrors.referenceNo = 'Reference No cannot be empty';
+      isValid = false;
+    }
+    if (!invoiceData.attachment) {
+      newErrors.attachment = 'Please select a file';
+      isValid = false;
+    }
+    if (!reason.trim()) {
+      newErrors.reason = 'Reason cannot be empty';
+      isValid = false;
+    }
+
+    setErrors((prev) => ({ ...prev, ...newErrors }));
+    if (isValid) {
+      console.log("Invoice Data:", { ...invoiceData, reason });
+      alert("Invoice saved!");
+      setShowInvoiceModule(false);
+    }
   };
 
-  // Enhanced applyFormatting with focus and selection handling
   const applyFormatting = (command, value = null) => {
     if (reasonEditableRef.current) {
       reasonEditableRef.current.focus();
@@ -280,7 +333,6 @@ function ReturnOrder() {
         if (!range.collapsed) {
           document.execCommand(command, false, value);
         } else {
-          // If no text is selected, insert the command effect at cursor
           const span = document.createElement("span");
           if (command === "bold") span.style.fontWeight = "bold";
           else if (command === "italic") span.style.fontStyle = "italic";
@@ -305,28 +357,29 @@ function ReturnOrder() {
   const handleFocusReason = () => {
     if (reasonEditableRef.current) {
       reasonEditableRef.current.focus();
+      setErrors((prev) => ({ ...prev, reason: reason ? '' : prev.reason }));
     }
   };
 
   const toolbarIcons = [
-    { label: "B", command: "bold" }, // Bold
-    { label: "I", command: "italic" }, // Italic
-    { label: "U", command: "underline" }, // Underline
-    { label: "S", command: "strikeThrough" }, // Strikethrough
-    { label: "H1", command: "formatBlock", value: "h1" }, // Heading/Title
-    { label: "¶", command: "formatBlock", value: "p" }, // Paragraph
-    { label: "≡L", command: "justifyLeft" }, // Align Justify Left
-    { label: "≡C", command: "justifyCenter" }, // Align Justify Center
-    { label: "≡R", command: "justifyRight" }, // Align Justify Right
-    { label: "•", command: "insertUnorderedList" }, // Bullet List
-    { label: "1.", command: "insertOrderedList" }, // Numbered List
-    { label: "→", command: "indent" }, // Indent
-    { label: "←", command: "outdent" }, // Outdent
-    { label: "Sans", command: "fontName", value: "sans-serif" }, // Font Sans-Serif
-    { label: "Normal", command: "removeFormat" }, // Unstyled/Normal
-    { label: "img", command: "insertImage" }, // Insert Image
-    { label: "vdo", command: "insertHTML", value: "<video></video>" }, // Insert Video
-    { label: "link", command: "createLink" }, // Insert Link
+    { label: "B", command: "bold" },
+    { label: "I", command: "italic" },
+    { label: "U", command: "underline" },
+    { label: "S", command: "strikeThrough" },
+    { label: "H1", command: "formatBlock", value: "h1" },
+    { label: "¶", command: "formatBlock", value: "p" },
+    { label: "≡L", command: "justifyLeft" },
+    { label: "≡C", command: "justifyCenter" },
+    { label: "≡R", command: "justifyRight" },
+    { label: "•", command: "insertUnorderedList" },
+    { label: "1.", command: "insertOrderedList" },
+    { label: "→", command: "indent" },
+    { label: "←", command: "outdent" },
+    { label: "Sans", command: "fontName", value: "sans-serif" },
+    { label: "Normal", command: "removeFormat" },
+    { label: "img", command: "insertImage" },
+    { label: "vdo", command: "insertHTML", value: "<video></video>" },
+    { label: "link", command: "createLink" },
   ];
 
   return (
@@ -538,41 +591,54 @@ function ReturnOrder() {
               <h2>Return Order</h2>
               <button className="pclose-btn" onClick={() => setShowInvoiceModule(false)}>✖</button>
             </div>
-            <div className="pform-group">
-              <div className="pdate-time-picker1">
-                <input
-                  type="datetime-local"
-                  name="date"
-                  value={invoiceData.date}
-                  onChange={handleInputChange}
-                  placeholder="Date"
-                  required
-                  className="pfilter-input pdate-input1"
-                />
-              </div>
+            <label className="pmodal-label">
+              Date <span className="prequired">*</span>
+            </label>
+            <div className="pdate-time-picker1">
               <input
-                type="text"
-                name="referenceNo"
-                value={invoiceData.referenceNo}
+                type="datetime-local"
+                name="date"
+                value={invoiceData.date}
                 onChange={handleInputChange}
-                placeholder="Reference No"
-              />
-            </div>
-            <div className="pform-group">
-              <input
-                type="text"
-                name="customer"
-                value={invoiceData.customer}
-                onChange={handleInputChange}
-                placeholder="Customer"
+                placeholder="Date"
                 required
+                className="pfilter-input pdate-input1"
               />
-              <div className="pattachment">
-                <input type="file" onChange={handleFileChange} id="attachment-input" />
-                <label htmlFor="attachment-input" className="pattachment-label">Choose file</label>
-                <input type="text" name="attachmentName" value={invoiceData.attachmentName || ""} readOnly />
-              </div>
             </div>
+            {errors.date && <span style={{ color: 'red', fontSize: '12px', }}>{errors.date}</span>}
+            <label className="pmodal-label">
+              Reference No <span className="prequired">*</span>
+            </label>
+            <input
+              type="text"
+              name="referenceNo"
+              value={invoiceData.referenceNo}
+              onChange={handleInputChange}
+              placeholder="Reference No"
+              required
+            />
+            {errors.referenceNo && <span style={{ color: 'red', fontSize: '12px' }}>{errors.referenceNo}</span>}
+            <label className="pmodal-label">
+              Customer <span className="prequired">*</span>
+            </label>
+            <input
+              type="text"
+              name="customer"
+              value={invoiceData.customer}
+              onChange={handleInputChange}
+              placeholder="Customer"
+              required
+            />
+            {errors.customer && <span style={{ color: 'red', fontSize: '12px' }}>{errors.customer}</span>}
+            <label className="pmodal-label">
+              Attachment <span className="prequired">*</span>
+            </label>
+            <div className="pattachment">
+              <input type="file" onChange={handleFileChange} id="attachment-input" />
+              <label htmlFor="attachment-input" className="pattachment-label">Choose file</label>
+              <input type="text" name="attachmentName" value={invoiceData.attachmentName || ""} readOnly />
+            </div>
+            {errors.attachment && <span style={{ color: 'red', fontSize: '12px' }}>{errors.attachment}</span>}
             <div className="pproduct-section">
               <p>Please select these before adding any product</p>
               <select onChange={handleAddProduct} value="">
@@ -615,8 +681,10 @@ function ReturnOrder() {
                 </tr>
               </tbody>
             </table>
+            <label className="pmodal-label">
+              Reason <span className="prequired">*</span>
+            </label>
             <div className="preason-section" onClick={handleFocusReason}>
-              <label onClick={handleFocusReason}>Reason</label>
               <div className="toolbar inline-toolbar" onClick={handleFocusReason}>
                 {toolbarIcons.map((icon, index) => (
                   <span
@@ -640,12 +708,18 @@ function ReturnOrder() {
                 className="editable-textarea"
               />
             </div>
-            <button className="psave-btn" onClick={handleSaveInvoice}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 6L9 17l-5-5"/>
-              </svg>
-              Save
-            </button>
+            {errors.reason && <span style={{ color: 'red', fontSize: '12px' }}>{errors.reason}</span>}
+            <div className="pmodal-buttons">
+              <button className="psave-btn" onClick={handleSaveInvoice}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+                Save
+              </button>
+              {/* <button className="pclear-button1" onClick={handleClearInvoice}>
+                <FiX /> Clear
+              </button> */}
+            </div>
           </div>
         </div>
       )}
@@ -667,6 +741,7 @@ function ReturnOrder() {
               value={subject}
               onChange={(e) => setSubject(e.target.value)}
             />
+            {errors.subject && <span style={{ color: 'red', fontSize: '12px' }}>{errors.subject}</span>}
             <label className="pmodal-label">
               Message <span className="prequired">*</span>
             </label>
@@ -676,6 +751,7 @@ function ReturnOrder() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
+            {errors.message && <span style={{ color: 'red', fontSize: '12px' }}>{errors.message}</span>}
             <div className="pmodal-buttons">
               <button
                 className="psave-button"
@@ -748,7 +824,7 @@ function ReturnOrder() {
         <div className="pmodal-overlay">
           <div className="pmodal-box">
             <div className="pmodal-icon">
-              <span className="pexclamation-icon">< HiOutlineExclamationCircle /></span>
+              <span className="pexclamation-icon"><HiOutlineExclamationCircle /></span>
             </div>
             <h2 className="pmodal-title">Are you sure ?</h2>
             <p className="pmodal-message">
