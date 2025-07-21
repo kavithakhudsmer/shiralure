@@ -1,5 +1,5 @@
 .devpsubscriber {
-  padding: 24px;
+  padding: 30px;
   background-color: #F2F6F9;
   font-family: Arial, sans-serif;
   min-height: 100vh;
@@ -33,7 +33,6 @@
 }
 
 .devpheader {
-padding: 0px 20px;
   border-bottom: 1px solid #F2F6F9;
   background-color: #F2F6F9;
   width: 100%;

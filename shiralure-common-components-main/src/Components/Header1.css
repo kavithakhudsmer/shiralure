@@ -426,7 +426,7 @@ body.dark-theme .kv-cart-list li:hover {
   position: absolute;
   top: 60px;
   right: 0;
-  background: #5654b6;
+  background: #5A66F1;
   color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -447,7 +447,7 @@ body.dark-theme .kv-cart-list li:hover {
 }
  
 .kv-profile-option:hover {
-  background-color: #758097;
+  background-color: #8e94e7;
   border-radius: 8px;
 }
  

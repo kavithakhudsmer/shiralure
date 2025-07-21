@@ -137,12 +137,13 @@ html, body {
 
 .vvp-tabs {
   display: flex;
-  gap: 10px;
+  align-items: center;
   padding: 10px;
   border-radius: 20px;
   margin-right: 30px;
   margin-left: 30px;
-  gap: 60px;
+  gap: 0%;
+  width: 80%;
 }
 
 .vvp-tab {
@@ -158,6 +159,7 @@ html, body {
   color: #4E5569;
   font-weight: bold;
   transition: all 0.2s;
+   width: 200%;
 }
 
 .vvp-tab.vvp-active {
@@ -703,7 +705,7 @@ html, body {
     display: block;
     width: 10px;
     height: 10px;
-    background-color: #007bff;
+    background-color: #5a66f1;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -719,23 +721,6 @@ html, body {
     padding-top: 15px;
     border-top: 1px solid #eee;
 }
-
-.vvp-save-button {
-    background-color: #f75535; /* Orange color from image */
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-
-.vvp-save-button:hover {
-    background-color: #d8452e; /* Slightly darker orange on hover */
-}
-
 .vvpmodal-content {
     background-color: #fff;
     padding: 30px;
@@ -808,31 +793,7 @@ html, body {
     font-size: 15px;
     margin-bottom: 20px;
 }
-/* Existing CSS (copy the previous CSS entirely) */
 
-/* ... (Your existing CSS from the previous response goes here) ... */
-
-/* --- New Additions for Clear Button, Notifications, and Validation --- */
-
-/* Clear Button */
-.vvp-clear-button {
-    background-color: #6c757d; /* Grey color, common for clear/cancel */
-    color: #fff;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-    margin-left: 10px; /* Space between Save and Clear */
-}
-
-.vvp-clear-button:hover {
-    background-color: #5a6268;
-}
-
-/* Validation Error Styles */
 .vvp-input-error {
     border-color: #dc3545 !important; /* Red border for erroneous input */
 }
@@ -842,52 +803,353 @@ html, body {
     font-size: 13px;
     margin-top: 4px; /* Space above message */
 }
-
-/* Notification Styles */
-.vvp-notification {
-    position: fixed;
-    bottom: 20px;
-    right: -350px; /* Start off-screen to the right */
-    width: 300px;
-    padding: 15px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 16px;
-    color: #fff;
-    z-index: 2000;
-    animation: slideInRight 0.5s forwards, slideOutLeft 0.5s 2.5s forwards; /* Animation properties */
+.vvp-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 1000;
+  top: 20%;
+  bottom: 75%;
+}
+/*video option*/
+.vvp-videos-card {
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.vvp-notification.success {
-    background-color: #28a745; /* Green for success */
+.vvp-videos-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
 }
 
-.vvp-notification.error {
-    background-color: #dc3545; /* Red for error */
+.vvp-add-video-button {
+  background-color: #5A66F1;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.vvp-notification-icon {
-    font-size: 20px;
+.vvp-add-video-button .vvp-add-icon {
+  margin-right: 8px;
 }
 
-/* Keyframe Animations for horizontal slide-in/out */
-@keyframes slideInRight {
-    from {
-        right: -350px;
-    }
-    to {
-        right: 20px; /* Slide to 20px from the right */
-    }
+.vvp-videos-table table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-@keyframes slideOutLeft {
-    from {
-        right: 20px;
-    }
-    to {
-        right: -350px; /* Slide back off-screen to the right */
-    }
+.vvp-videos-table th,
+.vvp-videos-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.vvp-videos-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.vvp-delete-button {
+  background: none;
+  border: none;
+  color: #ff4500;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.vvp-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vvp-modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+}
+
+.vvp-modal-content div {
+  margin-bottom: 15px;
+}
+
+.vvp-modal-content label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.vvp-modal-content select,
+.vvp-modal-content input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.vvp-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.vvp-modal-actions button {
+  align-items: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width:25%;
+  height: 38px;
+}
+
+.vvp-modal-actions button:first-child {
+  background-color: black;
+  color: white;
+}
+
+.vvp-modal-actions button:last-child {
+  background-color: #5A66F1;
+   color: white;
+}
+.vvp-shipping-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.vvp-shipping-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.vvp-shipping-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.vvp-shipping-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.vvp-shipping-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.vvp-required {
+  color: #ff0000;
+}
+
+.vvp-radio-group {
+  display: flex;
+  gap: 16px;
+}
+
+.vvp-radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.vvp-shipping-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background: #f9f9f9;
+  transition: border-color 0.2s;
+}
+
+.vvp-shipping-input:focus {
+  outline: none;
+  border-color: #007bff;
+  background: #fff;
+}
+
+.vvp-shipping-input[type="textarea"] {
+  min-height: 100px;
+  resize: vertical;
+  width: 100%;
+}
+
+.vvp-error-message {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.vvp-shipping-save-button-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.vvp-save-button {
+ background-color: #5a66f1;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  height: 36px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.vvp-save-button:hover {
+  background: #7681f3;
+}
+
+.vvp-clear-button {
+   background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  height: 36px;
+  width: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  margin-top: 10px;
+}
+
+.vvp-clear-button:hover {
+  background: rgb(100, 99, 99);
+}
+
+.vvp-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #28a745;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 14px;
+  z-index: 1000;
+}
+.vvp-seo-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.vvp-seo-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.vvp-seo-grid {
+  display: grid;
+  grid-template-row: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.vvp-seo-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.vvp-seo-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.vvp-required {
+  color: #ff0000;
+}
+
+.vvp-seo-input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  background: #f2f6f9;
+  transition: border-color 0.2s;
+}
+
+.vvp-seo-input:focus {
+  outline: none;
+  border-color: #007bff;
+  background: #fff;
+}
+
+.vvp-seo-input[type="text"],
+.vvp-seo-input[type="textarea"] {
+  width: 100%;
+}
+
+.vvp-seo-input[type="textarea"] {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.vvp-seo-input[type="file"] {
+  padding: 8px 10px;
+  width: 100%;
+}
+.vvp-seo-save-button-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+.vvp-offer-save-button-container {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
 }

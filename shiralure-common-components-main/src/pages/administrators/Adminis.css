@@ -2,44 +2,62 @@
   padding: 16px;
   margin: 10px 0;
   background-color: #ffffff;
+  border-radius: 3px;
+ 
 }
 .kvadmin-profile.fullscreen-profile {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #f2f6f9;
-  z-index: 1000;
-  padding: 2rem;
-  overflow-y: auto;
-border-radius: 4px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: -90px; /* Position below the header */
+  left: -35px;
+  width: 85vw;
+  height: calc(200vh - 180px - 6rem); /* Increased to 200vh for more height */
+  background-color: #f9fafc;
+  z-index: 100;
+  padding: 3rem;
+  border-radius: 4px;
   box-sizing: border-box;
+  margin-left: 0;
+  overflow-y: auto; /* Scroll only when needed */
+  margin-top: 0px;
+  max-height: 2500px; /* Increased max-height to accommodate */
+  margin-top: -70px;
+}
+ 
+.kvadmin-profile.fullscreen-profile > * {
+  max-height: 100%;
+  overflow: hidden;
+}
+.kvadmin-profile.fullscreen-profile > * {
+  flex-shrink: 1; /* Allow children to shrink if needed */
+  max-height: 100%; /* Prevent children from exceeding container */
+  overflow: hidden; /* Contain child overflows */
 }
 .kvbreadcrumb h2 {
   margin: 0;
   font-size: 17px;
   color: #6c757d;
 }
-
+ 
 .kvbreadcrumb .kvactive {
   color: #5A66F1;
   font-weight: bold;
 }
-
+ 
 .kvbreadcrumb {
   font-size: 16px;
   color: #6c757d;
 }
-
+ 
 .kvprofile-header {
   display: flex;
   gap: 20px;
   align-items: center;
   margin-bottom: 20px;
 }
-
-
+ 
+ 
 .kvavatar {
   width: 100px;
   height: 100px;
@@ -47,16 +65,24 @@ border-radius: 4px;
   border: 2px solid #ccc;
   border-radius: 4px;
 }
-
+.kvfull-page-profile {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 1000;
+}
 .kvavatar.rounded {
   border-radius: 50%;
 }
-
+ 
 .kvavatar.square {
   border-radius: 12px;
 }
-
-
+ 
+ 
 .role-badge {
   background-color: #ffee88;
   padding: 4px 10px;
@@ -66,7 +92,7 @@ border-radius: 4px;
   display: inline-block;
   margin-top: 0.3rem;
 }
-
+ 
 .kvupload-btn {
   margin-top: 8px;
   background-color: #4f46e5;
@@ -78,21 +104,21 @@ border-radius: 4px;
   outline: none;
   box-shadow: none;
 }
-
+ 
 /* Remove the black border when button is clicked/focused */
 .kvupload-btn:focus {
   outline: none;
   box-shadow: none;
 }
-
-
+ 
+ 
 .kvupload-btn:hover {
   background-color: #3730a3;
 }
 .kvrole{
    background-color: #fff27e;
  margin-top: 8px;
-  
+ 
   color: rgb(240, 196, 2);
   padding: 3px 15px;
   border: none;
@@ -107,7 +133,7 @@ border-radius: 4px;
   box-shadow: none;
   border: none;
 }
-
+ 
 .kvtabs button {
   padding: 8px 16px;
   border: none;
@@ -116,68 +142,68 @@ border-radius: 4px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
 }
-
+ 
 /* Remove black border on click */
 .kvtabs button:focus {
   outline: none;
   box-shadow: none;
 }
-
+ 
 .kvtabs .active {
   background-color: #4f46e5;
   color: white;
 }
-
+ 
 .kvtabs button:hover:not(.active) {
   background-color: #4f46e5;
   color: #d3d3d3;
 }
-
-
-
+ 
+ 
+ 
 .kvinfo-box {
   background: white;
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
  
-  
+ 
 }
-
+ 
 .kvstatus-active {
   color: green;
   font-weight: bold;
 }
-
+ 
 .kvform-group {
   margin-bottom: 15px;
   display: flex;
 }
-
+ 
 .kvform-group label {
   display: block;
   margin-bottom: 6px;
   font-weight: 500;
 }
-
+ 
 .kvform-group input {
   width: 100%;
   padding: 8px 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
-    
+   
 }
-
+ 
 .required {
   color: red;
 }
-
+ 
 .kvbutton-container {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
 }
-
+ 
 .kvsave-btn {
   background-color: #4f46e5;
   color: white;
@@ -186,31 +212,31 @@ border-radius: 4px;
   border-radius: 6px;
   cursor: pointer;
 }
-
+ 
 .kvsave-btn:hover {
   background-color: #3730a3;
 }
-
+ 
 .kvpassword-row {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  
+ 
 }
-
+ 
 .kvpassword-row .form-group {
   flex: 1;
   min-width: 20px;
-  
+ 
 }
-
-
+ 
+ 
 .kvaddress-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
+ 
 .kvadd-address-btn {
   background-color: #4f46e5;
   color: white;
@@ -223,14 +249,14 @@ border-radius: 4px;
   outline: none;
   box-shadow: none;
 }
-
+ 
 .kvaddress-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
 }
 .kvaddress-table th, .kvaddress-table td {
-  
+ 
   padding: 8px;
   text-align: left;
 }
@@ -238,13 +264,13 @@ border-radius: 4px;
   width: 100%;
   overflow-x: auto;
 }
-
+ 
 .kvaddress-table {
   min-width: 200px; /* or adjust based on column count */
   width: 100%;
   border-collapse: collapse;
 }
-
+ 
 .kvaddress-table th,
 .kvaddress-table td {
   padding: 8px;
@@ -252,7 +278,7 @@ border-radius: 4px;
   font-size: 14px;
   border-bottom: 1px solid #e0e0e0;
 }
-
+ 
 /* Optional styling for scrollbar */
 .kvaddress-table-wrapper::-webkit-scrollbar {
   height: 6px;
@@ -266,53 +292,53 @@ border-radius: 4px;
 .kvaddress-table td:nth-child(1) {
   width: 10%; /* Name */
 }
-
+ 
 .kvaddress-table th:nth-child(2),
 .kvaddress-table td:nth-child(2) {
   width: 10%; /* Email */
 }
-
+ 
 .kvaddress-table th:nth-child(3),
 .kvaddress-table td:nth-child(3) {
   width: 10%; /* Phone */
 }
-
+ 
 .kvaddress-table th:nth-child(4),
 .kvaddress-table td:nth-child(4) {
   width: 10%; /* Street */
 }
-
+ 
 .kvaddress-table th:nth-child(5),
 .kvaddress-table td:nth-child(5) {
   width: 8%; /* Country */
 }
-
+ 
 .kvaddress-table th:nth-child(6),
 .kvaddress-table td:nth-child(6) {
   width: 8%; /* State */
 }
-
+ 
 .kvaddress-table th:nth-child(7),
 .kvaddress-table td:nth-child(7) {
   width: 6%; /* City */
 }
-
+ 
 .kvaddress-table th:nth-child(8),
 .kvaddress-table td:nth-child(8) {
   width: 8%; /* Zip */
 }
-
+ 
 .kvaddress-table th:nth-child(9),
 .kvaddress-table td:nth-child(9) {
   width: 7%; /* Actions */
   text-align: center;
 }
-
+ 
 /* print */
 @media print {
   .no-print { display: none !important; }
 }
-
+ 
 /* Responsive tweaks for mobile */
 @media (max-width: 768px) {
   .kvaddress-table th,
@@ -333,7 +359,7 @@ border-radius: 4px;
   justify-content: center;
   z-index: 999;
 }
-
+ 
 .kvmodal {
  background-color: #fff;
   width: 90%;
@@ -344,26 +370,26 @@ border-radius: 4px;
   max-height: 90vh;
   overflow-y: auto;
 }
-
+ 
 .kvform-row {
   display: flex;
   gap: 8px;
   margin-bottom: 10px;
 }
-
+ 
 .kvform-row input,
 .kvform-row select {
   flex: 1;
   padding: 8px;
 }
-
+ 
 .kvmodal-actions {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   margin-top: 1rem;
 }
-
+ 
 .kvform-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -371,92 +397,92 @@ border-radius: 4px;
   margin-top: 1rem;
   height: auto;
 }
-
+ 
 .kvform-group {
   display: flex;
   flex-direction: column;
 }
-
+ 
 .kvform-group label {
   font-weight: bold;
   margin-bottom: 4px;
 }
-
+ 
 .required {
   color: red;
   margin-left: 4px;
 }
-
+ 
 .full-width {
   grid-column: 1 / -1;
 }
-
+ 
 .kvmodal-actions {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
   gap: 10px;
 }
-
-
-
+ 
+ 
+ 
 .kvphone-input {
   display: flex;
   gap: 4px;
 }
-
+ 
 .kvphone-input select {
   width: 75px;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
+ 
 .kvphone-input input {
   flex: 1;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
-
+ 
 .kvform-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
-
+ 
 .kvform-group {
   display: flex;
   flex-direction: column;
   padding: 6px 8px;
-   width: 90%; 
+   width: 90%;
   max-width: 250px;
 }
-
+ 
 .kvform-group label {
   margin-bottom: px;
   font-weight: 500;
 }
-
+ 
 .full-width {
   grid-column: 1 / -1;
 }
-
+ 
 .kvmodal-actions {
   margin-top: 20px;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 }
-
+ 
 .kvmodal-actions button {
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-
-
+ 
+ 
 .kvmodal-actions button[type="submit"] {
   background-color: #4f46e5;
   color: white;
@@ -479,18 +505,18 @@ select {
   border-radius: 4px;
   background: white;
 }
-
-
+ 
+ 
 .kvform-row {
   display: flex;
   gap: 20px;
 }
-
+ 
 .kvform-row .form-group {
   flex: 1;
 }
-
-
+ 
+ 
 .kvupload-photo {
   background: #fff;
   padding: 25px 30px;
@@ -500,14 +526,14 @@ select {
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   animation: fadeInScale 0.3s ease-in-out;
 }
-
+ 
 .kvupload-photo h2 {
   font-size: 20px;
   margin-bottom: 15px;
   color: #333;
   text-align: center;
 }
-
+ 
 .kvupload-photo input[type="file"] {
   margin-bottom: 20px;
   padding: 10px;
@@ -516,22 +542,22 @@ select {
   background-color: #fafafa;
   font-size: 14px;
 }
-
+ 
 .kvupload-photo .form-buttons {
   justify-content: space-between;
 }
-
+ 
 .kvupload-photo .form-buttons button {
   padding: 10px 16px;
   font-size: 14px;
   border-radius: 6px;
 }
-
+ 
 .kvupload-photo .form-buttons .save {
   background-color: #28a745;
   color: white;
 }
-
+ 
 .kvupload-photo .form-buttons .close {
   background-color: #6c757d;
   color: white;
@@ -540,7 +566,7 @@ select {
   font-size: 14px;
   margin: 6px 0;
 }
-
+ 
 .kvmodal {
   background-color: white;
   padding: 24px;
@@ -550,7 +576,7 @@ select {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   position: relative;
 }
-
+ 
 .kvmodal-overlay {
   position: fixed;
   top: 0;
@@ -563,15 +589,15 @@ select {
   justify-content: center;
   z-index: 9999;
 }
-
+ 
 .kvmodal h3 {
   margin-top: 0;
 }
-
+ 
 .kvclose-btn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 5rem;
+  right: 3rem;
   font-size: 1.5rem;
   background: none;
   border: none;
@@ -580,16 +606,15 @@ select {
   transition: transform 0.2s ease;
   outline: none;
 }
-
+ 
 .kvclose-btn:hover {
   transform: scale(1.2);
   color: #5A66F1;
 }
-
+ 
 .kvclose-btn:focus,
 .kvclose-btn:active {
   outline: none;
   box-shadow: none;
   background: none;
 }
-

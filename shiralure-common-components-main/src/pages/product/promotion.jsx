@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  FiChevronDown, FiEye, FiEdit2, FiTrash2, FiPrinter, FiFile
+FiEye, FiEdit2, FiTrash2, FiPrinter, FiFile
 } from 'react-icons/fi';
+import { IoMdArrowDropdown } from "react-icons/io";
 import { TiExport } from "react-icons/ti";
 import { FaSearch, FaTimes } from 'react-icons/fa';
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 import AddPromotionModal from './AddPromotionModal';
 import EditPromotionModal from './EditPromotion';
 import { GoFileSymlinkFile } from 'react-icons/go';
@@ -54,7 +56,30 @@ const ProductDashboard = () => {
     const files = Array.from(e.target.files);
     alert(`Uploaded ${files.length} file(s):\n${files.map(f => f.name).join(', ')}`);
   };
+useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Close items per page dropdown
+      if (itemsPerPageRef.current && !itemsPerPageRef.current.contains(event.target)) {
+        setShowItemsPerPageDropdown(false);
+      }
+      // Close export dropdown
+      if (exportRef.current && !exportRef.current.contains(event.target)) {
+        setShowExportDropdown(false);
+      }
+      // Close upload dropdown
+      if (fileInputRef.current && !fileInputRef.current.contains(event.target)) {
+        setShowUploadDropdown(false);
+      }
+    };
 
+    // Add event listener
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
   useEffect(() => {
     setAllPromotions(productsData);
   }, []);
@@ -198,17 +223,17 @@ const ProductDashboard = () => {
   return (
     <div className="pprrpromotions-dashboard">
       {/* HEADER */}
-      <div className="pprrheader">
-        <div className="pprrheader-content">
-          <h1>Products</h1>
-          <div className="pprrbreadcrumb">
-            <a href="/admin" className="pprrbreadcrumb-home">Home </a>
-            <span> &gt;&gt; Products</span>
+        <div className="pprrheader">
+          <div className="pprrheader-content">
+            <h1 style={{ fontSize: '28px', fontWeight: 'bold' }}>Products</h1>
+            <div className="pprrbreadcrumb">
+          <a href="/admin" className="pprrbreadcrumb-home">Home</a>
+          <span> &gt;&gt; Products</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ACTIONS */}
+        {/* ACTIONS */}
       <div className="pprrtable-container">
         <div className="pprrtable-header">
           <div className="pprrtable-actions">
@@ -219,7 +244,7 @@ const ProductDashboard = () => {
                 setShowFilterRow(false);
               }}>
                 <span>{itemsPerPage}</span>
-                <FiChevronDown size={16} color='white' />
+                <IoMdArrowDropdown size={16} color='white' />
               </div>
               {showItemsPerPageDropdown && (
                 <div className="pprritems-per-page-dropdown">
@@ -441,7 +466,7 @@ const ProductDashboard = () => {
                   <td>
                     <div className="pprritem-detail">
                       <img src={item.image} alt="" />
-                      <div>
+                      <div className="pprritem-text" >
                         <div className="pprritem-name">{item.name}</div>
                         <div className="pprritem-id">#{item.id}</div>
                       </div>
@@ -468,11 +493,11 @@ const ProductDashboard = () => {
             Showing {indexOfFirstItem + 1} to {Math.min(indexOfLastItem, filteredItems.length)} of {filteredItems.length} entries
           </div>
           <div className="pprrpagination-controls">
-            <button className="pprrpagination-btn" disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}></button>
+            <button className="pprrpagination-btn" disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}> <FaAngleLeft color="black" /></button>
             {[...Array(totalPages)].map((_, i) => (
               <button key={i + 1} className={`pprrpagination-btn ${currentPage === i + 1 ? 'pprractive' : ''}`} onClick={() => handlePageChange(i + 1)}>{i + 1}</button>
             ))}
-            <button className="pprrpagination-btn" disabled={currentPage === totalPages || totalPages === 0} onClick={() => handlePageChange(currentPage + 1)}></button>
+            <button className="pprrpagination-btn" disabled={currentPage === totalPages || totalPages === 0} onClick={() => handlePageChange(currentPage + 1)}> <FaAngleRight color="black" /></button>
           </div>
         </div>
       </div>

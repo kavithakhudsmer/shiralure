@@ -13,8 +13,6 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.25rem;
- 
-  margin-bottom: 20px;
   margin-left:20px;
   margin-right: 20px;
  
@@ -32,7 +30,7 @@
   text-align: right;
   gap: 0px;
   font-weight: 400;
-  margin-bottom: 24px;
+
 }
  
 .posbreadcrumb a {
@@ -151,7 +149,7 @@
   padding: 20px 10px;
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100%;
   width: 280px;
   overflow-y: auto;
   box-sizing: border-box;
