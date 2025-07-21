@@ -34,7 +34,28 @@
   }
   #printable-table thead {
     background-color: #f2f2f2;
-  }
+ 
+ }
+}
+.dvspError {
+  /* border: 2px solid #ff0000;  */
+  border-radius: 4px;
+}
+
+.dvspError-message {
+  color: #ff0000; /* Red text */
+  font-size: 12px;
+  margin-top: 4px;
+}
+.dvspError {
+  /* border: 2px solid #ff0000;  */
+  border-radius: 4px;
+}
+
+.dvspError-message {
+  color: #ff0000; /* Red text */
+  font-size: 12px;
+  margin-top: 4px;
 }
 
 .dvspHeader {

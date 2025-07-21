@@ -19,7 +19,9 @@ import { FiEye, FiEdit2, FiTrash2 } from 'react-icons/fi';
 
 import { PiSliders } from "react-icons/pi";
 import { BiSolidAddToQueue } from "react-icons/bi";
-import { GoFileSymlinkFile } from 'react-icons/go';
+import { FaFile } from "react-icons/fa";
+import { GoFileSymlinkFile } from "react-icons/go";
+import { FaFileUpload } from "react-icons/fa";
 
 const masterPurchasesData = [...initialDataWithNotes, ...generateMoreDataWithNotes(7, 20)];
 
@@ -33,6 +35,9 @@ function Purchase() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(6);
+
+  const [showUploadDropdown, setShowUploadDropdown] = useState(false);
+  const fileInputRef = useRef(null);
 
   const initialSearchCriteria = { supplier: "", date: "", ref: "", status: "", total: "", note: "" };
   const [searchCriteria, setSearchCriteria] = useState(initialSearchCriteria);
@@ -228,6 +233,15 @@ function Purchase() {
     setMasterData(updatedMasterData);
     applyFiltersAndSetData(updatedMasterData, activeSearchCriteria);
     handleClosePaymentModal();
+  };
+
+  const handleUploadFileClick = () => {
+    if (fileInputRef.current) fileInputRef.current.click();
+  };
+ 
+  const handleFileUpload = (e) => {
+    const files = Array.from(e.target.files);
+    alert(`Uploaded ${files.length} file(s):\n${files.map(f => f.name).join(', ')}`);
   };
 
   // Purchase Payments Handlers
@@ -431,6 +445,31 @@ function Purchase() {
           <div className="kicon-bth" title="Filter">
             <button className="kicon-btn" onClick={handleToggleForm}><PiSliders /></button>
           </div>
+          <div className="kexport-container">
+                        <button className="kicon-btn kadd-btn" title="Upload" onClick={() => {
+                          setShowUploadDropdown(prev => !prev);
+                          setShowFilterRow(false);
+                          setShowPrintDropdown(false);
+                          setShowItemsPerPageDropdown(false);
+                        }}>
+                          <GoFileSymlinkFile size={20} color='white' />
+                        </button>
+                        {showUploadDropdown && (
+                          <div className="kexport-dropdown">
+                            <a href="/sample.xlsx" download>
+                              <FaFile />Sample File
+                            </a>
+                            <button onClick={handleUploadFileClick}><FaFileUpload />Upload File</button>
+                          </div>
+                        )}
+                      </div>
+                      <input
+              type="file"
+              ref={fileInputRef}
+              style={{ display: 'none' }}
+              multiple
+              onChange={handleFileUpload}
+            />
           <div className="kdropdown-container" title="Share">
             <div className="kdropdown-container" ref={printDropdownRef}>
               <button className="kicon-btn" onClick={togglePrintDropdown}><FaShareSquare /></button>

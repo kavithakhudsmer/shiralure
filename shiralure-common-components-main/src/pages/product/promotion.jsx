@@ -202,8 +202,8 @@ const ProductDashboard = () => {
         <div className="pprrheader-content">
           <h1>Products</h1>
           <div className="pprrbreadcrumb">
-            <a href="/" className="pprrbreadcrumb-home">Home</a>
-            <span>&gt;&gt;Products</span>
+            <a href="/admin" className="pprrbreadcrumb-home">Home </a>
+            <span> &gt;&gt; Products</span>
           </div>
         </div>
       </div>

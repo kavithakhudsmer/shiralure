@@ -213,7 +213,7 @@ padding: 0px 20px;
 
 .devpclear-button {
   margin-top: 24px;
-  margin-left: -170px;
+  margin-left: -100px;
   margin-bottom: 20px;
   justify-content: center;
   border: none;
@@ -553,13 +553,6 @@ padding: 0px 20px;
   margin-top: 10px;
 }
 
-.devpsave-button:hover, .devpdelete-button:hover {
-  background-color: #999ff0;
-}
-
-.devpclear-button1:hover, .devpcancel-button:hover {
-  background-color: #4b5563;
-}
 
 .devpmodal-form {
   display: flex;
