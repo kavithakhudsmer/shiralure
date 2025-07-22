@@ -1,5 +1,5 @@
 .devpsubscriber {
-  padding: 30px;
+  padding: 24px;
   background-color: #F2F6F9;
   font-family: Arial, sans-serif;
   min-height: 100vh;
@@ -33,6 +33,7 @@
 }
 
 .devpheader {
+padding: 0px 20px;
   border-bottom: 1px solid #F2F6F9;
   background-color: #F2F6F9;
   width: 100%;
@@ -176,6 +177,7 @@
 
 .devpfilter-input {
   padding: 8px;
+  position: relative;
   margin-top: 24px;
   border: 1px solid #d1d5db;
   border-radius: 6px;
@@ -190,7 +192,7 @@
 }
 
 .devpsearch-button {
-  margin-top: 25px;
+  margin-top: 24px;
   margin-bottom: 20px;
   justify-content: center;
   border: none;
@@ -206,9 +208,6 @@
   background-color: #5a66f1;
 }
 
-.devpsearch-button:hover {
-  background-color: #999ff0;
-}
 
 .devpclear-button {
   margin-top: 24px;
@@ -228,9 +227,6 @@
   background-color: #000;
 }
 
-.devpclear-button:hover {
-  background-color: #4b5563;
-}
 
 .devpsubscriber-table {
   width: 100%;

@@ -496,10 +496,10 @@ function ReturnOrder() {
             </div>
             <div className="pfilter-buttons">
               <button className="psearch-button" onClick={handleSearch}>
-                Search<IoIosSearch />
+              <IoIosSearch />  Search
               </button>
               <button className="pclear-button" onClick={handleClear}>
-                Clear<MdClear />
+              <MdClear />  Clear
               </button>
             </div>
           </div>

@@ -131,7 +131,7 @@
 }
 
 .pbreadcrumb .phome::after {
-  content: " >>> ";
+  content: " >> ";
   color: #6b7280;
 }
 

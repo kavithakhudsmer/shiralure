@@ -1,30 +1,34 @@
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f2f6f9;
+  background-color: #f5f7fb;
   margin: 0;
-  
+ 
   height: 95vh;
   width: 100%;
   display: block;
  flex-direction: column;
   margin-top: 20px;
 }
-
-.admin-wrapper {
-  padding: 24px;
-  background-color: #F2F6F9;
-  font-family: Arial, sans-serif;
-  min-height: 100vh;
-  box-sizing: border-box;
+.kvcontainer {
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
 }
-
+ 
 .kvdivider-line {
   height: 1px;
   background-color: #ccc;
   margin-bottom: 30px;
   width: 100%;
 }
+.admin-wrapper {
+  background-color: #F2F6F9;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+padding:20px;
+}
+ 
 .kvadmin-header {
   border-bottom: none;
 }
@@ -33,65 +37,70 @@ body {
   padding: 30px;
   background-color: #ffffff;
   border-radius: 8px;
-
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  overflow: visible;
+  margin-left: 20px;
+  box-shadow: 0 0 0px rgba(0,0,0,0.05);
+  overflow:hidden;
   position: relative;
   width: calc(100% - 30px);
   min-width: 1000px;
  
-  max-height: 150vh;
-  box-sizing: border-box; 
+  max-height: 100vh;
+  box-sizing: border-box;
 }
-
+.kvcontainer-wrapper::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
 .kvadmin-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  padding: 14px 18px;
   font-size: 13px;
-  background-color: #f2f6f9;
-  border-bottom: 0px solid #ffffff;
-}
 
+ 
+ 
+}
+ 
 .kvadmin-header h1 {
   font-size: 28px;
   font-weight: 700;
   margin: 0;
   color: #111;
 }
-
+ 
 .kvbreadcrumb {
   font-size: 16px;
   color: #6c757d;
 }
-
+ 
 .kvdash {
   color: #5A66F1;
   font-weight: 600;
 }
-
+ 
 .kvdivider {
   margin: 0 6px;
   font-weight: bold;
   color: #888;
 }
-
+ 
 .kvactive {
   color: #333;
 }
-
+ 
 .kvbreadcrumb h2 {
   margin: 0;
-  font-size: 17px;
+  font-size: 20px;
   color: #6c757d;
 }
-
+ 
 .kvbreadcrumb .kvactive {
   color: #5A66F1;
   font-weight: bold;
 }
-
+ 
 .kvcontrols {
   display: flex;
   gap: 8px;
@@ -99,7 +108,7 @@ body {
   align-items: center;
   justify-content: flex-end;
 }
-
+ 
 .kvcontrols button {
   cursor: pointer;
   padding: 8px 8px;
@@ -114,16 +123,16 @@ body {
   line-height: 1;
   outline: none;
 }
-
+ 
 .kvcontrols button:focus {
   outline: none;
 }
-
+ 
 .kvrowcount-group {
   display: flex;
   gap: 2px;
 }
-
+ 
 .kvrowcount-btn {
   width: 30px;
   height: 30px;
@@ -140,21 +149,21 @@ body {
   line-height: 1;
   overflow: hidden;
 }
-
+ 
 .kvrowcount-wrapper {
   display: flex;
   align-items: center;
 }
-
+ 
 .kvcontrols button:hover {
   background: #5A66F1;
 }
-
+ 
 .kvshare-dropdown-wrapper,
 .kvrowcount-wrapper {
   position: relative;
 }
-
+ 
 .kvrowcount-wrapper button {
   width: 50px;
   height: 35px;
@@ -165,7 +174,7 @@ body {
   justify-content: center;
   cursor: pointer;
 }
-
+ 
 .kvshare-dropdown,
 .kvrowcount-dropdown {
   position: absolute;
@@ -180,7 +189,7 @@ body {
   z-index: 10;
   font-size: 16px;
 }
-
+ 
 .kvrowcount-dropdown {
   left: 0;
   min-height: 30px;
@@ -194,7 +203,7 @@ body {
   outline: none;
   border: #989ab3;
 }
-
+ 
 .kvrowcount-dropdown p {
   margin: 0;
   padding: 6px 8px;
@@ -202,17 +211,17 @@ body {
   color: #ffffff;
   transition: background 0.2s;
 }
-
+ 
 .kvrowcount-dropdown p:hover {
   background-color: #007bff;
   color: white;
 }
-
+ 
 .kvshare-dropdown-wrapper {
   position: relative;
   display: inline-block;
 }
-
+ 
 .kvshare-dropdown-wrapper button {
   background-color: #5A66F1;
   border: none;
@@ -225,7 +234,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-
+ 
 .kvshare-option {
   padding: 8px 12px;
   cursor: pointer;
@@ -233,11 +242,11 @@ body {
   align-items: center;
   gap: 8px;
 }
-
+ 
 .kvshare-option:hover {
   background-color: #f0f0f0;
 }
-
+ 
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -248,12 +257,12 @@ body {
     transform: translateY(0);
   }
 }
-
+ 
 .kvshare-option:hover,
 .kvrowcount-dropdown p:hover {
   background-color: #4f46e5;
 }
-
+ 
 .kvshare-dropdown {
   position: absolute;
   top: 40px;
@@ -266,7 +275,7 @@ body {
   padding: 4px 0px;
   color: #ffffff;
 }
-
+ 
 .kvshare-option {
   padding: 8px 12px;
   cursor: pointer;
@@ -275,12 +284,12 @@ body {
   gap: 6px;
   font-size: 14px;
 }
-
+ 
 .kvshare-option:hover {
   background-color: #4f46e5;
   color: #ccc;
 }
-
+ 
 .kvfilter-box {
   padding: 0px;
   background: #ffffff;
@@ -295,15 +304,15 @@ body {
   z-index: 1;
   animation: fadeDown 0.3s ease;
 }
-
-
+ 
+ 
 .kvfilter-line {
   display: flex;
   flex-wrap: wrap;
   gap: 32px 70px;
   align-items: flex-end;
 }
-
+ 
 .kvfilter-group {
   display: flex;
   flex-direction: column;
@@ -311,16 +320,16 @@ body {
   width: 20%;
   gap: 4px;
 }
-
+ 
 .kvfilter-group input {
   padding: 10px 12px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
-  
+ 
   background-color: #f0f8ff;
   color: #333;
 }
-
+ 
 .kvfilter-buttons {
   width: 1000%;
   display: flex;
@@ -328,11 +337,11 @@ body {
   justify-content: flex-start;
   margin-top: 10px;
 }
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
 .kvfilter-buttons button {
   padding: 8px 12px;
   border: none;
@@ -340,22 +349,22 @@ body {
   color: white;
   cursor: pointer;
   font-size: 14px;
-  
+ 
 }
-
+ 
 .kvfilter-buttons .search {
-  
+ 
   background-color: #5A66F1;
   max-width: 85px;
   font-size: 14px;
   justify-content: flex-start;
 }
-
+ 
 .kvfilter-buttons .clear {
   background-color: #363636;
   max-width: 110px;
 }
-
+ 
 table {
   width: 98%;
   border-collapse: collapse;
@@ -366,9 +375,9 @@ table {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-   border-spacing: 0 10px ;   
+   border-spacing: 0 10px ;  
 }
-
+ 
 th, td {
   padding: 7px 6px;
   text-align: left;
@@ -376,34 +385,34 @@ th, td {
   font-size: 14px;
   padding: 12px 8px;
 }
-
+ 
 th {
   background-color: #f5f5f5;
   font-weight: 600;
   color: #333;
-  
+ 
 }
-
+ 
 .active {
   color: #28a745;
   font-weight: 600;
 }
-
+ 
 .inactive {
   color: #dc3545;
   font-weight: 600;
 }
-
+ 
 .kvactions {
   padding: 0px;
 }
-
+ 
 .kvaction-buttons {
   display: flex;
   justify-content: flex-start;
   gap: 13px;
 }
-
+ 
 .kvicon-button:focus,
 .icon-button:focus,
 .kvicon-button:active,
@@ -412,9 +421,9 @@ th {
   box-shadow: none;
   border: none;
 }
-
+ 
 .kvicon-button {
-  
+ 
   border: none;
   padding: 6px;
   width: 24px;
@@ -425,21 +434,22 @@ th {
   border-radius: 50%;
   transition: background-color 0.2s ease, width 0.2s ease, height 0.2s ease;
   font-size: 16px;
-  gap: 20px;
+  gap: 15px;
+ 
 }
-
-
+ 
+ 
 .kvicon-button > * {
-  margin: 2px !important;
+  margin: 0px !important;
   padding: 1px !important;
 }
-
+ 
 .icon-button:hover {
   transform: scale(1.05);
   border-radius: 50%;
   border: none;
 }
-
+ 
 .kvview-btn {
   color: #5A66F1;
   background-color: rgb(255, 255, 255);
@@ -447,15 +457,15 @@ th {
   padding: 6px;
   width: 24px;
   height: 20px;
-  
+ 
 }
-
+ 
 .kvview-btn:hover {
   background-color: #c9cdf5;
   width: 30px;
   height: 25px;
 }
-
+ 
 .kvedit-btn {
   color: #22C55E;
   background-color: white;
@@ -464,13 +474,13 @@ th {
 width: 24px;
   height: 20px;
 }
-
+ 
 .kvedit-btn:hover {
   background-color: #d4edda;
   width: 30px;
   height: 25px;
 }
-
+ 
 .kvdelete-btn {
   color: #F4415F;
   background-color: white;
@@ -479,13 +489,13 @@ width: 24px;
   width: 24px;
   height: 20px;
 }
-
+ 
 .kvdelete-btn:hover {
   background-color: #f8d7da;
   width: 30px;
   height: 25px;
 }
-
+ 
 .kvoverlay {
   position: fixed;
   top: 0;
@@ -498,7 +508,7 @@ width: 24px;
   align-items: center;
   z-index: 999;
 }
-
+ 
 .kvform-box {
   background: #fff;
   padding: 20px 25px;
@@ -507,25 +517,25 @@ width: 24px;
   max-width: 90%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
-
+ 
 .kvform-box h2 {
   margin-bottom: 15px;
   font-size: 20px;
   color: #333;
 }
-
+ 
 .kvform-group {
   margin-bottom: 15px;
   font-size: 14px;
   display: flex;
   flex-direction: column;
 }
-
+ 
 .kvform-group label {
   margin-bottom: 5px;
   font-weight: 500;
 }
-
+ 
 .kvform-group input[type="text"],
 .kvform-group input[type="email"],
 .kvform-group input[type="password"] {
@@ -534,23 +544,23 @@ width: 24px;
   border-radius: 4px;
   border: 1px solid #e0e0e0;
 }
-
+ 
 .kvradio-group {
   display: flex;
   gap: 20px;
   font-weight: normal;
 }
-
+ 
 .kvradio-group input[type="radio"] {
   accent-color: #5A66F1;
 }
-
+ 
 .kvform-buttons {
   display: flex;
   gap: 8px;
   justify-content: flex-end;
 }
-
+ 
 .kvform-buttons button {
   cursor: pointer;
   padding: 8px 15px;
@@ -562,8 +572,8 @@ width: 24px;
   gap: 6px;
   font-size: 14px;
 }
-
-
+ 
+ 
 .kvform-buttons .save {
   background-color: #5A66F1;
   color: white;
@@ -572,7 +582,7 @@ width: 24px;
   outline: none;
   box-shadow: none;
 }
-
+ 
 .kvform-buttons .close {
   background-color: #363636;
   color: white;
@@ -585,27 +595,27 @@ width: 24px;
   padding: 10px 0;
   background-color: #fff;
 }
-
+ 
 .kvfooter-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
-
+ 
 .kvfooter-content p {
   margin: 0;
   font-size: 14px;
   color: #6c757d;
 }
-
+ 
 .kvpagination {
   display: flex;
   gap: 0px;
   align-items: center;
   border-radius: 4px;
 }
-
+ 
 .page {
   color: #5A66F1;
   width: 32px;
@@ -621,7 +631,7 @@ width: 24px;
   justify-content: center;
   gap: 0px;
 }
-
+ 
 .kvarrow {
   color: #5A66F1;
   width: 32px;
@@ -638,7 +648,7 @@ width: 24px;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
-
+ 
 .kvarrow1 {
   color: #5A66F1;
   width: 32px;
@@ -655,40 +665,40 @@ width: 24px;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
-
+ 
 .page:focus:not(:focus-visible),
 .kvarrow:focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
-
+ 
 .page.active {
   background-color: #DBDFE1;
   color: #5A66F1;
 }
-
+ 
 .kvarrow:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
-
+ 
 .kvform-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px 20px;
   margin-bottom: 20px;
 }
-
+ 
 .kvradio-group {
   display: flex;
   gap: 10px;
   margin-top: 6px;
 }
-
+ 
 .kvform-buttons.bottom-left {
   justify-content: flex-start;
 }
-
+ 
 .kvdelete-modal {
   position: fixed;
   top: 0;
@@ -701,7 +711,7 @@ width: 24px;
   align-items: center;
   z-index: 2000;
 }
-
+ 
 .kvdelete-box {
   background: #fff;
   padding: 40px;
@@ -712,28 +722,28 @@ width: 24px;
   animation: popup-fade 0.3s ease;
   gap: 12px;
 }
-
+ 
 .kvdelete-icon {
   margin-bottom: 15px;
 }
-
+ 
 .kvdelete-box h2 {
   margin-bottom: 10px;
   font-weight: bold;
 }
-
+ 
 .kvsubtext {
   margin-bottom: 20px;
   color: #555;
 }
-
+ 
 .kvdelete-buttons {
   display: flex;
   justify-content: center;
   gap: 12px;
   margin-top: 20px;
 }
-
+ 
 .kvdelete-buttons .yes {
   background: #5A66F1;
   color: #fff;
@@ -768,7 +778,7 @@ width: 24px;
     opacity: 1;
   }
 }
-
+ 
 .kvadmin-profile.fullscreen-profile {
   position: fixed;
   top: 0;
@@ -782,7 +792,7 @@ width: 24px;
   border-radius: 0;
   box-sizing: border-box;
 }
-
+ 
 .kvclose-btn {
   position: absolute;
   top: 0rem;
@@ -794,12 +804,12 @@ width: 24px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-
+ 
 .kvclose-btn:hover {
   transform: scale(1.2);
   color: red;
 }
-
+ 
 @media print {
   body * {
     visibility: hidden;
@@ -834,7 +844,7 @@ width: 24px;
     display: none !important;
   }
 }
-
+ 
 @media print {
   body * {
     visibility: hidden;
@@ -872,138 +882,136 @@ width: 24px;
     display: none !important;
   }
 }
-
+ 
 /* Responsive adjustments */
 @media screen and (max-width: 1200px) {
   .kvcontainer {
     min-width: 0; /* Override min-width to allow scaling */
     width: calc(100% - 30px);
-    
+   
   }
 }
-
+ 
 @media screen and (max-width: 768px) {
   .kvadmin-header {
     flex-direction: column;
     align-items: flex-start;
     padding: 20px 24px 10px;
   }
-
+ 
   .kvadmin-header h1 {
-    font-size: 26px;
+    font-size: 28px;
     margin: 0;
   }
-
+ 
   .kvbreadcrumb {
-    font-size: 20px;
+    font-size: 16px;
   }
-
+ 
   .kvcontrols {
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 8px;
     margin: 0 0 15px 0;
   }
-
+ 
   .kvfilter-line {
     flex-direction: column;
     gap: 32px;
     align-items: stretch;
   }
-
+ 
   .kvfilter-group {
     width: 100%;
     margin-bottom: 0px;
   }
-
+ 
   .kvfilter-box {
     width: calc(100% - 30px);
     margin: 0 auto 20px auto;
   }
-
+ 
   .print-table-area {
     overflow-x: auto;
   }
-
+ 
   table {
     width: 98%;
     min-width: 600px; /* Ensure table is scrollable */
   }
-
+ 
   .kvform-grid {
     grid-template-columns: 1fr;
     gap: 15px 20px;
   }
-
+ 
   .kvform-box {
     width: 90%;
     padding: 20px 25px;
   }
-
+ 
   .kvdelete-box {
     width: 90%;
     padding: 40px;
   }
-
+ 
   .kvpagination {
     flex-wrap: wrap;
     gap: 0px;
   }
 }
-
+ 
 @media screen and (max-width: 480px) {
   .kvadmin-header h1 {
-    font-size: 26px;
+    font-size: 28px;
   }
-
+ 
   .kvbreadcrumb {
     font-size: 16px;
   }
-
+ 
   .kvcontrols button {
     padding: 8px 8px;
     font-size: 18px;
   }
-
+ 
   .kvrowcount-btn {
     width: 3px;
     height: 30px;
     font-size: 20px;
   }
-
+ 
   .kvrowcount-wrapper button {
     width: 35px;
     height: 35px;
     font-size: 15px;
     padding: 8px;
   }
-
+ 
   .kvfilter-group input {
     padding: 10px 12px;
     font-size: 14px;
   }
-
+ 
   .kvfilter-buttons button {
     padding: 8px 12px;
     font-size: 14px;
   }
-
+ 
   th, td {
     padding: 7px 6px;
     font-size: 14px;
   }
-
  
-
+ 
+ 
   .kvform-box {
     width: 90%;
     padding: 20px 25px;
   }
-
+ 
   .kvdelete-box {
     width: 90%;
     padding: 40px;
   }
 }
-
-

@@ -1,18 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
-  FiTrash2, FiPrinter, FiFileText, FiCheck, FiX, FiEye, FiEdit2,FiDownload
+  FiTrash2, FiPrinter, FiFileText, FiCheck, FiX, FiEye, FiEdit2, FiDownload
 } from "react-icons/fi";
 import { FaShareFromSquare, FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 import { IoMdSearch, IoMdArrowDropdown, IoMdClose } from "react-icons/io";
-
 import { PiSliders } from "react-icons/pi";
-
 import { MdClear } from "react-icons/md";
 import { CiCircleAlert } from "react-icons/ci";
 import { BiSolidAddToQueue } from 'react-icons/bi';
 import ExcelJS from "exceljs";
-import ReactQuill from 'react-quill'; // Import ReactQuill directly
-import 'react-quill/dist/quill.snow.css'; // Import Quill's CSS
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import './damage.css';
 
 const DUMMY_PRODUCT_OPTIONS = [
@@ -44,7 +42,6 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
       let formDate = '';
       if (damageItem.date) {
         try {
-          // Parse date from format "12:45 PM, 15-03-2025" to "2025-03-15T12:45"
           const [time, datePart] = damageItem.date.split(', ');
           const [hours, minutesPeriod] = time.split(':');
           const [minutes, period] = minutesPeriod.split(' ');
@@ -126,8 +123,8 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
   };
 
   const handleAddProductFromDropdown = () => {
-    if (!selectedProductToAdd) {
-      setErrors((prev) => ({ ...prev, products: 'Please select a product to add.' }));
+    if (!selectedProductToAdd || selectedProductToAdd === '') {
+      setErrors((prev) => ({ ...prev, products: 'Please select a product before clicking Add' }));
       return;
     }
     const productData = productOptions.find(p => p.id === selectedProductToAdd);
@@ -167,23 +164,23 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
     };
 
     if (!formData.date) {
-      newErrors.date = 'Date is required';
+      newErrors.date = 'Date cannot be empty';
       hasErrors = true;
     }
     if (!formData.referenceNo) {
-      newErrors.referenceNo = 'Reference No is required';
+      newErrors.referenceNo = 'Reference No cannot be empty';
       hasErrors = true;
     }
-    if (!formData.attachments && !damageItem.imageUrl) {
-      newErrors.attachments = 'Image is required';
+    if (!formData.attachments && !damageItem?.imageUrl) {
+      newErrors.attachments = 'Choose file cannot be empty';
       hasErrors = true;
     }
     if (productsInReport.length === 0) {
-      newErrors.products = 'Product is required';
+      newErrors.products = 'Add product cannot be empty';
       hasErrors = true;
     }
     if (!formData.note || formData.note === '<p><br></p>') {
-      newErrors.note = 'Note is required';
+      newErrors.note = 'Notes cannot be empty';
       hasErrors = true;
     }
 
@@ -240,9 +237,7 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
               onChange={handleInputChange}
               className="devpfilter-input"
             />
-            {errors.date && (
-              <div className="devptext-red-500 devptext-sm devpmt-1"style={{ color: 'red' }}>{errors.date}</div>
-            )}
+            {errors.date && <div style={{ color: 'red', fontSize: '12px' }}>{errors.date}</div>}
           </div>
           <div className="devpfilter-group">
             <label htmlFor="referenceNo" className="devpfilter-label">
@@ -256,13 +251,11 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
               onChange={handleInputChange}
               className="devpfilter-input"
             />
-            {errors.referenceNo && (
-              <div className="devptext-red-500 devptext-sm devpmt-1"style={{ color: 'red' }}>{errors.referenceNo}</div>
-            )}
+            {errors.referenceNo && <div style={{ color: 'red', fontSize: '12px' }}>{errors.referenceNo}</div>}
           </div>
           <div className="devpfilter-group">
             <label htmlFor="attachments" className="devpfilter-label">
-              Attachments <span className="devprequired">*</span>
+              Choose File <span className="devprequired">*</span>
             </label>
             <input
               style={{ width: '300px' }}
@@ -272,9 +265,7 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
               onChange={handleFileChange}
               className="devpfilter-input"
             />
-            {errors.attachments && (
-              <div className="devptext-red-500 devptext-sm devpmt-1" style={{ color: 'red' }}>{errors.attachments}</div>
-            )}
+            {errors.attachments && <div style={{ color: 'red', fontSize: '12px' }}>{errors.attachments}</div>}
           </div>
         </div>
         <div className="devpfilter-container">
@@ -303,9 +294,7 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
                   Add
                 </button>
               </div>
-              {errors.products && (
-                <div className="devptext-red-500 devptext-sm devpmt-1" style={{ color: 'red' }}>{errors.products}</div>
-              )}
+              {errors.products && <div style={{ color: 'red', fontSize: '12px' }}>{errors.products}</div>}
             </div>
           </div>
         </div>
@@ -405,7 +394,7 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
         <div className="devpfilter-container">
           <div className="devpfilter-group">
             <label htmlFor="note" className="devpfilter-label">
-              Note <span className="devprequired">*</span>
+              Notes <span className="devprequired">*</span>
             </label>
             <ReactQuill
               theme="snow"
@@ -431,9 +420,7 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
                 ],
               }}
             />
-            {errors.note && (
-              <div className="devptext-red-500 devptext-sm devpmt-1"style={{ color: 'red' }}>{errors.note}</div>
-            )}
+            {errors.note && <div style={{ color: 'red', fontSize: '12px' }}>{errors.note}</div>}
           </div>
         </div>
         <div className="devpmodal-buttons">
@@ -694,11 +681,9 @@ const DamagePage = () => {
     try {
       let blob, filename;
       if (damageItem.attachments) {
-        // Use the uploaded file from attachments
         blob = damageItem.attachments;
         filename = `${damageItem.referenceNo || 'damage'}-${damageItem.productName || 'item'}.${damageItem.attachments.name.split('.').pop() || 'jpg'}`;
       } else {
-        // Fallback to fetching from imageUrl
         const response = await fetch(damageItem.imageUrl, { mode: 'cors' });
         if (!response.ok) throw new Error(`Failed to fetch image: ${response.statusText}`);
         blob = await response.blob();
@@ -841,7 +826,7 @@ const DamagePage = () => {
         <div className="devpheader-content">
           <h1>Damage</h1>
           <div className="devpbreadcrumb">
-            <span className="devphome">Home</span> &gt;&gt;  Damage
+            <span className="devphome">Home</span>  Damage
           </div>
         </div>
       </div>
@@ -1127,4 +1112,5 @@ const DamagePage = () => {
     </div>
   );
 };
+
 export default DamagePage;

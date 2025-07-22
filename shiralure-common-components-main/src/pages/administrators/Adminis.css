@@ -2,41 +2,24 @@
   padding: 16px;
   margin: 10px 0;
   background-color: #ffffff;
-  border-radius: 3px;
+  border-radius: 5px;
  
 }
-.kvadmin-profile.fullscreen-profile {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: -90px; /* Position below the header */
-  left: -35px;
-  width: 85vw;
-  height: calc(200vh - 180px - 6rem); /* Increased to 200vh for more height */
-  background-color: #f9fafc;
-  z-index: 100;
-  padding: 3rem;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-left: 0;
-  overflow-y: auto; /* Scroll only when needed */
-  margin-top: 0px;
-  max-height: 2500px; /* Increased max-height to accommodate */
-  margin-top: -70px;
-}
+ 
+ 
+/* Inner container */
+
+ 
+/* Hide scrollbar in WebKit browsers */
  
 .kvadmin-profile.fullscreen-profile > * {
   max-height: 100%;
   overflow: hidden;
 }
-.kvadmin-profile.fullscreen-profile > * {
-  flex-shrink: 1; /* Allow children to shrink if needed */
-  max-height: 100%; /* Prevent children from exceeding container */
-  overflow: hidden; /* Contain child overflows */
-}
+ 
 .kvbreadcrumb h2 {
   margin: 0;
-  font-size: 17px;
+  font-size: 20px;
   color: #6c757d;
 }
  
@@ -55,6 +38,7 @@
   gap: 20px;
   align-items: center;
   margin-bottom: 20px;
+  margin-top:20px;
 }
  
  
@@ -137,7 +121,7 @@
 .kvtabs button {
   padding: 8px 16px;
   border: none;
-  background: hsl(184, 100%, 97%);
+  background: #f9fafc;
   cursor: pointer;
   border-radius: 4px;
   transition: background-color 0.2s ease;
@@ -362,18 +346,17 @@
  
 .kvmodal {
  background-color: #fff;
-  width: 90%;
-  max-width: 500px;
+  max-width: 800px;
   padding: 24px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  max-height: 90vh;
+  max-height: 80vh;
   overflow-y: auto;
 }
  
 .kvform-row {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   margin-bottom: 10px;
 }
  
@@ -393,7 +376,7 @@
 .kvform-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 15px;
   margin-top: 1rem;
   height: auto;
 }
@@ -594,10 +577,10 @@ select {
   margin-top: 0;
 }
  
-.kvclose-btn {
-  position: absolute;
-  top: 5rem;
-  right: 3rem;
+.kvvclose-btn {
+  position: fixed;
+  top: 4rem;
+  right: 1rem;
   font-size: 1.5rem;
   background: none;
   border: none;
@@ -605,16 +588,40 @@ select {
   cursor: pointer;
   transition: transform 0.2s ease;
   outline: none;
+ 
+ 
 }
  
-.kvclose-btn:hover {
+.kvvclose-btn:hover {
   transform: scale(1.2);
   color: #5A66F1;
 }
  
-.kvclose-btn:focus,
-.kvclose-btn:active {
+.kvvclose-btn:focus,
+.kvvclose-btn:active {
   outline: none;
   box-shadow: none;
   background: none;
+}
+ .kvadmin-profile.fullscreen-profile {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: -130px; /* Adjusted for visibility */
+  left: -80px;
+  width: 90vw;
+  height: calc(200vh - 90px - 6rem); /* Adjusted for new top value */
+  background-color: #f2f6f9;
+  z-index: 180;
+  padding: 5rem;
+  border-radius: 7px;
+  box-sizing: border-box;
+  margin-left:0px;
+  margin-right: 20px;
+ overflow-y: hidden; /* Hide inner scrollbar */
+  max-height: 2800px;
+  margin-top: -40px;
+  overflow: hidden;
+ box-shadow: none;
+ 
 }

@@ -1,11 +1,11 @@
-// ProductList.jsx (Shira-prefixed classes)
 import React, { useEffect, useState } from 'react';
 import './ProductList.css';
 import { FaShareSquare, FaFileExcel, FaPrint } from 'react-icons/fa';
 import { MdArrowDropDown, MdOutlineClear } from 'react-icons/md';
 import { PiSliders } from 'react-icons/pi';
 import { BiSolidAddToQueue } from 'react-icons/bi';
-import { IoMdSearch } from "react-icons/io";
+import { IoMdSearch, IoMdCloseCircleOutline } from "react-icons/io";
+
 
 const ProductList = () => {
   const [stocks, setStocks] = useState([]);
@@ -15,10 +15,22 @@ const ProductList = () => {
   const [showAddForm, setShowAddForm] = useState(false);
   const [entries, setEntries] = useState(6);
   const [currentPage, setCurrentPage] = useState(1);
-  const [filterStatus, setFilterStatus] = useState('');
-  const [filterOrderId, setFilterOrderId] = useState('');
-  const [filterCustomer, setFilterCustomer] = useState('');
+
+  // States for filter panel inputs (these change as you type)
+  const [filterStatusInput, setFilterStatusInput] = useState('');
+  const [filterNameInput, setFilterNameInput] = useState('');
+
+  // New states to store the *applied* filter values (only updated on search click)
+  const [appliedFilterStatus, setAppliedFilterStatus] = useState('');
+  const [appliedFilterName, setAppliedFilterName] = useState('');
+
   const [newStock, setNewStock] = useState({ name: '', quantity: '', status: 'Active' });
+
+  // States for the "Add Stock" modal's name field and dropdown
+  const [addFormNameInput, setAddFormNameInput] = useState('');
+  const [filteredAddFormNames, setFilteredAddFormNames] = useState([]);
+  const [showAddFormNameDropdown, setShowAddFormNameDropdown] = useState(false);
+
 
   useEffect(() => {
     fetch('/stocks.json')
@@ -37,10 +49,43 @@ const ProductList = () => {
     setNewStock({ ...newStock, [name]: value });
   };
 
+  const handleAddFormNameChange = (e) => {
+    const value = e.target.value;
+    setAddFormNameInput(value);
+    setNewStock({ ...newStock, name: value });
+
+    if (value.length > 0) {
+      const uniqueNames = [...new Set(stocks.map(stock => stock.name))];
+      const filtered = uniqueNames.filter(name =>
+        name.toLowerCase().includes(value.toLowerCase())
+      );
+      setFilteredAddFormNames(filtered);
+      setShowAddFormNameDropdown(true);
+    } else {
+      setFilteredAddFormNames([]);
+      setShowAddFormNameDropdown(false);
+    }
+  };
+
+  const handleAddFormNameSelect = (name) => {
+    setAddFormNameInput(name);
+    setNewStock({ ...newStock, name: name });
+    setShowAddFormNameDropdown(false);
+  };
+
+  const handleClearAddFormName = () => {
+    setAddFormNameInput('');
+    setNewStock({ ...newStock, name: '' });
+    setFilteredAddFormNames([]);
+    setShowAddFormNameDropdown(false);
+  };
+
   const handleAddSubmit = () => {
     if (!newStock.name || !newStock.quantity) return;
-    setStocks([...stocks, newStock]);
+    setStocks([...stocks, { ...newStock, id: stocks.length > 0 ? Math.max(...stocks.map(s => s.id)) + 1 : 1 }]);
     setNewStock({ name: '', quantity: '', status: 'Active' });
+    setAddFormNameInput('');
+    setFilteredAddFormNames([]);
     setShowAddForm(false);
   };
 
@@ -61,11 +106,29 @@ const ProductList = () => {
     document.body.removeChild(link);
   };
 
+  // NEW: Function to handle search button click
+  const handleFilterSearch = () => {
+    setAppliedFilterName(filterNameInput);
+    setAppliedFilterStatus(filterStatusInput);
+    setCurrentPage(1); // Reset to first page on new search
+  };
+
+  // NEW: Function to handle clear button click in filter panel
+  const handleFilterClear = () => {
+    setFilterNameInput('');
+    setFilterStatusInput('');
+    setAppliedFilterName(''); // Clear applied filters
+    setAppliedFilterStatus(''); // Clear applied filters
+    setCurrentPage(1); // Reset to first page
+  };
+
+
+  // filteredStocks now filters by appliedFilterName and appliedFilterStatus
   const filteredStocks = stocks.filter(stock => {
-    const matchesStatus = filterStatus ? stock.status.toLowerCase() === filterStatus.toLowerCase() : true;
-    const matchesOrderId = filterOrderId ? stock.name.toLowerCase().includes(filterOrderId.toLowerCase()) : true;
-    const matchesCustomer = filterCustomer ? stock.name.toLowerCase().includes(filterCustomer.toLowerCase()) : true;
-    return matchesStatus && matchesOrderId && matchesCustomer;
+    const matchesStatus = appliedFilterStatus ? stock.status.toLowerCase() === appliedFilterStatus.toLowerCase() : true;
+    const matchesName = appliedFilterName ? stock.name.toLowerCase().includes(appliedFilterName.toLowerCase()) : true;
+
+    return matchesStatus && matchesName;
   });
 
   const totalPages = Math.ceil(filteredStocks.length / entries);
@@ -126,22 +189,29 @@ const ProductList = () => {
           <div className="shira-filter-panel">
             <div className="shira-filter-fields">
               <div className="shira-filter-group">
-                <label htmlFor="orderId">Name</label>
-                <input type="text" id="orderId" value={filterOrderId} onChange={(e) => setFilterOrderId(e.target.value)} />
+                <label htmlFor="filterName">Name</label>
+                <input
+                  type="text"
+                  id="filterName"
+                  value={filterNameInput}
+                  onChange={(e) => setFilterNameInput(e.target.value)}
+                />
               </div>
+
               <div className="shira-filter-group">
                 <label htmlFor="status">Status</label>
-                <select id="status" value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)}>
+                <select id="status" value={filterStatusInput} onChange={(e) => setFilterStatusInput(e.target.value)}>
                   <option value="">--</option>
                   <option value="Active">Active</option>
                   <option value="Inactive">Inactive</option>
                 </select>
               </div>
-              
             </div>
             <div className="shira-filter-buttons">
-              <button className="shira-search-btn"><IoMdSearch /> Search</button>
-              <button className="shira-clear-btn" onClick={() => { setFilterOrderId(''); setFilterStatus(''); setFilterCustomer(''); }}><MdOutlineClear /> Clear</button>
+              {/* Call handleFilterSearch on Search button click */}
+              <button className="shira-search-btn" type="button" onClick={handleFilterSearch}><IoMdSearch /> Search</button>
+              {/* Call handleFilterClear on Clear button click */}
+              <button className="shira-clear-btn" type="button" onClick={handleFilterClear}><MdOutlineClear /> Clear</button>
             </div>
           </div>
         )}
@@ -155,13 +225,19 @@ const ProductList = () => {
             </tr>
           </thead>
           <tbody>
-            {paginatedStocks.map((stock, i) => (
-              <tr key={i}>
-                <td>{stock.name}</td>
-                <td>{stock.quantity}</td>
-                <td className={stock.status.toLowerCase() === 'active' ? 'shira-status-active' : 'shira-status-inactive'}>{stock.status}</td>
+            {paginatedStocks.length > 0 ? (
+              paginatedStocks.map((stock, i) => (
+                <tr key={i}>
+                  <td>{stock.name}</td>
+                  <td>{stock.quantity}</td>
+                  <td className={stock.status.toLowerCase() === 'active' ? 'shira-status-active' : 'shira-status-inactive'}>{stock.status}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="3" style={{ textAlign: 'center', padding: '20px' }}>No stocks found matching your criteria.</td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
 
@@ -196,36 +272,63 @@ const ProductList = () => {
               <h2>Add Stock</h2>
               <button className="shira-modal-close" onClick={() => setShowAddForm(false)}>×</button>
             </div>
-            <div className="shira-modal-body">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                name="name"
-                value={newStock.name}
-                onChange={handleInputChange}
-              />
-              <label htmlFor="quantity">Quantity</label>
-              <input
-                type="number"
-                name="quantity"
-                value={newStock.quantity}
-                onChange={handleInputChange}
-              />
-              <label htmlFor="status">Status</label>
-              <select
-                name="status"
-                value={newStock.status}
-                onChange={handleInputChange}
-              >
-                <option value=" ">--</option>
-                <option value="Active">Active</option>
-                <option value="Inactive">Inactive</option>
-              </select>
-            </div>
-            <div className="shira-modal-footer">
-              <button className="shira-save-button" onClick={handleAddSubmit}>Save</button>
-              <button className="shira-cancel-button" onClick={() => setShowAddForm(false)}>Cancel</button>
-            </div>
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              handleAddSubmit();
+            }}>
+              <div className="shira-modal-body">
+                <label htmlFor="name">Name</label>
+                <div className="shira-add-stock-name-input-wrapper">
+                  <input
+                    type="text"
+                    name="name"
+                    value={addFormNameInput}
+                    onChange={handleAddFormNameChange}
+                    onFocus={() => {
+                      if (addFormNameInput.length > 0) setShowAddFormNameDropdown(true);
+                    }}
+                    onBlur={() => setTimeout(() => setShowAddFormNameDropdown(false), 100)}
+                  />
+                  {addFormNameInput && (
+                    <IoMdCloseCircleOutline
+                      className="shira-clear-add-form-name"
+                      onClick={handleClearAddFormName}
+                    />
+                  )}
+
+                  {showAddFormNameDropdown && filteredAddFormNames.length > 0 && (
+                    <div className="shira-add-stock-name-dropdown">
+                      {filteredAddFormNames.map((name, index) => (
+                        <div key={index} onMouseDown={() => handleAddFormNameSelect(name)}>
+                          {name}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <label htmlFor="quantity">Quantity</label>
+                <input
+                  type="number"
+                  name="quantity"
+                  value={newStock.quantity}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="status">Status</label>
+                <select
+                  name="status"
+                  value={newStock.status}
+                  onChange={handleInputChange}
+                >
+                  <option value="">--</option>
+                  <option value="Active">Active</option>
+                  <option value="Inactive">Inactive</option>
+                </select>
+              </div>
+              <div className="shira-modal-footer">
+                <button className="shira-save-button" type="submit">Save</button>
+                <button className="shira-cancel-button" type="button" onClick={() => setShowAddForm(false)}>Cancel</button>
+              </div>
+            </form>
           </div>
         </div>
       )}

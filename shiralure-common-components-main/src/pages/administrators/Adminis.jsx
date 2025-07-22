@@ -121,7 +121,7 @@ function Adminis({ admin, onClose }) {
         <h1>Administrators</h1>
         <div className="kvbreadcrumb">
           <h2>
-            <span className="kvactive">Home</span> &gt;&gt; <span>Administrators</span>
+            <a href="/admin" className="kvactive">Home</a> &gt;&gt; <span>Administrators</span>
           </h2>
         </div>
       </div>

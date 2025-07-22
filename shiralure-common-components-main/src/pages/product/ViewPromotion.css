@@ -1092,7 +1092,7 @@ html, body {
 
 .vvp-seo-grid {
   display: grid;
-  grid-template-row: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
 }
 
