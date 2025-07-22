@@ -224,7 +224,12 @@
   cursor: pointer;
   font-size: 14px;
 }
-
+.DEerror-message{
+  color: red;
+  font-size: 10px;
+  position: relative;
+  bottom: 7px;
+}
 .DEsearch-button {
   background-color: #5a66f1;
 }

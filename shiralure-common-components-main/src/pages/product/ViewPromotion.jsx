@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {
-  FiInfo, FiImage, FiGrid, FiUpload, FiPlus, FiTrash2
+  FiInfo, FiImage, FiGrid, FiUpload, FiPlus, FiTrash2, FiCheck
 } from 'react-icons/fi';
-import { MdOutlineExpandMore } from 'react-icons/md';
+import { MdOutlineExpandMore, MdClear } from 'react-icons/md';
 import DeleteModal from './viewcomponents/DeleteModal';
 import AddProductModal from './viewcomponents/AddProductModal';
 import './ViewPromotion.css';
 import { BiSolidOffer } from 'react-icons/bi';
-import { MdVideoLibrary, MdOutlineLocalShipping } from 'react-icons/md';
-import { TfiWorld } from 'react-icons/tfi';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // Import the styles (optional but recommended for default styling)
 import productsData from '../../data/products1.json'; // adjust based on file structure
+
 const ViewPromotion = () => {
   const { id } = useParams();
   const [promotion, setPromotion] = useState(null);
@@ -41,6 +40,13 @@ const ViewPromotion = () => {
   ]);
   const [newVideo, setNewVideo] = useState({ provider: '', link: '' });
   const [showAddVideoModal, setShowAddVideoModal] = useState(false);
+const [newVideoErrors, setNewVideoErrors] = useState({ provider: '', link: '' });
+  // New state for uploaded video file and its preview
+  const [uploadedVideo, setUploadedVideo] = useState(null);
+  const [uploadedVideoPreviewUrl, setUploadedVideoPreviewUrl] = useState('');
+  const [videoToDelete, setVideoToDelete] = useState(null);
+  const [showDeleteVideoModal, setShowDeleteVideoModal] = useState(false);
+  const [showDeleteUploadedVideoModal, setShowDeleteUploadedVideoModal] = useState(false);
 
   const [shippingForm, setShippingForm] = useState({
     shippingMethod: '', // or 'free' as default
@@ -69,19 +75,61 @@ const ViewPromotion = () => {
     image: ''
   });
   const [showSeoToast, setShowSeoToast] = useState(false);
-
-  // Function to handle adding a new video
+  // Function to handle adding a new video (external link)
   const handleAddVideo = () => {
-    if (newVideo.provider && newVideo.link) {
+    const errors = {};
+    if (!newVideo.provider) {
+      errors.provider = 'Video Provider is required';
+    }
+    if (!newVideo.link) {
+      errors.link = 'Link is required';
+    }
+
+    setNewVideoErrors(errors); // Set the errors state
+
+    // If there are no errors, proceed to add the video
+    if (Object.keys(errors).length === 0) {
       setVideos([...videos, { id: Date.now(), provider: newVideo.provider, link: newVideo.link }]);
       setNewVideo({ provider: '', link: '' });
       setShowAddVideoModal(false);
     }
   };
+// Function to handle opening the delete modal for a video
+  const handleDeleteVideoClick = (id) => {
+    setVideoToDelete(id);
+    setShowDeleteVideoModal(true);
+  };
 
-  // Function to handle deleting a video
-  const handleDeleteVideo = (id) => {
-    setVideos(videos.filter(video => video.id !== id));
+  // Function to handle confirming video deletion
+  const confirmDeleteVideo = () => {
+    setVideos(videos.filter(video => video.id !== videoToDelete));
+    setShowDeleteVideoModal(false);
+    setVideoToDelete(null);
+  };
+  // Function to handle video file upload
+  const handleUploadedVideoChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setUploadedVideo(file);
+      const reader = new FileReader();
+      reader.onloadend = () => setUploadedVideoPreviewUrl(reader.result);
+      reader.readAsDataURL(file);
+    } else {
+      setUploadedVideo(null);
+      setUploadedVideoPreviewUrl('');
+    }
+  };
+
+  // Function to delete uploaded video
+  // Function to delete uploaded video (will be called on modal confirmation)
+  const handleDeleteUploadedVideo = () => {
+    setUploadedVideo(null);
+    setUploadedVideoPreviewUrl('');
+    const videoInput = document.getElementById('uploadedVideo');
+    if (videoInput) {
+      videoInput.value = ''; // Clear the file input
+    }
+    setShowDeleteUploadedVideoModal(false); // Close the modal after deletion
   };
 
   useEffect(() => {
@@ -146,7 +194,7 @@ const ViewPromotion = () => {
       offerEndDate: offerForm.offerEndDate ? '' : 'Offer End Date is required',
       discountPercentage: offerForm.discountPercentage ? '' : 'Discount Percentage is required'
     };
-    
+
     setErrors(newErrors);
 
     if (Object.values(newErrors).every(error => !error)) {
@@ -183,7 +231,7 @@ const ViewPromotion = () => {
       estimatedDelivery: shippingForm.estimatedDelivery ? '' : 'Estimated Delivery is required',
       returnPolicy: shippingForm.returnPolicy ? '' : 'Return Policy is required'
     };
-    
+
     setShippingErrors(newErrors);
 
     if (Object.values(newErrors).every(error => !error)) {
@@ -232,7 +280,7 @@ const ViewPromotion = () => {
       metaKeyword: seoForm.metaKeyword ? '' : 'Meta Keyword is required',
       image: seoForm.image ? '' : 'Image is required'
     };
-    
+
     setSeoErrors(newErrors);
 
     if (Object.values(newErrors).every(error => !error)) {
@@ -279,7 +327,7 @@ const ViewPromotion = () => {
         <div className="vvp-header-right">
           <div className="vvp-breadcrumb">
             <a href="/admin/products" className="vvp-breadcrumb-home">Home</a>
-            <span> &gt;&gt;</span>
+            <span> {'>>'} </span>
             <a href="/" className="vvp-breadcrumb-promotions">Products</a>
           </div>
         </div>
@@ -392,24 +440,25 @@ const ViewPromotion = () => {
                         <th>Action</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      {filteredProducts.map(product => (
-                        <tr key={product.id}>
-                          <td>{product.name}</td>
-                          <td>₹{product.price}</td>
-                          <td>
-                            <span className={`vvp-status-badge ${product.status.toLowerCase()}`}>
-                              {product.status}
-                            </span>
-                          </td>
-                          <td>
-                            <button className="vvp-delete-button" onClick={() => handleDeleteClick(product.id)}>
-                              <FiTrash2 />
-                            </button>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
+                   <tbody>
+                  {filteredProducts.map(product => (
+                    <tr key={product.id}>
+                      <td>{product.name}</td>
+                      <td>₹{product.price}</td>
+                      <td>
+                        <span className={`vvp-status-badge ${product.status.toLowerCase()}`}>
+                          {product.status}
+                        </span>
+                      </td>
+                      <td>
+                        {/* This already points to handleDeleteClick */}
+                        <button className="vvp-delete-button" onClick={() => handleDeleteClick(product.id)}>
+                          <FiTrash2 />
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
                   </table>
                 </div>
               ) : (
@@ -427,10 +476,10 @@ const ViewPromotion = () => {
             <div className="vvp-offer-grid">
               <div className="vvp-offer-item">
                 <label htmlFor="offerStartDate" className="vvp-offer-label">OFFER START DATE <span className="vvp-required">*</span></label>
-                <input 
-                  type="datetime-local" 
-                  id="offerStartDate" 
-                  className="vvp-offer-input" 
+                <input
+                  type="datetime-local"
+                  id="offerStartDate"
+                  className="vvp-offer-input"
                   value={offerForm.offerStartDate}
                   onChange={handleOfferInputChange}
                 />
@@ -438,10 +487,10 @@ const ViewPromotion = () => {
               </div>
               <div className="vvp-offer-item">
                 <label htmlFor="offerEndDate" className="vvp-offer-label">OFFER END DATE <span className="vvp-required">*</span></label>
-                <input 
-                  type="datetime-local" 
-                  id="offerEndDate" 
-                  className="vvp-offer-input" 
+                <input
+                  type="datetime-local"
+                  id="offerEndDate"
+                  className="vvp-offer-input"
                   value={offerForm.offerEndDate}
                   onChange={handleOfferInputChange}
                 />
@@ -449,10 +498,10 @@ const ViewPromotion = () => {
               </div>
               <div className="vvp-offer-item">
                 <label htmlFor="discountPercentage" className="vvp-offer-label">DISCOUNT PERCENTAGE <span className="vvp-required">*</span></label>
-                <input 
-                  type="number" 
-                  id="discountPercentage" 
-                  className="vvp-offer-input" 
+                <input
+                  type="number"
+                  id="discountPercentage"
+                  className="vvp-offer-input"
                   value={offerForm.discountPercentage}
                   onChange={handleOfferInputChange}
                 />
@@ -462,21 +511,21 @@ const ViewPromotion = () => {
                 <label className="vvp-offer-label">DO YOU WANT TO ADD IN THE FLASH SALE? <span className="vvp-required">*</span></label>
                 <div className="vvp-radio-group">
                   <label className="vvp-radio-label">
-                    <input 
-                      type="radio" 
-                      name="flashSale" 
-                      value="yes" 
-                      className="vvp-radio-input" 
+                    <input
+                      type="radio"
+                      name="flashSale"
+                      value="yes"
+                      className="vvp-radio-input"
                       checked={offerForm.flashSale === 'yes'}
                       onChange={handleOfferInputChange}
                     /> Yes
                   </label>
                   <label className="vvp-radio-label">
-                    <input 
-                      type="radio" 
-                      name="flashSale" 
-                      value="no" 
-                      className="vvp-radio-input" 
+                    <input
+                      type="radio"
+                      name="flashSale"
+                      value="no"
+                      className="vvp-radio-input"
                       checked={offerForm.flashSale === 'no'}
                       onChange={handleOfferInputChange}
                     /> No
@@ -485,8 +534,8 @@ const ViewPromotion = () => {
               </div>
             </div>
             <div className="vvp-offer-save-button-container">
-              <button className="vvp-save-button" onClick={handleSaveOffer}>Save</button>
-              <button className="vvp-clear-button" onClick={handleClearOffer}>Clear</button>
+              <button className="vvp-save-button" onClick={handleSaveOffer}><FiCheck />Save</button>
+              <button className="vvp-clear-button" onClick={handleClearOffer}><MdClear />Clear</button>
             </div>
             {showToast && (
               <div className="vvp-toast">
@@ -498,9 +547,10 @@ const ViewPromotion = () => {
 
         {moreTab === 'videos' && (
           <div className="vvp-more-tab-content">
+            {/* Existing section for external video links */}
             <div className="vvp-videos-card">
               <div className="vvp-videos-header">
-                <h3> Videos</h3>
+                <h3> External Videos</h3>
                 <button className="vvp-add-video-button" onClick={() => setShowAddVideoModal(true)}>
                   <FiPlus className="vvp-add-icon" /> Add Video
                 </button>
@@ -515,96 +565,139 @@ const ViewPromotion = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {videos.map(video => (
-                      <tr key={video.id}>
-                        <td>{video.provider}</td>
-                        <td>{video.link}</td>
-                        <td>
-                          <button className="vvp-delete-button" onClick={() => handleDeleteVideo(video.id)}>
-                            <FiTrash2 />
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
+                {videos.map(video => (
+                  <tr key={video.id}>
+                    <td>{video.provider}</td>
+                    <td>{video.link}</td>
+                    <td>
+                      {/* Ensure this calls handleDeleteVideoClick */}
+                      <button className="vvp-delete-button" onClick={() => handleDeleteVideoClick(video.id)}>
+                        <FiTrash2 />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
                 </table>
-                {videos.length === 0 && <p>No videos available.</p>}
+                {videos.length === 0 && <p>No external videos available.</p>}
+              </div>
+            </div>
+
+            {/* New section for video file upload */}
+            <div className="vvp-videos-upload-card vvp-images-card"> {/* Reusing vvp-images-card for styling */}
+              <div className="vvp-videos-upload-content vvp-images-content">
+                <div className="vvp-video-left vvp-image-left">
+                  {uploadedVideoPreviewUrl ? (
+                    <video controls src={uploadedVideoPreviewUrl} className="vvp-video-preview">
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <div className="vvp-video-placeholder">No video selected</div>
+                  )}
+                </div>
+                <div className="vvp-video-right vvp-image-right">
+                  <p>Upload a video file here (e.g., MP4, WebM)</p>
+                  <br />
+                  <label className="vvp-upload-btn">
+                    <FiUpload className="vvp-upload-icon" />
+                    Upload Video
+                    <input
+                      type="file"
+                      id="uploadedVideo"
+                      onChange={handleUploadedVideoChange}
+                      style={{ display: 'none' }}
+                      accept="video/*"
+                    />
+                  </label>
+                {uploadedVideo && (
+                <div className="vvp-uploaded-video-info">
+                  <span>{uploadedVideo.name}</span>
+                  {/* Ensure this opens the uploaded video modal */}
+                  <button
+                    className="vvp-delete-uploaded-video-button"
+                    onClick={() => setShowDeleteUploadedVideoModal(true)}
+                  >
+                    <FiTrash2 />
+                  </button>
+                </div>
+              )}
+                </div>
               </div>
             </div>
           </div>
         )}
 
         {moreTab === 'shipping' && (
-  <div className="vvp-shipping-card">
-    <div className="vvp-shipping-title">Shipping & Return</div>
-    <div className="vvp-shipping-grid">
-      <div className="vvp-shipping-item">
-        <label className="vvp-shipping-label">SHIPPING TYPE <span className="vvp-required">*</span></label>
-        <div className="vvp-radio-group">
-          <label className="vvp-radio-label">
-            <input 
-              type="radio" 
-              name="shippingType" 
-              value="free" 
-              checked={shippingForm.shippingMethod === 'free'} 
-              onChange={(e) => handleShippingInputChange({ target: { name: 'shippingMethod', value: e.target.value } })}
-            /> Free
-          </label>
-          <label className="vvp-radio-label">
-            <input 
-              type="radio" 
-              name="shippingType" 
-              value="flatRate" 
-              checked={shippingForm.shippingMethod === 'flatRate'} 
-              onChange={(e) => handleShippingInputChange({ target: { name: 'shippingMethod', value: e.target.value } })}
-            /> Flat Rate
-          </label>
-        </div>
-        {shippingErrors.shippingMethod && <span className="vvp-error-message">{shippingErrors.shippingMethod}</span>}
-      </div>
-      <div className="vvp-shipping-item">
-        <label htmlFor="note" className="vvp-shipping-label">
-          SHIPPING & RETURN
-          <span className="vvp-required">*</span>
-        </label>
-        <ReactQuill
-          theme="snow"
-          value={shippingForm.returnPolicy}
-          onChange={(value) => handleShippingInputChange({ target: { name: 'returnPolicy', value } })}
-          placeholder="Insert content here ..."
-          modules={{
-            toolbar: [
-              ['bold', 'italic', 'underline', 'strike'],
-              ['blockquote', 'code-block'],
-              [{ header: 1 }, { header: 2 }],
-              [{ list: 'ordered' }, { list: 'bullet' }],
-              [{ script: 'sub' }, { script: 'super' }],
-              [{ indent: '-1' }, { indent: '+1' }],
-              [{ direction: 'rtl' }],
-              [{ size: ['small', false, 'large', 'huge'] }],
-              [{ header: [1, 2, 3, 4, 5, 6, false] }],
-              [{ color: [] }, { background: [] }],
-              [{ font: [] }],
-              [{ align: [] }],
-              ['link', 'image', 'video'],
-              ['clean'],
-            ],
-          }}
-        />
-        {shippingErrors.returnPolicy && <span className="vvp-error-message">{shippingErrors.returnPolicy}</span>}
-      </div>
-    </div>
-    <div className="vvp-shipping-save-button-container">
-      <button className="vvp-save-button" onClick={handleSaveShipping}>Save</button>
-      <button className="vvp-clear-button" onClick={handleClearShipping}>Clear</button>
-    </div>
-    {showShippingToast && (
-      <div className="vvp-toast">
-        Shipping details saved successfully!
-      </div>
-    )}
-  </div>
-)}
+          <div className="vvp-shipping-card">
+            <div className="vvp-shipping-title">Shipping & Return</div>
+            <div className="vvp-shipping-grid">
+              <div className="vvp-shipping-item">
+                <label className="vvp-shipping-label">SHIPPING TYPE <span className="vvp-required">*</span></label>
+                <div className="vvp-radio-group">
+                  <label className="vvp-radio-label">
+                    <input
+                      type="radio"
+                      name="shippingType"
+                      value="free"
+                      checked={shippingForm.shippingMethod === 'free'}
+                      onChange={(e) => handleShippingInputChange({ target: { name: 'shippingMethod', value: e.target.value } })}
+                    /> Free
+                  </label>
+                  <label className="vvp-radio-label">
+                    <input
+                      type="radio"
+                      name="shippingType"
+                      value="flatRate"
+                      checked={shippingForm.shippingMethod === 'flatRate'}
+                      onChange={(e) => handleShippingInputChange({ target: { name: 'shippingMethod', value: e.target.value } })}
+                    /> Flat Rate
+                  </label>
+                </div>
+                {shippingErrors.shippingMethod && <span className="vvp-error-message">{shippingErrors.shippingMethod}</span>}
+              </div>
+              <div className="vvp-shipping-item">
+                <label htmlFor="note" className="vvp-shipping-label">
+                  SHIPPING & RETURN
+                  <span className="vvp-required">*</span>
+                </label>
+                <ReactQuill
+                  theme="snow"
+                  value={shippingForm.returnPolicy}
+                  onChange={(value) => handleShippingInputChange({ target: { name: 'returnPolicy', value } })}
+                  placeholder="Insert content here ..."
+                  modules={{
+                    toolbar: [
+                      ['bold', 'italic', 'underline', 'strike'],
+                      ['blockquote', 'code-block'],
+                      [{ header: 1 }, { header: 2 }],
+                      [{ list: 'ordered' }, { list: 'bullet' }],
+                      [{ script: 'sub' }, { script: 'super' }],
+                      [{ indent: '-1' }, { indent: '+1' }],
+                      [{ direction: 'rtl' }],
+                      [{ size: ['small', false, 'large', 'huge'] }],
+                      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                      [{ color: [] }, { background: [] }],
+                      [{ font: [] }],
+                      [{ align: [] }],
+                      ['link', 'image', 'video'],
+                      ['clean'],
+                    ],
+                  }}
+                />
+                {shippingErrors.returnPolicy && <span className="vvp-error-message">{shippingErrors.returnPolicy}</span>}
+              </div>
+            </div>
+            <div className="vvp-shipping-save-button-container">
+              <button className="vvp-save-button" onClick={handleSaveShipping}><FiCheck />Save</button>
+              <button className="vvp-clear-button" onClick={handleClearShipping}><MdClear />Clear</button>
+            </div>
+            {showShippingToast && (
+              <div className="vvp-toast">
+                Shipping details saved successfully!
+              </div>
+            )}
+          </div>
+        )}
 
         {moreTab === 'seo' && (
           <div className="vvp-seo-card">
@@ -658,8 +751,8 @@ const ViewPromotion = () => {
               </div>
             </div>
             <div className="vvp-seo-save-button-container">
-              <button className="vvp-save-button" onClick={handleSaveSeo}>Save</button>
-              <button className="vvp-clear-button" onClick={handleClearSeo}>Clear</button>
+              <button className="vvp-save-button" onClick={handleSaveSeo}><FiCheck />Save</button>
+              <button className="vvp-clear-button" onClick={handleClearSeo}> <MdClear />Clear</button>
             </div>
             {showSeoToast && (
               <div className="vvp-toast">
@@ -669,11 +762,18 @@ const ViewPromotion = () => {
           </div>
         )}
       </div>
+<DeleteModal
+        isOpen={showDeleteVideoModal}
+        onClose={() => setShowDeleteVideoModal(false)}
+        onConfirm={confirmDeleteVideo}
+      />
+<DeleteModal
+        isOpen={showDeleteUploadedVideoModal}
+        onClose={() => setShowDeleteUploadedVideoModal(false)}
+        onConfirm={handleDeleteUploadedVideo}
+      />     <AddProductModal isOpen={showAddModal} onClose={() => setShowAddModal(false)} onAdd={handleAddProduct} productOptions={productOptions} />
 
-      <DeleteModal isOpen={showDeleteModal} onClose={() => setShowDeleteModal(false)} onConfirm={confirmDelete} />
-      <AddProductModal isOpen={showAddModal} onClose={() => setShowAddModal(false)} onAdd={handleAddProduct} productOptions={productOptions} />
-
-      {showAddVideoModal && (
+    {showAddVideoModal && (
         <div className="vvp-modal">
           <div className="vvp-modal-content">
             <h3>Add New Video</h3>
@@ -681,25 +781,37 @@ const ViewPromotion = () => {
               <label>Video Provider</label>
               <select
                 value={newVideo.provider}
-                onChange={(e) => setNewVideo({ ...newVideo, provider: e.target.value })}
+                onChange={(e) => {
+                  setNewVideo({ ...newVideo, provider: e.target.value });
+                  setNewVideoErrors(prev => ({ ...prev, provider: '' })); // Clear error on change
+                }}
               >
                 <option value="">Select Provider</option>
                 <option value="YouTube">YouTube</option>
                 <option value="Vimeo">Vimeo</option>
               </select>
+              {newVideoErrors.provider && (
+                <span className="vvp-error-message">{newVideoErrors.provider}</span>
+              )}
             </div>
             <div>
               <label>Link</label>
               <input
                 type="text"
                 value={newVideo.link}
-                onChange={(e) => setNewVideo({ ...newVideo, link: e.target.value })}
+                onChange={(e) => {
+                  setNewVideo({ ...newVideo, link: e.target.value });
+                  setNewVideoErrors(prev => ({ ...prev, link: '' })); // Clear error on change
+                }}
                 placeholder="Enter video URL"
               />
+              {newVideoErrors.link && (
+                <span className="vvp-error-message">{newVideoErrors.link}</span>
+              )}
             </div>
             <div className="vvp-modal-actions">
-              <button onClick={() => setShowAddVideoModal(false)}>Cancel</button>
-              <button onClick={handleAddVideo}>Add</button>
+              <button onClick={() => setShowAddVideoModal(false)}><MdClear />Cancel</button>
+              <button onClick={handleAddVideo}><FiCheck />Save</button>
             </div>
           </div>
         </div>

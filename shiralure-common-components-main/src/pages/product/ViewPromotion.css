@@ -93,9 +93,9 @@ html, body {
 }
 
 .vvp-breadcrumb {
-  font-size: 24px;
+  font-size: 20px;
   color: #333;
-  margin-top: 20px;
+ 
 }
 
 .vvp-breadcrumb-home {
@@ -136,47 +136,28 @@ html, body {
 }
 
 .vvp-tabs {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-radius: 20px;
-  margin-right: 30px;
-  margin-left: 30px;
-  gap: 0%;
-  width: 80%;
-}
+display: flex;
+    gap: 5%;
+    padding: 10px;
+    border-radius: 20px;
 
+}
 .vvp-tab {
-  flex: 2;
-  padding: 10px 20px;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  cursor: pointer;
-  align-items: center;
-  font-size: 20px;
-  font-weight: bold;
-  color: #4E5569;
-  font-weight: bold;
-  transition: all 0.2s;
-   width: 200%;
+  width: 100%;
+ 
 }
-
 .vvp-tab.vvp-active {
   color: white;
   font-weight: 500;
   background-color: #5A66F1;
 }
-
 .vvp-tab-icon {
   margin-right: 8px;
   margin-top: 2px;
 }
-
 .vvp-tab-content {
   padding: 20px 0;
 }
-
 .vvp-information-card {
   border: 1px solid #e2e8f0;
   border-radius: 8px;
@@ -451,16 +432,11 @@ html, body {
     height: 180px;
   }
 }
-
-.vvp-tabs {
-  display: flex;
-  gap: 10px;
-}
-
 .vvp-tab {
   padding: 8px 16px;
   border: none;
   background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   font-weight: 500;
   cursor: pointer;
@@ -480,12 +456,12 @@ html, body {
 
 .vvp-tab-dropdown {
   position: relative;
+  width: 100%;
 }
 
 .vvp-dropdown-menu {
   position: absolute;
-  top: 42px;
-  left: -108px;
+  top: 115%;
   background: white;
   margin-top:10px;
   border-radius: 10px;
@@ -519,7 +495,7 @@ html, body {
 }
 
 .vvp-info-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 16px;
 }
@@ -588,17 +564,20 @@ html, body {
 }
 
 .vvp-upload-btn {
-  display: inline-flex;
+ display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #4f46e5;
+  padding: 10px 20px;
+  background: #5A66F1;
   color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-  margin-top: 12px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 14px;
   font-weight: 500;
   transition: background 0.2s;
+  width: auto;
+  max-width: 200px;
 }
 
 .vvp-upload-btn:hover {
@@ -611,7 +590,7 @@ html, body {
 .vvp-offer-card {
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -667,8 +646,6 @@ html, body {
 .vvp-radio-group {
     display: flex;
     gap: 20px;
-    align-items: center;
-    margin-top: 5px; /* Adjust spacing from label */
 }
 
 .vvp-radio-label {
@@ -681,15 +658,10 @@ html, body {
 }
 
 .vvp-radio-input {
-    /* Default browser radio button */
-    margin: 0; /* Remove default margin */
-    -webkit-appearance: none; /* Hide default radio button */
-    -moz-appearance: none;
-    appearance: none;
     width: 18px;
     height: 18px;
     border: 2px solid #ccc;
-    border-radius: 50%;
+    border-radius: 100%;
     outline: none;
     cursor: pointer;
     position: relative;
@@ -918,12 +890,20 @@ html, body {
 }
 
 .vvp-modal-actions button {
-  align-items: center;
+   background-color: #5a66f1;
+  color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  height: 36px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   cursor: pointer;
-  width:25%;
-  height: 38px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  margin-top: 10px;
 }
 
 .vvp-modal-actions button:first-child {
@@ -1062,18 +1042,6 @@ html, body {
 .vvp-clear-button:hover {
   background: rgb(100, 99, 99);
 }
-
-.vvp-toast {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #28a745;
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-size: 14px;
-  z-index: 1000;
-}
 .vvp-seo-card {
   background: #fff;
   border-radius: 8px;
@@ -1092,7 +1060,7 @@ html, body {
 
 .vvp-seo-grid {
   display: grid;
-  grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
 }
 
@@ -1152,4 +1120,82 @@ html, body {
   display: flex;
   gap: 16px;
   margin-top: 24px;
+}
+.vvp-videos-upload-card {
+  margin-top: 20px; /* Space above the new video upload card */
+}
+
+.vvp-videos-upload-content {
+  display: flex;
+  flex-direction: row; /* Keep row for larger screens */
+  gap: 20px;
+  align-items: center;
+}
+
+.vvp-video-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vvp-video-preview {
+  width: 100%;
+  max-width: 300px; /* Adjust as needed */
+  height: auto;
+  min-height: 150px; /* Ensure some height for placeholder */
+  border: 1px dashed #cbd5e0;
+  border-radius: 8px;
+  object-fit: cover;
+  background-color: #f7fafc;
+}
+
+.vvp-video-placeholder {
+  width: 100%;
+  max-width: 300px;
+  min-height: 150px;
+  border: 1px dashed #cbd5e0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7fafc;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+.vvp-video-right {
+  flex: 1;
+  font-size: 17px;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+}
+
+.vvp-uploaded-video-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.vvp-delete-uploaded-video-button {
+  background: none;
+  border: none;
+  color: #F4415F;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.vvp-delete-uploaded-video-button:hover {
+  color: #c82333;
+}
+
+/* Responsive adjustments for video upload section */
+@media (max-width: 768px) {
+  .vvp-videos-upload-content {
+    flex-direction: column;
+  }
 }

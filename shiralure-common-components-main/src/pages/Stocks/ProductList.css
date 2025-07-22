@@ -1,5 +1,5 @@
 .shira-stocks-container {
-  padding: 24px;
+  padding: 30px;
   background-color: #F2F6F9;
   font-family: Arial, sans-serif;
   min-height: 100vh;
@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .shira-stocks-header-left h1 {
@@ -37,6 +37,7 @@
 .shira-stocks {
   background-color: white;
   border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .shira-stocks-actions {
@@ -55,13 +56,13 @@
   color: white;
   border: none;
   border-radius: 6px;
-  font-size: 20px;
+  font-size: 17px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   min-width: 45px;
-  height: 38px;
+  height: 34px;
 }
 
 .shira-dropdown-wrapper {
@@ -171,12 +172,14 @@
 
 
 .shira-stocks-divider-line {
-  border-bottom: 2px solid #f7f7f7;
+  border-bottom: 1px solid #d4d1d1;
   margin-bottom: 20px;
+  margin-right:20px;
+  margin-left:20px;
 }
 
 .shira-stocks-table {
-  width: 97%;
+  width: 95%;
   margin: 0 auto;
   border-collapse: collapse;
   background-color: white;
@@ -284,6 +287,7 @@
   width: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   position: relative;
+  margin-top: 32px;
 }
 
 .shira-modal-header {
@@ -327,7 +331,7 @@
   font-size: 15px;
   background-color: #f9fafb;
   outline: none;
-  width: calc(100% - 28px);
+  width:100%;
 }
 
 .shira-modal-body select {
@@ -360,25 +364,34 @@
   border: none;
   cursor: pointer;
   transition: 0.3s ease;
+  gap:8px;
 }
 
 .shira-save-button {
-  background-color: #6366f1;
-  color: white;
+ background-color: #5A66F1;
+  color: #ffffff;
+  border: 1px solid #d0c8f3;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  gap: 8px;
 }
 
-.shira-save-button:hover {
-  background-color: #4f46e5;
-}
 
 .shira-cancel-button {
-  background-color: #111;
+ background-color: #111111;
   color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  gap: 8px;
 }
 
-.shira-cancel-button:hover {
-  background-color: #000;
-}
+
 
 .shira-add-stock-name-input-wrapper {
   position: relative;
@@ -434,47 +447,41 @@
   color: #333;
 }
 
-/* Print-specific styles using the "visibility" technique */
+
 @media print {
   body * {
-    visibility: hidden; /* Hide everything by default */
+    visibility: hidden; 
   }
 
-  /* Make the main stock content area and its children visible */
   .shira-stocks,
   .shira-stocks * {
     visibility: visible;
   }
 
-  /* Specific rules to hide elements within .shira-stocks that are NOT the table */
-  /* These will override the general .shira-stocks * { visibility: visible; } for these specific elements */
-  .shira-stocks-header-section, /* The "Stocks" title and breadcrumbs */
-  .shira-stocks-actions, /* All buttons (entries, filter, share, add) */
+  .shira-stocks-header-section, 
+  .shira-stocks-actions, 
   .shira-stocks-divider-line,
   .shira-filter-panel,
   .shira-pagination-container {
-    display: none !important; /* Use display: none for elements you want to remove entirely from layout */
+    display: none !important; 
   }
 
-  /* Position the main stocks container for print */
   .shira-stocks {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     margin: 0;
-    padding: 20px; /* Adjust padding for print if needed */
+    padding: 20px; 
     box-sizing: border-box;
-    background-color: #fff !important; /* Ensure white background for print */
-    border-radius: 0 !important; /* Remove border-radius for print */
-    box-shadow: none !important; /* Remove shadows for print */
+    background-color: #fff !important; 
+    border-radius: 0 !important; 
+    box-shadow: none !important; 
   }
-
-  /* Table specific styling for print */
   .shira-stocks-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 0; /* Adjust or remove table margins */
+    margin: 0;
     background-color: #fff !important;
   }
 
@@ -483,27 +490,37 @@
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
-    color: #000; /* Ensure black text for readability */
+    color: #000; 
   }
 
   .shira-stocks-table thead {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    background-color: #f2f2f2 !important; /* Light grey header background */
+    background-color: #f2f2f2 !important; 
     color: #000 !important;
   }
-
-  /* Status specific styling for print */
   .shira-status-active,
   .shira-status-inactive {
     color: #000 !important;
     background-color: transparent !important;
-    border: none !important;
+    border-collapse: collapse;
     padding: 0 !important;
   }
-
-  /* Hide modals during print */
   .shira-modal-overlay {
     display: none !important;
+  }
+}
+@media print {
+  body * { visibility: hidden !important; }
+  .shira-stocks-table, .shira-stocks-table * { visibility: visible !important; }
+  .shira-stocks-table {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    border: px solid rgb(234, 234, 234) !important; /* Add this temporary border */
   }
 }

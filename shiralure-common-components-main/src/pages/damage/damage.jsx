@@ -58,7 +58,7 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
       }
 
       setFormData({
-        date: formDate || new Date().toISOString().split('T')[0],
+        date: damageItem.referenceNo ? formDate : '', // Do not pre-fill date for new damage
         referenceNo: damageItem.referenceNo || '',
         attachments: damageItem.attachments || null,
         note: damageItem.note || '',
@@ -224,48 +224,53 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
         </span>
       </div>
       <form onSubmit={handleSubmit} className="devpmodal-form">
-        <div className="devpfilter-container">
+        <div className="devpfilter-container devpfilter-row">
           <div className="devpfilter-group">
             <label htmlFor="date" className="devpfilter-label">
               Date <span className="devprequired">*</span>
             </label>
-            <input
-              type="datetime-local"
-              name="date"
-              id="date"
-              value={formData.date}
-              onChange={handleInputChange}
-              className="devpfilter-input"
-            />
-            {errors.date && <div style={{ color: 'red', fontSize: '12px' }}>{errors.date}</div>}
+            <div className="devpfilter-input-wrapper">
+              <input
+                type="datetime-local"
+                name="date"
+                id="date"
+                value={formData.date}
+                onChange={handleInputChange}
+                className="devpfilter-input"
+              />
+              {errors.date && <div className="devpfilter-error">{errors.date}</div>}
+            </div>
           </div>
           <div className="devpfilter-group">
             <label htmlFor="referenceNo" className="devpfilter-label">
               Reference No <span className="devprequired">*</span>
             </label>
-            <input
-              type="text"
-              name="referenceNo"
-              id="referenceNo"
-              value={formData.referenceNo}
-              onChange={handleInputChange}
-              className="devpfilter-input"
-            />
-            {errors.referenceNo && <div style={{ color: 'red', fontSize: '12px' }}>{errors.referenceNo}</div>}
+            <div className="devpfilter-input-wrapper">
+              <input
+                type="text"
+                name="referenceNo"
+                id="referenceNo"
+                value={formData.date}
+                onChange={handleInputChange}
+                className="devpfilter-input"
+              />
+              {errors.referenceNo && <div className="devpfilter-error">{errors.referenceNo}</div>}
+            </div>
           </div>
           <div className="devpfilter-group">
             <label htmlFor="attachments" className="devpfilter-label">
               Choose File <span className="devprequired">*</span>
             </label>
-            <input
-              style={{ width: '300px' }}
-              type="file"
-              name="attachments"
-              id="attachments"
-              onChange={handleFileChange}
-              className="devpfilter-input"
-            />
-            {errors.attachments && <div style={{ color: 'red', fontSize: '12px' }}>{errors.attachments}</div>}
+            <div className="devpfilter-input-wrapper">
+              <input
+                type="file"
+                name="attachments"
+                id="attachments"
+                onChange={handleFileChange}
+                className="devpfilter-input"
+              />
+              {errors.attachments && <div className="devpfilter-error">{errors.attachments}</div>}
+            </div>
           </div>
         </div>
         <div className="devpfilter-container">
@@ -273,8 +278,8 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
             <label htmlFor="addProduct" className="devpfilter-label">
               Add Products <span className="devprequired">*</span>
             </label>
-            <div className="devpfilter-container">
-              <div style={{ display: 'flex', gap: '8px' }}>
+            <div className="devpfilter-input-wrapper">
+              <div className="devpfilter-input-group">
                 <select
                   id="addProduct"
                   value={selectedProductToAdd}
@@ -294,7 +299,7 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
                   Add
                 </button>
               </div>
-              {errors.products && <div style={{ color: 'red', fontSize: '12px' }}>{errors.products}</div>}
+              {errors.products && <div className="devpfilter-error">{errors.products}</div>}
             </div>
           </div>
         </div>
@@ -324,7 +329,6 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
                           value={product.unitCost}
                           onChange={e => handleProductChange(index, 'unitCost', e.target.value)}
                           className="devpfilter-input"
-                          style={{ width: '100px' }}
                           step="0.01"
                           min="0"
                         />
@@ -335,7 +339,6 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
                           value={product.quantity}
                           onChange={e => handleProductChange(index, 'quantity', e.target.value)}
                           className="devpfilter-input"
-                          style={{ width: '80px' }}
                           min="1"
                         />
                       </td>
@@ -345,7 +348,6 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
                           value={product.discount}
                           onChange={e => handleProductChange(index, 'discount', e.target.value)}
                           className="devpfilter-input"
-                          style={{ width: '100px' }}
                           step="0.01"
                           min="0"
                         />
@@ -356,7 +358,6 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
                           value={product.taxes}
                           onChange={e => handleProductChange(index, 'taxes', e.target.value)}
                           className="devpfilter-input"
-                          style={{ width: '100px' }}
                           step="0.01"
                           min="0"
                         />
@@ -392,35 +393,37 @@ const EditDamageForm = ({ damageItem, onCancel, onSave, productOptions, pageTitl
           </div>
         </div>
         <div className="devpfilter-container">
-          <div className="devpfilter-group">
+          <div className="devpfilter-group devpfilter-full">
             <label htmlFor="note" className="devpfilter-label">
               Notes <span className="devprequired">*</span>
             </label>
-            <ReactQuill
-              theme="snow"
-              value={formData.note}
-              onChange={handleNoteChange}
-              placeholder="Insert content here ..."
-              modules={{
-                toolbar: [
-                  ['bold', 'italic', 'underline', 'strike'],
-                  ['blockquote', 'code-block'],
-                  [{ header: 1 }, { header: 2 }],
-                  [{ list: 'ordered' }, { list: 'bullet' }],
-                  [{ script: 'sub' }, { script: 'super' }],
-                  [{ indent: '-1' }, { indent: '+1' }],
-                  [{ direction: 'rtl' }],
-                  [{ size: ['small', false, 'large', 'huge'] }],
-                  [{ header: [1, 2, 3, 4, 5, 6, false] }],
-                  [{ color: [] }, { background: [] }],
-                  [{ font: [] }],
-                  [{ align: [] }],
-                  ['link', 'image', 'video'],
-                  ['clean'],
-                ],
-              }}
-            />
-            {errors.note && <div style={{ color: 'red', fontSize: '12px' }}>{errors.note}</div>}
+            <div className="devpfilter-input-wrapper">
+              <ReactQuill
+                theme="snow"
+                value={formData.note}
+                onChange={handleNoteChange}
+                placeholder="Insert content here ..."
+                modules={{
+                  toolbar: [
+                    ['bold', 'italic', 'underline', 'strike'],
+                    ['blockquote', 'code-block'],
+                    [{ header: 1 }, { header: 2 }],
+                    [{ list: 'ordered' }, { list: 'bullet' }],
+                    [{ script: 'sub' }, { script: 'super' }],
+                    [{ indent: '-1' }, { indent: '+1' }],
+                    [{ direction: 'rtl' }],
+                    [{ size: ['small', false, 'large', 'huge'] }],
+                    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+                    [{ color: [] }, { background: [] }],
+                    [{ font: [] }],
+                    [{ align: [] }],
+                    ['link', 'image', 'video'],
+                    ['clean'],
+                  ],
+                }}
+              />
+              {errors.note && <div className="devpfilter-error">{errors.note}</div>}
+            </div>
           </div>
         </div>
         <div className="devpmodal-buttons">
@@ -545,26 +548,26 @@ const DamagePage = () => {
         item.productName.toLowerCase().includes(filterForm.note.toLowerCase());
 
       const matchesDate =
-      filterForm.date === '' ||
-      (() => {
-        const filterDate = new Date(filterForm.date);
-        if (isNaN(filterDate)) return false;
+        filterForm.date === '' ||
+        (() => {
+          const filterDate = new Date(filterForm.date);
+          if (isNaN(filterDate)) return false;
 
-        const [time, datePart] = item.date.split(', ');
-        const [hours, minutesPeriod] = time.split(':');
-        const [minutes, period] = minutesPeriod.split(' ');
-        const [day, month, year] = datePart.split('-');
-        let adjustedHours = parseInt(hours, 10);
-        if (period === 'PM' && adjustedHours !== 12) adjustedHours += 12;
-        if (period === 'AM' && adjustedHours === 12) adjustedHours = 0;
-        const itemDate = new Date(`${year}-${month}-${day}T${adjustedHours.toString().padStart(2, '0')}:${minutes}`);
+          const [time, datePart] = item.date.split(', ');
+          const [hours, minutesPeriod] = time.split(':');
+          const [minutes, period] = minutesPeriod.split(' ');
+          const [day, month, year] = datePart.split('-');
+          let adjustedHours = parseInt(hours, 10);
+          if (period === 'PM' && adjustedHours !== 12) adjustedHours += 12;
+          if (period === 'AM' && adjustedHours === 12) adjustedHours = 0;
+          const itemDate = new Date(`${year}-${month}-${day}T${adjustedHours.toString().padStart(2, '0')}:${minutes}`);
 
-        const isSameDate =
-          filterDate.getFullYear() === itemDate.getFullYear() &&
-          filterDate.getMonth() === itemDate.getMonth() &&
-          filterDate.getDate() === itemDate.getDate();
-        return isSameDate;
-      })();
+          const isSameDate =
+            filterDate.getFullYear() === itemDate.getFullYear() &&
+            filterDate.getMonth() === itemDate.getMonth() &&
+            filterDate.getDate() === itemDate.getDate();
+          return isSameDate;
+        })();
 
       const matchesTotal =
         filterForm.total === '' || item.total.includes(filterForm.total);
@@ -616,7 +619,7 @@ const DamagePage = () => {
   const handleAddClick = () => {
     const newDamageTemplate = {
       id: `new_${Date.now()}`,
-      date: new Date().toLocaleDateString('en-CA'),
+      date: '',
       referenceNo: '',
       total: '$ 0.00',
       note: '',
@@ -826,7 +829,7 @@ const DamagePage = () => {
         <div className="devpheader-content">
           <h1>Damage</h1>
           <div className="devpbreadcrumb">
-            <span className="devphome">Home</span>  Damage
+            <span className="devphome">Home</span> &gt;&gt; Damage
           </div>
         </div>
       </div>

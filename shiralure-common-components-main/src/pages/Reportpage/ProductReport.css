@@ -2,7 +2,7 @@
   padding: 25px 30px;
   background-color: #F2F6F9;
   font-family: Arial, sans-serif;
-  min-height: 100vh; 
+  min-height: 100vh;
   box-sizing: border-box;
 }
 
@@ -11,8 +11,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-  flex-wrap: wrap; 
-  gap: 10px; 
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .rtitle {
@@ -28,8 +28,10 @@
   gap: 6px;
   color: #7a7a7a;
   font-size: 18px;
-  text-align: right; 
+  text-align: right;
+   margin-bottom: 14px;
 }
+
 .rlink {
   color: #6366f1;
   cursor: pointer;
@@ -40,8 +42,8 @@
   border-radius: 6px;
   padding: 10px;
   margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .ractions {
   display: flex;
@@ -52,7 +54,7 @@
   padding-bottom: 10px;
   flex-wrap: wrap;
   border-bottom: 1px solid #d8d8da;
-  margin-right: 4px; 
+  margin-right: 4px;
 }
 
 /* MODIFIED: Consistent button styling */
@@ -60,27 +62,27 @@
 .ricon-btn {
   background-color: #6366f1;
   color: white;
-  padding: 8px 10px; 
+  padding: 8px 10px;
   border-radius: 6px;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   border: none;
   cursor: pointer;
   font-size: 16px;
   white-space: nowrap;
-  height: 38px; 
-  box-sizing: border-box; 
+  height: 38px;
+  box-sizing: border-box;
 }
 
-.rdropdown-btn .MuiSvgIcon-root, 
-.rdropdown-btn svg { 
+.rdropdown-btn .MuiSvgIcon-root,
+.rdropdown-btn svg {
   margin-left: 4px;
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 
 .ricon-btn svg {
-  font-size: 20px; 
+  font-size: 20px;
 }
 
 .rdropdown-menu,
@@ -93,16 +95,16 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 800;
   min-width: 100px;
-  right: 0; 
+  right: 0;
 }
 
 .rdropdown-menu {
   top: 42px;
-  margin-right: 50px; 
+  margin-right: 50px;
 }
 
 .rshare-options-menu {
-  top: 42px; 
+  top: 42px;
 }
 
 .rdropdown-menu div,
@@ -139,65 +141,63 @@
   flex-wrap: wrap;
   margin-bottom: 20px;
   align-items: flex-start;
+  gap: 15px; /* Added gap between filter groups */
 }
 
 .rfilter-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-   gap: 5px; 
-   width: 30%;
-}
-
-.rfilter-label {
-  font-size: 14px;
-  color: #4b5563;
-  margin-bottom: 5px;
-  margin-right: 0px;
-  font-weight: 600;
   gap: 5px;
-  width: 30%;
-  
+  flex: 1; /* Allows groups to share space */
+  min-width: 180px; /* Minimum width before wrapping */
+  max-width: calc(33.33% - 10px); /* Adjust based on desired number of columns, considering gap */
 }
 
+.rfilter-label,
 .rfilter-label1 {
   font-size: 14px;
   color: #4b5563;
   margin-bottom: 5px;
   font-weight: 600;
-  margin-left: 20px;
-  gap: 5px;
-  width: 30%;
-  
+  /* Removed width and gap from labels - they are children of flex column, so flex-direction handles spacing */
+}
+
+.rfilter-label1 {
+  margin-left: 20px; /* Kept this for specific offset if desired */
 }
 
 .rfilter-input {
   padding: 8px 10px;
   border: 1px solid #d1d5db;
-  background-color: #f3f3f3;
+  background-color: #f7f7f7; /* Your chosen background color */
   border-radius: 6px;
   font-size: 14px;
-  width: 85%;
-  gap: 15px;
-
+  width: 50%; /* Make input take full width of its parent (.rfilter-group) */
+  box-sizing: border-box; /* Include padding/border in width */
 }
 
-.rfilter-inputs
-{
+.rfilter-inputs { 
   padding: 8px 10px;
   border: 1px solid #d1d5db;
-  background-color: #f3f3f3;
+  background-color: #f7f7f7; 
   border-radius: 6px;
   font-size: 14px;
-  height: 39px;
-  margin-left: 20px;
-  width: 100%;
-  gap: 15px;
-
+  height: 39px; 
+  margin-left: 20px; 
+  width: 90%; 
+  box-sizing: border-box; 
+  padding-right: 30px; 
 }
 
-#category-select {
-  color: #b0b2b4;
+.rfilter-input[type="text"] {
+    width: 90%;
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
 }
 
 .rfilter-actions {
@@ -233,24 +233,25 @@
 
 /* MODIFIED: Table Responsiveness */
 .beautyproducts {
-  overflow-x: auto; 
+  overflow-x: auto;
   margin-top: 18px;
+  background-color: white; /* Ensure background for table container */
+  border-radius: 10px; /* Apply border-radius here for full container */
 }
 
 .rproducts-table {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 10px;
-  
-  }
+  /* Removed border-radius here, moved to .beautyproducts */
+}
 
 .rproducts-table th,
 .rproducts-table td {
   padding: 14px 20px;
   text-align: left;
   border-bottom: 1px solid #dcdada;
-  white-space: normal; 
-  word-break: break-word; 
+  white-space: normal;
+  word-break: break-word;
 }
 
 .rproducts-table th {
@@ -267,6 +268,7 @@
 .rproducts-table td:nth-child(4) {
   text-align: center;
 }
+
 .rpagination-footer {
   display: flex;
   justify-content: space-between;
@@ -277,6 +279,7 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+
 .rpagin {
   margin-bottom: 10px;
 }
@@ -311,15 +314,13 @@
   background-color: #f3f4f6;
 }
 
-.rpagination-controls button:first-child
-{
-border-left: 1px solid #e5e7eb;
+.rpagination-controls button:first-child {
+  border-left: 1px solid #e5e7eb;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
 }
 
-.rpagination-controls button:last-child
-{
+.rpagination-controls button:last-child {
   border-top-right-radius: 6px;
   border-bottom-right-radius: 6px;
 }
@@ -333,25 +334,25 @@ border-left: 1px solid #e5e7eb;
   }
 
   .rheader-bar {
-    flex-direction: column; 
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .rtitle {
-    font-size: 24px; 
+    font-size: 24px;
     margin-bottom: 10px;
   }
 
   .rbreadcrumb {
-    justify-content: flex-start; 
+    justify-content: flex-start;
     text-align: left;
     font-size: 16px;
   }
 
   .ractions {
-    justify-content: center; 
-    gap: 8px; 
-    border-bottom: none; 
+    justify-content: center;
+    gap: 8px;
+    border-bottom: none;
     padding-bottom: 0;
     width: 100%;
   }
@@ -359,32 +360,42 @@ border-left: 1px solid #e5e7eb;
   .rdropdown-btn,
   .ricon-btn {
     padding: 6px 10px;
-    height: 32px; 
+    height: 32px;
     font-size: 14px;
   }
 
   .rdropdown-menu,
   .rshare-options-menu {
-    right: auto; 
-    left: 50%; 
+    right: auto;
+    left: 50%;
     transform: translateX(-50%);
-    top: 50px; 
-    min-width: unset; 
-    width: 90%; 
+    top: 50px;
+    min-width: unset;
+    width: 90%;
   }
 
   .rfilter-row {
-    flex-direction: column; 
-    gap: 8px; 
+    flex-direction: column;
+    gap: 8px;
   }
 
-  /* .rfilter-group {
-    width: 50%; 
-    min-width: unset; 
-  } */
+  .rfilter-group {
+    width: 100%; /* Full width for filter groups on small screens */
+    max-width: 100%; /* Ensure it doesn't exceed 100% */
+    margin-left: 0; /* Remove specific left margin for labels on small screens */
+  }
+
+  .rfilter-label1 {
+    margin-left: 0; /* Remove specific left margin for label1 on small screens */
+  }
+
+  .rfilter-input,
+  .rfilter-inputs {
+    margin-left: 0; /* Remove specific left margin for inputs on small screens */
+  }
 
   .rfilter-actions {
-    justify-content: center; 
+    justify-content: center;
     width: 100%;
   }
 
@@ -394,30 +405,30 @@ border-left: 1px solid #e5e7eb;
 
   .rproducts-table th,
   .rproducts-table td {
-    padding: 10px; /* Reduce table cell padding */
-    font-size: 14px; /* Smaller font size for table content */
-    white-space: normal; /* Allow text to wrap within cells */
-    word-break: break-word; /* Break long words */
+    padding: 10px;
+    font-size: 14px;
+    white-space: normal;
+    word-break: break-word;
   }
 
   .rpagination-footer {
-    flex-direction: column; /* Stack pagination elements */
+    flex-direction: column;
     text-align: center;
   }
 
   .rpagin {
-    margin-left: 0; /* Remove left margin */
-    margin-bottom: 10px; /* Add space below "Showing X of Y" */
+    margin-left: 0;
+    margin-bottom: 10px;
     font-size: 14px;
   }
 
   .rpagination-controls {
-    margin-right: 0; /* Remove right margin */
+    margin-right: 0;
     justify-content: center;
   }
 
   .rpagination-controls button {
-    padding: 6px 10px; /* Smaller padding for pagination buttons */
+    padding: 6px 10px;
     font-size: 13px;
   }
 }
@@ -442,14 +453,19 @@ border-left: 1px solid #e5e7eb;
 
   .rdropdown-btn,
   .ricon-btn {
-    padding: 8px 12px; /* Adjust padding for tablets */
-    height: 38px; /* Consistent height for tablets */
+    padding: 8px 12px;
+    height: 38px;
   }
 
+  .rfilter-group {
+    /* Adjusted for potentially two columns on tablets if desired,
+       or keep flex: 1 and let it wrap naturally */
+    max-width: calc(50% - 10px); /* Example for two columns */
+  }
   
-
-  .rfilter-input {
-    min-width: 70px;
+  .rfilter-input,
+  .rfilter-inputs {
+    min-width: unset; /* Ensure it's not restricted by old min-width */
   }
 
   .rproducts-table {
@@ -479,10 +495,6 @@ border-left: 1px solid #e5e7eb;
   .rproducts-table {
     width: 95%; /* Adjust as needed for desktop */
     margin: 0 auto;
-    /* You can add a min-width here IF you want the table
-       to always be at least a certain width on large desktops,
-       e.g., min-width: 800px;
-       But generally, `width: 100%` inside a flexible container is enough. */
   }
 
   .rpagin {
@@ -491,5 +503,20 @@ border-left: 1px solid #e5e7eb;
 
   .rpagination-controls {
     margin-right: 16px;
+  }
+}
+
+@media print {
+  body * { visibility: hidden !important; }
+  .beautyproducts, .beautyproducts * { visibility: visible !important; }
+  .beautyproducts {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    border: px solid rgb(234, 234, 234) !important; /* Add this temporary border */
   }
 }

@@ -141,7 +141,7 @@ const OrderTable = () => {
         <div className="sriheader">
           <h2 className="srititle">Online Orders</h2>
           <h6 className="sribreadcrumb">
-            <a href="/" className="sribreadcrumb">Home</a> <span>Online Orders</span>
+            <a href="/admin" className="sribreadcrumb">Home</a> &gt;&gt;  <span>Online Orders</span>
           </h6>
         </div>
         <div className="sriorder-box-wrapper">
@@ -295,7 +295,7 @@ const OrderTable = () => {
                     </td>
                     <td style={{ textAlign: 'center' }}>
                       <span className="sriaction-eye" onClick={() => handleViewDetails(item)}>
-                        <FiEye style={{ color: '#5A66F1', cursor: 'pointer', fontSize: '22px' }} />
+                        <FiEye style={{ color: '#5A66F1', cursor: 'pointer', fontSize: '16px' }} />
                       </span>
                     </td>
                   </tr>

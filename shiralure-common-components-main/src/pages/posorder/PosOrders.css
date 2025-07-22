@@ -40,7 +40,7 @@
 
 /* Main container styled like .dvsCouponContainer */
 .dvsCouponContainer {
-  padding: 24px;
+  padding: 30px;
    background-color: #F2F6F9;
   font-family: Arial, sans-serif;
   min-height: 100vh;
@@ -80,6 +80,9 @@
 .dvsDEbreadcrumb {
   font-size: 20px;
   color: #6b7280;
+  margin-right: -30px;
+  margin-top: 12px;
+  
 }
 
 .dvsDEbreadcrumb .dvsDEhome {

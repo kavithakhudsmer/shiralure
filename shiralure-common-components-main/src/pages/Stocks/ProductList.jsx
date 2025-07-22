@@ -5,7 +5,7 @@ import { MdArrowDropDown, MdOutlineClear } from 'react-icons/md';
 import { PiSliders } from 'react-icons/pi';
 import { BiSolidAddToQueue } from 'react-icons/bi';
 import { IoMdSearch, IoMdCloseCircleOutline } from "react-icons/io";
-
+import {FiCheck,FiX} from "react-icons/fi";
 
 const ProductList = () => {
   const [stocks, setStocks] = useState([]);
@@ -16,21 +16,20 @@ const ProductList = () => {
   const [entries, setEntries] = useState(6);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // States for filter panel inputs (these change as you type)
   const [filterStatusInput, setFilterStatusInput] = useState('');
   const [filterNameInput, setFilterNameInput] = useState('');
-
-  // New states to store the *applied* filter values (only updated on search click)
   const [appliedFilterStatus, setAppliedFilterStatus] = useState('');
   const [appliedFilterName, setAppliedFilterName] = useState('');
 
-  const [newStock, setNewStock] = useState({ name: '', quantity: '', status: 'Active' });
-
-  // States for the "Add Stock" modal's name field and dropdown
+  const [newStock, setNewStock] = useState({ name: '', quantity: '', status: '' }); // Changed default status to '' to trigger error
   const [addFormNameInput, setAddFormNameInput] = useState('');
   const [filteredAddFormNames, setFilteredAddFormNames] = useState([]);
   const [showAddFormNameDropdown, setShowAddFormNameDropdown] = useState(false);
 
+  // Add error states
+  const [nameError, setNameError] = useState('');
+  const [quantityError, setQuantityError] = useState('');
+  const [statusError, setStatusError] = useState('');
 
   useEffect(() => {
     fetch('/stocks.json')
@@ -47,12 +46,14 @@ const ProductList = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewStock({ ...newStock, [name]: value });
+    if (name === 'status') setStatusError(''); // Clear status error when changed
   };
 
   const handleAddFormNameChange = (e) => {
     const value = e.target.value;
     setAddFormNameInput(value);
     setNewStock({ ...newStock, name: value });
+    setNameError(''); // Clear error when user starts typing
 
     if (value.length > 0) {
       const uniqueNames = [...new Set(stocks.map(stock => stock.name))];
@@ -71,6 +72,7 @@ const ProductList = () => {
     setAddFormNameInput(name);
     setNewStock({ ...newStock, name: name });
     setShowAddFormNameDropdown(false);
+    setNameError(''); // Clear error when a name is selected
   };
 
   const handleClearAddFormName = () => {
@@ -78,15 +80,40 @@ const ProductList = () => {
     setNewStock({ ...newStock, name: '' });
     setFilteredAddFormNames([]);
     setShowAddFormNameDropdown(false);
+    setNameError(''); // Clear error when cleared
   };
 
   const handleAddSubmit = () => {
-    if (!newStock.name || !newStock.quantity) return;
-    setStocks([...stocks, { ...newStock, id: stocks.length > 0 ? Math.max(...stocks.map(s => s.id)) + 1 : 1 }]);
-    setNewStock({ name: '', quantity: '', status: 'Active' });
-    setAddFormNameInput('');
-    setFilteredAddFormNames([]);
-    setShowAddForm(false);
+    let hasError = false;
+
+    if (!newStock.name.trim()) {
+      setNameError('Name cannot be empty');
+      hasError = true;
+    } else {
+      setNameError('');
+    }
+
+    if (!newStock.quantity || newStock.quantity <= 0) {
+      setQuantityError('Quantity cannot be empty');
+      hasError = true;
+    } else {
+      setQuantityError('');
+    }
+
+    if (!newStock.status || newStock.status === '') {
+      setStatusError('Status cannot be empty');
+      hasError = true;
+    } else {
+      setStatusError('');
+    }
+
+    if (!hasError) {
+      setStocks([...stocks, { ...newStock, id: stocks.length > 0 ? Math.max(...stocks.map(s => s.id)) + 1 : 1 }]);
+      setNewStock({ name: '', quantity: '', status: '' }); // Reset to empty status
+      setAddFormNameInput('');
+      setFilteredAddFormNames([]);
+      setShowAddForm(false);
+    }
   };
 
   const handlePrint = () => {
@@ -106,28 +133,23 @@ const ProductList = () => {
     document.body.removeChild(link);
   };
 
-  // NEW: Function to handle search button click
   const handleFilterSearch = () => {
     setAppliedFilterName(filterNameInput);
     setAppliedFilterStatus(filterStatusInput);
-    setCurrentPage(1); // Reset to first page on new search
+    setCurrentPage(1);
   };
 
-  // NEW: Function to handle clear button click in filter panel
   const handleFilterClear = () => {
     setFilterNameInput('');
     setFilterStatusInput('');
-    setAppliedFilterName(''); // Clear applied filters
-    setAppliedFilterStatus(''); // Clear applied filters
-    setCurrentPage(1); // Reset to first page
+    setAppliedFilterName('');
+    setAppliedFilterStatus('');
+    setCurrentPage(1);
   };
 
-
-  // filteredStocks now filters by appliedFilterName and appliedFilterStatus
   const filteredStocks = stocks.filter(stock => {
     const matchesStatus = appliedFilterStatus ? stock.status.toLowerCase() === appliedFilterStatus.toLowerCase() : true;
     const matchesName = appliedFilterName ? stock.name.toLowerCase().includes(appliedFilterName.toLowerCase()) : true;
-
     return matchesStatus && matchesName;
   });
 
@@ -208,9 +230,7 @@ const ProductList = () => {
               </div>
             </div>
             <div className="shira-filter-buttons">
-              {/* Call handleFilterSearch on Search button click */}
               <button className="shira-search-btn" type="button" onClick={handleFilterSearch}><IoMdSearch /> Search</button>
-              {/* Call handleFilterClear on Clear button click */}
               <button className="shira-clear-btn" type="button" onClick={handleFilterClear}><MdOutlineClear /> Clear</button>
             </div>
           </div>
@@ -247,7 +267,7 @@ const ProductList = () => {
           </div>
           <div className="shira-pagination-controls">
             <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
-              &lt;
+              
             </button>
             {Array.from({ length: totalPages }, (_, i) => (
               <button
@@ -259,80 +279,84 @@ const ProductList = () => {
               </button>
             ))}
             <button onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>
-              &gt;
+              
             </button>
           </div>
         </div>
       </div>
 
       {showAddForm && (
-        <div className="shira-modal-overlay">
-          <div className="shira-modal-content">
-            <div className="shira-modal-header">
-              <h2>Add Stock</h2>
-              <button className="shira-modal-close" onClick={() => setShowAddForm(false)}>×</button>
-            </div>
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              handleAddSubmit();
-            }}>
-              <div className="shira-modal-body">
-                <label htmlFor="name">Name</label>
-                <div className="shira-add-stock-name-input-wrapper">
-                  <input
-                    type="text"
-                    name="name"
-                    value={addFormNameInput}
-                    onChange={handleAddFormNameChange}
-                    onFocus={() => {
-                      if (addFormNameInput.length > 0) setShowAddFormNameDropdown(true);
-                    }}
-                    onBlur={() => setTimeout(() => setShowAddFormNameDropdown(false), 100)}
-                  />
-                  {addFormNameInput && (
-                    <IoMdCloseCircleOutline
-                      className="shira-clear-add-form-name"
-                      onClick={handleClearAddFormName}
-                    />
-                  )}
-
-                  {showAddFormNameDropdown && filteredAddFormNames.length > 0 && (
-                    <div className="shira-add-stock-name-dropdown">
-                      {filteredAddFormNames.map((name, index) => (
-                        <div key={index} onMouseDown={() => handleAddFormNameSelect(name)}>
-                          {name}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <label htmlFor="quantity">Quantity</label>
-                <input
-                  type="number"
-                  name="quantity"
-                  value={newStock.quantity}
-                  onChange={handleInputChange}
-                />
-                <label htmlFor="status">Status</label>
-                <select
-                  name="status"
-                  value={newStock.status}
-                  onChange={handleInputChange}
-                >
-                  <option value="">--</option>
-                  <option value="Active">Active</option>
-                  <option value="Inactive">Inactive</option>
-                </select>
+  <div className="shira-modal-overlay">
+    <div className="shira-modal-content">
+      <div className="shira-modal-header">
+        <h2>Add Stock</h2>
+        <button className="shira-modal-close" onClick={() => setShowAddForm(false)}>×</button>
+      </div>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        handleAddSubmit();
+      }}>
+        <div className="shira-modal-body">
+          <label htmlFor="name">Name</label>
+          <div className="shira-add-stock-name-input-wrapper">
+            <input
+              type="text"
+              name="name"
+              value={addFormNameInput}
+              onChange={handleAddFormNameChange}
+              onFocus={() => {
+                if (addFormNameInput.length > 0) setShowAddFormNameDropdown(true);
+              }}
+              onBlur={() => setTimeout(() => setShowAddFormNameDropdown(false), 100)}
+            />
+            {addFormNameInput && (
+              <IoMdCloseCircleOutline
+                className="shira-clear-add-form-name"
+                onClick={handleClearAddFormName}
+              />
+            )}
+            {showAddFormNameDropdown && filteredAddFormNames.length > 0 && (
+              <div className="shira-add-stock-name-dropdown">
+                {filteredAddFormNames.map((name, index) => (
+                  <div key={index} onMouseDown={() => handleAddFormNameSelect(name)}>
+                    {name}
+                  </div>
+                ))}
               </div>
-              <div className="shira-modal-footer">
-                <button className="shira-save-button" type="submit">Save</button>
-                <button className="shira-cancel-button" type="button" onClick={() => setShowAddForm(false)}>Cancel</button>
-              </div>
-            </form>
+            )}
           </div>
+          {nameError && <div style={{ color: 'red', fontSize: '12px', marginTop: '-15px' }}>{nameError}</div>}
+
+          <label htmlFor="quantity">Quantity</label>
+          <input
+            type="number"
+            name="quantity"
+            value={newStock.quantity}
+            onChange={handleInputChange}
+          />
+          {quantityError && <div style={{ color: 'red', fontSize: '12px', marginTop: '-10px' }}>{quantityError}</div>}
+
+          <label htmlFor="status">Status</label>
+          <select
+            name="status"
+            value={newStock.status}
+            onChange={handleInputChange}
+          >
+            <option value="">--</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+          {statusError && <div style={{ color: 'red', fontSize: '12px', marginTop: '-10px' }}>{statusError}</div>}
         </div>
-      )}
+        <div className="shira-modal-footer">
+          <button className="shira-save-button" type="submit"> <FiCheck /> Save </button>
+          <button className="shira-cancel-button" type="button" onClick={() => setShowAddForm(false)}> <FiX /> Cancel </button>
+        </div>
+      </form>
     </div>
+  </div>
+)}
+ </div>
   );
 };
 

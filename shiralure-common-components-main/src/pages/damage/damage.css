@@ -1,5 +1,5 @@
 .devpsubscriber {
-  padding: 24px;
+  padding: 30px;
   background-color: #F2F6F9;
   font-family: Arial, sans-serif;
   min-height: 100vh;
@@ -33,7 +33,7 @@
 }
 
 .devpheader {
-padding: 0px 20px;
+
   border-bottom: 1px solid #F2F6F9;
   background-color: #F2F6F9;
   width: 100%;
@@ -71,7 +71,7 @@ padding: 0px 20px;
   background: #fff;
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width:100%; /* Matches Coupons.css */
   box-sizing: border-box;
@@ -185,7 +185,10 @@ padding: 0px 20px;
   width: 100%;
   height: fit-content;
 }
-
+.devpfilter-group div[style*="color: red"] {
+  display: block !important;
+  visibility: visible !important;
+}
 .devpdate-input {
   padding-right: 32px;
   height: 38.5px;
@@ -197,7 +200,7 @@ padding: 0px 20px;
   justify-content: center;
   border: none;
   border-radius: 6px;
-  height: 36px;
+  height: 33px;
   width: 96px;
   display: flex;
   align-items: center;
@@ -208,6 +211,9 @@ padding: 0px 20px;
   background-color: #5a66f1;
 }
 
+.devpsearch-button:hover {
+  background-color: #999ff0;
+}
 
 .devpclear-button {
   margin-top: 24px;
@@ -216,7 +222,7 @@ padding: 0px 20px;
   justify-content: center;
   border: none;
   border-radius: 6px;
-  height: 36px;
+  height: 33px;
   width: 96px;
   display: flex;
   align-items: center;
@@ -227,6 +233,9 @@ padding: 0px 20px;
   background-color: #000;
 }
 
+.devpclear-button:hover {
+  background-color: #4b5563;
+}
 
 .devpsubscriber-table {
   width: 100%;
@@ -651,4 +660,8 @@ padding: 0px 20px;
   .devpclear-button {
     margin-left: 0;
   }
+}
+.devpfilter-error{
+  color: red;
+  font-size: 10px;
 }

@@ -563,8 +563,7 @@ function Purchase() {
             </div>
             <div className="kadd-edit-form-row">
               <div className="kadd-edit-form-group"><label htmlFor="modal-supplier">Supplier</label><input type="text" id="modal-supplier" name="supplier" value={currentEditItem.supplier} onChange={handleAddEditInputChange} required /></div>
-              <div className="kadd-edit-form-group"><label htmlFor="modal-payment">Payment</label><select id="modal-payment" name="payment" value={currentEditItem.payment} onChange={handleAddEditInputChange} required><option value="Paid">Paid</option><option value="Pending">Pending</option><option value="Not Paid">Not Paid</option></select></div>
-            </div>
+                          </div>
             <h4 className="kadd-edit-section-title">Products</h4>
             <div className="kadd-edit-form-row">
               <div className="kadd-edit-form-group">

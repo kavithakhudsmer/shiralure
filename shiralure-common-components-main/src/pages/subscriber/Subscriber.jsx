@@ -21,6 +21,8 @@ function Subscriber() {
   const [showMailPage, setShowMailPage] = useState(false);
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [subjectError, setSubjectError] = useState("");
+  const [messageError, setMessageError] = useState("");
   const [deleteTargetIndex, setDeleteTargetIndex] = useState(null);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [rowsPerPage, setRowsPerPage] = useState(9);
@@ -99,12 +101,16 @@ function Subscriber() {
 
   const toggleFilters = () => setShowFilters(!showFilters);
   const toggleShareDropdown = () => setShowShareDropdown(!showShareDropdown);
-  const toggleMailPage = () => setShowMailPage(!showMailPage);
+  const toggleMailPage = () => {
+    setShowMailPage(!showMailPage);
+    clearMailForm();
+  };
 
   const handleSearch = () => {
-    const filtered = allSubscribers.filter((sub) =>
-      sub.email.toLowerCase().includes(emailFilter.toLowerCase()) &&
-      sub.date.toLowerCase().includes(dateFilter.toLowerCase())
+    const filtered = allSubscribers.filter(
+      (sub) =>
+        sub.email.toLowerCase().includes(emailFilter.toLowerCase()) &&
+        sub.date.toLowerCase().includes(dateFilter.toLowerCase())
     );
     setFilteredList(filtered);
     setCurrentPage(1);
@@ -131,13 +137,11 @@ function Subscriber() {
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet("Subscribers");
 
-    // Define headers
     worksheet.columns = [
       { header: "Email", key: "email", width: 30 },
       { header: "Date", key: "date", width: 20 },
     ];
 
-    // Add data
     filteredList.forEach((sub) => {
       worksheet.addRow({
         email: sub.email,
@@ -145,7 +149,6 @@ function Subscriber() {
       });
     });
 
-    // Style headers
     worksheet.getRow(1).font = { bold: true };
     worksheet.getRow(1).fill = {
       type: "pattern",
@@ -153,9 +156,10 @@ function Subscriber() {
       fgColor: { argb: "FFF2F2F2" },
     };
 
-    // Generate and download file
     const buffer = await workbook.xlsx.writeBuffer();
-    const blob = new Blob([buffer], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" });
+    const blob = new Blob([buffer], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -167,14 +171,29 @@ function Subscriber() {
   const clearMailForm = () => {
     setSubject("");
     setMessage("");
+    setSubjectError("");
+    setMessageError("");
   };
 
   const saveMail = () => {
-    if (!subject.trim() || !message.trim()) {
-      alert("Both Subject and Message are required.");
-      return;
+    let hasError = false;
+    setSubjectError("");
+    setMessageError("");
+
+    if (!subject.trim()) {
+      setSubjectError("Subject is required");
+      hasError = true;
     }
-    alert(`Saved message:\nSubject: ${subject}\nMessage: ${message}`);
+    if (!message.trim()) {
+      setMessageError("Message is required");
+      hasError = true;
+    }
+
+    if (!hasError) {
+      console.log("Saving mail:", { subject, message });
+      clearMailForm();
+      setShowMailPage(false);
+    }
   };
 
   const confirmDelete = (index) => {
@@ -211,13 +230,12 @@ function Subscriber() {
 
   const formatDateForDisplay = (dateString) => {
     if (!dateString) return "";
-    // Example input: "01:17PM, 23-12-2024"
     const [time, date] = dateString.split(", ");
     const match = time.match(/(\d+):(\d+)([AP]M)/);
     if (!match) return dateString;
     const [, hours, minutes, ampm] = match;
     const [day, month, year] = date.split("-");
-    
+
     const dateObj = new Date(`${year}-${month}-${day}T${hours}:${minutes}:00`);
     if (isNaN(dateObj.getTime())) return dateString;
 
@@ -229,7 +247,9 @@ function Subscriber() {
     const finalAmpm = formattedHours >= 12 ? "PM" : "AM";
     formattedHours = formattedHours % 12 || 12;
 
-    return `${formattedMonth}/${formattedDay}/${formattedYear} ${String(formattedHours).padStart(2, "0")}:${formattedMinutes} ${finalAmpm}`;
+    return `${formattedMonth}/${formattedDay}/${formattedYear} ${String(
+      formattedHours
+    ).padStart(2, "0")}:${formattedMinutes} ${finalAmpm}`;
   };
 
   return (
@@ -292,10 +312,10 @@ function Subscriber() {
             {showShareDropdown && (
               <div ref={shareDropdownRef} className="DEdropdown-menu">
                 <div className="DEdropdown-item" onClick={handlePrint}>
-                  <FiPrinter size={27} color="white"/> Print
+                  <FiPrinter size={27} color="white" /> Print
                 </div>
                 <div className="DEdropdown-item" onClick={handleExportXLS}>
-                  <FiFileText size={27} color="white"/> XLS
+                  <FiFileText size={27} color="white" /> XLS
                 </div>
               </div>
             )}
@@ -320,10 +340,7 @@ function Subscriber() {
                 value={emailFilter}
                 onChange={(e) => setEmailFilter(e.target.value)}
               />
-              <button
-                className="DEsearch-button"
-                onClick={handleSearch}
-              >
+              <button className="DEsearch-button" onClick={handleSearch}>
                 <IoMdSearch /> Search
               </button>
             </div>
@@ -337,10 +354,7 @@ function Subscriber() {
                   onChange={(e) => setDateFilter(e.target.value)}
                 />
               </div>
-              <button
-                className="DEclear-button"
-                onClick={handleClear}
-              >
+              <button className="DEclear-button" onClick={handleClear}>
                 <MdClear /> Clear
               </button>
             </div>
@@ -387,8 +401,10 @@ function Subscriber() {
 
         <div className="DEpagination">
           <div className="DEpagination-info">
-            Showing {Math.min((currentPage - 1) * rowsPerPage + 1, filteredList.length)} to{" "}
-            {Math.min(currentPage * rowsPerPage, filteredList.length)} of {filteredList.length} entries
+            Showing{" "}
+            {Math.min((currentPage - 1) * rowsPerPage + 1, filteredList.length)}{" "}
+            to {Math.min(currentPage * rowsPerPage, filteredList.length)} of{" "}
+            {filteredList.length} entries
           </div>
           <div className="DEpagination-buttons">
             <button
@@ -401,7 +417,9 @@ function Subscriber() {
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <button
                 key={page}
-                className={`DEpagination-button ${page === currentPage ? 'DEactive' : ''}`}
+                className={`DEpagination-button ${
+                  page === currentPage ? "DEactive" : ""
+                }`}
                 onClick={() => goToPage(page)}
               >
                 {page}
@@ -422,7 +440,7 @@ function Subscriber() {
         <div className="DEmodal-overlay">
           <div className="DEmodal">
             <div className="DEmodal-header">
-              <h2>Subscribers</h2>
+              <h2>Compose Message</h2>
               <span className="DEmodal-close" onClick={toggleMailPage}>
                 <FiX />
               </span>
@@ -431,30 +449,38 @@ function Subscriber() {
               Subject <span className="DErequired">*</span>
             </label>
             <input
-              className="DEmodal-input"
+              className={`DEmodal-input ${subjectError ? "DEinput-error" : ""}`}
               value={subject}
-              onChange={(e) => setSubject(e.target.value)}
+              onChange={(e) => {
+                setSubject(e.target.value);
+                if (e.target.value.trim()) setSubjectError("");
+              }}
+              placeholder="Enter subject"
             />
+            {subjectError && (
+              <span className="DEerror-message">{subjectError}</span>
+            )}
             <label className="DEmodal-label">
               Message <span className="DErequired">*</span>
             </label>
             <textarea
               rows="5"
-              className="DEmodal-textarea"
+              className={`DEmodal-textarea ${messageError ? "DEinput-error" : ""}`}
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e) => {
+                setMessage(e.target.value);
+                if (e.target.value.trim()) setMessageError("");
+              }}
+              placeholder="Enter your message"
             />
+            {messageError && (
+              <span className="DEerror-message">{messageError}</span>
+            )}
             <div className="DEmodal-buttons">
-              <button
-                className="DEsave-button"
-                onClick={saveMail}
-              >
+              <button className="DEsave-button" onClick={saveMail}>
                 <FiCheck /> Save
               </button>
-              <button
-                className="DEclear-button1"
-                onClick={clearMailForm}
-              >
+              <button className="DEclear-button1" onClick={clearMailForm}>
                 <FiX /> Clear
               </button>
             </div>
@@ -471,16 +497,10 @@ function Subscriber() {
             <h2>Are you sure?</h2>
             <p>You will not be able to recover the deleted record.</p>
             <div className="DEmodal-buttons1">
-              <button
-                className="DEdelete-button"
-                onClick={deleteSubscriber}
-              >
+              <button className="DEdelete-button" onClick={deleteSubscriber}>
                 Yes, Delete it!
               </button>
-              <button
-                className="DEcancel-button"
-                onClick={cancelDelete}
-              >
+              <button className="DEcancel-button" onClick={cancelDelete}>
                 No, Cancel!
               </button>
             </div>
