@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './License.css';
-import { Save } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 
 const License = () => {
   const [licenseKey, setLicenseKey] = useState('Shiralure');
@@ -31,8 +31,8 @@ const License = () => {
     
     <div className="license-actions6">
       <button onClick={handleSave} className="save-button6">
-        <Save size={16} />
-        Save
+        <FaCheck size={16} />
+         Save
       </button>
     </div>
   </div>

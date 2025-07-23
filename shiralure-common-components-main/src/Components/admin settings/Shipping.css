@@ -21,6 +21,7 @@
   border-radius: 8px;
   margin-bottom: 20px;
   border: 1px solid #e5e5e5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .conditional-section21 {
@@ -29,6 +30,7 @@
   border-radius: 8px;
   margin-bottom: 20px;
   border: 1px solid #e5e5e5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .section-title21 {
@@ -74,7 +76,7 @@
   margin-right: 10px;
   width: 16px;
   height: 16px;
-  accent-color: #6366f1;
+  accent-color: #5A66F1;
   cursor: pointer;
 }
 
@@ -99,7 +101,7 @@
 
 .form-input21:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: #5A66F1;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
@@ -108,7 +110,7 @@
 }
 
 .save-btn21 {
-  background: #6366f1;
+  background: #5A66F1;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -123,7 +125,7 @@
 }
 
 .save-btn21:hover {
-  background: #5856eb;
+  background: #5A66F1;
   transform: translateY(-1px);
 }
 
@@ -132,11 +134,11 @@
 }
 
 .save-btn21.primary21 {
-  background: #6366f1;
+  background: #5A66F1;
 }
 
 .save-btn21.primary21:hover {
-  background: #5856eb;
+  background: #5A66F1;
 }
 
 /* Responsive Design */
@@ -157,12 +159,12 @@
 
 /* Focus and accessibility improvements */
 .radio-option21:focus-within {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #5A66F1;
   outline-offset: 2px;
   border-radius: 4px;
 }
 
 .save-btn21:focus {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #5A66F1;
   outline-offset: 2px;
 }

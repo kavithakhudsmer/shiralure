@@ -348,7 +348,7 @@ const SupplierComponent = () => {
         }
 
         .add-btn25 {
-          background: #8b5cf6;
+          background: #5A66F1;
           color: white;
           border: none;
           padding: 8px 12px;
@@ -359,12 +359,10 @@ const SupplierComponent = () => {
           gap: 4px;
         }
 
-        .add-btn25:hover {
-          background: #7c3aed;
-        }
+       
 
         .export-btn25 {
-          background: #3b82f6;
+          background: #5A66F1;
           color: white;
           border: none;
           padding: 8px 12px;
@@ -375,9 +373,7 @@ const SupplierComponent = () => {
           gap: 4px;
         }
 
-        .export-btn25:hover {
-          background: #2563eb;
-        }
+        
 
         .supplier-table25 {
           background: white;
@@ -563,7 +559,7 @@ const SupplierComponent = () => {
 
         .form-group25 input:focus {
           outline: none;
-          border-color: #3b82f6;
+          border-color: #5A66F1;
           background: white;
         }
 
@@ -607,40 +603,32 @@ const SupplierComponent = () => {
         }
 
         .btn-primary25 {
-          background: #3b82f6;
+          background: #5A66F1;
           color: white;
         }
 
-        .btn-primary25:hover {
-          background: #2563eb;
-        }
+        
 
         .btn-secondary25 {
-          background: #6b7280;
+          background: #333;
           color: white;
         }
 
-        .btn-secondary25:hover {
-          background: #4b5563;
-        }
+        
 
         .btn-confirm25 {
-          background: #8b5cf6;
+          background: #5A66F1;
           color: white;
         }
 
-        .btn-confirm25:hover {
-          background: #7c3aed;
-        }
+      
 
         .btn-cancel25 {
-          background: #6b7280;
+          background: #333;
           color: white;
         }
 
-        .btn-cancel25:hover {
-          background: #4b5563;
-        }
+       
 
         .view-modal25 {
           max-width: 500px;
@@ -660,7 +648,7 @@ const SupplierComponent = () => {
           width: 60px;
           height: 60px;
           border-radius: 50%;
-          background: #3b82f6;
+          background: #5A66F1;
           display: flex;
           align-items: center;
           justify-content: center;

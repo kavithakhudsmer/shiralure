@@ -261,13 +261,13 @@ const ProductList = () => {
           </tbody>
         </table>
 
-        <div className="shira-pagination-container">
+       <div className="shira-pagination-container">
           <div className="shira-pagination-info">
             Showing {(currentPage - 1) * entries + 1} to {Math.min(currentPage * entries, filteredStocks.length)} out of {filteredStocks.length} entries
           </div>
           <div className="shira-pagination-controls">
             <button onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
-              
+              &lt;
             </button>
             {Array.from({ length: totalPages }, (_, i) => (
               <button
@@ -279,7 +279,7 @@ const ProductList = () => {
               </button>
             ))}
             <button onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} disabled={currentPage === totalPages}>
-              
+              &gt;
             </button>
           </div>
         </div>

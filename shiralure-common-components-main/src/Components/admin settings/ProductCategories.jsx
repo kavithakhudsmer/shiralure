@@ -7,11 +7,11 @@ import {
   Edit, 
   Eye, 
   Trash2, 
-  X, 
-  Save, 
+  X,
   RotateCcw,
   AlertTriangle 
 } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 
 const ProductCategoriesComponent = () => {
   const [categories, setCategories] = useState([
@@ -119,7 +119,7 @@ const ProductCategoriesComponent = () => {
  return (
   <div className="product-categories-container18">
     <div className="product-categories-header18">
-      <h2 className="product-categories-title18">PRODUCT CATEGORIES</h2>
+      <h2 className="product-categories-title18">Product Categories</h2>
       <div className="product-categories-actions18">
         <button className="pc-btn-primary18" onClick={handleAdd}>
           <Plus size={16} />Add
@@ -285,7 +285,7 @@ const ProductCategoriesComponent = () => {
 
           <div className="pc-modal-footer18">
             <button className="pc-btn-primary18" onClick={handleSave}>
-              <Save size={16} />
+              <FaCheck size={16} />
               SAVE
             </button>
             <button className="pc-btn-secondary18" onClick={handleClear}>
@@ -384,7 +384,7 @@ const ProductCategoriesComponent = () => {
 
           <div className="pc-modal-footer18">
             <button className="pc-btn-primary18" onClick={handleSave}>
-              <Save size={16} />
+              <FaCheck size={16} />
               SAVE
             </button>
             <button className="pc-btn-secondary18" onClick={handleClear}>
@@ -454,7 +454,7 @@ const ProductCategoriesComponent = () => {
         margin: 0 auto;
         padding: 20px;
         font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background: #f8fafc;
+        
         min-height: 100vh;
       }
 
@@ -480,7 +480,7 @@ const ProductCategoriesComponent = () => {
       }
 
       .pc-btn-primary18 {
-        background: #6366f1;
+        background: #5A66F1;
         color: white;
         border: none;
         padding: 10px 12px;
@@ -494,12 +494,10 @@ const ProductCategoriesComponent = () => {
         font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
 
-      .pc-btn-primary18:hover {
-        background: #5855e7;
-      }
+      
 
       .pc-btn-secondary18 {
-        background: #6366f1;
+        background: #5A66F1;
         color: white;
         border: none;
         padding: 10px 12px;
@@ -512,9 +510,7 @@ const ProductCategoriesComponent = () => {
         font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
 
-      .pc-btn-secondary18:hover {
-        background: #5855e7;
-      }
+      
 
       .pc-dropdown-container18 {
         position: relative;
@@ -752,7 +748,7 @@ const ProductCategoriesComponent = () => {
 
       .pc-form-input18:focus {
         outline: none;
-        border-color: #6366f1;
+        border-color: #5A66F1;
         box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
       }
 
@@ -770,7 +766,7 @@ const ProductCategoriesComponent = () => {
 
       .pc-form-textarea18:focus {
         outline: none;
-        border-color: #6366f1;
+        border-color: #5A66F1;
         box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
       }
 
@@ -900,7 +896,7 @@ const ProductCategoriesComponent = () => {
       }
 
       .pc-btn-danger18 {
-        background: #6366f1;
+        background: #5A66F1;
         color: white;
         border: none;
         padding: 12px 24px;
@@ -911,9 +907,7 @@ const ProductCategoriesComponent = () => {
         font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
 
-      .pc-btn-danger18:hover {
-        background: #5855e7;
-      }
+      
 
       .pc-btn-cancel18 {
         background: #6b7280;
@@ -927,9 +921,7 @@ const ProductCategoriesComponent = () => {
         font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
 
-      .pc-btn-cancel18:hover {
-        background: #4b5563;
-      }
+      
     `}</style>
   </div>
 );

@@ -199,7 +199,7 @@
 
 .DSError-message {
   color: #F4415F;
-  font-size: 12px;
+  font-size: 8px;
   margin-top: 4px;
   position: absolute;
   bottom: -18px;
@@ -573,12 +573,16 @@ label {
   background-color: #5a66f1;
   color: white;
 }
-
+.DSForm-buttons button:first-child:hover {
+  background-color: #7185e6;
+}
 .DSForm-buttons button:last-child {
   background-color: black;
   color: white;
 }
-
+.DSForm-buttons button:last-child:hover {
+  background-color: #6c757d;
+}
 
 .DSCoupon-details {
   display: flex;

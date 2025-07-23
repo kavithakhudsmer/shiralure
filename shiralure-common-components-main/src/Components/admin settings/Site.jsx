@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Save } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 
 const Site = () => {
   const [formData, setFormData] = useState({
@@ -469,7 +469,7 @@ const Site = () => {
 
         <div className="site-settings-save-section22">
           <button className="site-settings-save-btn22" onClick={handleSave}>
-            <Save size={16} />
+            <FaCheck size={16} />
             SAVE
           </button>
         </div>
@@ -535,7 +535,7 @@ const Site = () => {
 
         .site-settings-input22:focus {
           outline: none;
-          border-color: #5865f2;
+          border-color: #5A66F1;
         }
 
         .site-settings-radio-group22 {
@@ -557,7 +557,7 @@ const Site = () => {
         .site-settings-radio22 {
           width: 16px;
           height: 16px;
-          accent-color: #5865f2;
+          accent-color: #5A66F1;
           cursor: pointer;
         }
 
@@ -568,7 +568,7 @@ const Site = () => {
         }
 
         .site-settings-save-btn22 {
-          background: #5865f2;
+          background: #5A66F1;
           color: white;
           border: none;
           border-radius: 6px;
@@ -583,7 +583,7 @@ const Site = () => {
         }
 
         .site-settings-save-btn22:hover {
-          background: #5865f2;
+          background: #5A66F1;
         }
 
         @media (max-width: 768px) {

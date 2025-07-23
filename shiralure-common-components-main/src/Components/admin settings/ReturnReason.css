@@ -6,7 +6,7 @@
 
 .container19 {
   min-height: calc(100vh - 70px);
-  background-color: #f8f9fa;
+  
   padding: 24px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #5865f2;
+  background: #5A66F1;
   color: white;
   border: none;
   border-radius: 8px;
@@ -47,9 +47,7 @@
   transition: background-color 0.2s;
 }
 
-.add-btn19:hover {
-  background: #4752c4;
-}
+
 
 .add-icon19 {
   width: 32px;
@@ -294,7 +292,7 @@
 
 .return-reason-form-input19:focus {
   outline: none;
-  border-color: #5865f2;
+  border-color: #5A66F1;
   box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.2);
 }
 
@@ -312,7 +310,7 @@
 
 .return-reason-form-textarea19:focus {
   outline: none;
-  border-color: #5865f2;
+  border-color: #5A66F1;
   box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.2);
 }
 
@@ -344,14 +342,14 @@
 }
 
 .return-reason-radio-input19:checked {
-  border-color: #5865f2;
+  border-color: #5A66F1;
 }
 
 .return-reason-radio-input19:checked::after {
   content: '';
   width: 8px;
   height: 8px;
-  background: #5865f2;
+  background: #5A66F1;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -382,26 +380,18 @@
 }
 
 .return-reason-btn-primary19 {
-  background: #5865f2;
+  background: #5A66F1;
   color: white;
 }
 
-.return-reason-btn-primary19:hover {
-  background: #4752c4;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 
 .return-reason-btn-secondary19 {
   background: #6c757d;
   color: white;
 }
 
-.return-reason-btn-secondary19:hover {
-  background: #5a6268;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 
 .delete-modal19 {
   max-width: 400px;
@@ -458,22 +448,14 @@
   color: white;
 }
 
-.btn-primary19:hover {
-  background: #4752c4;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 
 .btn-secondary19 {
   background: #6c757d;
   color: white;
 }
 
-.btn-secondary19:hover {
-  background: #5a6268;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 
 .view-field19 {
   margin-bottom: 20px;

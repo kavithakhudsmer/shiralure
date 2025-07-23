@@ -4,7 +4,7 @@
 */
 
 import React, { useState } from 'react';
-import { Save } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 const Company = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -369,10 +369,10 @@ const Company = () => {
             type="button" 
             style={styles.saveButton}
             onClick={handleSubmit}
-            onMouseEnter={(e) => e.target.style.backgroundColor = '#5348e8'}
-            onMouseLeave={(e) => e.target.style.backgroundColor = '#6366f1'}
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#5A66F1'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = '#5A66F1'}
           >
-            <Save size={16} />
+            <FaCheck size={16} />
             Save
           </button>
         </div>

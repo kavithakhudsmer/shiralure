@@ -59,7 +59,7 @@
 
 .form-input8:focus {
   outline: none;
-  border-color: #4f7cff;
+  border-color: #5A66F1;
 }
 
 .form-select8 {
@@ -83,7 +83,7 @@
 
 .form-select8:focus {
   outline: none;
-  border-color: #4f7cff;
+  border-color: #5A66F1;
 }
 
 .radio-group8 {
@@ -116,8 +116,8 @@
 }
 
 .radio-input8:checked + .radio-custom8 {
-  border-color: #4f7cff;
-  background-color: #4f7cff;
+  border-color: #5A66F1;
+  background-color: #5A66F1;
 }
 
 .radio-input8:checked + .radio-custom8::after {
@@ -138,7 +138,7 @@
   justify-content: center;
   gap: 8px;
   padding: 12px 24px;
-  background-color: #4f7cff;
+  background-color: #5A66F1;
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -149,12 +149,10 @@
   margin-top: 32px;
 }
 
-.save-button8:hover {
-  background-color: #3d63e6;
-}
+
 
 .save-button8:active {
-  background-color: #2d4fd9;
+  background-color: #5A66F1;
 }
 
 .save-icon8 {

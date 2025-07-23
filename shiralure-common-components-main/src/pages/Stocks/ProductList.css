@@ -61,8 +61,8 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  min-width: 45px;
-  height: 34px;
+  min-width: 40px;
+  height: 36px;
 }
 
 .shira-dropdown-wrapper {
@@ -447,69 +447,6 @@
   color: #333;
 }
 
-
-@media print {
-  body * {
-    visibility: hidden; 
-  }
-
-  .shira-stocks,
-  .shira-stocks * {
-    visibility: visible;
-  }
-
-  .shira-stocks-header-section, 
-  .shira-stocks-actions, 
-  .shira-stocks-divider-line,
-  .shira-filter-panel,
-  .shira-pagination-container {
-    display: none !important; 
-  }
-
-  .shira-stocks {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin: 0;
-    padding: 20px; 
-    box-sizing: border-box;
-    background-color: #fff !important; 
-    border-radius: 0 !important; 
-    box-shadow: none !important; 
-  }
-  .shira-stocks-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0;
-    background-color: #fff !important;
-  }
-
-  .shira-stocks-table th,
-  .shira-stocks-table td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-    color: #000; 
-  }
-
-  .shira-stocks-table thead {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-    background-color: #f2f2f2 !important; 
-    color: #000 !important;
-  }
-  .shira-status-active,
-  .shira-status-inactive {
-    color: #000 !important;
-    background-color: transparent !important;
-    border-collapse: collapse;
-    padding: 0 !important;
-  }
-  .shira-modal-overlay {
-    display: none !important;
-  }
-}
 @media print {
   body * { visibility: hidden !important; }
   .shira-stocks-table, .shira-stocks-table * { visibility: visible !important; }
@@ -517,10 +454,11 @@
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
-    width: 100% !important;
+    width: 90% !important;
     margin: 0 !important;
     padding: 20px !important;
     box-sizing: border-box !important;
-    border: px solid rgb(234, 234, 234) !important; /* Add this temporary border */
+    border: 1px solid rgb(234, 234, 234) !important; /* Add this temporary border */
   }
+
 }

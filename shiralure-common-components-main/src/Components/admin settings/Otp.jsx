@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { ChevronDown,Save } from 'lucide-react';
-
+import { ChevronDown} from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 const OTPComponent = () => {
   const [otpType, setOtpType] = useState('');
   const [otpDigitLimit, setOtpDigitLimit] = useState('');
@@ -81,7 +81,7 @@ const OTPComponent = () => {
       </div>
 
       <button className="save-button11" onClick={handleSave}>
-        <Save size={16} />
+        <FaCheck size={16} />
         Save
       </button>
 
@@ -90,7 +90,7 @@ const OTPComponent = () => {
           max-width: 1200px;
           margin: 0 auto;
           padding: 24px;
-          background-color: #f8f9fa;
+          background-color: #ffffffff;
           min-height: 100vh;
           font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
@@ -184,12 +184,10 @@ const OTPComponent = () => {
           height: 40px;
         }
 
-        .save-button11:hover {
-          background: #5855eb;
-        }
+        
 
         .save-button11:active {
-          background: #4f46e5;
+          background: #5A66F1;
         }
 
         .save-icon11 {

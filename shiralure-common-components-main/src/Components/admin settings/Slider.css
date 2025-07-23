@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 20px;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #f8f9fa;
+  
   min-height: 100vh;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .slider-add-btn23 {
-  background-color: #6366f1;
+  background-color: #5A66F1;
   color: white;
   border: none;
   border-radius: 4px;
@@ -40,9 +40,7 @@
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.slider-add-btn23:hover {
-  background-color: #5856eb;
-}
+
 
 /* Table */
 .slider-management-table23 {
@@ -268,7 +266,7 @@
 
 .slider-form-input23:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: #5A66F1;
 }
 
 .slider-form-textarea23 {
@@ -285,7 +283,7 @@
 
 .slider-form-textarea23:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: #5A66F1;
 }
 
 .slider-file-input23 {
@@ -299,7 +297,7 @@
   align-items: center;
   gap: 6px;
   padding: 8px 12px;
-  background-color: #5856eb;
+  background-color: #5A66F1;
   color: white;
   border-radius: 4px;
   cursor: pointer;
@@ -309,10 +307,7 @@
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.slider-file-btn23:hover {
-  background-color: #5856eb;
-  color: white;
-}
+
 
 .slider-file-text23 {
   color: #6b7280;
@@ -353,7 +348,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background-color: #6366f1;
+  background-color: #5A66F1;
   color: white;
   border: none;
   padding: 10px 16px;
@@ -365,9 +360,7 @@
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.slider-save-btn23:hover {
-  background-color: #5856eb;
-}
+
 
 .slider-clear-btn23 {
   background-color: #6b7280;
@@ -479,7 +472,7 @@
 }
 
 .slider-confirm-btn23 {
-  background-color: #6366f1;
+  background-color: #5A66F1;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -491,9 +484,6 @@
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.slider-confirm-btn23:hover {
-  background-color: #5856eb;
-}
 
 .slider-cancel-btn23 {
   background-color: #6b7280;
@@ -525,7 +515,7 @@
   width: 20px;
   height: 20px;
   border: 2px solid #e5e7eb;
-  border-top: 2px solid #6366f1;
+  border-top: 2px solid #5A66F1;
   border-radius: 50%;
   animation: slider-spin23 1s linear infinite;
   margin-right: 8px;
@@ -565,7 +555,7 @@
 }
 
 .slider-empty-btn23 {
-  background-color: #6366f1;
+  background-color: #5A66F1;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -577,9 +567,7 @@
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.slider-empty-btn23:hover {
-  background-color: #5856eb;
-}
+
 
 /* Image Preview */
 .slider-image-preview23 {
@@ -746,7 +734,7 @@
 .slider-confirm-btn23:focus,
 .slider-cancel-btn23:focus,
 .slider-file-btn23:focus {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #5A66F1;
   outline-offset: 2px;
 }
 
@@ -756,7 +744,7 @@
 }
 
 .slider-radio-input23:focus {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #5A66F1;
   outline-offset: 2px;
 }
 
@@ -807,11 +795,11 @@
 /* File Upload Drag and Drop */
 .slider-file-input23.drag-over {
   background-color: #f0f9ff;
-  border-color: #6366f1;
+  border-color: #5A66F1;
 }
 
 .slider-file-input23.drag-over .slider-file-btn23 {
-  background-color: #6366f1;
+  background-color: #5A66F1;
 }
 
 /* Status Badge Variants */
@@ -827,7 +815,7 @@
 
 .slider-status-published23 {
   background-color: #dbeafe;
-  color: #2563eb;
+  color: #5A66F1;
 }
 
 /* Tooltip Styles */
@@ -973,7 +961,7 @@
   
   .slider-form-input23:focus,
   .slider-form-textarea23:focus {
-    border-color: #6366f1;
+    border-color: #5A66F1;
   }
   
   .slider-form-label23 {
@@ -1006,7 +994,7 @@
 
 /* Selection Styles */
 .slider-management-container23 ::selection {
-  background-color: #6366f1;
+  background-color: #5A66F1;
   color: white;
 }
 
@@ -1018,7 +1006,7 @@
 .slider-clear-btn23:focus-visible,
 .slider-confirm-btn23:focus-visible,
 .slider-cancel-btn23:focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #5A66F1;
   outline-offset: 2px;
 }
 

@@ -47,15 +47,12 @@
 }
 
 .outlet-btn-add12 {
-  background: #5865f2;
+  background: #5A66F1;
   color: white;
   padding: 10px 12px;
 }
 
-.outlet-btn-add12:hover {
-  background: #4752c4;
-  transform: translateY(-1px);
-}
+
 
 .outlet-table-container12 {
   padding: 0;
@@ -365,7 +362,7 @@
 .outlet-form-group12 input:focus,
 .outlet-form-group12 textarea:focus {
   outline: none;
-  border-color: #5865f2;
+  border-color: #5A66F1;
   box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.1);
 }
 
@@ -396,7 +393,7 @@
   margin-right: 6px;
   width: 14px;
   height: 14px;
-  accent-color: #5865f2;
+  accent-color: #5A66F1;
 }
 
 .outlet-form-modal-footer12 {
@@ -410,7 +407,7 @@
 }
 
 .outlet-btn-save-primary12 {
-  background: #5865f2;
+  background: #5A66F1;
   color: white;
   border: none;
   padding: 6px 12px;
@@ -423,10 +420,6 @@
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-save-primary12:hover {
-  background: #4752c4;
-  transform: translateY(-1px);
-}
 
 .outlet-btn-clear-secondary12 {
   background: #6c757d;
@@ -442,10 +435,7 @@
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-clear-secondary12:hover {
-  background: #545b62;
-  transform: translateY(-1px);
-}
+
 
 /* Delete Modal Styles */
 .outlet-delete-modal12 {
@@ -509,7 +499,7 @@
 }
 
 .outlet-btn-delete-yes12 {
-  background: #5865f2;
+  background: #5A66F1;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -521,10 +511,7 @@
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-delete-yes12:hover {
-  background: #4752c4;
-  transform: translateY(-1px);
-}
+
 
 .outlet-btn-delete-no12 {
   background: #333;
@@ -539,10 +526,7 @@
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.outlet-btn-delete-no12:hover {
-  background: #2c2c2c;
-  transform: translateY(-1px);
-}
+
 
 /* Compact height variants */
 .outlet-form-modal12.outlet-compact-height12 {
@@ -944,13 +928,13 @@
 .outlet-btn-clear-secondary12:focus,
 .outlet-btn-delete-yes12:focus,
 .outlet-btn-delete-no12:focus {
-  outline: 2px solid #5865f2;
+  outline: 2px solid #5A66F1;
   outline-offset: 2px;
 }
 
 .outlet-form-group12 input:focus,
 .outlet-form-group12 textarea:focus {
-  outline: 2px solid #5865f2;
+  outline: 2px solid #5A66F1;
   outline-offset: 1px;
 }
 

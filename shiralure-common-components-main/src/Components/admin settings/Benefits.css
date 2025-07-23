@@ -1,7 +1,7 @@
 /* Main Container */
 .ab-main-container {
     padding: 24px;
-    background-color: #f8fafc;
+    
     min-height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }

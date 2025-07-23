@@ -289,7 +289,7 @@ const ProductAttributes = () => {
       <style jsx>{`
         .product-attributes-container16 {
           padding: 20px;
-          background-color: #f5f7fa;
+          
           min-height: 100vh;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
@@ -318,7 +318,7 @@ const ProductAttributes = () => {
         }
 
         .product-attributes-add-btn16 {
-          background: #4f46e5;
+          background: #5A66F1;
           color: white;
           border: none;
           border-radius: 6px;
@@ -330,9 +330,7 @@ const ProductAttributes = () => {
           font-weight: 500;
         }
 
-        .product-attributes-add-btn16:hover {
-          background: #4338ca;
-        }
+       
 
         .product-attributes-table-container16 {
           overflow-x: auto;
@@ -510,7 +508,7 @@ const ProductAttributes = () => {
 
         .product-attributes-input16:focus {
           outline: none;
-          border-color: #4f46e5;
+          border-color: #5A66F1;
           background-color: white;
         }
 
@@ -547,22 +545,18 @@ const ProductAttributes = () => {
         }
 
         .product-attributes-save-btn16 {
-          background: #4f46e5;
+          background: #5A66F1;
           color: white;
         }
 
-        .product-attributes-save-btn16:hover {
-          background: #4338ca;
-        }
+        
 
         .product-attributes-cancel-btn16 {
           background: #6b7280;
           color: white;
         }
 
-        .product-attributes-cancel-btn16:hover {
-          background: #374151;
-        }
+        
 
         .product-attributes-delete-modal16 {
           max-width: 400px;
@@ -601,22 +595,18 @@ const ProductAttributes = () => {
         }
 
         .product-attributes-delete-confirm-btn16 {
-          background: #4f46e5;
+          background: #5A66F1;
           color: white;
         }
 
-        .product-attributes-delete-confirm-btn16:hover {
-          background: #4338ca;
-        }
+        
 
         .product-attributes-delete-cancel-btn16 {
           background: #6b7280;
           color: white;
         }
 
-        .product-attributes-delete-cancel-btn16:hover {
-          background: #374151;
-        }
+        
       `}</style>
     </div>
   );

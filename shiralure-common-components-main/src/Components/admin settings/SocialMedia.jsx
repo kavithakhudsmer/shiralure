@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Save } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 
 const SocialMedia = () => {
   const [socialLinks, setSocialLinks] = useState({
@@ -80,7 +80,7 @@ const SocialMedia = () => {
       alignItems: 'center',
       gap: '8px',
       padding: '8px 16px',
-      backgroundColor: '#5865f2',
+      backgroundColor: '#5A66F1',
       color: 'white',
       border: 'none',
       borderRadius: '6px',
@@ -94,7 +94,7 @@ const SocialMedia = () => {
       alignItems: 'center',
       gap: '8px',
       padding: '8px 24px',
-      backgroundColor: '#5865f2',
+      backgroundColor: '#5A66F1',
       color: 'white',
       border: 'none',
       borderRadius: '6px',
@@ -126,7 +126,7 @@ const SocialMedia = () => {
               onChange={(e) => handleInputChange('facebook', e.target.value)}
               style={styles.input}
               onFocus={(e) => {
-                e.target.style.borderColor = '#3b82f6';
+                e.target.style.borderColor = '#5A66F1';
                 e.target.style.boxShadow = '0 0 0 2px rgba(59, 130, 246, 0.1)';
               }}
               onBlur={(e) => {
@@ -146,7 +146,7 @@ const SocialMedia = () => {
               onChange={(e) => handleInputChange('youtube', e.target.value)}
               style={styles.input}
               onFocus={(e) => {
-                e.target.style.borderColor = '#3b82f6';
+                e.target.style.borderColor = '#5A66F1';
                 e.target.style.boxShadow = '0 0 0 2px rgba(59, 130, 246, 0.1)';
               }}
               onBlur={(e) => {
@@ -169,7 +169,7 @@ const SocialMedia = () => {
               onChange={(e) => handleInputChange('instagram', e.target.value)}
               style={styles.input}
               onFocus={(e) => {
-                e.target.style.borderColor = '#3b82f6';
+                e.target.style.borderColor = '#5A66F1';
                 e.target.style.boxShadow = '0 0 0 2px rgba(59, 130, 246, 0.1)';
               }}
               onBlur={(e) => {
@@ -189,7 +189,7 @@ const SocialMedia = () => {
               onChange={(e) => handleInputChange('twitter', e.target.value)}
               style={styles.input}
               onFocus={(e) => {
-                e.target.style.borderColor = '#3b82f6';
+                e.target.style.borderColor = '#5A66F1';
                 e.target.style.boxShadow = '0 0 0 2px rgba(59, 130, 246, 0.1)';
               }}
               onBlur={(e) => {
@@ -212,7 +212,7 @@ const SocialMedia = () => {
               onChange={(e) => handleInputChange('linkedin', e.target.value)}
               style={styles.input}
               onFocus={(e) => {
-                e.target.style.borderColor = '#3b82f6';
+                e.target.style.borderColor = '#5A66F1';
                 e.target.style.boxShadow = '0 0 0 2px rgba(59, 130, 246, 0.1)';
               }}
               onBlur={(e) => {
@@ -226,8 +226,8 @@ const SocialMedia = () => {
             <button
               onClick={handleAddMoreApps}
               style={styles.addButton}
-              onMouseOver={(e) => e.target.style.backgroundColor = '#2563eb'}
-              onMouseOut={(e) => e.target.style.backgroundColor = '#3b82f6'}
+              onMouseOver={(e) => e.target.style.backgroundColor = '#5A66F1'}
+              onMouseOut={(e) => e.target.style.backgroundColor = '#5A66F1'}
             >
               <span style={{fontSize: '16px'}}>+</span>
               Add More Apps
@@ -241,10 +241,10 @@ const SocialMedia = () => {
         <button
           onClick={handleSave}
           style={styles.saveButton}
-          onMouseOver={(e) => e.target.style.backgroundColor = '#2563eb'}
-          onMouseOut={(e) => e.target.style.backgroundColor = '#3b82f2'}
+          onMouseOver={(e) => e.target.style.backgroundColor = '#5A66F1'}
+          onMouseOut={(e) => e.target.style.backgroundColor = '#5A66F1'}
         >
-          <Save size={16} />
+          <FaCheck size={16} />
           Save
         </button>
       </div>

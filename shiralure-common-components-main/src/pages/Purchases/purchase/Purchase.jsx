@@ -539,7 +539,7 @@ function Purchase() {
       {showDeleteModal && (
         <div className="kmodal-overlay">
           <div className="kmodal-content">
-            <button className="kmodal-close-btn" onClick={handleCancelDelete}><XIcon /></button>
+            
             <div className="kmodal-icon-container"><ExclamationCircleIcon className="kmodal-icon" /></div>
             <h3 className="kmodal-title">Are you sure?</h3>
             <div className="kmodal-body">You will not be able to recover the deleted record!</div>

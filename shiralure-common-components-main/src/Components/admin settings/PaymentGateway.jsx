@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Save } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 
 const PaymentGateway = () => {
   const [activeTab, setActiveTab] = useState('RAZORPAY');
@@ -93,7 +93,7 @@ const PaymentGateway = () => {
               </div>
             </div>
             <button className="save-btn14">
-              <Save size={16} /> Save
+              <FaCheck size={16} /> Save
             </button>
           </div>
         );
@@ -163,7 +163,7 @@ const PaymentGateway = () => {
               </div>
             </div>
             <button className="save-btn14">
-              <Save size={16} /> Save
+              <FaCheck size={16} /> Save
             </button>
           </div>
         );
@@ -241,7 +241,7 @@ const PaymentGateway = () => {
               </div>
             </div>
             <button className="save-btn14">
-              <Save size={16} /> Save
+              <FaCheck size={16} /> Save
             </button>
           </div>
         );
@@ -285,7 +285,7 @@ const PaymentGateway = () => {
               </div>
             </div>
             <button className="save-btn14">
-              <Save size={16} /> Save
+              <FaCheck size={16} /> Save
             </button>
           </div>
         );
@@ -325,7 +325,7 @@ const PaymentGateway = () => {
               </div>
             </div>
             <button className="save-btn14">
-              <Save size={16} /> Save
+              <FaCheck size={16} /> Save
             </button>
           </div>
         );
@@ -364,7 +364,7 @@ const PaymentGateway = () => {
                 </div>
               </div>
             </div>
-            <button className="save-btn14"><Save size={16} /> Save</button>
+            <button className="save-btn14"><FaCheck size={16} /> Save</button>
           </div>
         );
     }
@@ -456,9 +456,9 @@ const PaymentGateway = () => {
         }
 
         .tab14.active14 {
-          background: #4752c4;
+          background: #5A66F1;
           color: white;
-          border-bottom: 2px solid #4752c4;
+          border-bottom: 2px solid #5A66F1;
         }
 
         .dropdown-container14 {
@@ -485,9 +485,9 @@ const PaymentGateway = () => {
         }
 
         .dropdown-tab14.active14 {
-          background: #4752c4;
+          background: #5A66F1;
           color: white;
-          border-bottom: 2px solid #4752c4;
+          border-bottom: 2px solid #5A66F1;
         }
 
         .dropdown-arrow14 {
@@ -529,7 +529,7 @@ const PaymentGateway = () => {
         }
 
         .dropdown-item14.active14 {
-          background: #4752c4;
+          background: #5A66F1;
           color: white;
         }
 
@@ -585,7 +585,7 @@ const PaymentGateway = () => {
 
         .form-group14 input:focus {
           outline: none;
-          border-color: #4752c4;
+          border-color: #5A66F1;
           box-shadow: 0 0 0 1px rgba(124, 77, 255, 0.2);
         }
 
@@ -612,12 +612,12 @@ const PaymentGateway = () => {
 
         .select-wrapper14 select:focus {
           outline: none;
-          border-color: #4752c4;
+          border-color: #5A66F1;
           box-shadow: 0 0 0 1px rgba(124, 77, 255, 0.2);
         }
 
         .save-btn14 {
-          background: #4752c4;
+          background: #5A66F1;
           color: white;
           border: none;
           padding: 10px 20px;
@@ -631,9 +631,7 @@ const PaymentGateway = () => {
           gap: 6px;
         }
 
-        .save-btn14:hover {
-          background: #3d47b3;
-        }
+        
 
         /* Responsive Design */
         @media (max-width: 768px) {

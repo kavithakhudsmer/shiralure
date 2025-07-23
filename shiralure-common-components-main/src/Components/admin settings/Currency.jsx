@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Edit, Trash2, Plus, X, Save, RotateCcw } from 'lucide-react';
+import { Edit, Trash2, Plus, X, RotateCcw } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 
 const CurrencyComponent = () => {
   const [currencies, setCurrencies] = useState([
@@ -91,7 +92,7 @@ const CurrencyComponent = () => {
   return (
     <div className="currency-container3">
       <div className="currency-header3">
-        <h2>CURRENCIES</h2>
+        <h2>Currencies</h2>
         <div className="header-buttons3">
           <button className="btn-primary3" onClick={handleAdd}>
             <Plus size={16} />Add
@@ -218,7 +219,7 @@ const CurrencyComponent = () => {
 
             <div className="modal-footer3">
               <button className="btn-primary3" onClick={handleSave}>
-                <Save size={16} />
+                <FaCheck size={16} />
                 SAVE
               </button>
               <button className="btn-secondary3" onClick={handleClear}>
@@ -277,7 +278,7 @@ const CurrencyComponent = () => {
         }
 
         .btn-primary3 {
-          background: #6366f1;
+          background: #5A66F1;
           color: white;
           border: none;
           padding: 8px 12px;
@@ -290,9 +291,7 @@ const CurrencyComponent = () => {
           font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .btn-primary3:hover {
-          background: #5855e7;
-        }
+        
 
         .btn-secondary3 {
           background: #f3f4f6;
@@ -308,9 +307,7 @@ const CurrencyComponent = () => {
           font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .btn-secondary3:hover {
-          background: #e5e7eb;
-        }
+        
 
         .currency-table3 {
           background: white;
@@ -446,9 +443,6 @@ const CurrencyComponent = () => {
           font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .close-btn3:hover {
-          color: #374151;
-        }
 
         .modal-body3 {
           padding: 20px;
@@ -490,7 +484,7 @@ const CurrencyComponent = () => {
 
         .form-group3 input:focus {
           outline: none;
-          border-color: #6366f1;
+          border-color: #5A66F1;
           box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
 
@@ -559,7 +553,7 @@ const CurrencyComponent = () => {
         }
 
         .btn-danger3 {
-          background: #6366f1;
+          background: #5A66F1;
           color: white;
           border: none;
           padding: 12px 24px;
@@ -570,9 +564,7 @@ const CurrencyComponent = () => {
           font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .btn-danger3:hover {
-          background: #5855e7;
-        }
+        
 
         .btn-cancel3 {
           background: #6b7280;
@@ -586,9 +578,7 @@ const CurrencyComponent = () => {
           font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .btn-cancel3:hover {
-          background: #4b5563;
-        }
+       
       `}</style>
     </div>
   );

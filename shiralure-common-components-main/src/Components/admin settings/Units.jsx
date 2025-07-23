@@ -92,7 +92,7 @@ const Units = () => {
   );
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f8fafc', padding: '24px' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#ffffffff', padding: '24px' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>

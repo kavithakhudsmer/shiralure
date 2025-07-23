@@ -192,7 +192,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     minHeight: 0,
-    background: '#f5f5f5',
+    
     height: 'calc(100vh - 70px)', // Keeping the height calculation as per your request
     paddingBottom: '24px', // Added padding to increase the background size at the bottom
   },
@@ -255,8 +255,8 @@ const styles = {
     userSelect: 'none',
   },
   settingsMenuLiActive: {
-    background: '#fceaea',
-    color: '#d64545',
+  
+    color: '#5A66F1',
     fontWeight: 600,
     borderRadius: 0,
   },
@@ -268,7 +268,7 @@ const styles = {
   },
   settingsChildContent: {
     flex: 1,
-    background: '#f5f5f5',
+    background: '#ffffffff',
     overflowY: 'auto',
   },
 };

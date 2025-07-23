@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
-import { Mail, MessageSquare, Bell, Save } from 'lucide-react';
+import { Mail, MessageSquare, Bell } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 
 const NotificationAlert = () => {
   const [activeTab, setActiveTab] = useState('mail');
@@ -243,7 +244,7 @@ const NotificationAlert = () => {
         </div>
 
         <button className="save-button10" onClick={handleSave}>
-          <Save size={16} />
+          <FaCheck size={16} />
           SAVE
         </button>
       </div>
@@ -403,7 +404,7 @@ const NotificationAlert = () => {
         }
 
         .save-button10 {
-          background: #6366f1;
+          background: #5A66F1;
           color: white;
           border: none;
           padding: 12px 24px;
@@ -419,9 +420,7 @@ const NotificationAlert = () => {
           letter-spacing: 0.5px;
         }
 
-        .save-button10:hover {
-          background: #5855eb;
-        }
+        
 
         .save-button10:active {
           background: #4f46e5;

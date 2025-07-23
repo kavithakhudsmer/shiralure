@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Save } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 import './Mail.css';
 
 const Mail = () => {
@@ -146,7 +146,7 @@ const Mail = () => {
       </div>
       
       <button className="save-button8" onClick={handleSave}>
-        <Save size={16} />
+        <FaCheck size={16} />
         Save
       </button>
     </div>

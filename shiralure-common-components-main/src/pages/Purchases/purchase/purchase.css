@@ -8,6 +8,7 @@ body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f2f6f9
 .kbreadcrumb { display: flex; justify-content: flex-end; align-items: center; gap: 6px; color: #7a7a7a; font-size: 20px; }
 .klink { color: #5A66F1; cursor: pointer; }
 .kpurchase-table-container { background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Added for responsiveness */
   }
 
 .kcontrols { display: flex; gap: 10px; margin-bottom: 20px; justify-content: flex-end; align-items: center; }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Shipping.css';
-import { Save } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 const ShippingSetup = () => {
   const [selectedMethod, setSelectedMethod] = useState('PRODUCT_WISE');
   const [flatRateCost, setFlatRateCost] = useState('');
@@ -67,7 +67,7 @@ const ShippingSetup = () => {
         </div>
         
         <button className="save-btn21 primary21" onClick={handleSave}>
-          <Save size={16} />Save
+          <FaCheck size={16} />Save
         </button>
       </div>
 
@@ -87,7 +87,7 @@ const ShippingSetup = () => {
             />
           </div>
           <button className="save-btn21 primary21" onClick={handleSave}>
-            <Save size={16} /> Save
+            <FaCheck size={16} /> Save
           </button>
         </div>
       )}
@@ -108,7 +108,7 @@ const ShippingSetup = () => {
             />
           </div>
           <button className="save-btn21 primary21" onClick={handleSave}>
-            <Save size={16} /> Save
+            <FaCheck size={16} /> Save
           </button>
         </div>
       )}

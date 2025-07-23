@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Save} from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 const Cookies = () => {
   const [cookiesData, setCookiesData] = useState({
     detailsPage: '',
@@ -69,7 +69,7 @@ const Cookies = () => {
                 fontSize: '14px'
               }}
               onFocus={(e) => {
-                e.target.style.borderColor = '#3b82f6';
+                e.target.style.borderColor = '#5A66F1';
                 e.target.style.boxShadow = '0 0 0 2px rgba(59, 130, 246, 0.1)';
               }}
               onBlur={(e) => {
@@ -198,7 +198,7 @@ const Cookies = () => {
               boxSizing: 'border-box'
             }}
             onFocus={(e) => {
-              e.target.style.borderColor = '#3b82f6';
+              e.target.style.borderColor = '#5A66F1';
               e.target.style.boxShadow = '0 0 0 2px rgba(59, 130, 246, 0.1)';
             }}
             onBlur={(e) => {
@@ -217,7 +217,7 @@ const Cookies = () => {
           alignItems: 'center',
           gap: '8px',
           padding: '8px 24px',
-          backgroundColor: '#6366f1',
+          backgroundColor: '#5A66F1',
           color: 'white',
           border: 'none',
           borderRadius: '6px',
@@ -225,10 +225,10 @@ const Cookies = () => {
           cursor: 'pointer',
           marginTop: '32px'
         }}
-        onMouseOver={(e) => e.target.style.backgroundColor = '#2563eb'}
-        onMouseOut={(e) => e.target.style.backgroundColor = '#3b82f6'}
+        onMouseOver={(e) => e.target.style.backgroundColor = '#5A66F1'}
+        onMouseOut={(e) => e.target.style.backgroundColor = '#5A66F1'}
       >
-         <Save size={16} />
+         <FaCheck size={16} />
         Save
       </button>
     </div>

@@ -5,9 +5,9 @@ import {
   Eye, 
   Trash2, 
   X, 
-  Save,
   AlertTriangle 
 } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 
 const ProductBrandsComponent = () => {
   const [brands, setBrands] = useState([
@@ -232,7 +232,7 @@ const ProductBrandsComponent = () => {
                 Close
               </button>
               <button className="pb-btn-save17" onClick={handleSave}>
-                <Save size={16} />
+                <FaCheck size={16} />
                 Save
               </button>
             </div>
@@ -316,7 +316,7 @@ const ProductBrandsComponent = () => {
                 Close
               </button>
               <button className="pb-btn-save17" onClick={handleSave}>
-                <Save size={16} />
+                <FaCheck size={16} />
                 Save
               </button>
             </div>
@@ -381,7 +381,7 @@ const ProductBrandsComponent = () => {
           margin: 0 auto;
           padding: 20px;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          background: #f8fafc;
+         
           min-height: 100vh;
         }
 
@@ -400,7 +400,7 @@ const ProductBrandsComponent = () => {
         }
 
         .pb-add-btn17 {
-          background: #6366f1;
+          background: #5A66F1;
           color: white;
           border: none;
           padding: 10px;
@@ -411,9 +411,7 @@ const ProductBrandsComponent = () => {
           justify-content: center;
         }
 
-        .pb-add-btn17:hover {
-          background: #5855e7;
-        }
+        
 
         .pb-table17 {
           background: white;
@@ -604,7 +602,7 @@ const ProductBrandsComponent = () => {
 
         .pb-form-input17:focus {
           outline: none;
-          border-color: #6366f1;
+          border-color: #5A66F1;
           background: white;
           box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
@@ -623,7 +621,7 @@ const ProductBrandsComponent = () => {
 
         .pb-form-textarea17:focus {
           outline: none;
-          border-color: #6366f1;
+          border-color: #5A66F1;
           background: white;
           box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
@@ -703,7 +701,7 @@ const ProductBrandsComponent = () => {
 
         .pb-btn-save17 {
           padding: 8px 16px;
-          background: #6366f1;
+          background: #5A66F1;
           color: white;
           border: none;
           border-radius: 6px;
@@ -714,9 +712,7 @@ const ProductBrandsComponent = () => {
           gap: 6px;
         }
 
-        .pb-btn-save17:hover {
-          background: #5855e7;
-        }
+        
 
         .pb-view-body17 {
           padding: 20px;
@@ -811,7 +807,7 @@ const ProductBrandsComponent = () => {
         }
 
         .pb-btn-danger17 {
-          background: #6366f1;
+          background: #5A66F1;
           color: white;
           border: none;
           padding: 12px 24px;
@@ -821,9 +817,7 @@ const ProductBrandsComponent = () => {
           font-weight: 500;
         }
 
-        .pb-btn-danger17:hover {
-          background: #5855e7;
-        }
+        
 
         .pb-btn-cancel17 {
           background: #6b7280;
@@ -836,9 +830,7 @@ const ProductBrandsComponent = () => {
           font-weight: 500;
         }
 
-        .pb-btn-cancel17:hover {
-          background: #4b5563;
-        }
+        
       `}</style>
     </div>
   );

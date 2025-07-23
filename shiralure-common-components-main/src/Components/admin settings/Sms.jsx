@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Save } from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 
 const SmsGateway = () => {
   const [activeTab, setActiveTab] = useState('TWILLIO');
@@ -187,7 +187,7 @@ const SmsGateway = () => {
         </div>
 
         <button className="save-button24">
-          <Save size={16} /> Save
+          <FaCheck size={16} /> Save
         </button>
       </div>
 
@@ -224,7 +224,7 @@ const SmsGateway = () => {
         }
 
         .tab-button24.active24 {
-          background-color: #4752c4;
+          background-color: #5A66F1;
           color: white;
         }
 
@@ -298,7 +298,7 @@ const SmsGateway = () => {
 
         .form-input24:focus {
           outline: none;
-          border-color: #4752c4;
+          border-color: #5A66F1;
         }
 
         .form-select24 {
@@ -321,7 +321,7 @@ const SmsGateway = () => {
 
         .form-select24:focus {
           outline: none;
-          border-color: #4752c4;
+          border-color: #5A66F1;
         }
 
         .save-button24 {
@@ -329,7 +329,7 @@ const SmsGateway = () => {
           align-items: center;
           gap: 8px;
           padding: 12px 24px;
-          background-color: #4752c4;
+          background-color: #5A66F1;
           color: white;
           border: none;
           border-radius: 4px;
@@ -339,9 +339,7 @@ const SmsGateway = () => {
           transition: background-color 0.2s ease;
         }
 
-        .save-button24:hover {
-          background-color: #4752c4;
-        }
+       
 
         @media (max-width: 640px) {
           .form-row24 {

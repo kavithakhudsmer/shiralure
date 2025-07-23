@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Theme.css';
-import {Save} from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 
 const ThemeComponent = () => {
   const [uploadModalOpen, setUploadModalOpen] = useState(false);
@@ -110,7 +110,7 @@ const ThemeComponent = () => {
 
       {/* Save Button */}
       <button className="save-button27" onClick={handleSave}>
-        <Save size={16} /> Save
+        <FaCheck size={16} /> Save
       </button>
 
       {/* Upload Modal */}

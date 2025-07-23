@@ -134,7 +134,7 @@ const Slider = () => {
     <div className="slider-management-container23">
       {/* Header */}
       <div className="slider-management-header23">
-        <h2 className="slider-management-title23">SLIDERS</h2>
+        <h2 className="slider-management-title23">Sliders</h2>
         <button className="slider-add-btn23" onClick={handleAddNew}>
           <Plus size={16} />Add
         </button>

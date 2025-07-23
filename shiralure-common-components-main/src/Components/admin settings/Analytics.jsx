@@ -76,7 +76,7 @@ const Analytics = () => {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundColor: '#f8fafc',
+      
       padding: '24px',
       fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
     }}>
@@ -106,7 +106,7 @@ const Analytics = () => {
           <button 
             onClick={handleAdd}
             style={{
-              background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
+              background: 'linear-gradient(135deg, #5A66F1 0%, #5A66F1 100%)',
               color: 'white',
               border: 'none',
               borderRadius: '8px',
@@ -129,7 +129,7 @@ const Analytics = () => {
         {/* Table */}
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead style={{ backgroundColor: '#f9fafb' }}>
+            <thead style={{ backgroundColor: '#ffffffff' }}>
               <tr>
                 <th style={{
                   textAlign: 'left',
@@ -342,7 +342,7 @@ const Analytics = () => {
                       value="Available"
                       checked={formData.status === 'Available'}
                       onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                      style={{ width: '16px', height: '16px', accentColor: '#6366f1' }}
+                      style={{ width: '16px', height: '16px', accentColor: '#5A66F1' }}
                     />
                     <label htmlFor="available" style={{
                       fontSize: '14px',
@@ -358,7 +358,7 @@ const Analytics = () => {
                       value="Unavailable"
                       checked={formData.status === 'Unavailable'}
                       onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                      style={{ width: '16px', height: '16px', accentColor: '#6366f1' }}
+                      style={{ width: '16px', height: '16px', accentColor: '#5A66F1' }}
                     />
                     <label htmlFor="unavailable" style={{
                       fontSize: '14px',
@@ -378,7 +378,7 @@ const Analytics = () => {
               borderTop: '1px solid #e5e7eb'
             }}>
               <button onClick={handleSave} style={{
-                background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
+                background: 'linear-gradient(135deg, #5A66F1 0%, #5A66F1 100%)',
                 color: 'white',
                 border: 'none',
                 borderRadius: '8px',
@@ -472,7 +472,7 @@ const Analytics = () => {
               justifyContent: 'center'
             }}>
               <button onClick={confirmDelete} style={{
-                background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
+                background: 'linear-gradient(135deg, #5A66F1 0%, #5A66F1 100%)',
                 color: 'white',
                 border: 'none',
                 borderRadius: '8px',

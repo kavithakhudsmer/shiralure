@@ -91,7 +91,7 @@ const LanguagesComponent = () => {
           max-width: 1200px;
           margin: 0 auto;
           padding: 24px;
-          background-color: #f9fafb;
+          background-color: #ffffffff;
           min-height: 100vh;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
@@ -118,7 +118,7 @@ const LanguagesComponent = () => {
         }
 
         .lang-mgmt-add-btn5 {
-          background-color: #2563eb;
+          background-color: #5A66F1;
           color: white;
           border: none;
           padding: 8px 16px;
@@ -131,9 +131,7 @@ const LanguagesComponent = () => {
           transition: background-color 0.2s;
         }
 
-        .lang-mgmt-add-btn5:hover {
-          background-color: #1d4ed8;
-        }
+      
 
         .lang-mgmt-table-wrapper5 {
           background: white;
@@ -279,7 +277,7 @@ const LanguagesComponent = () => {
         }
 
         .lang-mgmt-pagination-active5 {
-          background-color: #2563eb !important;
+          background-color: #5A66F1 !important;
           color: white !important;
         }
 
@@ -369,7 +367,7 @@ const LanguagesComponent = () => {
 
         .lang-mgmt-form-input5:focus {
           outline: none;
-          border-color: #2563eb;
+          border-color: #5A66F1;
           box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
@@ -385,14 +383,12 @@ const LanguagesComponent = () => {
         }
 
         .lang-mgmt-file-label5 {
-          color: #2563eb;
+          color: #5A66F1;
           cursor: pointer;
           text-decoration: none;
         }
 
-        .lang-mgmt-file-label5:hover {
-          color: #1d4ed8;
-        }
+       
 
         .lang-mgmt-file-text5 {
           color: #6b7280;
@@ -449,7 +445,7 @@ const LanguagesComponent = () => {
 
         .lang-mgmt-save-btn5 {
           padding: 8px 16px;
-          background-color: #2563eb;
+          background-color: #5A66F1;
           color: white;
           border: none;
           border-radius: 6px;
@@ -462,7 +458,7 @@ const LanguagesComponent = () => {
         }
 
         .lang-mgmt-save-btn5:hover:not(:disabled) {
-          background-color: #1d4ed8;
+          background-color: #5A66F1;
         }
 
         .lang-mgmt-save-btn5:disabled {
@@ -539,7 +535,7 @@ const LanguagesComponent = () => {
 
         .lang-mgmt-confirm-delete-btn5 {
           padding: 8px 24px;
-          background-color: #2563eb;
+          background-color: #5A66F1;
           color: white;
           border: none;
           border-radius: 6px;
@@ -548,9 +544,7 @@ const LanguagesComponent = () => {
           transition: background-color 0.2s;
         }
 
-        .lang-mgmt-confirm-delete-btn5:hover {
-          background-color: #1d4ed8;
-        }
+       
 
         .lang-mgmt-cancel-delete-btn5 {
           padding: 8px 24px;

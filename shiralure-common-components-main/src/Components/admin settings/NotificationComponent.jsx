@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import {Save} from 'lucide-react';
+import { FaCheck } from "react-icons/fa";
 <div className="some-style">Hello</div>
 const NotificationComponent= () => {
   const [formData, setFormData] = useState({
@@ -157,7 +157,7 @@ const NotificationComponent= () => {
         </div>
         
         <button className="save-button9" onClick={handleSave}>
-          <Save size={16} />
+          <FaCheck size={16} />
           Save
         </button>
       </div>
@@ -176,7 +176,7 @@ const NotificationComponent= () => {
           background: white;
           border-radius: 8px;
           padding: 0;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          
           margin-bottom: 24px;
           max-width: 1200px;
           margin-left: auto;
@@ -187,7 +187,7 @@ const NotificationComponent= () => {
           background-color: #ffffff;
           border: none;
           padding: 0;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+         
           max-width: 1200px;
           margin: 0 auto;
         }
@@ -282,7 +282,7 @@ const NotificationComponent= () => {
         }
 
         .save-button9 {
-          background: #6366f1;
+          background: #5A66F1;
           color: white;
           border: none;
           padding: 10px 20px;
@@ -298,12 +298,10 @@ const NotificationComponent= () => {
           height: 40px;
         }
 
-        .save-button9:hover {
-          background: #5855eb;
-        }
+       
 
         .save-button9:active {
-          background: #4f46e5;
+          background: #5A66F1;
         }
 
         .save-icon9 {
