@@ -31,7 +31,7 @@
     margin-top: 6px;
 }
 .rk-customer-breadcrumb-link {
-    color: #007bff;
+    color: #5A66F1;
     text-decoration: none;
 }
 .rk-customer-breadcrumb span {
@@ -62,7 +62,7 @@
     display: inline-block;
 }
 .rk-customer-icon-box {
-    background-color: #6c5ce7;
+    background-color: #5A66F1;
     color: #fff;
     border: none;
     padding: 10px 12px;
@@ -74,9 +74,7 @@
     font-size: 18px;
     transition: background-color 0.3s ease;
 }
-.rk-customer-icon-box:hover {
-    background-color: #5a4cb8;
-}
+
 .rk-customer-icon {
     font-size: 18px;
 }
@@ -84,7 +82,7 @@
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #6c5ce7;
+    background-color: #5A66F1;
     color: white;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -103,10 +101,7 @@
     font-size: 14px;
     color: white;
 }
-.rk-customer-share-item:hover {
-    background-color: #f0f0f0;
-    color: #333;
-}
+
 .rk-customer-dropdown-icon {
     font-size: 16px;
 }
@@ -172,19 +167,15 @@
     transition: background-color 0.3s ease;
 }
 .rk-customer-filter-buttons button.rk-customer-search {
-    background-color: #6c5ce7;
+    background-color: #5A66F1;
     color: #fff;
 }
-.rk-customer-filter-buttons button.rk-customer-search:hover {
-    background-color: #5a4cb8;
-}
+
 .rk-customer-filter-buttons button.rk-customer-clear {
     background-color: #333;
     color: #fff;
 }
-.rk-customer-filter-buttons button.rk-customer-clear:hover {
-    background-color: #333;
-}
+
 .rk-customer-print-table-area {
     overflow-x: auto;
 }
@@ -336,7 +327,7 @@
 .rk-customer-form-group input:focus,
 .rk-customer-form-group select:focus {
     outline: none;
-    border-color: #6c5ce7;
+    border-color: #5A66F1;
     box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.2);
 }
 .rk-customer-phone-input {
@@ -380,8 +371,8 @@
     transition: all 0.2s ease-in-out;
 }
 .rk-customer-radio-group input[type="radio"]:checked {
-    border-color: #6c5ce7;
-    background-color: #6c5ce7;
+    border-color: #5A66F1;
+    background-color: #5A66F1;
 }
 .rk-customer-radio-group input[type="radio"]:checked::before {
     content: '';
@@ -413,19 +404,15 @@
     transition: background-color 0.3s ease;
 }
 .rk-customer-form-buttons button.rk-customer-save {
-    background-color: #6c5ce7;
+    background-color: #5A66F1;
     color: #fff;
 }
-.rk-customer-form-buttons button.rk-customer-save:hover {
-    background-color: #5a4cb8;
-}
+
 .rk-customer-form-buttons button.rk-customer-close {
     background-color: #333;
     color: #fff;
 }
-.rk-customer-form-buttons button.rk-customer-close:hover {
-    background-color: #555;
-}
+
 .rk-customer-delete-modal {
     position: fixed;
     top: 0;
@@ -476,19 +463,15 @@
     transition: background-color 0.3s ease;
 }
 .rk-customer-delete-buttons button.rk-customer-yes {
-    background-color: #6c5ce7;
+    background-color: #5A66F1;
     color: #fff;
 }
-.rk-customer-delete-buttons button.rk-customer-yes:hover {
-    background-color: #5a4cb8;
-}
+
 .rk-customer-delete-buttons button.rk-customer-no {
     background-color: #333;
     color: #fff;
 }
-.rk-customer-delete-buttons button.rk-customer-no:hover {
-    background-color: #555;
-}
+
 .rk-customer-footer {
     display: flex;
     justify-content: space-between;
@@ -511,7 +494,7 @@
 }
 .rk-customer-pagination-arrow {
     background-color: #ffffff;
-    color: #4338ca;
+    color: #5A66F1;
     border: 1px solid #ddd;
     padding: 8px 12px;
     cursor: pointer;
@@ -523,7 +506,7 @@
 }
 .rk-customer-pagination-page {
     background-color: #ffffff;
-    color: #4338ca;
+    color: #5A66F1;
     border: 1px solid #ddd;
     padding: 8px 12px;
     cursor: pointer;
@@ -540,11 +523,11 @@
 }
 .rk-customer-pagination-page:hover:not(:disabled) {
     background-color: #ffffff;
-    color: #4338ca;
+    color: #5A66F1;
 }
 .rk-customer-pagination-page.rk-customer-active {
 background-color: #eef2ff;
-    color: #4338ca;
+    color: #5A66F1;
     font-weight: 500;
 }
 .rk-customer-pagination-arrow:disabled,
@@ -558,7 +541,7 @@ background-color: #eef2ff;
 
 }
 .rk-customer-row-count-btn {
-    background-color: #6c5ce7;
+    background-color: #5A66F1;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -571,14 +554,12 @@ background-color: #eef2ff;
     height: 38px;
     box-sizing: border-box;
 }
-.rk-customer-row-count-btn:hover {
-    background-color: #6c5ce7;
-}
+
 .rk-customer-row-count-dropdown {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #6c5ce7;
+    background-color: #5A66F1;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -593,10 +574,7 @@ background-color: #eef2ff;
     font-size: 14px;
     color: white;
 }
-.rk-customer-row-count-dropdown p:hover {
-    background-color: #f0f0f0;
-    color: #333;
-}
+
 @media print {
     body * {
         visibility: hidden;
